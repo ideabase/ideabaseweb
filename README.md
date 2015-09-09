@@ -1,2 +1,2 @@
 # ideabaseweb
-For the new idealess website
+For the new ideabase website
