@@ -13,13 +13,13 @@ return array(
 	'server' => 'localhost',
 
 	// The database username to connect with.
-	'user' => 'ikentprod',
+	'user' => 'root',
 
 	// The database password to connect with.
-	'password' => 'S{g7FT]nrH(q',
+	'password' => 'root',
 
 	// The name of the database to select.
-	'database' => 'ibkent_ideabase_production',
+	'database' => 'ideaweb',
 
 	// The prefix to use when naming tables. This can be no more than 5 characters.
 	'tablePrefix' => 'craft',
