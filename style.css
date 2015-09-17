@@ -1,0 +1,35 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+#header{
+	margin-top: 5%;
+	font-size: 2em;
+	text-align: center;
+}
+
+#navigation{
+	width: 100%;
+}
+
+#navigation ul {
+	margin: 0; padding: 0;
+	float: left;
+}
+
+#navigation ul li {
+	display: inline;
+}
+
+#navigation ul li a {
+	color: black;
+	font-size: 2em;
+	float: left; 
+	text-decoration: none;
+	padding: 20px;
+}
+
+#navigation ul li a:visited {
+	color: black;
+}
+
