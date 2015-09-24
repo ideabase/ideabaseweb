@@ -10,5 +10,6 @@
 		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 		<p>{{ entry.awardWinningProject}}</p>
 		<p>{{ entry.awardDateAwarded}}</p>
+		<a href="{{ entry.getURL(winningProjectUrl) }}">Winning Project URL</a>
 	</article>
 {% endblock %}
