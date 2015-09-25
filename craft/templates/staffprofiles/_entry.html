@@ -12,5 +12,8 @@
 		<p>{{ entry.profileFunFact }}</p>
 		<p>{{ entry.profileJobTitle }}</p>
 		<p>{{ entry.profileOfficePhoneNumber }}</p>
+		{% for image in craft.assets.kind('image') %}
+    		<li><img src="{{ image.getUrl('thumb') }}" alt="{{ image.title }}"></li>
+		{% endfor %}
 	</article>
 {% endblock %}
