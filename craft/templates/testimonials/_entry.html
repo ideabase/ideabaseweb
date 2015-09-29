@@ -20,7 +20,7 @@
 		<h1>{{ entry.title }}</h1>
 		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 		<p>{{ entry.dateOfQuote }}</p>
-		<a href="{{ entry.getURL(testimonalNameOfQuoter) }}">{{ entry.testimonialNameofQuoter }}</a>
+		<p>{{ testimonialNameOfQuoter }}</p>
 		<p>{{ testimonialQuote }}</p>
 	</article>
 {% endblock %}
