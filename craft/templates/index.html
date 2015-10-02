@@ -33,13 +33,29 @@
 	<!-- End About Section -->
 
 	<h1>{{ entry.title }}</h1>
-	<p>{{ entry.mainTagline }}</p>	
+	<p>{{ entry.mainTagline }}</p>
+
+	<!-- Services List -->
+	{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
+    
+    <ul>
+    <li>
+        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+        {{ entry.serviceDescription }}
+        <a href="{{ entry.url }}">Continue reading</a>
+    </li>
+    </ul>
+	{% endfor %}
+	<!-- End Services List -->
 	
 
 	<!-- Footer -->
 	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}
-	{{ footer.footerEmail }}
+	{{ footer.callToAction }}</p>
+	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
+    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+	{% endfor %}</p>
+	<p>{{ footer.footerEmail }}
 	{{ footer.faxNumber }}
 	{{ footer.phoneNumber }}</p>
 	<!-- End Footer -->
