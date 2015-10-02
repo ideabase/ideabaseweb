@@ -20,14 +20,28 @@
 {% extends "_layout" %}
 
 {% block content %}
+
+	<!-- About Section -->
+		<!-- About Image -->
+			{% for asset in entry.aboutImage %}
+				<img src="{{ asset.getUrl('aboutImageTransform') }}">
+			{% endfor %}
+		<!-- End About Image -->
+			
+	<p>{{ entry.homepageAboutText }}</p>
+	
+	<!-- End About Section -->
+
 	<h1>{{ entry.title }}</h1>
+	<p>{{ entry.mainTagline }}</p>	
+	
 
-	{{ entry.mainTagline }}
+	<!-- Footer -->
+	<p>{{ footer.footerAddress }}
+	{{ footer.callToAction }}
+	{{ footer.footerEmail }}
+	{{ footer.faxNumber }}
+	{{ footer.phoneNumber }}</p>
+	<!-- End Footer -->
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
 {% endblock %}
