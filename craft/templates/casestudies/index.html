@@ -1,22 +1,14 @@
 {#
- # News index template
- # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
+ # Case Study Index Template 
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+{% set title = "Case Studies" %}
 
 {% block content %}
-	<h1>News</h1>
+	<h1>Case Studies</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
+	{% for entry in craft.entries.section('caseStudy').find() %}
 		<article>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
@@ -24,14 +16,4 @@
 			<p><a href="{{ entry.url }}">Continue reading</a></p>
 		</article>
 	{% endfor %}
-		<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
 {% endblock %}

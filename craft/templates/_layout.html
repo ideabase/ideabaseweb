@@ -23,7 +23,7 @@
 			        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 		}
 
-		#header, #footer { display: block; color: #fff; background: #da5a47; }
+		#header, #footer { display: block; color: #fff; background: #FFFFFF; }
 		#header a, #footer a { color: #fff; }
 		#header { border-radius: 7px 7px 0 0; padding: 25px; }
 		#header:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
@@ -49,7 +49,9 @@
 <body>
 	<div id="container">
 		<header id="header">
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+			<div align="center">{% for image in craft.assets.title('IdeaBase Logo') %}
+    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+	{% endfor %}</div>
 
 			<!--<nav>
 				<ul>

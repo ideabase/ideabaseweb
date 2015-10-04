@@ -20,12 +20,11 @@
 {% extends "_layout" %}
 
 {% block content %}
-
 	<!-- About Section -->
 		<!-- About Image -->
-			{% for asset in entry.aboutImage %}
+			<div align="center">{% for asset in entry.aboutImage %}
 				<img src="{{ asset.getUrl('aboutImageTransform') }}">
-			{% endfor %}
+			{% endfor %}</div>
 		<!-- End About Image -->
 			
 	<p>{{ entry.homepageAboutText }}</p>
@@ -36,6 +35,7 @@
 	<p>{{ entry.mainTagline }}</p>
 
 	<!-- Services List -->
+	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Services (Process) Headline/Description</div></h2>
 	{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
     
     <ul>
@@ -46,7 +46,21 @@
     </li>
     </ul>
 	{% endfor %}
+	<h3><a href="services/">More Services</a></h3>
 	<!-- End Services List -->
+
+	<!-- Projects List -->
+	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Project Headline/Description</div></h2>
+	{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
+    <ul>
+    <li>
+        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+        <a href="{{ entry.url }}">Continue reading</a>
+    </li>
+    </ul>
+	{% endfor %}
+	<h3><a href="projects/">More Projects</a></h3>
+	<!-- End Projects List -->
 	
 
 	<!-- Footer -->
