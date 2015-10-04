@@ -24,4 +24,15 @@
 			<p><a href="{{ entry.url }}">Continue reading</a></p>
 		</article>
 	{% endfor %}
+		<!-- Footer -->
+	<p>{{ footer.footerAddress }}
+	{{ footer.callToAction }}</p>
+	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
+    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+	{% endfor %}</p>
+	<p>{{ footer.footerEmail }}
+	{{ footer.faxNumber }}
+	{{ footer.phoneNumber }}</p>
+	<!-- End Footer -->
 {% endblock %}
+

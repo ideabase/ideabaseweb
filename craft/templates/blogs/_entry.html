@@ -10,4 +10,14 @@
 		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 		<p>{{ entry.blogContent}}</p>
 	</article>
+		<!-- Footer -->
+	<p>{{ footer.footerAddress }}
+	{{ footer.callToAction }}</p>
+	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
+    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+	{% endfor %}</p>
+	<p>{{ footer.footerEmail }}
+	{{ footer.faxNumber }}
+	{{ footer.phoneNumber }}</p>
+	<!-- End Footer -->
 {% endblock %}
