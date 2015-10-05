@@ -1,1 +1,20 @@
-staff profile index.html
+{#
+ # People index template
+ #}
+
+{% extends "_layout" %}
+{% set title = "News" %}
+
+{% block content %}
+	<h1>People at IdeaBase Kent</h1>
+
+	{% for entry in craft.entries.section('people').find() %}
+		<article>
+			<div style="border:1px solid black; margin: 10px; text-align: left;">{% for asset in entry.staffHeadshot %}
+     		<img src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
+     		{% endfor %}
+			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			<p>{{ entry.profileJobTitle }}</p></div>
+		</article>
+	{% endfor %}
+{% endblock %}
