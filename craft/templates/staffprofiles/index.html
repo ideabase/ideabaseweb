@@ -3,10 +3,14 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+{% set title = "Staff" %}
 
 {% block content %}
-	<h1>People at IdeaBase Kent</h1>
+	<h1>{{ entry.staffIndexHeader }}</h1>
+	<h3>{{ entry.staffIndexDescription }}</h3>
+	{% for asset in entry.peopleFeaturedImage %}
+     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    {% endfor %}
 
 	{% for entry in craft.entries.section('people').find() %}
 		<article>
@@ -14,7 +18,10 @@
      		<img src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
      		{% endfor %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>{{ entry.profileJobTitle }}</p></div>
+			<p>bio: {{ entry.profileJobTitle }}</p></div>
 		</article>
+
 	{% endfor %}
+	<h2>{{ entry.workForIdeabaseTitle}}</h2>
+	<h3>{{ entry.workForIdeabaseDescription }}</h3>
 {% endblock %}

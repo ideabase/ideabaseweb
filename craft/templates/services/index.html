@@ -6,14 +6,20 @@ Services Template
 {% set title = "Services" %}
 
 {% block content %}
-	<h1>Services</h1>
+	<h1>{{ entry.processHeader }}</h1>
+	{% for asset in entry.processFeaturedImage %}
+     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    {% endfor %}
 
-	{% for entry in craft.entries.section('services').find() %}
+	{% for entry in craft.entries.section('services').order(postDate) %}
+		<div style="border:1px solid black; margin: 10px; text-align: left;">
 		<article>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
+			{% for asset in entry.serviceImage %}
+     			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+			<p>{{ entry.serviceDescription }}</p>
 		</article>
+		</div>
 	{% endfor %}
 {% endblock %}
