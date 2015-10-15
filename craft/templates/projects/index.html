@@ -1,27 +1,24 @@
 {#
- # News index template
- # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
  #}
 
 {% extends "_layout" %}
 {% set title = "News" %}
 
 {% block content %}
-	<h1>News</h1>
+	<h1>Projects</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
+	{% for entry in craft.entries.section('ideabaseProjects').find() %}
 		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
+
+			<a href="{{ entry.url }}">{{ entry.title }}
+			<div>
+			{% for asset in entry.projectPicture %}
+		     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		   	{% endfor %}
+   			</div></a>
 		</article>
+
 	{% endfor %}
+			<p>INSERT TESTIMONIAL??</p>
+	{{ entry.testimonial }}
 {% endblock %}

@@ -16,11 +16,22 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<article>
 		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		{{ entry.body }}
-	</article>
+		<div>
+		{% for asset in entry.projectPicture %}
+     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   		{% endfor %}
+   		<div>
+
+   		<div>{{ entry.projectDescription }}</div>
+
+   		<div>
+   		{% for asset in entry.projectPicture2 %}
+     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   		{% endfor %}
+   		</div>
+		
+
 		<!-- Footer -->
 	<p>{{ footer.footerAddress }}
 	{{ footer.callToAction }}</p>
