@@ -2,7 +2,7 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+
 
 {% block content %}
 	<h1>Projects</h1>
@@ -21,4 +21,17 @@
 	{% endfor %}
 			<p>INSERT TESTIMONIAL??</p>
 	{{ entry.testimonial }}
+
+	<!-- Projects List -->
+		<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Case Study Headline</div></h2>
+		{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
+	    <ul>
+	    <li>
+	        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+	        <a href="{{ entry.url }}">Continue reading</a>
+	    </li>
+	    </ul>
+		{% endfor %}
+		<h3><a href="casestudies/">More Case Studies</a></h3>
+	<!-- End Projects List -->
 {% endblock %}
