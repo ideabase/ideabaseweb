@@ -7,21 +7,6 @@
 
 {% block content %}
 
-{% set peoplenav = craft.categories.group('staffHierarchy') %}
-
-<ul id="nav">
-    {% nav entry in peoplenav %}
-        <li>
-            <a href="{{ entry.url }}">{{ entry.title }}</a>
-            {% ifchildren %}
-                <ul>
-                    {% children %}
-                </ul>
-            {% endifchildren %}
-        </li>
-    {% endnav %}
-</ul>
-
 
 	<h1>{{ entry.staffIndexHeader }}</h1>
 	<h3>{{ entry.staffIndexDescription }}</h3>
@@ -29,16 +14,24 @@
      	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     {% endfor %}
 
-	{% for entry in craft.entries.section('people').find() %}
-		<article>
-			<div style="border:1px solid black; margin: 10px; text-align: left;">{% for asset in entry.staffHeadshot %}
-     		<img src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
-     		{% endfor %}
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>bio: {{ entry.profileJobTitle }}</p></div>
-		</article>
+{% set categories = craft.categories.group('staffHierarchy') %}
+{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
-	{% endfor %}
+{% for category in categories.relatedTo(projects) %}
+  <h3>{{ category.title }}</h3>
+
+  <ul>
+    {% for entry in staff.relatedTo(category) %}
+		<div style="border:1px solid black; margin: 10px; text-align: left;">
+				{% for asset in entry.staffHeadshot %}
+     				<img src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
+     			{% endfor %}
+		<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+		<p>bio: {{ entry.profileJobTitle }}</p></div>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
 	<h2>{{ entry.workForIdeabaseTitle}}</h2>
 	<h3>{{ entry.workForIdeabaseDescription }}</h3>
 {% endblock %}

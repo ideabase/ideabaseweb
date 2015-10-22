@@ -7,14 +7,14 @@
 {% block content %}
 	<article>
 		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+		{% for asset in entry.staffHeadshot %}
+     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   		{% endfor %}
 		<p>{{ entry.profileContactEmail }}</p>
 		<p>{{ entry.profileFunFact }}</p>
 		<p>{{ entry.profileJobTitle }}</p>
 		<p>{{ entry.profileOfficePhoneNumber }}</p>
-		{% for image in craft.assets.kind('image') %}
-    		<li><img src="{{ image.getUrl('thumb') }}" alt="{{ image.title }}"></li>
-		{% endfor %}
+
 	</article>
 		<!-- Footer -->
 	<p>{{ footer.footerAddress }}
