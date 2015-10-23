@@ -5,18 +5,12 @@ Services Template
 {% extends "_layout" %}
 
 {% block content %}
-	<article>
-		<h1>{{ entry.title }}</h1>
-		<p>{{ entry.serviceDescription }}</p>
-	</article>
-		<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
+	<section class="service"
+		<h1 class="service__title">
+			{{ entry.title }}
+		</h1>
+		<p class="service__text">
+			{{ entry.serviceDescription }}
+		</p>
+	</section>
 {% endblock %}

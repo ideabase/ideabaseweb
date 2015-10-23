@@ -6,32 +6,46 @@
 {% set title = "Staff" %}
 
 {% block content %}
+	<section class="people-index">
 
+		<h1 class="people-index__header">{{ entry.staffIndexHeader }}</h1>
+		<h3 class="people-index__text">{{ entry.staffIndexDescription }}</h3>
+		<div class="people-index__image">
+			{% for asset in entry.peopleFeaturedImage %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    	</div>
+    </section>	
+    <section class="people-individual">	
+	{% set categories = craft.categories.group('staffHierarchy') %}
+	{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
-	<h1>{{ entry.staffIndexHeader }}</h1>
-	<h3>{{ entry.staffIndexDescription }}</h3>
-	{% for asset in entry.peopleFeaturedImage %}
-     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-    {% endfor %}
+	{% for category in categories.relatedTo(projects) %}
+  	<h3 class="people-individual__category">{{ category.title }}</h3>
 
-{% set categories = craft.categories.group('staffHierarchy') %}
-{% set staff = craft.entries.section('people').order('title').limit(null) %}
-
-{% for category in categories.relatedTo(projects) %}
-  <h3>{{ category.title }}</h3>
-
-  <ul>
-    {% for entry in staff.relatedTo(category) %}
-		<div style="border:1px solid black; margin: 10px; text-align: left;">
-				{% for asset in entry.staffHeadshot %}
-     				<img src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
-     			{% endfor %}
-		<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-		<p>bio: {{ entry.profileJobTitle }}</p></div>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
-	<h2>{{ entry.workForIdeabaseTitle}}</h2>
-	<h3>{{ entry.workForIdeabaseDescription }}</h3>
+  		<ul class="people-individual-list">
+    		{% for entry in staff.relatedTo(category) %}
+    			<li class="people-individual-list__item">
+					<div >
+						{% for asset in entry.staffHeadshot %}
+     						<img class="people-individual-list__image"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
+     					{% endfor %}
+     				</div>	
+					<h3 class="people-individual-list__title">
+						<a href="{{ entry.url }}">
+							{{ entry.title }}
+						</a>
+					</h3>
+					<p class="people-individual-list__text">
+						bio: {{ entry.profileJobTitle }}
+					</p>
+				</li>
+   			{% endfor %}
+  		</ul>
+	{% endfor %}
+	</section>
+	<section class="ideabase-apply"
+		<h2 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h2>
+		<h3 class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</h3>
+	</section>	
 {% endblock %}

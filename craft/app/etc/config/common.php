@@ -129,6 +129,7 @@ $configArray = array(
 		'app.etc.errors.EtException',
 		'app.etc.errors.Exception',
 		'app.etc.errors.HttpException',
+		'app.etc.errors.InvalidSubpathException',
 		'app.etc.errors.TemplateLoaderException',
 		'app.etc.et.Et',
 		'app.etc.events.Event',

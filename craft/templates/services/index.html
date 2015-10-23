@@ -6,33 +6,33 @@ Services Template
 {% set title = "Services" %}
 
 {% block content %}
-	<h1>{{ entry.processHeader }}</h1>
-	{% for asset in entry.processFeaturedImage %}
-     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-    {% endfor %}
-
-	{% for entry in craft.entries.section('services').order(postDate) %}
-		<div style="border:1px solid black; margin: 10px; text-align: left;">
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			{% for asset in entry.serviceImage %}
-     			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+	<section class="service-index">
+		<h1 class="service-index__title">
+			{{ entry.processHeader }}
+		</h1>
+		<div class="service-index__image">
+			{% for asset in entry.processFeaturedImage %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
-			<p>{{ entry.serviceDescription }}</p>
-		</article>
-		</div>
-	{% endfor %}
-
-			<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
-	
+    	</div>
+    </section>
+    <section class="service-index-entry">
+		{% for entry in craft.entries.section('services').order(postDate) %}
+			<article class="service-index-entry-individual">
+					<h3 class="service-index-entry-individual__title">
+						<a href="{{ entry.url }}">
+							{{ entry.title }}
+						</a>
+					</h3>
+					<div class="service-index-entry-individual__image">
+						{% for asset in entry.serviceImage %}
+     						<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+    					{% endfor %}
+    				</div>	
+					<p class="service-index-entry-individual__text">
+						{{ entry.serviceDescription }}
+					</p>
+			</article>
+		{% endfor %}
 {% endblock %}
 

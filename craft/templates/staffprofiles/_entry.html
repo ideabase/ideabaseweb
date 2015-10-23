@@ -5,25 +5,18 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<article>
-		<h1>{{ entry.title }}</h1>
-		{% for asset in entry.staffHeadshot %}
-     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   		{% endfor %}
-		<p>{{ entry.profileContactEmail }}</p>
-		<p>{{ entry.profileFunFact }}</p>
-		<p>{{ entry.profileJobTitle }}</p>
-		<p>{{ entry.profileOfficePhoneNumber }}</p>
-
-	</article>
-		<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
+	<section class="people">
+		<h1 class="people__title">
+			{{ entry.title }}
+		</h1>
+		<div class="people__image">
+			{% for asset in entry.staffHeadshot %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   			{% endfor %}
+   		</div>
+		<p class="people__text">{{ entry.profileContactEmail }}</p>
+		<p class="people__text">{{ entry.profileFunFact }}</p>
+		<p class="people__text">{{ entry.profileJobTitle }}</p>
+		<p class="people__text">{{ entry.profileOfficePhoneNumber }}</p>
+	</section>
 {% endblock %}

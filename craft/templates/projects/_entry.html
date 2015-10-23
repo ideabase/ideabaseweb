@@ -1,45 +1,30 @@
 {#
- # News entry template
+ # Project entry template
  # -------------------
- #
- # This template gets loaded whenever a News entry’s URL is
- # requested. That’s because the News section’s Template setting is
- # set to “news/_entry”, the path to this template.
- #
- # When this template is loaded, it will already have an ‘entry’
- # variable, set to the requested News entry.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
  #}
 
 {% extends "_layout" %}
 
 {% block content %}
-		<h1>{{ entry.title }}</h1>
-		<div>
-		{% for asset in entry.projectPicture %}
-     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   		{% endfor %}
-   		<div>
+	<section class="project-entry">
+		<h1 class="project-entry__title">
+			{{ entry.title }}
+		</h1>
 
-   		<div>{{ entry.projectDescription }}</div>
-
-   		<div>
-   		{% for asset in entry.projectPicture2 %}
-     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   		{% endfor %}
+		<div class="project-entry__image">
+			{% for asset in entry.projectPicture %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   			{% endfor %}
    		</div>
-		
 
-		<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
+   		<div class="project-entry__text">
+   			{{ entry.projectDescription }}
+   		</div>
+
+   		<div class="project-entry__image">
+   			{% for asset in entry.projectPicture2 %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   			{% endfor %}
+   		</div>
+   	</section>
 {% endblock %}

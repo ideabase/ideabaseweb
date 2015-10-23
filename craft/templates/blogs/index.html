@@ -1,37 +1,31 @@
 {#
- # News index template
+ # Blogs index template
  # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
 
-{% block content %}
-	<h1>Blogs</h1>
-
-	{% for entry in craft.entries.section('blogPost').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
-	{% endfor %}
-		<!-- Footer -->
-	<p>{{ footer.footerAddress }}
-	{{ footer.callToAction }}</p>
-	<p>{% for image in craft.assets.filename('Screen-Shot-2015-10-02-at-6.23.17-PM.png') %}
-    	<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-	{% endfor %}</p>
-	<p>{{ footer.footerEmail }}
-	{{ footer.faxNumber }}
-	{{ footer.phoneNumber }}</p>
-	<!-- End Footer -->
-{% endblock %}
+	{% block content %}
+		<section class="blog-index">
+			<h1 class="blog-index__title">
+				Blogs
+			</h1>
+			{% for entry in craft.entries.section('blogPost').find() %}
+				<article class="blog-index-entry">
+					<h3 class="blog-index-entry__title">
+						<a href="{{ entry.url }}">
+							{{ entry.title }}
+						</a>
+					</h3>
+					<p class="blog-index-entry_date">
+						Posted on {{ entry.postDate.format('F d, Y') }}
+					</p>
+					<p class="blog-index-entry_link">
+						<a href="{{ entry.url }}">
+							Continue reading
+						</a>
+					</p>
+				</article>
+			{% endfor %}	
+		</section>	
+	{% endblock %}

@@ -5,33 +5,53 @@
 
 
 {% block content %}
-	<h1>Projects</h1>
+	<section class="project-index"
+		<h1 class="project-index__title">Projects</h1>
 
-	{% for entry in craft.entries.section('ideabaseProjects').find() %}
-		<article>
-
-			<a href="{{ entry.url }}">{{ entry.title }}
-			<div>
-			{% for asset in entry.projectPicture %}
-		     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-		   	{% endfor %}
-   			</div></a>
-		</article>
-
-	{% endfor %}
+			{% for entry in craft.entries.section('ideabaseProjects').find() %}
+				<article class="project-index__entry">
+					<a href="{{ entry.url }}">
+						<p class="project-index__indivdual">
+							{{ entry.title }}
+						</p>
+						<div class="project-index__image">
+							{% for asset in entry.projectPicture %}
+		     					<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		   					{% endfor %}
+   						</div>
+   					</a>
+				</article>
+			{% endfor %}
 			<p>INSERT TESTIMONIAL??</p>
-	{{ entry.testimonial }}
+			{{ entry.testimonial }}
+	</section>		
 
 	<!-- Projects List -->
-		<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Case Study Headline</div></h2>
-		{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
-	    <ul>
-	    <li>
-	        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-	        <a href="{{ entry.url }}">Continue reading</a>
-	    </li>
-	    </ul>
-		{% endfor %}
-		<h3><a href="casestudies/">More Case Studies</a></h3>
+	<section class="case-study">
+		<h2 class="case-study__headline">
+			Case Study Headline	
+		</h2>
+		<article class="case-study__entry">
+		<ul class="case-study__list">
+			{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
+	    			<li class="case-study__list-item">
+	        			<h3 class="case-study__list-title">
+	        				<a href="{{ entry.url }}">
+	        					{{ entry.title }}
+	        				</a>
+	        			</h3>
+	        			<a href="{{ entry.url }}">
+	        				Continue reading
+	        			</a>
+	    			</li>
+
+			{% endfor %}
+			</ul>	
+			<h3 class="case-study__extra">
+				<a href="casestudies/">
+					More Case Studies
+				</a>
+			</h3>
+		</article>
 	<!-- End Projects List -->
 {% endblock %}
