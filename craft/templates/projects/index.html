@@ -34,8 +34,8 @@
 		<article class="case-study__entry">
 		<ul class="case-study__list">
 			{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
-	    			<li class="case-study__list-item">
-	        			<h3 class="case-study__list-title">
+	    			<li class="case-study__list__item">
+	        			<h3 class="case-study__list__title">
 	        				<a href="{{ entry.url }}">
 	        					{{ entry.title }}
 	        				</a>

@@ -26,11 +26,9 @@
   		<ul class="people-individual-list">
     		{% for entry in staff.relatedTo(category) %}
     			<li class="people-individual-list__item">
-					<div >
 						{% for asset in entry.staffHeadshot %}
      						<img class="people-individual-list__image"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
-     					{% endfor %}
-     				</div>	
+     					{% endfor %}	
 					<h3 class="people-individual-list__title">
 						<a href="{{ entry.url }}">
 							{{ entry.title }}
