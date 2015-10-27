@@ -1,13 +1,6 @@
-{#
- # News entry template
- #}
-
-{% extends "_layout" %}
-
-{% block content %}
-	<section class="case-study-individual">
+<section class="case-study-individual">
 		<h1 class="case-study-individual__title">{{ entry.title }}</h1>
 		<p class="case-study-individual__text">Posted on {{ entry.postDate.format('F d, Y') }}</p>
 		<p class="case-study-individual__text">{{ entry.caseStudyContent }}</p>
 	</section>
-{% endblock %}
+

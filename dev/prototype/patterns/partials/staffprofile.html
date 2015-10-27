@@ -1,0 +1,15 @@
+
+	<section class="people">
+		<h1 class="people__title">
+			{{ entry.title }}
+		</h1>
+		<div class="people__image">
+			{% for asset in entry.staffHeadshot %}
+     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   			{% endfor %}
+   		</div>
+		<p class="people__text">{{ entry.profileContactEmail }}</p>
+		<p class="people__text">{{ entry.profileFunFact }}</p>
+		<p class="people__text">{{ entry.profileJobTitle }}</p>
+		<p class="people__text">{{ entry.profileOfficePhoneNumber }}</p>
+	</section>
