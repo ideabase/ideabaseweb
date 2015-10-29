@@ -7,14 +7,45 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+
+/* header */
+
+header {
+  text-align: center;
+}
 nav li {
   list-style-type: none;
-  display: inline;
-  margin-right: 5em;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: rgb(26,95,171);
+  padding: .4em;
+  font-size: 1.2em;
 }
+
+@media screen and (min-width: 600px) {
+  nav li {
+    display: inline;
+    margin: 2em;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .ideabaselogo {
+    text-align: left;
+    width: 40%;
+    float: left;
+  }
+  header {
+    text-align: left;
+  }
+  nav {
+    margin-top: 2em;
+    width: 60%;
+    float: left;
+  }
+}
+
+
 ul {
   margin: 0;
   padding: 0;
@@ -22,17 +53,144 @@ ul {
 nav {
   margin-bottom: 1.5em;
 }
+
+
+/* buttons */
+
+.buttons {
+  text-align: center;
+}
 .button {
-  background-color: rgb(26,95,171);
   display: inline-block;
   color: white;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: .7em;
-  padding: 1em 2.5em;
+  font-size: .65em;
+  padding: 1em 1.4em 1em 1.8em;
+  border-style: solid;
+  border-width: 3px;
+  margin: 1em 2em;
 }
 .button::after {
-  content: ">"
+  content: "▶";
+  font-size: .5em;
+  padding-left: 15px;
+}
+.button-primary {
+  background-color: rgb(26,95,171);
+  border-color: rgb(26,95,171);
+}
+.button-secondary {
+  background-color: rgb(0,168,225);
+  border-color: rgb(0,168,225);
+}
+.button-tertiary {
+  background-color: transparent;
+  color: rgb(26,95,171);
+  border-color: rgb(26,95,171);
+
+}
+
+
+/* headings */
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  color: rgb(0,168,225);
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(26,95,171);
+  letter-spacing: 3px;
+}
+h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: rgb(26,95,171);
+}
+
+
+/* paragraph */
+
+p {
+  font-size: 1.1em;
+  line-height: 1.5
+}
+.highlight {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: rgb(77,77,77);
+  text-align: center;
+}
+
+
+/* color */
+
+.swatches {
+  text-align: center;
+}
+.swatch {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  margin: 1em 1.5em;
+}
+.swatch-royal {
+  background-color: rgb(26,95,171);
+}
+.swatch-cyan {
+  background-color: rgb(0,168,225);
+}
+.swatch-darkgray {
+  background-color: rgb(77,77,77);
+}
+.swatch-lightgray {
+  background-color: rgb(188,190,192);
+}
+
+
+/* primary layout */
+
+.content-primary {
+    padding: 1em 3em;
+    clear: left;
+}
+
+/* secondary layout */
+
+.content-secondary {
+  background-color: rgb(26,95,171);
+  color: white;
+  padding: 2em 3em;
+}
+.content-secondary h2, .content-secondary h3, .content-secondary .highlight {
+  color: white;
+}
+.content-secondary h1 {
+  color: rgb(188,190,192);
+}
+.content-secondary .button-primary {
+  background-color: white;
+  color: rgb(26,95,171);
+  border-color: white;
+}
+
+
+/* footer */
+
+footer {
+  background-color: rgb(77,77,77);
+  padding: 1em 3em;
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  font-size: .8em;
 }
