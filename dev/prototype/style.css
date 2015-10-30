@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,300,300italic);
 
 .ideabaselogo {
-  width: 300px;
+  max-width: 300px;
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -20,7 +20,7 @@ nav li {
   text-transform: uppercase;
   color: rgb(26,95,171);
   padding: .4em;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 @media screen and (min-width: 600px) {
@@ -36,12 +36,15 @@ nav li {
     float: left;
   }
   header {
-    text-align: left;
+    text-align: right;
+    margin-right: 1.5em;
   }
   nav {
     margin-top: 2em;
     width: 60%;
-    float: left;
+    float: right;
+    margin-right: 1.4em;
+    font-size: .85em;
   }
 }
 
