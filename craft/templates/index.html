@@ -56,6 +56,16 @@
 		<div class="contact-form">{% include 'global/contactform.html' %}</div>
 	<!-- End Contact Form -->
 
+				<!-- Social Media Loop -->
+	{% for block in entry.socialMediaRepeater %}
+
+    {% if block.type == "socialName" %}
+
+        <h3>{{ block.socialMediaName }}</h3>
+
+    {% endif %}
+    {% endfor %}
+
 	
 
 

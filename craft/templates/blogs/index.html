@@ -9,23 +9,22 @@
 		<section class="blog-index">
 			<h1 class="blog-index__title">
 				Blogs
-			</h1>
-			{% for entry in craft.entries.section('blogPost').find() %}
-				<article class="blog-index-entry">
-					<h3 class="blog-index-entry__title">
+  <section class="people-individual">	
+	{% set categories = craft.categories.group('caseStudyOrBlog') %}
+	{% set staff = craft.entries.section('blogPost').order('title').limit(null) %}
+	{% for category in categories.relatedTo(projects) %}
+  	<h3 class="people-individual__category">{{ category.title }}</h3>
+
+  		<ul class="people-individual-list">
+    		{% for entry in staff.relatedTo(category) %}
+    			<li class="people-individual-list__item">	
+					<h3 class="people-individual-list__title">
 						<a href="{{ entry.url }}">
 							{{ entry.title }}
 						</a>
 					</h3>
-					<p class="blog-index-entry_date">
-						Posted on {{ entry.postDate.format('F d, Y') }}
-					</p>
-					<p class="blog-index-entry_link">
-						<a href="{{ entry.url }}">
-							Continue reading
-						</a>
-					</p>
-				</article>
-			{% endfor %}	
-		</section>	
+				</li>
+   			{% endfor %}
+  		</ul>
+	{% endfor %}
 	{% endblock %}
