@@ -16,8 +16,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
-	<!-- <link href="../css/styles.css" type="text/css" rel="stylesheet" media="screen"/> -->	
-	{% includeCssFile "/css/styles.css" %}
+	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>	
+	<!--{% includeCssFile "css/styles.css" %}-->
 </head> 
 
 <body>

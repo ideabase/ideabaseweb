@@ -94,6 +94,29 @@ class AssetsFieldType extends BaseElementFieldType
 	}
 
 	/**
+	 * @inheritDoc IFieldType::getInputHtml()
+	 *
+	 * @param string $name
+	 * @param mixed  $criteria
+	 *
+	 * @return string
+	 */
+	public function getInputHtml($name, $criteria)
+	{
+		try
+		{
+			return parent::getInputHtml($name, $criteria);
+		}
+		catch (InvalidSubpathException $e)
+		{
+			return '<p class="warning">' .
+				'<span data-icon="alert"></span> ' .
+				Craft::t('This field’s target subfolder path is invalid: {path}', array('path' => '<code>'.$this->getSettings()->singleUploadLocationSubpath.'</code>')) .
+				'</p>';
+		}
+	}
+
+	/**
 	 * @inheritDoc IFieldType::prepValueFromPost()
 	 *
 	 * @param mixed $value
@@ -184,15 +207,10 @@ class AssetsFieldType extends BaseElementFieldType
 			$elementFiles = $elementFiles->find();
 		}
 
+		$filesToMove = array();
+
 		if (is_array($elementFiles) && count($elementFiles))
 		{
-			$fileIds = array();
-
-			foreach ($elementFiles as $elementFile)
-			{
-				$fileIds[] = $elementFile->id;
-			}
-
 			$settings = $this->getSettings();
 
 			if ($this->getSettings()->useSingleFolder)
@@ -201,11 +219,24 @@ class AssetsFieldType extends BaseElementFieldType
 					$settings->singleUploadLocationSource,
 					$settings->singleUploadLocationSubpath);
 
-				// Move all the files for single upload directories.
-				$filesToMove = $fileIds;
+				// Move only the fiels with a changed folder ID.
+				foreach ($elementFiles as $elementFile)
+				{
+					if ($targetFolderId != $elementFile->folderId)
+					{
+						$filesToMove[] = $elementFile->id;
+					}
+				}
 			}
 			else
 			{
+				$fileIds = array();
+
+				foreach ($elementFiles as $elementFile)
+				{
+					$fileIds[] = $elementFile->id;
+				}
+
 				// Find the files with temp sources and just move those.
 				$criteria =array(
 					'id' => array_merge(array('in'), $fileIds),

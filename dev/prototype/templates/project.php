@@ -13,6 +13,9 @@
 
     <body>
     	<?php include("../patterns/partals/project.html"); ?>
+        <?php include("../patterns/partials/awards.html"); ?>
+        <?php include("../patterns/partals/project.html"); ?>
+        <?php include("../patterns/partials/awards.html"); ?>
     </body>	
 
     <body>
