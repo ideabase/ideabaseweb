@@ -14,7 +14,10 @@
 		{{ footer.phoneNumber }}
 	</p>
 
-			<!-- Social Media Loop -->
-<!-- Social Media Loop -->
-
+						<!-- Social Media -->
+			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
+     			{{ block.socialMediaName }}
+     			{{ block.socialMediaLink }}
+			{% endfor %}
+			<!-- End Social Media -->
 </footer>
