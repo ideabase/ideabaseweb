@@ -1,0 +1,27 @@
+{#
+ # Awards index template
+ #}
+
+{% extends "_layout" %}
+{% set title = "News" %}
+
+{% block content %}
+
+	{% for entry in craft.entries.section('news').find() %}
+		<section class="award-individual">
+			<h3 class="award-individual__title">
+				<a href="{{ entry.url }}">
+					{{ entry.title }}
+				</a>
+			</h3>
+			<p class="award-individual__text">
+				Posted on {{ entry.postDate.format('F d, Y') }}
+			</p>
+			<p class="award-individual__text">
+				<a href="{{ entry.url }}">
+					Continue reading
+				</a>
+			</p>
+		</section>
+	{% endfor %}
+{% endblock %}

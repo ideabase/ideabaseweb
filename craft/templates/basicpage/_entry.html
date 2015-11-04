@@ -1,0 +1,16 @@
+{#
+ # Basic Page entry template
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+	<section class="basic-entry">
+		<h1 class="basic-entry__title">
+			{{ entry.title }}
+		</h1>
+
+		<p class="basic-entry__date">
+			{{ entry.basicContent }}
+		</p>
+{% endblock %}
