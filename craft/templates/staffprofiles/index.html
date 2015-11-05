@@ -7,14 +7,18 @@
 
 {% block content %}
 	<section class="people-index">
-
-		<h1 class="people-index__header">{{ entry.staffIndexHeader }}</h1>
-		<h3 class="people-index__text">{{ entry.staffIndexDescription }}</h3>
+	
 		<div class="people-index__image">
 			{% for asset in entry.peopleFeaturedImage %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     	</div>
+
+		<h1 class="people-index__header">{{ entry.staffIndexHeader }}</h1>
+		<p class="people-index__text">{{ entry.staffIndexDescription }}</p	>
+		
+    	<h1 class="people-index__header">{{ entry.qualityHeadline}}</h1>
+    	<p class="people-index__text">{{ entry.qualityDescription }}</p>
     </section>	
     <section class="people-individual">	
 	{% set categories = craft.categories.group('staffHierarchy') %}
@@ -40,11 +44,35 @@
 				</li>
    			{% endfor %}
   		</ul>
-	{% endfor %}
+  		</section>
+  			{% endfor %}
+
+  		<!-- blog pulls -->
+  		{% for entry in craft.entries.section('blogPost').limit(2) %}
+		<section class="blog-individual">
+			<h3 class="blog-individual__title">
+				<a href="{{ entry.url }}">
+					{{ entry.title }}
+				</a>
+			</h3>
+			<p class="blog-individual__text">
+				Writte by {{ entry.blogAuthor }}
+			</p>
+			<p class="blog-individual__text">
+				<a href="{{ entry.url }}">
+					Continue reading
+				</a>
+			</p>
+		</section>
+		{% endfor %}
+
+  		<!-- end blog pulls -->
+
 	</section>
-	<section class="ideabase-apply"
-		<h2 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h2>
-		<h3 class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</h3>
+	<section class="ideabase-apply">
+		<h1 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h1>
+		<p class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</p>
+		<p class="ideabase-apply__link">{{ entry.workForIdeabaseLink }}</p>
 	</section>	
 
 
