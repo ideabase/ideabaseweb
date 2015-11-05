@@ -24,27 +24,29 @@
 
 
 	<!-- Services List -->
-	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Services (Process) Headline/Description</div></h2>
+	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.designHeadline }}</div></h2>
+
 	{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
-    
     <ul>
-    <li>
-        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        {{ entry.serviceDescription }}
-        <a href="{{ entry.url }}">Continue reading</a>
-    </li>
+    	<li>
+        	<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+        		{{ entry.serviceDescription }}
+        	<a href="{{ entry.url }}">Continue reading</a>
+   		</li>
     </ul>
 	{% endfor %}
-	<h3><a href="services/">More Services</a></h3>
+	<h3><a href="process/">More Services</a></h3>
 	<!-- End Services List -->
 
 	<!-- Projects List -->
-	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">Project Headline/Description</div></h2>
+	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.projectsHeadline }}</div></h2>
+	<p>{{ entry.projectsDescription }}</p>
+
 	{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
     <ul>
     <li>
         <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        <a href="{{ entry.url }}">Continue reading</a>
+        <p><a href="{{ entry.url }}">Continue reading</a></p>
     </li>
     </ul>
 	{% endfor %}

@@ -1,7 +1,7 @@
 <header id="header">
-				{% for image in craft.assets.title('IdeaBase Logo') %}
-    				<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-    			{% endfor %}
+				<a href="{{ siteUrl }}">{% for image in craft.assets.title('ideabaselogo') %}
+    				<img width="50%" src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+    			{% endfor %} </a>
 
 			<nav>
 				<ul class="nav">
