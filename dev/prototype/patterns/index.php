@@ -11,6 +11,6 @@
     		include $filename;
 		}	
 	?>   
-
+	<link href="../../../prod/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 </body> 
 </html>
