@@ -6,52 +6,51 @@
 
 {% block content %}
 	<section class="project-index"
-		<h1 class="project-index__title">Projects</h1>
+		<h1 class="project-index__title">{{ entry.projectHeadline }}</h1>
+		<p class="project-index__text">{{ entry.projectsSubDescription }}</p>
+
+
 
 			{% for entry in craft.entries.section('ideabaseProjects').find() %}
 				<article class="project-index__entry">
 					<a href="{{ entry.url }}">
-						<p class="project-index__indivdual">
-							{{ entry.title }}
-						</p>
+						<p class="project-index__indivdual">{{ entry.title }}</p>
 						<div class="project-index__image">
 							{% for asset in entry.projectPicture %}
 		     					<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-		   					{% endfor %}
+		     				{% endfor %}	
    						</div>
+						{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
+   							{% for entry in relatedAward %}
+								{{ entry.title }}
+							{% endfor %} <br>
+
+						{% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
+   							{% for entry in relatedTestimonial %}
+								{{ entry.title }}
+							{% endfor %}	
+
    					</a>
 				</article>
 			{% endfor %}
-			<p>INSERT TESTIMONIAL??</p>
-			{{ entry.testimonial }}
 	</section>		
 
-	<!-- Projects List -->
+	<!-- Case Study List -->
 	<section class="case-study">
-		<h2 class="case-study__headline">
-			Case Study Headline	
-		</h2>
+		<h1 class="case-study__headline">{{ entry.caseStudyHeadline }}</h2>
+		<p class="case-study__text">{{ entry.caseStudySubDescription }}</p>
 		<article class="case-study__entry">
-		<ul class="case-study__list">
-			{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
-	    			<li class="case-study__list__item">
-	        			<h3 class="case-study__list__title">
-	        				<a href="{{ entry.url }}">
-	        					{{ entry.title }}
-	        				</a>
-	        			</h3>
-	        			<a href="{{ entry.url }}">
-	        				Continue reading
-	        			</a>
-	    			</li>
-
-			{% endfor %}
+			<ul class="case-study__list">
+				{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
+	    				<li class="case-study__list__item">
+	        				<h3 class="case-study__list__title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+	        				<a href="{{ entry.url }}">Continue reading</a>
+	    				</li>	
+				{% endfor %}
 			</ul>	
-			<h3 class="case-study__extra">
-				<a href="casestudies/">
-					More Case Studies
-				</a>
-			</h3>
+
 		</article>
+		<h1 class="case-study__headline">{{ entry.classroomExperienceHeadline }}</h1>
+		<p class="case-study__text">{{ entry.classroomExperienceDescription }}</p>
 	<!-- End Projects List -->
 {% endblock %}
