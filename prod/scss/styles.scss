@@ -9,11 +9,16 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 
 /* header */
 
 header {
   text-align: center;
+  @include clearfix;
 }
 nav li {
   list-style-type: none;

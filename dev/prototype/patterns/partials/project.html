@@ -1,22 +1,18 @@
 
 	<section class="project-entry">
 		<h1 class="project-entry__title">
-			{{ entry.title }}
+		 Project Title
 		</h1>
 
 		<div class="project-entry__image">
-			{% for asset in entry.projectPicture %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   			{% endfor %}
    		</div>
 
    		<div class="project-entry__text">
-   			{{ entry.projectDescription }}
+   			Project Description
    		</div>
 
    		<div class="project-entry__image">
-   			{% for asset in entry.projectPicture2 %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   			{% endfor %}
    		</div>
    	</section>
