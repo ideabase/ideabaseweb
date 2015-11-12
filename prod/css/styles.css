@@ -4,8 +4,12 @@
 
 body { font-family: 'Source Sans Pro', sans-serif; }
 
+* { box-sizing: border-box; }
+
 /* header */
-header { text-align: center; }
+header { text-align: center; *zoom: 1; }
+header:before, header:after { content: " "; display: table; }
+header:after { clear: both; }
 
 nav li { list-style-type: none; font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: #1a5fab; padding: .4em; font-size: 1em; }
 

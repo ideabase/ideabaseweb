@@ -1,16 +1,3 @@
-<footer class="global-footer">
-	<p class="global-footer__text">
-		{{ footer.footerAddress }} 
-		{{ footer.callToAction }}
-	</p>
-	<p class="global-footer__image">
-		{% for image in craft.assets.title('Footer-Map') %}
-    		<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-    	{% endfor %}
-	</p>
-	<p class="global-footer__text">
-		{{ footer.footerEmail }}
-		{{ footer.faxNumber }}
-		{{ footer.phoneNumber }}
-	</p>
+<footer>
+  <p>Copyright IdeaBase 2015</p>
 </footer>
