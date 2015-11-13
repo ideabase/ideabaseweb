@@ -2,6 +2,7 @@
 				<a href="{{ siteUrl }}">{% for image in craft.assets.title('ideabaselogo') %}
     				<img width="50%" src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
     			{% endfor %} </a>
+    			<p class="header-catchline">{{ entry.headerCatchline}}</p>
 
 			<nav>
 				<ul class="nav">
