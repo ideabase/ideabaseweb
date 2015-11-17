@@ -10,6 +10,7 @@ Services Template
 		<h1 class="service-index__title">
 			{{ entry.processHeader }}
 		</h1>
+		<p>{{ entry.processDescription }}</p>
 		<div class="service-index__image">
 			{% for asset in entry.processFeaturedImage %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
@@ -34,6 +35,10 @@ Services Template
 					</p>
 			</article>
 		{% endfor %}
+		<p>{{ entry.uxTestingLabDescription }}</p>
+
+		<h1>{{ entry.testimonialHeadline }}</h1>
+		<p>{{ entry.testimonialDescription }}</p>
 
 			<!-- Contact Form -->
 			{% include 'global/contactform.html' %}
