@@ -12,9 +12,11 @@
 		{{ footer.footerEmail }}
 		{{ footer.faxNumber }}
 		{{ footer.phoneNumber }}
+		{{ footer.footerBlurb }}
+		{{ footer.copyright }}
 	</p>
 
-						<!-- Social Media -->
+			<!-- Social Media -->
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
      			{{ block.socialMediaName }}
      			{{ block.socialMediaLink }}
