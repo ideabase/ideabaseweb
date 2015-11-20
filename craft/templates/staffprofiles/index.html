@@ -46,10 +46,7 @@
    			{% endfor %}
   		</ul>
   		  	{% endfor %}
-  	</section>
-
-
-  		<!-- blog pulls -->
+  		  	  		<!-- blog pulls -->
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
 		<section class="blog-individual">
 			<h3 class="blog-individual__title">
@@ -57,7 +54,7 @@
 					{{ entry.title }}
 				</a>
 			</h3>
-			<p class="blog-individual__text">Written by {{ entry.blogAuthor }}</p>
+			<p class="blog-individual__text">Written by {{ entry.author }}</p>
 
 			<p class="blog-individual__text">
 				<a href="{{ entry.url }}">
@@ -68,6 +65,10 @@
 		{% endfor %}
 
   		<!-- end blog pulls -->
+  	</section>
+
+
+
 	<section class="ideabase-apply">
 		<h1 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h1>
 		<p class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</p>
