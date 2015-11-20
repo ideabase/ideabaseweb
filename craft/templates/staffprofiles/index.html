@@ -21,10 +21,11 @@
     	<p class="people-index__text">{{ entry.qualityDescription }}</p>
     </section>	
     <section class="people-individual">	
-	{% set categories = craft.categories.group('staffHierarchy') %}
+	{% set staffGroup = craft.categories.group('staffHierarchy') %}
 	{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
-	{% for category in categories.relatedTo(projects) %}
+	{% for category in staffGroup.relatedTo(projects) %}
+
   	<h3 class="people-individual__category">{{ category.title }}</h3>
 
   		<ul class="people-individual-list">
@@ -44,8 +45,9 @@
 				</li>
    			{% endfor %}
   		</ul>
-  		</section>
-  			{% endfor %}
+  		  	{% endfor %}
+  	</section>
+
 
   		<!-- blog pulls -->
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
@@ -56,7 +58,7 @@
 				</a>
 			</h3>
 			<p class="blog-individual__text">
-				Writte by {{ entry.blogAuthor }}
+				Written by {{ entry.author }}
 			</p>
 			<p class="blog-individual__text">
 				<a href="{{ entry.url }}">
@@ -67,8 +69,6 @@
 		{% endfor %}
 
   		<!-- end blog pulls -->
-
-	</section>
 	<section class="ideabase-apply">
 		<h1 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h1>
 		<p class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</p>
