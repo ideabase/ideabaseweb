@@ -20,22 +20,21 @@
 		<!-- End About Image -->
 	<!-- End About Section -->
 
-	
-
-
 	<!-- Services List -->
-	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.designHeadline }}</div></h2>
+	<section class="section-services">
+		<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.designHeadline }}</div></h2>
 
-	{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
-    <ul>
-    	<li>
-        	<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        		{{ entry.serviceDescription }}
-        	<a href="{{ entry.url }}">Continue reading</a>
-   		</li>
-    </ul>
-	{% endfor %}
-	<h3><a href="process/">More Services</a></h3>
+		{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
+	    <ul>
+	    	<li>
+	        	<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+	        		{{ entry.serviceDescription }}
+	        	<a href="{{ entry.url }}">Continue reading</a>
+	   		</li>
+	    </ul>
+		{% endfor %}
+		<h3><a href="process/">More Services</a></h3>
+	</section>
 	<!-- End Services List -->
 
 	<!-- Projects List -->
@@ -52,9 +51,5 @@
 	{% endfor %}
 	<h3><a href="projects/">More Projects</a></h3>
 	<!-- End Projects List -->
-
-
-	
-
 
 {% endblock %}

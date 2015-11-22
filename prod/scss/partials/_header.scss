@@ -1,0 +1,101 @@
+/* header */
+
+header {
+  text-align: center;
+  @include clearfix;
+}
+
+.nav__trigger {
+  display: block;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.nav__trigger__link {
+  display: inline-block;
+  background-color: $blue;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 1em;
+}
+
+nav {
+  height: 0;
+  opacity: 0;
+  transition: all .7s ease-out;
+  overflow: hidden;
+  li {
+    height: 0;
+    opacity: 0;
+    transition: all .25s ease-out;
+  }
+  @media screen and (min-width: 600px) {
+    display: block;
+    height: auto;
+    opacity: 1;
+    transition: none;
+    li {
+      height: auto;
+      opacity: 1;
+      transition: none;
+    }
+  }
+}
+
+.nav--show {
+  height: auto;
+  opacity: 1;
+  li {
+    height: 2em;
+    opacity: 1;
+    transition: none;
+  }
+}
+
+nav li {
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  padding: .4em;
+  font-size: 1em;
+  a {
+    color: rgb(26,95,171);
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  nav li {
+    display: inline;
+    margin: 2em;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .ideabaselogo {
+    text-align: left;
+    width: 40%;
+    float: left;
+  }
+  header {
+    text-align: right;
+    margin-right: 1.5em;
+  }
+  nav {
+    margin-top: 2em;
+    width: 60%;
+    float: right;
+    margin-right: 1.4em;
+    font-size: .85em;
+  }
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  margin-bottom: 1.5em;
+}

@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "19076",
+"creatorBuild": "19102",
 "files": {
 	"\/craft\/app\/assetsourcetypes\/BaseAssetSourceType.php": {
 		"fileType": 8192,
@@ -34359,29 +34359,164 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/3\/c\/3cdfdf1e17efa9613580da7e47b3d34cb7e0f49b0aab12c60ecb5552cb598762.php": {
+	"\/craft\/plugins\/mnbreakandcontinue\/MNBreakAndContinuePlugin.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3\/c\/3cdfdf1e17efa9613580da7e47b3d34cb7e0f49b0aab12c60ecb5552cb598762.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/MNBreakAndContinuePlugin.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8ee8bb4218e8ac521489f1cde339ec4d14c59d10f36ac1ac636758a088c3f890.php": {
+	"\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Break_Node.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8ee8bb4218e8ac521489f1cde339ec4d14c59d10f36ac1ac636758a088c3f890.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Break_Node.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/9\/d\/9d75e09c7e184f23b0006805347188ad86535bd6db1e25aee1412b92b0b5e395.php": {
+	"\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Break_TokenParser.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9\/d\/9d75e09c7e184f23b0006805347188ad86535bd6db1e25aee1412b92b0b5e395.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Break_TokenParser.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Continue_Node.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Continue_Node.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Continue_TokenParser.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/Continue_TokenParser.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/MNBreakAndContinueTwigExtension.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/mnbreakandcontinue\/twigextensions\/MNBreakAndContinueTwigExtension.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/1\/6\/161bc798692a0db6292e578ef7ac333cc472df76e408492ea6f934fe0118c8c4.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1\/6\/161bc798692a0db6292e578ef7ac333cc472df76e408492ea6f934fe0118c8c4.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/3\/a\/3a725824163caac7208544cd4723299a4173ebd458cb7f73febdcf5c5c4e0dd0.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3\/a\/3a725824163caac7208544cd4723299a4173ebd458cb7f73febdcf5c5c4e0dd0.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/4\/5\/4577631008c9603cfdd3a1e8184444ca583e664eba366698748ec6bec9109751.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4\/5\/4577631008c9603cfdd3a1e8184444ca583e664eba366698748ec6bec9109751.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/5\/4\/54455501f137044d1ede6852a31fecd12788f50100f2302323ffabc1df2b6dd8.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/5\/4\/54455501f137044d1ede6852a31fecd12788f50100f2302323ffabc1df2b6dd8.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/5\/c\/5c6849b95600f3bfd3da871167ebb88a5169f3b9b4d0dd290f9112036ebc0f4d.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/5\/c\/5c6849b95600f3bfd3da871167ebb88a5169f3b9b4d0dd290f9112036ebc0f4d.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/6\/e\/6e9c32481acfdab4e104523cad62020f13b8885586e41728a00928e0f5db39a2.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/6\/e\/6e9c32481acfdab4e104523cad62020f13b8885586e41728a00928e0f5db39a2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/8\/6\/86b9324d3d044af7ee12f3f121554e0c84b9beca5518663d146728f752861dd1.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/6\/86b9324d3d044af7ee12f3f121554e0c84b9beca5518663d146728f752861dd1.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8e3c4641e1e1b28dd4293449c19d1c1057fc19ef47cf9455958c220991a95ba2.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8e3c4641e1e1b28dd4293449c19d1c1057fc19ef47cf9455958c220991a95ba2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/9\/8\/98ff2b8d4f8fba7b27572eb7ffecaa94a4001770e4d5e9b937a7640999c79a2f.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9\/8\/98ff2b8d4f8fba7b27572eb7ffecaa94a4001770e4d5e9b937a7640999c79a2f.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/b\/5\/b537819107c7aad6ddb93f31e0602bfcec8d7b0ebfbd0bd914694d981e0a1e77.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b\/5\/b537819107c7aad6ddb93f31e0602bfcec8d7b0ebfbd0bd914694d981e0a1e77.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/b\/e\/be9ed907a7ac46e10edf36a922dcc6392bc4647e7e20beb0d209f125a30e291c.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b\/e\/be9ed907a7ac46e10edf36a922dcc6392bc4647e7e20beb0d209f125a30e291c.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/d\/9\/d96e4ef8e6a9a1087bad9bce59363bcee4ef3b7478e552b82e018de4db53c760.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d\/9\/d96e4ef8e6a9a1087bad9bce59363bcee4ef3b7478e552b82e018de4db53c760.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -34724,6 +34859,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dev\/prototype\/patterns\/partials\/hero-slot.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/hero-slot.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dev\/prototype\/patterns\/partials\/project.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -34922,790 +35066,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/_aboutImageTransform\/IdeaBase_Logo_StackedOutlineColor.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5854,
-		"inputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-10.53.43-AM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 102939,
-		"inputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-6.23.17-PM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 60783,
-		"inputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_featuredImageTop\/Screen-Shot-2015-10-02-at-10.53.43-AM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 244189,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_thumb\/IdeaBase_Logo_StackedOutlineColor.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 18039,
-		"inputAbbreviatedPath": "\/prod\/Images\/_thumb\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_thumb\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-10.53.43-AM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 249090,
-		"inputAbbreviatedPath": "\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-6.23.17-PM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 216967,
-		"inputAbbreviatedPath": "\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_thumb\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_aboutImageTransform\/Another-Headshot.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4245,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/Another-Headshot.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/Another-Headshot.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_aboutImageTransform\/HeadshotImage.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5073,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/HeadshotImage.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/HeadshotImage.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_aboutImageTransform\/ReillyHawkins.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3950,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/ReillyHawkins.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_aboutImageTransform\/ReillyHawkins.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/Another-Headshot.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6840,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Another-Headshot.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Another-Headshot.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-<<<<<<< HEAD
-=======
-	"\/prod\/Images\/headshots\/_featuredImageTop\/CHRIS-EDIT-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 11653,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/CHRIS-EDIT-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/CHRIS-EDIT-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
->>>>>>> 5f9b837e34b333d0309de26924848c563e15060a
-	"\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5696,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/ideabasephoto-1500x683.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 26225,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ideabasephoto-1500x683.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ideabasephoto-1500x683.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/Program-Project-Management.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 11836,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Program-Project-Management.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Program-Project-Management.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/projectmanagement.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 11985,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/projectmanagement.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/projectmanagement.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6242,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 9299,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/ReillyHawkins1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/Victoria1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7827,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Victoria1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Victoria1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_featuredImageTop\/web-design.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 12551,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/web-design.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/web-design.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Another-Headshot.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2869,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Another-Headshot.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Another-Headshot.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/CHRIS-EDIT-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4119,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/CHRIS-EDIT-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/CHRIS-EDIT-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Dowling_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2383,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Dowling_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Dowling_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/HeadshotImage.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3145,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/HeadshotImage.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/HeadshotImage.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/QuintinSteele-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2944,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/QuintinSteele-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/QuintinSteele-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2675,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2822,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/ReillyHawkins1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Victoria1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3041,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Victoria1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_meetTheTeamHeadshot\/Victoria1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/Another-Headshot.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 19448,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/Another-Headshot.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/Another-Headshot.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/download-1.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 21997,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download-1.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download-1.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/download-2.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 20497,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download-2.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download-2.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/download.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13289,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/download.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/HeadshotImage.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 19276,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/HeadshotImage.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/HeadshotImage.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/ideabasephoto-1500x683.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 28719,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/ideabasephoto-1500x683.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/ideabasephoto-1500x683.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/Program-Project-Management.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 24661,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/Program-Project-Management.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/Program-Project-Management.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/projectmanagement.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 19919,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/projectmanagement.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/projectmanagement.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/ReillyHawkins.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 16633,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/ReillyHawkins.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/ReillyHawkins.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/_thumb\/web-design.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17957,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/web-design.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_thumb\/web-design.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Another-Headshot.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5918,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Another-Headshot.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Another-Headshot.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 45248,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 43198,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 52794,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 50429,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Dowling.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 28874,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Dowling_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 27641,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/download-1.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 10096,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/download-1.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/download-1.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/download-2.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6545,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/download-2.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/download-2.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/download.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5963,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/download.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/download.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/HeadshotImage.jpeg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5247,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/HeadshotImage.jpeg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/HeadshotImage.jpeg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/ideabasephoto-1500x683.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 231899,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ideabasephoto-1500x683.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ideabasephoto-1500x683.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/John-Headshot-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 57228,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 54575,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 48775,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 46498,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/NicoCiani-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 27417,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 26147,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Program-Project-Management.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 48646,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Program-Project-Management.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Program-Project-Management.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/projectmanagement.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 61050,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/projectmanagement.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/projectmanagement.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 51386,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 49054,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Rachel1-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 51508,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 49183,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/ReillyHawkins.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8547,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 49083,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 46743,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Victoria1-350x500.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 37015,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 35300,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/headshots\/web-design.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1.13772e+06,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/web-design.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/web-design.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/IdeaBase_Logo_StackedOutlineColor.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 630987,
-		"inputAbbreviatedPath": "\/prod\/Images\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/IdeaBase_Logo_StackedOutlineColor.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/Screen-Shot-2015-10-02-at-10.53.43-AM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 494705,
-		"inputAbbreviatedPath": "\/prod\/Images\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/Screen-Shot-2015-10-02-at-10.53.43-AM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/prod\/Images\/Screen-Shot-2015-10-02-at-6.23.17-PM.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 151291,
-		"inputAbbreviatedPath": "\/prod\/Images\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/Screen-Shot-2015-10-02-at-6.23.17-PM.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/prod\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -35714,6 +35074,28 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/prod\/js\/custom-scripts-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/js\/custom-scripts-min.js",
+		"outputAbbreviatedPath": "\/prod\/js\/min\/custom-scripts-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/prod\/js\/custom-scripts.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/js\/custom-scripts.js",
+		"outputAbbreviatedPath": "\/prod\/js\/custom-scripts-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/prod\/README.md": {
 		"criticStyle": 0,
@@ -35784,6 +35166,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/prod\/scss\/partials\/_hero.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_hero.scss",
+		"outputAbbreviatedPath": "\/prod\/scss\/css\/_hero.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/prod\/scss\/partials\/_partials_.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -35793,6 +35191,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_partials_.scss",
 		"outputAbbreviatedPath": "\/prod\/scss\/css\/_partials_.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/prod\/scss\/partials\/_variables.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_variables.scss",
+		"outputAbbreviatedPath": "\/prod\/scss\/css\/_variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -35849,7 +35263,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Chris Hallahan",
+"lastSavedByUser": "Christopher Hallahan",
 "manualImportLinks": {
 	},
 "projectAttributes": {
@@ -35859,7 +35273,7 @@
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -35949,8 +35363,16 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"no_nested_string_interpolation": {
+			"active": 1,
+			"flagValue": -1
+			},
 		"no_plusplus": {
 			"active": 0,
+			"flagValue": -1
+			},
+		"no_private_function_fat_arrows": {
+			"active": 1,
 			"flagValue": -1
 			},
 		"no_stand_alone_at": {
@@ -35959,6 +35381,10 @@
 			},
 		"no_tabs": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_this": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_throwing_strings": {
@@ -36001,7 +35427,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/ideabase.web",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,

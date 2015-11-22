@@ -5,3 +5,6 @@ _header.scssc
 craft/.DS_Store
 .DS_Store
 styles.scssc
+_hero.scssc
+_clearfix.scssc
+_variables.scssc
