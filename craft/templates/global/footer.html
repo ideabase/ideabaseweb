@@ -1,4 +1,16 @@
 <footer class="global-footer">
+	<section class="footer-form">
+	<p class="footer-form__button">{{ footer.ctaButton }}</p>
+		<h2> {{ footer.footerHeadline }}</h2>
+			<p class="global-footer_text">{{ footer.contactFormDescription }}</p>
+			<!-- Contact Form -->
+			<div class="contact-form">{% include 'global/contactform.html' %}</div>
+			<!-- End Contact Form -->
+	</section>
+
+
+
+	<section class="footer-info">
 	<p class="global-footer__text">
 		{{ footer.footerAddress }} 
 		{{ footer.callToAction }}
@@ -12,12 +24,15 @@
 		{{ footer.footerEmail }}
 		{{ footer.faxNumber }}
 		{{ footer.phoneNumber }}
+		{{ footer.footerBlurb }}
+		{{ footer.copyright }}
 	</p>
 
-						<!-- Social Media -->
+			<!-- Social Media -->
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
      			{{ block.socialMediaName }}
      			{{ block.socialMediaLink }}
 			{% endfor %}
 			<!-- End Social Media -->
+	</section>		
 </footer>
