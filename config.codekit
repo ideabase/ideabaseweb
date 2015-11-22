@@ -35124,6 +35124,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5696,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/_featuredImageTop\/Dowling_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/headshots\/_featuredImageTop\/ideabasephoto-1500x683.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -35333,6 +35344,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45248,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43198,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/BrendanBennett-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52794,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50429,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/CHRIS-EDIT-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Dowling.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28874,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Dowling_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27641,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Dowling_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/headshots\/download-1.jpeg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -35388,6 +35465,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/headshots\/John-Headshot-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 57228,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54575,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/John-Headshot-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48775,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46498,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/MarioFasolo-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/NicoCiani-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27417,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26147,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/NicoCiani-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/headshots\/Program-Project-Management.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -35410,6 +35553,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51386,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49054,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/QuintinSteele-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Rachel1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51508,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49183,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Rachel1-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/headshots\/ReillyHawkins.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -35417,6 +35604,50 @@
 		"initialSize": 8547,
 		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins.jpg",
 		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49083,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46743,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/ReillyHawkins1-350x500_1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Victoria1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37015,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35300,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshots\/Victoria1-350x500_1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
