@@ -9,6 +9,10 @@
 	     
     <body>
         <?php include("../patterns/partials/header.html"); ?>
+        <?php include("../patterns/partials/hero-slot.html"); ?>
+        <?php include("../patterns/partials/services.html"); ?>
         <?php include("../patterns/partials/footer.html"); ?>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../../../prod/js/custom-scripts-min.js"></script>
 </html>

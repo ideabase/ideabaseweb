@@ -13,57 +13,6 @@ body {
   box-sizing: border-box;
 }
 
-
-/* header */
-
-header {
-  text-align: center;
-  @include clearfix;
-}
-nav li {
-  list-style-type: none;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  color: rgb(26,95,171);
-  padding: .4em;
-  font-size: 1em;
-}
-
-@media screen and (min-width: 600px) {
-  nav li {
-    display: inline;
-    margin: 2em;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .ideabaselogo {
-    text-align: left;
-    width: 40%;
-    float: left;
-  }
-  header {
-    text-align: right;
-    margin-right: 1.5em;
-  }
-  nav {
-    margin-top: 2em;
-    width: 60%;
-    float: right;
-    margin-right: 1.4em;
-    font-size: .85em;
-  }
-}
-
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-nav {
-  margin-bottom: 1.5em;
-}
-
-
 /* buttons */
 
 .buttons {
