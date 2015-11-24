@@ -24,7 +24,7 @@
 	{% set staffGroup = craft.categories.group('staffHierarchy') %}
 	{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
-	{% for category in staffGroup.relatedTo(projects) %}
+	{% for category in staffGroup.relatedTo(project) %}
 
   	<h3 class="people-individual__category">{{ category.title }}</h3>
 
