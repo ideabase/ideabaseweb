@@ -15,6 +15,7 @@
 				<article class="project-index__entry">
 					<a href="{{ entry.url }}">
 						<p class="project-index__indivdual">{{ entry.title }}</p>
+						<p class="project-index__individual">{{entry.projectDescription }}</p>
 						<div class="project-index__image">
 							{% for asset in entry.projectPicture %}
 		     					<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
@@ -33,7 +34,7 @@
    					</a>
 				</article>
 			{% endfor %}
-			<div><a href="{{site.Url}}/project-list">All Projects</a></div>
+
 	</section>		
 
 	<!-- Case Study List -->
