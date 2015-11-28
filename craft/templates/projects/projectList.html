@@ -1,0 +1,31 @@
+{#
+ #}
+
+{% extends "_layout" %}
+
+
+{% block content %}
+	<section class="project-index">
+		<h1 class="project-index__title">{{ entry.projectHeadline }}</h1>
+		<p class="project-index__text">{{ entry.projectsSubDescription }}</p>
+
+
+	{% set projectCategory = craft.categories.group('projectType') %}
+	{% set Project = craft.entries.section('ideabaseProjects').order('title').limit(null) %}
+
+	{% for category in projectCategory.relatedTo(project) %}
+
+  	<h3 class="people-individual__category">{{ category.title }}</h3>
+
+  		<ul class="people-individual-list">
+    		{% for entry in Project.relatedTo(category) %}
+    							<article class="project-index__entry">
+					<a href="{{ entry.url }}">
+						<p class="project-index__indivdual">{{ entry.title }}</p>
+						<div class="project-index__image"></a>	
+   			{% endfor %}
+  		</ul>
+  	{% endfor %}
+  				<div><a href="{{site.Url}}/prod/project-list">All Projects</a><div>
+	</section>
+	{% endblock %}

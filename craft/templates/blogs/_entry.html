@@ -5,7 +5,22 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<section>
+
+
+	<article class="blog">
+	    		<div class="people__image">
+				{% for asset in entry.blogFeaturedImage %}
+     				<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   				{% endfor %}
+   			</div>
+		<h1 class="blog__title">{{ entry.title }}</h1>
+		<p class="blog__date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+		<p class="blog__text">{{ entry.blogContent}}</p>
+	</article>
+	
+		<section>
+
+
 		{% for entry in entry.blogAuthor %}
 			{{ entry.title }}
     		{{ entry.profileBiographyDescription }}
@@ -17,10 +32,5 @@
    			</div>
 		{% endfor %}
 	</section>
-	<article class="blog">
-		<h1 class="blog__title">{{ entry.title }}</h1>
-		<p class="blog__date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		<p class="blog__text">{{ entry.blogContent}}</p>
-	</article>
 
 	{% endblock %}

@@ -19,5 +19,12 @@
 		<p class="people__text">{{ entry.profileFunFact }}</p>
 		<p class="people__text">{{ entry.profileJobTitle }}</p>
 		<p class="people__text">{{ entry.profileOfficePhoneNumber }}</p>
+
+		<!-- Staff Social Media -->
+			{% for block in entry.staffSocialMedia %}
+     			{{ block.staffSocName }}
+     			{{ block.staffSocLink }}
+			{% endfor %}
+		<!-- End Staff Social Media -->
 	</section>
 {% endblock %}
