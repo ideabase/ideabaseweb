@@ -1,9 +1,43 @@
 .section-about {
-  padding: 0 2em 1em 2em;
   text-align: center;
-  background-color: black;
-  h1 {
-    margin-top: 0;
-    padding-top: 1em;
+  background-image: url(../Images/global/practice.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  position: relative;
+  &:after {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	background-color: rgba($blue,.8);
+  	top: 0;
+  	left: 0;
+  	display: block;
+  	content: "";
   }
+  @media screen and (min-width: 1000px) {
+  	padding: 5em;
+  }
+}
+
+.section-about__container {
+	z-index: 100;
+}
+
+.section-about__title {
+  margin-top: 0;
+  padding: 1em;
+  padding-bottom: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 5px rgba(0,0,0,.8);
+}
+
+.section-about__text {
+	color: white;
+	padding: 2em;
+	max-width: 500px;
+	margin: 0 auto;
 }

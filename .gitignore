@@ -12,3 +12,9 @@ _variables.scssc
 .DS_Store
 
 prod/.DS_Store
+_buttons.scssc
+_footer-cta.scssc
+_footer-global.scssc
+_headings.scssc
+_paragraphs.scssc
+_reset.scssc

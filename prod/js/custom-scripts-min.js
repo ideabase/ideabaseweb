@@ -1,1 +1,1 @@
-$("#navshow").click(function(){$("nav").toggleClass("nav--show")});
+$("#navshow").click(function(){$("nav").toggleClass("nav--show"),$("#navshow").toggleClass("nav__trigger__link--show");var n="Close",s="Menu";$("#navshow").text(s),$(".nav__trigger__link--show").text(n)});

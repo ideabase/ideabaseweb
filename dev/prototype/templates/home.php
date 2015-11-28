@@ -6,6 +6,7 @@
         <title>IdeaBase: Home Page Template</title>
 	    <link href="../../../prod/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 	 </head>
+     <script src="../../../prod/js/modernizr-custom.min.js"></script>
 	     
     <body>
         <?php include("../patterns/partials/header.html"); ?>

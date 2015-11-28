@@ -12,10 +12,11 @@
 					{% for asset in entry.aboutImage %}
 						<img class="section-about__image" src="{{ asset.getUrl('aboutImageTransform') }}">
 				 	{% endfor %}
-
+				<div class="section-about__container">
 				 	<h1 class="section-about__title">{{ entry.title }}</h1>
 				 	<h2 class="section-about__tagline">{{ entry.mainTagline }}</h2> 
 				 	<p class="section-about__text">{{ entry.homepageAboutText }}</p>
+				 </div>
 			</section>
 		<!-- End About Image -->
 	<!-- End About Section -->

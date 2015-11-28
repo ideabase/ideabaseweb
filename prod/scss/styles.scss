@@ -2,93 +2,9 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,300,300italic);
 
-.ideabaselogo {
-  max-width: 300px;
-}
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $source;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-/* buttons */
-
-.buttons {
-  text-align: center;
-}
-.button {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: .65em;
-  padding: 1em 1.4em 1em 1.8em;
-  border-style: solid;
-  border-width: 3px;
-  margin: 1em 2em;
-}
-.button::after {
-  content: "▶";
-  font-size: .5em;
-  padding-left: 15px;
-}
-.button-primary {
-  background-color: rgb(26,95,171);
-  border-color: rgb(26,95,171);
-}
-.button-secondary {
-  background-color: rgb(0,168,225);
-  border-color: rgb(0,168,225);
-}
-.button-tertiary {
-  background-color: transparent;
-  color: rgb(26,95,171);
-  border-color: rgb(26,95,171);
-
-}
-
-
-/* headings */
-
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2em;
-  color: rgb(0,168,225);
-}
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.4em;
-  color: rgb(26,95,171);
-  letter-spacing: 3px;
-}
-h3 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  color: rgb(26,95,171);
-}
-
-
-/* paragraph */
-
-p {
-  font-size: 1.1em;
-  line-height: 1.5
-}
-.highlight {
-  font-size: 1.2em;
-  font-weight: 600;
-  color: rgb(77,77,77);
-  text-align: center;
-}
-
 
 /* color */
 
@@ -139,18 +55,6 @@ p {
   background-color: white;
   color: rgb(26,95,171);
   border-color: white;
-}
-
-
-/* footer */
-
-footer {
-  background-color: rgb(77,77,77);
-  padding: 1em 3em;
-  margin: 0;
-  color: white;
-  font-weight: 600;
-  font-size: .8em;
 }
 
 
