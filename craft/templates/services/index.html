@@ -20,19 +20,19 @@ Services Template
     <section class="service-index-entry">
 		<!-- Social Media -->
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homepageDescripton }}
+    {{ block.homeProcessName }} {{ block.homeProcessDescription }}
     		{% for asset in block.icon1 %}
-       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
     		{% endfor %}
 
     		 {% for asset in block.icon2 %}
-       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     		{% for asset in block.icon3 %}
-       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     		{% for asset in block.icon4 %}
-       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
     		{% endfor %}
      <ul>
     {% for row in block.homeProcessExampleTable %}

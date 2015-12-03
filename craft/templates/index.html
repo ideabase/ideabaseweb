@@ -7,48 +7,59 @@
 
 {% block content %}
 	<!-- About Section -->
-		<!-- About Image -->
 			<section class="section-about">
-					{% for asset in entry.aboutImage %}
-						<img class="section-about__image" src="{{ asset.getUrl('aboutImageTransform') }}">
-				 	{% endfor %}
+
+			<!-- About Image -->
+				{% for asset in entry.aboutImage %}
+					<img class="section-about__image" src="{{ asset.getUrl('aboutImageTransform') }}">
+				 {% endfor %}
+			<!-- End About Image -->
+			<!-- About Container -->
 				<div class="section-about__container">
 				 	<h1 class="section-about__title">{{ entry.title }}</h1>
 				 	<h2 class="section-about__tagline">{{ entry.mainTagline }}</h2> 
 				 	<p class="section-about__text">{{ entry.homepageAboutText }}</p>
 				 </div>
+			<!-- End About Container -->	 
 			</section>
-		<!-- End About Image -->
 	<!-- End About Section -->
 
 	<!-- Services List -->
 	<section class="section-services">
-		<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.designHeadline }}</div></h2>
-		{% for entry in craft.entries.section('processIndex') %}
-			{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-			    {{ block.homeProcessName }} {{ block.homepageDescription }}
-			    		{% for asset in block.icon1 %}
-			       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-			    		{% endfor %}
+		<!-- Process List -->
+		<h2 class="section-services__headline">{{ entry.designHeadline }}</h2>
+			{% for entry in craft.entries.section('processIndex') %}
+				<ul class="section-services__list">
+					{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+						<li>
+						    <div class="section-services__title">{{ block.homeProcessName }}</div> 
+						    <div class="section-services__text">{{ block.homepageDescription }}</div>
+						    		{% for asset in block.icon1 %}
+						       			<img class="section-services__icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+						    		{% endfor %}
+						</li>    		
+					{% endfor %}	
+				</ul>	
 			{% endfor %}
-		{% endfor %}
-		<h3><a href="process/">More Services</a></h3>
+		<!-- End Process List -->	
+		<a class="section-services__button" href="process/">More Services</a>
 	</section>
-	<!-- End Services List -->
 
 	<!-- Projects List -->
-	<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.projectsHeadline }}</div></h2>
-	<p>{{ entry.projectsDescription }}</p>
+	<section class="project-list">
+		<h2 class="project-list__title">{{ entry.projectsHeadline }}</div></h2>
+		<p class="project-list__text">{{ entry.projectsDescription }}</p>
 
-	{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
-    <ul>
-    <li>
-        <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        <p><a href="{{ entry.url }}">Continue reading</a></p>
-    </li>
-    </ul>
-	{% endfor %}
-	<h3><a href="projects/">More Projects</a></h3>
+		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
+		    <ul class="project-list__list">
+			    <li>
+			        <h3 class="project-list__item-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			        <p class="project-list__link"><a href="{{ entry.url }}">Continue reading</a></p>
+			    </li>
+		    </ul>
+		{% endfor %}
+		<h3 class="project-list__button"><a href="projects/">More Projects</a></h3>
+	</section>
 	<!-- End Projects List -->
 
 {% endblock %}
