@@ -38,23 +38,3 @@ body {
     clear: left;
 }
 
-/* secondary layout */
-
-.content-secondary {
-  background-color: rgb(26,95,171);
-  color: white;
-  padding: 2em 3em;
-}
-.content-secondary h2, .content-secondary h3, .content-secondary .highlight {
-  color: white;
-}
-.content-secondary h1 {
-  color: rgb(0,168,225);
-}
-.content-secondary .button-primary {
-  background-color: white;
-  color: rgb(26,95,171);
-  border-color: white;
-}
-
-

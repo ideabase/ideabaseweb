@@ -16,11 +16,23 @@
   border-width: 3px;
   margin: 1em 2em;
 }
+
+.button--large {
+  padding: 1em 1.5em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
 .button::after {
   content: "▶";
   font-size: .5em;
   padding-left: 15px;
 }
+
+.button--large:after {
+  content: none;
+}
+
 .button-primary {
   background-color: rgb(26,95,171);
   border-color: rgb(26,95,171);
@@ -33,5 +45,4 @@
   background-color: transparent;
   color: rgb(26,95,171);
   border-color: rgb(26,95,171);
-
 }

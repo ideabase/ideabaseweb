@@ -1,3 +1,66 @@
-<footer>
-  <p>Copyright IdeaBase 2015</p>
+<footer class="global-footer">
+	<h2>Let's Make Something Great Together</h2>
+	<img src="" class="global-footer__image" />
+	<section class="footer-form" id="footer-form-toggle">
+			<p class="global-footer_phone">Phone: 330.672.7300</p>
+			<p class="global-footer_email">Email: info@ideabasekent.com</p>
+			<p class="global-footer_text">Be a part of something big. Blah Blah Blah</p>
+			<!-- Contact Form -->
+			<div class="contact-form">
+				<form method="post" action="" accept-charset="UTF-8">
+				    <input type="hidden" name="action" value="contactForm/sendMessage">
+				    <input type="hidden" name="redirect" value="contact/thanks">
+
+				    <h3><label for="fromName">Your Name</label></h3>
+				    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+
+				    <h3><label for="fromEmail">Your Email</label></h3>
+				    <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+
+				    <h3><label for="subject">Subject</label></h3>
+				    <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+
+				    <h3><label for="message">Message</label></h3>
+				    <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+
+				    <input type="submit" value="Send">
+				</form>
+			</div>
+			<!-- End Contact Form -->
+	</section>
+	<a href="#footer-form-toggle" class="footer-form__button button button-primary button--large">Get in Touch Today</a>
+
+	<section class="footer-info">
+		<section class="footer-info__address">
+			<p class="global-footer__text">
+				138 E. Main Street, Suite 203<br/>
+				Kent, OH 44240
+			</p>
+			<a class="global-footer__directions">Get Directions to Our Office</a>
+		</section>
+		<section class="footer-info__contact">
+			<p class="global-footer__text">
+				P: 330.672.7300
+				E: info@ideabasekent.com
+			</p>
+		</section>
+	<!-- Social Media -->
+		<section class="footer-info__social">
+			<a href="#" class="footer-info__social__icon">Facebook</a>
+			<a href="#"  class="footer-info__social__icon">Facebook</a>
+			<a href="#" class="footer-info__social__icon">Facebook</a>
+			<a href="#" class="footer-info__social__icon">Facebook</a>
+			<a href="#" class="footer-info__social__icon">Facebook</a>
+			<a href="#" class="footer-info__social__icon">Facebook</a>
+		</section>
+	<!-- End Social Media -->
+	<section class="footer-info__supplemental">
+		<p class="footer-info__about">Opened in 2009, IdeaBase, formerly the Tannery was the brainchild of Jim Guadino.</p>
+		<p class="footer-info__legal">Website Designed and Developed By IdeaBase in Kent, OH.</p>
+		<p class="footer-info__legal">Copyright 2015 IdeaBase</p>
+	</section>
 </footer>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../../../prod/js/custom-scripts-min.js"></script>
+</html>
