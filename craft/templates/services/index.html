@@ -13,15 +13,27 @@ Services Template
 		<p>{{ entry.processDescription }}</p>
 		<div class="service-index__image">
 			{% for asset in entry.processFeaturedImage %}
-     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     	</div>
     </section>
-
-
-		<!-- Service Matrix -->
+    <section class="service-index-entry">
+		<!-- Social Media -->
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homeProcessDescripton }} {{ block.icon1 }}
+    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+    		{% for asset in block.icon1 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+
+    		 {% for asset in block.icon2 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    		{% for asset in block.icon3 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    		{% for asset in block.icon4 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
      <ul>
     {% for row in block.homeProcessExampleTable %}
         <li>{{ row.examples }}</li> 
@@ -29,7 +41,7 @@ Services Template
     </ul>
 {% endfor %}
 
-			<!-- End Service Matrix -->
+			<!-- End Social Media -->
 		<p>{{ entry.uxTestingLabDescription }}</p>
 
 		<h1>{{ entry.testimonialHeadline }}</h1>

@@ -25,15 +25,12 @@
 	<section class="section-services">
 		<h2><div style="border:1px solid black; margin: 10px; text-align: center;">{{ entry.designHeadline }}</div></h2>
 
-		{% for entry in craft.entries.section('services').limit(3).order('postDate') %}
-	    <ul>
-	    	<li>
-	        	<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-	        		{{ entry.serviceDescription }}
-	        	<a href="{{ entry.url }}">Continue reading</a>
-	   		</li>
-	    </ul>
-		{% endfor %}
+	{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+    		{% for asset in block.icon1 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+{% endfor %}
 		<h3><a href="process/">More Services</a></h3>
 	</section>
 	<!-- End Services List -->
