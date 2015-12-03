@@ -1,0 +1,27 @@
+/* secondary layout */
+
+
+.panel-secondary-container {
+	background-color: rgb(26,95,171);
+}
+
+.panel-primary, .panel-secondary {
+	padding: 2em 3em;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.panel-secondary {
+  color: white;
+}
+.panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight {
+  color: white;
+}
+.panel-secondary h1 {
+  color: rgb(0,168,225);
+}
+.panel-secondary .button-primary {
+  background-color: white;
+  color: rgb(26,95,171);
+  border-color: white;
+}

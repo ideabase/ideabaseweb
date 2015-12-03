@@ -129,7 +129,15 @@ table { border-collapse: collapse; border-spacing: 0; }
 td, th { padding: 0; }
 
 /* footer */
-footer { background-color: #4d4d4d; padding: 1em 3em; margin: 0; color: white; font-weight: 600; font-size: .8em; }
+.global-footer { text-align: center; margin-top: 4em; }
+
+.footer-info { background-color: #bcbec0; padding: 2em 5em; margin: #4d4d4d; font-weight: 600; font-size: .9em; text-align: left; }
+
+.footer-info__address, .footer-info__contact { padding: 0 5em; }
+
+.footer-info__supplemental { text-align: center; font-size: .9em; }
+
+.footer-form { display: none; }
 
 /* header */
 header { text-align: center; *zoom: 1; margin-bottom: 1em; max-width: 1200px; margin: 0 auto; }
@@ -176,13 +184,18 @@ nav li a:hover, nav li a:focus { color: #3285e0; }
 @media screen and (min-width: 600px) { nav li { display: inline; margin: 1.5em; } }
 @media screen and (min-width: 1000px) { nav li { font-size: 1.2em; } }
 
-.section-about { text-align: center; background-image: url(../Images/global/practice.jpg); background-size: cover; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 2em; position: relative; }
+.section-about { text-align: center; background-image: url(../Images/global/practice.jpg); background-size: cover; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 2em 3em; position: relative; }
 .section-about:after { position: absolute; height: 100%; width: 100%; background-color: rgba(26, 95, 171, 0.8); top: 0; left: 0; display: block; content: ""; }
-@media screen and (min-width: 1000px) { .section-about { padding: 5em; } }
+@media screen and (min-width: 1000px) { .section-about { padding: 5em 15em; } }
+@media screen and (min-width: 1500px) { .section-about { padding: 10em 30em; } }
+
+.section-about__title { color: white; }
+.section-about__title:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 1em; background-color: white; display: block; }
+@media screen and (min-width: 1000px) { .section-about__title { font-size: 2.5em; } }
 
 .section-about__container { z-index: 100; }
 
-.section-about__title { margin-top: 0; padding: 1em; padding-bottom: 0; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); }
+.section-about__title { margin-top: 0; padding: 1em; padding-bottom: 0; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); }
 
 .section-about__text { color: white; padding: 2em; max-width: 500px; margin: 0 auto; }
 
@@ -191,7 +204,11 @@ nav li a:hover, nav li a:focus { color: #3285e0; }
 
 .button { display: inline-block; color: white; text-decoration: none; font-family: "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: 3px; font-size: .65em; padding: 1em 1.4em 1em 1.8em; border-style: solid; border-width: 3px; margin: 1em 2em; }
 
+.button--large { padding: 1em 1.5em; font-size: 1.3em; text-align: center; }
+
 .button::after { content: "▶"; font-size: .5em; padding-left: 15px; }
+
+.button--large:after { content: none; }
 
 .button-primary { background-color: #1a5fab; border-color: #1a5fab; }
 
@@ -211,6 +228,19 @@ p { font-size: 1.1em; line-height: 1.5; }
 
 .highlight { font-size: 1.2em; font-weight: 600; color: #4d4d4d; text-align: center; }
 
+/* secondary layout */
+.panel-secondary-container { background-color: #1a5fab; }
+
+.panel-primary, .panel-secondary { padding: 2em 3em; max-width: 1200px; margin: 0 auto; }
+
+.panel-secondary { color: white; }
+
+.panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight { color: white; }
+
+.panel-secondary h1 { color: #00a8e1; }
+
+.panel-secondary .button-primary { background-color: white; color: #1a5fab; border-color: white; }
+
 body { font-family: "Source Sans Pro", sans-serif; }
 
 /* color */
@@ -228,12 +258,3 @@ body { font-family: "Source Sans Pro", sans-serif; }
 
 /* primary layout */
 .content-primary { padding: 1em 3em; clear: left; }
-
-/* secondary layout */
-.content-secondary { background-color: #1a5fab; color: white; padding: 2em 3em; }
-
-.content-secondary h2, .content-secondary h3, .content-secondary .highlight { color: white; }
-
-.content-secondary h1 { color: #00a8e1; }
-
-.content-secondary .button-primary { background-color: white; color: #1a5fab; border-color: white; }

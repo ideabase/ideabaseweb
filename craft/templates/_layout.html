@@ -15,24 +15,17 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<meta name="description" content="Page Description Goes Here">
 	<link rel="home" href="{{ siteUrl }}" />
-	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>	
 </head> 
 
 <body>
-	<div id="container">
 		{% include 'global/header.html' %}
-
 		<main id="content" role="main">
 			{% block content %}
 			{% endblock %}
 		</main>
-
-
-
-		<p>{% include 'global/footer.html' %}</p>
-
-		
-	</div>
+		{% include 'global/footer.html' %}
+	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>	
 </body>
 </html>
