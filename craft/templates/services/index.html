@@ -17,30 +17,11 @@ Services Template
     		{% endfor %}
     	</div>
     </section>
-    <section class="service-index-entry">
-		{% for entry in craft.entries.section('services').order(postDate) %}
-			<article class="service-index-entry-individual">
 
-					<!-- icon -->
-			    	<div class="service-index-entry-individual__image">
-						{% for asset in entry.serviceIcon %}
-     						<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    					{% endfor %}
-    				</div>	
-    				<!-- icon -->
 
-					<h3 class="service-index-entry-individual__title">
-						<a href="{{ entry.url }}">
-							{{ entry.title }}
-						</a>
-					</h3>
-
-			</article>
-		{% endfor %}
-
-		<!-- Social Media -->
+		<!-- Service Matrix -->
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+    {{ block.homeProcessName }} {{ block.homeProcessDescripton }} {{ block.icon1 }}
      <ul>
     {% for row in block.homeProcessExampleTable %}
         <li>{{ row.examples }}</li> 
@@ -48,7 +29,7 @@ Services Template
     </ul>
 {% endfor %}
 
-			<!-- End Social Media -->
+			<!-- End Service Matrix -->
 		<p>{{ entry.uxTestingLabDescription }}</p>
 
 		<h1>{{ entry.testimonialHeadline }}</h1>
