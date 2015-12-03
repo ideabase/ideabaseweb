@@ -13,34 +13,27 @@ Services Template
 		<p>{{ entry.processDescription }}</p>
 		<div class="service-index__image">
 			{% for asset in entry.processFeaturedImage %}
-     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     	</div>
     </section>
     <section class="service-index-entry">
-		{% for entry in craft.entries.section('services').order(postDate) %}
-			<article class="service-index-entry-individual">
-
-					<!-- icon -->
-			    	<div class="service-index-entry-individual__image">
-						{% for asset in entry.serviceIcon %}
-     						<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    					{% endfor %}
-    				</div>	
-    				<!-- icon -->
-
-					<h3 class="service-index-entry-individual__title">
-						<a href="{{ entry.url }}">
-							{{ entry.title }}
-						</a>
-					</h3>
-
-			</article>
-		{% endfor %}
-
 		<!-- Social Media -->
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+    {{ block.homeProcessName }} {{ block.homepageDescripton }}
+    		{% for asset in block.icon1 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+
+    		 {% for asset in block.icon2 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    		{% for asset in block.icon3 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    		{% for asset in block.icon4 %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
      <ul>
     {% for row in block.homeProcessExampleTable %}
         <li>{{ row.examples }}</li> 

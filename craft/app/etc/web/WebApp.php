@@ -54,8 +54,8 @@ namespace Craft;
  *
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @see       http://buildwithcraft.com
+ * @license   http://craftcms.com/license Craft License Agreement
+ * @see       http://craftcms.com
  * @package   craft.app.etc.web
  * @since     1.0
  */
@@ -113,6 +113,12 @@ class WebApp extends \CWebApplication
 
 		// Attach our Craft app behavior.
 		$this->attachBehavior('AppBehavior', new AppBehavior());
+
+		// If there is a custom validationKey set, apply it here.
+		if ($validationKey = $this->config->get('validationKey'))
+		{
+			$this->security->setValidationKey($validationKey);
+		}
 
 		// Attach our own custom Logger
 		Craft::setLogger(new Logger());
@@ -201,7 +207,7 @@ class WebApp extends \CWebApplication
 		// Check if the app path has changed.  If so, run the requirements check again.
 		$this->_processRequirementsCheck();
 
-		// Makes sure that the uploaded files are compatible with the current DB schema
+		// Makes sure that the uploaded files are compatible with the current database schema
 		if (!$this->updates->isSchemaVersionCompatible())
 		{
 			if ($this->request->isCpRequest())
@@ -982,7 +988,10 @@ class WebApp extends \CWebApplication
 
 			// Special case because we hide the cpTrigger in emails.
 			$this->request->getPath() === craft()->config->get('actionTrigger').'/users/setpassword' ||
-			$this->request->getPath() === craft()->config->get('actionTrigger').'/users/verifyemail'
+			$this->request->getPath() === craft()->config->get('actionTrigger').'/users/verifyemail' ||
+			// Special case because this might be a request with a user that has "Access the site when the system is off"
+			// permissions and is in the process of logging in while the system is off.
+			$this->request->getActionSegments() == array('users', 'login')
 		)
 		{
 			if ($this->userSession->checkPermission('accessCpWhenSystemIsOff'))
