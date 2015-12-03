@@ -20,7 +20,7 @@ Services Template
     <section class="service-index-entry">
 		<!-- Social Media -->
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+    {{ block.homeProcessName }} {{ block.homepageDescripton }}
     		{% for asset in block.icon1 %}
        			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
