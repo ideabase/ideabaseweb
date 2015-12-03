@@ -1,7 +1,7 @@
 <footer class="global-footer">
 	<h2>Let's Make Something Great Together</h2>
 	<img src="" class="global-footer__image" />
-	<section class="footer-form" id="footer-form-toggle">
+	<section class="footer-form" id="footer-form">
 			<p class="global-footer_phone">Phone: 330.672.7300</p>
 			<p class="global-footer_email">Email: info@ideabasekent.com</p>
 			<p class="global-footer_text">Be a part of something big. Blah Blah Blah</p>
@@ -12,23 +12,25 @@
 				    <input type="hidden" name="redirect" value="contact/thanks">
 
 				    <h3><label for="fromName">Your Name</label></h3>
-				    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+				    <input id="fromName" type="text" name="fromName" value="">
 
 				    <h3><label for="fromEmail">Your Email</label></h3>
-				    <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+				    <input id="fromEmail" type="text" name="fromEmail" value="">
 
 				    <h3><label for="subject">Subject</label></h3>
-				    <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+				    <input id="subject" type="text" name="subject" value="">
 
 				    <h3><label for="message">Message</label></h3>
-				    <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+				    <textarea rows="10" cols="40" id="message" name="message"></textarea>
 
 				    <input type="submit" value="Send">
 				</form>
 			</div>
 			<!-- End Contact Form -->
 	</section>
-	<a href="#footer-form-toggle" class="footer-form__button button button-primary button--large">Get in Touch Today</a>
+	<div class="footer-form__button__container">
+		<a id="footer-form-toggle" href="#footer-form-toggle" class="footer-form__button button button-primary button--large">Get in Touch Today</a>
+	</div>
 
 	<section class="footer-info">
 		<section class="footer-info__address">

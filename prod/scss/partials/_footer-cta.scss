@@ -1,3 +1,19 @@
-.footer-form {
-	display: none;
+.footer-form__button__container {
+	position: absolute;
+	width: 100%;
+	z-index: 100;
 }
+.footer-form__button {
+	top: 0;
+	position: relative;
+}
+
+.js .footer-form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
+}
+
+.js .form--show {
+  max-height: 50em;
+ }

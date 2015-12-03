@@ -7,15 +7,21 @@
 
 .footer-info {
   background-color: $lightgray;
-  padding: 2em 5em;
+  padding: 4em 2em 5em;;
   margin: $darkgray;
   font-weight: 600;
   font-size: .9em;
   text-align: left;
+  top: 50px;
+  position: relative;
 }
 
 .footer-info__address, .footer-info__contact {
 	padding: 0 5em;
+}
+
+.footer-info__social {
+  text-align: center;
 }
 
 .footer-info__supplemental {
