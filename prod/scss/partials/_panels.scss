@@ -3,12 +3,25 @@
 
 .panel-secondary-container {
 	background-color: rgb(26,95,171);
+  position: relative;
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($blue,.8);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+  }
 }
 
 .panel-primary, .panel-secondary {
 	padding: 2em 3em;
 	max-width: 1200px;
 	margin: 0 auto;
+  z-index: 200;
+  position: relative;
 }
 
 .panel-secondary {
@@ -24,4 +37,8 @@
   background-color: white;
   color: rgb(26,95,171);
   border-color: white;
+}
+
+.panel-projects {
+  background-image: url(../Images/global/practice.jpg);
 }
