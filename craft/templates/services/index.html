@@ -20,21 +20,35 @@ Services Template
     <section class="service-index-entry">
 		{% for entry in craft.entries.section('services').order(postDate) %}
 			<article class="service-index-entry-individual">
+
+					<!-- icon -->
+			    	<div class="service-index-entry-individual__image">
+						{% for asset in entry.serviceIcon %}
+     						<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+    					{% endfor %}
+    				</div>	
+    				<!-- icon -->
+
 					<h3 class="service-index-entry-individual__title">
 						<a href="{{ entry.url }}">
 							{{ entry.title }}
 						</a>
 					</h3>
-					<div class="service-index-entry-individual__image">
-						{% for asset in entry.serviceImage %}
-     						<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    					{% endfor %}
-    				</div>	
-					<p class="service-index-entry-individual__text">
-						{{ entry.serviceDescription }}
-					</p>
+
 			</article>
 		{% endfor %}
+
+		<!-- Social Media -->
+{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+    {{ block.homeProcessName }} {{ block.homeProcessDescripton }}
+     <ul>
+    {% for row in block.homeProcessExampleTable %}
+        <li>{{ row.examples }}</li> 
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+			<!-- End Social Media -->
 		<p>{{ entry.uxTestingLabDescription }}</p>
 
 		<h1>{{ entry.testimonialHeadline }}</h1>
