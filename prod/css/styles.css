@@ -301,7 +301,7 @@ nav li a:hover { border: 2px solid #1a5fab; }
 
 .active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a { border: 2px solid #1a5fab; }
 
-.section-about { -webkit-animation: fadeIn 1s; animation: fadeIn 1s; text-align: center; background-image: url(../Images/global/practice.jpg); background-size: cover; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 1em 0em; position: relative; }
+.section-about { -webkit-animation: fadeIn 1s; animation: fadeIn 1s; text-align: center; background-image: url(../Images/global/practice.jpg); background-attachment: fixed; background-size: cover; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 1em 0em; position: relative; }
 .section-about:after { position: absolute; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.5); top: 0; left: 0; display: block; content: ""; }
 @media screen and (min-width: 500px) { .section-about { padding: 1em 2em; } }
 @media screen and (min-width: 700px) { .section-about { padding: 3em 5em; } }
@@ -380,7 +380,7 @@ p { font-size: 1.1em; line-height: 1.5; }
 .introduction:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 2em; background-color: #1a5fab; display: block; }
 
 /* secondary layout */
-.panel-secondary-container { background-color: #00a8e1; position: relative; }
+.panel-secondary-container { background-color: #00a8e1; position: relative; background-attachment: fixed; }
 .panel-secondary-container:after { position: absolute; height: 100%; width: 100%; background-color: rgba(26, 95, 171, 0.8); top: 0; left: 0; display: block; content: ""; }
 
 .panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 1000px; margin: 0 auto; z-index: 200; position: relative; }

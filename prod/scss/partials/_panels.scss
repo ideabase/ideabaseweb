@@ -4,6 +4,7 @@
 .panel-secondary-container {
 	background-color: $cyan;
   position: relative;
+  background-attachment: fixed;
   &:after {
     position: absolute;
     height: 100%;
