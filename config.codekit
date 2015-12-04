@@ -23310,7 +23310,7 @@
 		},
 	"\/prod\/js\/flickity.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/prod\/js\/flickity.min.js",
 		"outputAbbreviatedPath": "\/prod\/js\/min\/flickity.min-min.js",
@@ -23653,6 +23653,14 @@
 	],
 "lastSavedByUser": "Chris Hallahan",
 "manualImportLinks": {
+	"\/prod\/js\/custom-scripts.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/prod\/js\/flickity.min.js",
+			"position": 0,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",

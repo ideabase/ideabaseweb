@@ -106,11 +106,18 @@ nav {
     display: block;
     height: auto;
     transition: none;
+    margin-top: -10px;
     li {
       height: auto;
       opacity: 1;
       transition: none;
     }
+  }
+  @media screen and (min-width: 1000px) {
+    margin-top: 2em;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 1.5em;
   }
 }
 
@@ -189,6 +196,9 @@ nav li {
   }
   @media screen and (min-width: 1000px) {
     font-size: 1.2em;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 1.3em;
   }
 }
 
