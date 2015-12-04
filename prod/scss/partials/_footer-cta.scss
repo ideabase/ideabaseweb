@@ -12,10 +12,28 @@
 	max-width: 100px;
 }
 
+.global-footer__invitation {
+	font-size: 1.1em;
+}
+
 .global-footer__cta {
 	margin: 0;
 	padding: 1em;
 	padding-top: 0;
+}
+
+.global-footer__contact {
+	color: $blue;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.contact__trigger__link--show {
+	@extend .button-primary--inactive;
+}
+
+.contact-form label {
+	display: none;
 }
 
 .js .footer-form {
@@ -25,5 +43,8 @@
 }
 
 .js .form--show {
-  max-height: 50em;
+  max-height: 60em;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2em 2em 2em;
  }

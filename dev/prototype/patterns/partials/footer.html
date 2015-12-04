@@ -3,26 +3,22 @@
 	<h2 class="global-footer__cta">Let's Make Something Great Together</h2>
 	<img src="../../assets/img/lightbulb-sample.png" class="global-footer__image" />
 	<section class="footer-form" id="footer-form">
-			<p class="global-footer_phone">Phone: 330.672.7300</p>
-			<p class="global-footer_email">Email: info@ideabasekent.com</p>
-			<p class="global-footer_text">Be a part of something big. Blah Blah Blah</p>
+			<p class="global-footer__contact"><span class="global-footer__contact__title">Phone</span> 330.672.7300</p>
+			<p class="global-footer__contact"><span class="global-footer__contact__title">Email</span> info@ideabasekent.com</p>
+			<p class="global-footer__invitation">Be a part of something big.  Partner with our talented team of designers on your next initiatve and become part of our educational mission.  Get in touch today by contacting Kristin Dowling, Business Develoment Manager, via email, phone or by completing the form below.</p>
 			<!-- Contact Form -->
 			<div class="contact-form">
 				<form method="post" action="" accept-charset="UTF-8">
-				    <input type="hidden" name="action" value="contactForm/sendMessage">
-				    <input type="hidden" name="redirect" value="contact/thanks">
-
-				    <h3><label for="fromName">Your Name</label></h3>
-				    <input id="fromName" type="text" name="fromName" value="">
-
-				    <h3><label for="fromEmail">Your Email</label></h3>
-				    <input id="fromEmail" type="text" name="fromEmail" value="">
-
-				    <h3><label for="subject">Subject</label></h3>
-				    <input id="subject" type="text" name="subject" value="">
-
-				    <h3><label for="message">Message</label></h3>
-				    <textarea rows="10" cols="40" id="message" name="message"></textarea>
+				    <label for="fromName">Name</label>
+				    <input placeholder="Your Name" id="fromName" type="text" name="fromName" value="">
+				    <label for="fromEmail">Email</label>
+				    <input placeholder="Your Email" id="fromEmail" type="text" name="fromEmail" value="">
+				    <label for="subject">Company</label>
+				    <input placeholder="Company" id="subject" type="text" name="subject" value="">
+				    <label for="subject">Phone</label>
+				    <input placeholder="Phone" id="subject" type="text" name="subject" value="">
+				   <label for="message">How Can We Help?</label>
+				    <textarea placeholder="How Can We Help?" rows="10" cols="40" id="message" name="message"></textarea>
 
 				    <input type="submit" value="Send">
 				</form>
@@ -32,36 +28,41 @@
 	<div class="footer-form__button__container">
 		<a id="footer-form-toggle" href="#footer-form-toggle" class="footer-form__button button button-primary button--large">Get in Touch Today</a>
 	</div>
-
-	<section class="footer-info">
-		<section class="footer-info__address">
-			<p class="global-footer__text">
-				138 E. Main Street, Suite 203<br/>
-				Kent, OH 44240
-			</p>
-			<a class="global-footer__directions">Get Directions to Our Office</a>
+	<div class="footer-info__container">
+		<section class="footer-info">
+			<section class="footer-info__address">
+				<p class="global-footer__text">
+					138 E. Main Street, Suite 203<br/>
+					Kent, OH 44240
+				</p>
+				<a href="#" class="global-footer__directions">Get Directions to Our Office</a>
+			</section>
+			<section class="footer-info__contact">
+				<p class="global-footer__text">
+					<span class="global-footer__text__name">P:</span>330.672.7300
+				</p>
+				<p class="global-footer__text">
+					<span class="global-footer__text__name">E:</span><a href="mailto:info@ideabasekent.com">info@ideabasekent.com</a>
+				</p>
+			</section>
+		<!-- Social Media -->
+			<section class="footer-info__social">
+				<a href="http://www.facebook.com" class="footer-info__social__icon">Facebook</a>
+				<a href="http://www.twitter.com"  class="footer-info__social__icon">Facebook</a>
+				<a href="http://www.youtube.com" class="footer-info__social__icon">Facebook</a>
+				<a href="http://www.instagram.com" class="footer-info__social__icon">Facebook</a>
+				<a href="http://www.linkedin.com" class="footer-info__social__icon">LinkedIn</a>
+				<a href="http://www.flickr.com" class="footer-info__social__icon">Facebook</a>
+				<a href="#" class="footer-info__social__icon">Facebook</a>
+			</section>
+		<!-- End Social Media -->
+		<section class="footer-info__supplemental">
+			<p class="footer-info__about">Opened in 2009, IdeaBase, formerly the Tannery was the brainchild of Jim Guadino, the former and founding dean of Kent State's College of Communication and Information. IdeaBase is now a thriving design agency where top-performing students assemble to gain experiential learning opportunities and solve problems for clients within and outside of the university.</p>
+			<p class="footer-info__legal">Website Designed and Developed By IdeaBase in Kent, OH.</p>
+			<p class="footer-info__legal">Copyright 2015 IdeaBase</p>
 		</section>
-		<section class="footer-info__contact">
-			<p class="global-footer__text">
-				P: 330.672.7300
-				E: info@ideabasekent.com
-			</p>
-		</section>
-	<!-- Social Media -->
-		<section class="footer-info__social">
-			<a href="#" class="footer-info__social__icon">Facebook</a>
-			<a href="#"  class="footer-info__social__icon">Facebook</a>
-			<a href="#" class="footer-info__social__icon">Facebook</a>
-			<a href="#" class="footer-info__social__icon">Facebook</a>
-			<a href="#" class="footer-info__social__icon">Facebook</a>
-			<a href="#" class="footer-info__social__icon">Facebook</a>
-		</section>
-	<!-- End Social Media -->
-	<section class="footer-info__supplemental">
-		<p class="footer-info__about">Opened in 2009, IdeaBase, formerly the Tannery was the brainchild of Jim Guadino.</p>
-		<p class="footer-info__legal">Website Designed and Developed By IdeaBase in Kent, OH.</p>
-		<p class="footer-info__legal">Copyright 2015 IdeaBase</p>
 	</section>
+	</div>
 </footer>
 <link href="../../../prod/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

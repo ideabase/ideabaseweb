@@ -155,6 +155,9 @@ nav {
     margin-bottom: 0;
     padding-top: .75em;
     padding-bottom: .75em;
+    a:hover {
+      border-color: transparent;
+    }
   }
 
 
@@ -165,15 +168,19 @@ nav li {
   font-family: $mont;
   font-weight: 700;
   text-transform: uppercase;
-  padding: .4em;
   font-size: 1em;
   letter-spacing: 2px;
   a {
     color: rgb(26,95,171);
+    padding: .4em;
     text-decoration: none;
     transition: .25s color ease-in;
-    &:hover, &:focus {
-      color: lighten($blue, 15%);
+    border: 2px solid transparent;
+    transition: .3s all ease-in-out;
+    transform: scale3d(1,1,1);
+    &:hover {
+      border: 2px solid $blue;
+      transform: scale3d(1.1,1.1,1.1);
     }
   }
   @media screen and (min-width: 600px) {
@@ -183,4 +190,8 @@ nav li {
   @media screen and (min-width: 1000px) {
     font-size: 1.2em;
   }
+}
+
+.active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a {
+  border: 2px solid $blue;
 }
