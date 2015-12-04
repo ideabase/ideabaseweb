@@ -6,6 +6,10 @@ body {
   font-family: $source;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* color */
 
 .swatches {
@@ -28,13 +32,5 @@ body {
 }
 .swatch-lightgray {
   background-color: rgb(188,190,192);
-}
-
-
-/* primary layout */
-
-.content-primary {
-    padding: 1em 3em;
-    clear: left;
 }
 

@@ -29,3 +29,12 @@ $( "#contact-toggle" ).click(function() {
   $("html, body").animate({ scrollTop: $('#footer-form').offset().top }, 1000);
   return false;
 });
+
+// Initialize Flickity
+
+$('.section-projects__list').flickity({
+  // options
+  wrapAround: true,
+  contain: true,
+  watchCSS: true
+});

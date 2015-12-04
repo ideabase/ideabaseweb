@@ -8,6 +8,16 @@
 	position: relative;
 }
 
+.global-footer__image {
+	max-width: 100px;
+}
+
+.global-footer__cta {
+	margin: 0;
+	padding: 1em;
+	padding-top: 0;
+}
+
 .js .footer-form {
     max-height: 0;
     overflow: hidden;
