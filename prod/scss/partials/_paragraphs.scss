@@ -4,9 +4,12 @@ p {
   font-size: 1.1em;
   line-height: 1.5
 }
-.highlight {
+.introduction {
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: 500;
   color: rgb(77,77,77);
   text-align: center;
+  @media screen and (min-width: 700px) {
+		font-size: 1.4em;
+  }
 }

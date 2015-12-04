@@ -308,6 +308,11 @@ nav li a:hover { border: 2px solid #1a5fab; }
 @media screen and (min-width: 1000px) { .section-about { padding: 6em 12em; } }
 @media screen and (min-width: 1500px) { .section-about { padding: 10em 26em; } }
 
+@media screen and (min-width: 500px) { .section-about--interior { padding: 1em 2em; } }
+@media screen and (min-width: 700px) { .section-about--interior { padding: 1em 5em; } }
+@media screen and (min-width: 1000px) { .section-about--interior { padding: 1em 12em; } }
+@media screen and (min-width: 1500px) { .section-about--interior { padding: 1em 26em; } }
+
 .section-about__title { color: white; font-size: 1.7em; }
 .section-about__title:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 1em; background-color: white; display: block; }
 @media screen and (min-width: 700px) { .section-about__title { font-size: 2em; } }
@@ -319,6 +324,9 @@ nav li a:hover { border: 2px solid #1a5fab; }
 
 .section-about__text { color: white; padding: 2em; max-width: 800px; margin: 0 auto; }
 @media screen and (min-width: 700px) { .section-about__text { font-size: 1.3em; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); } }
+
+.section-about__text--interior { padding: 1.5em; }
+@media screen and (min-width: 700px) { .section-about__text--interior { font-size: 1.3em; } }
 
 @-webkit-keyframes fadeIn { 0% { opacity: 0; }
   100% { opacity: 1; } }
@@ -367,7 +375,8 @@ h3 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #1a5fa
 /* paragraph */
 p { font-size: 1.1em; line-height: 1.5; }
 
-.highlight { font-size: 1.2em; font-weight: 600; color: #4d4d4d; text-align: center; }
+.introduction { font-size: 1.2em; font-weight: 500; color: #4d4d4d; text-align: center; }
+@media screen and (min-width: 700px) { .introduction { font-size: 1.4em; } }
 
 /* secondary layout */
 .panel-secondary-container { background-color: #1a5fab; position: relative; }
