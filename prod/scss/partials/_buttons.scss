@@ -19,11 +19,12 @@
 }
 
 .button--large {
-  padding: 1em 1.25em;
-  font-size: 1em;
+  padding: 1em 1em;
+  font-size: .9em;
   text-align: center;
   @media screen and (min-width: 700px) {
     font-size: 1.2em;
+    padding: 1em 1.25em;
   }
 }
 
@@ -49,6 +50,15 @@
   border-color: $darkgray;
   &:hover {
     background-color: darken($darkgray, 10%);
+  }
+}
+.panel-secondary .button-primary {
+  background-color: white;
+  color: rgb(26,95,171);
+  border-color: white;
+  &:hover {
+    background-color: $cyan;
+    color: white;
   }
 }
 .button-secondary {

@@ -150,7 +150,16 @@ nav {
       background-image: url(../Images/global/envelopeicon.svg);
       background-repeat: no-repeat;
       background-position: bottom center;
-      margin-bottom: -2px;
+      margin-bottom: -10px;
+      @media screen and (min-width: 600px) {
+        margin-bottom: -5px;
+      }
+      @media screen and (min-width: 1000px) {
+        margin-bottom: -3px;
+      }
+      @media screen and (min-width: 1200px) {
+        margin-bottom: -4px;
+      }
     }
     span {
      display: none;
@@ -164,6 +173,7 @@ nav {
     padding-bottom: .75em;
     a:hover {
       border-color: transparent;
+      transform: scale3d(1.1,1.1,1.1);
     }
   }
 
@@ -187,7 +197,6 @@ nav li {
     transform: scale3d(1,1,1);
     &:hover {
       border: 2px solid $blue;
-      transform: scale3d(1.1,1.1,1.1);
     }
   }
   @media screen and (min-width: 600px) {

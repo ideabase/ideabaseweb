@@ -25,9 +25,12 @@
 
 .global-footer__contact {
 	color: $blue;
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin: .5em;
+	@media screen and (min-width: 600px) {
+		font-size: 2em;
+	}
 	a {
 		color: $blue;
 	}
@@ -38,6 +41,10 @@
 	font-size: .6em;
 	text-transform: uppercase;
 	margin-right: .25em;
+	display: block;
+	@media screen and (min-width: 600px) {
+		display: inline;
+	}
 }
 
 .contact__trigger__link--show {
