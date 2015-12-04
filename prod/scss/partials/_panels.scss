@@ -2,7 +2,7 @@
 
 
 .panel-secondary-container {
-	background-color: rgb(26,95,171);
+	background-color: $cyan;
   position: relative;
   &:after {
     position: absolute;
@@ -18,7 +18,7 @@
 
 .panel-primary, .panel-secondary {
 	padding: 1.5em 2em;
-	max-width: 1200px;
+	max-width: 1000px;
 	margin: 0 auto;
   z-index: 200;
   position: relative;
@@ -29,6 +29,7 @@
 
 .panel-secondary {
   color: white;
+  text-align: center;
 }
 .panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight {
   color: white;

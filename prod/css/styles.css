@@ -366,7 +366,7 @@ input[type="button"], input[type="reset"], input[type="submit"] { text-align: le
 /* headings */
 h1 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 2em; color: #00a8e1; }
 
-h2 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 1.2em; color: #1a5fab; letter-spacing: 3px; }
+h2 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 1.2em; color: #1a5fab; letter-spacing: 3px; margin-bottom: 1.5em; }
 @media screen and (min-width: 700px) { h2 { font-size: 1.6em; } }
 
 h3 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #1a5fab; font-size: 1.1em; }
@@ -375,17 +375,18 @@ h3 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #1a5fa
 /* paragraph */
 p { font-size: 1.1em; line-height: 1.5; }
 
-.introduction { font-size: 1.2em; font-weight: 500; color: #4d4d4d; text-align: center; }
+.introduction { font-size: 1.2em; font-weight: 500; color: #4d4d4d; text-align: center; margin-bottom: 0; }
 @media screen and (min-width: 700px) { .introduction { font-size: 1.4em; } }
+.introduction:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 2em; background-color: #1a5fab; display: block; }
 
 /* secondary layout */
-.panel-secondary-container { background-color: #1a5fab; position: relative; }
+.panel-secondary-container { background-color: #00a8e1; position: relative; }
 .panel-secondary-container:after { position: absolute; height: 100%; width: 100%; background-color: rgba(26, 95, 171, 0.8); top: 0; left: 0; display: block; content: ""; }
 
-.panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 1200px; margin: 0 auto; z-index: 200; position: relative; }
+.panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 1000px; margin: 0 auto; z-index: 200; position: relative; }
 @media screen and (min-width: 650px) { .panel-primary, .panel-secondary { padding: 2em 3em; } }
 
-.panel-secondary { color: white; }
+.panel-secondary { color: white; text-align: center; }
 
 .panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight { color: white; }
 
@@ -411,6 +412,21 @@ p { font-size: 1.1em; line-height: 1.5; }
 @media screen and (min-width: 800px) { .section-services__list__item__icon { max-width: 165px; } }
 
 .section-services__list__item a { text-decoration: none; color: #4d4d4d; }
+
+.service-index { padding-top: .5em; padding-bottom: 0; }
+
+.service-index_description { text-align: center; }
+
+.service-index__image__container { max-height: 350px; overflow: hidden; -webkit-clip-path: polygon(50% 17%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0); clip-path: polygon(50% 17%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0); max-width: 1000px; margin: 0 auto; margin-bottom: 2em; margin-top: 2em; background-color: #1a5fab; display: block; content: ""; }
+
+.service-index__examples { -webkit-columns: 100px 2; -moz-columns: 100px 2; columns: 100px 2; text-align: center; list-style-type: none; margin: 0 auto; padding: 0; margin-top: 2em; width: 80%; font-size: 1.3em; }
+
+.service-index__examples__item { color: #1a5fab; margin-bottom: .5em; display: inline-block; }
+@media screen and (min-width: 700px) { .service-index__examples__item { width: 50%; } }
+
+.service-index__icons { -webkit-columns: 50px 4; -moz-columns: 50px 4; columns: 50px 4; margin: 0 auto; text-align: center; }
+.service-index__icons img { max-width: 100px; }
+@media screen and (min-width: 800px) { .service-index__icons { max-width: 500px; } }
 
 /* headings */
 .section-projects { text-align: center; }

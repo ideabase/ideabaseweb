@@ -22902,6 +22902,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/practice.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.73823e+06,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/practice.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/project-sample.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -23069,6 +23080,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/introduction.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dev\/prototype\/patterns\/partials\/price.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/price.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
