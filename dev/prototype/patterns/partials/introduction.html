@@ -1,5 +1,12 @@
 <div class="panel-primary-container">
 <section class="section-introduction panel-primary">
+	<php $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+	if (strpos($url,'process') !== false) {
+	    echo 'This is a process page.';
+	} else {
+	    echo 'This is not a process page.';
+	} ?>
 	<p class="introduction">Our comprehensive service offering supports our clients’ design initiatives from the early discovery phase through implementation.  Whether you’re laying the foundation for your product’s success, or building out and refining your design, we’re here to help.  And we do all of this right here locally in downtown Kent, OH.</p>
 </section>
 </div>

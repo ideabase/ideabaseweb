@@ -321,7 +321,7 @@ nav li a:hover { border: 2px solid #1a5fab; }
 
 .section-about__container { z-index: 100; }
 
-.section-about__title { -webkit-animation-name: fadeInUp; animation-name: fadeInUp; -webkit-animation-delay: .25s; animation-delay: .25s; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; margin-top: 0; padding: 1em; padding-bottom: 0; padding-top: 0; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); color: white; font-size: 1.7em; }
+.section-about__title { margin-top: 0; padding: 1em; padding-bottom: 0; padding-top: 0; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); color: white; font-size: 1.7em; }
 @media screen and (min-width: 700px) { .section-about__title { font-size: 2em; } }
 @media screen and (min-width: 1000px) { .section-about__title { font-size: 3em; } }
 
@@ -391,8 +391,10 @@ p { font-size: 1.1em; line-height: 1.5; }
 /* secondary layout */
 .panel-secondary-container { background-color: #00a8e1; position: relative; }
 
-.panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 1000px; margin: 0 auto; z-index: 200; position: relative; }
+.panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 900px; margin: 0 auto; z-index: 200; position: relative; }
 @media screen and (min-width: 650px) { .panel-primary, .panel-secondary { padding: 2em 3em; } }
+
+@media screen and (min-width: 650px) { .panel-secondary { padding: 3.5em 3em; } }
 
 .panel-secondary { color: white; text-align: center; }
 
@@ -407,7 +409,7 @@ p { font-size: 1.1em; line-height: 1.5; }
 .section-services { text-align: center; }
 
 .section-services__list { list-style-type: none; margin: 0; padding: 0; text-align: center; }
-@media screen and (min-width: 600px) { .section-services__list { text-align: left; max-width: 950px; margin: 0 auto; } }
+@media screen and (min-width: 600px) { .section-services__list { text-align: left; max-width: 700px; margin: 0 auto; } }
 
 .section-services__list__item { *zoom: 1; }
 .section-services__list__item:before, .section-services__list__item:after { content: " "; display: table; }
