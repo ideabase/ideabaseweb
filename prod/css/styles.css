@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,400,400italic);
 * { box-sizing: border-box; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -301,28 +301,29 @@ nav li a:hover { border: 2px solid #1a5fab; }
 
 .active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a { border: 2px solid #1a5fab; }
 
-.section-about { -webkit-animation: fadeIn 1s; animation: fadeIn 1s; text-align: center; background-image: url(../Images/global/practice.jpg); background-attachment: fixed; background-size: cover; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 1em 0em; position: relative; }
-.section-about:after { position: absolute; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.5); top: 0; left: 0; display: block; content: ""; }
-@media screen and (min-width: 500px) { .section-about { padding: 1em 2em; } }
-@media screen and (min-width: 700px) { .section-about { padding: 3em 5em; } }
-@media screen and (min-width: 1000px) { .section-about { padding: 6em 12em; } }
-@media screen and (min-width: 1500px) { .section-about { padding: 10em 26em; } }
+.section-about { -webkit-animation: fadeIn 1s; animation: fadeIn 1s; text-align: center; background-size: 150% auto; background-color: #1a5fab; background-blend-mode: multiply; background-position: center; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: 3em 0em; position: relative; }
+.section-about:after { position: absolute; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.2); top: 0; left: 0; display: block; content: ""; }
+@media screen and (min-width: 500px) { .section-about { padding: 3em 0em; min-height: 200px; } }
+@media screen and (min-width: 700px) { .section-about { padding: 3em 5em; background-size: 115% auto; } }
+@media screen and (min-width: 1000px) { .section-about { padding: 7em 12em; min-height: 250px; } }
+@media screen and (min-width: 1500px) { .section-about { padding: 10em 26em; background-size: 100% auto; } }
 
-@media screen and (min-width: 500px) { .section-about--interior { padding: 1em 2em; } }
-@media screen and (min-width: 700px) { .section-about--interior { padding: 1em 5em; } }
-@media screen and (min-width: 1000px) { .section-about--interior { padding: 1em 12em; } }
-@media screen and (min-width: 1500px) { .section-about--interior { padding: 1em 26em; } }
+.section-about--interior { background-position: center; }
+@media screen and (min-width: 500px) { .section-about--interior { padding: 2em 2em; } }
+@media screen and (min-width: 700px) { .section-about--interior { padding: 2em 5em; } }
+@media screen and (min-width: 1000px) { .section-about--interior { padding: 2em 12em; } }
+@media screen and (min-width: 1500px) { .section-about--interior { padding: 2em 26em; } }
 
-.section-about__title { color: white; font-size: 1.7em; }
-.section-about__title:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 1em; background-color: white; display: block; }
-@media screen and (min-width: 700px) { .section-about__title { font-size: 2em; } }
-@media screen and (min-width: 1000px) { .section-about__title { font-size: 3em; } }
+@media screen and (min-width: 1000px) { .section-about--interior .section-about__title { font-size: 2.5em; } }
 
 .section-about__container { z-index: 100; }
 
-.section-about__title { margin-top: 0; padding: 1em; padding-bottom: 0; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); }
+.section-about__title { margin-top: 0; padding: 1em; padding-bottom: 0; padding-top: 0; margin: 0 auto; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); color: white; font-size: 1.7em; }
+@media screen and (min-width: 700px) { .section-about__title { font-size: 2em; } }
+@media screen and (min-width: 1000px) { .section-about__title { font-size: 3em; } }
 
-.section-about__text { color: white; padding: 2em; max-width: 800px; margin: 0 auto; }
+.section-about__text { color: white; padding: 0 2em; max-width: 800px; margin: 0 auto; }
+.section-about__text:before { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-bottom: 1em; margin-top: 1em; background-color: white; display: block; }
 @media screen and (min-width: 700px) { .section-about__text { font-size: 1.3em; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); } }
 
 .section-about__text--interior { padding: 1.5em; }
@@ -366,22 +367,22 @@ input[type="button"], input[type="reset"], input[type="submit"] { text-align: le
 /* headings */
 h1 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 2em; color: #00a8e1; }
 
-h2 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 1.2em; color: #1a5fab; letter-spacing: 3px; margin-bottom: 1.5em; }
-@media screen and (min-width: 700px) { h2 { font-size: 1.6em; } }
+h2 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-align: center; font-size: 1.3em; color: #1a5fab; letter-spacing: 3px; margin-bottom: 1.5em; }
+@media screen and (min-width: 700px) { h2 { font-size: 1.7em; } }
 
-h3 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #1a5fab; font-size: 1.1em; }
-@media screen and (min-width: 700px) { h3 { font-size: 1.3em; margin-bottom: 0em; } }
+h3 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #1a5fab; font-size: 1.3em; }
+@media screen and (min-width: 700px) { h3 { font-size: 1.5em; margin-bottom: 0em; } }
 
 /* paragraph */
 p { font-size: 1.1em; line-height: 1.5; }
+@media screen and (min-width: 900px) { p { font-size: 1.25em; } }
 
 .introduction { font-size: 1.2em; font-weight: 500; color: #4d4d4d; text-align: center; margin-bottom: 0; }
 @media screen and (min-width: 700px) { .introduction { font-size: 1.4em; } }
 .introduction:after { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-top: 2em; background-color: #1a5fab; display: block; }
 
 /* secondary layout */
-.panel-secondary-container { background-color: #00a8e1; position: relative; background-attachment: fixed; }
-.panel-secondary-container:after { position: absolute; height: 100%; width: 100%; background-color: rgba(26, 95, 171, 0.8); top: 0; left: 0; display: block; content: ""; }
+.panel-secondary-container { background-color: #00a8e1; position: relative; }
 
 .panel-primary, .panel-secondary { padding: 1.5em 2em; max-width: 1000px; margin: 0 auto; z-index: 200; position: relative; }
 @media screen and (min-width: 650px) { .panel-primary, .panel-secondary { padding: 2em 3em; } }
@@ -392,7 +393,8 @@ p { font-size: 1.1em; line-height: 1.5; }
 
 .panel-secondary h1 { color: #00a8e1; }
 
-.panel-projects { background-image: url(../Images/global/practice.jpg); }
+.panel-background-image { background-image: url(../Images/global/practice.jpg); }
+.panel-background-image:after { position: absolute; height: 100%; width: 100%; background-color: rgba(26, 95, 171, 0.8); top: 0; left: 0; display: block; content: ""; z-index: 10; }
 
 /* headings */
 .section-services { text-align: center; }
@@ -405,11 +407,15 @@ p { font-size: 1.1em; line-height: 1.5; }
 .section-services__list__item:after { clear: both; }
 @media screen and (min-width: 600px) { .section-services__list__item { margin-bottom: 1.5em; } }
 
-@media screen and (min-width: 600px) { .section-services__list__item__name { margin-top: 1.5em; } }
+.section-services__list__item__name { margin-bottom: .5em; }
+@media screen and (min-width: 600px) { .section-services__list__item__name { margin-top: 1em; } }
 
 .section-services__list__item__icon { max-width: 125px; }
 @media screen and (min-width: 600px) { .section-services__list__item__icon { float: left; margin-right: 2em; max-width: 155px; } }
 @media screen and (min-width: 800px) { .section-services__list__item__icon { max-width: 165px; } }
+
+.section-services__list__item__description { margin-top: 0; margin-bottom: 1.5em; }
+@media screen and (min-width: 600px) { .section-services__list__item__description { margin-top: .5em; } }
 
 .section-services__list__item a { text-decoration: none; color: #4d4d4d; }
 
@@ -425,7 +431,7 @@ p { font-size: 1.1em; line-height: 1.5; }
 @media screen and (min-width: 700px) { .service-index__examples__item { width: 50%; } }
 
 .service-index__icons { -webkit-columns: 50px 4; -moz-columns: 50px 4; columns: 50px 4; margin: 0 auto; text-align: center; }
-.service-index__icons img { max-width: 100px; }
+.service-index__icons img { width: 100px; max-width: 100%; }
 @media screen and (min-width: 800px) { .service-index__icons { max-width: 500px; } }
 
 /* headings */
@@ -473,6 +479,17 @@ p { font-size: 1.1em; line-height: 1.5; }
   .section-projects__list:after { content: ''; } }
 .section-projects__list__item__thumb { -webkit-transition: .2s all ease-in-out; transition: .2s all ease-in-out; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); border: 4px solid transparent; }
 .section-projects__list__item__thumb:hover { -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); border-color: #00a8e1; }
+
+blockquote { font-family: "Montserrat", sans-serif; display: block; font-size: 1.4em; line-height: 1.5; margin: 2em 0 1em 0; text-transform: uppercase; padding: 0 .5em; }
+blockquote:before, blockquote:after { content: open-quote; color: #1a5fab; font-size: 4em; position: absolute; z-index: -10; margin-left: -.3em; margin-top: -.4em; }
+blockquote:after { content: close-quote; margin-left: -.08em; }
+@media screen and (min-width: 700px) { blockquote { font-size: 2em; } }
+
+cite { display: block; margin-top: 1em; font-size: 1.2rem; font-style: normal; text-transform: none; margin-bottom: 2em; }
+cite:before { content: ""; width: 1.5em; white-space: pre; height: 3px; margin: 0 auto; margin-bottom: 1em; background-color: white; display: block; }
+@media screen and (min-width: 700px) { cite { font-size: 1.4rem; } }
+
+.layout-three-wide:first-child { float: left; }
 
 body { font-family: "Source Sans Pro", sans-serif; }
 

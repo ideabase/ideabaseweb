@@ -1,71 +1,61 @@
 .section-about {
   animation: fadeIn 1s;
   text-align: center;
-  background-image: url(../Images/global/practice.jpg);
-  background-attachment: fixed;
-  background-size: cover;
+  background-size: 150% auto;
+  background-color: $blue;
+  background-blend-mode: multiply;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em 0em;
+  padding: 3em 0em;
   position: relative;
   &:after {
   	position: absolute;
   	height: 100%;
   	width: 100%;
-  	background-color: rgba(black,.5);
+  	background-color: rgba(black,.2);
   	top: 0;
   	left: 0;
   	display: block;
   	content: "";
   }
   @media screen and (min-width: 500px) {
-    padding: 1em 2em;
+    padding: 3em 0em;
+    min-height: 200px;
   }
   @media screen and (min-width: 700px) {
     padding: 3em 5em;
+    background-size: 115% auto;
   }
   @media screen and (min-width: 1000px) {
-  	padding: 6em 12em;
+  	padding: 7em 12em;
+    min-height: 250px;
   }
   @media screen and (min-width: 1500px) {
     padding: 10em 26em;
+    background-size: 100% auto;
   }
 }
 
 .section-about--interior {
+  background-position: center;
   @media screen and (min-width: 500px) {
-    padding: 1em 2em;
+    padding: 2em 2em;
   }
   @media screen and (min-width: 700px) {
-    padding: 1em 5em;
+    padding: 2em 5em;
   }
   @media screen and (min-width: 1000px) {
-    padding: 1em 12em;
+    padding: 2em 12em;
   }
   @media screen and (min-width: 1500px) {
-    padding: 1em 26em;
+    padding: 2em 26em;
   }
 }
-
-.section-about__title {
-  color: white;
-  font-size: 1.7em;
-  &:after {
-    content: "";
-    width: 1.5em;
-    white-space: pre;
-    height: 3px;
-    margin: 0 auto;
-    margin-top: 1em;
-    background-color: white;
-    display: block;
-  }
-  @media screen and (min-width: 700px) {
-    font-size: 2em;
-  }
+.section-about--interior .section-about__title {
   @media screen and (min-width: 1000px) {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 
@@ -77,15 +67,35 @@
   margin-top: 0;
   padding: 1em;
   padding-bottom: 0;
+  padding-top: 0;
   margin: 0 auto;
   text-shadow: 1px 1px 5px rgba(0,0,0,.8);
+  color: white;
+  font-size: 1.7em;
+  @media screen and (min-width: 700px) {
+    font-size: 2em;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 3em;
+  }
 }
 
 .section-about__text {
 	color: white;
-	padding: 2em;
+	padding: 0 2em;
 	max-width: 800px;
 	margin: 0 auto;
+  &:before {
+    content: "";
+    width: 1.5em;
+    white-space: pre;
+    height: 3px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    background-color: white;
+    display: block;
+  }
   @media screen and (min-width: 700px) {
     font-size: 1.3em;
     text-shadow: 1px 1px 5px rgba(0,0,0,.8);

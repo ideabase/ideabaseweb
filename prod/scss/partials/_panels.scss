@@ -4,17 +4,6 @@
 .panel-secondary-container {
 	background-color: $cyan;
   position: relative;
-  background-attachment: fixed;
-  &:after {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba($blue,.8);
-    top: 0;
-    left: 0;
-    display: block;
-    content: "";
-  }
 }
 
 .panel-primary, .panel-secondary {
@@ -39,6 +28,17 @@
   color: rgb(0,168,225);
 }
 
-.panel-projects {
+.panel-background-image {
   background-image: url(../Images/global/practice.jpg);
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($blue,.8);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: 10;
+  }
 }
