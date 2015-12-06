@@ -21,7 +21,10 @@
     font-size: .9em;
   }
   @media screen and (min-width: 700px) {
-    padding: 5em 2em 2em 2em;;
+    padding: 5em 2em 2em 2em;
+    p, a {
+      font-size: .95em;
+    }
   }
 }
 
@@ -86,6 +89,7 @@
   clear: left;
   @media screen and (min-width: 900px) {
     text-align: left;
+    font-size: .95em;
   }
 }
 
@@ -125,6 +129,10 @@
 }
 
 .footer-info__about {
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
   @media screen and (max-width: 900px) {
     display: none;
   }

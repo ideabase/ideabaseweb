@@ -64,6 +64,10 @@
 }
 
 .section-about__title {
+  animation-name: fadeInUp;
+  animation-delay: .25s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
   margin-top: 0;
   padding: 1em;
   padding-bottom: 0;
@@ -97,7 +101,7 @@
     display: block;
   }
   @media screen and (min-width: 700px) {
-    font-size: 1.3em;
+    font-size: 1.4em;
     text-shadow: 1px 1px 5px rgba(0,0,0,.8);
   }
 }
@@ -116,5 +120,19 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }

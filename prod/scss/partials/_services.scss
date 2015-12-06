@@ -92,9 +92,7 @@
   color: $blue;
   margin-bottom: .5em;
   display: inline-block;
-  @media screen and (min-width: 700px) {
-    width: 50%;
-  }
+  width: 100%;
 }
 
 .service-index__icons {
@@ -104,9 +102,6 @@
   img {
     width: 100px;
     max-width: 100%;
-  }
-  @media screen and (min-width: 800px) {
-    max-width: 500px;
   }
 }
 
