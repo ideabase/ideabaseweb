@@ -18,12 +18,12 @@
   margin: 0 auto;
   max-width: 1100px;
   p, a {
-    font-size: .9em;
+    font-size: .8rem;
   }
   @media screen and (min-width: 700px) {
     padding: 5em 2em 2em 2em;
     p, a {
-      font-size: .95em;
+      font-size: .9rem;
     }
   }
 }
@@ -126,6 +126,10 @@
 .footer-info__legal {
   margin: 0;
   padding: 0;
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
 }
 
 .footer-info__about {
