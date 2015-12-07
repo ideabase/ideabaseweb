@@ -2,19 +2,14 @@
   animation: fadeIn 1s;
   text-align: center;
   background-size: 150% auto;
-  background-color: $blue;
-  background-blend-mode: multiply;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 3em 0em;
   position: relative;
   &:after {
   	position: absolute;
   	height: 100%;
   	width: 100%;
-  	background-color: rgba(black,.2);
+  	background-color: rgba($blue,.85);
   	top: 0;
   	left: 0;
   	display: block;
@@ -35,6 +30,28 @@
   @media screen and (min-width: 1500px) {
     padding: 10em 26em;
     background-size: 100% auto;
+  }
+}
+
+.flexbox .section-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundblendmode .section-about {
+  background-color: $blue;
+  background-blend-mode: multiply;
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(black,.2);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: -10
   }
 }
 
@@ -71,7 +88,10 @@
   margin: 0 auto;
   text-shadow: 1px 1px 5px rgba(0,0,0,.8);
   color: white;
-  font-size: 1.7em;
+  font-size: 1.5em;
+  @media screen and (min-width: 500px) {
+    font-size: 1.7em;
+  }
   @media screen and (min-width: 700px) {
     font-size: 2em;
   }
@@ -85,6 +105,8 @@
 	padding: 0 2em;
 	max-width: 800px;
 	margin: 0 auto;
+  font-size: 1em;
+  text-shadow: 1px 1px 5px rgba(0,0,0,.8);
   &:before {
     content: "";
     width: 1.5em;
@@ -96,10 +118,20 @@
     background-color: white;
     display: block;
   }
+  @media screen and (min-width: 500px) {
+    font-size: 1.2em;
+  }
   @media screen and (min-width: 700px) {
     font-size: 1.4em;
-    text-shadow: 1px 1px 5px rgba(0,0,0,.8);
   }
+}
+
+.section-about--interior .section-about__container {
+  padding-top: 5%;
+}
+
+.flexbox .section-about--interior .section-about__container {
+  padding-top: 0;
 }
 
 .section-about__text--interior {

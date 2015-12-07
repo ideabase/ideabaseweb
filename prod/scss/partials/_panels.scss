@@ -35,12 +35,18 @@
 }
 
 .panel-background-image {
-  background-image: url(../Images/global/practice.jpg);
+  background-image: url(../../dev/assets/img/bricks-small.jpg);
+  @media screen and (min-width: 600px) {
+    background-image: url(../../dev/assets/img/bricks-medium.jpg);
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url(../../dev/assets/img/bricks.jpg);
+  }
   &:after {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba($blue,.8);
+    background-color: rgba($blue,.9);
     top: 0;
     left: 0;
     display: block;
