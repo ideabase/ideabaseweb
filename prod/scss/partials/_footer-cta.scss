@@ -15,6 +15,9 @@
 .global-footer__invitation {
 	font-size: 1.1em;
 	margin-bottom: 2em;
+	a {
+		color: $blue;
+	}
 }
 
 .global-footer__cta {

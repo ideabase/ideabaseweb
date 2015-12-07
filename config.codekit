@@ -23098,6 +23098,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dev\/prototype\/patterns\/partials\/case-studies.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/case-studies.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dev\/prototype\/patterns\/partials\/colors.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23242,6 +23251,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dev\/prototype\/patterns\/partials\/succeed.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/succeed.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dev\/prototype\/patterns\/partials\/supplemental-introduction.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23256,6 +23274,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/testimonial.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dev\/prototype\/patterns\/partials\/work.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/work.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
