@@ -36,6 +36,10 @@
 		<a class="button button-primary" href="dev/prototype/templates/home.php">View Prototype</a>
 		<a class="button button-primary" href="dev/prototype/patterns/index.php">View Pattern Library</a>
 		<hr>
+		<h2>Usability Testing</h2>
+		<p>Nov. 2015 - We conducted interviews with past clients and students to determine the top tasks for the website, as well as perception of our brand so far.</p>
+		<a class="button button-primary" href="dev/prototype/templates/home.php">View Usability Script</a>
+		<hr>
 		<h2>Production Website / Content Management System</h2>
 		<p>Nov. 2015 - We conducted interviews with past clients and students to determine the top tasks for the website, as well as perception of our brand so far.</p>
 		<a class="button button-primary" href="prod/">View Production Website</a>
