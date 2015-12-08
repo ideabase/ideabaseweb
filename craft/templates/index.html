@@ -7,18 +7,17 @@
 
 {% block content %}
 	<!-- About Section -->
-			<section class="section-about">
+			<section class="section-header">
 
-			<!-- About Image -->
+			<!-- About Image
 				{% for asset in entry.aboutImage %}
 					<img class="section-about__image" src="{{ asset.getUrl('aboutImageTransform') }}">
 				 {% endfor %}
-			<!-- End About Image -->
+			End About Image -->
 			<!-- About Container -->
-				<div class="section-about__container">
-				 	<h1 class="section-about__title">{{ entry.title }}</h1>
-				 	<h2 class="section-about__tagline">{{ entry.mainTagline }}</h2> 
-				 	<p class="section-about__text">{{ entry.homepageAboutText }}</p>
+				<div class="section-header__container">
+				 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
+				 	<p class="section-header__text">{{ entry.homepageAboutText }}</p>
 				 </div>
 			<!-- End About Container -->	 
 			</section>
@@ -31,15 +30,13 @@
 		<h2>{{ entry.designHeadline }}</h2>
 			<ul class="section-services__list">
 				{% for entry in craft.entries.section('processIndex') %}
-						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-									
+						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}					
 							<li class="section-services__list__item">
 								{% for asset in block.icon1 %}
 							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
 							    <p class="section-services__list__item__description">{{ block.homepageDescription }}</p>
-
 							</li>    		
 						{% endfor %}	
 				{% endfor %}
