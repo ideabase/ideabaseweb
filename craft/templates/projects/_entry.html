@@ -26,7 +26,20 @@
    		<div class="project-entry__image">
    			{% for asset in entry.projectPicture2 %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   			{% endfor %}
+   			{% endfor %} 
    		</div>
+
+      <div>{{ entry.projectUrl }}</div>
+
+        <!-- Display 3 related projects -->
+        {% for relatedEntry in craft.entries({
+            section: 'ideabaseProjects',
+            relatedTo: entry.projectCategory,
+            limit: 3
+        }) %}
+            <a href="{{ relatedEntry.url }}">{{ relatedEntry.title }}</a>
+        {% endfor %}
+
+
    	</section>
 {% endblock %}
