@@ -1,5 +1,6 @@
 .layout-three-wide {
 	padding-bottom: 2em;
+	text-align: center;
 	@media screen and (min-width: 800px) {
 		margin: 0 auto;
 		max-width: 1000px;
@@ -9,9 +10,8 @@
 			padding-right: 1em;
 		}
 		div:nth-of-type(3) {
-			width: 50%;
+			width: 70%;
 			margin: 0 auto;
-			padding-top: 1em;
 			clear: left;
 		}
 	}

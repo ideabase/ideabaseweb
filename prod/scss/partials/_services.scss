@@ -25,6 +25,7 @@
 
 .section-services__list__item__name {
   margin-bottom: .5em;
+  margin-top: 0;
 	@media screen and (min-width: 600px) {
 		margin-top: 1em;
 	}
@@ -84,15 +85,20 @@
   margin: 0 auto;
   padding: 0;
   margin-top: 2em;
-  width: 80%;
-  font-size: 1.3em;
+  width: 95%;
+  font-size: 1.1em
 }
 
 .service-index__examples__item {
   color: $blue;
-  margin-bottom: .5em;
+  margin-bottom: .75em;
   display: inline-block;
   width: 100%;
+}
+
+.service-index__examples__supplemental {
+  font-size: 1em;
+  margin-top: 1.5em;
 }
 
 .service-index__icons {
@@ -105,4 +111,9 @@
   }
 }
 
+@media screen and (min-width: 800px) {
+  .layout-three-wide div:nth-of-type(3) .service-index__icons {
+    width: 65%;
+  }
+}
 
