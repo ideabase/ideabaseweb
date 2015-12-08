@@ -2,9 +2,9 @@
 		<?php include("../patterns/partials/interior-hero-slot-process.html"); ?>
     	<?php include("../patterns/partials/introduction.html"); ?>
     	<div class="layout-three-wide">
-	    	<?php include("../patterns/partials/service-entry-discover.html"); ?>
-	    	<?php include("../patterns/partials/service-entry-discover.html"); ?>
-	    	<?php include("../patterns/partials/service-entry-discover.html"); ?>
+	    	<?php include("../patterns/partials/service-entry-disc.html"); ?>
+	    	<?php include("../patterns/partials/service-entry-design.html"); ?>
+	    	<?php include("../patterns/partials/service-entry-refine.html"); ?>
 	    </div>
         <?php include("../patterns/partials/price.html"); ?>
         <?php include("../patterns/partials/testimonial.html"); ?>

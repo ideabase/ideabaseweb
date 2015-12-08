@@ -1,4 +1,4 @@
-<html>  
+<html class="no-js" lang="en">  
 <title>Pattern Library</title> 
 
 <body> 
@@ -15,5 +15,8 @@
 	?>   
 	<link href="../../../prod/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="../../../../../style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script src="../../../prod/js/modernizr-custom.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="../../../prod/js/custom-scripts-min.js"></script>
 </body> 
 </html>

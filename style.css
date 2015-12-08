@@ -1,11 +1,28 @@
 body {
-	padding: 1.5em;
+	padding: 1em;
+	margin-bottom: 2em;
 }
 
-	#header{
-	margin-top: 5%;
+hr {
+	margin: 2em 0;
+}
+
+.introduction {
+	margin-bottom: 2em;
+}
+
+#header{
 	font-size: 2em;
 	text-align: center;
+}
+
+#header img {
+	width: 225px;
+}
+
+#wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 #navigation {
