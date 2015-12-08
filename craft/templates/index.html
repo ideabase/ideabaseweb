@@ -25,25 +25,29 @@
 	<!-- End About Section -->
 
 	<!-- Services List -->
-	<section class="section-services">
+	<div class="panel-primary-container">
+	<section class="section-services panel-primary">
 		<!-- Process List -->
-		<h2 class="section-services__headline">{{ entry.designHeadline }}</h2>
-			{% for entry in craft.entries.section('processIndex') %}
-				<ul class="section-services__list">
-					{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-						<li>
-						    <div class="section-services__title">{{ block.homeProcessName }}</div> 
-						    <div class="section-services__text">{{ block.homepageDescription }}</div>
-						    		{% for asset in block.icon1 %}
-						       			<img class="section-services__icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-						    		{% endfor %}
-						</li>    		
-					{% endfor %}	
-				</ul>	
-			{% endfor %}
+		<h2>{{ entry.designHeadline }}</h2>
+			<ul class="section-services__list">
+				{% for entry in craft.entries.section('processIndex') %}
+						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+									
+							<li class="section-services__list__item">
+								{% for asset in block.icon1 %}
+							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+							    {% endfor %}
+							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
+							    <p class="section-services__list__item__description">{{ block.homepageDescription }}</p>
+
+							</li>    		
+						{% endfor %}	
+				{% endfor %}
+			</ul>		
 		<!-- End Process List -->	
-		<a class="section-services__button" href="process/">More Services</a>
+		<a class="button button-primary" href="process/">Our Design Process</a>
 	</section>
+	</div>
 
 	<!-- Projects List -->
 	<div class="panel-secondary-container panel-background-image">
