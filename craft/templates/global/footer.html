@@ -1,38 +1,57 @@
 <footer class="global-footer">
-	<section class="footer-form">
-	<p class="footer-form__button">{{ footer.ctaButton }}</p>
-		<h2> {{ footer.footerHeadline }}</h2>
-			<p class="global-footer_text">{{ footer.contactFormDescription }}</p>
+	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
+
+	<section class="footer-form" id="footer-form">
+		<p class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</p>
+		<p class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></p>
+
+
+			<p class="global-footer_invitation">{{ footer.contactFormDescription }}</p>
 			<!-- Contact Form -->
 			<div class="contact-form">{% include 'global/contactform.html' %}</div>
 			<!-- End Contact Form -->
 	</section>
+	<div class="footer-form__button__container">
+		<a id="footer-form-toggle" href="#footer-form-toggle" class="footer-form__button button button-primary button--large">{{ footer.ctaButton }}</a>
+	</div>
 
 
-
-	<section class="footer-info">
-	<p class="global-footer__text">
-		{{ footer.footerAddress }} 
-		{{ footer.callToAction }}
-	</p>
-	<p class="global-footer__image">
-		{% for image in craft.assets.title('Footer-Map') %}
-    		<img src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
-    	{% endfor %}
-	</p>
-	<p class="global-footer__text">
-		{{ footer.footerEmail }}
-		{{ footer.faxNumber }}
-		{{ footer.phoneNumber }}
-		{{ footer.footerBlurb }}
-		{{ footer.copyright }}
-	</p>
+	<div class="footer-info__container">
+		<section class="footer-info">
+			<section class="footer-info__address">
+				<p class="global-footer__text">
+					{{ footer.street }}<br>
+					{{ footer.footerAddress}}
+				</p>
+				<a href="basic-page.php" class="global-footer__directions">Get Directions to Our Office</a>
+			</section>
+			<section class="footer-info__contact">		
+				<p class="global-footer__text">		
+					<span class="global-footer__text__name">P:</span>{{ footer.phoneNumber }}
+				</p>
+				<p class="global-footer__text">
+					<span class="global-footer__text__name">E:</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a>
+				</p>
+			</section>
 
 			<!-- Social Media -->
+			<section class="footer-info__social">
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
-     			{{ block.socialMediaName }}
-     			{{ block.socialMediaLink }}
+     			<a href="{{ block.socialMediaLink }}" class="footer-info__social__icon">{{ block.socialMediaName }}</a>
 			{% endfor %}
+			</section>
 			<!-- End Social Media -->
-	</section>		
+			<section class="footer-info__supplemental">
+				<p class="footer-info__about">	
+					{{ footer.footerBlurb }}
+				</p>
+				<p class="footer-info__about">	
+
+				</p>	
+				<p class="footer-info__legal">
+					{{ footer.copyright }}
+				</p>
+			</section>	
+		</section>	
+	</div>	
 </footer>

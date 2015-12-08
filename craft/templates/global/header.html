@@ -1,9 +1,12 @@
-<header role="banner" id="header">
+<header role="banner">
 	<a href="{{ siteUrl }}">{% for image in craft.assets.title('ideabaselogo') %}
-    <img width="50%" src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
+    <img class="ideabaselogo" src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
     {% endfor %} </a>
-	<nav>
-				<ul class="nav">
+     <span class="nav__trigger">
+    	<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
+	</span>
+	<nav role="navigation">
+				<ul>
 					<li class="nav__item">
 						<a href="{{ url('process') }}" 
 						{% if craft.request.firstSegment == 'process' %}class="active"{% endif %}>Process</a>
@@ -16,6 +19,7 @@
 						<a href="{{ url('people') }}" 
 						{% if craft.request.firstSegment == 'people' %}class="active"{% endif %}>People</a>
 					</li>
-				</ul> 
+      				<li class="nav__contact"><a href="#footer-form" id="contact-toggle"><span>Contact Us</span></a></li>
+      			</ul> 
 	</nav>
 </header>

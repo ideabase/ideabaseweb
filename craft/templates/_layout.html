@@ -10,7 +10,7 @@
  #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en-US">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +26,12 @@
 			{% endblock %}
 		</main>
 		{% include 'global/footer.html' %}
-	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>	
+	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
+
+
+<script src="{{ siteUrl }}/js/modernizr-custom.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{ siteUrl }}/js/custom-scripts-min.js"></script>
 </body>
+
 </html>
