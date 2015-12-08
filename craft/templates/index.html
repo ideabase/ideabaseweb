@@ -46,20 +46,26 @@
 	</section>
 
 	<!-- Projects List -->
-	<section class="project-list">
-		<h2 class="project-list__title">{{ entry.projectsHeadline }}</div></h2>
-		<p class="project-list__text">{{ entry.projectsDescription }}</p>
+	<div class="panel-secondary-container panel-background-image">
+	<section class="section-projects panel-secondary">
+		<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
+		<p class="section-projects__description">{{ entry.projectsDescription }}</p>
 
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
-		    <ul class="project-list__list">
-			    <li>
-			        <h3 class="project-list__item-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			        <p class="project-list__link"><a href="{{ entry.url }}">Continue reading</a></p>
+		    <ul class="section-projects__list">
+			    <li class="section-projects__list__item">
+				    <a href="{{ entry.url }}">
+							{% for asset in entry.projectPicture %}
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   							{% endfor %}
+				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
+				    </a>
 			    </li>
 		    </ul>
 		{% endfor %}
-		<h3 class="project-list__button"><a href="projects/">More Projects</a></h3>
+		<a class="button button-primary" href="projects/">More Projects</a>
 	</section>
+	</div>
 	<!-- End Projects List -->
 
 {% endblock %}
