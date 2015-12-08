@@ -51,18 +51,18 @@
 		<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
 		<p class="section-projects__description">{{ entry.projectsDescription }}</p>
 
+		<ul class="section-projects__list">
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
-		    <ul class="section-projects__list">
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 							{% for asset in entry.projectPicture %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
    							{% endfor %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
 			    </li>
-		    </ul>
 		{% endfor %}
+		</ul>
 		<a class="button button-primary" href="projects/">More Projects</a>
 	</section>
 	</div>
