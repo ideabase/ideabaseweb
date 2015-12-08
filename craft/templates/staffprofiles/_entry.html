@@ -26,5 +26,14 @@
      			{{ block.staffSocLink }}
 			{% endfor %}
 		<!-- End Staff Social Media -->
+		<section>
+		<h2>Recent Projects and Blogs</h2>
+		    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
+       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+    		{% endfor %}
+    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
+       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+    		{% endfor %}	
+    	</section>	
 	</section>
 {% endblock %}
