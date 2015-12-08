@@ -86,20 +86,24 @@ margin-top: .5em;
     letter-spacing: 3px;
     position: relative;
     &:after {
-      content: "▾";
-      padding-left: .9em;
-      font-size: 1.3em;
-      position: absolute;
-      top: 19%;
+      content: "";
+          background-image: url(../Images/global/arrow-down-white.svg);
+          background-size: auto;
+          background-repeat: no-repeat;
+          font-size: 1.3em;
+          position: absolute;
+          top: 35%;
+          height: 10px;
+          width: 10px;
+          right: 10px;
+          display: block;
     }
   }
   .nav__trigger__link.nav__trigger__link--show {
     background-color: $cyan;
     &:after {
-      content: "✕";
-      font-size: 1.1em;
-      top: 25%;
-      right: 17%;
+      background-image: url(../Images/global/x.svg);
+      right: 11px;
     }
   }
 

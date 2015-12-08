@@ -3,7 +3,7 @@
   text-align: center;
   background-size: 150% auto;
   background-position: center;
-  padding: 3em 0em;
+  padding: 4em 0em;
   position: relative;
   &:after {
   	position: absolute;
@@ -16,11 +16,11 @@
   	content: "";
   }
   @media screen and (min-width: 500px) {
-    padding: 3em 0em;
+    padding: 5em 0em;
     min-height: 200px;
   }
   @media screen and (min-width: 700px) {
-    padding: 3em 5em;
+    padding: 6em 4em;
     background-size: 115% auto;
   }
   @media screen and (min-width: 1000px) {
