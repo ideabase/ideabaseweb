@@ -1,0 +1,115 @@
+/* headings */
+
+.section-projects {
+  text-align: center;
+}
+
+.section-projects__list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  @media screen and ( min-width: 700px ) {
+    columns: 100px 3;
+    width: 90%;
+    margin-bottom: 1em;
+  }
+}
+
+.section-projects__list__item {
+  @media screen and ( min-width: 700px ) {
+    padding: 1.5em;
+  }
+}
+
+.section-projects__list a {
+  text-decoration: none;
+}
+
+.section-projects__list:after {
+  content: 'flickity';
+  display: none; /* hide :after */
+}
+
+/* smaller, dark, rounded square */
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: $blue;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+}
+
+/* position dots in gallery */
+.flickity-page-dots {
+  bottom: -15px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+.flickity-enabled:focus .flickity-viewport {
+  outline: thin dotted;
+  outline: 1px auto -webkit-focus-ring-color;
+}
+
+@media screen and ( max-width: 700px ) {
+
+  .section-projects__list {
+    margin-top: 2em;
+  }
+
+  .section-projects__list__item {
+    width: 100%; /* full width */
+    height: auto; /* height of gallery */
+    margin-right: 10px;
+  }
+  .section-projects__list__item__thumb {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and ( min-width: 700px ) {
+  /* disable Flickity for large devices */
+  .section-projects__list:after {
+    content: '';
+  }
+}
+
+.section-projects__list__item__thumb {
+  transition: .2s all ease-in-out;
+  transform:scale(1);
+  border: 4px solid transparent;
+   &:hover {
+     transform:scale(1.05);
+     border-color: $cyan;
+   }
+}

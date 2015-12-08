@@ -12,7 +12,7 @@ $( "#navshow" ).click(function() {
 $( "#footer-form-toggle" ).click(function() {
   $( "#footer-form" ).toggleClass( "form--show" );
   $( "#footer-form-toggle" ).toggleClass( "contact__trigger__link--show" );
-  var contactclose = "Maybe Later?";
+  var contactclose = "Maybe Later? :(";
   var contactdefault = "Get In Touch Today";
   $( "#footer-form-toggle" ).text(contactdefault);
   $( ".contact__trigger__link--show" ).text(contactclose);
@@ -22,10 +22,19 @@ $( "#footer-form-toggle" ).click(function() {
 $( "#contact-toggle" ).click(function() {
   $( "#footer-form" ).addClass( "form--show" );
   $( "#footer-form-toggle" ).addClass( "contact__trigger__link--show" );
-  var contactclose = "Maybe Later?";
+  var contactclose = "Maybe Later? :(";
   var contactdefault = "Get In Touch Today";
   $( "#footer-form-toggle" ).text(contactdefault);
   $( ".contact__trigger__link--show" ).text(contactclose);
   $("html, body").animate({ scrollTop: $('#footer-form').offset().top }, 1000);
   return false;
+});
+
+// Initialize Flickity
+
+$('.section-projects__list').flickity({
+  // options
+  wrapAround: true,
+  contain: true,
+  watchCSS: true
 });

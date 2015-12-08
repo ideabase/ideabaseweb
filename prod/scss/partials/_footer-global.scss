@@ -2,29 +2,147 @@
 
 .global-footer {
 	text-align: center;
-	margin-top: 4em;
+	margin-top: 3em;
 }
 
-.footer-info {
+.footer-info__container {
   background-color: $lightgray;
-  padding: 4em 2em 5em;;
-  margin: $darkgray;
-  font-weight: 600;
-  font-size: .9em;
-  text-align: left;
   top: 50px;
   position: relative;
 }
 
+.footer-info {
+  padding: 3em 2em 2em 2em;;
+  font-weight: 500;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 1100px;
+  p, a {
+    font-size: .8rem;
+  }
+  @media screen and (min-width: 700px) {
+    padding: 5em 2em 2em 2em;
+    p, a {
+      font-size: .85rem;
+    }
+  }
+}
+
 .footer-info__address, .footer-info__contact {
-	padding: 0 5em;
+	width: 200px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  font-weight: 600;
+  p, a {
+    font-size: .9rem;
+  }
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+  @media screen and (min-width: 700px) {
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  @media screen and (min-width: 900px) {
+    width: 33%;
+    text-align: left;
+  }
+  @media screen and (min-width: 1100px) {
+    width: 38%;
+    text-align: left;
+  }
+}
+
+.global-footer__text {
+  margin: 0;
+  padding: 0;
 }
 
 .footer-info__social {
   text-align: center;
+  @include clearfix;
+  width: 240px;
+  margin: 1.5em auto 0 auto;
+  @media screen and (min-width: 700px) {
+    clear: left;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 29%;
+    float: right;
+    clear: none;
+    text-align: left;
+  }
+  @media screen and (min-width: 1100px) {
+    width: 24%;
+  }
+}
+
+.global-footer__text__name {
+  color: $blue;
+  padding-right: .5em;
 }
 
 .footer-info__supplemental {
 	text-align: center;
-	font-size: .9em;
+ 
+	font-size: .85em;
+  width: 100%;
+  clear: left;
+  @media screen and (min-width: 900px) {
+    text-align: left;
+    font-size: .85em;
+  }
+}
+
+.footer-info__social__icon {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  float: left;
+  display: inline;
+  width: 35px;
+  height: 35px;
+  margin-left: .15rem;
+  margin-right: .15rem;
+  text-indent: -9999px;
+  &[href*="facebook.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+  &[href*="flickr.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+  &[href*="linkedin.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+  &[href*="twitter.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+  &[href*="youtube.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+  &[href*="instagram.com"] {
+    background-image: url(../../dev/assets/img/social-sample.png);
+  }
+}
+
+.footer-info__legal {
+  margin: 0;
+  padding: 0;
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.footer-info__about {
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 }

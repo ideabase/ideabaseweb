@@ -11,12 +11,21 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
   color: rgb(26,95,171);
   letter-spacing: 3px;
+  margin-bottom: 1.5em;
+  @media screen and (min-width: 700px) {
+    font-size: 1.7em;
+  }
 }
 h3 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   color: rgb(26,95,171);
+  font-size: 1.3em;
+  @media screen and (min-width: 700px) {
+    font-size: 1.5em;
+    margin-bottom: 0em;
+  }
 }

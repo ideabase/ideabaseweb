@@ -2,30 +2,30 @@
 
 
 .panel-secondary-container {
-	background-color: rgb(26,95,171);
+	background-color: $cyan;
   position: relative;
-  &:after {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba($blue,.8);
-    top: 0;
-    left: 0;
-    display: block;
-    content: "";
-  }
 }
 
 .panel-primary, .panel-secondary {
-	padding: 2em 3em;
-	max-width: 1200px;
+	padding: 1.5em 2em;
+	max-width: 900px;
 	margin: 0 auto;
   z-index: 200;
   position: relative;
+  @media screen and (min-width: 650px) {
+    padding: 2em 3em;
+  }
+}
+
+.panel-secondary {
+  @media screen and (min-width: 650px) {
+    padding: 3.5em 3em;
+  }
 }
 
 .panel-secondary {
   color: white;
+  text-align: center;
 }
 .panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight {
   color: white;
@@ -33,12 +33,24 @@
 .panel-secondary h1 {
   color: rgb(0,168,225);
 }
-.panel-secondary .button-primary {
-  background-color: white;
-  color: rgb(26,95,171);
-  border-color: white;
-}
 
-.panel-projects {
-  background-image: url(../Images/global/practice.jpg);
+.panel-background-image {
+  background-image: url(../../dev/assets/img/bricks-small.jpg);
+  @media screen and (min-width: 600px) {
+    background-image: url(../../dev/assets/img/bricks-medium.jpg);
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url(../../dev/assets/img/bricks.jpg);
+  }
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($blue,.9);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: 10;
+  }
 }

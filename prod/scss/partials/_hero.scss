@@ -1,65 +1,143 @@
-.section-about {
+.section-header {
   animation: fadeIn 1s;
   text-align: center;
-  background-image: url(../Images/global/practice.jpg);
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2em 3em;
+  background-size: 150% auto;
+  background-position: center;
+  padding: 4em 0em;
   position: relative;
   &:after {
   	position: absolute;
   	height: 100%;
   	width: 100%;
-  	background-color: rgba(black,.5);
+  	background-color: rgba($blue,.85);
   	top: 0;
   	left: 0;
   	display: block;
   	content: "";
   }
+  @media screen and (min-width: 500px) {
+    padding: 5em 0em;
+    min-height: 200px;
+  }
+  @media screen and (min-width: 700px) {
+    padding: 6em 4em;
+    background-size: 115% auto;
+  }
   @media screen and (min-width: 1000px) {
-  	padding: 5em 15em;
+  	padding: 7em 12em;
+    min-height: 250px;
   }
   @media screen and (min-width: 1500px) {
-    padding: 10em 30em;
+    padding: 10em 26em;
+    background-size: 100% auto;
   }
 }
 
-.section-about__title {
-  color: white;
+.flexbox .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundblendmode .section-header {
+  background-color: $blue;
+  background-blend-mode: multiply;
   &:after {
-    content: "";
-    width: 1.5em;
-    white-space: pre;
-    height: 3px;
-    margin: 0 auto;
-    margin-top: 1em;
-    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(black,.2);
+    top: 0;
+    left: 0;
     display: block;
+    content: "";
   }
+}
+
+.section-header--interior {
+  background-position: center;
+  @media screen and (min-width: 500px) {
+    padding: 2em 2em;
+  }
+  @media screen and (min-width: 700px) {
+    padding: 2em 5em;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 2em 12em;
+  }
+  @media screen and (min-width: 1500px) {
+    padding: 2em 26em;
+  }
+}
+.section-header--interior .section-header__title {
   @media screen and (min-width: 1000px) {
     font-size: 2.5em;
   }
 }
 
-.section-about__container {
+.section-header__container {
 	z-index: 100;
 }
 
-.section-about__title {
+.section-header__title {
   margin-top: 0;
   padding: 1em;
   padding-bottom: 0;
+  padding-top: 0;
   margin: 0 auto;
   text-shadow: 1px 1px 5px rgba(0,0,0,.8);
+  color: white;
+  font-size: 1.5em;
+  @media screen and (min-width: 500px) {
+    font-size: 1.7em;
+  }
+  @media screen and (min-width: 700px) {
+    font-size: 2em;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 3em;
+  }
 }
 
-.section-about__text {
+.section-header__text {
 	color: white;
-	padding: 2em;
-	max-width: 500px;
+	padding: 0 2em;
+	max-width: 800px;
 	margin: 0 auto;
+  font-size: 1em;
+  text-shadow: 1px 1px 5px rgba(0,0,0,.8);
+  &:before {
+    content: "";
+    width: 1.5em;
+    white-space: pre;
+    height: 3px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    background-color: white;
+    display: block;
+  }
+  @media screen and (min-width: 500px) {
+    font-size: 1.2em;
+  }
+  @media screen and (min-width: 700px) {
+    font-size: 1.4em;
+  }
+}
+
+.section-header--interior .section-header__container {
+  padding-top: 5%;
+}
+
+.flexbox .section-header--interior .section-header__container {
+  padding-top: 0;
+}
+
+.section-header__text--interior {
+  padding: 1.5em;
+  @media screen and (min-width: 700px) {
+    font-size: 1.3em;
+  }
 }
 
 
@@ -69,5 +147,19 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }

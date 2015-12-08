@@ -1,9 +1,13 @@
 @import 'partials/_partials_.scss';
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,400,400italic);
 
 body {
   font-family: $source;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* color */
@@ -28,13 +32,5 @@ body {
 }
 .swatch-lightgray {
   background-color: rgb(188,190,192);
-}
-
-
-/* primary layout */
-
-.content-primary {
-    padding: 1em 3em;
-    clear: left;
 }
 

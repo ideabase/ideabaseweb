@@ -4,9 +4,515 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>IdeaBase: Home Page Template</title>
-      <link href="../../../prod/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
    </head>
-     <script src="../../../prod/js/modernizr-custom.min.js"></script>
+   <!-- Critical Path CSS Goes Here -->
+      <style type="text/css">
+        * {
+          box-sizing: border-box;
+        }
+
+        html {
+          font-family: sans-serif;
+          -ms-text-size-adjust: 100%;
+          -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+          margin: 0;
+        }
+
+        header,
+        main,
+        nav,
+        section {
+          display: block;
+        }
+
+        a {
+          background-color: transparent;
+        }
+
+        h1 {
+          font-size: 2em;
+          margin: 0.67em 0;
+        }
+
+        img {
+          border: 0;
+        }
+
+        .contact-form label {
+          display: none;
+        }
+
+        header {
+          text-align: center;
+          *zoom: 1;
+          margin-bottom: 1em;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        header:before,
+        header:after {
+          content: " ";
+          display: table;
+        }
+
+        header:after {
+          clear: both;
+        }
+
+        @media screen and (min-width: 600px) {
+          header {
+            margin-bottom: 1.5em;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          header {
+            margin-bottom: 1em;
+          }
+        }
+
+        .ideabaselogo {
+          max-width: 300px;
+        }
+
+        header ul {
+          margin: 0;
+          padding: 0;
+        }
+
+        .ideabaselogo {
+          margin-top: .5em;
+        }
+
+        @media screen and (min-width: 700px) {
+          .ideabaselogo {
+            max-width: 325px;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          .ideabaselogo {
+            text-align: left;
+            width: 40%;
+            float: left;
+            margin-left: 1em;
+          }
+
+          nav {
+            margin-top: 2em;
+            width: 60%;
+            text-align: right;
+            float: right;
+            margin-right: 1.4em;
+            font-size: .85em;
+          }
+        }
+
+        .nav__trigger {
+          display: none;
+        }
+
+        .nav__trigger__link {
+          display: inline-block;
+          background-color: #1a5fab;
+          padding: .9em 4em 1em 2em;
+          text-decoration: none;
+          color: white;
+          margin-bottom: 1em;
+          font-family: "Montserrat",sans-serif;
+          text-transform: uppercase;
+          font-size: .7em;
+          letter-spacing: 3px;
+          position: relative;
+        }
+
+        .nav__trigger__link:after {
+          content: "▾";
+          padding-left: .9em;
+          font-size: 1.3em;
+          position: absolute;
+          top: 19%;
+        }
+
+        nav {
+          -webkit-transition: max-height 0.05s ease-out;
+          transition: max-height 0.05s ease-out;
+        }
+
+        nav a {
+          color: #1a5fab;
+        }
+
+        @media screen and (min-width: 600px) {
+          nav {
+            display: block;
+            height: auto;
+            -webkit-transition: none;
+            transition: none;
+          }
+
+          nav li {
+            height: auto;
+            opacity: 1;
+            -webkit-transition: none;
+            transition: none;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          nav {
+            margin-top: 2em;
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          nav {
+            margin-top: 1.5em;
+          }
+        }
+
+        .nav__contact a {
+          color: #1a5fab;
+          width: 2em;
+          height: 2em;
+          background-size: 100% auto;
+          display: inline-block;
+          background-repeat: no-repeat;
+          background-position: bottom center;
+          margin-bottom: -10px;
+        }
+
+        @media screen and (min-width: 600px) {
+          .nav__contact a {
+            margin-bottom: -5px;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          .nav__contact a {
+            margin-bottom: -3px;
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          .nav__contact a {
+            margin-bottom: -4px;
+          }
+        }
+
+        .nav__contact span {
+          display: none;
+        }
+
+        .nav__contact {
+          background-color: white;
+          margin-bottom: 0;
+          padding-top: .75em;
+          padding-bottom: .75em;
+        }
+
+        nav li {
+          list-style-type: none;
+          font-family: "Montserrat",sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 1em;
+          letter-spacing: 2px;
+        }
+
+        nav li a {
+          color: #1a5fab;
+          padding: .4em;
+          text-decoration: none;
+          -webkit-transition: .25s color ease-in;
+          transition: .25s color ease-in;
+          border: 2px solid transparent;
+          -webkit-transition: .3s all ease-in-out;
+          transition: .3s all ease-in-out;
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+
+        @media screen and (min-width: 600px) {
+          nav li {
+            display: inline;
+            margin: 1.5em;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          nav li {
+            font-size: 1.2em;
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          nav li {
+            font-size: 1.3em;
+          }
+        }
+
+        .section-about {
+          -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+          text-align: center;
+          background-size: 150% auto;
+          background-position: center;
+          padding: 3em 0em;
+          position: relative;
+        }
+
+        .section-about:after {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(26,95,171,0.85);
+          top: 0;
+          left: 0;
+          display: block;
+          content: "";
+        }
+
+        @media screen and (min-width: 500px) {
+          .section-about {
+            padding: 3em 0em;
+            min-height: 200px;
+          }
+        }
+
+        @media screen and (min-width: 700px) {
+          .section-about {
+            padding: 3em 5em;
+            background-size: 115% auto;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          .section-about {
+            padding: 7em 12em;
+            min-height: 250px;
+          }
+        }
+
+        .section-about__container {
+          z-index: 100;
+        }
+
+        .section-about__title {
+          margin-top: 0;
+          padding: 1em;
+          padding-bottom: 0;
+          padding-top: 0;
+          margin: 0 auto;
+          text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+          color: white;
+          font-size: 1.5em;
+        }
+
+        @media screen and (min-width: 500px) {
+          .section-about__title {
+            font-size: 1.7em;
+          }
+        }
+
+        @media screen and (min-width: 700px) {
+          .section-about__title {
+            font-size: 2em;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          .section-about__title {
+            font-size: 3em;
+          }
+        }
+
+        .section-about__text {
+          color: white;
+          padding: 0 2em;
+          max-width: 800px;
+          margin: 0 auto;
+          font-size: 1em;
+          text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        }
+
+        .section-about__text:before {
+          content: "";
+          width: 1.5em;
+          white-space: pre;
+          height: 3px;
+          margin: 0 auto;
+          margin-bottom: 1em;
+          margin-top: 1em;
+          background-color: white;
+          display: block;
+        }
+
+        @media screen and (min-width: 500px) {
+          .section-about__text {
+            font-size: 1.2em;
+          }
+        }
+
+        @media screen and (min-width: 700px) {
+          .section-about__text {
+            font-size: 1.4em;
+          }
+        }
+
+        h1 {
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 2em;
+          color: #00a8e1;
+        }
+
+        h2 {
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.3em;
+          color: #1a5fab;
+          letter-spacing: 3px;
+          margin-bottom: 1.5em;
+        }
+
+        @media screen and (min-width: 700px) {
+          h2 {
+            font-size: 1.7em;
+          }
+        }
+
+        h3 {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 600;
+          color: #1a5fab;
+          font-size: 1.3em;
+        }
+
+        @media screen and (min-width: 700px) {
+          h3 {
+            font-size: 1.5em;
+            margin-bottom: 0em;
+          }
+        }
+
+        p {
+          font-size: 1.1em;
+          line-height: 1.5;
+        }
+
+        @media screen and (min-width: 900px) {
+          p {
+            font-size: 1.25em;
+          }
+        }
+
+        .panel-primary {
+          padding: 1.5em 2em;
+          max-width: 900px;
+          margin: 0 auto;
+          z-index: 200;
+          position: relative;
+        }
+
+        @media screen and (min-width: 650px) {
+          .panel-primary {
+            padding: 2em 3em;
+          }
+        }
+
+        .section-services {
+          text-align: center;
+        }
+
+        .section-services__list {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+
+        @media screen and (min-width: 600px) {
+          .section-services__list {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+          }
+        }
+
+        .section-services__list__item {
+          *zoom: 1;
+        }
+
+        .section-services__list__item:before,
+        .section-services__list__item:after {
+          content: " ";
+          display: table;
+        }
+
+        .section-services__list__item:after {
+          clear: both;
+        }
+
+        @media screen and (min-width: 600px) {
+          .section-services__list__item {
+            margin-bottom: 1.5em;
+          }
+        }
+
+        .section-services__list__item__name {
+          margin-bottom: .5em;
+        }
+
+        @media screen and (min-width: 600px) {
+          .section-services__list__item__name {
+            margin-top: 1em;
+          }
+        }
+
+        .section-services__list__item__icon {
+          max-width: 125px;
+        }
+
+        @media screen and (min-width: 600px) {
+          .section-services__list__item__icon {
+            float: left;
+            margin-right: 2em;
+            max-width: 155px;
+          }
+        }
+
+        @media screen and (min-width: 800px) {
+          .section-services__list__item__icon {
+            max-width: 165px;
+          }
+        }
+
+        .section-services__list__item__description {
+          margin-top: 0;
+          margin-bottom: 1.5em;
+        }
+
+        @media screen and (min-width: 600px) {
+          .section-services__list__item__description {
+            margin-top: .5em;
+          }
+        }
+
+        body {
+          font-family: "Source Sans Pro",sans-serif;
+        }
+
+        img {
+          max-width: 100%;
+        }
+      </style>
   <body>
     <header role="banner">
     <a href="home.php"><img class="ideabaselogo" src="../../assets/img/ideabaselogo.svg" alt="IdeaBase"/></a>
@@ -22,3 +528,4 @@
     </ul>
   </nav>
 </header>
+<main>
