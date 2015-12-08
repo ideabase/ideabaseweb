@@ -1,4 +1,4 @@
-.section-about {
+.section-header {
   animation: fadeIn 1s;
   text-align: center;
   background-size: 150% auto;
@@ -33,13 +33,13 @@
   }
 }
 
-.flexbox .section-about {
+.flexbox .section-header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.backgroundblendmode .section-about {
+.backgroundblendmode .section-header {
   background-color: $blue;
   background-blend-mode: multiply;
   &:after {
@@ -54,7 +54,7 @@
   }
 }
 
-.section-about--interior {
+.section-header--interior {
   background-position: center;
   @media screen and (min-width: 500px) {
     padding: 2em 2em;
@@ -69,17 +69,17 @@
     padding: 2em 26em;
   }
 }
-.section-about--interior .section-about__title {
+.section-header--interior .section-header__title {
   @media screen and (min-width: 1000px) {
     font-size: 2.5em;
   }
 }
 
-.section-about__container {
+.section-header__container {
 	z-index: 100;
 }
 
-.section-about__title {
+.section-header__title {
   margin-top: 0;
   padding: 1em;
   padding-bottom: 0;
@@ -99,7 +99,7 @@
   }
 }
 
-.section-about__text {
+.section-header__text {
 	color: white;
 	padding: 0 2em;
 	max-width: 800px;
@@ -125,15 +125,15 @@
   }
 }
 
-.section-about--interior .section-about__container {
+.section-header--interior .section-header__container {
   padding-top: 5%;
 }
 
-.flexbox .section-about--interior .section-about__container {
+.flexbox .section-header--interior .section-header__container {
   padding-top: 0;
 }
 
-.section-about__text--interior {
+.section-header__text--interior {
   padding: 1.5em;
   @media screen and (min-width: 700px) {
     font-size: 1.3em;

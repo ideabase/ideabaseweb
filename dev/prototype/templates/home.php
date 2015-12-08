@@ -1,15 +1,15 @@
 <?php include("../patterns/partials/header.html"); ?>
 	<style type="text/css">
-		.section-about { 
+		.section-header { 
 			background-image: url(../../assets/img/practice-small.jpg)
 		}
 		@media screen and (min-width: 600px) {
-			.section-about {
+			.section-header {
 			background-image: url(../../assets/img/practice-medium.jpg)
 			}
 		}
 		@media screen and (min-width: 1000px) {
-			.section-about {
+			.section-header {
 			background-image: url(../../assets/img/practice.jpg)
 			}
 		}
