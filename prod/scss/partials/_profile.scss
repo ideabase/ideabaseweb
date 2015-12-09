@@ -4,30 +4,44 @@
 	margin-bottom: 3em;
 	display: block;
 	position: relative;
-	padding-bottom: 50px;
 	transition: .3s all ease-in-out;
 	&:hover{ 
 		.people__profile-item__info {
-			background-color: $cyan;
+			background-color: rgba($cyan,.9);
 			height: 37%;
 			transition: .3s all ease-in-out;
 		}
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 550px) {
 	.people__profile-item {
-		width: 50%;
+		width: 45%;
 		float: left;
-		padding: 2em;
 	}
 
 	.people .people__profile-item:nth-child(odd) {
-		clear: right;
+		margin-right: 5%;
 	}
 
 	.people {
 		@include clearfix;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.people__profile-item {
+		width: 31.3%;
+		float: left;
+		margin: 2em 1%;
+	}
+
+	.people .people__profile-item:nth-child(odd) {
+		margin: 2em 1%;
+	}
+
+	.people .people__profile-item:nth-child(4n+1) {
+		clear: left;
 	}
 }
 
@@ -36,8 +50,9 @@
 }
 
 .people__profile-item__info {
-	background-color: $blue;
+	background-color: rgba($blue,.95);
 	color: white;
+	transition: .3s all ease-in-out;
 	width: 100%;
 	margin: 0 auto;
 	padding: 1.5em 2em;
@@ -61,25 +76,36 @@
 	text-transform: uppercase;
 	font-family: $mont;
 	text-decoration: none;
+	text-align: center;
 }
 
 .people__profile-item__first-name {
-	font-size: 2.5em;
+	font-size: 2.3em;
 	margin-bottom: 0em;
 	letter-spacing: 1px;
 	font-weight: 600;
+	@media screen and (min-width: 550px) {
+		font-size: 2.2em;
+	}
 }
 
 .people__profile-item__last-name {
 	margin-bottom: 1em;
 	letter-spacing: 4px;
 	font-weight: 600;
+	@media screen and (min-width: 550px) {
+		margin-bottom: .5em;
+	}
 }
 
 .people__profile-item__title {
 	margin: 0;
-	font-size: 1.1em;
+	font-size: 1em;
 	text-decoration: none;
+	text-align: center;
+	@media screen and (min-width: 550px) {
+		font-size: .8em;
+	}
 }
 
 .people__profile-item {
