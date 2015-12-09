@@ -12,6 +12,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en-US">
 <head>
+	<style type="text/css">
+			.section-header { 
+				background-image: url(../../assets/img/practice-small.jpg)
+			}
+			@media screen and (min-width: 600px) {
+				.section-header {
+				background-image: url(../../assets/img/practice-medium.jpg)
+				}
+			}
+			@media screen and (min-width: 1000px) {
+				.section-header {
+				background-image: url(../../assets/img/practice.jpg)
+				}
+			}
+	</style>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
