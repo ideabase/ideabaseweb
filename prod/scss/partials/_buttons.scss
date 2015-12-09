@@ -51,6 +51,7 @@
   border-color: $blue;
   &:hover {
     background-color: $cyan;
+    border-color: $cyan;
   }
 }
 
@@ -68,6 +69,7 @@
   &:hover {
     background-color: $cyan;
     color: white;
+    border-color: $cyan;
   }
 }
 

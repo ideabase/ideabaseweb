@@ -23023,6 +23023,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/profile-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35136,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/profile-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/project-sample-small.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -23834,6 +23845,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_partials_.scss",
 		"outputAbbreviatedPath": "\/prod\/scss\/css\/_partials_.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/prod\/scss\/partials\/_profile.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_profile.scss",
+		"outputAbbreviatedPath": "\/prod\/scss\/css\/_profile.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

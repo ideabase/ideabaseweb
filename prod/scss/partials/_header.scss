@@ -39,9 +39,9 @@ margin-top: .5em;
     width: 40%;
     float: left;
     margin-left: 1em;
+    margin-top: 1.1em
   }
   nav {
-    margin-top: 2em;
     width: 60%;
     text-align: right;
     float: right;
@@ -123,11 +123,11 @@ nav {
     }
   }
   @media screen and (min-width: 1000px) {
-    margin-top: 2em;
+    margin-top: 2.7em;
 
   }
   @media screen and (min-width: 1200px) {
-    margin-top: 1.5em;
+    margin-top: 2.6em
   }
 }
 
@@ -199,14 +199,16 @@ nav li {
   letter-spacing: 2px;
   a {
     color: rgb(26,95,171);
-    padding: .4em;
+    padding: .4em 0em;
     text-decoration: none;
     transition: .25s color ease-in;
-    border: 2px solid transparent;
-    transition: .3s all ease-in-out;
+    border-bottom: 3px solid transparent;
+    transition: .3s color ease-in-out;
     transform: scale3d(1,1,1);
     &:hover {
-      border: 2px solid $blue;
+      //border: 2px solid $blue;
+      //background-color: $blue;
+      color: $cyan;
     }
   }
   @media screen and (min-width: 600px) {
@@ -222,5 +224,6 @@ nav li {
 }
 
 .active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a {
-  border: 2px solid $blue;
+  color: $cyan;
+  border-bottom: 3px solid $cyan;
 }

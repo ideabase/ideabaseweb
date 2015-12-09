@@ -1,0 +1,88 @@
+.people__profile-item {
+	width: 75%;
+	margin: 0 auto;
+	margin-bottom: 3em;
+	display: block;
+	position: relative;
+	padding-bottom: 50px;
+	transition: .3s all ease-in-out;
+	&:hover{ 
+		.people__profile-item__info {
+			background-color: $cyan;
+			height: 37%;
+			transition: .3s all ease-in-out;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.people__profile-item {
+		width: 50%;
+		float: left;
+		padding: 2em;
+	}
+
+	.people .people__profile-item:nth-child(odd) {
+		clear: right;
+	}
+
+	.people {
+		@include clearfix;
+	}
+}
+
+.people__profile-item__photo {
+	width: 100%;
+}
+
+.people__profile-item__info {
+	background-color: $blue;
+	color: white;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1.5em 2em;
+	position: absolute;
+	bottom: 0;
+	height: 33%;
+	a {
+		color: white;
+	}
+}
+
+.people__profile-item__info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.people__profile-item__first-name, .people__profile-item__last-name {
+	color: white;
+	margin: 0;
+	text-transform: uppercase;
+	font-family: $mont;
+	text-decoration: none;
+}
+
+.people__profile-item__first-name {
+	font-size: 2.5em;
+	margin-bottom: 0em;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.people__profile-item__last-name {
+	margin-bottom: 1em;
+	letter-spacing: 4px;
+	font-weight: 600;
+}
+
+.people__profile-item__title {
+	margin: 0;
+	font-size: 1.1em;
+	text-decoration: none;
+}
+
+.people__profile-item {
+	color: white;
+	text-decoration: none;
+}
