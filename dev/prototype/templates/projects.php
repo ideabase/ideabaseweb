@@ -15,7 +15,7 @@
     		}
     	</style>
     	<?php include("../patterns/partials/interior-hero-slot-projects.html"); ?>
-    	<?php include("../patterns/partials/introduction.html"); ?>
+    	<?php include("../patterns/partials/introduction-projects.html"); ?>
     	<div class="panel-primary-container">
     	<section class="section-services panel-primary">
 	    	<?php include("../patterns/partials/project.html"); ?>

@@ -7,8 +7,11 @@
 
 .footer-info__container {
   background-color: $lightgray;
-  top: 50px;
+  top: 40px;
   position: relative;
+  @media screen and (min-width: 700px) {
+    top: 50px;
+  }
 }
 
 .footer-info {
@@ -23,7 +26,7 @@
   @media screen and (min-width: 700px) {
     padding: 5em 2em 2em 2em;
     p, a {
-      font-size: .85rem;
+      font-size: .8rem;
     }
   }
 }
@@ -35,7 +38,7 @@
   font-weight: 600;
   text-align: center;
   p, a {
-    font-size: .9rem;
+    font-size: .95rem;
   }
   a {
     color: $blue;
@@ -54,6 +57,24 @@
   @media screen and (min-width: 1100px) {
     width: 38%;
     text-align: left;
+  }
+}
+
+.global-footer__directions {
+  display: inline-block;
+  position: relative;
+  padding-right: 1.1em;
+ &:after {
+    content: "";
+    background-image: url(../Images/global/arrow-right-blue.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    font-size: .5em;
+    height: 10px;
+    width: 7px;
+    position: absolute;
+    right: 0;
+    top: 4px;
   }
 }
 
@@ -144,12 +165,15 @@
 }
 
 .footer-info__logo {
-  width: 175px;
+  width: 125px;
   display: inline-block;
   margin: 0 auto;
   margin-bottom: 1em;
+  margin-top: 1em;
   @media screen and (min-width: 900px) {
-    margin-left:-7px;
+    float: right;
+    margin-top: -3px;
+    width: 150px;
   }
 }
 

@@ -19,24 +19,33 @@
     	<?php include("../patterns/partials/supplemental-introduction.html"); ?>
     	<div class="panel-primary-container">
     	<section class="section-people panel-primary-wide">
+        <h2>Meet Our Team</h2>
             <section class="people">
-            <h2>Meet Our Team</h2>
     		<?php include("../patterns/partials/staffprofile.html"); ?>
+    		<?php include("../patterns/partials/staffprofile2.html"); ?>
     		<?php include("../patterns/partials/staffprofile.html"); ?>
-    		<?php include("../patterns/partials/staffprofile.html"); ?>
+            <?php include("../patterns/partials/staffprofile2.html"); ?>
             <?php include("../patterns/partials/staffprofile.html"); ?>
-            <?php include("../patterns/partials/staffprofile.html"); ?>
-            <?php include("../patterns/partials/staffprofile.html"); ?>
+            <?php include("../patterns/partials/staffprofile2.html"); ?>
             </section>
+            <section class="section-blog-teaser">
+            <h3>From Our Blog</h3>
             <?php include("../patterns/partials/blog-post-teaser.html"); ?>
             <?php include("../patterns/partials/blog-post-teaser.html"); ?>
-                    <section class="people">
+            <a class="button button-primary" href="#">Read More In Our Staff Blog</a>
+            </section>
+                  <section class="people">
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
                     <?php include("../patterns/partials/staffprofile.html"); ?>
                     <?php include("../patterns/partials/staffprofile.html"); ?>
-                    <?php include("../patterns/partials/staffprofile.html"); ?>
-                    <?php include("../patterns/partials/staffprofile.html"); ?>
-                    <?php include("../patterns/partials/staffprofile.html"); ?>
-                    <?php include("../patterns/partials/staffprofile.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
+                    <?php include("../patterns/partials/staffprofile2.html"); ?>
                     </section>
     	</section>
     	</div>
