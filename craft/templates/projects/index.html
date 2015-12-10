@@ -21,18 +21,19 @@
 			<section class="section-services panel-primary">
 					<a href="{{ entry.url }}">
 						<h1 class="project-entry__title">{{ entry.title }}</h1>
+
+							<div class="project-entry__image">
+								{% for asset in entry.projectPicture %}
+			     					<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+			     				{% endfor %}	
+	   						</div>
 						<div class="project-entry__text">{{entry.projectDescription }}</div>
-						<div class="project-entry__image">
-							{% for asset in entry.projectPicture %}
-		     					<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-		     				{% endfor %}	
-   						</div>
 
 						{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
    							{% for entry in relatedAward %}
 								{{ entry.title }}
 							{% endfor %}
-							
+
 						{% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
    							{% for entry in relatedTestimonial %}
 								{{ entry.title }}
