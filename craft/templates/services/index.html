@@ -6,45 +6,79 @@ Services Template
 {% set title = "Services" %}
 
 {% block content %}
-	<section class="service-index">
-		<h1 class="service-index__title">
-			{{ entry.processHeader }}
-		</h1>
-		<p>{{ entry.processDescription }}</p>
-		<div class="service-index__image">
+
+	<section class="section-header section-header__interior">
+    <div class="section-header__container">
+		  <h1 class="service-header__title">{{ entry.processHeader }}</h1>
+    </div>
+  </section>
+  
+  <div class="panel-primary-container">
+  <section class="section-introduction panel-primary">
+		<p class="introduction">{{ entry.processDescription }}</p>
+  </section>
+  </div>  
+		<!--
+    <div class="service-index__image">
+
 			{% for asset in entry.processFeaturedImage %}
        			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     	</div>
     </section>
     <section class="service-index-entry">
-		<!-- Social Media -->
+    -->
+<div class="layout-three-wide">
 {% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
-    {{ block.homeProcessName }} {{ block.homeProcessDescription }}
-    		{% for asset in block.icon1 %}
-       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
 
-    		 {% for asset in block.icon2 %}
-       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
-    		{% for asset in block.icon3 %}
-       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
-    		{% for asset in block.icon4 %}
-       			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
-     <ul>
-    {% for row in block.homeProcessExampleTable %}
-        <li>{{ row.examples }}</li> 
-    {% endfor %}
-    </ul>
+  <div class="panel-primary-container">
+    <section class="service-index panel-primary">
+      <h2 class="service-index__title">{{ block.homeProcessName }}</h2>
+        <div class="service-index-icons">
+            {% for asset in block.icon1 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		 {% for asset in block.icon2 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		{% for asset in block.icon3 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		{% for asset in block.icon4 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+          </div>
+
+          <p class="service-index__description">{{ block.homeProcessDescription }}</p>
+             <ul class="service-index__examples">
+              {% for row in block.homeProcessExampleTable %}
+                  <li class="service-index__examples__item">{{ row.examples }}</li> 
+              {% endfor %}
+            </ul>
+  </div>
+
 {% endfor %}
+    <p class="service-index__examples__supplemental">{{ entry.uxTestingLabDescription }}</p>
+    <a class="button button-primary" href="">{{ entry.uxLabButton }}</a>
+</div>
+<!-- </div> -->
 
 			<!-- End Social Media -->
-		<p>{{ entry.uxTestingLabDescription }}</p>
 
-		<h1>{{ entry.testimonialHeadline }}</h1>
-		<p>{{ entry.testimonialDescription }}</p>
+    <div class="panel-secondary-container panel-background-image">
+      <section class="section-price panel-secondary">
+        <h2>{{ entry.priceHeadline}}</h2>
+        <div class="introduction">{{ entry.priceDescription }}</div>
+      </section>
+      </div>
+<div class="panel-primary-container">
+<section class="testimonial-entry panel-primary">
+		<blockquote class="testimonial-entry__text">{{ entry.testimonialHeadline }}</blockquote>
+		<cite class="testimonial-entry__author">{{ entry.testimonialDescription }}</cite>
+</section>
+</div>    
 {% endblock %}
 
