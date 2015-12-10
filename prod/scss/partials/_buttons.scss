@@ -51,6 +51,7 @@
   border-color: $blue;
   &:hover {
     background-color: $cyan;
+    border-color: $cyan;
   }
 }
 
@@ -68,11 +69,17 @@
   &:hover {
     background-color: $cyan;
     color: white;
+    border-color: $cyan;
+  }
+  &:after {
+    background-image: url(../Images/global/arrow-right-blue.svg);
   }
 }
 
-.panel-secondary .button.button-primary:after {
-  background-image: url(../Images/global/arrow-right-blue.svg);
+.panel-secondary .button.button-primary:hover {
+  &:after {
+  background-image:url(../Images/global/arrow-right-white.svg);
+}
 }
 
 

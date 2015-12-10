@@ -1,0 +1,158 @@
+.people__profile-item {
+	width: 75%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	display: block;
+	position: relative;
+	transition: .3s all ease-in-out;
+	max-width: 250px;
+	&:after {
+		content: "";
+		background-color: rgba($blue,0);
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		z-index: 100;
+		transition: .3s all ease-in-out;
+	}
+	&:hover{ 
+		&:after {
+			background-color: rgba($blue,.3);
+			background-blend-mode: multiply;
+		}
+		.people__profile-item__info {
+			background-color: rgba($cyan,.9);
+			height: 37%;
+			transition: .3s all ease-in-out;
+		}
+	}
+	@media screen and (min-width: 600px) {
+		margin-bottom: 3em;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.people__profile-item {
+		width: 45%;
+		float: left;
+		max-width: inherit;
+	}
+
+	.people .people__profile-item:nth-child(odd) {
+		margin-right: 2.5%;
+		margin-left: 2.5%
+	}
+
+	.people {
+		@include clearfix;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.people__profile-item {
+		width: 30%;
+		float: left;
+		margin: 0em 1% 2em 1%;
+	}
+
+	.people .people__profile-item:nth-child(odd) {
+		margin: 3em 1.9%;
+	}
+
+	.people .people__profile-item:nth-child(3n+1) {
+		clear: left;
+	}
+}
+
+.people__profile-item__photo {
+	width: 100%;
+	position: relative;
+}
+
+.people__profile-item__info {
+	background-color: rgba($blue,.95);
+	color: white;
+	transition: .3s all ease-in-out;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1.5em 2em;
+	position: absolute;
+	bottom: 0;
+	height: 33%;
+	z-index: 1000;
+	a {
+		color: white;
+	}
+}
+
+.people__profile-item__info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.people__profile-item__first-name, .people__profile-item__last-name {
+	color: white;
+	margin: 0;
+	text-transform: uppercase;
+	font-family: $mont;
+	text-decoration: none;
+	text-align: center;
+}
+
+.people__profile-item__first-name {
+	font-size: 1.5em;
+	margin-bottom: 0em;
+	letter-spacing: 1px;
+	font-weight: 600;
+	@media screen and (min-width: 600px) {
+		font-size: 1.3em;
+	}
+	@media screen and (min-width: 700px) {
+		font-size: 1.7em;
+	}
+	@media screen and (min-width: 800px) {
+		font-size: 1.5em;
+	}
+	@media screen and (min-width: 1000px) {
+		font-size: 1.8em;
+	}
+	@media screen and (min-width: 1200px) {
+		font-size: 2em;
+	}
+}
+
+.people__profile-item__last-name {
+	margin-bottom: 1em;
+	letter-spacing: 4px;
+	font-weight: 600;
+	font-size: 1em;
+	@media screen and (min-width: 600px) {
+		margin-bottom: .5em;
+	}
+	@media screen and (min-width: 900px) {
+		font-size: 1.2em;
+		margin-bottom: 1.2em;
+	}
+}
+
+.people__profile-item__title {
+	margin: 0;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+	@media screen and (min-width: 600px) {
+		font-size: .8em;
+	}
+	@media screen and (min-width: 1000px) {
+		font-size: 1em;
+	}
+}
+
+.people__profile-item {
+	color: white;
+	text-decoration: none;
+}
