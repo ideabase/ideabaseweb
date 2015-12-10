@@ -7,12 +7,20 @@
 }
 
 .panel-primary, .panel-secondary {
-	padding: 1.5em 2em;
+	padding: 1.5em 2em 1.5em 2em;
 	max-width: 900px;
   z-index: 200;
   position: relative;
+  margin: 0 auto;
   @media screen and (min-width: 650px) {
-    padding: 2em 3em;
+    padding: 2em 3em 2em 3em;
+  }
+}
+
+.panel-primary {
+  padding: 1.5em 2em 0 2em;
+  @media screen and (min-width: 650px) {
+    padding: 2em 3em 0em 3em;
   }
 }
 
@@ -24,6 +32,7 @@
 }
 
 .panel-secondary {
+  margin-top: 2em;
   @media screen and (min-width: 650px) {
     padding: 3.5em 3em;
   }

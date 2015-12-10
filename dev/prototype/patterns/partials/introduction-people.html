@@ -1,0 +1,12 @@
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+	<php $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+	if (strpos($url,'process') !== false) {
+	    echo 'This is a process page.';
+	} else {
+	    echo 'This is not a process page.';
+	} ?>
+	<p class="introduction">With backgrounds in Visual Communication Design, Public Relations, User Experience, Advertising, Computer Information Systems, Digital Sciences, Marketing and Communications, our diverse team members have one thing in common: they’re passionate about design.</p>
+</section>
+</div>

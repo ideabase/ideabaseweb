@@ -1,27 +1,46 @@
 .people__profile-item {
 	width: 75%;
 	margin: 0 auto;
-	margin-bottom: 3em;
+	margin-bottom: 1em;
 	display: block;
 	position: relative;
 	transition: .3s all ease-in-out;
+	&:after {
+		content: "";
+		background-color: rgba($blue,0);
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		z-index: 100;
+		transition: .3s all ease-in-out;
+	}
 	&:hover{ 
+		&:after {
+			background-color: rgba($blue,.3);
+			background-blend-mode: multiply;
+		}
 		.people__profile-item__info {
 			background-color: rgba($cyan,.9);
 			height: 37%;
 			transition: .3s all ease-in-out;
 		}
 	}
+	@media screen and (min-width: 600px) {
+		margin-bottom: 3em;
+	}
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 600px) {
 	.people__profile-item {
 		width: 45%;
 		float: left;
 	}
 
 	.people .people__profile-item:nth-child(odd) {
-		margin-right: 5%;
+		margin-left: 5%;
 	}
 
 	.people {
@@ -33,11 +52,11 @@
 	.people__profile-item {
 		width: 31.3%;
 		float: left;
-		margin: 2em 1%;
+		margin: 0em 1% 2em 1%;
 	}
 
 	.people .people__profile-item:nth-child(odd) {
-		margin: 2em 1%;
+		margin: 3em 1%;
 	}
 
 	.people .people__profile-item:nth-child(4n+1) {
@@ -47,6 +66,7 @@
 
 .people__profile-item__photo {
 	width: 100%;
+	position: relative;
 }
 
 .people__profile-item__info {
@@ -59,6 +79,7 @@
 	position: absolute;
 	bottom: 0;
 	height: 33%;
+	z-index: 1000;
 	a {
 		color: white;
 	}
@@ -80,12 +101,21 @@
 }
 
 .people__profile-item__first-name {
-	font-size: 2.3em;
+	font-size: 1.7em;
 	margin-bottom: 0em;
 	letter-spacing: 1px;
 	font-weight: 600;
-	@media screen and (min-width: 550px) {
-		font-size: 2.2em;
+	@media screen and (min-width: 600px) {
+		font-size: 1.3em;
+	}
+	@media screen and (min-width: 700px) {
+		font-size: 1.7em;
+	}
+	@media screen and (min-width: 800px) {
+		font-size: 1.5em;
+	}
+	@media screen and (min-width: 1000px) {
+		font-size: 2em;
 	}
 }
 
@@ -93,8 +123,13 @@
 	margin-bottom: 1em;
 	letter-spacing: 4px;
 	font-weight: 600;
-	@media screen and (min-width: 550px) {
+	font-size: 1em;
+	@media screen and (min-width: 600px) {
 		margin-bottom: .5em;
+	}
+	@media screen and (min-width: 900px) {
+		font-size: 1.2em;
+		margin-bottom: 1.2em;
 	}
 }
 
@@ -103,8 +138,11 @@
 	font-size: 1em;
 	text-decoration: none;
 	text-align: center;
-	@media screen and (min-width: 550px) {
+	@media screen and (min-width: 600px) {
 		font-size: .8em;
+	}
+	@media screen and (min-width: 1000px) {
+		font-size: 1em;
 	}
 }
 

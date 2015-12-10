@@ -160,16 +160,8 @@ nav {
       background-image: url(../Images/global/envelopeicon.svg);
       background-repeat: no-repeat;
       background-position: bottom center;
-      margin-bottom: -10px;
-      @media screen and (min-width: 600px) {
-        margin-bottom: -5px;
-      }
-      @media screen and (min-width: 1000px) {
-        margin-bottom: -3px;
-      }
-      @media screen and (min-width: 1200px) {
-        margin-bottom: -4px;
-      }
+      position: relative;
+      bottom: -2px;
     }
     span {
      display: none;
@@ -181,6 +173,7 @@ nav {
     margin-bottom: 0;
     padding-top: .75em;
     padding-bottom: .75em;
+    transition: .3s all ease-in-out;
     a:hover {
       border-color: transparent;
       transform: scale3d(1.1,1.1,1.1);
@@ -202,7 +195,7 @@ nav li {
     padding: .4em 0em;
     text-decoration: none;
     transition: .25s color ease-in;
-    border-bottom: 3px solid transparent;
+    border-bottom: 5px solid transparent;
     transition: .3s color ease-in-out;
     transform: scale3d(1,1,1);
     &:hover {
@@ -223,7 +216,9 @@ nav li {
   }
 }
 
-.active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a {
-  color: $cyan;
-  border-bottom: 3px solid $cyan;
+@media screen and (min-width: 600px) {
+  .active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a {
+    color: $cyan;
+    border-bottom: 5px solid $cyan;
+  }
 }
