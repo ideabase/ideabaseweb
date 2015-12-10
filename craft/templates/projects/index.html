@@ -5,26 +5,34 @@
 
 
 {% block content %}
-	<section class="project-index">
-		<h1 class="project-index__title">{{ entry.projectHeadline }}</h1>
-		<p class="project-index__text">{{ entry.projectsSubDescription }}</p>
+<section class="section-header section-header__interior">
+	<div class="section-header__container">
+		<h1 class="section-header__title">{{ entry.projectHeadline }}</h1>
+	</div>
+</section>
 
-
-
-			{% for entry in craft.entries.section('ideabaseProjects').find() %}
-				<article class="project-index__entry">
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+		<p class="introduction">{{ entry.projectsSubDescription }}</p>
+</section>
+</div>
+<div class="panel-primary-container">
+			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
+			<section class="section-services panel-primary">
 					<a href="{{ entry.url }}">
-						<p class="project-index__indivdual">{{ entry.title }}</p>
-						<p class="project-index__individual">{{entry.projectDescription }}</p>
-						<div class="project-index__image">
-							{% for asset in entry.projectPicture %}
-		     					<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-		     				{% endfor %}	
-   						</div>
+						<h1 class="project-entry__title">{{ entry.title }}</h1>
+
+							<div class="project-entry__image">
+								{% for asset in entry.projectPicture %}
+			     					<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+			     				{% endfor %}	
+	   						</div>
+						<div class="project-entry__text">{{entry.projectDescription }}</div>
+
 						{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
    							{% for entry in relatedAward %}
 								{{ entry.title }}
-							{% endfor %} <br>
+							{% endfor %}
 
 						{% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
    							{% for entry in relatedTestimonial %}
@@ -32,10 +40,11 @@
 							{% endfor %}	
 
    					</a>
-				</article>
-			{% endfor %}
 
-	</section>		
+   			</section>		
+			{% endfor %}
+</div>			
+	
 
 	<!-- Case Study List -->
 	<section class="case-study">
