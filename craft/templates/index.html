@@ -17,7 +17,7 @@
 			<!-- About Container -->
 				<div class="section-header__container">
 				 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
-				 	<p class="section-header__text">{{ entry.homepageAboutText }}</p>
+				 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
 				 </div>
 			<!-- End About Container -->	 
 			</section>
@@ -36,7 +36,7 @@
 							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
-							    <p class="section-services__list__item__description">{{ block.homepageDescription }}</p>
+							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
 							</li>    		
 						{% endfor %}	
 				{% endfor %}
@@ -50,7 +50,7 @@
 	<div class="panel-secondary-container panel-background-image">
 	<section class="section-projects panel-secondary">
 		<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
-		<p class="section-projects__description">{{ entry.projectsDescription }}</p>
+		<div class="section-projects__description">{{ entry.projectsDescription }}</div>
 
 		<ul class="section-projects__list">
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
