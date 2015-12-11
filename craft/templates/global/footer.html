@@ -2,11 +2,11 @@
 	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
 
 	<section class="footer-form" id="footer-form">
-		<p class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</p>
-		<p class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></p>
+		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
+		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
 
 
-			<p class="global-footer_invitation">{{ footer.contactFormDescription }}</p>
+			<div class="global-footer_invitation">{{ footer.contactFormDescription }}</div>
 			<!-- Contact Form -->
 			<div class="contact-form">{% include 'global/contactform.html' %}</div>
 			<!-- End Contact Form -->
@@ -19,19 +19,19 @@
 	<div class="footer-info__container">
 		<section class="footer-info">
 			<section class="footer-info__address">
-				<p class="global-footer__text">
+				<div class="global-footer__text">
 					{{ footer.street }}<br>
 					{{ footer.footerAddress}}
-				</p>
+				</div>
 				<a href="basic-page.php" class="global-footer__directions">Get Directions to Our Office</a>
 			</section>
 			<section class="footer-info__contact">		
-				<p class="global-footer__text">		
+				<div class="global-footer__text">		
 					<span class="global-footer__text__name">P:</span>{{ footer.phoneNumber }}
-				</p>
-				<p class="global-footer__text">
+				</div>
+				<div class="global-footer__text">
 					<span class="global-footer__text__name">E:</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a>
-				</p>
+				</div>
 			</section>
 
 			<!-- Social Media -->
@@ -42,12 +42,12 @@
 			</section>
 			<!-- End Social Media -->
 			<section class="footer-info__supplemental">
-				<p class="footer-info__about">	
+				<div class="footer-info__about">	
 					{{ footer.footerBlurb }}
-				</p>	
-				<p class="footer-info__legal">
+				</div>	
+				<div class="footer-info__legal">
 					{{ footer.copyright }}
-				</p>
+				</div>
 			</section>	
 		</section>	
 	</div>	

@@ -71,14 +71,17 @@ Services Template
     <div class="panel-secondary-container panel-background-image">
       <section class="section-price panel-secondary">
         <h2>{{ entry.priceHeadline}}</h2>
-        <div class="introduction">{{ entry.priceDescription }}</div>
+          <p>{{ entry.priceDescription }}</p>
       </section>
       </div>
 <div class="panel-primary-container">
 <section class="testimonial-entry panel-primary">
-		<blockquote class="testimonial-entry__text">{{ entry.testimonialHeadline }}</blockquote>
-		<cite class="testimonial-entry__author">{{ entry.testimonialDescription }}</cite>
+{% for entry in craft.entries.section('testimonials').find()|slice(0,1) %}
+		<blockquote class="testimonial-entry__text">{{ entry.testimonialQuote }}</blockquote>
+		<cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
+    {% endfor %}
 </section>
 </div>    
+
 {% endblock %}
 
