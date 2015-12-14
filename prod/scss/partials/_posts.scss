@@ -24,9 +24,17 @@
   }
 }
 
+.blog-teaser__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .blog-teaser {
-    text-decoration: none;
     color: $darkgray;
+    a {
+      text-decoration: none;
+    }
     @media screen and (min-width: 850px) {
       width: 45%;
       float: left;
@@ -90,4 +98,5 @@
   text-align: left;
   margin-top: 0;
   padding-top: 0em;
+  color: $darkgray;
 }
