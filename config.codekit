@@ -23866,35 +23866,35 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/_featuredImageTop\/ruR4z.png": {
+	"\/prod\/images\/_featuredImageTop\/ruR4z.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 10333,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/ruR4z.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/ruR4z.png",
+		"inputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/ruR4z.png",
+		"outputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/ruR4z.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/global\/practice.jpg": {
+	"\/prod\/images\/global\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1.73823e+06,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/global\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/global\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/ruR4z.png": {
+	"\/prod\/images\/ruR4z.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1012,
-		"inputAbbreviatedPath": "\/prod\/Images\/ruR4z.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/ruR4z.png",
+		"inputAbbreviatedPath": "\/prod\/images\/ruR4z.png",
+		"outputAbbreviatedPath": "\/prod\/images\/ruR4z.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
