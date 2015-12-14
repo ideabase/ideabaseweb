@@ -63,37 +63,33 @@
   		</ul>
   		  	{% endfor %}
 
-  		  	</section>
-  		<section class="section-blog-teaser">	
-  		  	  		<!-- blog pulls -->
+  		 </section>
+  		<section class="section-blog-teaser">
+  		<ul class="blog-teaser-list">
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
-		<section class="blog-individual">
-			<h3 class="blog-individual__title">
-				<a href="{{ entry.url }}">
-					{{ entry.title }}
-				</a>
-			</h3>
-			<p class="blog-individual__text">Written by {{ entry.author }}</p>
-
-			<p class="blog-individual__text">
-				<a href="{{ entry.url }}">
-					Continue reading
-				</a>
-			</p>
-		</section>
+  		<li class="blog-teaser">
+  			<a href="{{ entry.url }}">
+					<h3 class="blog-individual__title">{{ entry.title }}</h3>
+					<p class="blog-individual__text">Written by {{ entry.author }}</p>
+					<p class="blog-individual__text"></p>
+			</a>
+		</li>
 		{% endfor %}
+		</ul>
+		</section>
 		<div><a href="{{site.Url}}/prod/blogs">More Blogs</a></div>
 
   		<!-- end blog pulls -->
   	</section>
 
 
-
-	<section class="ideabase-apply">
-		<h1 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h1>
-		<p class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</p>
-		<p class="ideabase-apply__link">{{ entry.workForIdeabaseLink }}</p>
+  	<div class="panel-secondary-container panel-background-image">
+	<section class="section-price panel-secondary">
+		<h2>{{ entry.workForIdeabaseTitle}}</h2>
+		<p>{{ entry.workForIdeabaseDescription }}</p>
+		<a class="button button-primary" href="#">{{ entry.workForIdeabaseLink }}</a>
 	</section>	
+	</div>
 
 
 {% endblock %}
