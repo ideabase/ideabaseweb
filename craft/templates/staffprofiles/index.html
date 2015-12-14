@@ -6,21 +6,33 @@
 {% set title = "Staff" %}
 
 {% block content %}
-	<section class="people-index">
-	
+<section class="section-header section-header--interior">
+	<div class="section-header__container">
+		<h1 class="section-header__title">{{ entry.staffIndexHeader }}</h1>
+	</div>
+</section>		
+		<!-- 
 		<div class="people-index__image">
 			{% for asset in entry.peopleFeaturedImage %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
-    	</div>
+    	</div> -->
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+		<p class="introduction">{{ entry.staffIndexDescription }}</p>
+	</section>
+</div>
 
-		<h1 class="people-index__header">{{ entry.staffIndexHeader }}</h1>
-		<p class="people-index__text">{{ entry.staffIndexDescription }}</p	>
-		
-    	<h1 class="people-index__header">{{ entry.qualityHeadline}}</h1>
-    	<p class="people-index__text">{{ entry.qualityDescription }}</p>
-    </section>	
-    <section class="people-individual">	
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+    	<h2>{{ entry.qualityHeadline}}</h2>
+    	<p>{{ entry.qualityDescription }}</p>
+   </section>
+ </div>	
+
+<div class="primary-container">
+<section class="section-people panel-primary-wide"> 
+    <section class="people">	
 	{% set staffGroup = craft.categories.group('staffHierarchy') %}
 	{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
@@ -28,53 +40,56 @@
 
   	<h3 class="people-individual__category">{{ category.title }}</h3>
 
-  		<ul class="people-individual-list">
+  		<ul>
+
     		{% for entry in staff.relatedTo(category) %}
-    			<li class="people-individual-list__item">
-						{% for asset in entry.staffHeadshot %}
-     						<img class="people-individual-list__image"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
-     					{% endfor %}	
-					<h3 class="people-individual-list__title">
-						<a href="{{ entry.url }}">
-							{{ entry.title }}
-						</a>
-					</h3>
-					<p class="people-individual-list__text">
-						bio: {{ entry.profileJobTitle }}
-					</p>
-				</li>
+    		<a href="{{ entry.Url }}" class="people__profile-item">
+	    		{% for asset in entry.staffHeadshot %}
+		     		<img class="people__profile-item__photo"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
+		     	{% endfor %}	
+	    		<div class="people__profile-item__info">
+	    		<div class="people__profile-item__info__container">
+	    			<li class="people-individual-list__item">
+							
+	     				
+						<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
+
+						<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+					</li>
+				</div>
+				</div>
+			</a>		
    			{% endfor %}
   		</ul>
   		  	{% endfor %}
-  		  	  		<!-- blog pulls -->
-  		{% for entry in craft.entries.section('blogPost').limit(2) %}
-		<section class="blog-individual">
-			<h3 class="blog-individual__title">
-				<a href="{{ entry.url }}">
-					{{ entry.title }}
-				</a>
-			</h3>
-			<p class="blog-individual__text">Written by {{ entry.author }}</p>
 
-			<p class="blog-individual__text">
-				<a href="{{ entry.url }}">
-					Continue reading
-				</a>
-			</p>
-		</section>
+  		 </section>
+  		<section class="section-blog-teaser">
+  		<ul class="blog-teaser-list">
+  		{% for entry in craft.entries.section('blogPost').limit(2) %}
+  		<li class="blog-teaser">
+  			<a href="{{ entry.url }}">
+					<h3 class="blog-individual__title">{{ entry.title }}</h3>
+					<p class="blog-individual__text">Written by {{ entry.author }}</p>
+					<p class="blog-individual__text"></p>
+			</a>
+		</li>
 		{% endfor %}
+		</ul>
+		</section>
 		<div><a href="{{site.Url}}/prod/blogs">More Blogs</a></div>
 
   		<!-- end blog pulls -->
   	</section>
 
 
-
-	<section class="ideabase-apply">
-		<h1 class="ideabase-apply__title">{{ entry.workForIdeabaseTitle}}</h1>
-		<p class="ideabase-apply__text">{{ entry.workForIdeabaseDescription }}</p>
-		<p class="ideabase-apply__link">{{ entry.workForIdeabaseLink }}</p>
+  	<div class="panel-secondary-container panel-background-image">
+	<section class="section-price panel-secondary">
+		<h2>{{ entry.workForIdeabaseTitle}}</h2>
+		<p>{{ entry.workForIdeabaseDescription }}</p>
+		<a class="button button-primary" href="#">{{ entry.workForIdeabaseLink }}</a>
 	</section>	
+	</div>
 
 
 {% endblock %}

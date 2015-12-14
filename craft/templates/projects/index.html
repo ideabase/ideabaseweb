@@ -17,8 +17,9 @@
 </section>
 </div>
 <div class="panel-primary-container">
-			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
 			<section class="section-services panel-primary">
+			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
+
 					<a href="{{ entry.url }}">
 						<h1 class="project-entry__title">{{ entry.title }}</h1>
 
@@ -41,27 +42,44 @@
 
    					</a>
 
-   			</section>		
-			{% endfor %}
+	
+			{% endfor %}<br>
+			<a class="button button-primary" href="{{siteUrl}}/prod/project-list">{{ entry.moreProjectsButton }}</a>
+			</section>	
+			
 </div>			
 	
 
 	<!-- Case Study List -->
-	<section class="case-study">
-		<h1 class="case-study__headline">{{ entry.caseStudyHeadline }}</h2>
-		<p class="case-study__text">{{ entry.caseStudySubDescription }}</p>
-		<article class="case-study__entry">
-			<ul class="case-study__list">
-				{% for entry in craft.entries.section('caseStudy').limit(3).order('postDate') %} 
-	    				<li class="case-study__list__item">
-	        				<h3 class="case-study__list__title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-	        				<a href="{{ entry.url }}">Continue reading</a>
-	    				</li>	
-				{% endfor %}
-			</ul>	
+<div class="panel-primary-container">
+	<section class="section-introduction panel-primary">
+		<h2>{{ entry.caseStudyHeadline }}</h2>
+		<p>{{ entry.caseStudySubDescription }}</p>
 
-		</article>
-		<h1 class="case-study__headline">{{ entry.classroomExperienceHeadline }}</h1>
-		<p class="case-study__text">{{ entry.classroomExperienceDescription }}</p>
+		<section class="section-blog-teaser">
+			<ul class="blog-teaser-list">
+			{% for entry in craft.entries.section('caseStudy').limit(2).order('postDate') %} 
+
+	    			<li class="blog-teaser">
+	    				<a href="{{ entry.url }}">
+	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
+	        				<p class="blog-teaser__link">Continue reading</p>
+	        			</a>
+	    			</li>
+	    			
+			{% endfor %}
+			</ul>
+			
+		</section>
+	</section>
+</div>
+	<div class="panel-secondary-container panel-background-image">
+
+	<section class="section-price panel-secondary">
+		<h2>{{ entry.classroomExperienceHeadline }}</h2>
+		<p>{{ entry.classroomExperienceDescription }}</p>
+		<a class="button button-primary" href="#">{{ entry.classroomButton }}</a>
+	</section>
+	</div>	
 	<!-- End Case Study List -->
 {% endblock %}

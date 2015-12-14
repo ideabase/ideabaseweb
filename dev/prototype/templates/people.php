@@ -30,8 +30,10 @@
             </section>
             <section class="section-blog-teaser">
             <h3>From Our Blog</h3>
-            <?php include("../patterns/partials/blog-post-teaser.html"); ?>
-            <?php include("../patterns/partials/blog-post-teaser.html"); ?>
+            <ul class="blog-teaser-list">
+                <?php include("../patterns/partials/blog-post-teaser.html"); ?>
+                <?php include("../patterns/partials/blog-post-teaser.html"); ?>
+            </ul>
             <a class="button button-primary" href="#">Read More In Our Staff Blog</a>
             </section>
                   <section class="people">

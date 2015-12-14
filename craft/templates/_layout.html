@@ -14,16 +14,28 @@
 <head>
 	<style type="text/css">
 			.section-header { 
-				background-image: url(../../assets/img/practice-small.jpg)
+				{% if entry.aboutImage | length %}
+				    {% for asset in entry.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageSmall') }});
+				    {% endfor %}
+				{% endif %}
 			}
 			@media screen and (min-width: 600px) {
 				.section-header {
-				background-image: url(../../assets/img/practice-medium.jpg)
+					{% if entry.aboutImage | length %}
+				    {% for asset in entry.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageMedium') }});
+				    {% endfor %}
+				{% endif %}
 				}
 			}
 			@media screen and (min-width: 1000px) {
 				.section-header {
-				background-image: url(../../assets/img/practice.jpg)
+					{% if entry.aboutImage | length %}
+				    {% for asset in entry.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageLarge') }});
+				    {% endfor %}
+				{% endif %}
 				}
 			}
 	</style>
