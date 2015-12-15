@@ -1,5 +1,10 @@
 <footer class="global-footer">
 	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
+				{% if footer.formIcon | length %}
+				    {% for asset in footer.formIcon %}
+				        background-image: url({{ asset.getUrl('featureImageSmall') }});
+				    {% endfor %}
+				{% endif %}
 
 	<section class="footer-form" id="footer-form">
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>

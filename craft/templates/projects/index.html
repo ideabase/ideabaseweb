@@ -58,7 +58,7 @@
 
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
-			{% for entry in craft.entries.section('caseStudy').limit(2).order('postDate') %} 
+			{% for entry in craft.entries.section('caseStudy').limit(2) %} 
 
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
