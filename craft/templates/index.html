@@ -32,32 +32,6 @@
 				{% endif %}
 				}
 			}
-		}
-				.panel-background-image { 
-				{% if entry.brickBackgroundPattern | length %}
-				    {% for asset in entry.brickBackgroundPattern %}
-				        background-image: url({{ asset.getUrl('brickSmall') }});
-				    {% endfor %}
-				{% endif %}
-			}
-			@media screen and (min-width: 600px) {
-				.panel-background-image {
-					{% if entry.brickBackgroundPattern | length %}
-				    {% for asset in entry.brickBackgroundPattern %}
-				        background-image: url({{ asset.getUrl('brickMedium') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
-			@media screen and (min-width: 1000px) {
-				.panel-background-image {
-					{% if entry.brickBackgroundPattern | length %}
-				    {% for asset in entry.brickBackgroundPattern %}
-				        background-image: url({{ asset.getUrl('brickLarge') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
 
 </style>
 	<!-- About Section -->

@@ -50,13 +50,7 @@
 }
 
 .panel-background-image {
-  background-image: url(../../dev/assets/img/bricks-small.jpg);
-  @media screen and (min-width: 600px) {
-    background-image: url(../../dev/assets/img/bricks-medium.jpg);
-  }
-  @media screen and (min-width: 1000px) {
-    background-image: url(../../dev/assets/img/bricks.jpg);
-  }
+  // background-image: url(../../dev/assets/img/bricks-small.jpg);
   &:after {
     position: absolute;
     height: 100%;
