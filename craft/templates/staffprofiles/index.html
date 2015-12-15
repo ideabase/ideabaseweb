@@ -44,13 +44,13 @@
 
     		{% for entry in staff.relatedTo(category) %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
-	    		{% for asset in entry.staffHeadshot %}
-		     		<img class="people__profile-item__photo"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
-		     	{% endfor %}	
+	    		
 	    		<div class="people__profile-item__info">
 	    		<div class="people__profile-item__info__container">
 	    			<li class="people-individual-list__item">
-							
+						{% for asset in entry.staffHeadshot %}
+				     		<img class="people__profile-item__photo"src="{{ asset.getUrl('meetTheTeamHeadshot') }}" alt= "{{ asset.title}}">
+				     	{% endfor %}	
 	     				
 						<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
 
