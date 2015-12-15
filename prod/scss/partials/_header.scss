@@ -87,7 +87,7 @@ margin-top: .5em;
     position: relative;
     &:after {
       content: "";
-          background-image: url(../Images/global/arrow-down-white.svg);
+          background-image: url(../images/global/arrow-down-white_151214_170627.svg);
           background-size: auto;
           background-repeat: no-repeat;
           font-size: 1.3em;
@@ -102,7 +102,7 @@ margin-top: .5em;
   .nav__trigger__link.nav__trigger__link--show {
     background-color: $cyan;
     &:after {
-      background-image: url(../Images/global/x.svg);
+      background-image: url(../images/global/x_151214_170629.svg);
       right: 11px;
     }
   }
