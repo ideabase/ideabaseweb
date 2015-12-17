@@ -40,7 +40,7 @@
 			}
 			.panel-background-image { 
 				{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
-				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern %}
+				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).order('RAND()').limit(1).order('RAND()') %}
 				        background-image: url({{ asset.getUrl('brickSmall') }});
 				    {% endfor %}
 				{% endif %}
@@ -48,7 +48,7 @@
 			@media screen and (min-width: 600px) {
 				.panel-background-image {
 					{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
-				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern %}
+				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).order('RAND()') %}
 				        background-image: url({{ asset.getUrl('brickMedium') }});
 				    {% endfor %}
 				{% endif %}
@@ -57,7 +57,7 @@
 			@media screen and (min-width: 1000px) {
 				.panel-background-image {
 					{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
-				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern %}
+				    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).order('RAND()') %}
 				        background-image: url({{ asset.getUrl('brickLarge') }});
 				    {% endfor %}
 				{% endif %}
