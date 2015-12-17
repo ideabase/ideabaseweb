@@ -15,6 +15,7 @@
    			</div>
 		<h1 class="blog__title">{{ entry.title }}</h1>
 		<p class="blog__date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+
 		<p class="blog__text">{{ entry.blogContent}}</p>
 	</article>
 	
@@ -22,8 +23,10 @@
 
 
 		{% for entry in entry.blogAuthor %}
-			{{ entry.title }}
-    		{{ entry.profileBiographyDescription }}
+		{{ entry.title }}
+		{% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
+		{% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
+    		{{ firstBioParagraph|raw }}
     		{{ entry.profileJobTitle }}
     		<div class="people__image">
 				{% for asset in entry.staffHeadshot %}
