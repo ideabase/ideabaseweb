@@ -29,19 +29,40 @@
     	<p>{{ entry.qualityDescription }}</p>
    </section>
  </div>	
-
+    {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
+	{% set leader = craft.entries.section('people').relatedTo(leaderGroup) %}
+	{% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
+	{% set staff = craft.entries.section('people').relatedTo(staffGroup) %}
 <div class="panel-primary-container">
 <section class="section-people panel-primary-wide"> 
    <section class="people">	
-	{% set staffGroup = craft.categories.group('staffHierarchy') %}
-	{% set staff = craft.entries.section('people').order('title').limit(null) %}
-
-	{% for category in staffGroup.relatedTo(category) %}
 
 
   		<ul>
 
-    		{% for entry in staff.relatedTo(staffGroup) %}
+    		{% for entry in leader.relatedTo(leaderGroup) %}
+    		<a href="{{ entry.Url }}" class="people__profile-item">
+    				{% for asset in entry.staffHeadshot %}
+				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+				     {% endfor %}
+	    		
+	    		<div class="people__profile-item__info">
+
+	    			<div class="people__profile-item__info__container">
+
+		    			<li class="people-individual-list__item">
+								
+		     				
+							<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
+
+							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+								
+						</li>
+					</div>
+				</div>
+			</a>		
+   			{% endfor %}
+   			{% for entry in staff.relatedTo(staffGroup).limit(2) %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     				{% for asset in entry.staffHeadshot %}
 				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
@@ -64,58 +85,67 @@
 			</a>		
    			{% endfor %}
   		</ul>
-  	{% endfor %}
-  	<!--{% set staffGroup = craft.categories.group('staffHierarchy') %}
-	{% set staff = craft.entries.section('people').order('title').limit(null) %}
 
-	{% for category in staffGroup.relatedTo(project) %}
-
-
-  		<ul>
-
-    		{% for entry in staff.relatedTo(category) %}
-    		<a href="{{ entry.Url }}" class="people__profile-item">
-    				{% for asset in entry.staffHeadshot %}
-				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-				     {% endfor %}
-	    		
-	    		<div class="people__profile-item__info">
-
-	    			<div class="people__profile-item__info__container">
-
-		    			<li class="people-individual-list__item">
-								
-		     				
-							<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
-
-							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-								
-						</li>
-					</div>
-				</div>
-			</a>		
-   			{% endfor %}
-  		</ul>
-  	{% endfor %} -->
-
-  		 </section>
+  	</section>
   		<section class="section-blog-teaser">
   		<ul class="blog-teaser-list">
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
   		<li class="blog-teaser">
   			<a href="{{ entry.url }}">
 					<h3 class="blog-individual__title">{{ entry.title }}</h3>
-					<p class="blog-individual__text">Written by {{ entry.author }}</p>
-					<p class="blog-individual__text"></p>
+					{% set blogParagraphs = entry.blogContent|split('.') %}
+					{% set firstBlogParagraph = blogParagraphs|first ~ '.' %}
+    					{{ firstBlogParagraph|raw }}
+
+    				<div>
+					{% for entry in entry.blogAuthor %}
+						{{ entry.title }}
+					{% endfor %}
+					</div>	
+
 			</a>
 		</li>
-		{% endfor %}
+		{% endfor %}	
 		</ul>
+				<div><a href="{{site.Url}}/prod/blogs">More Blogs</a></div>
 		</section>
-		<div><a href="{{site.Url}}/prod/blogs">More Blogs</a></div>
 
-  		<!-- end blog pulls -->
+		<section class="people">	
+
+
+  		<ul>
+   			{% for entry in staff.relatedTo(staffGroup).offset(2) %}
+    		<a href="{{ entry.Url }}" class="people__profile-item">
+    				{% for asset in entry.staffHeadshot %}
+				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+				     {% endfor %}
+	    		
+	    		<div class="people__profile-item__info">
+
+	    			<div class="people__profile-item__info__container">
+
+		    			<li class="people-individual-list__item">
+								
+		     				
+							<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
+
+							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+								
+						</li>
+					</div>
+				</div>
+			</a>		
+   			{% endfor %}
+  		</ul>
+
   	</section>
+
+
+
+
+
+  	</section>
+
 
 
   	<div class="panel-secondary-container panel-background-image">
