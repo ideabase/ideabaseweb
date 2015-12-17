@@ -16,7 +16,6 @@
         </style>
         <?php include("../patterns/partials/interior-hero-slot-people.html"); ?>
     	<?php include("../patterns/partials/introduction-people.html"); ?>
-    	<?php include("../patterns/partials/supplemental-introduction.html"); ?>
     	<div class="panel-primary-container">
     	<section class="section-people panel-primary-wide">
         <h2>Meet Our Team</h2>

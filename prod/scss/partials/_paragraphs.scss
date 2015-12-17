@@ -16,6 +16,9 @@ p {
   @media screen and (min-width: 700px) {
 		font-size: 1.5em;
   }
+  a {
+    color: $blue;
+  }
   &:after {
     content: "";
     width: 1.5em;
