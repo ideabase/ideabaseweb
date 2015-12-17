@@ -20,7 +20,7 @@
         <h2>Featured Projects</h2>
     	<section class="section-projects">
 	    	<?php include("../patterns/partials/project.html"); ?>
-	    	<?php include("../patterns/partials/project.html"); ?>
+	    	<?php include("../patterns/partials/project2.html"); ?>
 	    	<?php include("../patterns/partials/project.html"); ?>
             <a class="button button-primary" href="projects.php">More Projects</a>
 	    </section>
