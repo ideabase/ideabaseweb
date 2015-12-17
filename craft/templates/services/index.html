@@ -34,7 +34,7 @@ Services Template
   <div class="panel-primary-container">
     <section class="service-index panel-primary">
       <h2 class="service-index__title">{{ block.homeProcessName }}</h2>
-        <div class="service-index-icons">
+        <div class="service-index__icons">
             {% for asset in block.icon1 %}
            			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
         		{% endfor %}

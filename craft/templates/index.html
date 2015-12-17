@@ -60,7 +60,7 @@
 				{% for entry in craft.entries.section('processIndex') %}
 						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}					
 							<li class="section-services__list__item">
-								{% for asset in block.icon1 %}
+								{% for asset in block.homepageIcon %}
 							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
