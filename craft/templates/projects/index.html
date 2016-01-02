@@ -30,10 +30,10 @@
 					
 
 					{% for asset in entry.projectPicture %}
-			     		<img class="project-entry__image" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}" />
+			     		<img class="project-entry__image" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
 			     	{% endfor %}
 			     	
-			     	<div class="project-entry__description>">
+			     	<div class="project-entry__description">
 						<div class="project-entry__description__container">
 							<h1 class="project-entry__description__title">{{ entry.title }}</h1>
 							<div class="project-entry__description__text">{{ entry.projectDescription }}</div>
