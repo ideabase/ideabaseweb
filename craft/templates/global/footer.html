@@ -48,8 +48,8 @@
 				<div class="footer-info__about">	
 					{{ footer.footerBlurb }}
 				</div>
-				{% for asset in footer.formIcon %}
-			     	<p class="footer-info__logo"><img src="{{ asset.getUrl('formIconNormal') }}" alt= "{{ asset.title}}"></p>
+				{% for asset in footer.kentStateLogo %}
+			     	<p class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></p>
 			    {% endfor %}	
 				<div class="footer-info__legal">
 					{{ footer.copyright }}
