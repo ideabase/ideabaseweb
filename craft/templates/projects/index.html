@@ -37,6 +37,9 @@
 						<div class="project-entry__description__container">
 							<h1 class="project-entry__description__title">{{ entry.title }}</h1>
 							<div class="project-entry__description__text">{{ entry.projectDescription }}</div>
+							{% for entry in entry.forWhichClient %}
+						        <p class="project-entry__description__client">{{ entry.title }}</p>
+						    {% endfor %}
 
 						{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
    							
