@@ -76,9 +76,14 @@
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
-	        				{% set caseStudyParagraphs = entry.caseStudyContent|split('.') %}
+	        				{% set caseStudyParagraphs = entry.blogContent|split('.') %}
 							{% set firstCaseStudyParagraph = caseStudyParagraphs|first ~ '.' %}
     							{{ firstCaseStudyParagraph|raw }}
+    						<div>
+							{% for entry in entry.blogAuthor %}
+								{{ entry.title }}
+							{% endfor %}
+							</div>		
 	        				<p class="blog-teaser__link">Continue reading</p>
 	        			</a>
 	    			</li>
