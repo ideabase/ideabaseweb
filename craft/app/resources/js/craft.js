@@ -5587,7 +5587,7 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		return sourceKey.split(':')[1];
 	},
 
-	onStartSearching: function()
+	startSearching: function()
 	{
 		// Does this source have subfolders?
 		if (this.$source.siblings('ul').length)
@@ -5626,7 +5626,7 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		this.base();
 	},
 
-	onStopSearching: function()
+	stopSearching: function()
 	{
 		if (this.showingIncludeSubfoldersCheckbox)
 		{
@@ -5643,7 +5643,7 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		this.base();
 	},
 
-	getElementParams: function()
+	getViewParams: function()
 	{
 		var data = this.base();
 
@@ -6428,7 +6428,7 @@ Craft.AssetSelectorModal = Craft.BaseElementSelectorModal.extend(
 			return;
 		}
 
-		var $btnGroup = $('<div class="btngroup"/>').appendTo(this.$buttons);
+		var $btnGroup = $('<div class="btngroup"/>').appendTo(this.$primaryButtons);
 		this.$selectBtn.appendTo($btnGroup);
 
 		this.$selectTransformBtn = $('<div class="btn menubtn disabled">'+Craft.t('Select transform')+'</div>').appendTo($btnGroup);
@@ -8830,6 +8830,7 @@ Craft.ElementEditor = Garnish.Base.extend(
 			else
 			{
 				this.hud.updateBody($hudContents);
+				this.hud.updateSizeAndPosition();
 			}
 
 			// Focus on the first text input
@@ -11342,7 +11343,6 @@ Craft.InfoIcon = Garnish.Base.extend(
 		{
 			this.hud = new Garnish.HUD(this.$icon, this.$icon.html(), {
 				hudClass: 'hud info-hud',
-				minBodyHeight: 0,
 				closeOtherHUDs: false
 			});
 		}
@@ -11746,8 +11746,8 @@ Craft.LivePreview = Garnish.Base.extend(
 			this.$dragHandle = $('<div class="lp-draghandle"/>').appendTo(this.$editorContainer);
 
 			var $header = $('<header class="header"></header>').appendTo(this.$editor),
-				$closeBtn = $('<div class="btn">'+Craft.t('Done')+'</div>').appendTo($header),
-				$heading = $('<h1>'+Craft.t('Live Preview')+'</h1>').appendTo($header);
+				$closeBtn = $('<div class="btn">'+Craft.t('Close Live Preview')+'</div>').appendTo($header),
+				$saveBtn = $('<div class="btn submit">'+Craft.t('Save')+'</div>').appendTo($header);
 
 			this.dragger = new Garnish.BaseDrag(this.$dragHandle, {
 				axis:          Garnish.X_AXIS,
@@ -11757,6 +11757,7 @@ Craft.LivePreview = Garnish.Base.extend(
 			});
 
 			this.addListener($closeBtn, 'click', 'exit');
+			this.addListener($saveBtn, 'click', 'save');
 		}
 
 		// Set the sizes
@@ -11805,6 +11806,11 @@ Craft.LivePreview = Garnish.Base.extend(
 
 		this.inPreviewMode = true;
 		this.trigger('enter');
+	},
+
+	save: function()
+	{
+		Craft.cp.submitPrimaryForm();
 	},
 
 	handleWindowResize: function()
@@ -15050,6 +15056,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 	clearCheckoutFormTimeout: null,
 	$customerNameInput: null,
 	$customerEmailInput: null,
+	$ccField: null,
 	$ccNumInput: null,
 	$ccExpInput: null,
 	$ccCvcInput: null,
@@ -15113,9 +15120,10 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 					this.$checkoutSpinner        = this.$checkoutForm.find('#pay-spinner');
 					this.$customerNameInput      = this.$checkoutForm.find('#customer-name');
 					this.$customerEmailInput     = this.$checkoutForm.find('#customer-email');
-					this.$ccNumInput             = this.$checkoutForm.find('#cc-num');
-					this.$ccExpInput             = this.$checkoutForm.find('#cc-exp');
-					this.$ccCvcInput             = this.$checkoutForm.find('#cc-cvc');
+					this.$ccField                = this.$checkoutForm.find('#cc-inputs');
+					this.$ccNumInput             = this.$ccField.find('#cc-num');
+					this.$ccExpInput             = this.$ccField.find('#cc-exp');
+					this.$ccCvcInput             = this.$ccField.find('#cc-cvc');
 					this.$businessFieldsToggle   = this.$checkoutForm.find('.fieldtoggle');
 					this.$businessNameInput      = this.$checkoutForm.find('#business-name');
 					this.$businessAddress1Input  = this.$checkoutForm.find('#business-address1');
@@ -15217,7 +15225,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 					{
 						this.couponPrice = response.couponPrice;
 						this.formattedCouponPrice = response.formattedCouponPrice;
-						this.updateCheckoutSubmitBtn();
+						this.updateCheckoutUi();
 					}
 				}
 			}, this));
@@ -15226,7 +15234,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 		{
 			// Clear out the coupon price
 			this.couponPrice = null;
-			this.updateCheckoutSubmitBtn();
+			this.updateCheckoutUi();
 		}
 	},
 
@@ -15263,7 +15271,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 			}
 		}
 
-		this.updateCheckoutSubmitBtn();
+		this.updateCheckoutUi();
 
 		if (this.clearCheckoutFormTimeout)
 		{
@@ -15288,21 +15296,52 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 		this.$checkoutScreen.velocity('stop').css(Craft.left, width).removeClass('hidden').animateLeft(0, 'fast');
 	},
 
-	updateCheckoutSubmitBtn: function()
+	updateCheckoutUi: function()
 	{
-		var price;
-
-		if (this.couponPrice !== null)
+		// Only show the CC fields if there is a price
+		if (this.getPrice() == 0)
 		{
-			price = this.formattedCouponPrice;
+			this.$ccField.hide();
 		}
 		else
 		{
-			var editionInfo = this.editions[this.edition];
-			price = editionInfo.salePrice ? editionInfo.formattedSalePrice : editionInfo.formattedPrice;
+			this.$ccField.show();
 		}
 
-		this.$checkoutSubmitBtn.val(Craft.t('Pay {price}', {price: price}));
+		// Update the Pay button
+		this.$checkoutSubmitBtn.val(Craft.t('Pay {price}', {
+			price: this.getFormattedPrice()
+		}));
+	},
+
+	getPrice: function()
+	{
+		if (this.couponPrice !== null)
+		{
+			return this.couponPrice;
+		}
+
+		if (this.editions[this.edition].salePrice)
+		{
+			return this.editions[this.edition].salePrice;
+		}
+
+		return this.editions[this.edition].price;
+	},
+
+	getFormattedPrice: function()
+	{
+		if (this.couponPrice !== null)
+		{
+			return this.formattedCouponPrice;
+		}
+
+		if (this.editions[this.edition].salePrice)
+		{
+			return this.editions[this.edition].formattedSalePrice;
+		}
+
+		return this.editions[this.edition].formattedPrice;
 	},
 
 	onTestBtnClick: function(ev)
@@ -15356,7 +15395,8 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 
 		this.cleanupCheckoutForm();
 
-		var pkg = ev.data.pkg;
+		// Get the price
+		var price = this.getPrice();
 
 		// Get the CC data
 		var expVal = this.getExpiryValues();
@@ -15377,22 +15417,25 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 			this.$customerNameInput.addClass('error');
 		}
 
-		if (!Stripe.validateCardNumber(ccData.number))
+		if (price != 0)
 		{
-			validates = false;
-			this.$ccNumInput.addClass('error');
-		}
+			if (!Stripe.validateCardNumber(ccData.number))
+			{
+				validates = false;
+				this.$ccNumInput.addClass('error');
+			}
 
-		if (!Stripe.validateExpiry(ccData.exp_month, ccData.exp_year))
-		{
-			validates = false;
-			this.$ccExpInput.addClass('error');
-		}
+			if (!Stripe.validateExpiry(ccData.exp_month, ccData.exp_year))
+			{
+				validates = false;
+				this.$ccExpInput.addClass('error');
+			}
 
-		if (!Stripe.validateCVC(ccData.cvc))
-		{
-			validates = false;
-			this.$ccCvcInput.addClass('error');
+			if (!Stripe.validateCVC(ccData.cvc))
+			{
+				validates = false;
+				this.$ccCvcInput.addClass('error');
+			}
 		}
 
 		if (validates)
@@ -15403,59 +15446,60 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 			this.$checkoutSubmitBtn.addClass('active');
 			this.$checkoutSpinner.removeClass('hidden');
 
-			Stripe.setPublishableKey(this.stripePublicKey);
-			Stripe.createToken(ccData, $.proxy(function(status, response)
+			if (price != 0)
 			{
-				if (!response.error)
+				Stripe.setPublishableKey(this.stripePublicKey);
+				Stripe.createToken(ccData, $.proxy(function(status, response)
 				{
-					var expectedPrice;
-
-					if (this.couponPrice)
+					if (!response.error)
 					{
-						expectedPrice = this.couponPrice;
+						this.sendPurchaseRequest(price, response.id);
 					}
 					else
 					{
-						expectedPrice = (this.editions[this.edition].salePrice ? this.editions[this.edition].salePrice : this.editions[this.edition].price);
+						this.onPurchaseResponse();
+						this.showError(response.error.message);
+						Garnish.shake(this.$checkoutForm, 'left');
 					}
-
-					// Pass the token along to Elliott to charge the card
-					var expVal = this.getExpiryValues();
-
-					var data = {
-						ccTokenId:            response.id,
-						expMonth:             expVal.month,
-						expYear:              expVal.year,
-						edition:              this.edition,
-						expectedPrice:        expectedPrice,
-						name:                 ccData.name,
-						email:                this.$customerEmailInput.val(),
-						businessName:         this.$businessNameInput.val(),
-						businessAddress1:     this.$businessAddress1Input.val(),
-						businessAddress2:     this.$businessAddress2Input.val(),
-						businessCity:         this.$businessCityInput.val(),
-						businessState:        this.$businessStateInput.val(),
-						businessCountry:      this.$businessCountryInput.val(),
-						businessZip:          this.$businessZipInput.val(),
-						businessTaxId:        this.$businessTaxIdInput.val(),
-						purchaseNotes:        this.$purchaseNotesInput.val(),
-						couponCode:           this.$couponInput.val()
-					};
-
-					Craft.postActionRequest('app/purchaseUpgrade', data, $.proxy(this, 'onPurchaseUpgrade'));
-				}
-				else
-				{
-					this.onPurchaseResponse();
-					this.showError(response.error.message);
-					Garnish.shake(this.$checkoutForm, 'left');
-				}
-			}, this));
+				}, this));
+			}
+			else
+			{
+				this.sendPurchaseRequest(0, null);
+			}
 		}
 		else
 		{
 			Garnish.shake(this.$checkoutForm, 'left');
 		}
+	},
+
+	sendPurchaseRequest: function(expectedPrice, ccTokenId)
+	{
+		// Pass the token along to Elliott to charge the card
+		var expVal = expectedPrice != 0 ? this.getExpiryValues() : {month: null, year: null};
+
+		var data = {
+			ccTokenId:            ccTokenId,
+			expMonth:             expVal.month,
+			expYear:              expVal.year,
+			edition:              this.edition,
+			expectedPrice:        expectedPrice,
+			name:                 this.$customerNameInput.val(),
+			email:                this.$customerEmailInput.val(),
+			businessName:         this.$businessNameInput.val(),
+			businessAddress1:     this.$businessAddress1Input.val(),
+			businessAddress2:     this.$businessAddress2Input.val(),
+			businessCity:         this.$businessCityInput.val(),
+			businessState:        this.$businessStateInput.val(),
+			businessCountry:      this.$businessCountryInput.val(),
+			businessZip:          this.$businessZipInput.val(),
+			businessTaxId:        this.$businessTaxIdInput.val(),
+			purchaseNotes:        this.$purchaseNotesInput.val(),
+			couponCode:           this.$couponInput.val()
+		};
+
+		Craft.postActionRequest('app/purchaseUpgrade', data, $.proxy(this, 'onPurchaseUpgrade'));
 	},
 
 	onPurchaseResponse: function()

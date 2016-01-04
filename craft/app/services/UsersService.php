@@ -529,7 +529,8 @@ class UsersService extends BaseApplicationComponent
 				'id' => $userRecord->uid
 			);
 			$protocol = craft()->request->isSecureConnection() ? 'https' : 'http';
-			$url = UrlHelper::getSiteUrl($path, $params, $protocol, $user->preferredLocale);
+			$locale = $user->preferredLocale ?: craft()->i18n->getPrimarySiteLocaleId();
+			$url = UrlHelper::getSiteUrl($path, $params, $protocol, $locale);
 		}
 
 		return $url;
@@ -561,7 +562,8 @@ class UsersService extends BaseApplicationComponent
 		}
 		else
 		{
-			return UrlHelper::getSiteUrl($path, $params, $scheme, $user->preferredLocale);
+			$locale = $user->preferredLocale ?: craft()->i18n->getPrimarySiteLocaleId();
+			return UrlHelper::getSiteUrl($path, $params, $scheme, $locale);
 		}
 	}
 
@@ -584,7 +586,8 @@ class UsersService extends BaseApplicationComponent
 		IOHelper::ensureFolderExists($userPhotoFolder);
 		IOHelper::ensureFolderExists($targetFolder);
 
-		$targetPath = $targetFolder.AssetsHelper::cleanAssetName($fileName);
+		$fileName = AssetsHelper::cleanAssetName($fileName);
+		$targetPath = $targetFolder.$fileName;
 
 		$result = $image->saveAs($targetPath);
 

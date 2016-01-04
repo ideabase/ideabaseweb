@@ -1442,7 +1442,7 @@ class TemplatesService extends BaseApplicationComponent
 			$html .= ' hasthumb';
 		}
 
-		$label = $context['element'];
+		$label = HtmlHelper::encode($context['element']);
 
 		$html .= '" data-id="'.$context['element']->id.'" data-locale="'.$context['element']->locale.'" data-status="'.$context['element']->getStatus().'" data-label="'.$label.'" data-url="'.$context['element']->getUrl().'"';
 
@@ -1478,11 +1478,12 @@ class TemplatesService extends BaseApplicationComponent
 
 		if ($context['context'] == 'index' && ($cpEditUrl = $context['element']->getCpEditUrl()))
 		{
-			$html .= HtmlHelper::encodeParams('<a href="{cpEditUrl}">{label}</a>', array('cpEditUrl' => $cpEditUrl, 'label' => $label));
+			$cpEditUrl = HtmlHelper::encode($cpEditUrl);
+			$html .= "<a href=\"{$cpEditUrl}\">{$label}</a>";
 		}
 		else
 		{
-			$html .= HtmlHelper::encode($label);
+			$html .= $label;
 		}
 
 		$html .= '</span></div></div>';

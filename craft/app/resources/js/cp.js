@@ -42,6 +42,7 @@ Craft.CP = Garnish.Base.extend(
 	$main: null,
 	$content: null,
 	$collapsibleTables: null,
+	$primaryForm: null,
 
 	navItems: null,
 	totalNavItems: null,
@@ -167,27 +168,27 @@ Craft.CP = Garnish.Base.extend(
 			this.initAlerts();
 		}
 
-		// Listen for save shortcuts in primary forms
-		var $primaryForm = $('form[data-saveshortcut]:first');
+		// Does this page have a primary form?
+		if (this.$container.prop('nodeName') == 'FORM')
+		{
+			this.$primaryForm = this.$container;
+		}
+		else
+		{
+			this.$primaryForm = $('form[data-saveshortcut]:first');
+		}
 
-		if ($primaryForm.length == 1)
+		// Does the primary form support the save shortcut?
+		if (this.$primaryForm.length && Garnish.hasAttr(this.$primaryForm, 'data-saveshortcut'))
 		{
 			this.addListener(Garnish.$doc, 'keydown', function(ev)
 			{
 				if (Garnish.isCtrlKeyPressed(ev) && ev.keyCode == Garnish.S_KEY)
 				{
 					ev.preventDefault();
-
-					// Give other stuff on the page a chance to prepare
-					this.trigger('beforeSaveShortcut');
-
-					if ($primaryForm.data('saveshortcut-redirect'))
-					{
-						$('<input type="hidden" name="redirect" value="'+$primaryForm.data('saveshortcut-redirect')+'"/>').appendTo($primaryForm);
-					}
-
-					$primaryForm.submit();
+					this.submitPrimaryForm();
 				}
+
 				return true;
 			});
 		}
@@ -254,6 +255,19 @@ Craft.CP = Garnish.Base.extend(
 		{
 			new Craft.WrongEditionModal($wrongEditionModalContainer);
 		}
+	},
+
+	submitPrimaryForm: function()
+	{
+		// Give other stuff on the page a chance to prepare
+		this.trigger('beforeSaveShortcut');
+
+		if (this.$primaryForm.data('saveshortcut-redirect'))
+		{
+			$('<input type="hidden" name="redirect" value="'+this.$primaryForm.data('saveshortcut-redirect')+'"/>').appendTo(this.$primaryForm);
+		}
+
+		this.$primaryForm.submit();
 	},
 
 	updateSidebarMenuLabel: function()
@@ -1159,9 +1173,7 @@ var TaskProgressHUD = Garnish.HUD.extend(
 		this.tasksById = {};
 		this.completedTasks = [];
 
-		this.base(this.icon.$a, null, {
-			minBodyHeight: 0
-		});
+		this.base(this.icon.$a);
 
 		this.$main.attr('id', 'tasks-hud');
 
