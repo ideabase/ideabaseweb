@@ -334,15 +334,11 @@ body.rtl .customize-sources-table-column .move { margin-left: 10px; }
 /* ----------------------------------------
 /*  Icon lists
 /* ----------------------------------------*/
-ul.icons { margin-top: 20px; }
+ul.icons { margin-top: 20px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
 ul.icons:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
 
 ul.icons li { margin: 0 0 10px; }
-body.ltr ul.icons li { float: left; }
-body.rtl ul.icons li { float: right; }
-
-ul.icons li.break { clear: both; }
 
 ul.icons li a { display: block; position: relative; padding: 60px 5px 10px; width: 110px; text-align: center; color: #29323d; border-radius: 4px; border: 1px solid #fff; }
 
@@ -1534,7 +1530,7 @@ body .redactor-dropdown { z-index: 100; }
 
 body .redactor-dropdown li { border-bottom: none; background: none; }
 
-body .redactor-box:not(.redactor-box-fullscreen) .redactor-editor { background: none; border: none; border-top: 1px solid #e3e5e8; padding: 12px; }
+body .redactor-box:not(.redactor-box-fullscreen) .redactor-editor { background: none; border: none; border-top: 1px solid #e3e5e8; padding: 12px; font-size: 15px; line-height: 1.4; }
 
 body.ltr .redactor-editor ul, body.ltr .redactor-editor ol { padding-left: 2em !important; }
 body.rtl .redactor-editor ul, body.rtl .redactor-editor ol { padding-right: 2em !important; }
