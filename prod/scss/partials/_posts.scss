@@ -1,11 +1,12 @@
 .section-blog-teaser {
   width: 80%;
   margin: 0 auto;
-  border-top: 1px solid $cyan;
+  text-align: center;
+  //border-top: 1px solid $cyan;
   margin-top: 3em;
   margin-bottom: 3em;
   padding-bottom: 1em;
-  border-bottom: 1px solid $cyan;
+  //border-bottom: 1px solid $cyan;
   @include clearfix;
   @media screen and (min-width: 600px) {
     margin-top: 2em;
@@ -32,6 +33,7 @@
 
 .blog-teaser {
     color: $darkgray;
+    text-align: center;
     a {
       text-decoration: none;
     }
@@ -52,10 +54,8 @@
   font-weight: bold;
   text-decoration: none;
   margin-bottom: 1.5em;
-  display: block;
-  width: 170px;
+  display: inline-block;
   position: relative;
-  text-align: left;
   font-size: .95em;
   padding-right: 1.2em;
   &:hover, &:focus {
@@ -77,7 +77,7 @@
 
 .blog-teaser__title {
   margin-top: 1.25em;
-  text-align: left;
+  //text-align: left;
   font-size: 1.35em;
   margin-bottom: .25em;
   line-height: 1.2;
@@ -87,7 +87,7 @@
 .blog-teaser__author {
   color: $darkgray;
   margin-top: 0;
-  text-align: left;
+  //text-align: left;
   text-transform: uppercase;
   font-size: .9em;
   letter-spacing: 1px;
@@ -95,7 +95,7 @@
 
 .blog-teaser__text {
   font-size: .95em;
-  text-align: left;
+  //text-align: left;
   margin-top: 0;
   padding-top: 0em;
   color: $darkgray;

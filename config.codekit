@@ -9699,15 +9699,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/app\/lib\/PclZip.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/lib\/PclZip.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/craft\/app\/lib\/S3.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -13068,6 +13059,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/app\/resources\/lib\/redactor\/lang\/ar.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/ar.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/ar-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/craft\/app\/resources\/lib\/redactor\/lang\/de.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -13096,6 +13098,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/fr.js",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/fr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/redactor\/lang\/hu.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/hu.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/hu-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/redactor\/lang\/it.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/it.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/it-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -19580,6 +19604,26 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/vendor\/pclzip\/pclzip\/composer.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/pclzip\/pclzip\/composer.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/craft\/app\/vendor\/pclzip\/pclzip\/composer-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/craft\/app\/vendor\/pclzip\/pclzip\/pclzip.lib.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/pclzip\/pclzip\/pclzip.lib.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/vendor\/phpmailer\/phpmailer\/changelog.md": {
 		"criticStyle": 0,
 		"enableFootnotes": 1,
@@ -23577,6 +23621,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dev\/prototype\/patterns\/partials\/people-home.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dev\/prototype\/patterns\/partials\/people-home.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dev\/prototype\/patterns\/partials\/price.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24683,6 +24736,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_layout.scss",
 		"outputAbbreviatedPath": "\/prod\/scss\/css\/_layout.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/prod\/scss\/partials\/_logos.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_logos.scss",
+		"outputAbbreviatedPath": "\/prod\/scss\/css\/_logos.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

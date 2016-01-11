@@ -19,7 +19,7 @@
         <?php include("../patterns/partials/supplemental-introduction.html"); ?>
 
     	<div class="panel-primary-container">
-    	<section class="section-projects">
+    	<section class="section-projects-featured">
 	    	<?php include("../patterns/partials/project.html"); ?>
 	    	<?php include("../patterns/partials/project2.html"); ?>
 	    	<?php include("../patterns/partials/project.html"); ?>

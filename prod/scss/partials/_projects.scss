@@ -116,15 +116,17 @@
 
 // Start Projects on Projects Page //
 
-.section-projects {
+.section-projects-featured {
   margin-top: 3em;
   display: block;
+  margin-bottom: 2em;
+  text-align: center;
 }
-.section-projects .button {
+.section-projects-featured .button {
   margin-top: 4em;
 }
 
-.section-projects .project-entry:nth-child(2) {
+.section-projects-featured .project-entry:nth-child(2) {
   .project-entry__description {
     background-color: rgba($cyan,.95);
   }

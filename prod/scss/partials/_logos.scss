@@ -1,0 +1,14 @@
+.section-people__logos {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	columns: 25px 4;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.section-people__logos__item {
+	max-width: 150px;
+	margin: 0 auto;
+	text-align: center;
+}
