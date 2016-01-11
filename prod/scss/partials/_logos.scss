@@ -1,3 +1,17 @@
+.section-people-home {
+	&:after {
+	  content: "";
+	  width: 1.5em;
+	  white-space: pre;
+	  height: 3px;
+	  margin: 0 auto;
+	  margin-top: 3em;
+	  margin-bottom: 5em;
+	  background-color: $blue;
+	  display: block;
+	}
+}
+
 .section-people__logos {
 	list-style-type: none;
 	margin: 0;

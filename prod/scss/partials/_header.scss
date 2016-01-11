@@ -195,7 +195,6 @@ nav li {
     padding: .4em 0em;
     text-decoration: none;
     transition: .25s color ease-in;
-    border-bottom: 3px solid transparent;
     transition: .3s color ease-in-out;
     transform: scale3d(1,1,1);
     &:hover {
@@ -219,6 +218,5 @@ nav li {
 @media screen and (min-width: 600px) {
   .active-page--people nav ul li:nth-child(3) a, .active-page--process nav ul li:nth-child(1) a, .active-page--projects nav ul li:nth-child(2) a {
     color: $cyan;
-    border-bottom-color: $cyan;
   }
 }
