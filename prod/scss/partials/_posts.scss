@@ -9,7 +9,7 @@
   //border-bottom: 1px solid $cyan;
   @include clearfix;
   @media screen and (min-width: 600px) {
-    margin-top: 2em;
+    margin-top: 0;
     margin-bottom: 4em;
   }
   @media screen and (min-width: 850px) {
