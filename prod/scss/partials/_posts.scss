@@ -123,6 +123,9 @@
   color: $blue;
   font-size: 1.7em;
   margin-bottom: .5em;
+  @media screen and (min-width: 800px) {
+    font-size: 2.2em;
+  }
 }
 
 .blog__entry__author:after {

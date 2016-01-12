@@ -43,7 +43,7 @@ $('.section-projects__list').flickity({
 
 window.sr = ScrollReveal({ reset: true });
 sr.reveal('.footer-form__button__container', { duration: 1200, scale: 1   } );
-sr.reveal('.section-people__logos', { duration: 800, scale: 1  } );
-sr.reveal('.section-services__list__item__icon', { delay: 300, duration: 800 } );
-sr.reveal('.section-header__title', { delay: 300, scale: 1, duration: 800 } );
-sr.reveal('.section-projects__list', { scale: 1, duration: 800 } );
+sr.reveal('.section-people__logos', { duration: 1000, scale: 1  } );
+sr.reveal('.section-services__list__item__icon', { delay: 300, duration: 1000 } );
+sr.reveal('.section-header__title', { delay: 300, scale: 1, duration: 1000 } );
+sr.reveal('.section-projects__list', { scale: 1, duration: 1000 } );
