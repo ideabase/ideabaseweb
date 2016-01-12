@@ -1,7 +1,7 @@
 <?php include("../patterns/partials/header.html"); ?>
         <?php include("../patterns/partials/map-slot.html"); ?>
         <div class="panel-primary-container">
-        <section class="section-services panel-primary">
+        <section class="section-basic-page panel-primary">
         <p class="introduction">Planning to visit? Stop by our Downtown Kent location, conveniently located in Acorn Alley. Feel free to use either of our two entrances: our front entrance is next to 4 Cats Art Studio, and our back entrance is behind Tree City Coffee and beside Flashers Cleaners.  Once you’ve arrived, go up the stairs or take the elevator to the second floor and you’ll find our office.</p>
 
         <h2>Our Address</h2>

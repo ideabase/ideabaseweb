@@ -1,7 +1,7 @@
 <?php include("../patterns/partials/header.html"); ?>
         <?php include("../patterns/partials/map-slot.html"); ?>
         <div class="panel-primary-container">
-        <section class="section-services panel-primary">
+        <section class="section-basic-page panel-primary">
         <p class="introduction">We proudly manage our own in-house User Experience Testing Lab. This on-site lab complements our design services by offering clients the ability to test their products using our advanced research equipment. Through this testing process, we can take the next steps in improving new or existing designs.</p>
 
         <p>The lab is operated by an experienced User Experience Designer and a team of graduate students from Kent State’s renowned User Experience Design master’s program. </p> 
