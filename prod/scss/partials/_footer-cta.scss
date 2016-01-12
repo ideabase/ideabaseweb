@@ -6,6 +6,10 @@
 .footer-form__button {
 	top: 0;
 	position: relative;
+	transition: 5s all ease-in;
+	animation-name: slideInUp;
+	animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 .global-footer__image {
