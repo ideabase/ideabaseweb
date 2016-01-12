@@ -3,37 +3,59 @@
  #}
 
 {% extends "_layout" %}
-
 {% block content %}
-	<section class="people">
+<div class="panel-primary-container">
+	<section class="people panel-primary-wide">
+
+	<div class="people__image">
+		{% for asset in entry.staffHeadshot %}
+     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+   		{% endfor %}
+   	</div>
+
+   	<div class="people__info">
 		<h1 class="people__title">
 			{{ entry.title }}
 		</h1>
-		<div class="people__image">
-			{% for asset in entry.staffHeadshot %}
-     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   			{% endfor %}
-   		</div>
-   		<p class="people__text">{{ entry.profileBiographyDescription }}</p>
-		<p class="people__text">{{ entry.profileContactEmail }}</p>
-		<p class="people__text">{{ entry.profileFunFact }}</p>
 		<p class="people__text">{{ entry.profileJobTitle }}</p>
-		<p class="people__text">{{ entry.profileOfficePhoneNumber }}</p>
+		<p class="people__text">{{ entry.collegeDegree }}</p>
+
+		<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
+		
+		<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
+		
+		<p class="people__phone"><a href="#">{{ entry.profileOfficePhoneNumber }}</a></p>
 
 		<!-- Staff Social Media -->
+		<section class="footer-info__social">
 			{% for block in entry.staffSocialMedia %}
-     			{{ block.staffSocName }}
-     			{{ block.staffSocLink }}
+     			<a class="footer-info__social__icon" href="{{ block.staffSocLink.url }}">{{ block.staffSocName }}</a>
 			{% endfor %}
+		</section>	
 		<!-- End Staff Social Media -->
-		<section>
-		<h2>Recent Projects and Blogs</h2>
-		    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
-       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
-    		{% endfor %}
-    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
-       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
-    		{% endfor %}	
-    	</section>	
-	</section>
+
+		<section class="people-projects">
+			<h2 class="people-projects__title">Projects</h2>
+				<ul class="people-projects__list">
+					<li class="people-projects__list__item">
+					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
+			       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			    		{% endfor %}
+			    	</li>
+			    </ul>
+		</section>	
+		<section class="people-posts">
+			<h2 class="people-posts__title">Blog Posts</h2>
+				<ul class="people-posts__list">
+					<li class="people-posts__list__item">
+			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
+			       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			    		{% endfor %}	
+			    	</li>
+			    </ul>		
+    	</section>
+    	<a class="button button-primary button--reverse" href="#">Return to People</a>
+    </div>		
+</section>
+</div>
 {% endblock %}
