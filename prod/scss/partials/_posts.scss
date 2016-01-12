@@ -100,3 +100,136 @@
   padding-top: 0em;
   color: $darkgray;
 }
+
+
+// Single Blog Entries //
+
+
+.section-header-blog {
+  max-height: 400px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+.blog__entry {
+  @include clearfix;
+}
+
+.blog__entry__title {
+  text-align: left;
+  text-transform: none;
+  color: $blue;
+  font-size: 1.7em;
+  margin-bottom: .5em;
+}
+
+.blog__entry__author:after {
+  content: "|";
+  padding-left: 1em;
+}
+
+.blog__entry__author, .blog__entry__date {
+  font-weight: 600;
+  text-align: left;
+  display: inline-block;
+  float: left;
+  margin-right: 1em;
+  color: $blue;
+}
+
+.blog__entry__text {
+  clear: left;
+  text-align: left;
+  padding-top: 1em;
+  margin-bottom: 1.5em;
+  p {
+    font-size: 1.2em
+  }
+}
+
+.blog__entry__tags {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+  margin-bottom: 1.5em;
+}
+
+.blog__entry__tags__item {
+  display: inline-block;
+  float: left;
+  background-color: $lightgray;
+  color: $darkgray;
+  text-decoration: none;
+  margin-right: 1em;
+  padding: .5em .75em;
+  font-size: .8em;
+  font-weight: 600;
+  transition: .2s all ease-in-out;
+  &:hover {
+    background-color: $darkgray;
+    color: $lightgray;
+  }
+}
+
+.blog__entry__author__image {
+  float: left;
+  margin-right: 1.5em;
+  margin-top: -.5em;
+  img {
+    border-radius: 30px;
+    width: 60px;
+  }
+}
+
+.blog__entry__author__name, .blog__entry__author__info {
+  color: $blue;
+  font-weight: 600;
+  display: block;
+  text-align: left;
+}
+
+.blog__entry__sidebar {
+  padding-top: 2em;
+  text-align: left;
+  &:after {
+    content: "";
+    width: 1.5em;
+    white-space: pre;
+    height: 3px;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 5em;
+    background-color: $blue;
+    display: block;
+  }
+}
+
+.blog__entry__related__title {
+  margin-top: 2em;
+}
+
+.blog__entry__author__description {
+  margin-top: 1.5em;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.people-posts__title {
+  text-align: left;
+}
+
+.people-posts--blog {
+  margin-top: 2em;
+  width: 100%;
+  float: none;
+  margin-bottom: 2em;
+  text-align: left;
+}
+
+
+.blog-teaser__link--blog {
+  margin-top: 0;
+}
