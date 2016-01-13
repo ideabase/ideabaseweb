@@ -22888,137 +22888,56 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/1\/6\/161bc798692a0db6292e578ef7ac333cc472df76e408492ea6f934fe0118c8c4.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/3\/c\/3cdfdf1e17efa9613580da7e47b3d34cb7e0f49b0aab12c60ecb5552cb598762.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1\/6\/161bc798692a0db6292e578ef7ac333cc472df76e408492ea6f934fe0118c8c4.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3\/c\/3cdfdf1e17efa9613580da7e47b3d34cb7e0f49b0aab12c60ecb5552cb598762.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/3\/a\/3a725824163caac7208544cd4723299a4173ebd458cb7f73febdcf5c5c4e0dd0.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/4a\/4a65dec42b98111471fe39b89bc4ffacbca22441f1bb9d7c0b963a576dc745e9.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3\/a\/3a725824163caac7208544cd4723299a4173ebd458cb7f73febdcf5c5c4e0dd0.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4a\/4a65dec42b98111471fe39b89bc4ffacbca22441f1bb9d7c0b963a576dc745e9.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/4\/5\/4577631008c9603cfdd3a1e8184444ca583e664eba366698748ec6bec9109751.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/7f\/7f2427e610584b21dd941e82fce7721ea1ef24f2bb31b5bcc77ab4bc8136862f.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4\/5\/4577631008c9603cfdd3a1e8184444ca583e664eba366698748ec6bec9109751.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/7f\/7f2427e610584b21dd941e82fce7721ea1ef24f2bb31b5bcc77ab4bc8136862f.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/5\/4\/54455501f137044d1ede6852a31fecd12788f50100f2302323ffabc1df2b6dd8.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8ee8bb4218e8ac521489f1cde339ec4d14c59d10f36ac1ac636758a088c3f890.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/5\/4\/54455501f137044d1ede6852a31fecd12788f50100f2302323ffabc1df2b6dd8.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8ee8bb4218e8ac521489f1cde339ec4d14c59d10f36ac1ac636758a088c3f890.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/5\/c\/5c6849b95600f3bfd3da871167ebb88a5169f3b9b4d0dd290f9112036ebc0f4d.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/9\/d\/9d75e09c7e184f23b0006805347188ad86535bd6db1e25aee1412b92b0b5e395.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/5\/c\/5c6849b95600f3bfd3da871167ebb88a5169f3b9b4d0dd290f9112036ebc0f4d.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9\/d\/9d75e09c7e184f23b0006805347188ad86535bd6db1e25aee1412b92b0b5e395.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/6\/e\/6e9c32481acfdab4e104523cad62020f13b8885586e41728a00928e0f5db39a2.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/ff\/ff0460cbcaddafdaa5724d65d5e1e860262577f8095e6848c40c7270d4e3c3d3.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/6\/e\/6e9c32481acfdab4e104523cad62020f13b8885586e41728a00928e0f5db39a2.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/8\/6\/86b9324d3d044af7ee12f3f121554e0c84b9beca5518663d146728f752861dd1.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/6\/86b9324d3d044af7ee12f3f121554e0c84b9beca5518663d146728f752861dd1.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8e3c4641e1e1b28dd4293449c19d1c1057fc19ef47cf9455958c220991a95ba2.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8\/e\/8e3c4641e1e1b28dd4293449c19d1c1057fc19ef47cf9455958c220991a95ba2.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/9\/8\/98ff2b8d4f8fba7b27572eb7ffecaa94a4001770e4d5e9b937a7640999c79a2f.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9\/8\/98ff2b8d4f8fba7b27572eb7ffecaa94a4001770e4d5e9b937a7640999c79a2f.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/a7\/a78e16ff039d3b46d910263cf033f3a63f682cdeb2cf861216a695faec13211d.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/a7\/a78e16ff039d3b46d910263cf033f3a63f682cdeb2cf861216a695faec13211d.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/b\/5\/b537819107c7aad6ddb93f31e0602bfcec8d7b0ebfbd0bd914694d981e0a1e77.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b\/5\/b537819107c7aad6ddb93f31e0602bfcec8d7b0ebfbd0bd914694d981e0a1e77.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/b\/e\/be9ed907a7ac46e10edf36a922dcc6392bc4647e7e20beb0d209f125a30e291c.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b\/e\/be9ed907a7ac46e10edf36a922dcc6392bc4647e7e20beb0d209f125a30e291c.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/d\/9\/d96e4ef8e6a9a1087bad9bce59363bcee4ef3b7478e552b82e018de4db53c760.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d\/9\/d96e4ef8e6a9a1087bad9bce59363bcee4ef3b7478e552b82e018de4db53c760.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/e9\/e975d9c161147160eda96875e6065aeb8ae19985a51c6338e35601b4ec337bbf.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e9\/e975d9c161147160eda96875e6065aeb8ae19985a51c6338e35601b4ec337bbf.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/f3\/f37a88c1fc02b7e8290db5b8b367bfb1374bebc61551742e563e5eb6f7fe18c8.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/f3\/f37a88c1fc02b7e8290db5b8b367bfb1374bebc61551742e563e5eb6f7fe18c8.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/ff\/ff0460cbcaddafdaa5724d65d5e1e860262577f8095e6848c40c7270d4e3c3d3.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24404,236 +24323,236 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_aboutImageTransform\/practice.jpg": {
+	"\/prod\/images\/_aboutImageTransform\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 11656,
-		"inputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_aboutImageTransform\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_aboutImageTransform\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_aboutImageTransform\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_brickLarge\/bricks.jpg": {
+	"\/prod\/images\/_brickLarge\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 299660,
-		"inputAbbreviatedPath": "\/prod\/Images\/_brickLarge\/bricks.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_brickLarge\/bricks.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_brickLarge\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_brickLarge\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_brickMedium\/bricks.jpg": {
+	"\/prod\/images\/_brickMedium\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 112863,
-		"inputAbbreviatedPath": "\/prod\/Images\/_brickMedium\/bricks.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_brickMedium\/bricks.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_brickMedium\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_brickMedium\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_brickSmall\/bricks.jpg": {
+	"\/prod\/images\/_brickSmall\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 62181,
-		"inputAbbreviatedPath": "\/prod\/Images\/_brickSmall\/bricks.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_brickSmall\/bricks.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_brickSmall\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_brickSmall\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featuredImageTop\/profile-sample.jpg": {
+	"\/prod\/images\/_featuredImageTop\/profile-sample.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 7975,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/profile-sample.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/profile-sample.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/profile-sample.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featuredImageTop\/ruR4z.png": {
+	"\/prod\/images\/_featuredImageTop\/ruR4z.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 10333,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/ruR4z.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featuredImageTop\/ruR4z.png",
+		"inputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/ruR4z.png",
+		"outputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/ruR4z.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featureImageLarge\/bricks.jpg": {
+	"\/prod\/images\/_featureImageLarge\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 299660,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featureImageLarge\/bricks.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featureImageLarge\/bricks.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_featureImageLarge\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_featureImageLarge\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featureImageLarge\/practice.jpg": {
+	"\/prod\/images\/_featureImageLarge\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 150685,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featureImageLarge\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featureImageLarge\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_featureImageLarge\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_featureImageLarge\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featureImageMedium\/practice.jpg": {
+	"\/prod\/images\/_featureImageMedium\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 51837,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featureImageMedium\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featureImageMedium\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_featureImageMedium\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_featureImageMedium\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_featureImageSmall\/practice.jpg": {
+	"\/prod\/images\/_featureImageSmall\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 30870,
-		"inputAbbreviatedPath": "\/prod\/Images\/_featureImageSmall\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_featureImageSmall\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_featureImageSmall\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_featureImageSmall\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_formIconNormal\/lightbulb-sample.png": {
+	"\/prod\/images\/_formIconNormal\/lightbulb-sample.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 7467,
-		"inputAbbreviatedPath": "\/prod\/Images\/_formIconNormal\/lightbulb-sample.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/_formIconNormal\/lightbulb-sample.png",
+		"inputAbbreviatedPath": "\/prod\/images\/_formIconNormal\/lightbulb-sample.png",
+		"outputAbbreviatedPath": "\/prod\/images\/_formIconNormal\/lightbulb-sample.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/_meetTheTeamHeadshot\/profile-sample.jpg": {
+	"\/prod\/images\/_meetTheTeamHeadshot\/profile-sample.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 3055,
-		"inputAbbreviatedPath": "\/prod\/Images\/_meetTheTeamHeadshot\/profile-sample.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/_meetTheTeamHeadshot\/profile-sample.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/_meetTheTeamHeadshot\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/_meetTheTeamHeadshot\/profile-sample.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/blogs\/test.html": {
+	"\/prod\/images\/blogs\/test.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prod\/Images\/blogs\/test.html",
+		"inputAbbreviatedPath": "\/prod\/images\/blogs\/test.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/bricks.jpg": {
+	"\/prod\/images\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 166610,
-		"inputAbbreviatedPath": "\/prod\/Images\/bricks.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/bricks.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/featured\/test.html": {
+	"\/prod\/images\/featured\/test.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prod\/Images\/featured\/test.html",
+		"inputAbbreviatedPath": "\/prod\/images\/featured\/test.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/global\/practice.jpg": {
+	"\/prod\/images\/global\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1.73823e+06,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/global\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/global\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/headshot\/test.html": {
+	"\/prod\/images\/headshot\/test.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prod\/Images\/headshot\/test.html",
+		"inputAbbreviatedPath": "\/prod\/images\/headshot\/test.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/lightbulb-sample.png": {
+	"\/prod\/images\/lightbulb-sample.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 260917,
-		"inputAbbreviatedPath": "\/prod\/Images\/lightbulb-sample.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/lightbulb-sample.png",
+		"inputAbbreviatedPath": "\/prod\/images\/lightbulb-sample.png",
+		"outputAbbreviatedPath": "\/prod\/images\/lightbulb-sample.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/misc\/test.html": {
+	"\/prod\/images\/misc\/test.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prod\/Images\/misc\/test.html",
+		"inputAbbreviatedPath": "\/prod\/images\/misc\/test.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/practice.jpg": {
+	"\/prod\/images\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 143069,
-		"inputAbbreviatedPath": "\/prod\/Images\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/practice.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/practice.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/profile-sample.jpg": {
+	"\/prod\/images\/profile-sample.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 33480,
-		"inputAbbreviatedPath": "\/prod\/Images\/profile-sample.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/profile-sample.jpg",
+		"inputAbbreviatedPath": "\/prod\/images\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/profile-sample.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/ruR4z.png": {
+	"\/prod\/images\/ruR4z.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1012,
-		"inputAbbreviatedPath": "\/prod\/Images\/ruR4z.png",
-		"outputAbbreviatedPath": "\/prod\/Images\/ruR4z.png",
+		"inputAbbreviatedPath": "\/prod\/images\/ruR4z.png",
+		"outputAbbreviatedPath": "\/prod\/images\/ruR4z.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25201,7 +25120,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Christopher Hallahan",
+"lastSavedByUser": "Chris Hallahan",
 "manualImportLinks": {
 	"\/prod\/js\/custom-scripts.js": [
 		{

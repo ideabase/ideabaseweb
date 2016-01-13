@@ -42,7 +42,9 @@ $('.section-projects__list').flickity({
 $('.project-single__images').flickity({
   // options
   wrapAround: true,
-  contain: true
+  contain: true,
+  watchCSS: true,
+  autoPlay: 5000
 });
 
 // Reveal the Contact Us Button on Scroll //

@@ -306,6 +306,11 @@
   }
 }
 
+.project-single__images:after {
+  content: 'flickity';
+  display: none;
+}
+
 .project-single__images__item {
   width: 100%; /* full width */
   height: auto; /* height of gallery */
