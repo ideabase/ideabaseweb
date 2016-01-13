@@ -219,6 +219,16 @@
   font-weight: 600;
 }
 
+.testimonial-entry--project {
+  blockquote {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  cite {
+    margin-bottom: 2em;
+  }
+}
+
 .project-entry__description__text {
   p {
     font-size: .9em;
@@ -260,11 +270,13 @@
   margin: 0 auto;
   font-size: .8em;
   text-align: left;
-  margin-top: 2em;
-  @media screen and (min-width: 800px) {
+  margin-top: 4em;
+  @media screen and (min-width: 600px) {
     margin-left: inherit;
     font-size: .85em;
     width: 200px;
+    margin-top: 5.5em;
+
   }
 }
 
@@ -323,7 +335,7 @@
 .project-single__images .flickity-prev-next-button {
   width: 30px;
   height: 30px;
-  border-radius: 5px;
+  border-radius: 0;
   background: $blue;
 }
 
@@ -347,12 +359,14 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
+  columns: 50px 2;
 }
 
 .project-entry__description__award--project-single {
   margin-left: 0;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   img {
     width: 50px;
     margin-right: 1.5em
@@ -362,11 +376,15 @@
     color: $blue;
     font-weight: 600;
   }
+  @media screen and (min-width: 700px) {
+    margin-top: 5.5em;
+  }
 }
 
 .project-single__team__list__item {
   margin-bottom: .5em;
   font-weight: 600;
+  display: inline-block;
   a {
     color: $blue;
     text-decoration: none;
@@ -383,8 +401,13 @@
 }
 
 @media screen and (min-width: 600px) {
-  .project-single__team, .project-single__info {
-    width: 50%;
+  .project-single__team {
+    width: 60%;
+    float: left;
+    padding-right: 10%;
+  }
+  .project-single__info {
+    width: 20%;
     float: left;
   }
 }
