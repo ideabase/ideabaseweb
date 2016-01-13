@@ -30,13 +30,19 @@ $( "#contact-toggle" ).click(function() {
   return false;
 });
 
-// Initialize Flickity
+// Initialize Flickity on the two image sliders //
 
 $('.section-projects__list').flickity({
   // options
   wrapAround: true,
   contain: true,
   watchCSS: true
+});
+
+$('.project-single__images').flickity({
+  // options
+  wrapAround: true,
+  contain: true
 });
 
 // Reveal the Contact Us Button on Scroll //

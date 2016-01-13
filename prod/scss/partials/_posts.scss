@@ -163,12 +163,12 @@
 .blog__entry__tags__item {
   display: inline-block;
   float: left;
-  background-color: $lightgray;
+  background-color: lighten($lightgray,5%);
   color: $darkgray;
   text-decoration: none;
   margin-right: 1em;
-  padding: .5em .75em;
-  font-size: .8em;
+  padding: .75em .9em;
+  font-size: .9em;
   font-weight: 600;
   transition: .2s all ease-in-out;
   &:hover {
