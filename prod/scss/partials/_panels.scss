@@ -42,12 +42,36 @@
 .panel-secondary {
   color: white;
   text-align: center;
+  @include clearfix;
 }
 .panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight {
   color: white;
 }
 .panel-secondary h1 {
   color: rgb(0,168,225);
+}
+
+.panel-secondary__thumbnail {
+  width: 150px;
+  border: 2px solid white;
+  @media screen and (min-width: 800px) {
+    float: left;
+    margin-right: 5%;
+    width: 20%;
+    margin-top: .5em;
+  }
+}
+
+.panel-secondary--left {
+  @media screen and (min-width: 800px) {
+    text-align: left;
+    margin-bottom: 2em;
+    float: left;
+    width: 75%;
+    p {
+      margin-top: 0;
+    }
+  }
 }
 
 .panel-background-image {

@@ -23251,6 +23251,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/design-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24098,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/design-sample.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/design-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/glyphix.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31459,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/glyphix.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/glyphix.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/horizontal-large-3.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -23510,6 +23532,17 @@
 		"initialSize": 7421,
 		"inputAbbreviatedPath": "\/dev\/assets\/img\/social-sample.png",
 		"outputAbbreviatedPath": "\/dev\/assets\/img\/social-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/trophy-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27688,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/trophy-sample.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/trophy-sample.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
