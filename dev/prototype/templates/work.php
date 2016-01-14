@@ -1,5 +1,6 @@
 <?php include("../patterns/partials/header.html"); ?>
-        <?php include("../patterns/partials/map-slot.html"); ?>
+        <?php include("../patterns/partials/inline-tags.html"); ?>
+        <?php include("../patterns/partials/interior-hero-slot-ux.html"); ?>
         <div class="panel-primary-container">
         <section class="section-services panel-primary">
 
