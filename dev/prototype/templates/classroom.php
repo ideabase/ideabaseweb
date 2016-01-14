@@ -1,5 +1,6 @@
 <?php include("../patterns/partials/header.html"); ?>
-        <?php include("../patterns/partials/map-slot.html"); ?>
+        <?php include("../patterns/partials/inline-tags.html"); ?>
+        <?php include("../patterns/partials/interior-hero-slot-ux.html"); ?>
         <div class="panel-primary-container">
         <section class="section-services panel-primary">
         <p class="introduction">Enhance your educational experience. Take advantage of additional hands-on learning opportunities available through our partnership with Glyphix, and our Responsive Web Design classes and workshops.</p>

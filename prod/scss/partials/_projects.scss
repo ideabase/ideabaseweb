@@ -147,7 +147,7 @@
     z-index: 50;
     transition: .3s all ease-in-out;
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 700px) {
     height: 550px;
     &:hover {
       .project-entry__description {
@@ -189,7 +189,7 @@
 
 .project-entry__description__container {
   max-width: 500px;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 700px) {
     width: 300px;
     max-width: inherit;
   }
@@ -200,15 +200,17 @@
 
 .project-entry__description__title {
   color: white;
-  font-size: 1.75em;
+  font-size: 1.5em;
   margin-bottom: 0;
   padding-bottom: 0;
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 600px) {
     font-size: 2em;
+  }
+  @media screen and (min-width: 700px) {
+    text-align: left;
   }
   @media screen and (min-width: 800px) {
     font-size: 2.2em;
-    text-align: left;
   }
 }
 
@@ -220,6 +222,7 @@
 }
 
 .testimonial-entry--project {
+  padding: 1.5em;
   blockquote {
     margin-top: 0;
     font-size: 1.5em;
@@ -232,7 +235,7 @@
 .project-entry__description__text {
   p {
     font-size: .9em;
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 700px) {
       font-size: 1em;
     }
   }
@@ -244,21 +247,24 @@
   background-color: rgba($blue,.95);
   margin-top: 25%;
   color: white;
-  padding: 1.25em;
+  padding: .75em 1.25em;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: .3s all ease-in-out;
   z-index: 100;
-  @media screen and (min-width: 800px) {
-    width: 40%;
+  @media screen and (min-width: 700px) {
+    width: 50%;
     bottom: inherit;
     top: 0;
     margin-top: 0;
     height: 100%;
     text-align: left;
     padding: 1em 3em;
+  }
+  @media screen and (min-width: 800px) {
+    width: 40%;
   }
   @media screen and (min-width: 1500px) {
     padding: 3em
@@ -270,13 +276,13 @@
   margin: 0 auto;
   font-size: .8em;
   text-align: left;
-  margin-top: 4em;
+  margin-top: 2em;
   @media screen and (min-width: 600px) {
-    margin-left: inherit;
     font-size: .85em;
     width: 200px;
-    margin-top: 5.5em;
-
+  }
+  @media screen and (min-width: 700px) {
+    margin-left: inherit;
   }
 }
 
@@ -284,7 +290,7 @@
   width: 25px;
   float: left;
   margin-right: 1em;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 700px) {
     width: 45px;
     margin-top: .2em;
   }
@@ -376,8 +382,9 @@
     color: $blue;
     font-weight: 600;
   }
-  @media screen and (min-width: 700px) {
-    margin-top: 5.5em;
+  @media screen and (min-width: 600px) {
+    margin-top: 5.5em;    
+    margin-left: auto;
   }
 }
 
