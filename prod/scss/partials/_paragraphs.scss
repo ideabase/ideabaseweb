@@ -5,9 +5,14 @@ p {
   line-height: 1.5;
   font-weight: 300;
   @media screen and (min-width: 900px) {
-    font-size: 1.25em;
+    font-size: 1.2em;
   }
 }
+
+.section-blog-entry .panel-primary a, .section-basic-page .panel-primary a {
+  color: $blue;
+}
+
 .introduction {
   font-size: 1.3em;
   font-weight: 500;
@@ -31,4 +36,8 @@ p {
     background-color: $blue;
     display: block;
   }
+}
+
+.section-basic-page .introduction:after {
+  margin-bottom: 2em;
 }

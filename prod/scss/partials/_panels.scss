@@ -39,10 +39,20 @@
   }
 }
 
+.panel-secondary h2 {
+  margin-top: 1em;
+}
+.panel-secondary p {
+  margin-bottom: .5em;
+}
+
 .panel-secondary {
   color: white;
   text-align: center;
   @include clearfix;
+}
+.panel-secondary h2 {
+  margin-bottom: 1em;
 }
 .panel-secondary h2, .panel-secondary h3, .panel-secondary .highlight {
   color: white;
@@ -75,7 +85,6 @@
 }
 
 .panel-background-image {
-  // background-image: url(../../dev/assets/img/bricks-small.jpg);
   &:after {
     position: absolute;
     height: 100%;

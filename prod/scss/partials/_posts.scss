@@ -2,11 +2,9 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  //border-top: 1px solid $cyan;
   margin-top: 3em;
   margin-bottom: 3em;
   padding-bottom: 1em;
-  //border-bottom: 1px solid $cyan;
   @include clearfix;
   @media screen and (min-width: 600px) {
     margin-top: 0;
@@ -29,6 +27,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 1em;
 }
 
 .blog-teaser {
@@ -123,7 +122,7 @@
   text-transform: none;
   color: $blue;
   font-size: 1.7em;
-  margin-bottom: .5em;
+  margin-bottom: .35em;
   @media screen and (min-width: 800px) {
     font-size: 2.2em;
   }
@@ -148,18 +147,13 @@
   text-align: left;
   padding-top: 1em;
   margin-bottom: 1.5em;
-  p {
-    @media screen and (min-width: 800px) {
-      font-size: 1.2em;
-      margin-bottom: 1.5em;
-    }
-  }
 }
 
 .blog__entry__tags {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: .9em;
   @include clearfix;
   margin-bottom: 1.5em;
 }
@@ -172,7 +166,6 @@
   text-decoration: none;
   margin-right: 1em;
   padding: .5em .75em;
-  font-size: .9em;
   font-weight: 600;
   transition: .2s all ease-in-out;
   &:hover {

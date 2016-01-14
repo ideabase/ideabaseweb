@@ -19,6 +19,10 @@
   transition: .3s all ease-in-out;
 }
 
+.section-blog-entry .panel-primary .button, .section-basic-page .panel-primary .button {
+  color: white;
+}
+
 .button--large {
   padding: 1em 1em;
   font-size: .9em;
@@ -113,6 +117,10 @@
 
 .section-body-button .button {
   margin-top: 0;
+}
+
+.section-body-button .button {
+  margin-bottom: 3em;
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {

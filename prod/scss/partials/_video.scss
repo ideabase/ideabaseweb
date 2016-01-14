@@ -2,3 +2,10 @@ iframe {
 	width: 100%;
 	max-width: 100%;
 }
+
+.section-body-video figure {
+	margin: 0 auto;
+	@media screen and (min-width: 600px) {
+		width: 85%;
+	}
+}

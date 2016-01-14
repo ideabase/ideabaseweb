@@ -1,34 +1,37 @@
 <?php include("../patterns/partials/header.html"); ?>
         <?php include("../patterns/partials/inline-tags.html"); ?>
-        <?php include("../patterns/partials/interior-hero-slot-ux.html"); ?>
-        <div class="panel-primary-container">
-        <section class="section-services panel-primary">
+        <?php include("../patterns/partials/interior-hero-slot-work.html"); ?>
+        <div class="section-basic-page panel-primary-container">
+        <section class="section-basic-page panel-primary">
 
-        Put Your Design Skills to the Test
+        <h2>Put Your Design Skills to the Test</h2>
 
-        At IdeaBase, we believe that all students should have the opportunity to gain real-world experience before graduating. Our student employees come from a variety of backgrounds and benefit from our comprehensive service offering.
+        <p>At IdeaBase, we believe that top-performing students should have the opportunity to gain real-world experience before graduating. Our student employees come from a variety of backgrounds and benefit from our comprehensive service offering.</p>
 
-        Our student employees are:
-        part-time or full-time Kent State University students
-        taking at least 6 credit hours
-        who are passionate about design
-
-        Our students are primarily from the College of Communication and Information, but we have team members from other majors as well.  Some of our past student majors include:
-        Visual Communication Design
-        Communication Studies
-        Advertising
-        Public Relations
-        Journalism
-        Computer Information Systems
-        Computer Science
-        User Experience Design
-        Library & Information Science
-        Digital Sciences
-
-        Think you’ll be a great fit? Email your resume to info@ideabasekent.com.
-
-        Not a student? Not a problem--you can still get involved by mentoring students, donating supplies or joining our professional advisory board. Contact Kristin Dowling, Business Development Manager, today.
+        <p>Our student employees are:</p>
+        <ul>
+        <li>Part-time or full-time Kent State University students</li>
+        <li>Taking at least 6 credit hours</li>
+        <li>Passionate about design</li>
+        </ul>
         
+        <h2>Degree Programs</h2>
+        <p>Our students are primarily from the College of Communication and Information, but we have team members from other majors as well.  Some of our past student majors include:</p>
+        <ul>
+        <li>Visual Communication Design</li>
+        <li>Communication Studies</li>
+        <li>Advertising</li>
+        <li>Public Relations</li>
+        <li>Journalism</li>
+        <li>Computer Information Systems</li>
+        <li>Computer Science</li>
+        <li>User Experience Design</li>
+        <li>Library & Information Science</li>
+        <li>Digital Science</li>
+        </ul>
+        <h2>Apply for a Job</h2>
+        <p>Think you’ll be a great fit? Email your resume to <a href="#">info@ideabasekent.com</a>.</p>
+        <p>Not a student? Not a problem.  You can still get involved by mentoring students, donating supplies or joining our professional advisory board. Contact <a href="#">Kristin Dowling, Business Development Manager, today</a>.</p>
         </section>
     </div>
 <?php include("../patterns/partials/footer.html"); ?>

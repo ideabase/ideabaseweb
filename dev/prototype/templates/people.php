@@ -3,8 +3,10 @@
         <?php include("../patterns/partials/interior-hero-slot-people.html"); ?>
     	<?php include("../patterns/partials/introduction-people.html"); ?>
     	<div class="panel-primary-container">
+        <section class="section-title">
+            <h2>Meet Our Team</h2>
+        </section>
     	<section class="section-people panel-primary-wide">
-        <h2>Meet Our Team</h2>
             <section class="people">
     		<?php include("../patterns/partials/staffprofile.html"); ?>
     		<?php include("../patterns/partials/staffprofile2.html"); ?>

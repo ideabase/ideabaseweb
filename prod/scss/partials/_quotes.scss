@@ -53,3 +53,13 @@ cite {
 		margin-bottom: 4em;
 	}
 }
+
+
+.section-basic-page .testimonial-entry, .section-blog-entry .testimonial-entry {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	cite {
+		margin-bottom: 2em;
+	}
+}

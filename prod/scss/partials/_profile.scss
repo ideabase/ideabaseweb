@@ -199,11 +199,15 @@
 .people__image {
 	img {
 		width: 90%;
+		max-width: 200px;
 	}
 	@media screen and (min-width: 700px) {
 		float: left;
 		width: 30%;
 		text-align: left;
+		img {
+			max-width: inherit;
+		}
 	}
 }
 
@@ -318,6 +322,7 @@
 	margin: 0;
 	padding: 0;
 	margin-bottom: 2em;
+	font-size: 1em;
 }
 
 .people-projects__list__item, .people-posts__list__item {

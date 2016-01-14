@@ -1,0 +1,24 @@
+.section-blog-entry .panel-primary ul, .section-basic-page .panel-primary ul {
+	  font-size: 1.1em;
+	  line-height: 1.5;
+	  font-weight: 300;
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  columns: 100px 2;
+	  li {
+	  	padding-left: 1em;
+	  	display: inline-block;
+	  	width: 100%;
+	  }
+	  li:before {
+		content: "\25cf";
+		margin-right: .5em;
+		color: $cyan;
+		font-size: .85em;
+		margin-left: -1em;
+	  }
+	  @media screen and (min-width: 900px) {
+	    font-size: 1.25em;	
+	   }
+}
