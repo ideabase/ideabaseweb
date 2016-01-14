@@ -24521,6 +24521,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/images\/_featuredImageTop\/lightbulb-sample.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49121,
+		"inputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/lightbulb-sample.png",
+		"outputAbbreviatedPath": "\/prod\/images\/_featuredImageTop\/lightbulb-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/images\/_featuredImageTop\/profile-sample.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

@@ -117,10 +117,13 @@
 
 .section-body-button .button {
   margin-top: 0;
+  margin-bottom: 3em;
 }
 
-.section-body-button .button {
-  margin-bottom: 3em;
+.section-body-button {
+  @media screen and (min-width: 650px) {
+  padding-top: .5em;
+  }
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {

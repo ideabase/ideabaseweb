@@ -4,11 +4,8 @@
         <div class="section-basic-page panel-primary-container">
         <section class="section-basic-page panel-primary">
 
-        <h2>Put Your Design Skills to the Test</h2>
-
-        <p>At IdeaBase, we believe that top-performing students should have the opportunity to gain real-world experience before graduating. Our student employees come from a variety of backgrounds and benefit from our comprehensive service offering.</p>
-
-        <p>Our student employees are:</p>
+        <p class="introduction">Put Your Design Skills to the Test.  At IdeaBase, we believe that top-performing students should have the opportunity to gain real-world experience before graduating.</p>
+        <p>Our student employees come from a variety of backgrounds and benefit from our comprehensive service offering.  Our student employees are:</p>
         <ul>
         <li>Part-time or full-time Kent State University students</li>
         <li>Taking at least 6 credit hours</li>
