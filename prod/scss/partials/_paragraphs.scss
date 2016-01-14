@@ -22,11 +22,12 @@ p {
   }
   &:after {
     content: "";
-    width: 1.5em;
+    width: 1.75rem;
     white-space: pre;
     height: 3px;
     margin: 0 auto;
     margin-top: 2em;
+    margin-bottom: 2em;
     background-color: $blue;
     display: block;
   }
