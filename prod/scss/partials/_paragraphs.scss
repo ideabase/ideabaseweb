@@ -21,8 +21,15 @@ p {
   color: rgb(77,77,77);
   text-align: center;
   margin-bottom: 0;
+  p {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
   @media screen and (min-width: 700px) {
 		font-size: 1.5em;
+    p {
+      font-size: 1.5rem;
+    }
   }
   a {
     color: $blue;

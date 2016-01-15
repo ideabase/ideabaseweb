@@ -3,17 +3,17 @@
 
 {% extends "_layout" %}
 
-
 {% block content %}
-<section class="section-header section-header__interior">
+{% include '_includes/_background-images.html' %}
+<section class="section-header section-header--interior">
 	<div class="section-header__container">
-		<h1 class="section-header__title">{{ entry.projectHeadline }}</h1>
+		<h1 class="section-header__title">{{ entry.title }}</h1>
 	</div>
 </section>
 
 <div class="panel-primary-container">
 <section class="section-introduction panel-primary">
-		<p class="introduction">{{ entry.projectsSubDescription }}</p>
+		<div class="introduction">{{ entry.projectsSubDescription }}</div>
 </section>
 </div>
 

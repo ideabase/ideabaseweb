@@ -15,18 +15,18 @@
         </section>
         <?php include("../patterns/partials/body-image.html"); ?>
         <section class="section-basic-page panel-primary">
-        <h3>Paid Parking</h3>
-        <ul>
-            <li>Metered parking is available on E. Main Street (front entrance) and Erie Street (back entrance).  Meters are free on weekdays after 5 p.m. and all day on weekends.</li>
-            <li>Hourly parking is available in the PARTA parking deck.</li>
-        </ul>
-        <h3>Free Parking</h3>
-        <ul>
-            <li>Behind the Kent Stage in two hour increments</li>
-            <li>Near the bridge</li>
-            <li>Near the Pufferbelly </li>
-            <li>In the large lot behind Panini’s on the weekend and after 5 p.m. only</li>
-        </ul>
+        <h3>Parking Options</h3>
+        <ol>
+            <li>Metered parking on E. Main Street (front entrance) and Erie Street (back entrance).  All metered parking is free on weekdays after 5 p.m. and all day on weekends.</li>
+</li>
+            <li>Hourly parking in the PARTA parking garage.</li>
+            <li>On W. Main St. bridge that crosses the river (2 hour increments).</li>
+            <li>Lot behind the Kent Stage (Columbus Street) in two hour increments (Free)</li>
+            <li>Lot off of Franklin Ave., under the bridge near Rt. 59 (Free)</li>
+            <li>Street on W. College Ave. and lot on Franklin Ave., behind Huntington Bank (Free)</li> 
+            <li>Large lot behind Panini’s (Free on the weekend and weekdays after 5 p.m. only)</li>
+        </ol>
+        <p>Parking is most difficult during lunch hours and close to 5:00 p.m.</p>
         <p>If you’re parking on the Kent State campus, we’re about a 10 minute walk down the Lefton Esplanade.</p>
         <p>Need help finding our office?  Give us a call at 330-672-7300.</p>
         </section>

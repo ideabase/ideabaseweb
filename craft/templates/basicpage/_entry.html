@@ -5,12 +5,49 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<section class="basic-entry">
-		<h1 class="basic-entry__title">
-			{{ entry.title }}
-		</h1>
 
-		<p class="basic-entry__date">
-			{{ entry.basicContent }}
-		</p>
+{% include '_includes/_background-images.html' %}
+
+<section class="section-header section-header--interior">
+	<div class="section-header__container">
+		<h1 class="section-header__title">{{ entry.title }}</h1>
+	</div>
+</section>
+
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+		<div class="introduction">{{ entry.introduction }}</div>
+</section>
+</div>
+
+{% for block in entry.basicPageOptions %}
+
+    {% if block.type == "text" %}
+    	<section class="section-basic-page panel-primary">
+        {{ block.basicPageText }}
+        </section>
+
+    {% elseif block.type == "button" %}
+    	<section class="section-body-button panel-primary">
+    		<a class="button button-primary" href="{{ block.buttonUrl }}">{{ block.buttonTitle }}</a>
+    	</section>
+
+    {% elseif block.type == "image" %}
+
+        {% set image = block.image.first() %}
+        {% if image %}
+            <img src="{{ image.getUrl('thumb') }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}">
+        {% endif %}
+
+    {% elseif block.type == "quote" %}
+
+        <blockquote>
+            <p>{{ block.quote }}</p>
+            <cite>– {{ block.cite }}</cite>
+        </blockquote>
+
+    {% endif %}
+
+{% endfor %}
+
 {% endblock %}
