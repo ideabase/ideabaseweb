@@ -1,12 +1,13 @@
 .section-blog-entry .panel-primary ul, .section-basic-page .panel-primary ul {
-	  font-size: 1.1em;
+	  font-size: 1.05em;
 	  line-height: 1.5;
 	  font-weight: 300;
 	  list-style-type: none;
 	  margin: 0;
 	  padding: 0;
-	  columns: 100px 2;
+	  columns: 200px 2;
 	  margin-bottom: 2em;
+	  margin-top: 1em;
 	  li {
 	  	padding-left: 1em;
 	  	display: inline-block;
@@ -20,6 +21,6 @@
 		margin-left: -1em;
 	  }
 	  @media screen and (min-width: 900px) {
-	    font-size: 1.25em;	
+	    font-size: 1.1em;	
 	   }
 }

@@ -48,6 +48,7 @@
 
 .button--reverse {
   padding-left: 2.5em;
+  margin-top: 1.5em;
   &:after {
     background-image: url(../images/global/arrow-right-white.svg);
     transform: scaleX(-1);
