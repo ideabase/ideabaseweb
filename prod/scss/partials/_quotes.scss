@@ -12,7 +12,7 @@ blockquote {
 	padding: 0 .5em 0 .8em;
 	text-align: center;
 	&:before, &:after {
-		content: open-quote;
+		content: "\201C";
 		color: $cyan;
 		font-size: 4em;
 		position: absolute;
@@ -21,7 +21,7 @@ blockquote {
 		margin-top: -.5em;
 	}
 	&:after {
-		content: close-quote;
+		content: "\201D";
 		margin-left: .1em;
 		margin-top: -.25em;
 	}

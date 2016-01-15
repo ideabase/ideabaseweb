@@ -217,6 +217,15 @@
   font-weight: 300;
 }
 
+.blog__entry__author__description p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.blog__entry__author__description a {
+  color: $blue;
+}
+
 .people-posts--blog .people-posts__title {
   text-align: left;
 }

@@ -1,7 +1,7 @@
 .section-blog-entry .panel-primary ul, .section-basic-page .panel-primary ul {
 	  font-size: 1.05em;
 	  line-height: 1.5;
-	  font-weight: 300;
+	  font-weight: 400;
 	  list-style-type: none;
 	  margin: 0;
 	  padding: 0;
@@ -23,4 +23,13 @@
 	  @media screen and (min-width: 900px) {
 	    font-size: 1.1em;	
 	   }
+}
+
+.section-blog-entry .panel-primary ol, .section-basic-page .panel-primary ol {
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 1.05em;
+	li {
+		margin-bottom: .5em;
+	}
 }

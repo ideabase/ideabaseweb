@@ -31,20 +31,56 @@
     	<section class="section-body-button panel-primary">
     		<a class="button button-primary" href="{{ block.buttonUrl }}">{{ block.buttonTitle }}</a>
     	</section>
+	
+	{% elseif block.type == "buttonInternalLink" %}
+		<section class="section-body-button panel-primary">
+			<a class="button button-primary" href="{{ block.buttonLinkInternal.first().url }}">{{ block.buttonNameInternal }}</a>
+		</section>
 
     {% elseif block.type == "image" %}
 
         {% set image = block.image.first() %}
         {% if image %}
-            <img src="{{ image.getUrl('thumb') }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}">
+        	<section class="section-body-image panel-primary">
+        		<figure class="section-body-image__figure">
+        			<img class="section-body-image__image" src="{{ image.getUrl('thumb') }}" alt="{{ image.title }}" />
+        			<figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
+        		</figure>
+        	</section>
         {% endif %}
 
-    {% elseif block.type == "quote" %}
+    {% elseif block.type == "video" %}
 
-        <blockquote>
-            <p>{{ block.quote }}</p>
-            <cite>– {{ block.cite }}</cite>
-        </blockquote>
+    <section class="section-body-video panel-primary">
+    	<figure class="section-body-video__figure">
+    		{{ block.videoURL|raw }}
+    		<figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
+    	</figure>
+    </section>
+
+    {% elseif block.type == "callOut" %}
+
+    <div class="panel-secondary-container panel-background-image">
+    <section class="section-price panel-secondary">
+        <h2>{{ block.callOut }}</h2>
+        {% set image = block.callOutImage.first() %}
+        {% if image %}
+        	<img class="panel-secondary__thumbnail" src="{{ image.getUrl }}" alt ="{{ image.title }}" />
+        {% endif %}
+        
+        <div class="panel-secondary--left">
+        	{{ block.callOutText }}
+        </div>
+    </section>
+    </div>
+
+    {% elseif block.type == "pullQuote" %}
+
+        <section class="testimonial-entry panel-primary">
+        		<blockquote class="testimonial-entry__text">{{ block.pullQuote }}
+        		</blockquote>	
+        		<cite class="testimonial-entry__author">{{ block.pullQuoteAuthor }}</cite>
+        </section>
 
     {% endif %}
 

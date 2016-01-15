@@ -6,34 +6,96 @@
 
 {% block content %}
 
+<section class="section-header-blog-basic-page">
+		{% for asset in entry.blogFeaturedImage %}
+		  <img class="blog__entry__image" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		{% endfor %}
+</section>
+<div class="panel-primary-container">
+    <section class="section-blog-entry panel-primary">
+	<article class="blog__entry">
+		<h1 class="blog__entry__title">{{ entry.title }}</h1>
+		<span class="blog__entry__author">
+			{% for entry in entry.blogAuthor %}
+			{{ entry.title }}
+			{% endfor %}
+		</span>
+		<span class="blog__entry__date">Posted on {{ entry.postDate.format('F d, Y') }}</span>
+		<div class="blog__entry__text">
+			{{ entry.blogContent}}
+			{% for block in entry.blogPostContent %}
 
-	<article class="blog">
-	    		<div class="people__image">
-				{% for asset in entry.blogFeaturedImage %}
-     				<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   				{% endfor %}
-   			</div>
-		<h1 class="blog__title">{{ entry.title }}</h1>
-		<p class="blog__date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+			    {% if block.type == "text" %}
+			        {{ block.text }}
 
-		<p class="blog__text">{{ entry.blogContent}}</p>
+			    {% elseif block.type == "image" %}
+
+			        {% set image = block.image.first() %}
+			        {% if image %}
+			        	<section class="section-body-image panel-primary">
+			        		<figure class="section-body-image__figure">
+			        			<img class="section-body-image__image" src="{{ image.getUrl('thumb') }}" alt="{{ image.title }}" />
+			        			<figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
+			        		</figure>
+			        	</section>
+			        {% endif %}
+
+			    {% elseif block.type == "video" %}
+
+			    <section class="section-body-video panel-primary">
+			    	<figure class="section-body-video__figure">
+			    		{{ block.videoURL|raw }}
+			    		<figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
+			    	</figure>
+			    </section>
+
+			    {% elseif block.type == "pullQuote" %}
+
+			        <section class="testimonial-entry panel-primary">
+			        		<blockquote class="testimonial-entry__text">{{ block.pullQuote }}
+			        		</blockquote>	
+			        		<cite class="testimonial-entry__author">{{ block.pullQuoteAuthor }}</cite>
+			        </section>
+
+			    {% endif %}
+
+			{% endfor %}
+		</div>
 	</article>
-	
-		<section>
-
-
+	<aside class="blog__entry__sidebar">
 		{% for entry in entry.blogAuthor %}
-		{{ entry.title }}
+		<div class="blog__entry__author__image">
+			{% for asset in entry.staffHeadshot %}
+		     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		   	{% endfor %}
+		 </div>
+		 <span class="blog__entry__author__name">{{ entry.title }}
+		 </span>
+		<span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
+		<div class="blog__entry__author__description">
 		{% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
 		{% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
     		{{ firstBioParagraph|raw }}
-    		{{ entry.profileJobTitle }}
-    		<div class="people__image">
-				{% for asset in entry.staffHeadshot %}
-     				<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   				{% endfor %}
-   			</div>
+		</div>
+		<a href="{{ entry.url }}" class="blog-teaser__link blog-teaser__link--blog">Read More About {{ entry.profileFirstName }}</a>   		
 		{% endfor %}
+		<section class="people-posts people-posts--blog">
+			<h2 class="people-posts__title">Related Posts</h2>	
+			<ul class="people-posts__list">
+				<li class="people-posts__list__item">
+					<a href="#">The Atmosphere of IdeaBase by Sarah Holzer</a>
+				</li>
+				<li class="people-posts__list__item">
+					<a href="#">Building a Responsive Library Website by Sarah Holzer</a>
+				</li>
+				<li class="people-posts__list__item">
+					<a href="#">The Atmosphere of IdeaBase by Sarah Holzer</a>
+				</li>
+			</ul>
+		</section>
+		<a class="button button-primary button--reverse" href="/blog">Back to Blog</a>	
+	</aside>
 	</section>
+</div>
 
 	{% endblock %}
