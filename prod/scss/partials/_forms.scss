@@ -1,0 +1,61 @@
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
+.project-category {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: -1.25em;
+	margin-bottom: 1em;
+	max-width: 400px;
+}
+
+label[for=category] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+label[for=category]::after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  display: block;
+  background: $cyan url(../images/global/arrow-down-white.svg) no-repeat center center;
+  background-size: 50% auto;
+  pointer-events: none;
+  &:hover {
+  	background-color: $blue;
+  }
+}
+
+label[for=category] select {
+  border: 3px solid $lightgray;
+  background: white;
+  padding: .5em .75em .5em .75em;
+  width: 100%;
+  font-size: 16px;
+  font-family: $source;
+  cursor: pointer;
+}
+
+label[for=category] select::-ms-expand {
+    display: none;
+}
+
+label[for=category] :-moz-any(select) {
+  width: 110%;
+}
+
+label[for=category].ie9 select {
+  width: 110%;
+}
+
+label[for=category] select:focus {
+  outline: 1px dotted #A9A9A9;
+}

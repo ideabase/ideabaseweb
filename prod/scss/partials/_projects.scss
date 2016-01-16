@@ -420,3 +420,102 @@
     float: left;
   }
 }
+
+// Project Listing Page //
+
+.section-projects-all {
+  padding-bottom: 0;
+}
+
+.project-list {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  a {
+    text-decoration: none;
+  }
+}
+
+.project-list__item {
+  margin-bottom:  2.5em;
+}
+
+.project-list__item__image {
+  position: relative;
+  z-index: 50;
+  display: block;
+  &:before {
+    transition: .3s all ease-in-out;
+    background-color: rgba($blue,0);
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    transition: .3s all ease-in-out;
+  }
+  img {
+    display: block;
+  }
+}
+
+.project-list__item__image:hover, .project-list__item__image:focus {
+  &:before {
+    background-color: rgba($blue,.5);
+  }
+}
+
+.project-list__item__name {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.project-list__item__client {
+  font-size: 1em;
+  margin-top: .35em;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+
+  .project-list {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .project-list .project-list__item:nth-child(odd) {
+    margin-right: 2.5%;
+    margin-left: 2.5%
+  }
+
+  .project-list__item {
+    width: 45%;
+    float: left;
+    max-width: inherit;
+    margin-bottom: 2em;
+  }
+
+  .project-list {
+    @include clearfix;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .project-list__item {
+    width: 30%;
+    float: left;
+    margin: 0em 1% 3em 1%;
+  }
+
+  .project-list .project-list__item:nth-child(odd) {
+    margin: 0 1%;
+  }
+
+  .project-list .project-list__item:nth-child(3n+1) {
+    clear: left;
+  }
+}
