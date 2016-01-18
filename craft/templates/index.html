@@ -84,7 +84,7 @@
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
-							{% for asset in entry.projectPicture.first() %}
+							{% for asset in entry.projectPicture.limit(1) %}
      							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
    							{% endfor %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
