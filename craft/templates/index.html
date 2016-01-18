@@ -61,7 +61,7 @@
 						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}					
 							<li class="section-services__list__item">
 								{% for asset in block.homepageIcon %}
-							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
+							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
 							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
@@ -85,7 +85,7 @@
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 							{% for asset in entry.projectPicture %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
    							{% endfor %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
