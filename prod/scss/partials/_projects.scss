@@ -81,6 +81,10 @@
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+.section-projects__list__item__name {
+  font-size: 1.2em;
+}
+
 @media screen and ( max-width: 700px ) {
 
   .section-projects__list {
@@ -92,6 +96,7 @@
     width: 100%; /* full width */
     height: auto; /* height of gallery */
     margin-right: 10px;
+    display: inline-block;
   }
   .section-projects__list__item__thumb {
     width: 100%;
