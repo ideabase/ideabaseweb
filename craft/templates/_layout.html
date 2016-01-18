@@ -1,12 +1,6 @@
 {#
  # Layout template
  # ---------------
- #
- # This template defines your site’s global layout. It can be
- # “extended” by other templates to fill in the gaps.
- #
- # See Twig’s Template Inheritance documentation for more details:
- # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
  #}
 
 <!DOCTYPE html>
@@ -46,13 +40,10 @@
 			{% endblock %}
 		</main>
 		{% include 'global/footer.html' %}
-	<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
-
-
+<link href="{{ siteUrl }}/css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
 <script src="{{ siteUrl }}/js/modernizr-custom.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.0.6/scrollreveal.min.js"></script>
 <script src="{{ siteUrl }}/js/custom-scripts-min.js"></script>
 </body>
-
 </html>
