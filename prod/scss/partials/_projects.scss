@@ -486,6 +486,65 @@
   text-align: center;
 }
 
+.project-category {
+  text-align:center;
+  position: relative;
+}
+
+.project-category__list {
+  list-style-type: none;
+  padding: 1em;
+  width: 60%;
+  margin: 0 auto;
+  background-color: $blue;
+}
+
+.project-category__list__item {
+  padding-top: .75em;
+  font-size: 1em;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+}
+
+.project-category .nav__trigger__link {
+  display: none;
+}
+
+.js .project-category .nav__trigger__link {
+  display: inline-block;
+  font-size: .75em;
+}
+
+.js .project-category__list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in;
+  padding: 0;
+}
+
+.project-category__list.project--show {
+  max-height: inherit;
+  padding: 1em;
+  padding-top: .5em;
+  padding-bottom: 1.25em;
+  position: absolute;
+  z-index:1000;
+  margin: 0 auto;
+  max-width: 300px;
+  margin-top: -.8em;
+  left: 20%;
+  border:1px solid white;
+}
+
+.nav__trigger__link.button--show {
+  background-color: $cyan;
+}
+
 @media screen and (min-width: 600px) {
 
   .project-list {
