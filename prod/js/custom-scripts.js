@@ -8,6 +8,13 @@ $( "#navshow" ).click(function() {
   $( ".nav__trigger__link--show" ).text(menuclose);
 });
 
+// Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
+$( "#categorytrigger" ).click(function() {
+  $( "#categorytriggerlist" ).toggleClass( "project--show" );
+  $( "#categorytrigger" ).toggleClass( "button--show" );
+});
+
+
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
 $( "#footer-form-toggle" ).click(function() {
   $( "#footer-form" ).toggleClass( "form--show" );
