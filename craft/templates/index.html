@@ -103,7 +103,7 @@
 		{% for block in entry.projectMatrix.type('homeProjects') %}
 			<ul class="section-people__logos">	
      			{% for asset in block.projectImageLogo %}
-           			<img src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
+           			<li><img src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}"></li>
         		{% endfor %}	
 			</ul>
 		{% endfor %}	
