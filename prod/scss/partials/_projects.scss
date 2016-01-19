@@ -133,7 +133,7 @@
 
 .section-projects-featured .project-entry:nth-child(2) {
   .project-entry__description {
-    background-color: rgba($cyan,.95);
+    background-color: rgba($blue,.95);
   }
 }
 
@@ -155,14 +155,14 @@
     transition: .3s all ease-in-out;
   }
   @media screen and (min-width: 700px) {
-    height: 550px;
+    height: 650px;
     &:hover {
       .project-entry__description {
         width: 45%;
-        background-color: rgba($blue,1);
+        background-color: rgba($cyan,1);
       }
       &:nth-child(2) .project-entry__description {
-        background-color: rgba($cyan,1);
+        background-color: rgba($blue,1);
       }
       &:after {
         background-color: rgba($blue,.3);
@@ -254,7 +254,7 @@
 .project-entry__description {
   position: absolute;
   bottom: 0;
-  background-color: rgba($blue,.95);
+  background-color: rgba($cyan,.95);
   margin-top: 25%;
   color: white;
   padding: .75em 1.25em;
