@@ -526,6 +526,8 @@
   color: $darkgray;
   &:after {
     background-image: url(../images/global/downarrowgray.svg);
+    background-size: 50% auto;
+    top: 40%;
   }
 }
 
