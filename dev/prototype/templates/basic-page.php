@@ -13,7 +13,7 @@
         <li>Back entrance is behind Tree City Coffee and beside Flashers Cleaners</li>
         </ul>
         </section>
-        <?php include("../patterns/partials/body-image.html"); ?>
+        <?php include("../patterns/partials/map-image.html"); ?>
         <section class="section-basic-page panel-primary">
         <h3>Parking Options</h3>
         <ol>
