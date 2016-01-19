@@ -524,6 +524,9 @@
   font-size: .75em;
   background-color: $lightgray;
   color: $darkgray;
+  &:after {
+    background-image: url(../images/global/downarrowgray.svg);
+  }
 }
 
 .js .project-category__list {
