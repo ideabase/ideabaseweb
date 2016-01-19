@@ -24514,6 +24514,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/ux-bw.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 317160,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/ux-bw.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/ux-bw.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/ux.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

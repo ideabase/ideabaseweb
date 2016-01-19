@@ -46,7 +46,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(black,.2);
+    background-color: darken(rgba($blue,.3),15%);
     top: 0;
     left: 0;
     display: block;
@@ -56,6 +56,11 @@
 
 .section-header--interior {
   background-position: center;
+  background-blend-mode: overlay !important;
+  background-color: rgba(26, 95, 171, .8);
+  &:after {
+    background-color: darken(rgba($blue,.7),15%) !important;
+  }
   @media screen and (min-width: 500px) {
     padding: 2em 2em;
   }
