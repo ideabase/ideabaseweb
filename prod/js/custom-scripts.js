@@ -59,10 +59,10 @@ $('.project-single__images').flickity({
 
 window.sr = ScrollReveal({ reset: true });
 sr.reveal('.footer-form__button__container', { duration: 1200, scale: 1   } );
-sr.reveal('.section-people__logos', { duration: 1000, scale: 1  } );
-sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 1000 } );
-sr.reveal('.section-header__title', { delay: 100, scale: 1, duration: 1000 } );
-sr.reveal('.section-projects__list', { scale: 1, duration: 1000 } );
+sr.reveal('.section-people__logos', { duration: 500, scale: 1  } );
+sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 500 } );
+sr.reveal('.section-header__title', { delay: 100, scale: 1, duration: 500 } );
+sr.reveal('.section-projects__list', { scale: 1, duration: 500 } );
 
 // Live Filter //
 

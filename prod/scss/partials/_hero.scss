@@ -40,7 +40,7 @@
 }
 
 .backgroundblendmode .section-header {
-  background-color: $blue;
+  background-color: lighten($blue,10%);
   background-blend-mode: multiply;
   &:after {
     position: absolute;

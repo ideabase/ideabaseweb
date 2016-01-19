@@ -4,7 +4,8 @@
         <div class="section-basic-page panel-primary-container">
             <?php include("../patterns/partials/about-text.html"); ?>
             <?php include("../patterns/partials/about-video.html"); ?>
-            <?php include("../patterns/partials/about-text2.html"); ?>
+            <?php include("../patterns/partials/about-text3.html"); ?>
             <?php include("../patterns/partials/body-image.html"); ?>
+            <?php include("../patterns/partials/about-text2.html"); ?>
         </div>
 <?php include("../patterns/partials/footer.html"); ?>
