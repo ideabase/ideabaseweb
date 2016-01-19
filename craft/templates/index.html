@@ -84,8 +84,8 @@
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
-							{% for asset in entry.projectPicture %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+							{% for asset in entry.projectPicture.limit(1) %}
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
    							{% endfor %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
@@ -96,5 +96,19 @@
 	</section>
 	</div>
 	<!-- End Projects List -->
+	<div class="panel-primary-container">
+	<section class="section-people-home panel-primary">
+		<h2>{{ entry.peopleSectionTitle }}</h2>
+		<p>{{ entry.peopleSectionDescription }}</p>
+		{% for block in entry.projectMatrix.type('homeProjects') %}
+			<ul class="section-people__logos">	
+     			{% for asset in block.projectImageLogo %}
+           			<img src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
+        		{% endfor %}	
+			</ul>
+		{% endfor %}	
+		<a class="button button-primary" href="{{ entry.peopleButtonLink.url }}">{{ entry.peopleButtonName }}</a>
+	</section>
+	</div>
 
 {% endblock %}

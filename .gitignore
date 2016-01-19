@@ -38,3 +38,4 @@ prod/images/headshot/_featuredImageTop
 prod/images/headshot/profile-sample.jpg
 prod/images/headshot/profile-square.jpg
 prod/Images/.DS_Store
+craft/config/db.php

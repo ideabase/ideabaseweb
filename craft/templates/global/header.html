@@ -1,3 +1,4 @@
+{% cache globally %}
 <header role="banner">
 	<a href="{{ siteUrl }}">{% for image in craft.assets.title('ideabaselogo') %}
     <img class="ideabaselogo" src="{{ image.getUrl('aboutImageTransform') }}" alt="{{ image.title }}">
@@ -23,3 +24,4 @@
       			</ul> 
 	</nav>
 </header>
+{% endcache %}

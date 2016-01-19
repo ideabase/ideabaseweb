@@ -3,7 +3,7 @@
         <?php include("../patterns/partials/interior-hero-slot-work.html"); ?>
         <div class="section-basic-page panel-primary-container">
         <section class="section-basic-page panel-primary">
-        <p class="introduction">Put Your Design Skills to the Test.  At IdeaBase, we believe that top-performing students should have the opportunity to gain real-world experience before graduating.</p>
+        <p class="introduction">Put your design skills to the test.  At IdeaBase, we believe that top-performing students should have the opportunity to gain real-world experience before graduating.</p>
         <h2>Qualifications</h2>
         <p>Our student employees come from a variety of backgrounds and benefit from our comprehensive service offering.  Our student employees are:</p>
         <ul>

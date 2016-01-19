@@ -9,7 +9,7 @@
 	    	<?php include("../patterns/partials/project.html"); ?>
 	    	<?php include("../patterns/partials/project2.html"); ?>
 	    	<?php include("../patterns/partials/project.html"); ?>
-            <a class="button button-primary" href="projects.php">More Projects</a>
+            <a class="button button-primary" href="projects-all.php">See All Projects</a>
 	    </section>
 	    </div>
 	    <?php include("../patterns/partials/case-studies.html"); ?>

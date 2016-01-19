@@ -8,6 +8,13 @@ $( "#navshow" ).click(function() {
   $( ".nav__trigger__link--show" ).text(menuclose);
 });
 
+// Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
+$( "#categorytrigger" ).click(function() {
+  $( "#categorytriggerlist" ).toggleClass( "project--show" );
+  $( "#categorytrigger" ).toggleClass( "button--show" );
+});
+
+
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
 $( "#footer-form-toggle" ).click(function() {
   $( "#footer-form" ).toggleClass( "form--show" );
@@ -52,7 +59,10 @@ $('.project-single__images').flickity({
 
 window.sr = ScrollReveal({ reset: true });
 sr.reveal('.footer-form__button__container', { duration: 1200, scale: 1   } );
-sr.reveal('.section-people__logos', { duration: 1000, scale: 1  } );
-sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 1000 } );
-sr.reveal('.section-header__title', { delay: 100, scale: 1, duration: 1000 } );
-sr.reveal('.section-projects__list', { scale: 1, duration: 1000 } );
+sr.reveal('.section-people__logos', { duration: 500, scale: 1  } );
+sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 500 } );
+sr.reveal('.section-header__title', { delay: 100, scale: 1, duration: 500 } );
+sr.reveal('.section-projects__list', { scale: 1, duration: 500 } );
+
+// Live Filter //
+
