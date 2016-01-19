@@ -46,9 +46,13 @@
 			</section>
 			<!-- End Social Media -->
 			<section class="footer-info__supplemental">
-				<div class="footer-info__about">	
-					{{ footer.footerBlurb }}
-				</div>
+				<ul class="footer-info__nav">
+					<li class="footer-info__nav__item"><a href="about.php">About</a></li>
+					<li class="footer-info__nav__item"><a href="blogs.php">Blog</a></li>
+					<li class="footer-info__nav__item"><a href="classroom.php">Classes</a></li>
+					<li class="footer-info__nav__item"><a href="work.php">Jobs</a></li>
+					<li class="footer-info__nav__item"><a href="ux.php">UX Lab</a></li>
+				</ul>
 				{% for asset in footer.kentStateLogo %}
 			     	<p class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></p>
 			    {% endfor %}	
