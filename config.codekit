@@ -24225,6 +24225,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/computer.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.42578e+06,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/computer.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/computer.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/design-sample.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -24298,6 +24309,17 @@
 		"initialSize": 3534,
 		"inputAbbreviatedPath": "\/dev\/assets\/img\/icon-sample.png",
 		"outputAbbreviatedPath": "\/dev\/assets\/img\/icon-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/IdeaBase_Map-03.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 651682,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/IdeaBase_Map-03.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/IdeaBase_Map-03.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
