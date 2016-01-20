@@ -24409,6 +24409,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/dev\/assets\/img\/john.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5.02914e+06,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/dev\/assets\/img\/lab.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -24427,6 +24438,17 @@
 		"initialSize": 1083,
 		"inputAbbreviatedPath": "\/dev\/assets\/img\/lightbulb-sample.png",
 		"outputAbbreviatedPath": "\/dev\/assets\/img\/lightbulb-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/location.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.42647e+06,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/location.jpg",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/location.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

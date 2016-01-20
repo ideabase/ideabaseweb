@@ -57,9 +57,9 @@
 .section-header--interior {
   background-position: center;
   background-blend-mode: overlay !important;
-  background-color: rgba(26, 95, 171, .8);
+  background-color: rgba(26, 95, 171, 1);
   &:after {
-    background-color: darken(rgba($blue,.7),15%) !important;
+    background-color: darken(rgba($blue,.65),20%) !important;
   }
   @media screen and (min-width: 500px) {
     padding: 2em 2em;
