@@ -13,12 +13,6 @@
             </ul>
             <a class="button button-primary" href="projects-all.php">See All Projects</a>
            </section>
-    	<!--<section class="section-projects-featured">
-	    	<?php include("../patterns/partials/project.html"); ?>
-	    	<?php include("../patterns/partials/project2.html"); ?>
-	    	<?php include("../patterns/partials/project.html"); ?>
-            <a class="button button-primary" href="projects-all.php">See All Projects</a>
-	    </section>-->
 	    </div>
 	    <?php include("../patterns/partials/case-studies.html"); ?>
     	<?php include("../patterns/partials/succeed.html"); ?>

@@ -95,26 +95,28 @@
 
   	</section>
   		<section class="section-blog-teaser">
+  		<h3>From Our Blog</h3>
   		<ul class="blog-teaser-list">
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
   		<li class="blog-teaser">
   			<a href="{{ entry.url }}">
-					<h3 class="blog-individual__title">{{ entry.title }}</h3>
+					<h1 class="blog-teaser__title">{{ entry.title }}</h1>
+					{% for entry in entry.blogAuthor %}
+						<p class="blog-teaser__author">
+						{{ entry.title }}
+						</p>
+					{% endfor %}
 					{% set blogParagraphs = entry.blogContent|split('.') %}
 					{% set firstBlogParagraph = blogParagraphs|first ~ '.' %}
-    					{{ firstBlogParagraph|raw }}
-
-    				<div>
-					{% for entry in entry.blogAuthor %}
-						{{ entry.title }}
-					{% endfor %}
-					</div>	
-
+							<div class="blog-teaser__text">
+					    		{{ firstBlogParagraph|raw }}
+					    	</div>
+					<p class="blog-teaser__link">Read NAME's Post</p>
 			</a>
 		</li>
 		{% endfor %}	
 		</ul>
-				<div><a href="{{site.Url}}/prod/blogs">More Blogs</a></div>
+				<a class="button button-primary" href="#">Read More In Our Staff Blog</a>
 		</section>
 
 		<section class="people">	
