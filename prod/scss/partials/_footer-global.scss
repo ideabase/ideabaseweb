@@ -175,6 +175,10 @@
   margin: 0 auto;
   margin-bottom: 1em;
   margin-top: 1em;
+  img {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   @media screen and (min-width: 900px) {
     float: right;
     margin-top: -10px;
