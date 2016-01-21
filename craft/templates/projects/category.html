@@ -1,16 +1,32 @@
-{# Recipe Index page #}
+{##}
 {% extends  "_layout" %}
 {% block content %}
     <div class="page-title">
         <h2>{{ category.title }}</h2>
     </div>
+	<section class="section-projects-all panel-primary-wide">
+		<ul class="project-list">
+			
 
 {% for entry in craft.entries.section('ideabaseProjects').relatedTo(category) %}
 
-<article class="project-index__entry">
-	<a href="{{ entry.url }}">
-	<p class="project-index__indivdual">{{ entry.title }}</p>
-<div class="project-index__image"></a>	
+
+    		<li class="project-list__item">
+					<a href="{{ entry.url }}">
+						{% for asset in entry.projectPicture %}
+			     			<div class="project-list__item__image"><img class="" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></div>
+			     		{% endfor %}
+
+			     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
+
+						{% for entry in entry.forWhichClient %}
+        					<h3 class="project-list__item__client">{{ entry.title }}</h3>
+						</a>	
+						</li>
+   			{% endfor %}
+   			
+  		</ul>
+	</section>
 
 {% endfor %}
 {% endblock %}
