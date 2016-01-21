@@ -1,0 +1,16 @@
+{# Recipe Index page #}
+{% extends  "_layout" %}
+{% block content %}
+    <div class="page-title">
+        <h2>{{ category.title }}</h2>
+    </div>
+
+{% for entry in craft.entries.section('ideabaseProjects').relatedTo(category) %}
+
+<article class="project-index__entry">
+	<a href="{{ entry.url }}">
+	<p class="project-index__indivdual">{{ entry.title }}</p>
+<div class="project-index__image"></a>	
+
+{% endfor %}
+{% endblock %}
