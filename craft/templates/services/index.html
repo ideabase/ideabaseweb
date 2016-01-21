@@ -6,7 +6,7 @@ Process Template
 {% set title = "Process" %}
 
 {% block content %}
-
+{% include '_includes/_background-images.html' %}
 	<section class="section-header section-header--interior">
     <div class="section-header__container">
 		  <h1 class="section-header__title">{{ entry.processHeader }}</h1>
@@ -61,7 +61,7 @@ Process Template
   </div>
 
 {% endfor %}
-    <p class="service-index__examples__supplemental">{{ entry.uxTestingLabDescription }}</p>
+    <div class="service-index__examples__supplemental">{{ entry.uxTestingLabDescription }}</div>
     <a class="button button-primary" href="">{{ entry.uxLabButton }}</a>
 </div>
 <!-- </div> -->

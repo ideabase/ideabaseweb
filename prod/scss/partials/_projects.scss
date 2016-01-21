@@ -126,10 +126,22 @@
   display: block;
   margin-bottom: 2em;
   text-align: center;
+  background-color: $blue;
+  color: white;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  @media screen and (min-width: 850px) {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    margin-top: 6em
+  }
 }
 
 .section-projects-featured .button {
-  margin-top: 4em;
+  margin-top: 1em;
+  @media screen and (min-width: 850px) {
+    margin-top: 3em;
+  }
 }
 
 .section-projects-featured .project-entry:nth-child(2) {
@@ -435,20 +447,25 @@
 
 .section-projects-all {
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .section-projects-featured .section-projects-all {
-  margin-top:0;
-  padding-top:0;
+  z-index:5000;
+  @media screen and (min-width: 850px) {
+    margin-top: -10em;
+  }
 }
 
 .section-projects-featured .project-list {
   @media screen and (min-width: 600px) {
-    width: 80%;
+    width: 95%;
   }
 }
 
 .section-projects-featured .project-list__item {
+  margin-right: auto;
+  margin-left: auto;
   @media screen and (min-width: 600px) {
     width: 100%;
     margin-bottom: 2em;
@@ -456,6 +473,7 @@
   @media screen and (min-width: 850px) {
     width: 30%;
     margin-bottom: 0;
+    margin: 0 1.5%
   }
 }
 
@@ -517,6 +535,7 @@
 .project-list__item__name {
   font-size: 1.2em;
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .project-list__item__client {
@@ -633,5 +652,33 @@
 }
 
 .project-list__item--featured {
-  margin-bottom: 0em;
+  margin-bottom: 3em;
+  color: white;
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0em;
+  }
+}
+
+.project-list__item--featured .project-list__item__name {
+  color: white;
+}
+
+.project-list__item--featured .project-list__item__description {
+  color: white;
+}
+
+.project-list__item--featured .project-list__item__client {
+  color: white;
+}
+
+.project-list__item--featured .project-list__item__image {
+  @media screen and (min-width: 800px) {
+    margin-bottom: 2em;
+  }
+}
+
+.section-projects-all-button {
+  @media screen and (min-width: 800px) {
+    margin-top: -1em;
+  }
 }

@@ -82,6 +82,8 @@
 .global-footer__text {
   margin: 0;
   padding: 0;
+  font-weight:normal;
+  line-height: 1.5;
 }
 
 .footer-info__social {
@@ -140,22 +142,22 @@
     transform: scale(1.05);
   }
   &[href*="facebook.com"] {
-    background-image: url(../../dev/assets/img/social/facebook.svg);
+    background-image: url(../images/global/facebook.svg);
   }
   &[href*="flickr.com"] {
-    background-image: url(../../dev/assets/img/social/flickr.svg);
+    background-image: url(../images/global/flickr.svg);
   }
   &[href*="linkedin.com"] {
-    background-image: url(../../dev/assets/img/social/linkedin.svg);
+    background-image: url(../images/global/linkedin.svg);
   }
   &[href*="twitter.com"] {
-    background-image: url(../../dev/assets/img/social/twitter.svg);
+    background-image: url(../images/global/twitter.svg);
   }
   &[href*="youtube.com"] {
-    background-image: url(../../dev/assets/img/social/youtube.svg);
+    background-image: url(../images/global/youtube.svg);
   }
   &[href*="instagram.com"] {
-    background-image: url(../../dev/assets/img/social/instagram.svg);
+    background-image: url(../images/global/instagram.svg);
   }
 }
 
@@ -175,6 +177,10 @@
   margin: 0 auto;
   margin-bottom: 1em;
   margin-top: 1em;
+  img {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   @media screen and (min-width: 900px) {
     float: right;
     margin-top: -10px;
