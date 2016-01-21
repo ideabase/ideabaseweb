@@ -17,48 +17,37 @@
 </section>
 </div>
 
-<div class="panel-primary-containter">
-<section class="section-introduction panel-primary">
+<div class="panel-primary-container">
+<section class="section-title panel-primary">
 	<h2>Featured Projects</h2>
 </section>
 </div>
 
-<div class="panel-primary-container">
-	<section class="section-projects">
+<div class="panel-primary-container panel-secondary-container section-projects-featured panel-background-image">
+	<section class="section-projects-all panel-secondary panel-primary-wide">
+		<ul class="project-list">
 			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
-			<a class="project-entry" href="{{ entry.url }}">
-					
-
+			<li class="project-list__item project-list__item--featured">	
+			<a href="{{ entry.url }}">
 					{% for asset in entry.projectPicture %}
-			     		<img class="project-entry__image" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+					<div class="project-list__item__image">
+			     		<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+			     	</div>
 			     	{% endfor %}
 			     	
-			     	<div class="project-entry__description">
-						<div class="project-entry__description__container">
-							<h1 class="project-entry__description__title">{{ entry.title }}</h1>
-							<div class="project-entry__description__text">{{ entry.projectDescription }}</div>
-							{% for entry in entry.forWhichClient %}
-						        <p class="project-entry__description__client">{{ entry.title }}</p>
-						    {% endfor %}
-
-						{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
-   							
-   							{% for entry in relatedAward %}
-   							<div class="project-entry__description__award">
-								{{ entry.title }}
-							</div>	
-							{% endfor %}
-
-						<!--{% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
-   							{% for entry in relatedTestimonial %}
-								{{ entry.title }}
-							{% endfor %}
-							-->
-						</div>
-					</div>	
-			</a>	
+			     	<h2 class="project-list__item__name">{{ entry.title }}
+			     	</h2>
+			     	<h3 class="project-list__item__client">
+			     			{% for entry in entry.forWhichClient %}
+							{{ entry.title }}
+			     		    {% endfor %}
+			     	</h3>
+					<p class="project-list__item__description"{{ entry.projectDescription }}</p>
+			</a>
+			</li>	
 			{% endfor %}
-			<a class="button button-primary" href="{{siteUrl}}projects-list">{{ entry.moreProjectsButton }}</a>
+			</ul>
+			<a class="button button-primary" href="{{siteUrl}}/prod/project-list">{{ entry.moreProjectsButton }}</a>
 	</section>			
 </div>			
 	
@@ -72,25 +61,24 @@
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
 			{% for entry in craft.entries.section('caseStudy').limit(2) %} 
-
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
+	        				{% for entry in entry.blogAuthor %}
+	        					<p class="blog-teaser__author">
+	        					{{ entry.title }}
+	        					</p>
+	        				{% endfor %}
 	        				{% set caseStudyParagraphs = entry.blogContent|split('.') %}
 							{% set firstCaseStudyParagraph = caseStudyParagraphs|first ~ '.' %}
+								<div class="blog-teaser__text">
     							{{ firstCaseStudyParagraph|raw }}
-    						<div>
-							{% for entry in entry.blogAuthor %}
-								{{ entry.title }}
-							{% endfor %}
-							</div>		
-	        				<p class="blog-teaser__link">Continue reading</p>
+    							</div>
+	        				<p class="blog-teaser__link">Read NAME's Post</p>
 	        			</a>
 	    			</li>
-	    			
 			{% endfor %}
 			</ul>
-			
 		</section>
 	</section>
 </div>
