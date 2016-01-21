@@ -9,8 +9,6 @@
 			
 
 {% for entry in craft.entries.section('ideabaseProjects').relatedTo(category) %}
-
-
     		<li class="project-list__item">
 					<a href="{{ entry.url }}">
 						{% for asset in entry.projectPicture %}
