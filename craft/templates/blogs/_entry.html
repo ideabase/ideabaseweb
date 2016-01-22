@@ -93,6 +93,16 @@
 				</li>
 			</ul>
 		</section>
+		{% set tagEntries = craft.entries.section('blogPost').limit(null) %}
+	<ul class="blog__entry__tags">
+    	{% for tag in craft.tags.relatedTo(tagEntries) %}
+    		<li>
+        		<a href="#" class="blog__entry__tags__item">
+          			{{ tag.title }}
+        		</a>
+      		</li>
+      	{% endfor %}
+    </ul>		
 		<a class="button button-primary button--reverse" href="/blog">Back to Blog</a>	
 	</aside>
 	</section>
