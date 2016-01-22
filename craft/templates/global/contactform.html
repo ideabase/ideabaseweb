@@ -15,7 +15,7 @@
     {{ getCsrfInput() }}
     <div class="contact-form__column">
         <input type="hidden" name="action" value="contactForm/sendMessage">
-        <input type="hidden" name="redirect" value="contact/thanks">
+        <input type="hidden" name="redirect" value="success/index.html">
 
             <label for="fromName">Your Name</label>
             <input placeholder="Name" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
@@ -29,7 +29,7 @@
     </div>
     <div class="contact-form__column">
             <label for="subject">Company</label>
-            <input placeholder="Subject" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            <input placeholder="Company Name" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
             {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
             <label for="subject">Phone</label>
