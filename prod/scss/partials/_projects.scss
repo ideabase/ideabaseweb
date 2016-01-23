@@ -13,10 +13,8 @@
   margin-top: 1em;
   margin-bottom: 2em;
   @media screen and ( min-width: 700px ) {
-    columns: 100px 3;
     width: 90%;
     margin-bottom: 1em;
-    max-height: 300px;
   }
 }
 
@@ -24,6 +22,9 @@
   @media screen and ( min-width: 700px ) {
     padding: 1.5em;
     display: inline-block;
+    float: left;
+    width: 31%;
+    margin: 0 1%;
   }
 }
 
