@@ -22,6 +22,20 @@
 	        <meta property="og:image" content="{{ asset.getUrl('featureImageSmall') }}">
 	    {% endfor %}
 	{% endif %}
+	{% if entry.blogFeaturedImage | length %}
+	    {% for asset in entry.blogFeaturedImage %}
+	        <meta itemprop="image" content="{{ asset.getUrl() }}">
+	        <meta name="twitter:image:src" content="{{ asset.getUrl() }}">
+	        <meta property="og:image" content="{{ asset.getUrl() }}">
+	    {% endfor %}
+	{% endif %}
+	{% if entry.staffHeadshot | length %}
+	    {% for asset in entry.staffHeadshot %}
+	        <meta itemprop="image" content="{{ asset.getUrl() }}">
+	        <meta name="twitter:image:src" content="{{ asset.getUrl() }}">
+	        <meta property="og:image" content="{{ asset.getUrl() }}">
+	    {% endfor %}
+	{% endif %}
 	<!-- Twitter -->
 	<meta name="twitter:site" content="@ideabasekent">
 	<meta name="twitter:title" content="{{ entry.title }}">
