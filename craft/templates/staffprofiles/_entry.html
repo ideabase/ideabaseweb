@@ -23,8 +23,9 @@
 		<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
 		
 		<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
-		
+		{% if entry.profileOfficePhoneNumber|length %}
 		<p class="people__phone"><a href="#">{{ entry.profileOfficePhoneNumber }}</a></p>
+		{% endif %}
 
 		<!-- Staff Social Media -->
 		<section class="footer-info__social">
@@ -33,27 +34,37 @@
 			{% endfor %}
 		</section>	
 		<!-- End Staff Social Media -->
-
+		{# Check for Related Projects #}
+		{% set allRelatedEntries = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
+		{# If related entries, then go ahead and output code #}
+		{% if allRelatedEntries|length %}
 		<section class="people-projects">
 			<h2 class="people-projects__title">Projects</h2>
-				<ul class="people-projects__list">
-					<li class="people-projects__list__item">
+				<ul class="people-projects__list">		
 					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
-			       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+					    	<li class="people-projects__list__item">
+			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       			</li>
 			    		{% endfor %}
-			    	</li>
 			    </ul>
-		</section>	
+		</section>
+		{% endif %}
+
+		{# Check for Related Blog Posts #}
+		{% set allRelatedEntries = craft.entries.section('blogPost').relatedTo(entry) %}
+		{# If related entries, then go ahead and output code #}
+		{% if allRelatedEntries|length %}
 		<section class="people-posts">
 			<h2 class="people-posts__title">Blog Posts</h2>
 				<ul class="people-posts__list">
-					<li class="people-posts__list__item">
 			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
-			       			<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
-			    		{% endfor %}	
-			    	</li>
+			    			<li class="people-posts__list__item">
+			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       			</li>
+			    		{% endfor %}
 			    </ul>		
     	</section>
+    	{% endif %}
     	<a class="button button-primary button--reverse" href="#">Return to People</a>
     </div>		
 </section>
