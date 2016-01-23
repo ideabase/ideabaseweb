@@ -1,0 +1,34 @@
+<!-- Metadata -->
+	<title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+	{% if entry.description %}
+	    <meta name="description" content="{{ entry.description }}">
+	    <meta property="og:description" content="{{ entry.description }}">
+	    <meta itemprop="description" content="{{ entry.description }}">
+	    <meta name="twitter:card" content="{{ entry.description }}">
+	    <meta name="twitter:description" content="{{ entry.description }}">
+	{% else %}
+		<meta name="description" content="{{ metadata.description }}">
+		<meta property="og:description" content="{{ metadata.description }}">
+		<meta itemprop="description" content="{{ metadata.description }}">
+		<meta name="twitter:card" content="{{ metadata.description }}">
+		<meta name="twitter:description" content="{{ metadata.description }}">
+	{% endif %}
+	<meta itemprop="name" content="entry.title">
+	{% if entry.aboutImage | length %}
+	    {% for asset in entry.aboutImage %}
+	        <meta itemprop="image" content="{{ asset.getUrl('featureImageSmall') }}">
+	        <meta name="twitter:image:src" content="{{ asset.getUrl('featureImageSmall') }}">
+	        <meta property="og:image" content="{{ asset.getUrl('featureImageSmall') }}">
+	    {% endfor %}
+	{% endif %}
+	<!-- Twitter -->
+	<meta name="twitter:site" content="@ideabasekent">
+	<meta name="twitter:title" content="{{ entry.title }}">
+	<meta name="twitter:creator" content="@ideabasekent">
+	<!-- Open Graph General (Facebook & Pinterest) -->
+	<meta property="og:url" content="{{ entry.url }}">
+	<meta property="og:title" content="{{ entry.title }}">
+	<meta property="og:site_name" content="{{ siteName }}">
+	<meta property="og:locale" content="en_US">
+<!-- End Metadata -->
