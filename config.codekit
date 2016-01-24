@@ -25713,6 +25713,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/prod\/js\/analytics.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/js\/analytics.js",
+		"outputAbbreviatedPath": "\/prod\/js\/min\/analytics-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/prod\/js\/custom-scripts-min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -25752,6 +25763,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/prod\/js\/jquery.quicksand.js",
 		"outputAbbreviatedPath": "\/prod\/js\/min\/jquery.quicksand-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/prod\/js\/min\/custom-scripts-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/js\/min\/custom-scripts-min.js",
+		"outputAbbreviatedPath": "\/prod\/js\/min\/min\/custom-scripts-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
