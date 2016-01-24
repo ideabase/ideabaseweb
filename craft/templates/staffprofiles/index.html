@@ -23,12 +23,12 @@
 	</section>
 </div>
 
-<div class="panel-primary-container">
+<!--<div class="panel-primary-container">
 <section class="section-introduction panel-primary">
     	<h2>{{ entry.qualityHeadline}}</h2>
     	<p>{{ entry.qualityDescription }}</p>
    </section>
- </div>	
+ </div>	-->
     {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
 	{% set leader = craft.entries.section('people').relatedTo(leaderGroup) %}
 	{% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
