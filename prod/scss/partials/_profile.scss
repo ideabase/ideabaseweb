@@ -7,7 +7,7 @@
 }
 
 .people__profile-item {
-	width: 75%;
+	width: 100%;
 	margin: 0 auto;
 	margin-bottom: 1em;
 	display: block;
@@ -89,10 +89,13 @@
 	padding: 1.5em 2em;
 	position: absolute;
 	bottom: 0;
-	height: 33%;
+	height: 40%;
 	z-index: 1000;
 	a {
 		color: white;
+	}
+	@media screen and (min-width: 600px) {
+		height: 35%;
 	}
 }
 

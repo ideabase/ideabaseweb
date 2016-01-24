@@ -36,10 +36,6 @@
 <div class="panel-primary-container">
 <section class="section-people panel-primary-wide"> 
    <section class="people">	
-
-
-  		<ul>
-
     		{% for entry in leader.relatedTo(leaderGroup) %}
     		{% if entry.alumniLightswitch %}
     		{% else %}
@@ -51,16 +47,12 @@
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
-
-		    			<li class="people-individual-list__item">
 							
 							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
 		     				
 							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-								
-						</li>
 					</div>
 				</div>
 			</a>
@@ -77,21 +69,14 @@
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
-
-		    			<li class="people-individual-list__item">
-								
-		     				
-							<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
-
+							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
+							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>	
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-								
-						</li>
 					</div>
 				</div>
 			</a>
 			{% endif %}		
    			{% endfor %}
-  		</ul>
 
   	</section>
   		<section class="section-blog-teaser">
@@ -121,8 +106,6 @@
 
 		<section class="people">	
 
-
-  		<ul>
    			{% for entry in staff.relatedTo(staffGroup).offset(2) %}
    			{% if entry.alumniLightswitch %}
     		{% else %}
@@ -135,20 +118,17 @@
 
 	    			<div class="people__profile-item__info__container">
 
-		    			<li class="people-individual-list__item">
 								
-		     				
-							<h3 class="people__profile-item__last-name">{{ entry.title }}</h3>
+							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
+							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
 								
-						</li>
 					</div>
 				</div>
 			</a>
 			{% endif %}		
    			{% endfor %}
-  		</ul>
 
   	</section>
 

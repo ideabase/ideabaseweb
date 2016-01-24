@@ -173,7 +173,7 @@
 
 .footer-info__logo {
   width: 125px;
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   margin-bottom: 1em;
   margin-top: 1em;
@@ -183,7 +183,8 @@
   }
   @media screen and (min-width: 900px) {
     float: right;
-    margin-top: -10px;
+    display: inline-block;
+    margin-top: 48px;
     width: 150px;
   }
 }
@@ -193,13 +194,14 @@
   margin: 0;
   padding: 0;
   margin: 0 auto;
-  width: 275px;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
+  display: inline-block;
   margin-bottom: 1.5em;
   @include clearfix;
   @media screen and (min-width: 900px) {
     margin-left: 0;
     width: auto;
+    margin-top: 0;
   }
 }
 
@@ -211,7 +213,12 @@
   a {
     color: $blue;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .8rem;
+  }
+  @media screen and (min-width: 450px) {
+    a {
+      font-size: 1rem;
+    }
   }
   @media screen and (min-width: 900px) {
     margin-left: 0;
