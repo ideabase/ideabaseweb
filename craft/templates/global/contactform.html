@@ -18,7 +18,7 @@
         <input type="hidden" name="redirect" value="{{ siteUrl }}/success/">
 
             <label for="fromName">Your Name</label>
-            <input placeholder="Name" id="fromName" type="text" name="message[Name]" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+            <input placeholder="Name" id="fromName" type="text" name="message[Client Name]" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
             <!--{{ message is defined and message ? errorList(message.getErrors('fromName')) }}-->
 
             <label for="fromEmailAddress">Your Email</label>
