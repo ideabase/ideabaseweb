@@ -20,7 +20,43 @@
 {% set title = "404" %}
 
 {% block content %}
-	<h1>Page not found</h1>
-
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+	<style type="text/css">
+			.section-header { 
+				{% if fourofour.aboutImage | length %}
+				    {% for asset in fourofour.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageSmall') }});
+				    {% endfor %}
+				{% endif %}
+			}
+			@media screen and (min-width: 600px) {
+				.section-header {
+					{% if fourofour.aboutImage | length %}
+				    {% for asset in fourofour.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageMedium') }});
+				    {% endfor %}
+				{% endif %}
+				}
+			}
+			@media screen and (min-width: 1000px) {
+				.section-header {
+					{% if fourofour.aboutImage | length %}
+				    {% for asset in fourofour.aboutImage %}
+				        background-image: url({{ asset.getUrl('featureImageLarge') }});
+				    {% endfor %}
+				{% endif %}
+				}
+			}
+	</style>
+	<section class="section-header section-header--interior">
+		<div class="section-header__container">
+			<h1 class="section-header__title">404: Page Not Found</h1>
+		</div>
+	</section>
+	<div class="panel-primary-container">
+	<section class="section-introduction panel-primary">
+			<div class="introduction">{{fourofour.introduction}}</div>
+			<p>{{fourofour.body}}</p>
+			<a class="button button-primary button--reverse" href="{{ siteUrl }}">Return Home</a>
+	</section>
+	</div>
 {% endblock %}
