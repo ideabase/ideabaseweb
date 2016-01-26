@@ -26,7 +26,7 @@
 					{{ footer.street }}<br>
 					{{ footer.footerAddress}}
 				</div>
-				<a href="basic-page.php" class="global-footer__directions">Get Directions to Our Office</a>
+				<a href="{{siteUrl}}/directions" class="global-footer__directions">Get Directions to Our Office</a>
 			</section>
 			<section class="footer-info__contact">		
 				<div class="global-footer__text">		
@@ -46,11 +46,11 @@
 			<!-- End Social Media -->
 			<section class="footer-info__supplemental">
 				<ul class="footer-info__nav">
-					<li class="footer-info__nav__item"><a href="about.php">About</a></li>
-					<li class="footer-info__nav__item"><a href="blogs.php">Blog</a></li>
-					<li class="footer-info__nav__item"><a href="classroom.php">Classes</a></li>
-					<li class="footer-info__nav__item"><a href="work.php">Jobs</a></li>
-					<li class="footer-info__nav__item"><a href="ux.php">UX Lab</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}/about">About</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}/blog">Blog</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}/classes">Classes</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}/jobs">Jobs</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}/ux">UX Lab</a></li>
 				</ul>
 				{% for asset in footer.kentStateLogo %}
 			     	<p class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></p>
