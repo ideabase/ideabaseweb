@@ -379,7 +379,11 @@
 }
 
 .project-single__images .flickity-page-dots .dot {
-  background: $blue;
+  background: $lightgray;
+}
+
+.project-single__images .flickity-page-dots .is-selected {
+  background: $darkgray;
 }
 
 .project-single__images .flickity-page-dots {
@@ -476,7 +480,7 @@
   @media screen and (min-width: 850px) {
     width: 30%;
     margin-bottom: 0;
-    margin: 0 1.5%
+    margin: 0 1.667%
   }
 }
 
@@ -582,6 +586,7 @@
   font-size: .75em;
   background-color: $lightgray;
   color: $darkgray;
+  cursor: pointer;
   &:after {
     background-image: url(../images/global/downarrowgray.svg);
     background-size: 50% auto;
@@ -642,11 +647,11 @@
   .project-list__item {
     width: 30%;
     float: left;
-    margin: 0em 1.5% 3em 1.5%;
+    margin: 0em 1.667% 3em 1.667%;
   }
 
   .project-list .project-list__item:nth-child(odd) {
-    margin: 0 1.5%;
+    margin: 0 1.667%;
   }
 
   .project-list .project-list__item:nth-child(3n+1) {

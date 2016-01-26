@@ -137,6 +137,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
   text-align: left;
   float: left;
   margin-left: 0;
+  padding: 1em 1.8em 1em 1.8em;
   @media screen and (min-width: 700px) {
     margin-left: 1%;
   }

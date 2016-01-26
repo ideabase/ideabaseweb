@@ -22942,6 +22942,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/2e\/2e9633cd969f64fafa13f3033776c58887db210cdbe243ca807888d1d435071a.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/2e\/2e9633cd969f64fafa13f3033776c58887db210cdbe243ca807888d1d435071a.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/3b\/3b4dacc429c11ef155a5628482c7991e40f797f04b048764f8ea2fefcb752c54.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -22983,6 +22992,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/59\/593e024c6156ecc2405bfe74e165ec76c821514a56e611f9b39f0d240bc34010.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/71\/71704d9f0145b93174f531792e9dd7ace898ea7559f7d23a64a7a28a096d688c.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/71\/71704d9f0145b93174f531792e9dd7ace898ea7559f7d23a64a7a28a096d688c.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -25371,6 +25389,28 @@
 		"initialSize": 260917,
 		"inputAbbreviatedPath": "\/prod\/images\/lightbulb-sample.png",
 		"outputAbbreviatedPath": "\/prod\/images\/lightbulb-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/misc\/_featuredImageTop\/Jef_Raskin_holding_Canon_Cat_model.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110318,
+		"inputAbbreviatedPath": "\/prod\/images\/misc\/_featuredImageTop\/Jef_Raskin_holding_Canon_Cat_model.png",
+		"outputAbbreviatedPath": "\/prod\/images\/misc\/_featuredImageTop\/Jef_Raskin_holding_Canon_Cat_model.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/misc\/_featuredImageTop\/NaotoFukasawa3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11492,
+		"inputAbbreviatedPath": "\/prod\/images\/misc\/_featuredImageTop\/NaotoFukasawa3.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/misc\/_featuredImageTop\/NaotoFukasawa3.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

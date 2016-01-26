@@ -7,9 +7,9 @@
 
 .pagination__item {
 	float: left;
-	width: 35px;
+	width: 24px;
 	background-color: lighten($lightgray,5%);
-	margin: 0 .5em;
+	margin: 0 .4em;
 	height: 30px;
 	font-size: .9em;
 	margin-bottom: .5em;
@@ -20,6 +20,10 @@
 		width: 100%;
 		height: 100%;
 		padding: .4em .5em 0em .5em;
+	}
+	@media screen and (min-width: 500px) {
+		width: 35px;
+		margin: 0 .5em;
 	}
 }
 

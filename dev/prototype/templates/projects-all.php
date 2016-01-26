@@ -3,7 +3,7 @@
         <?php include("../patterns/partials/interior-hero-slot-project.html"); ?>
         <div class="panel-primary-container">
             <div class="project-category">
-                <a class="nav__trigger__link" href="#" id="categorytrigger">Browse by Category</a>
+                <a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
             	<ul class=
             	"project-category__list" id="categorytriggerlist">
             	      <li class="project-category__list__item"><a href=_"#">Print</a></li>
