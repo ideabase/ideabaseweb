@@ -13,6 +13,9 @@ p {
 
 .section-blog-entry .panel-primary a, .section-basic-page .panel-primary a {
   color: $blue;
+  &:hover, &:focus {
+    color: $cyan;
+  }
 }
 
 .introduction {
@@ -33,6 +36,10 @@ p {
   }
   a {
     color: $blue;
+    transition: .3s all ease-in-out;
+    &:hover {
+      color: $cyan;
+    }
   }
   &:after {
     content: "";

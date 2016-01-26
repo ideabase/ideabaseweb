@@ -44,6 +44,10 @@
   a {
     color: $blue;
     text-decoration: none;
+    transition: .3s all ease-in-out;
+    &:hover {
+      color: $cyan;
+    }
   }
   @media screen and (min-width: 700px) {
     width: 50%;
@@ -112,6 +116,7 @@
 .global-footer__text__name {
   color: $blue;
   padding-right: .5em;
+  font-weight: bold;
 }
 
 .footer-info__supplemental {
@@ -219,6 +224,10 @@
     color: $blue;
     text-decoration: none;
     font-size: .8rem;
+    transition: .3s all ease-in-out;
+    &:hover {
+      color: $cyan;
+    }
   }
   @media screen and (min-width: 450px) {
     a {
@@ -239,6 +248,10 @@
   a {
     color: $blue;
     text-decoration: none;
+    transition: .3s all ease-in-out;
+    &:hover {
+     color: $cyan;
+    }
   }
   @media screen and (max-width: 900px) {
     display: none;

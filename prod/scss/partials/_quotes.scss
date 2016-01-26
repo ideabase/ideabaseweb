@@ -11,6 +11,7 @@ blockquote {
 	text-transform: uppercase;
 	padding: 0 .5em 0 .8em;
 	text-align: center;
+	color: $darkgray;
 	&:before, &:after {
 		content: "\201C";
 		color: $cyan;

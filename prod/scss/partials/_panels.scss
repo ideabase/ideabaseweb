@@ -63,7 +63,6 @@
 
 .panel-secondary__thumbnail {
   width: 150px;
-  border: 2px solid white;
   @media screen and (min-width: 800px) {
     float: left;
     margin-right: 5%;
@@ -79,7 +78,7 @@
     float: left;
     width: 75%;
     p {
-      margin-top: 0;
+      margin-top: .1em;
     }
   }
 }

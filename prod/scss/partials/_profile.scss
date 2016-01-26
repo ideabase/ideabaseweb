@@ -63,11 +63,11 @@
 	.people__profile-item {
 		width: 30%;
 		float: left;
-		margin: 0em 1% 2em 1%;
+		margin: 0em 1.667% 2em 1.667%;
 	}
 
 	.people .people__profile-item:nth-child(odd) {
-		margin: 0 1%;
+		margin: 0 1.667%;
 	}
 
 	.people .people__profile-item:nth-child(3n+1) {
@@ -256,6 +256,10 @@
 	a {
 		color: $blue;
 		text-decoration: none;
+		transition: .3s all ease-in-out;
+		&:hover {
+			color: $cyan;
+		}
 	}
 	&:before {
 		content: "E:";
