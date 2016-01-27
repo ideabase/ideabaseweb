@@ -10,7 +10,7 @@
 	<div class="people__image">
 		{% if entry.staffHeadshot|length %}
 			{% for asset in entry.staffHeadshot %}
-	     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+	     		<img src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}">
 	   		{% endfor %}
 	   	{% endif %}
    	</div>

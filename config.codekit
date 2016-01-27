@@ -26139,6 +26139,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/images\/global\/_thumb\/placeholder.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4715,
+		"inputAbbreviatedPath": "\/prod\/images\/global\/_thumb\/placeholder.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/global\/_thumb\/placeholder.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/images\/global\/_thumb\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -26190,6 +26201,17 @@
 		"initialSize": 11521,
 		"inputAbbreviatedPath": "\/prod\/images\/headshot\/_featuredImageTop\/profile-square.jpg",
 		"outputAbbreviatedPath": "\/prod\/images\/headshot\/_featuredImageTop\/profile-square.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/headshot\/_thumb\/profile-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30118,
+		"inputAbbreviatedPath": "\/prod\/images\/headshot\/_thumb\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/headshot\/_thumb\/profile-sample.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
