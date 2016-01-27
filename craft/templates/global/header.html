@@ -9,12 +9,12 @@
 	<nav role="navigation">
 				<ul>
 					<li class="nav__item">
-						<a href="{{ url('process') }}" 
-						{% if craft.request.firstSegment == 'process' %}class="active"{% endif %}>Services</a>
+						<a href="{{ url('services') }}" 
+						{% if craft.request.firstSegment == 'services' %}class="active"{% endif %}>Services</a>
 					</li>
 					<li class="nav__item">
-						<a href="{{ url('projects') }}" 
-						{% if craft.request.firstSegment == 'projects' %}class="active"{% endif %}>Work</a>
+						<a href="{{ url('work') }}" 
+						{% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Work</a>
 					</li>
 					<li class="nav__item">
 						<a href="{{ url('people') }}" 
