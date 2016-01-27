@@ -350,6 +350,19 @@
   }
 }
 
+.project-single__images--single {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 4em;
+  min-height: 200px;
+  @media screen and (min-width: 800px) {
+    width: 100%;
+  }
+}
+
 .project-single__images:after {
   content: 'flickity';
   display: none;

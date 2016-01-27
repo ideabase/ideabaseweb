@@ -9,13 +9,25 @@
 	<section class="project-single panel-primary">
     <article>
 		<h1 class="project-single__name">{{ entry.title }}</h1>
-    <ul class="project-single__images">
-      <li class="project-single__images_item">
-        {% for asset in entry.projectPicture %}
-          <img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    {% set numberOfPhotos = entry.projectPicture|length %}
+    {% if numberOfPhotos > 1 %}
+      <ul class="project-single__images">
+      {% for asset in entry.projectPicture %}
+        <li class="project-single__images_item">
+            <img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+        </li>
         {% endfor %} 
-      </li>
-    </ul>    
+      </ul>  
+    {% elseif numberOfPhotos == 1 %}
+      <ul class="project-single__images--single">
+      {% for asset in entry.projectPicture %}
+        <li class="project-single__images_item">
+            <img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+        </li>
+        {% endfor %} 
+      </ul> 
+    {% endif %}
+      
     <h3 class="project-single__client">
       {% for entry in entry.forWhichClient %}
         {{ entry.title }}
@@ -70,7 +82,7 @@
       {% endfor %}
     </ul>  
 
-      <a class="button button-primary button--reverse" href="#">Back to Projects</a>  
+      <a class="button button-primary button--reverse" href="{{ siteURL }}/work">Back to Work</a>  
       
    	</section>
 {% endblock %}
