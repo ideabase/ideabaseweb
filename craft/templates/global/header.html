@@ -6,22 +6,22 @@
      <span class="nav__trigger">
     	<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
 	</span>
+	{% endcache %}
 	<nav role="navigation">
 				<ul>
 					<li class="nav__item">
 						<a href="{{ url('services') }}" 
-						{% if craft.request.firstSegment == 'services' %}class="active"{% endif %}>Services</a>
+						{% if craft.request.firstSegment == 'services' %}class="active-page"{% endif %}>Services</a>
 					</li>
 					<li class="nav__item">
 						<a href="{{ url('work') }}" 
-						{% if craft.request.firstSegment == 'work' %}class="active"{% endif %}>Work</a>
+						{% if craft.request.firstSegment == 'work' %}class="active-page"{% endif %}>Work</a>
 					</li>
 					<li class="nav__item">
 						<a href="{{ url('people') }}" 
-						{% if craft.request.firstSegment == 'people' %}class="active"{% endif %}>People</a>
+						{% if craft.request.firstSegment == 'people' %}class="active-page"{% endif %}>People</a>
 					</li>
       				<li class="nav__contact"><a href="#footer-form" id="contact-toggle"><span>Contact Us</span></a></li>
       			</ul> 
 	</nav>
 </header>
-{% endcache %}
