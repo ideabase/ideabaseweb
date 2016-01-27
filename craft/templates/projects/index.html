@@ -29,11 +29,19 @@
 			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
 			<li class="project-list__item project-list__item--featured">	
 			<a href="{{ entry.url }}">
-					{% for asset in entry.projectPicture %}
-					<div class="project-list__item__image">
-			     		<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
-			     	</div>
-			     	{% endfor %}
+					{% if asset in entry.projectPicture|length %}
+						{% for asset in entry.projectPicture %}
+						<div class="project-list__item__image">
+				     		<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+				     	</div>
+				     	{% endfor %}
+				     	{% else %}
+				     	<div class="project-list__item__image">
+				     	     {% for asset in imagePlaceholder.aboutImage %}
+				     	     	<img src="{{ asset.getURL('projectThumb') }}" alt= "No Image Found">
+				     	     {% endfor %}
+				     	</div>
+			     	{% endif %}
 			     	
 			     	<h2 class="project-list__item__name">{{ entry.title }}
 			     	</h2>

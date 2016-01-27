@@ -40,9 +40,13 @@
     		{% if entry.alumniLightswitch %}
     		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
+    			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
-				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}" />
 				     {% endfor %}
+				     {% else %}
+				     	<img src="{{ siteUrl}}/Images/global/placeholder.jpg" alt= "No Image Found">
+				{% endif %}
 	    		
 	    		<div class="people__profile-item__info">
 
@@ -62,9 +66,13 @@
    			{% if entry.alumniLightswitch %}
     		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
+    			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
 				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
 				     {% endfor %}
+				     {% else %}
+				     	<img src="{{ siteUrl}}/Images/global/placeholder.jpg" alt= "No Image Found">
+				{% endif %}
 	    		
 	    		<div class="people__profile-item__info">
 
@@ -110,9 +118,15 @@
    			{% if entry.alumniLightswitch %}
     		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
+    			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
 				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
 				     {% endfor %}
+				     {% else %}
+				     	{% for asset in imagePlaceholder.aboutImage %}
+				     		<img src="{{ asset.getURL('projectThumb') }}" alt= "No Image Found">
+				     	{% endfor %}
+				{% endif %}
 	    		
 	    		<div class="people__profile-item__info">
 

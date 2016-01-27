@@ -8,9 +8,11 @@
 	<section class="people panel-primary-wide">
 
 	<div class="people__image">
-		{% for asset in entry.staffHeadshot %}
-     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-   		{% endfor %}
+		{% if entry.staffHeadshot|length %}
+			{% for asset in entry.staffHeadshot %}
+	     		<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+	   		{% endfor %}
+	   	{% endif %}
    	</div>
 
    	<div class="people__info">
