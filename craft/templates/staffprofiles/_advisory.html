@@ -1,0 +1,64 @@
+{#
+ # Advisory Board template
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+{% include '_includes/_background-images.html' %}
+<div class="panel-primary-container">
+<section class="section-introduction panel-primary">
+		<h1 class="project-single__name">{{ entry.title }}</h1>
+		<div class="introduction">{{ entry.introduction }}</div>
+	</section>
+	{% set image = entry.aboutImage.first() %}
+	{% if image %}
+		<section class="section-body-image panel-primary">
+			<figure class="section-body-image__figure">
+				<img class="section-body-image__image" src="{{ image.getUrl }}" alt="{{ image.title }}" />
+			</figure>
+		</section>
+	{% endif %}
+</div>
+
+    {% set boardGroup = craft.categories.group('staffHierarchy').slug('professional-advisory-board') %}
+	{% set board = craft.entries.section('people').relatedTo(boardGroup) %}
+	{% set facultyGroup = craft.categories.group('staffHierarchy').slug('faculty-advisory-board') %}
+	{% set faculty = craft.entries.section('people').relatedTo(facultyGroup) %}
+
+<div class="panel-primary-container">
+<section class="section-people-listing panel-primary"> 
+   <section class="people-listing">
+   			<h2>Professional Advisory Board</h2>
+   			<ul class="people-listing__list">
+    		{% for entry in board.relatedTo(boardGroup) %}
+    				<li class="people-listing__item">
+		    			<a href="{{ entry.Url }}">
+							<h3 class="people-listing__name">{{ entry.profileFirstName }}
+							{{ entry.profileLastName }}</h3>
+							<p class="people-listing__title">{{ entry.profileJobTitle }}</p>
+						</a>
+					</li>
+   			{% endfor %}
+   			</ul>
+   	</section>
+   	<section class="people-listing">
+			<h2>Faculty Advisory Board</h2>
+				<ul class="people-listing__list">
+			    {% for entry in board.relatedTo(facultyGroup) %}
+			    	    <li class="people-listing__item">
+			    			<a href="{{ entry.Url }}">
+			    				<h3 class="people-listing__name">{{ entry.profileFirstName }}
+			    				{{ entry.profileLastName }}</h3>
+			    				<p class="people-listing__title">{{ entry.profileJobTitle }}</p>
+			    			</a>
+			    		</li>
+			{% endfor %}
+			</ul>
+  	</section>
+  	<div class="section-body-button">
+  		<a class="button button-primary button--reverse" href="{{ siteUrl }}/people">Return to People</a>
+  	</div>
+</section>
+
+{% endblock %}

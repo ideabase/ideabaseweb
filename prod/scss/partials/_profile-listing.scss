@@ -1,0 +1,39 @@
+.section-people-listing {
+	padding-top: 0;
+}
+
+.people-listing {
+	margin-bottom: 1em;
+	padding-top: 1em;
+}
+
+.people-listing__list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	columns: 200px 2;
+}
+
+.people-listing__item {
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	padding: 0 1.5em;
+}
+
+.people-listing__item a {
+	text-decoration: none;
+}
+
+.people-listing__title {
+	margin-top: .25em;
+}
+
+.people-listing__name {
+	margin-top: .5em;
+	margin-bottom: 0;
+}
+
+.people-listing__title {
+	color: $darkgray;
+}
