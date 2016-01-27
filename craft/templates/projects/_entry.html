@@ -42,13 +42,13 @@
     <div class="project-single__team">
       <h4 class="project-single__team__title">Team</h4>
       <ul class="project-single__team__list">
-        <li class="project-single__team__list__item"> 
             {% for entry in entry.contributor %}
-              <a href="{{ entry.Url }}">
-               {{ entry.title }}
-              </a> 
-            {% endfor %}
-        </li> 
+              <li class="project-single__team__list__item"> 
+                <a href="{{ entry.Url }}">
+                 {{ entry.title }}
+                </a> 
+              </li>
+            {% endfor %} 
       </ul> 
     </div>
     {% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
