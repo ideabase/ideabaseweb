@@ -22519,63 +22519,34 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/ArtVandelayPlugin.php": {
+	"\/craft\/plugins\/adminbar\/AdminbarPlugin.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/ArtVandelayPlugin.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/AdminbarPlugin.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/composer.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/composer.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/composer-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
-	"\/craft\/plugins\/artvandelay\/consolecommands\/ArtVandelayCommand.php": {
-		"fileType": 8192,
+	"\/craft\/plugins\/adminbar\/buildsource\/style.css": {
+		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/consolecommands\/ArtVandelayCommand.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/buildsource\/style.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/controllers\/ArtVandelayController.php": {
+	"\/craft\/plugins\/adminbar\/controllers\/AdminbarController.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/controllers\/ArtVandelayController.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/controllers\/AdminbarController.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/models\/ArtVandelay_ExportedDataModel.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/models\/ArtVandelay_ExportedDataModel.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/models\/ArtVandelay_ResultModel.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/models\/ArtVandelay_ResultModel.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/README.md": {
+	"\/craft\/plugins\/adminbar\/README.md": {
 		"criticStyle": 0,
 		"enableFootnotes": 1,
 		"enableLabels": 1,
@@ -22584,9 +22555,9 @@
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/README.md",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/README.md",
 		"maskEmailAddresses": 1,
-		"outputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/README.html",
+		"outputAbbreviatedPath": "\/craft\/plugins\/adminbar\/README.html",
 		"outputFormat": 0,
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -22596,186 +22567,71 @@
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
 		},
-	"\/craft\/plugins\/artvandelay\/resources\/css\/default.css": {
-		"fileType": 16,
-		"ignore": 0,
+	"\/craft\/plugins\/adminbar\/releases.json": {
+		"fileType": 524288,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/resources\/css\/default.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/releases.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/craft\/plugins\/adminbar\/releases-min.json",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
 		},
-	"\/craft\/plugins\/artvandelay\/resources\/images\/art-vandelay.jpg": {
-		"fileType": 16384,
+	"\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-bar.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 84974,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/resources\/images\/art-vandelay.jpg",
-		"outputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/resources\/images\/art-vandelay.jpg",
+		"initialSize": 65250,
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-bar.png",
+		"outputAbbreviatedPath": "\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-bar.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/craft\/plugins\/artvandelay\/resources\/js\/default.js": {
-		"fileType": 64,
+	"\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-settings.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/resources\/js\/default.js",
-		"outputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/resources\/js\/min\/default-min.js",
+		"initialSize": 235776,
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-settings.png",
+		"outputAbbreviatedPath": "\/craft\/plugins\/adminbar\/resources\/screenshots\/screenshot-settings.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"processed": 0
 		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_AssetsService.php": {
+	"\/craft\/plugins\/adminbar\/services\/AdminbarService.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_AssetsService.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/services\/AdminbarService.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_CategoriesService.php": {
+	"\/craft\/plugins\/adminbar\/templates\/bar.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_CategoriesService.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/templates\/bar.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_ContentTabsService.php": {
+	"\/craft\/plugins\/adminbar\/templates\/settings.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_ContentTabsService.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/templates\/settings.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_FieldsService.php": {
+	"\/craft\/plugins\/adminbar\/variables\/AdminbarVariable.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_FieldsService.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_GlobalsService.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_GlobalsService.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_ImportExportService.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_ImportExportService.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_SectionsService.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_SectionsService.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/services\/ArtVandelay_TagsService.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/services\/ArtVandelay_TagsService.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_fieldExport.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_fieldExport.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_import1.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_import1.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_import2.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_import2.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_import3.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_import3.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_import4.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_import4.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_index.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_sectionExport.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_sectionExport.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/templates\/_tabExport.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/templates\/_tabExport.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/plugins\/artvandelay\/variables\/ArtVandelayVariable.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/plugins\/artvandelay\/variables\/ArtVandelayVariable.php",
+		"inputAbbreviatedPath": "\/craft\/plugins\/adminbar\/variables\/AdminbarVariable.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23182,6 +23038,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/28\/284611d5ae67b2193e990798a86d75407fdf8c732996e0ba86f930eb275926b8.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/28\/284611d5ae67b2193e990798a86d75407fdf8c732996e0ba86f930eb275926b8.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/28\/28ac1297b10289baab560937fc388af22ec6820fb5801f7b828e78d6c2d900ff.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23430,6 +23295,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4a\/4ae024521534fbc361a88d51aea22c6d18390a3dd8a6f9aa4bd2a41df5e2f5f9.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/4a\/4ae7c52b0b51ef8b5b121854976e2109ad44280913b37cdf68ccc3c0a2baa3b0.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4a\/4ae7c52b0b51ef8b5b121854976e2109ad44280913b37cdf68ccc3c0a2baa3b0.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23700,6 +23574,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/65\/65f4bc6550818999a425ce05120077acdf8b8678eb9e76084987ec071ed973b1.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/66\/667a3e0b6fa0a42d682d205c708d3308a4fec8a8b272bb0f20c6a9efddd98714.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/66\/667a3e0b6fa0a42d682d205c708d3308a4fec8a8b272bb0f20c6a9efddd98714.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
