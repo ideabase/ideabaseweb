@@ -1,0 +1,49 @@
+{#
+ #}
+
+{% extends "_layout" %}
+
+
+{% block content %}
+{% include '_includes/_background-images.html' %}
+<section class="section-header section-header--interior">
+	<div class="section-header__container">
+		<h1 class="section-header__title">{{ entry.blogHeadlineIndex }}</h1>
+	</div>
+</section>
+
+{% set Blog = craft.entries.section('blogPost').order('title').limit(null) %}
+
+<div class="panel-primary-container">
+<section class="section-blog-all panel-primary">
+	<ul class="blog-list">
+		{% for entry in Blog %}
+    		<li class="blog-list__item">
+					<a href="{{ entry.url }}">
+						{% set asset = entry.blogFeaturedImage %}
+						{% if asset|length %}
+							{% for asset in entry.blogFeaturedImage.limit(1) %}
+									<div class="project-list__item__image">
+							     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+							     	</div>
+							     	{% endfor %}
+							     	{% else %}
+							     	<div class="project-list__item__image">
+							     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
+							     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+							     	     {% endfor %}
+							     	</div>
+						    {% endif %}
+
+			     		<h2 class="blog-list__title">{{ entry.title }}</h2>
+
+						<span class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</span>
+
+						</a>	
+			</li>
+   			{% endfor %}
+   		</ul>
+   	</section>
+   </div>
+
+{% endblock %}
