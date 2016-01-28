@@ -32,10 +32,11 @@
     		{% for entry in Project %}
     		<li class="project-list__item">
 					<a href="{{ entry.url }}">
-						{% if asset in entry.projectPicture|length %}
+						{% set asset = entry.projectPicture %}
+						{% if asset|length %}
 							{% for asset in entry.projectPicture %}
 									<div class="project-list__item__image">
-							     		<img src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+							     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
 							     	</div>
 							     	{% endfor %}
 							     	{% else %}

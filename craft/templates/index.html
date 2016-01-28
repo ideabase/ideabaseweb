@@ -57,9 +57,15 @@
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
+				    {% if entry.projectPicture|length %}
 							{% for asset in entry.projectPicture.limit(1) %}
      							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
    							{% endfor %}
+   							{% else %}
+   								{% for asset in imagePlaceholder.aboutImage %}
+   									<img class="section-projects__list__item__thumb"  src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+   								{% endfor %}
+   					{% endif %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
 			    </li>
