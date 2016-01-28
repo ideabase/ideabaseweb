@@ -34,14 +34,14 @@
 					<a href="{{ entry.url }}">
 						{% set asset = entry.projectPicture %}
 						{% if asset|length %}
-							{% for asset in entry.projectPicture %}
+							{% for asset in entry.projectPicture.limit(1) %}
 									<div class="project-list__item__image">
 							     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
 							     	</div>
 							     	{% endfor %}
 							     	{% else %}
 							     	<div class="project-list__item__image">
-							     	     {% for asset in imagePlaceholder.aboutImage %}
+							     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
 							     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
 							     	     {% endfor %}
 							     	</div>
