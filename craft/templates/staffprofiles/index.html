@@ -30,15 +30,13 @@
    </section>
  </div>	-->
     {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
-	{% set leader = craft.entries.section('people').relatedTo(leaderGroup) %}
+	{% set leader = craft.entries.section('people').relatedTo(leaderGroup).alumniLightswitch('not 1') %}
 	{% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
-	{% set staff = craft.entries.section('people').relatedTo(staffGroup) %}
+	{% set staff = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1') %}
 <div class="panel-primary-container">
 <section class="section-people panel-primary-wide"> 
    <section class="people">	
     		{% for entry in leader.relatedTo(leaderGroup) %}
-    		{% if entry.alumniLightswitch %}
-    		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
@@ -62,11 +60,8 @@
 					</div>
 				</div>
 			</a>
-			{% endif %}		
    			{% endfor %}
    			{% for entry in staff.relatedTo(staffGroup).limit(2) %}
-   			{% if entry.alumniLightswitch %}
-    		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
@@ -75,9 +70,8 @@
 				     {% else %}
 				     	{% for asset in imagePlaceholder.aboutImage %}
 				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
-				     	{% endfor %}
+						{% endfor %}
 				{% endif %}
-	    		
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
@@ -87,7 +81,6 @@
 					</div>
 				</div>
 			</a>
-			{% endif %}		
    			{% endfor %}
 
   	</section>
@@ -119,8 +112,6 @@
 		<section class="people">	
 
    			{% for entry in staff.relatedTo(staffGroup).offset(2) %}
-   			{% if entry.alumniLightswitch %}
-    		{% else %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
@@ -145,18 +136,11 @@
 					</div>
 				</div>
 			</a>
-			{% endif %}		
    			{% endfor %}
 
   	</section>
 
-
-
-
-
   	</section>
-
-
 
   	<div class="panel-secondary-container panel-background-image">
 	<section class="section-price panel-secondary">
@@ -165,8 +149,5 @@
 		<a class="button button-primary" href="#">{{ entry.workForIdeabaseLink }}</a>
 	</section>	
 	</div>
-
-
-
 
 {% endblock %}
