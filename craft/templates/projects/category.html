@@ -12,7 +12,7 @@
     		<li class="project-list__item">
 					<a href="{{ entry.url }}">
 						{% for asset in entry.projectPicture %}
-			     			<div class="project-list__item__image"><img class="" src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></div>
+			     			<div class="project-list__item__image"><img class="" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}"></div>
 			     		{% endfor %}
 
 			     		<h2 class="project-list__item__name">{{ entry.title }}</h2>

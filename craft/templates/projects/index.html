@@ -32,13 +32,13 @@
 					{% if asset in entry.projectPicture|length %}
 						{% for asset in entry.projectPicture %}
 						<div class="project-list__item__image">
-				     		<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+				     		<img src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
 				     	</div>
 				     	{% endfor %}
 				     	{% else %}
 				     	<div class="project-list__item__image">
 				     	     {% for asset in imagePlaceholder.aboutImage %}
-				     	     	<img src="{{ asset.getURL('projectThumb') }}" alt= "No Image Found">
+				     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
 				     	     {% endfor %}
 				     	</div>
 			     	{% endif %}

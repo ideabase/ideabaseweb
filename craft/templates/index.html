@@ -58,7 +58,7 @@
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 							{% for asset in entry.projectPicture.limit(1) %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
    							{% endfor %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
