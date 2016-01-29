@@ -301,6 +301,7 @@ $configArray = array(
 		'app.models.MatrixBlockTypeModel',
 		'app.models.MatrixSettingsModel',
 		'app.models.Model',
+		'app.models.NumberFieldTypeSettingsModel',
 		'app.models.PasswordModel',
 		'app.models.PluginNewReleaseModel',
 		'app.models.PluginUpdateModel',
