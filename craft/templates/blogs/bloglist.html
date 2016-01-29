@@ -20,25 +20,23 @@
 		{% for entry in Blog %}
     		<li class="blog-list__item">
 					<a href="{{ entry.url }}">
-						{% set asset = entry.blogFeaturedImage %}
-						{% if asset|length %}
-							{% for asset in entry.blogFeaturedImage.limit(1) %}
-									<div class="project-list__item__image">
-							     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
-							     	</div>
-							     	{% endfor %}
-							     	{% else %}
-							     	<div class="project-list__item__image">
-							     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-							     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
-							     	     {% endfor %}
-							     	</div>
-						    {% endif %}
 
-			     		<h2 class="blog-list__title">{{ entry.title }}</h2>
-
+			     		<h1 class="blog-list__title">{{ entry.title }}</h2>
+			     		{% set blogAuthor = entry.blogAuthor %}
+						{% for entry in blogAuthor %}
+						<span class="blog-list__author">{{ entry.title }}</span>
+						{% endfor %}
 						<span class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</span>
-
+							
+						{% set blogParagraphsIndex = entry.blogContent|split('.') %}
+						{% set firstBlogParagraphIndex = blogParagraphsIndex|first ~ '.' %}
+							<div class="blog-list__text">
+					    		{{ firstBlogParagraphIndex|raw }}
+					    	</div>
+					    {% for entry in blogAuthor %}
+						<p class="blog-teaser__link">{{ entry.profileFirstName}}</p>
+						{% endfor %}
+					    
 						</a>	
 			</li>
    			{% endfor %}
