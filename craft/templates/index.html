@@ -43,7 +43,7 @@
 				{% endfor %}
 			</ul>		
 		<!-- End Process List -->	
-		<a class="button button-primary" href="process/">Our Design Process</a>
+		<a class="button button-primary" href="{{ entry.servicesButtonLink.first().url }}">{{ entry.servicesButtonLinkName }}</a>
 	</section>
 	</div>
 
@@ -71,7 +71,7 @@
 			    </li>
 		{% endfor %}
 		</ul>
-		<a class="button button-primary" href="projects/">More Projects</a>
+		<a class="button button-primary" href="{{ entry.projectButtonLink.first().url }}">{{ entry.projectsButtonLinkName }}</a>
 	</section>
 	</div>
 	<!-- End Projects List -->
@@ -86,7 +86,7 @@
         		{% endfor %}	
 			</ul>
 		{% endfor %}	
-		<a class="button button-primary" href="{{ entry.peopleButtonLink.url }}">{{ entry.peopleButtonName }}</a>
+		<a class="button button-primary" href="{{ entry.peopleButtonLink.first().url }}">{{ entry.peopleButtonName }}</a>
 	</section>
 	</div>
 

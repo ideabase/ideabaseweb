@@ -116,9 +116,11 @@
 .section-projects__list__item__thumb {
   transition: .2s all ease-in-out;
   border: 4px solid transparent;
+  @media screen and ( min-width: 700px ) {
    &:hover {
      border-color: $cyan;
    }
+ }
 }
 
 // Start Projects on Projects Page //

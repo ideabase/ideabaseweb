@@ -23007,6 +23007,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/567.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1556,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/567.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/567.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/02\/024b7845266ee8b7cd8a1715955b661c3bc365406e4c9ecfe55ece191c051ee0.php": {
 		"fileType": 8192,
 		"ignore": 0,
