@@ -6,11 +6,18 @@
 
 {% block content %}
 
+{% if entry.blogFeaturedImage | length %}
 <section class="section-header-blog-basic-page">
 		{% for asset in entry.blogFeaturedImage %}
-		  <img class="blog__entry__image" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		<picture>
+		  <source media="(max-width: 639px)" srcset="{{ asset.getUrl('featureImageSmall') }}" >
+		  <source media="(min-width: 1024px)" srcset="{{ asset.getUrl('featureImageLarge') }}">
+		  <source media="(min-width: 640px)" srcset="{{ asset.getUrl('featureImageMedium') }}">
+		  <img class="blog__entry__image" srcset="{{ asset.getUrl('featureImageLarge') }}" alt= "{{ asset.title}}">
+		</picture>
 		{% endfor %}
 </section>
+{% endif %}
 <div class="panel-primary-container">
     <section class="section-blog-entry panel-primary">
 	<article class="blog__entry">

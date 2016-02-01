@@ -110,6 +110,9 @@
   overflow: hidden;
   img {
     width: 100%;
+    @media screen and (min-width: 1000px) {
+      margin-top: -25%;
+    }
   }
 }
 

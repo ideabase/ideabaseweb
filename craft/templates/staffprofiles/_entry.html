@@ -30,12 +30,14 @@
 		<p class="people__phone"><a href="#">{{ entry.profileOfficePhoneNumber }}</a></p>
 		{% endif %}
 
+		{% if entry.staffSocialMedia|length %}
 		<!-- Staff Social Media -->
 		<section class="footer-info__social">
 			{% for block in entry.staffSocialMedia %}
-     			<a class="footer-info__social__icon" href="{{ block.staffSocLink.url }}">{{ block.staffSocName }}</a>
+     			<a class="footer-info__social__icon" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
 			{% endfor %}
 		</section>	
+		{% endif %}
 		<!-- End Staff Social Media -->
 		{# Check for Related Projects #}
 		{% set allRelatedEntries = craft.entries.section('ideabaseProjects').relatedTo(entry) %}

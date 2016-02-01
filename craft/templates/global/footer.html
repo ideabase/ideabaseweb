@@ -9,7 +9,7 @@
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
 
 
-			<div class="global-footer_invitation">{{ footer.contactFormDescription }}</div>
+			<div class="global-footer__invitation">{{ footer.contactFormDescription }}</div>
 			<!-- Contact Form -->
 			<div class="contact-form">{% include 'global/contactform.html' %}</div>
 			<!-- End Contact Form -->
@@ -52,11 +52,13 @@
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}/jobs">Jobs</a></li>
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}/ux">UX Lab</a></li>
 				</ul>
-				{% for asset in footer.kentStateLogo %}
-			     	<p class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></p>
-			    {% endfor %}	
-				<div class="footer-info__legal">
-					{{ footer.copyright }}
+				<div class="footer-info__bottom">
+					{% for asset in footer.kentStateLogo %}
+				     	<div class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></div>
+				    {% endfor %}	
+					<div class="footer-info__legal">
+						{{ footer.copyright }}
+					</div>
 				</div>
 			</section>	
 		</section>	

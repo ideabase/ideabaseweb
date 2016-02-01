@@ -145,7 +145,15 @@
   	<div class="panel-secondary-container panel-background-image">
 	<section class="section-price panel-secondary">
 		<h2>{{ entry.workForIdeabaseTitle}}</h2>
-		<p>{{ entry.workForIdeabaseDescription }}</p>
+		{% set image = entry.calloutImage.first() %}
+		{% if entry.calloutImage | length %}
+			<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+			<div class="panel-secondary--left">
+			  <p>{{ entry.workForIdeabaseDescription }}</p>
+			</div>
+			{% else %}
+			<p>{{ entry.workForIdeabaseDescription }}</p>
+		{% endif %}
 		<a class="button button-primary" href="#">{{ entry.workForIdeabaseLink }}</a>
 	</section>	
 	</div>

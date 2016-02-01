@@ -94,7 +94,15 @@
 
 	<section class="section-price panel-secondary">
 		<h2>{{ entry.classroomExperienceHeadline }}</h2>
-		<p>{{ entry.classroomExperienceDescription }}</p>
+		{% set image = entry.calloutImage.first() %}
+		{% if entry.calloutImage | length %}
+		<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+		<div class="panel-secondary--left">
+		  {{ entry.classroomExperienceDescription }}
+		</div>
+		{% else %}
+		{{ entry.classroomExperienceDescription }}
+		{% endif %}
 		<a class="button button-primary" href="#">{{ entry.classroomButton }}</a>
 	</section>
 	</div>	

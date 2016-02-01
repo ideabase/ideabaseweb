@@ -69,9 +69,18 @@ Process Template
     <div class="panel-secondary-container panel-background-image">
       <section class="section-price panel-secondary">
         <h2>{{ entry.priceHeadline}}</h2>
-        <p>{{ entry.priceDescription }}</p>
+        {% set image = entry.calloutImage.first() %}
+        {% if entry.calloutImage | length %}
+          <img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+          <div class="panel-secondary--left">
+            {{ entry.priceDescription }}
+          </div>
+          {% else %}
+          {{ entry.priceDescription }}
+        {% endif %}
       </section>
-      </div>
+    </div>
+
 <div class="panel-primary-container">
 <section class="testimonial-entry panel-primary">
 {% for entry in craft.entries.section('testimonials').find()|slice(0,1) %}
