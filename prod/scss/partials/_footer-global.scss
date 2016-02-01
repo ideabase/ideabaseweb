@@ -18,7 +18,7 @@
 .footer-info {
   padding: 4.5em 2em 2em 2em;;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
   max-width: 1100px;
   p, a {
@@ -27,6 +27,7 @@
   }
   @media screen and (min-width: 700px) {
     padding: 5em 2em 2em 2em;
+    //text-align: left;
     p, a {
       font-size: .75rem;
     }
@@ -94,7 +95,8 @@
 .footer-info__social {
   text-align: center;
   @include clearfix;
-  width: 240px;
+  display: block;
+  width: 250px;
   margin: 1.5em auto 1em auto;
 }
 
