@@ -84,10 +84,12 @@
    			{% endfor %}
 
   	</section>
+
   		<section class="section-blog-teaser">
   		<h3>From Our Blog</h3>
   		<ul class="blog-teaser-list">
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
+  		{% set BlogAuthorName = entry.blogAuthor %}
   		<li class="blog-teaser">
   			<a href="{{ entry.url }}">
 					<h1 class="blog-teaser__title">{{ entry.title }}</h1>
@@ -101,7 +103,9 @@
 							<div class="blog-teaser__text">
 					    		{{ firstBlogParagraph|raw }}
 					    	</div>
-					<p class="blog-teaser__link">Read NAME's Post</p>
+					{% for entry in BlogAuthorName %}    	
+					<p class="blog-teaser__link">Read {{ entry.profileFirstName }}'s Post</p>
+					{% endfor %}
 			</a>
 		</li>
 		{% endfor %}	
