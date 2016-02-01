@@ -63,14 +63,15 @@
       </div>
     </div>
     </aside> 
-
     {% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
+    {% if relatedTestimonial | length %}
     <section class="testimonial-entry--project panel-primary">
       {% for entry in relatedTestimonial %}
         <blockquote class="testimonial-entry__text">{{ entry.testimonialQuote }}</blockquote>
         <cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
       {% endfor %}
     </section>
+    {% endif %}
 
     <ul class="blog__entry__tags">
       {% for entry in entry.projectCategory %}
