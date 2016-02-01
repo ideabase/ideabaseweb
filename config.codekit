@@ -22479,6 +22479,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/config\/db-default.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/config\/db-default.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/config\/db.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -22833,6 +22842,83 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2054,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2890,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1825,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2182,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2253,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1437,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2816,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -22840,6 +22926,50 @@
 		"initialSize": 1550,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg",
 		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2369,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2054,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1389,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5813,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -22862,6 +22992,17 @@
 		"initialSize": 2227,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/500.jpg",
 		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1827,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -22943,6 +23084,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/13\/13d2e842722c6f334c16d6bdc60b522bf24c7872f91b345419a7813494a65dd0.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/16\/16cf30c1de691730fb9699864d18fff219948c967a95c8751762092ca8043a6f.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/16\/16cf30c1de691730fb9699864d18fff219948c967a95c8751762092ca8043a6f.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23087,6 +23237,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4d\/4da647b3e0d92c19537e068ccd550d19d8a4456229da542cda7e4f381646d474.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/50\/502a695acad6519437f84f3dc830cc6a192e2cfc4fa6e806f1a316e90777b19b.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/50\/502a695acad6519437f84f3dc830cc6a192e2cfc4fa6e806f1a316e90777b19b.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23361,6 +23520,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/bc\/bc7d53558e7f842f0158f79d42c3e178ab1a0b8ac7e3a30860f9dd6bb7f77975.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/bc\/bc7d53558e7f842f0158f79d42c3e178ab1a0b8ac7e3a30860f9dd6bb7f77975.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/be\/be3ac9d886b3a85cadcfdc36ab4407a42606ae75d2c7f2e9893b2012b9925d33.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23438,6 +23606,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/df\/df2273a9a23b5161376f7d9527a172627dcc82fe9589c59d6117266a793a0502.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e1\/e13fcd4c59968dcb105c9935768111ec05649415c4db55876836ce45ccdb9843.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e1\/e13fcd4c59968dcb105c9935768111ec05649415c4db55876836ce45ccdb9843.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e1\/e15e3aa2d0af6bded63f8360b7fcf6cfa4ac3fc58446de06769e63cb25797874.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e1\/e15e3aa2d0af6bded63f8360b7fcf6cfa4ac3fc58446de06769e63cb25797874.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24046,6 +24232,17 @@
 		"initialSize": 5.02914e+06,
 		"inputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
 		"outputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/KSU_Logo_Gray.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22358,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/KSU_Logo_Gray.png",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/KSU_Logo_Gray.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25503,6 +25700,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/prod\/Images\/bricks-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 166610,
+		"inputAbbreviatedPath": "\/prod\/Images\/bricks-2.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/bricks-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -25589,35 +25797,266 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/prod\/Images\/global\/_featuredImageTop\/candrive.jpg": {
+	"\/prod\/Images\/global\/16447262348_7476080e8c_o-350x500.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 30272,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/candrive.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/candrive.jpg",
+		"initialSize": 33240,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/16447262348_7476080e8c_o-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/16447262348_7476080e8c_o-350x500.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/global\/_featureImageLarge\/placeholder.jpg": {
+	"\/prod\/Images\/global\/22209537264_ca11dca8a4_k.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 49800,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/placeholder.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/placeholder.jpg",
+		"initialSize": 319232,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/22209537264_ca11dca8a4_k.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/22209537264_ca11dca8a4_k.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/global\/_thumbnailLandscape\/candrive.jpg": {
+	"\/prod\/Images\/global\/_aboutImageTransform\/practice.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 24118,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/_thumbnailLandscape\/candrive.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/_thumbnailLandscape\/candrive.jpg",
+		"initialSize": 11643,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_aboutImageTransform\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_aboutImageTransform\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_brickLarge\/bricks.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 299549,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_brickLarge\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_brickLarge\/bricks.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_brickMedium\/bricks.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 112771,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_brickMedium\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_brickMedium\/bricks.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_brickSmall\/bricks.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 62130,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_brickSmall\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_brickSmall\/bricks.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featuredImageTop\/16447262348_7476080e8c_o-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7925,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/16447262348_7476080e8c_o-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/16447262348_7476080e8c_o-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featuredImageTop\/DowlingKristin-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6844,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/DowlingKristin-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/DowlingKristin-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featuredImageTop\/profile-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7925,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/profile-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featuredImageTop\/QuintinSteele-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11025,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/QuintinSteele-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featuredImageTop\/QuintinSteele-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageLarge\/22209537264_ca11dca8a4_k.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74210,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/22209537264_ca11dca8a4_k.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/22209537264_ca11dca8a4_k.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageLarge\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 90964,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageLarge\/practice.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 79624,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageLarge\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageMedium\/22209537264_ca11dca8a4_k.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46699,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/22209537264_ca11dca8a4_k.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/22209537264_ca11dca8a4_k.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageMedium\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54932,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageMedium\/mario_image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 142142,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/mario_image.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/mario_image.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageMedium\/practice.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51740,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageMedium\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageSmall\/22209537264_ca11dca8a4_k.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30718,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/22209537264_ca11dca8a4_k.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/22209537264_ca11dca8a4_k.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageSmall\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36856,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_featureImageSmall\/practice.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30850,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/practice.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_featureImageSmall\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_formIconNormal\/lightbulb-sample.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7467,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_formIconNormal\/lightbulb-sample.png",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_formIconNormal\/lightbulb-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_meetTheTeamHeadshot\/profile-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3040,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_meetTheTeamHeadshot\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_meetTheTeamHeadshot\/profile-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_projectThumb\/placeholder.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2503,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_projectThumb\/placeholder.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_projectThumb\/placeholder.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/_thumb\/placeholder.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4715,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/_thumb\/placeholder.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/_thumb\/placeholder.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25633,13 +26072,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/prod\/Images\/global\/_thumbnailLandscape\/practice.jpg": {
+	"\/prod\/Images\/global\/bricks.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 19778,
-		"inputAbbreviatedPath": "\/prod\/Images\/global\/_thumbnailLandscape\/practice.jpg",
-		"outputAbbreviatedPath": "\/prod\/Images\/global\/_thumbnailLandscape\/practice.jpg",
+		"initialSize": 166610,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/bricks.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/bricks.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25651,6 +26090,94 @@
 		"initialSize": 1.96819e+06,
 		"inputAbbreviatedPath": "\/prod\/Images\/global\/candrive.jpg",
 		"outputAbbreviatedPath": "\/prod\/Images\/global\/candrive.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/CHRIS-EDIT-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49757,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/CHRIS-EDIT-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/CHRIS-EDIT-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/DowlingKristin-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27561,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/DowlingKristin-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/DowlingKristin-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/images\/_featuredImageTop\/ReillyHawkins1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10888,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/images\/_featuredImageTop\/ReillyHawkins1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/images\/_featuredImageTop\/ReillyHawkins1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/images\/profile-example2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42611,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/images\/profile-example2.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/images\/profile-example2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/images\/ReillyHawkins1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45164,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/images\/ReillyHawkins1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/images\/ReillyHawkins1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/KSU_Logo_Gray.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20546,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/KSU_Logo_Gray.png",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/KSU_Logo_Gray.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/lightbulb-sample.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 260917,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/lightbulb-sample.png",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/lightbulb-sample.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/mario_image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 842838,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/mario_image.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/mario_image.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25673,6 +26200,61 @@
 		"initialSize": 1.73823e+06,
 		"inputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
 		"outputAbbreviatedPath": "\/prod\/Images\/global\/practice.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/profile-example2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42611,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/profile-example2.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/profile-example2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/profile-sample.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33240,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/profile-sample.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/profile-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/QuintinSteele-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47924,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/QuintinSteele-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/QuintinSteele-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/Screen-Shot-2016-01-21-at-11.15.02-AM.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.25576e+06,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/Screen-Shot-2016-01-21-at-11.15.02-AM.png",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/Screen-Shot-2016-01-21-at-11.15.02-AM.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/Victoria1-350x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35212,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/Victoria1-350x500.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/Victoria1-350x500.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

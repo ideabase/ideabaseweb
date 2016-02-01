@@ -23,6 +23,9 @@
 	a {
 		color: $blue;
 	}
+	p a {
+		color: $blue;
+	}
 }
 
 .global-footer__cta {
@@ -84,16 +87,24 @@
 	}
 }
 
+.footer-form {
+	width: 100%;
+	display: block;
+}
+
 .js .footer-form {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in;
 }
 
 .js .form--show {
+  height: auto;
+  overflow: visible;
   max-height: 60em;
-  max-width: 1000px;
-  width: 100%;
+  max-width: 900px;
+  //width: 100%;
+  display: block;
   margin: 0 auto;
   padding: 0 2em 2em 2em;
  }

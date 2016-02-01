@@ -35,7 +35,7 @@
 
 .button::after {
   content: "";
-  background-image: url(../images/global/arrow-right-white.svg);
+  background-image: url(../Images/global/arrow-right-white.svg);
   background-size: auto;
   background-repeat: no-repeat;
   font-size: .5em;
@@ -50,7 +50,7 @@
   padding-left: 3.5em;
   margin-top: 1.5em;
   &:after {
-    background-image: url(../images/global/arrow-right-white.svg);
+    background-image: url(../Images/global/arrow-right-white.svg);
     transform: scaleX(-1);
     filter: FlipH;
     right: inherit;
@@ -89,13 +89,13 @@
     border-color: $cyan;
   }
   &:after {
-    background-image: url(../images/global/arrow-right-blue_151214_170628.svg);
+    background-image: url(../Images/global/arrow-right-blue_151214_170628.svg);
   }
 }
 
 .panel-secondary .button.button-primary:hover {
   &:after {
-  background-image:url(../images/global/arrow-right-white_151214_170629.svg);
+  background-image:url(../Images/global/arrow-right-white_151214_170629.svg);
 }
 }
 
