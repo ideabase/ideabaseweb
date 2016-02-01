@@ -14,7 +14,7 @@
       <ul class="project-single__images">
       {% for asset in entry.projectPicture %}
         <li class="project-single__images_item">
-            <img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+            <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
         </li>
         {% endfor %} 
       </ul>  
@@ -22,7 +22,7 @@
       <ul class="project-single__images--single">
       {% for asset in entry.projectPicture %}
         <li class="project-single__images_item">
-            <img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+            <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
         </li>
         {% endfor %} 
       </ul> 
