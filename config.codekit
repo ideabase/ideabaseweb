@@ -22842,6 +22842,83 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2054,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/267.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2890,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/268.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1825,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/269.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2182,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/270.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2253,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/272.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1437,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/278.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2816,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/280.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -22849,6 +22926,50 @@
 		"initialSize": 1550,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg",
 		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/281.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2369,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/282.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2054,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/285.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1389,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/343.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5813,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/489.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -22871,6 +22992,17 @@
 		"initialSize": 2227,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/500.jpg",
 		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1827,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/60\/502.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -23105,6 +23237,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4d\/4da647b3e0d92c19537e068ccd550d19d8a4456229da542cda7e4f381646d474.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/50\/502a695acad6519437f84f3dc830cc6a192e2cfc4fa6e806f1a316e90777b19b.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/50\/502a695acad6519437f84f3dc830cc6a192e2cfc4fa6e806f1a316e90777b19b.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23465,6 +23606,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/df\/df2273a9a23b5161376f7d9527a172627dcc82fe9589c59d6117266a793a0502.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e1\/e13fcd4c59968dcb105c9935768111ec05649415c4db55876836ce45ccdb9843.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e1\/e13fcd4c59968dcb105c9935768111ec05649415c4db55876836ce45ccdb9843.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e1\/e15e3aa2d0af6bded63f8360b7fcf6cfa4ac3fc58446de06769e63cb25797874.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e1\/e15e3aa2d0af6bded63f8360b7fcf6cfa4ac3fc58446de06769e63cb25797874.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24073,6 +24232,17 @@
 		"initialSize": 5.02914e+06,
 		"inputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
 		"outputAbbreviatedPath": "\/dev\/assets\/img\/john.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/dev\/assets\/img\/KSU_Logo_Gray.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22358,
+		"inputAbbreviatedPath": "\/dev\/assets\/img\/KSU_Logo_Gray.png",
+		"outputAbbreviatedPath": "\/dev\/assets\/img\/KSU_Logo_Gray.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25975,6 +26145,17 @@
 		"initialSize": 45164,
 		"inputAbbreviatedPath": "\/prod\/Images\/global\/images\/ReillyHawkins1-350x500.jpg",
 		"outputAbbreviatedPath": "\/prod\/Images\/global\/images\/ReillyHawkins1-350x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/global\/KSU_Logo_Gray.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20546,
+		"inputAbbreviatedPath": "\/prod\/Images\/global\/KSU_Logo_Gray.png",
+		"outputAbbreviatedPath": "\/prod\/Images\/global\/KSU_Logo_Gray.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

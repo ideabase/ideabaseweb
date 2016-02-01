@@ -104,13 +104,10 @@
   }
 
   @media screen and (min-width: 900px) {
-    width: 29%;
+    width: auto;
     float: right;
     clear: none;
     text-align: left;
-  }
-  @media screen and (min-width: 1100px) {
-    width: 24%;
   }
 }
 
@@ -190,14 +187,14 @@
   @media screen and (min-width: 900px) {
     float: right;
     display: inline-block;
-    margin-top: 48px;
     width: 150px;
-    height: 65px;
-    img {
-      width: 150px;
-      height: 65px;
-    }
+    margin-top: 0;
   }
+}
+
+.footer-info__bottom {
+  clear: left;
+  display: block;
 }
 
 .footer-info__nav {

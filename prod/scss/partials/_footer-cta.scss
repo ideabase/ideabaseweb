@@ -84,16 +84,24 @@
 	}
 }
 
+.footer-form {
+	width: 100%;
+	display: block;
+}
+
 .js .footer-form {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in;
 }
 
 .js .form--show {
+  height: auto;
+  overflow: auto;
   max-height: 60em;
-  max-width: 100%;
-  width: 100%;
+  max-width: 900px;
+  //width: 100%;
+  display: block;
   margin: 0 auto;
   padding: 0 2em 2em 2em;
  }
