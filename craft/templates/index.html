@@ -6,34 +6,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-<style type="text/css">
-			.section-header { 
-				{% if entry.aboutImage | length %}
-				    {% for asset in entry.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageSmall') }});
-				    {% endfor %}
-				{% endif %}
-			}
-			@media screen and (min-width: 600px) {
-				.section-header {
-					{% if entry.aboutImage | length %}
-				    {% for asset in entry.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageMedium') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
-			@media screen and (min-width: 1000px) {
-				.section-header {
-					{% if entry.aboutImage | length %}
-				    {% for asset in entry.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageLarge') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
-
-</style>
+{% include '_includes/_background-images.html' %}
 	<!-- About Section -->
 			<section class="section-header">
 
@@ -84,9 +57,15 @@
 		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
+				    {% if entry.projectPicture|length %}
 							{% for asset in entry.projectPicture.limit(1) %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}">
+     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
    							{% endfor %}
+   						{% else %}
+   						{% for asset in imagePlaceholder.aboutImage %}
+   					   		<img class="section-projects__list__item__thumb"  src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+   					 	{% endfor %}
+   					 {% endif %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
 				    </a>
 			    </li>
@@ -103,7 +82,7 @@
 		{% for block in entry.projectMatrix.type('homeProjects') %}
 			<ul class="section-people__logos">	
      			{% for asset in block.projectImageLogo %}
-           			<li><img src="{{ asset.getUrl('projectThumb') }}" alt= "{{ asset.title}}"></li>
+           			<li><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></li>
         		{% endfor %}	
 			</ul>
 		{% endfor %}	
