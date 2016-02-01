@@ -22479,6 +22479,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/config\/db-default.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/config\/db-default.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/config\/db.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -22947,6 +22956,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/16\/16cf30c1de691730fb9699864d18fff219948c967a95c8751762092ca8043a6f.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/16\/16cf30c1de691730fb9699864d18fff219948c967a95c8751762092ca8043a6f.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/18\/187c7bdceb148f58c6950998849a3df18764a7699e6c37f0f1c8629592ba7853.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23357,6 +23375,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b9\/b9e80110e2f3165903368e1f81518f19d4fa13f187872a1c4898af313d462148.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/bc\/bc7d53558e7f842f0158f79d42c3e178ab1a0b8ac7e3a30860f9dd6bb7f77975.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/bc\/bc7d53558e7f842f0158f79d42c3e178ab1a0b8ac7e3a30860f9dd6bb7f77975.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -25502,6 +25529,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/prod\/Images\/bricks-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 166610,
+		"inputAbbreviatedPath": "\/prod\/Images\/bricks-2.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/bricks-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/prod\/Images\/bricks.jpg": {
 		"fileType": 16384,
