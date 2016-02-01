@@ -13,7 +13,7 @@
     {% if numberOfPhotos > 1 %}
       <ul class="project-single__images">
       {% for asset in entry.projectPicture %}
-        <li class="project-single__images_item">
+        <li class="project-single__images__item">
             <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
         </li>
         {% endfor %} 
@@ -21,7 +21,7 @@
     {% elseif numberOfPhotos == 1 %}
       <ul class="project-single__images--single">
       {% for asset in entry.projectPicture %}
-        <li class="project-single__images_item">
+        <li class="project-single__images__item">
             <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
         </li>
         {% endfor %} 
