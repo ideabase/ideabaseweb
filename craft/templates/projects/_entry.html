@@ -33,10 +33,14 @@
         {{ entry.title }}
       {% endfor %}
     </h3>
+    {% if entry.projectDescription | length %}
     <div class="project-single__description">
         <p>{{ entry.projectDescription }}</p>
     </div>
+    {% endif %}
+    {% if entry.projectUrl | length %}
     <a href="{{ entry.projectUrl }}" class="blog-teaser__link blog-teaser__link--blog">View the Project</a>
+    {% endif %}
     </article>
     <aside class="project-single__aside">
     {% if entry.contributor | length %}
