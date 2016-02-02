@@ -34,7 +34,7 @@
 		<!-- Staff Social Media -->
 		<section class="footer-info__social">
 			{% for block in entry.staffSocialMedia %}
-     			<a class="footer-info__social__icon" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
+     			<a class="footer-info__social__icon" target="_blank" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
 			{% endfor %}
 		</section>	
 		{% endif %}
