@@ -144,7 +144,7 @@
   transform: scale(.95);
   transition: .1s transform ease-in;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 	&[href*="*.*"] {
 		background-image: url(../Images/global/website.svg);
@@ -188,7 +188,6 @@
 	&[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg);
   } 
-
 }
 
 .footer-info__legal {
