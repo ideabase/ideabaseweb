@@ -19,6 +19,9 @@
 	<div class="project-category">
 		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
 		<ul class="project-category__list" id="categorytriggerlist">
+		<li class="project-category__list__item">
+			<a href="{{ siteUrl }}/work/all">All</a>
+		</li>
 			{%  for category in projectCategory %}
 				<li class="project-category__list__item">
 					<a href="{{ category.url }}">{{category.title}}</a>
