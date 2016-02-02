@@ -73,7 +73,7 @@
 		{% for entry in entry.blogAuthor %}
 		<div class="blog__entry__author__image">
 			{% for asset in entry.staffHeadshot %}
-		     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		     	<img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
 		   	{% endfor %}
 		 </div>
 		 <span class="blog__entry__author__name">{{ entry.title }}
