@@ -22842,6 +22842,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/100\/569.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3732,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/100\/569.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/100\/569.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/30\/242.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -23007,6 +23018,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/30\/569.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1092,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/569.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/569.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/567.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -23023,6 +23045,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/02\/024b7845266ee8b7cd8a1715955b661c3bc365406e4c9ecfe55ece191c051ee0.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/06\/06fa9e2d3315536a8f39fe73b1cc3861a80e1b9796f180aa77ffb352285526a7.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/06\/06fa9e2d3315536a8f39fe73b1cc3861a80e1b9796f180aa77ffb352285526a7.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23347,6 +23378,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/59\/593e024c6156ecc2405bfe74e165ec76c821514a56e611f9b39f0d240bc34010.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/5a\/5aa851196213b28fadd61df97e8d69242467398155ecb624ce37d86b34e7d032.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/5a\/5aa851196213b28fadd61df97e8d69242467398155ecb624ce37d86b34e7d032.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -26076,6 +26116,28 @@
 		"initialSize": 4839,
 		"inputAbbreviatedPath": "\/prod\/images\/_projectThumb\/176\/lightbulb-sample.jpg",
 		"outputAbbreviatedPath": "\/prod\/images\/_projectThumb\/176\/lightbulb-sample.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/basic\/002.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 917267,
+		"inputAbbreviatedPath": "\/prod\/images\/basic\/002.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/basic\/002.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/basic\/_basicPageImage\/002.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45586,
+		"inputAbbreviatedPath": "\/prod\/images\/basic\/_basicPageImage\/002.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/basic\/_basicPageImage\/002.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
