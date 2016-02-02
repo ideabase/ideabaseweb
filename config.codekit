@@ -27352,22 +27352,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/prod\/scss\/partials\/_footer-global.scss": {
-		"createSourceMap": 0,
-		"debugStyle": 0,
-		"decimalPrecision": 10,
-		"fileType": 4,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/prod\/scss\/partials\/_footer-global.scss",
-		"outputAbbreviatedPath": "\/prod\/scss\/css\/_footer-global.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/prod\/scss\/partials\/_forms.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
