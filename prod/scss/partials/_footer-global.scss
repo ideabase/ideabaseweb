@@ -143,12 +143,10 @@
   text-indent: -9999px;
   transform: scale(.95);
   transition: .1s transform ease-in;
+	background-image: url(../Images/global/website.svg);
   &:hover {
     transform: scale(1.04);
   }
-	&[href*="*.*"] {
-		background-image: url(../Images/global/website.svg);
-	}
   &[href*="facebook.com"] {
     background-image: url(../Images/global/facebook.svg);
   }
