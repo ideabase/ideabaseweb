@@ -145,7 +145,7 @@
   transition: .1s transform ease-in;
 	background-image: url(../Images/global/website.svg);
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
   &[href*="facebook.com"] {
     background-image: url(../Images/global/facebook.svg);
