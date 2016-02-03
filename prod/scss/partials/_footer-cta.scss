@@ -108,6 +108,9 @@
   margin: 0 auto;
   margin-bottom: 2em;
   padding: 0 2em 2em 2em;
+  @media screen and (min-width: 500px) {
+  	max-width: 400px;
+  }
   @media screen and (min-width: 600px) {
   	max-width: 500px;
   }

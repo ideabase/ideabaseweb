@@ -96,8 +96,11 @@
   text-align: center;
   @include clearfix;
   display: block;
-  width: 250px;
+  width: 220px;
   margin: 1.5em auto 1em auto;
+  @media screen and (min-width: 700px) {
+    width: 250px;
+  }
 }
 
 .footer-info__social--footer {
@@ -136,14 +139,18 @@
   background-size: 100% auto;
   float: left;
   display: inline;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   margin-left: .15rem;
   margin-right: .15rem;
   text-indent: -9999px;
   transform: scale(.95);
   transition: .1s transform ease-in;
 	background-image: url(../Images/global/website.svg);
+  @media screen and (min-width: 700px) {
+    width: 35px;
+    height: 35px;
+  }
   &:hover {
     transform: scale(1.05);
   }
