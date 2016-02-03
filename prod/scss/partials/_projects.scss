@@ -687,6 +687,15 @@
   }
 }
 
+.section-projects-featured .project-list__item {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  @media screen and (min-width: 850px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .project-list__item--featured .project-list__item__name {
   color: white;
 }
