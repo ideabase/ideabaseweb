@@ -59,6 +59,9 @@
 	</section>			
 </div>			
 	
+{% set blogGroup = craft.categories.group('caseStudyOrBlog').slug('case-study') %}
+{% set caseStudy = craft.entries.section('blogPost').relatedTo(blogGroup) %}
+
 
 	<!-- Case Study List -->
 <div class="panel-primary-container">
@@ -68,7 +71,7 @@
 
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
-			{% for entry in craft.entries.section('caseStudy').limit(2) %} 
+			{% for entry in caseStudy.relatedTo(blogGroup) %} 
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>

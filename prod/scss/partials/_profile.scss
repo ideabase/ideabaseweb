@@ -69,7 +69,7 @@
 
 	.people .people__profile-item:nth-child(odd) {
 		margin: 0 1.667%;
-		clear: auto;
+		clear: inherit;
 	}
 
 	.people .people__profile-item:nth-child(3n+1) {
@@ -242,6 +242,13 @@
 	margin: 0 auto;
 	margin-top: 2em;
 	margin-bottom: 2em;
+	a {
+		color: $blue;
+		transition: .3s all ease-in-out;
+		&:hover {
+			color: $cyan;
+		}
+	}
 	p {
 		font-size: 1em;
 	}
