@@ -26102,6 +26102,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/headshot\/_thumb\/Hairweaving_image1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33199,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshot\/_thumb\/Hairweaving_image1.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshot\/_thumb\/Hairweaving_image1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/headshot\/_thumb\/MGQM2.jpeg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7292,
+		"inputAbbreviatedPath": "\/prod\/Images\/headshot\/_thumb\/MGQM2.jpeg",
+		"outputAbbreviatedPath": "\/prod\/Images\/headshot\/_thumb\/MGQM2.jpeg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/headshot\/Hairweaving_image1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

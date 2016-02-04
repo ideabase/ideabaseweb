@@ -69,7 +69,7 @@
 
 	.people .people__profile-item:nth-child(odd) {
 		margin: 0 1.667%;
-		clear: auto;
+		clear: inherit;
 	}
 
 	.people .people__profile-item:nth-child(3n+1) {
