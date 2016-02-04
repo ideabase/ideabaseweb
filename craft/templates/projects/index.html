@@ -50,7 +50,9 @@
 							{{ entry.title }}
 			     		    {% endfor %}
 			     	</h3>
-					<div class="project-list__item__description">{{ entry.projectDescription }}</div>
+			     	{% set descriptionParagraph = entry.projectDescription|split('.') %}
+			     	{% set firstDescriptionParagraph = descriptionParagraph|first ~ '.' %}
+					<div class="project-list__item__description">{{ firstDescriptionParagraph|raw }}</div>
 			</a>
 			</li>	
 			{% endfor %}
