@@ -1,6 +1,33 @@
 {##}
 {% extends  "_layout" %}
 {% block content %}
+<style type="text/css">
+		.section-header { 
+			{% if category.aboutImage | length %}
+			    {% for asset in category.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageSmall') }});
+			    {% endfor %}
+			{% endif %}
+		}
+		@media screen and (min-width: 600px) {
+			.section-header {
+				{% if category.aboutImage | length %}
+			    {% for asset in category.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageMedium') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
+		@media screen and (min-width: 1000px) {
+			.section-header {
+				{% if category.aboutImage | length %}
+			    {% for asset in category.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageLarge') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
+</style>
 {% include '_includes/_background-images.html' %}
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
