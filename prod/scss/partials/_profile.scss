@@ -242,6 +242,13 @@
 	margin: 0 auto;
 	margin-top: 2em;
 	margin-bottom: 2em;
+	a {
+		color: $blue;
+		transition: .3s all ease-in-out;
+		&:hover {
+			color: $cyan;
+		}
+	}
 	p {
 		font-size: 1em;
 	}
