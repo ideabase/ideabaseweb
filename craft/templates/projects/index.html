@@ -27,7 +27,7 @@
 	<section class="section-projects-all panel-secondary panel-primary-wide">
 		<ul class="project-list">
 			{% for entry in craft.entries.section('ideabaseProjects')|slice(0,3) %}
-			<li class="project-list__item project-list__item--featured">	
+			<li class="project-list__item--featured">	
 			<a href="{{ entry.url }}">
 					{% if asset in entry.projectPicture|length %}
 						{% for asset in entry.projectPicture %}

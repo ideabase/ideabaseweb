@@ -133,7 +133,7 @@
   background-color: $blue;
   color: white;
   padding-bottom: 2em;
-  padding-top: 2em;
+  padding-top: 1em;
   @media screen and (min-width: 850px) {
     padding-top: 5em;
     padding-bottom: 3em;
@@ -518,6 +518,8 @@
   position: relative;
   z-index: 50;
   display: block;
+  max-width: 350px;
+  margin: 0 auto;
   &:before {
     transition: .3s all ease-in-out;
     background-color: rgba($blue,0);
@@ -537,10 +539,10 @@
   }
 }
 
-.project-list__item__description {
+.project-list__item__description p {
   color: $darkgray;
   text-align: center;
-  font-size: 1em;
+  font-size: .95em;
   width: 90%;
   margin: 0 auto;
   margin-top: 1em;
@@ -682,8 +684,11 @@
 .project-list__item--featured {
   margin-bottom: 3em;
   color: white;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 850px) {
     margin-bottom: 0em;
+    width: 30%;
+    float: left;
+    margin: 0em 1.667% 0em 1.667%;
   }
 }
 
@@ -700,7 +705,7 @@
   color: white;
 }
 
-.project-list__item--featured .project-list__item__description {
+.project-list__item--featured .project-list__item__description p {
   color: white;
 }
 
