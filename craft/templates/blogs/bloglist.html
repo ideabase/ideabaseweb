@@ -33,9 +33,18 @@
 							<div class="blog-list__text">
 					    		{{ firstBlogParagraphIndex|raw }}
 					    	</div>
-					    {% for entry in blogAuthor %}
-						<p class="blog-teaser__link">{{ entry.profileFirstName}}</p>
-						{% endfor %}
+					    {% set numberOfAuthors = entry.blogAuthor|length %}
+					    {% if numberOfAuthors < 2 %}
+						    {% for entry in blogAuthor %}
+							<p class="blog-teaser__link">
+								Read {{ entry.profileFirstName}}'s Post</p>
+							{% endfor %}
+						{% else %}
+							{% if numberOfAuthors >= 2 %}
+							<p class="blog-teaser__link">
+								Read the Post</p>
+							{% endif %}
+						{% endif %}
 					    
 						</a>	
 			</li>

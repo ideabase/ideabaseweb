@@ -289,4 +289,8 @@
 
 .blog-list__text {
   color: $darkgray;
+  p {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
 }

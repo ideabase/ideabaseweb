@@ -24076,6 +24076,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/dc\/dcc5e347264154be3a6c9a63f860c28f2ce98cb67924bed0e6378ea04422254c.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/dc\/dcc5e347264154be3a6c9a63f860c28f2ce98cb67924bed0e6378ea04422254c.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/dd\/dd61f8dbfe50a8bba425090a19adeebcf2c2595f4f9d3b2969f7d041ac723f31.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -26599,6 +26608,17 @@
 		"initialSize": 54932,
 		"inputAbbreviatedPath": "\/prod\/images\/global\/_featureImageMedium\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
 		"outputAbbreviatedPath": "\/prod\/images\/global\/_featureImageMedium\/489\/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/global\/_featureImageMedium\/mario_image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 142245,
+		"inputAbbreviatedPath": "\/prod\/images\/global\/_featureImageMedium\/mario_image.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/global\/_featureImageMedium\/mario_image.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
