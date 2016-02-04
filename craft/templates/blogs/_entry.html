@@ -71,26 +71,28 @@
 	</article>
 	<aside class="blog__entry__sidebar">
 		{% for entry in entry.blogAuthor %}
-		<div class="blog__entry__author__image">
-			{% for asset in entry.staffHeadshot %}
-		     	<img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
-		   	{% endfor %}
-		 </div>
-		 <span class="blog__entry__author__name">{{ entry.title }}
-		 </span>
-		<span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
-		<div class="blog__entry__author__description">
-		{% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
-		{% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
-    		{{ firstBioParagraph|raw }}
-		</div>
-		<a href="{{ entry.url }}" class="blog-teaser__link blog-teaser__link--blog">Read More About {{ entry.profileFirstName }}</a>   		
+		<section class="blog__entry-author">
+			<div class="blog__entry__author__image">
+				{% for asset in entry.staffHeadshot %}
+			     	<img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
+			   	{% endfor %}
+			 </div>
+			 <span class="blog__entry__author__name">{{ entry.title }}
+			 </span>
+			<span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
+			<div class="blog__entry__author__description">
+			{% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
+			{% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
+	    		{{ firstBioParagraph|raw }}
+			</div>
+			<a href="{{ entry.url }}" class="blog-teaser__link blog-teaser__link--blog">Read More About {{ entry.profileFirstName }}</a>   
+		</section>		
 		{% endfor %}
-		<section class="people-posts people-posts--blog">
 		{% set tag = entry.blogTags %}
-		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ currentEntry.id).limit(3).order('RAND()').find() %}
-		<h2 class="people-posts__title">Related Posts</h2>	
+		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ currentEntry.id).limit(3).order('RAND()').find() %}	
 			{% if relatedEntries | length %}
+			<section class="people-posts people-posts--blog">
+			<h2 class="people-posts__title">Related Posts</h2>
 			<ul class="people-posts__list">
 			    {% for entry in relatedEntries %}
 			        <li class="people-posts__list__item">
@@ -99,22 +101,13 @@
 			        	</a>
 			        </li>		
 			    {% endfor %}
-			</ul>    
+			</ul>
+			</section> 
 			{% endif %}
-			<!-- <h2 class="people-posts__title">Related Posts</h2>	
-			<ul class="people-posts__list">
-				<li class="people-posts__list__item">
-					<a href="#">The Atmosphere of IdeaBase by Sarah Holzer</a>
-				</li>
-				<li class="people-posts__list__item">
-					<a href="#">Building a Responsive Library Website by Sarah Holzer</a>
-				</li>
-				<li class="people-posts__list__item">
-					<a href="#">The Atmosphere of IdeaBase by Sarah Holzer</a>
-				</li>
-			</ul>-->
-		</section>
-		{% set tagEntries = craft.entries.section('blogPost').limit(null) %}
+
+	<!-- Begin Tags -->
+	{% set tagEntries = craft.entries.section('blogPost').limit(null) %}
+	{% if tagEntries | length %}
 	<ul class="blog__entry__tags">
     	{% for tag in craft.tags.relatedTo(tagEntries) %}
     		<li>
@@ -123,7 +116,8 @@
         		</a>
       		</li>
       	{% endfor %}
-    </ul>		
+    </ul>	
+    {% endif %}	
 		<a class="button button-primary button--reverse" href="/blog">Back to Blog</a>	
 	</aside>
 	</section>
