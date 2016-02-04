@@ -8,6 +8,9 @@ styles.scssc
 _hero.scssc
 _clearfix.scssc
 _variables.scssc
+prod/Images/*
+prod/scss/.sass-cache/
+prod/scss/.sass-cache/*
 
 .DS_Store
 
@@ -62,3 +65,6 @@ prod/Images/headshot/_staffCircle/Hairweaving_image1.jpg
 prod/Images/headshot/_staffCircle/MGQM2.jpeg
 prod/Images/headshot/Hairweaving_image1.jpg
 prod/Images/headshot/MGQM2.jpeg
+prod/Images/global/_featureImageLarge/489/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg
+prod/Images/global/_featureImageMedium/489/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg
+prod/Images/global/_featureImageSmall/489/Screen-Shot-2016-01-21-at-11.15.02-AM.jpg
