@@ -13,7 +13,7 @@ a {
 
 .countdowncontainer {
 	background-color: #1a5fab;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	padding: 1em;
 	color: white;
@@ -24,6 +24,7 @@ a {
 @media screen and (min-width: 900px) {
 	.countdowncontainer {
 		font-size: 1.5em;
+		width: 80%;
 	}
 }
 
@@ -54,6 +55,7 @@ a {
 #wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	margin-bottom: 2em;
 }
 
 h1 {
