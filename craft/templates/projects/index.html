@@ -73,7 +73,7 @@
 
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
-			{% for entry in caseStudy.relatedTo(blogGroup) %} 
+			{% for entry in caseStudy.relatedTo(blogGroup).limit(2) %} 
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
