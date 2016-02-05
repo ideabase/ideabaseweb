@@ -54,7 +54,9 @@
 		<div class="section-projects__description">{{ entry.projectsDescription }}</div>
 
 		<ul class="section-projects__list">
-		{% for entry in craft.entries.section('ideabaseProjects').limit(3).order('postDate') %} 
+		{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
+
+		{% for entry in featured.limit(3) %} 
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 				    {% if entry.projectPicture|length %}
