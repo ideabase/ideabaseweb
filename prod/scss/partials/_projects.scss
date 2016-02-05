@@ -612,9 +612,11 @@
   color: $darkgray;
   cursor: pointer;
   &:after {
-    background-image: url(../images/global/downarrowgray.svg);
+    background-image: url(../Images/global/downarrowgray.svg);
     background-size: 50% auto;
     top: 40%;
+    width: 20px;
+    right: 10px;
   }
 }
 
