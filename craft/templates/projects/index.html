@@ -31,8 +31,8 @@
 			{% for entry in featured.limit(3) %}
 			<li class="project-list__item--featured">	
 			<a href="{{ entry.url }}">
-					{% if asset in entry.projectPicture|length %}
-						{% for asset in entry.projectPicture %}
+					{% if asset in entry.projectPicture | length %}
+						{% for asset in entry.projectPicture.limit(1) %}
 						<div class="project-list__item__image">
 				     		<img src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
 				     	</div>
