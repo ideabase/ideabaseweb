@@ -9,5 +9,5 @@
 
 return array(
 	'showBetaUpdates' => true,
-	//'devMode' => true,
+	'devMode' => true,
 );
