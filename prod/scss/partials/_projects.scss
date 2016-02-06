@@ -46,7 +46,7 @@
   border-radius: 5px;
   background: transparent;
 }
-.flickity-prev-next-button:hover {
+.flickity-prev-next-button:hover, .flickity-prev-next-button:focus  {
   background: $blue;
 }
 /* arrow color */

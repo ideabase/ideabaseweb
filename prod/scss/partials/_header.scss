@@ -176,7 +176,7 @@ nav {
     padding-top: .75em;
     padding-bottom: .75em;
     transition: .3s transform ease-in-out;
-    a:hover {
+    a:hover, &:focus {
       border-color: transparent;
       transform: scale3d(1.1,1.1,1.1);
     }
@@ -199,7 +199,7 @@ nav li {
     transition: .25s color ease-in;
     transition: .3s color ease-in-out;
     transform: scale3d(1,1,1);
-    &:hover {
+    &:hover, &:focus {
       //border: 2px solid $blue;
       //background-color: $blue;
       color: $cyan;
@@ -221,4 +221,21 @@ nav li {
   .active-page {
     color: $cyan;
   }
+}
+
+// Skip to Content links for accessibility //
+
+#skip-to-content {
+  padding: 1em;
+  position: absolute;
+  top: -40px;
+  left: 1em;
+  z-index: 1000;
+  color: white;
+}
+
+#skip-to-content:focus {
+  position: absolute;
+  top: 0;
+  background: #4593ff;
 }

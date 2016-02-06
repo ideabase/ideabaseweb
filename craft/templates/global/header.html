@@ -1,5 +1,6 @@
 {% cache globally %}
 <header role="banner">
+	<a id="skip-to-content" href="#content">skip to main content</a>
 	<a href="{{ siteUrl }}">{% for image in header.headerLogo %}
     <img class="ideabaselogo" src="{{ image.getUrl }}" alt="{{ image.title }}">
     {% endfor %} </a>

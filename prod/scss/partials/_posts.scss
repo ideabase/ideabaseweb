@@ -172,7 +172,7 @@
   font-weight: 600;
   margin-bottom: 1em;
   transition: .2s all ease-in-out;
-  &:hover {
+  &:hover, &:focus {
     background-color: $darkgray;
     color: $lightgray;
   }

@@ -47,7 +47,7 @@
     color: $blue;
     text-decoration: none;
     transition: .3s all ease-in-out;
-    &:hover {
+    &:hover, &:focus {
       color: $cyan;
     }
   }
@@ -151,7 +151,7 @@
     width: 35px;
     height: 35px;
   }
-  &:hover {
+  &:hover, &:focus {
     transform: scale(1.05);
   }
   &[href*="facebook.com"] {
@@ -254,7 +254,7 @@
     text-decoration: none;
     font-size: .8rem;
     transition: .3s all ease-in-out;
-    &:hover {
+    &:hover, &:focus {
       color: $cyan;
     }
   }
@@ -278,7 +278,7 @@
     color: $blue;
     text-decoration: none;
     transition: .3s all ease-in-out;
-    &:hover {
+    &:hover, &:focus {
      color: $cyan;
     }
   }

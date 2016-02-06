@@ -1,5 +1,5 @@
 {%cache globally%}
-<footer class="global-footer">
+<footer role="contentinfo" class="global-footer">
 	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
 	{% for asset in footer.formIcon %}
 		<img src="{{ asset.getUrl('formIconNormal') }}" class="global-footer__image" alt= "{{ asset.title}}">

@@ -37,7 +37,7 @@ p {
   a {
     color: $blue;
     transition: .3s all ease-in-out;
-    &:hover {
+    &:hover, &:focus {
       color: $cyan;
     }
   }

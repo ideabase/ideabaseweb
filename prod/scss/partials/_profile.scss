@@ -26,7 +26,7 @@
 		z-index: 100;
 		transition: .3s all ease-in-out;
 	}
-	&:hover{ 
+	&:hover, &:focus{ 
 		&:after {
 			background-color: rgba($blue,.3);
 			background-blend-mode: multiply;
@@ -245,7 +245,7 @@
 	a {
 		color: $blue;
 		transition: .3s all ease-in-out;
-		&:hover {
+		&:hover, &:focus {
 			color: $cyan;
 		}
 	}
@@ -266,7 +266,7 @@
 		color: $blue;
 		text-decoration: none;
 		transition: .3s all ease-in-out;
-		&:hover {
+		&:hover, &:focus {
 			color: $cyan;
 		}
 	}

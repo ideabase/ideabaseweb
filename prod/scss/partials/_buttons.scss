@@ -65,7 +65,7 @@
 .button-primary {
   background-color: $blue;
   border-color: $blue;
-  &:hover {
+  &:hover, &:focus {
     background-color: $cyan;
     border-color: $cyan;
   }
@@ -74,7 +74,7 @@
 .button-primary--inactive {
   background-color: $darkgray;
   border-color: $darkgray;
-  &:hover {
+  &:hover, &:focus {
     background-color: darken($darkgray, 10%);
     border-color:  darken($darkgray, 10%);
   }
@@ -83,7 +83,7 @@
   background-color: white;
   color: rgb(26,95,171);
   border-color: white;
-  &:hover {
+  &:hover, &:focus {
     background-color: $cyan;
     color: white;
     border-color: $cyan;
@@ -93,7 +93,7 @@
   }
 }
 
-.panel-secondary .button.button-primary:hover {
+.panel-secondary .button.button-primary:hover, .button.button-primary:focus {
   &:after {
   background-image:url(../Images/global/arrow-right-white_151214_170629.svg);
 }
@@ -103,7 +103,7 @@
 .button-secondary {
   background-color: $cyan;
   border-color: $cyan;
-  &:hover {
+  &:hover, &:focus {
     background-color: $blue;
   }
 }
@@ -111,7 +111,7 @@
   background-color: transparent;
   color: rgb(26,95,171);
   border-color: rgb(26,95,171);
-  &:hover {
+  &:hover, &:focus {
     background-color: transparent;
     border-color: $cyan;
   }

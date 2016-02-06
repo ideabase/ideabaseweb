@@ -28,7 +28,7 @@ label[for=category]::after {
   background: $cyan url(../images/global/arrow-down-white.svg) no-repeat center center;
   background-size: 50% auto;
   pointer-events: none;
-  &:hover {
+  &:hover, &:focus {
   	background-color: $blue;
   }
 }
