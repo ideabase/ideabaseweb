@@ -39,7 +39,9 @@
     </div>
     {% endif %}
     {% if entry.video | length %}
+        <div class="project-single__video">
         {{ entry.video|videoEmbed }}
+        </div>
     {% endif %}
     {% if entry.projectUrl | length %}
     <a href="{{ entry.projectUrl }}" class="blog-teaser__link blog-teaser__link--blog">View the Project</a>
