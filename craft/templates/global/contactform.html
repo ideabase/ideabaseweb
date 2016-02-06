@@ -28,12 +28,12 @@
 
     </div>
     <div class="contact-form__column">
-            <label for="subject">Company</label>
-            <input placeholder="Company Name" id="subject" type="text" name="message[Company Name]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            <label for="company">Company</label>
+            <input placeholder="Company Name" id="company" type="text" name="message[Company Name]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
             <!--{{ message is defined and message ? errorList(message.getErrors('subject')) }}-->
 
-            <label for="subject">Phone</label>
-            <input placeholder="Phone" id="subject" type="text" name="message[Phone]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            <label for="phone">Phone</label>
+            <input placeholder="Phone" id="phone" type="text" name="message[Phone]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
             <!--{{ message is defined and message ? errorList(message.getErrors('subject')) }}-->
     </div> 
             <label for="message">How Can We Help?</label>
