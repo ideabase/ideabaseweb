@@ -64,3 +64,11 @@ sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 500 } )
 sr.reveal('.section-header__title', { delay: 100, scale: 1, duration: 500 } );
 sr.reveal('.section-projects__list', { scale: 1, duration: 500 } );
 sr.reveal('.project-list__item--featured', { scale: 1, duration: 800 } );
+
+
+// Fit Videos into their place //
+
+$(document).ready(function(){
+   // Target your .container, .wrapper, .post, etc.
+   $(".video-container").fitVids();
+ });
