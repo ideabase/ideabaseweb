@@ -65,7 +65,7 @@
         <h2>{{ block.callOut }}</h2>
         {% set image = block.callOutImage.first() %}
         {% if image %}
-        	<img class="panel-secondary__thumbnail" src="{{ image.getUrl }}" alt ="{{ image.title }}" />
+        	<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
             <div class="panel-secondary--left">
                 {{ block.callOutText }}
             </div>
