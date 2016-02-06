@@ -103,7 +103,7 @@ margin-top: .5em;
     background-color: $cyan;
     &:after {
       background-image: url(../Images/global/x_151214_170629.svg);
-      right: 11px;
+      right: 20px;
     }
   }
 
@@ -116,6 +116,7 @@ nav {
     display: block;
     height: auto;
     transition: none;
+    margin-top: -10px;
     li {
       height: auto;
       opacity: 1;
@@ -155,6 +156,7 @@ nav {
       color: $blue;
       width: 2em;
       height: 2em;
+      top:2px;
       background-size: 100% auto;
       display:inline-block;
       background-image: url(../Images/global/envelopeicon.svg);
