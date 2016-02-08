@@ -57,7 +57,7 @@ $('.project-single__images').flickity({
 
 // Reveal the Contact Us Button on Scroll //
 
-window.sr = ScrollReveal({ reset: true });
+window.sr = ScrollReveal({ reset: false });
 sr.reveal('.footer-form__button__container', { duration: 1200, scale: 1   } );
 sr.reveal('.section-people__logos', { duration: 500, scale: 1  } );
 sr.reveal('.section-services__list__item__icon', { delay: 100, duration: 500 } );
