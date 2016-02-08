@@ -39,7 +39,8 @@ margin-top: .5em;
     width: 40%;
     float: left;
     margin-left: 1em;
-    margin-top: 1.1em
+    margin-top: 1.1em;
+    height: 90px;
   }
   nav {
     width: 60%;
@@ -128,7 +129,7 @@ nav {
 
   }
   @media screen and (min-width: 1200px) {
-    margin-top: 2.6em
+    margin-top: 2.9em
   }
 }
 
@@ -155,8 +156,8 @@ nav {
     a {
       color: $blue;
       width: 2em;
-      height: 2em;
-      top:2px;
+      height: 28px;
+      top:4px;
       background-size: 100% auto;
       display:inline-block;
       background-image: url(../Images/global/envelopeicon.svg);
