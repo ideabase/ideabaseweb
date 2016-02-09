@@ -103,6 +103,11 @@
   }
 }
 
+.footer-info__social--profile {
+  display: inline-block;
+  width: inherit;
+}
+
 .footer-info__social--footer {
   @media screen and (min-width: 700px) {
     clear: left;
@@ -185,7 +190,7 @@
     background-image: url(../Images/global/codepen.svg);
   }
 	&[href*="github.com"] {
-    background-image: url(../Images/global/github.com);
+    background-image: url(../Images/global/github.svg);
   }
 	&[href*="tumblr.com"] {
     background-image: url(../Images/global/tumblr.svg);

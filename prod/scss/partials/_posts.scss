@@ -161,6 +161,21 @@
   margin-bottom: 1.5em;
 }
 
+.blog__entry__tags__title {
+  margin-bottom: .5em;
+  display: block;
+}
+
+.blog__entry__tags__single {
+  display: inline-block;
+  float: left;
+  font-size: 1.2em;
+  color: $darkgray;
+  margin-right: 1em;
+  font-style: italic;
+  margin-bottom: .25em;
+}
+
 .blog__entry__tags__item {
   display: inline-block;
   float: left;
