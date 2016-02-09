@@ -103,6 +103,11 @@
   }
 }
 
+.footer-info__social--profile {
+  display: inline-block;
+  width: inherit;
+}
+
 .footer-info__social--footer {
   @media screen and (min-width: 700px) {
     clear: left;
