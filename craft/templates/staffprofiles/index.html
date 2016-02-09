@@ -36,7 +36,7 @@
 <div class="panel-primary-container">
 <section class="section-people panel-primary-wide"> 
    <section class="people">	
-    		{% for entry in leader.relatedTo(leaderGroup) %}
+    		{% for entry in leader.relatedTo(leaderGroup).order('profileLastName asc') %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
@@ -61,7 +61,7 @@
 				</div>
 			</a>
    			{% endfor %}
-   			{% for entry in staff.relatedTo(staffGroup).limit(2) %}
+   			{% for entry in staff.relatedTo(staffGroup).order('profileLastName asc').limit(2) %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
@@ -115,7 +115,7 @@
 
 		<section class="people">	
 
-   			{% for entry in staff.relatedTo(staffGroup).offset(2) %}
+   			{% for entry in staff.relatedTo(staffGroup).order('profileLastName asc').offset(2) %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
     				{% for asset in entry.staffHeadshot %}
