@@ -20,7 +20,7 @@
     min-height: 200px;
   }
   @media screen and (min-width: 700px) {
-    padding: 6em 4em;
+    padding: 6em 7em;
     background-size: 115% auto;
   }
   @media screen and (min-width: 1000px) {
@@ -28,6 +28,10 @@
   }
   @media screen and (min-width: 1500px) {
     padding: 10em 26em;
+    background-size: 100% auto;
+  }
+  @media screen and (min-width: 1900px) {
+    padding: 13em 30em;
     background-size: 100% auto;
   }
 }
