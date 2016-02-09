@@ -106,10 +106,9 @@
 			{% endif %}
 
 	<!-- Begin Tags -->
-	{% set tagEntries = craft.entries.section('blogPost').limit(null) %}
 	{% if tagEntries | length %}
 	<ul class="blog__entry__tags">
-    	{% for tag in craft.tags.relatedTo(tagEntries) %}
+    	{% for tag in entry.blogTags %}
     		<li>
         		<a href="#" class="blog__entry__tags__item">
           			{{ tag.title }}
