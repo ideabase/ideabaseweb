@@ -107,12 +107,11 @@
 
 	<!-- Begin Tags -->
 	{% if entry.blogTags | length %}
+	<strong class="blog__entry__tags__title">Tags:</strong>
 	<ul class="blog__entry__tags">
     	{% for tag in entry.blogTags %}
-    		<li>
-        		<a href="#" class="blog__entry__tags__item">
-          			{{ tag.title }}
-        		</a>
+    		<li class="blog__entry__tags__single">
+          		{{ tag.title }}
       		</li>
       	{% endfor %}
     </ul>	
