@@ -21,7 +21,7 @@
 	{% endif %}
 </div>
 
-	{% set alumni = craft.entries.section('people') %}
+	{% set alumni = craft.entries.section('people').order('profileLastName asc') %}
 
 <div class="panel-primary-container">
 <section class="section-people-listing panel-primary"> 
