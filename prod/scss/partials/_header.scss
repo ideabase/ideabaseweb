@@ -178,10 +178,12 @@ nav {
     margin-bottom: 0;
     padding-top: .75em;
     padding-bottom: .75em;
-    transition: .3s transform ease-in-out;
+    a {
+      transition: all .1s ease-in-out;
+    }
     a:hover, &:focus {
       border-color: transparent;
-      transform: scale3d(1.1,1.1,1.1);
+      transform: scale(1.1, 1.1);
     }
   }
 
