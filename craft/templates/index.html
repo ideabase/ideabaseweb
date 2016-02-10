@@ -10,21 +10,18 @@
 	<!-- About Section -->
 			<section class="section-header">
 
-			<!-- About Image
-				{% for asset in entry.aboutImage %}
-					<img class="section-about__image" src="{{ asset.getUrl('aboutImageTransform') }}">
-				 {% endfor %}
-			End About Image -->
-			<!-- About Container -->
+			{%cache globally%}
 				<div class="section-header__container">
 				 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
 				 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
 				 </div>
 			<!-- End About Container -->	 
 			</section>
+			{% endcache %}
 	<!-- End About Section -->
 
 	<!-- Services List -->
+	{%cache globally%}
 	<div class="panel-primary-container">
 	<section class="section-services panel-primary">
 		<!-- Process List -->
@@ -46,6 +43,7 @@
 		<a class="button button-primary" href="{{ entry.servicesButtonLink.first().url }}">{{ entry.servicesButtonLinkName }}</a>
 	</section>
 	</div>
+	{% endcache %}
 
 	<!-- Projects List -->
 	<div class="panel-secondary-container panel-background-image">
@@ -79,6 +77,7 @@
 	</section>
 	</div>
 	<!-- End Projects List -->
+	{%cache globally%}
 	<div class="panel-primary-container">
 	<section class="section-people-home panel-primary">
 		<h2>{{ entry.peopleSectionTitle }}</h2>
@@ -93,5 +92,6 @@
 		<a class="button button-primary" href="{{ entry.peopleButtonLink.first().url }}">{{ entry.peopleButtonName }}</a>
 	</section>
 	</div>
+	{% endcache %}
 
 {% endblock %}
