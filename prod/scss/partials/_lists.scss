@@ -41,7 +41,7 @@
 	}
 }
 
-.section-basic-page.panel-primary ol, .panel-secondary ol {
+.section-basic-page.panel-primary ol {
 	counter-reset:li; /* Initiate a counter */
 	margin-left:0; /* Remove the default left margin */
     padding-left:0; /* Remove the default left padding */
