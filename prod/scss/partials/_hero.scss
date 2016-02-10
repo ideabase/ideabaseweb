@@ -79,7 +79,7 @@
   background-blend-mode: overlay !important;
   background-color: rgba(26, 95, 171, 1);
   &:after {
-    background-color: darken(rgba($blue,.55),20%) !important;
+    background-color: darken(rgba($blue,.35),20%) !important;
   }
 }
 
