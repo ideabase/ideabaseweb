@@ -1533,6 +1533,8 @@ body .redactor-dropdown li { border-bottom: none; background: none; }
 
 body .redactor-box:not(.redactor-box-fullscreen) .redactor-editor { background: none; border: none; border-top: 1px solid #e3e5e8; padding: 12px; font-size: 15px; line-height: 1.4; }
 
+body .redactor-box:not(.redactor-box-fullscreen) .redactor-editor.redactor-structure { padding-left: 32px; }
+
 body.ltr .redactor-editor ul, body.ltr .redactor-editor ol { padding-left: 2em !important; }
 body.rtl .redactor-editor ul, body.rtl .redactor-editor ol { padding-right: 2em !important; }
 body.ltr .redactor-editor ul, body.ltr .redactor-editor ol { padding-right: 0 !important; }
