@@ -34,3 +34,17 @@
 		max-height: 90px;
 	}
 }
+
+.no-csscolumns .section-people__logos {
+		margin-left: 2em;
+		margin-bottom: 4em;
+}
+
+.no-csscolumns .section-people__logos__item {
+	@media screen and (min-width: 800px) {
+		float: left;
+		width: 23%;
+		margin: 1%;
+		margin-bottom: 2%;
+	}
+}
