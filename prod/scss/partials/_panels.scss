@@ -88,7 +88,7 @@
 }
 
 .panel-background-image {
-  background-size:100% auto;
+  background-size: cover;
   &:after {
     position: absolute;
     height: 100%;
