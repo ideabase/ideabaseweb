@@ -47,11 +47,6 @@
 			     	
 			     	<h2 class="project-list__item__name">{{ entry.title }}
 			     	</h2>
-			     	<h3 class="project-list__item__client">
-			     			{% for entry in entry.forWhichClient %}
-							{{ entry.title }}
-			     		    {% endfor %}
-			     	</h3>
 			     	{% set descriptionParagraph = entry.projectDescription|split('.') %}
 			     	{% set firstDescriptionParagraph = descriptionParagraph|first ~ '.' %}
 					<div class="project-list__item__description">{{ firstDescriptionParagraph|raw }}</div>

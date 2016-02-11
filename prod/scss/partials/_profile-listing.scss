@@ -12,6 +12,9 @@
 	margin: 0;
 	padding: 0;
 	columns: 200px 2;
+	@media screen and (min-width: 1000px) {
+		columns: 200px 3;
+	}
 }
 
 .people-listing__item {

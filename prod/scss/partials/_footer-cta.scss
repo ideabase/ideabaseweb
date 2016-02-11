@@ -106,13 +106,19 @@
   //width: 100%;
   display: block;
   margin: 0 auto;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
   padding: 0 2em 2em 2em;
+  @media screen and (min-width: 400px) {
+  	max-width: 375px;
+  }
   @media screen and (min-width: 500px) {
-  	max-width: 400px;
+  	max-width: 450px;
   }
   @media screen and (min-width: 600px) {
   	max-width: 500px;
+  }
+  @media screen and (min-width: 700px) {
+  	max-width: 600px;
   }
   @media screen and (min-width: 800px) {
   	max-width: 700px;

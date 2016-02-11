@@ -18,6 +18,10 @@ p {
   }
 }
 
+.section-basic-page .section-introduction.panel-primary {
+  padding-top: 0;
+}
+
 .introduction {
   font-size: 1.2em;
   font-weight: 500;
@@ -28,7 +32,13 @@ p {
     font-size: 1.2rem;
     font-weight: 500;
   }
-  @media screen and (min-width: 700px) {
+    @media screen and (min-width: 700px) {
+      font-size: 1.3em;
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  @media screen and (min-width: 900px) {
 		font-size: 1.5em;
     p {
       font-size: 1.5rem;

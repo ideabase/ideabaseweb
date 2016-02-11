@@ -22,7 +22,7 @@
 		<li class="project-category__list__item">
 			<a href="{{ siteUrl }}/work/all">All</a>
 		</li>
-			{%  for category in projectCategory %}
+			{%  for category in projectCategory.order('title asc') %}
 				<li class="project-category__list__item">
 					<a href="{{ category.url }}">{{category.title}}</a>
 				</li>

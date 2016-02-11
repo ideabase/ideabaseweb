@@ -13,7 +13,7 @@
   margin-top: 1em;
   margin-bottom: 2em;
   @media screen and ( min-width: 700px ) {
-    width: 90%;
+    width: 100%;
     margin-bottom: 1em;
     @include clearfix;
   }
@@ -420,6 +420,15 @@
   font-size: 1em;
 }
 
+.project-single__description {
+  a {
+    color: $blue;
+    &:hover, &:focus {
+      color: $cyan;
+    }
+  }
+}
+
 .project-entry__description__award--project-single {
   margin-left: 0;
   margin-bottom: 2em;
@@ -584,6 +593,11 @@
   position: relative;
 }
 
+.js .project-category .nav__trigger__link.button--show {
+  background-color: lighten($darkgray,15%);
+  color: white;
+}
+
 .project-category__list {
   list-style-type: none;
   padding: 1em;
@@ -627,7 +641,7 @@
 .js .project-category__list {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in;
+  transition: max-height 0.5s ease-in-out;
   padding: 0;
 }
 

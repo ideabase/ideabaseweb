@@ -13,13 +13,19 @@
 	  	display: inline-block;
 	  	width: 100%;
 	  	margin-bottom: .5em;
+	  	position: relative;
 	  }
 	  li:before {
-		content: "\25a0";
-		margin-right: .95em;
+		content: "";
+		height: 5px;
+		width: 5px;
+		margin-bottom: 3px;
+		display: inline-block;
+		background-color: $cyan;
+		margin-right: .7rem;
 		color: $cyan;
 		font-size: 1rem;
-		margin-left: -1.2em
+		margin-left: -1rem
 	  }
 	  @media screen and (min-width: 900px) {
 	    font-size: 1.1em;	
@@ -33,4 +39,46 @@
 	li {
 		margin-bottom: .5em;
 	}
+}
+
+.section-basic-page.panel-primary ol {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+    @media screen and (min-width: 800px) {
+    	width: 80%;
+    	margin: 0 auto;
+    	margin-bottom: 0em;
+    }
+    > li {
+    	position:relative; /* Create a positioning context */
+    	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+    	padding:.5em 8px; /* Add some spacing around the content */
+    	list-style:none; /* Disable the normal item numbering */
+    	border-top:2px solid $cyan;
+    	font-size: .9em;
+    	@media screen and (min-width: 800px) {
+    		font-size: 1.1rem;
+    	}
+    	&:before {
+    		content:counter(li); /* Use the counter as content */
+    		    counter-increment:li; /* Increment the counter by 1 */
+    		    /* Position and style the number */
+    		    position:absolute;
+    		    top:-2px;
+    		    left:-2em;
+    		    box-sizing:border-box;
+    		    width:2em;
+    		    /* Some space between the number and the content in browsers that support
+    		       generated content but not positioning it (Camino 2 is one example) */
+    		    margin-right:8px;
+    		    padding:.5em;
+    		    border-top:2px solid $cyan;
+    		    color:#fff;
+    		    background: $blue;
+    		    font-weight:bold;
+    		    font-family:"Helvetica Neue", Arial, sans-serif;
+    		    text-align:center;
+    	}
+    }
 }

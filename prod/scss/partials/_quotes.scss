@@ -24,7 +24,7 @@ blockquote {
 	&:after {
 		content: "\201D";
 		margin-left: .1em;
-		margin-top: -.25em;
+		margin-top: -.15em;
 	}
 	@media screen and (min-width: 700px) {
 		font-size: 1.8em;
