@@ -13,13 +13,14 @@
 	display: block;
 	position: relative;
 	transition: .3s all ease-in-out;
-	max-width: 250px;
+	max-width: 300px;
 	&:after {
 		content: "";
 		background-color: rgba($blue,0);
 		position: absolute;
-		height: 100%;
-		top: 0;
+		height: 99.6%;
+		bottom: 3px;
+		overflow: hidden;
 		left: 0;
 		display: block;
 		width: 100%;
@@ -90,8 +91,8 @@
 	margin: 0 auto;
 	padding: 1.5em 2em;
 	position: absolute;
-	bottom: 0;
-	height: 40%;
+	bottom: 3px;
+	height: 35%;
 	z-index: 1000;
 	a {
 		color: white;
@@ -154,7 +155,7 @@
 
 .people__profile-item__title {
 	margin: 0;
-	font-size: 1em;
+	font-size: .9em;
 	text-decoration: none;
 	text-align: center;
 	@media screen and (min-width: 600px) {
