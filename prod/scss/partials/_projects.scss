@@ -541,6 +541,8 @@
   display: block;
   max-width: 350px;
   margin: 0 auto;
+  border:4px solid transparent;
+  transition: .3s all ease-in-out;
   &:before {
     transition: .3s all ease-in-out;
     background-color: rgba($blue,0);
@@ -574,6 +576,7 @@
 }
 
 .project-list__item__image:hover, .project-list__item__image:focus {
+  border-color: $cyan;
   &:before {
     background-color: rgba($blue,.5);
   }
