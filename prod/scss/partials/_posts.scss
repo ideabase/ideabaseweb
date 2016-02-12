@@ -150,6 +150,13 @@
   text-align: left;
   padding-top: 1em;
   margin-bottom: 1.5em;
+  p a {
+    color: $blue;
+    transition: .3s all ease-in-out;
+    &:hover {
+      color: $cyan;
+    }
+  }
 }
 
 .blog__entry__tags {
