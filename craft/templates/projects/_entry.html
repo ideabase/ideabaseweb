@@ -87,7 +87,7 @@
     <ul class="blog__entry__tags">
       {% for entry in entry.projectCategory %}
       <li>
-        <a href="#" class="blog__entry__tags__item">
+        <a href="{{ entry.url }}" class="blog__entry__tags__item">
           {{ entry.title }}
         </a>
       </li>
