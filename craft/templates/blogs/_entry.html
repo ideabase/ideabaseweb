@@ -50,8 +50,8 @@
 			    {% elseif block.type == "video" %}
 
 			    <section class="section-body-video panel-primary">
-			    	<figure class="section-body-video__figure">
-			    		{{ block.videoURL|raw }}
+			    	<figure class="section-body-video__figure video-container">
+			    		{{ block.videoUrl|videoEmbed }}
 			    		<figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
 			    	</figure>
 			    </section>
