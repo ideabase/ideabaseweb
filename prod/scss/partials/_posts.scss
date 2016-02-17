@@ -132,8 +132,10 @@
 }
 
 .blog__entry__author:after {
-  content: "|";
   padding-left: 1em;
+  @media screen and (min-width: 600px) {
+    content: "|";
+  }
 }
 
 .blog__entry__author, .blog__entry__date {
