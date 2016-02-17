@@ -141,10 +141,19 @@
 .blog__entry__author, .blog__entry__date {
   font-weight: 600;
   text-align: left;
-  display: inline-block;
-  float: left;
+  display: block;
   margin-right: 1em;
   color: $blue;
+  @media screen and (min-width: 600px) {
+    display: inline-block;
+    float: left;
+  }
+}
+
+.section-blog-entry .blog__entry__text {
+  p, ul, ol {
+    font-size: 1.1rem;
+  }
 }
 
 .blog__entry__text {
