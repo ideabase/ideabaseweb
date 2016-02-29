@@ -7175,7 +7175,7 @@ Craft.CategoryIndex = Craft.BaseElementIndex.extend(
 			this.$newCategoryBtnGroup = $('<div class="btngroup submit"/>');
 			var $menuBtn;
 
-			// If they are, show a primany "New category" button, and a dropdown of the other groups (if any).
+			// If they are, show a primary "New category" button, and a dropdown of the other groups (if any).
 			// Otherwise only show a menu button
 			if (selectedGroup)
 			{
@@ -8217,6 +8217,8 @@ Craft.DeleteUserModal = Garnish.Modal.extend(
  */
 Craft.EditableTable = Garnish.Base.extend(
 {
+	initialized: false,
+
 	id: null,
 	baseName: null,
 	columns: null,
@@ -8242,6 +8244,31 @@ Craft.EditableTable = Garnish.Base.extend(
 			copyDraggeeInputValuesToHelper: true
 		});
 
+		if (this.isVisible())
+		{
+			this.initialize();
+		}
+		else
+		{
+			this.addListener(Garnish.$win, 'resize', 'initializeIfVisible');
+		}
+	},
+
+	isVisible: function()
+	{
+		return (this.$table.height() > 0);
+	},
+
+	initialize: function()
+	{
+		if (this.initialized)
+		{
+			return;
+		}
+
+		this.initialized = true;
+		this.removeListener(Garnish.$win, 'resize');
+
 		var $rows = this.$tbody.children();
 
 		for (var i = 0; i < $rows.length; i++)
@@ -8251,6 +8278,14 @@ Craft.EditableTable = Garnish.Base.extend(
 
 		this.$addRowBtn = this.$table.next('.add');
 		this.addListener(this.$addRowBtn, 'activate', 'addRow');
+	},
+
+	initializeIfVisible: function()
+	{
+		if (this.isVisible())
+		{
+			this.initialize();
+		}
 	},
 
 	addRow: function()
@@ -8482,7 +8517,7 @@ Craft.EditableTable.Row = Garnish.Base.extend(
 	{
 		var keyCode = ev.keyCode ? ev.keyCode : ev.charCode;
 
-		if (!Garnish.isCtrlKeyPressed(ev) (
+		if (!Garnish.isCtrlKeyPressed(ev) && (
 			(keyCode == Garnish.RETURN_KEY) ||
 			(ev.data.type == 'number' && !Craft.inArray(keyCode, Craft.EditableTable.Row.numericKeyCodes))
 		))
@@ -9118,7 +9153,7 @@ Craft.EntryIndex = Craft.BaseElementIndex.extend(
 			this.$newEntryBtnGroup = $('<div class="btngroup submit"/>');
 			var $menuBtn;
 
-			// If they are, show a primany "New entry" button, and a dropdown of the other sections (if any).
+			// If they are, show a primary "New entry" button, and a dropdown of the other sections (if any).
 			// Otherwise only show a menu button
 			if (selectedSection)
 			{
