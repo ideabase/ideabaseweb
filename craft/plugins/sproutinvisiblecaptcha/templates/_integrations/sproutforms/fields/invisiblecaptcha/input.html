@@ -1,0 +1,3 @@
+{% if not craft.sproutinvisiblecaptcha.hasSproutFormsSupport() %}
+	{{ craft.sproutinvisiblecaptcha.protect() }}
+{% endif %}

@@ -1,0 +1,258 @@
+{% import "_includes/forms" as forms %}
+
+{# Define the plugin name to use in the description or use generic sentance #}
+{% set plugin = craft.sproutInvisibleCaptcha %}
+
+{% block content %}
+
+<p>{{ plugin.getName() }} provides several user-friendly methods to protect your forms from vile spammers and evil robots.</p>
+
+<hr>
+
+<p>Select the security checks you want Invisible Captcha to use to protect your forms from unwanted submissions.</p>
+
+<div class="field first">
+	<div class="checkbox-select">
+		<div class="method-origin">
+			
+			<label>
+				<input type="checkbox" value="origin" name="captchaMethod[]" {% if plugin.isMethodSet('origin') %}checked{% endif %}>
+				<strong>Require web-based form submissions</strong> (Origin)
+			</label> 
+			<span class="more-info">?</span>
+			<div class="note">
+
+				<p>The <b>Origin</b> spam protection method ensures that your form is submitted from your website and not from a third-party website or a headless browser. This method implements behavior similar to CSRF tokens.</p>
+
+				<p><em><b>Note:</b> This method should not have any chance for a regular user to get denied from submitting your form.</em></p>
+
+				<p><strong>How do I test this method?</strong> It may not be easy to test this method for the average user.  To do so, you will need to write a script that programatically submits your form with a user agent string or domain that does not match the information for those settings provided by your website. Blocked submissions will be logged in the database and can also be seen in the <a href="{{ cpUrl('utils/logs/sproutinvisiblecaptcha.log') }}">Invisible Captcha logs</a>.</p>
+			</div>
+
+		</div>
+		<div class="method-duplicate">
+			
+			<label>
+				<input type="checkbox" value="duplicate" name="captchaMethod[]" {% if plugin.isMethodSet('duplicate') %}checked{% endif %}>
+				<strong>Prevent duplicate submissions if a user hits submit more than once</strong> (Duplicate Submission)
+			</label> 
+			<span class="more-info">?</span>
+			<div class="note">
+				
+				<p>Sometimes a user may accidentally (or intentially) trigger a form submit button more than once. The <b>Duplicate Submission</b> spam protection method uses a randomly generated unique id to verify that a form is only submitted once to the database.</p>
+
+				<p><strong>How do I test this method?</strong> When you submit your form, hit the submit button as many times as you can as fast as you can (or at least twice)! With this setting turned off, if you are not preventing duplicated submissions in any other way on the front-end of your website, you should see multiple form submissions in your database.  With this setting turned on, you should only see one form entry get saved to the database. Blocked submissions will be logged in the database and can also be seen in the <a href="{{ cpUrl('utils/logs/sproutinvisiblecaptcha.log') }}">Invisible Captcha logs</a>.</p>
+
+			</div>
+
+		</div>
+		<div class="method-javascript">
+			
+			<label>
+				<input type="checkbox" value="javascript" name="captchaMethod[]" {% if plugin.isMethodSet('javascript') %}checked{% endif %}>
+				<strong>Prevent a form from being submmitted if a user does not have JavaScript enabled</strong> (Javascript)
+			</label> 
+			<span class="more-info">?</span>
+			<div class="note">
+				
+				<p>These days, most human users visiting your website have Javascript enabled in their web browser.  Often, when robots access your website programatically, they do not have Javascript enabled. The <b>Javascript</b> spam protection method tests if a user submitting your form has Javascript enabled in their browser and rejects the submission if they do not.</p>
+
+				<p><em><b>Note:</b> While this method can be very effective at stopping spam and is frequently used, there is a small chance some real users will not be able to submit your form if they accessing your website from a location or device where Javascript is disabled. Check your website analytics to make the best decision for your audience.</em></p>
+
+				<p><strong>How do I test this method?</strong> Disable javascript in your web browser. Refresh your form page and submit the form as usual.  With javascript disabled in your web browser your form submission should be blocked. Blocked submissions will be logged in the database and can also be seen in the <a href="{{ cpUrl('utils/logs/sproutinvisiblecaptcha.log') }}">Invisible Captcha logs</a>.</p>
+
+			</div>
+
+		</div>
+		<div class="option method-honeypot">
+			<div>
+
+				<label>
+					<input type="checkbox" value="honeypot" class="has-settings" name="captchaMethod[]" {% if plugin.isMethodSet('honeypot') %}checked{% endif %}>
+					<strong>Block form submissions by robots who auto-fill all of your form fields</strong> (Honeypot) 
+				</label>
+				<span class="more-info">?</span>
+				<div class="note">
+
+					<p>Many robots fill out every single form field before they submit.  The <strong>Honeypot</strong> method of spam protection creates a hidden field that should not be filled in by a user on your site because they will never see the field or know it exists.  When a robot automatically fills in the field and submits the form, the form submission will be denied.</p>
+
+					<p><em><b>Note:</b> Some screen readers will see this hidden field.  We will clearly label the hidden field with the message you define in the "Hidden honeypot message" setting to communicate to a user with a screen reader that they should not add anything to the honeypot form field.</em></p>
+
+					<p><strong>How do I test this method?</strong> To test this method you will need to modify the HTML on your form page before you submit it.  Open your browser tools and find the HTML &lang;input&rang; field for your honeypot. It will be within a &lang;div&rang; that uses the name you defined in your settings and the &lang;input&rang; field will also use that same name.</p>
+
+					<p>Edit that input field (** This is important. In Chrome for example, if you double click on the input in your browser tools you are not editing your page as HTML and you must right click and select "Edit as HTML" to be sure that you are actually modifying the page code so that it is submitted differently for your test). Add any string of characters to the value="" parameter so that it is not blank (i.e. value="bees!") and then submit your form. Blocked submissions will be logged in the database and can also be seen in the <a href="{{ cpUrl('utils/logs/sproutinvisiblecaptcha.log') }}">Invisible Captcha logs</a>.</p>
+				
+				</div>
+			</div>
+
+			{% set ishonetpotset = plugin.isMethodSet('honeypot') %}
+			{% set honeypotFieldName = plugin.getMethodOption('honeypotFieldName') %}
+			{% set honeypotScreenReaderMessage = plugin.getMethodOption('honeypotScreenReaderMessage') %}
+			{% set honeypotRequireJavascript = plugin.getMethodOption('honeypotRequireJavascript') %}
+			{% set formKeyDuration = plugin.getMethodOption('formKeyDuration') %}
+
+			<div class="sub-settings" {% if ishonetpotset is sameas(false) %}style="display:none;"{%else %}style="display:block;"{% endif %}>
+
+				{{ forms.textField({
+					id:				"methodOptions[honeypotFieldName]",
+					name:			"methodOptions[honeypotFieldName]",
+					label:			"Name of your honeypot field"|t,
+					instructions:	"All lowercase, no spaces."|t,
+					value:			honeypotFieldName,
+					errors:			""
+				}) }}
+
+				{{ forms.textField({
+					id:				"methodOptions[honeypotScreenReaderMessage]",
+					name:			"methodOptions[honeypotScreenReaderMessage]",
+					label:			"Hidden honeypot message for screen readers"|t,
+					instructions:	"This is displayed to screen readers so users will know not to fill in this field."|t,
+					value:			honeypotScreenReaderMessage,
+					errors:			""
+				}) }}
+
+				</div>
+			</div>
+
+			<div class="method method-time">
+
+				<div>
+					<label>
+						<input type="checkbox" value="time" class="has-settings" name="captchaMethod[]" {% if plugin.isMethodSet('time') %}checked{% endif %}>
+						<strong>Require a minimum amount of time to fill out your form</strong>  (Time-based)
+					</label>
+
+					<span class="more-info">?</span>
+					<div class="note">
+						<p>The <b>Time-based</b> spam protection method defends your forms against robots who submit forms quicker than humans could.</p>  
+
+						<p><em><strong>Note</strong>: If a human does fill out the form too quickly, it will be blocked as spam, so be sure to set this number to a reasonable amount of seconds for a real user to complete all of your form fields. 4 or 5 seconds is usually enough to weed out the majority of spam bots, while letting actual humans submit forms successfully.</em></p>
+
+						<p><strong>How do I test this method?</strong> To test the time-based method, update your time setting to something absurdly high. For example, set the minumum time required to submit your form to 1 day: 86400. Now go and submit your form in less than a day (if you can)!  Blocked submissions will be logged in the database and can also be seen in the <a href="{{ cpUrl('utils/logs/sproutinvisiblecaptcha.log') }}">Invisible Captcha logs</a>.</p>
+
+					</div>
+				</div>
+
+				{% set elapsedTime = plugin.getMethodOption('elapsedTime') %}
+				{% set istimeset = plugin.isMethodSet('time') %}
+
+				<div class="sub-settings" {% if istimeset is sameas(false) %}style="display:none;"{%else %}style="display:block;"{% endif %}>
+					
+					{# Should only display if using FULL or TIME captcha methods #}
+					{{ forms.textField({
+						id:				"methodOptions[elapsedTime]",
+						name:			"methodOptions[elapsedTime]",
+						label:			"Minimum time to submit form"|t,
+						instructions:	"This is the minimum time in seconds a user should take to fill out all form fields and hit submit."|t,
+						value:			elapsedTime,
+						autofocus:	false,
+						errors:			""
+					}) }}
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<h3>Enable Member Registration Protection</h3>
+<p>Automatically add Invisible Captcha support for front-end Member Registrations.</p>
+
+{{ forms.lightswitch({
+	onLabel:  "On",
+	offLabel: "Off",
+	name:     "protectMemberRegistrations",
+	on:       (settings.protectMemberRegistrations is defined) 
+	? settings.protectMemberRegistrations 
+	: ""
+}) }}
+
+<hr>
+
+<h3>Enable Sprout Forms Protection</h3>
+<p>Automatically add Invisible Captcha support for all Sprout Forms using the `craft.sproutForms.displayForm()` tag.</p>
+
+{{ forms.lightswitch({
+	onLabel:  "On",
+	offLabel: "Off",
+	name:     "sproutFormsDisplayFormTagOutput",
+	on:       (settings.sproutFormsDisplayFormTagOutput is defined) 
+	? settings.sproutFormsDisplayFormTagOutput 
+	: ""
+}) }}
+
+<hr>
+
+<h3>Log failed submissions in the database</h3>
+
+{{ forms.lightswitch({
+	onLabel:  "On",
+	offLabel: "Off",
+	name:     "logFailedSubmissions",
+	on:       (settings.logFailedSubmissions is defined) 
+	? settings.logFailedSubmissions 
+	: ""
+}) }}
+
+{% endblock %}
+
+{% set sproutInvisibleCaptchaJs %}
+$('.has-settings').on('change', function() {
+if (this.checked)
+{
+	console.log($(this).closest('div').next('.sub-settings'));
+	$(this).closest('div').next('.sub-settings').slideDown('fast');
+}
+else
+{
+	console.log($(this).closest('div').next('.sub-settings'));
+	$(this).closest('div').next('.sub-settings').slideUp('fast');
+}
+});
+$('.more-info').on('click', function() {
+$(this).next().slideToggle();
+});
+
+{% endset %}
+
+{% set sproutInvisibleCaptchaCss %}
+#main {
+padding-bottom: 50px;
+}
+div.sub-settings {
+margin-left: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.checkbox-select p {
+margin-top: 0;
+}
+.more-info {
+display:inline-block;
+background-color: #ccc;
+color:#fff;
+width:14px;
+height:14px;
+font-size:10px;
+font-weight:bold;
+text-align: center;
+line-height: 14px;
+cursor:pointer;
+border-radius: 3px;
+vertical-align: text-top;
+margin-left:3px;
+}
+.note {
+background-color:#ffd;
+display: none;
+margin-bottom:10px;
+margin-top:5px;
+margin-left: 16px;
+padding:10px;
+}
+{% endset %}
+
+{% includeJs sproutInvisibleCaptchaJs %}
+{% includeCss sproutInvisibleCaptchaCss %}
