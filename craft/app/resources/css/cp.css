@@ -30,7 +30,7 @@ body.rtl #alerts li:before { margin: -1px 0 0 3px ; }
 body.ltr #global-sidebar { left: 0; }
 body.rtl #global-sidebar { right: 0; }
 
-#global-sidebar nav { flex-grow: 1; -ms-flex: 1; }
+#global-sidebar nav { flex-grow: 1; -ms-flex: 1; -ms-flex-preferred-size: auto; }
 
 #global-sidebar #devmode { width: 100%; height: 4px; background: url(../images/dev-mode.svg) repeat-x 15px 0; cursor: help; }
 
@@ -62,7 +62,9 @@ body.rtl #global-sidebar { right: 0; }
 
 #global-sidebar .topbar a.site-name { flex-grow: 1; -ms-flex: 1; padding: 14px; }
 
-#global-sidebar .topbar a.site-name .photo-container { margin-right: 14px; flex-shrink: 0; }
+#global-sidebar .topbar a.site-name .photo-container { flex-shrink: 0; }
+body.ltr #global-sidebar .topbar a.site-name .photo-container { margin-right: 14px; }
+body.rtl #global-sidebar .topbar a.site-name .photo-container { margin-left: 14px; }
 
 #global-sidebar .topbar a.site-name h2 { padding: 0; margin: 0; }
 
@@ -307,6 +309,44 @@ body.rtl #crumbs li:after { content: 'leftangle'; }
 /* footer */
 #footer { padding: 24px; text-align: center; font-size: 0; }
 
+#footer #edition-logo { margin: 0 auto 14px; border: 1px solid #b9bfc6; border-radius: 3px; display: inline-block; height: 23px; cursor: default; -webkit-transition: border-color linear 100ms; -moz-transition: border-color linear 100ms; -ms-transition: border-color linear 100ms; transition: border-color linear 100ms; }
+
+#footer #edition-logo > .edition-name, #footer #edition-logo > .edition-trial { display: inline-block; padding: 8px 8px 7px; font-size: 12px; line-height: 8px; font-weight: 500; }
+
+#footer #edition-logo > .edition-name { color: #8f98a3; letter-spacing: 2.2px; padding-right: 5.8px; text-transform: uppercase; -webkit-transition: color linear 100ms; -moz-transition: color linear 100ms; -ms-transition: color linear 100ms; transition: color linear 100ms; }
+
+#footer #edition-logo > .edition-trial { display: inline-block; position: relative; background: #b9bfc6; color: #ebedef; border-radius: 0 1px 1px 0; letter-spacing: 1px; text-transform: lowercase; -webkit-transition: background linear 100ms; -moz-transition: background linear 100ms; -ms-transition: background linear 100ms; transition: background linear 100ms; }
+body.ltr #footer #edition-logo > .edition-trial { margin-left: 5px; }
+body.rtl #footer #edition-logo > .edition-trial { margin-right: 5px; }
+body.ltr #footer #edition-logo > .edition-trial { padding-left: 5px; }
+body.rtl #footer #edition-logo > .edition-trial { padding-right: 5px; }
+body.ltr #footer #edition-logo > .edition-trial { padding-right: 7px; }
+body.rtl #footer #edition-logo > .edition-trial { padding-left: 7px; }
+
+#footer #edition-logo > .edition-trial:before { display: block; position: absolute; top: 0; content: '.'; font-size: 0; width: 0; height: 0; border-style: solid; -webkit-transition: border-color linear 100ms; -moz-transition: border-color linear 100ms; -ms-transition: border-color linear 100ms; transition: border-color linear 100ms; }
+
+body.ltr #footer #edition-logo > .edition-trial:before { left: -10px; border-width: 0 10px 23px 0; border-color: transparent #b9bfc6 transparent transparent; }
+
+body.rtl #footer #edition-logo > .edition-trial:before { right: -10px; border-width: 0 0 23px 10px; border-color: transparent transparent transparent #b9bfc6; }
+
+#footer #edition-logo.hot { cursor: pointer; }
+
+#footer #edition-logo.hot + .settings { display: inline-block; position: relative; top: -1px; width: 13px; font-size: 13px; color: rgba(185, 191, 198, 0.5); -webkit-transition: color linear 100ms; -moz-transition: color linear 100ms; -ms-transition: color linear 100ms; transition: color linear 100ms; }
+body.ltr #footer #edition-logo.hot + .settings { margin: 0 -18px 0 6px ; }
+body.rtl #footer #edition-logo.hot + .settings { margin: 0 6px 0 -18px ; }
+
+#footer #edition-logo.hot:hover { border-color: #0d78f2; }
+
+#footer #edition-logo.hot:hover > .edition-name { color: #0d78f2; }
+
+#footer #edition-logo.hot:hover > .edition-trial { background: #0d78f2; }
+
+body.ltr #footer #edition-logo.hot:hover > .edition-trial:before { border-color: transparent #0d78f2 transparent transparent; }
+
+body.rtl #footer #edition-logo.hot:hover > .edition-trial:before { border-color: transparent transparent transparent #0d78f2; }
+
+#footer #edition-logo.hot:hover + .settings { color: #0d78f2; }
+
 #footer li { display: inline-block; font-size: 11px; color: #b9bfc6; white-space: nowrap; }
 
 #footer li:not(:last-child):after { display: inline-block; margin: 0 7px; content: '•'; }
@@ -337,29 +377,45 @@ body.rtl #footer #upgradepromo a .go:after { padding-right: 5px; }
 
 #upgrademodal .body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; }
 
-#upgrademodal .logo { margin: 0 auto 24px; max-width: 160px; height: 40px; font-size: 0; background: no-repeat 50% 50%; background-size: 100%; }
+#upgrademodal .logo { margin: 0 auto 24px; font-weight: 500; font-size: 18px; color: #da5a47; letter-spacing: 3.3px; line-height: 14px; border: 1px solid #da5a47; border-radius: 3px; padding: 10px 6.7px 9px 10px; text-transform: uppercase; display: inline-block; }
 
-#upgrademodal .logo.craftclient { background-image: url(../images/editions/craftclient.png); }
+#upgrademodal-compare table th, #upgrademodal-compare table td { width: 33.33%; }
 
-#upgrademodal .logo.craftpro { background-image: url(../images/editions/craftpro.png); }
-
-#upgrademodal .body tr.buybtns td { vertical-align: bottom; text-align: center; }
-
-#upgrademodal .body tr.buybtns .installed { display: inline-block; border-radius: 3px; padding: 6px 12px; color: #00b007; -webkit-box-shadow: 0 0 0 1px #00b007; -moz-box-shadow: 0 0 0 1px #00b007; box-shadow: 0 0 0 1px #00b007; }
-
-#upgrademodal .body tr.buybtns td .btngroup { display: inline-block; }
-
-#upgrademodal .body tr.buybtns .installed + br + .btngroup { margin-top: 10px; }
-
-#upgrademodal .body .listedprice { text-decoration: line-through; color: #b9bfc6; }
-body.ltr #upgrademodal .body .listedprice { margin-right: 10px; }
-body.rtl #upgrademodal .body .listedprice { margin-left: 10px; }
-
-#upgrademodal-compare table thead th { text-align: center; }
+#upgrademodal-compare table th.feature { font-weight: normal; color: #8f98a3; }
 
 #upgrademodal-compare table thead th { font-size: 13px; line-height: 18px; font-weight: normal; }
 
-#upgrademodal-compare table thead th .logo { margin-bottom: 14px; }
+#upgrademodal-compare table thead tr.logos th { padding-bottom: 14px; }
+
+#upgrademodal-compare table thead tr.logos th .logo { margin-bottom: 0; }
+
+#upgrademodal-compare table thead tr.logos th p { white-space: normal; max-width: 250px; }
+
+#upgrademodal-compare table thead tr.license-statuses td { padding-top: 0; padding-bottom: 14px; }
+
+#upgrademodal-compare table thead tr.license-statuses td .license-status:before { border: 1px solid; border-radius: 9px; width: 17px; height: 17px; line-height: 17px; margin-right: 5px; }
+
+#upgrademodal-compare table thead tr.license-statuses td .installed { color: #00b007; }
+
+#upgrademodal-compare table thead tr.license-statuses td .licensed { color: #5286d9; }
+
+#upgrademodal-compare table thead tr.license-statuses td .installed:before { border-color: #00b007; }
+
+#upgrademodal-compare table thead tr.license-statuses td .licensed:before { border-color: #5286d9; }
+
+#upgrademodal-compare table thead tr.price th, #upgrademodal-compare table thead tr.price td { position: relative; padding-top: 14px; }
+
+#upgrademodal-compare table thead tr.price td .listedprice { text-decoration: line-through; color: #b9bfc6; }
+body.ltr #upgrademodal-compare table thead tr.price td .listedprice { margin-right: 5px; }
+body.rtl #upgrademodal-compare table thead tr.price td .listedprice { margin-left: 5px; }
+
+#upgrademodal-compare table thead tr.price th:before, #upgrademodal-compare table thead tr.price td:before { position: absolute; top: 0; display: block; width: 24px; height: 1px; content: '.'; font-size: 0; background: #e3e5e8; }
+
+body.ltr #upgrademodal-compare table thead tr.price th:before { left: 0; }
+body.rtl #upgrademodal-compare table thead tr.price th:before { right: 0; }
+
+body.ltr #upgrademodal-compare table thead tr.price td:before { left: 14px; }
+body.rtl #upgrademodal-compare table thead tr.price td:before { right: 14px; }
 
 #upgrademodal-compare table tbody th, #upgrademodal-compare table tbody td { width: 33.33%; }
 
@@ -368,16 +424,12 @@ body.rtl #upgrademodal .body .listedprice { margin-left: 10px; }
 #upgrademodal-compare table tbody th.group { padding-top: 30px; border-bottom-style: solid; color: #8f98a3; }
 
 #upgrademodal-compare table tbody th.group:before { margin-top: -2px; width: 24px; font-size: 17px; }
-body.ltr #upgrademodal-compare table tbody th.group:before { text-align: left; }
-body.rtl #upgrademodal-compare table tbody th.group:before { text-align: right; }
 
-#upgrademodal-compare table tbody th.feature { font-weight: normal; color: #8f98a3; }
-
-#upgrademodal-compare table tbody td { text-align: center; }
-
-#upgrademodal-compare table tbody tr.buybtns td { padding-top: 30px; border-bottom: none; }
+#upgrademodal-compare table tbody tr.buybtns td { padding-top: 14px; border-bottom: none; }
 
 #upgrademodal-checkout { background: #fafafa; }
+
+#upgrademodal-checkout .logowrapper { text-align: center; }
 
 #upgrademodal-checkout form { max-width: 350px; margin: 0 auto !important; padding-bottom: 10px; }
 
@@ -404,10 +456,6 @@ body.rtl #upgrademodal-checkout .spinner#coupon-spinner { left: -24px; }
 #upgrademodal-success .message { display: block; position: absolute; top: 50%; left: 0; width: 100%; margin-top: -71px; padding-top: 62px; text-align: center; background: url(../images/success.png) no-repeat 50% 0; }
 
 #upgrademodal-success .message p { margin-bottom: 24px; font-size: 15px; line-height: 1.4; }
-
-#wrongedition-modal { text-align: center; }
-
-#wrongedition-modal .btngroup { float: none; }
 
 /* field layout forms */
 .fieldlayoutform, .fld-tab, .fld-field { color: #2f1fb5; font-family: 'Coming Soon', sans-serif; font-style: italic; text-transform: uppercase; }
@@ -640,6 +688,4 @@ body > .sidebar li { width: auto !important; }
 /* retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) { .fieldlayoutform { background-image: url(../images/fieldlayoutform-bg_2x.png); background-size: 30px 30px; }
   #upgrademodal.loading { background-image: url(../images/spinner_big_2x.gif); background-size: 48px; }
-  #upgrademodal .logo.craftclient { background-image: url(../images/editions/craftclient_2x.png); }
-  #upgrademodal .logo.craftpro { background-image: url(../images/editions/craftpro_2x.png); }
   #upgrademodal-success .message { background-image: url(../images/success_2x.png); background-size: 48px; } }

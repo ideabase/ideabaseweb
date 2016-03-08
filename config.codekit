@@ -164,6 +164,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/controllers\/ChartsController.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/controllers\/ChartsController.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/controllers\/DashboardController.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -439,6 +448,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/elementactions\/DeleteUsersElementAction.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/elementactions\/DownloadFileElementAction.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/elementactions\/DownloadFileElementAction.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1946,6 +1964,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/fieldtypes\/IEagerLoadingFieldType.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/fieldtypes\/IEagerLoadingFieldType.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/fieldtypes\/IFieldType.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2131,6 +2158,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/framework\/base\/CComponent.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/framework\/base\/CDbStatePersister.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/framework\/base\/CDbStatePersister.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -4354,15 +4390,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/framework\/messages\/lv\/yii.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/app\/framework\/messages\/nb\/yii.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/framework\/messages\/nb\/yii.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -9474,6 +9501,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/helpers\/ChartHelper.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/helpers\/ChartHelper.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/helpers\/CpHelper.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -9933,11 +9969,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/migrations\/m160114_000000_asset_sources_public_url_default_true.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160114_000000_asset_sources_public_url_default_true.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/migrations\/m160223_000000_sortorder_to_smallint.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160223_000000_sortorder_to_smallint.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/migrations\/m160229_000000_set_default_entry_statuses.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160229_000000_set_default_entry_statuses.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/migrations\/m160304_000000_client_permissions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160304_000000_client_permissions.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -10932,6 +10995,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/resources\/css\/charts.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/css\/charts.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/resources\/css\/cp.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -11187,50 +11259,6 @@
 		"initialSize": 7302,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/craft_2x.png",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/craft_2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/craft\/app\/resources\/images\/editions\/craftclient.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2336,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftclient.png",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftclient.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/craft\/app\/resources\/images\/editions\/craftclient_2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4769,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftclient_2x.png",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftclient_2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/craft\/app\/resources\/images\/editions\/craftpro.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2381,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftpro.png",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftpro.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/craft\/app\/resources\/images\/editions\/craftpro_2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4878,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftpro_2x.png",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/editions\/craftpro_2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -11609,6 +11637,61 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/app\/resources\/images\/touch-icons\/ipad-pro_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5115,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad-pro_2x.png",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad-pro_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/app\/resources\/images\/touch-icons\/ipad_1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2324,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad_1x.png",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad_1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/app\/resources\/images\/touch-icons\/ipad_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4831,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad_2x.png",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/ipad_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/app\/resources\/images\/touch-icons\/iphone_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3700,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/iphone_2x.png",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/iphone_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/app\/resources\/images\/touch-icons\/iphone_3x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5629,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/iphone_3x.png",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/images\/touch-icons\/iphone_3x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/app\/resources\/images\/transforms\/crop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -11950,6 +12033,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/app\/resources\/js\/compressed\/NewUsersWidget.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/js\/compressed\/NewUsersWidget.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/js\/compressed\/min\/NewUsersWidget-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/craft\/app\/resources\/js\/compressed\/PositionSelectInput.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -12275,6 +12369,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/js\/MatrixInput.js",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/js\/min\/MatrixInput-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/js\/NewUsersWidget.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/js\/NewUsersWidget.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/js\/min\/NewUsersWidget-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -12707,6 +12812,270 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/ca-ES.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/ca-ES.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/ca-ES-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/de-CH.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/de-CH.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/de-CH-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/de-DE.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/de-DE.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/de-DE-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/en-CA.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/en-CA.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/en-CA-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/en-GB.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/en-GB.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/en-GB-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/en-US.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/en-US.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/en-US-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/es-ES.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/es-ES.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/es-ES-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/fi-FI.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/fi-FI.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/fi-FI-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/fr-CA.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/fr-CA.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/fr-CA-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/fr-FR.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/fr-FR.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/fr-FR-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/he-IL.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/he-IL.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/he-IL-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/hu-HU.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/hu-HU.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/hu-HU-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/it-IT.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/it-IT.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/it-IT-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/ja-JP.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/ja-JP.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/ja-JP-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/ko-KR.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/ko-KR.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/ko-KR-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/mk-MK.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/mk-MK.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/mk-MK-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/nl-NL.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/nl-NL.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/nl-NL-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/pl-PL.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/pl-PL.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/pl-PL-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/pt-BR.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/pt-BR.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/pt-BR-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/ru-RU.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/ru-RU.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/ru-RU-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/sv-SE.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/sv-SE.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/sv-SE-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3-i18n\/zh-CN.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/zh-CN.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3-i18n\/min\/zh-CN-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3\/d3.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3\/d3.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3\/min\/d3-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/d3\/d3.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3\/d3.min.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/d3\/min\/d3.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/craft\/app\/resources\/lib\/datepicker-i18n\/datepicker-ar.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -12936,23 +13305,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/craft\/app\/resources\/lib\/jquery-2.1.4.js": {
+	"\/craft\/app\/resources\/lib\/jquery-2.2.1.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery-2.1.4.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery-2.1.4-min.js",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery-2.2.1.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery-2.2.1-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/craft\/app\/resources\/lib\/jquery-2.1.4.min.js": {
+	"\/craft\/app\/resources\/lib\/jquery-2.2.1.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery-2.1.4.min.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery-2.1.4.min-min.js",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery-2.2.1.min.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery-2.2.1.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -13057,21 +13426,21 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/craft\/app\/resources\/lib\/qunit\/qunit-1.20.0.css": {
+	"\/craft\/app\/resources\/lib\/qunit\/qunit-1.22.0.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/qunit-1.20.0.css",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/qunit-1.22.0.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/app\/resources\/lib\/qunit\/qunit-1.20.0.js": {
+	"\/craft\/app\/resources\/lib\/qunit\/qunit-1.22.0.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/qunit-1.20.0.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/min\/qunit-1.20.0-min.js",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/qunit-1.22.0.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/qunit\/min\/qunit-1.22.0-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -13363,17 +13732,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/velocity.min.js",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/velocity.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/craft\/app\/resources\/lib\/xregexp-all-min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/xregexp-all-min.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/xregexp-all-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -14160,6 +14518,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/templates\/_components\/widgets\/GetHelp\/response.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/templates\/_components\/widgets\/NewUsers\/settings.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/templates\/_components\/widgets\/NewUsers\/settings.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -15159,6 +15526,42 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/templates\/tests\/buttons.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/templates\/tests\/charts\/_layout.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/templates\/tests\/charts\/_layout.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/templates\/tests\/charts\/date-range.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/templates\/tests\/charts\/date-range.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/templates\/tests\/charts\/docs.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/templates\/tests\/charts\/docs.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/templates\/tests\/charts\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/templates\/tests\/charts\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -21615,6 +22018,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/vendor\/twig\/twig\/lib\/Twig\/Node\/Expression\/NullCoalesce.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/lib\/Twig\/Node\/Expression\/NullCoalesce.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/vendor\/twig\/twig\/lib\/Twig\/Node\/Expression\/Parent.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -22425,6 +22837,744 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/bootstrap.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/bootstrap.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/AutoloaderTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/AutoloaderTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Cache\/FilesystemTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Cache\/FilesystemTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/CompilerTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/CompilerTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/EnvironmentTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/EnvironmentTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ErrorTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ErrorTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/escapingTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/escapingTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ExpressionParserTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ExpressionParserTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Extension\/CoreTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Extension\/CoreTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Extension\/SandboxTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Extension\/SandboxTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FileCachingTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FileCachingTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FileExtensionEscapingStrategyTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FileExtensionEscapingStrategyTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FilesystemHelper.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/FilesystemHelper.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Fixtures\/errors\/base.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Fixtures\/errors\/base.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Fixtures\/errors\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Fixtures\/errors\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/IntegrationTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/IntegrationTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/LegacyIntegrationTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/LegacyIntegrationTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/LexerTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/LexerTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/ArrayTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/ArrayTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/ChainTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/ChainTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/FilesystemTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/FilesystemTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_bis\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_bis\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_final\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_final\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_quater\/named_absolute.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_quater\/named_absolute.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_ter\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/named_ter\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_bis\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_bis\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_final\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_final\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_ter\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Loader\/Fixtures\/normal_ter\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/NativeExtensionTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/NativeExtensionTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/AutoEscapeTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/AutoEscapeTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/BlockReferenceTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/BlockReferenceTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/BlockTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/BlockTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/DoTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/DoTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ArrayTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ArrayTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/AssignNameTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/AssignNameTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/AddTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/AddTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/AndTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/AndTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/ConcatTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/ConcatTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/DivTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/DivTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/FloorDivTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/FloorDivTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/ModTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/ModTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/MulTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/MulTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/OrTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/OrTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/SubTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Binary\/SubTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/CallTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/CallTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ConditionalTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ConditionalTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ConstantTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ConstantTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/FilterTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/FilterTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/FunctionTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/FunctionTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/GetAttrTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/GetAttrTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/NameTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/NameTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ParentTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/ParentTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/FilterInclude.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/FilterInclude.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/FunctionInclude.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/FunctionInclude.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/TestInclude.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/PHP53\/TestInclude.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/TestTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/TestTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/NegTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/NegTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/NotTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/NotTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/PosTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/Expression\/Unary\/PosTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ForTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ForTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/IfTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/IfTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ImportTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ImportTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/IncludeTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/IncludeTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/MacroTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/MacroTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ModuleTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/ModuleTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/PrintTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/PrintTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SandboxedPrintTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SandboxedPrintTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SandboxTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SandboxTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SetTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SetTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SpacelessTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/SpacelessTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/TextTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Node\/TextTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/NodeVisitor\/OptimizerTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/NodeVisitor\/OptimizerTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ParserTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/ParserTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/AbstractTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/AbstractTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/BlackfireTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/BlackfireTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/HtmlTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/HtmlTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/TextTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/Dumper\/TextTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/ProfileTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/Profiler\/ProfileTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/TemplateTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/TemplateTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/TokenStreamTest.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/vendor\/twig\/twig\/test\/Twig\/Tests\/TokenStreamTest.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/widgets\/BaseWidget.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -22457,6 +23607,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/widgets\/IWidget.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/widgets\/NewUsersWidget.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/widgets\/NewUsersWidget.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23061,6 +24220,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/13\/130ba61bee283b56debbf337968196a72e7c218861d55304a5dec3d4a4f5b722.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/13\/130ba61bee283b56debbf337968196a72e7c218861d55304a5dec3d4a4f5b722.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/15\/153c869cd2a477b6115cdafb5ce9e9e993e087be1c8f95af25925174095d2740.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/15\/153c869cd2a477b6115cdafb5ce9e9e993e087be1c8f95af25925174095d2740.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/15\/154edd17986b7c448c0337b410e54d860166a47945f5b2b79efa1890203bbb32.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -23070,29 +24247,74 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/22\/22e36c830b025bc15b51bb043cc1f3da907e8e31c7cce479901a89127af702d7.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/1e\/1e096c8d5b7c756dae1b727b83b8bfa87cdfe9898e32d724ac0d19f4d1a25212.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/22\/22e36c830b025bc15b51bb043cc1f3da907e8e31c7cce479901a89127af702d7.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1e\/1e096c8d5b7c756dae1b727b83b8bfa87cdfe9898e32d724ac0d19f4d1a25212.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/32\/32f78984f4dc5f11b14ea8edde3d9d3d45b8fe34f868cbf590be6d6d1ba996f0.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/23\/23fb7dceef4b45a5548a804aa3db0e422fbde1de9b34f0fe471a86357a53d21d.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/32\/32f78984f4dc5f11b14ea8edde3d9d3d45b8fe34f868cbf590be6d6d1ba996f0.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/23\/23fb7dceef4b45a5548a804aa3db0e422fbde1de9b34f0fe471a86357a53d21d.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/3f\/3fd123e20dcc987da252c52554e57e171cdd9e89291be904993c04fc7767cdae.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/35\/35e17529902615c7a8ff8a3b1d43c5a6b4e32c842913ad1c480ecdd7873b10cc.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3f\/3fd123e20dcc987da252c52554e57e171cdd9e89291be904993c04fc7767cdae.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/35\/35e17529902615c7a8ff8a3b1d43c5a6b4e32c842913ad1c480ecdd7873b10cc.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/37\/373a90b93465e79d172a032bf33fdd466238099f1bc8792f06b0a8ba4c5cdbcb.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/37\/373a90b93465e79d172a032bf33fdd466238099f1bc8792f06b0a8ba4c5cdbcb.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/37\/37fa772fc7ca3633fd3ef593ed26e3d15b57b394ab095eaa15a02a41ffbcbbc8.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/37\/37fa772fc7ca3633fd3ef593ed26e3d15b57b394ab095eaa15a02a41ffbcbbc8.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/3c\/3c5798e0b53957d9a443027c44dd01014c84686a8e41b0458f98d505473101dc.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3c\/3c5798e0b53957d9a443027c44dd01014c84686a8e41b0458f98d505473101dc.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/43\/43b8942900fdb6ed0edcde52bddc5f870b32ce44eb3bfebb8c303ed210749a84.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/43\/43b8942900fdb6ed0edcde52bddc5f870b32ce44eb3bfebb8c303ed210749a84.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/45\/4507ef2cad85a9be800f51d82ec25d37fe57bc20909a72b2740538ff65cd6b0b.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/45\/4507ef2cad85a9be800f51d82ec25d37fe57bc20909a72b2740538ff65cd6b0b.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23106,83 +24328,146 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/47\/47f0ad12c32a6b225ec888addbd36d3a9b2f01b877ce35d7f53a4077f084aa8d.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/48\/48fab435f3afffc0ee772c31c11c4dff959245e9168caaf5bf696e07834cf70b.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/47\/47f0ad12c32a6b225ec888addbd36d3a9b2f01b877ce35d7f53a4077f084aa8d.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/48\/48fab435f3afffc0ee772c31c11c4dff959245e9168caaf5bf696e07834cf70b.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/4d\/4dcaf95945b7ed77e96b56dc0b0060644147d501347efbe182083ed198ae77f8.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/4b\/4b570eefbe28ad1f2752db46cd57b22535f2df2ca7607909c1325c727aa3206a.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4d\/4dcaf95945b7ed77e96b56dc0b0060644147d501347efbe182083ed198ae77f8.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4b\/4b570eefbe28ad1f2752db46cd57b22535f2df2ca7607909c1325c727aa3206a.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/54\/5421cab0ff38290c4738bb52563ecaef497d333e74ee6c2bd05ceb938f421276.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/4d\/4dc28d08ce3a9a9131991a5d0d3477bad23de8c443ab24658a3ba7d39fb3767c.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/54\/5421cab0ff38290c4738bb52563ecaef497d333e74ee6c2bd05ceb938f421276.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/4d\/4dc28d08ce3a9a9131991a5d0d3477bad23de8c443ab24658a3ba7d39fb3767c.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/65\/65c2b1b034dbf08e2b30ec86daaf6377294a698f132b9b06f9d7e4aaedcd44f2.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/54\/54cf8dba6021562f3afb01db543ae63be7288451b90656848418941ba8b3f5ff.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/65\/65c2b1b034dbf08e2b30ec86daaf6377294a698f132b9b06f9d7e4aaedcd44f2.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/54\/54cf8dba6021562f3afb01db543ae63be7288451b90656848418941ba8b3f5ff.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/69\/69ec5d722faf4930fe2e1da56b991257fb2057f8c8bb40df0c7d5d84ae2d330a.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/68\/680c09010937d4cc7a3d08227e1c2eaaeb459771f8927fe8fe0cf6c5c9a2d664.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/69\/69ec5d722faf4930fe2e1da56b991257fb2057f8c8bb40df0c7d5d84ae2d330a.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/68\/680c09010937d4cc7a3d08227e1c2eaaeb459771f8927fe8fe0cf6c5c9a2d664.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/76\/7674b4d239e38736353da6b9a815df436e82119fed08504a3c427623a51cd354.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/6e\/6e5829e161e64d9a450a801b80a5af4208cc6ad2f660d982da57f1d046dd3b78.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/76\/7674b4d239e38736353da6b9a815df436e82119fed08504a3c427623a51cd354.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/6e\/6e5829e161e64d9a450a801b80a5af4208cc6ad2f660d982da57f1d046dd3b78.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/83\/839abd80aada6dd8458ec3e02bb1bdec1f6a3b7ac59f98c7997686ada5dba3bb.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/74\/740aeeab0aa493d01b3dd133bde62070b5c9ae0f1a973c50be41af118a948d80.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/83\/839abd80aada6dd8458ec3e02bb1bdec1f6a3b7ac59f98c7997686ada5dba3bb.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/74\/740aeeab0aa493d01b3dd133bde62070b5c9ae0f1a973c50be41af118a948d80.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/91\/91664e838b03881e5b9a01b9999f855f9ee93297195bef535ce4e47802a0ca5a.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/76\/760e48f26d1024fe9f77122f2afaeb7c6775f42957f598c749bbff941a565edf.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/91\/91664e838b03881e5b9a01b9999f855f9ee93297195bef535ce4e47802a0ca5a.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/76\/760e48f26d1024fe9f77122f2afaeb7c6775f42957f598c749bbff941a565edf.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/94\/940c2dd40a471ef10a1caf3a01d9856cbff2dbdeaa8ee454360c48ee97a7df9b.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/79\/79a8cd47592241a9028a079b638321b701576b36bebd42358ec8d4a2437fd5ee.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/94\/940c2dd40a471ef10a1caf3a01d9856cbff2dbdeaa8ee454360c48ee97a7df9b.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/79\/79a8cd47592241a9028a079b638321b701576b36bebd42358ec8d4a2437fd5ee.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/7f\/7f45af78c42e501941d02748c270b18bcb3c9c4060b624e556aee29f0221c9c3.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/7f\/7f45af78c42e501941d02748c270b18bcb3c9c4060b624e556aee29f0221c9c3.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/85\/85a93baf21de036436de076da82eda5ddcbc06dec37e95d8c9ba6a1a66b968b2.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/85\/85a93baf21de036436de076da82eda5ddcbc06dec37e95d8c9ba6a1a66b968b2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/8e\/8ecbd6dfd779e1781184ed8f812af53b919b68a392e777363279034fd03f4e3b.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/8e\/8ecbd6dfd779e1781184ed8f812af53b919b68a392e777363279034fd03f4e3b.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/94\/94af8731bc20aaf8a2e3c95709e9dde3ea331597e61102ae8ec7745e93003eb7.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/94\/94af8731bc20aaf8a2e3c95709e9dde3ea331597e61102ae8ec7745e93003eb7.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/9a\/9a81f9f9e0af4369b59665e17006cd07027c6b0930730581e112af53a833d79d.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9a\/9a81f9f9e0af4369b59665e17006cd07027c6b0930730581e112af53a833d79d.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/a3\/a3f7e5c31571907801f245e0743253f55c06e1f66ffc5d15c446152606859d39.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/a3\/a3f7e5c31571907801f245e0743253f55c06e1f66ffc5d15c446152606859d39.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/a4\/a4116eadb91635db2a85207646e7e4de8a3cdfaefa648b3760bf65f6aad22e27.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/a4\/a4116eadb91635db2a85207646e7e4de8a3cdfaefa648b3760bf65f6aad22e27.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23196,20 +24481,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/b1\/b13a6b10e1b155ef8aa7c9483fd2b2aaff1388a0aec79dc16fe39adaf5a0c9d2.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/af\/af9fe404043267b1bb0a761c3fc5ea97b40cb505b3dd0b3b1084111d11ebc909.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b1\/b13a6b10e1b155ef8aa7c9483fd2b2aaff1388a0aec79dc16fe39adaf5a0c9d2.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/af\/af9fe404043267b1bb0a761c3fc5ea97b40cb505b3dd0b3b1084111d11ebc909.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/b3\/b3ad1efb24062af611cbc4c32dbd1b8599e893e0fe7434719d98620ebe8eb1ac.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/b8\/b859c7324946f6e91b0fc745b6783804627d54395ac1b6be75d45d9e6a4334b2.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b3\/b3ad1efb24062af611cbc4c32dbd1b8599e893e0fe7434719d98620ebe8eb1ac.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b8\/b859c7324946f6e91b0fc745b6783804627d54395ac1b6be75d45d9e6a4334b2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/b8\/b8b000c5e253763f06f33086e46800d446977319d419819e9d2ce5e4328cbe09.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b8\/b8b000c5e253763f06f33086e46800d446977319d419819e9d2ce5e4328cbe09.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/bf\/bfc6c02f2453e4ad350a20cbba0ae5e560fac1f68b29721efb55a7a2015132ea.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/bf\/bfc6c02f2453e4ad350a20cbba0ae5e560fac1f68b29721efb55a7a2015132ea.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23223,29 +24526,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/c4\/c439e7c2035f2cb56a9d6d7fbabe773748aaa4af5ed56dc439d34204895ad6fd.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/d6\/d62ebe25c33c9a6d9d62381dbf0792b83e5191599a3c7bf0863408ecb994e8eb.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/c4\/c439e7c2035f2cb56a9d6d7fbabe773748aaa4af5ed56dc439d34204895ad6fd.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d6\/d62ebe25c33c9a6d9d62381dbf0792b83e5191599a3c7bf0863408ecb994e8eb.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/storage\/runtime\/compiled_templates\/cf\/cf5eca1d48e98dd7c23dbd3bce426957cdc4beb70bb59cbbd51e37878e4a1fed.php": {
+	"\/craft\/storage\/runtime\/compiled_templates\/da\/da8bc0883478276ebb8795ce32cedc3cb43221d06efd03c3daf3672f6796b1b6.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/cf\/cf5eca1d48e98dd7c23dbd3bce426957cdc4beb70bb59cbbd51e37878e4a1fed.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/storage\/runtime\/compiled_templates\/de\/de5d0d5b6da8f4b0ed10e9540d8cc591a53dee809346ba421000cf52d5661f79.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/de\/de5d0d5b6da8f4b0ed10e9540d8cc591a53dee809346ba421000cf52d5661f79.php",
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/da\/da8bc0883478276ebb8795ce32cedc3cb43221d06efd03c3daf3672f6796b1b6.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -23255,6 +24549,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e0\/e00ad669b9374be153b0f875666f5232be38499e290f468760e3ed851ffa3839.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e0\/e014675e7b1c746f26f79ea6613a9b781910d8c4916465e3d96f7960a5e8483d.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e0\/e014675e7b1c746f26f79ea6613a9b781910d8c4916465e3d96f7960a5e8483d.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

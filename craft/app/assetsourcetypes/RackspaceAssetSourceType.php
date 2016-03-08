@@ -420,7 +420,8 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 			'username'   => array(AttributeType::String, 'required' => true),
 			'apiKey'     => array(AttributeType::String, 'required' => true),
 			'region'     => array(AttributeType::String, 'required' => true),
-			'container'	 => array(AttributeType::String, 'required' => true),
+			'container'  => array(AttributeType::String, 'required' => true),
+			'publicURLs' => array(AttributeType::Bool,   'default' => true),
 			'urlPrefix'  => array(AttributeType::String, 'required' => true),
 			'subfolder'  => array(AttributeType::String, 'default' => ''),
 		);
@@ -527,7 +528,7 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 		$originatingSourceType = craft()->assetSources->getSourceTypeById($file->sourceId);
 		$originatingSettings = $originatingSourceType->getSettings();
 
-		$sourceUri = $this->_prepareRequestURI($originatingSettings->container, $this->_getPathPrefix($originatingSourceType).$sourceFolder->path.$file->filename);
+		$sourceUri = $this->_prepareRequestURI($originatingSettings->container, $this->_getPathPrefix($originatingSettings).$sourceFolder->path.$file->filename);
 		$targetUri = $this->_prepareRequestURI($this->getSettings()->container, $newServerPath);
 
 		$this->_copyFile($sourceUri, $targetUri);
@@ -557,7 +558,7 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 
 					// Since Rackspace needs it's paths prepared, we deviate a little from the usual pattern.
 					$sourceTransformPath = $file->getFolder()->path.craft()->assetTransforms->getTransformSubpath($file, $index);
-					$sourceTransformPath = $this->_prepareRequestURI($originatingSettings->container, $this->_getPathPrefix($originatingSourceType).$sourceTransformPath);
+					$sourceTransformPath = $this->_prepareRequestURI($originatingSettings->container, $this->_getPathPrefix($originatingSettings).$sourceTransformPath);
 
 					$targetTransformPath = $this->_getPathPrefix().$targetFolder->path.craft()->assetTransforms->getTransformSubpath($destination, $destinationIndex);
 					$targetTransformPath = $this->_prepareRequestURI($this->getSettings()->container, $targetTransformPath);
@@ -1157,14 +1158,10 @@ class RackspaceAssetSourceType extends BaseAssetSourceType
 	 */
 	private function _downloadFile($path, $targetFile)
 	{
-		$target = $this->getSettings()->urlPrefix.$path;
+		$targetUri = $this->_prepareRequestURI($this->getSettings()->container.'/'.$this->_getPathPrefix().$path);
+		$response = $this->_doAuthenticatedRequest(static::RACKSPACE_STORAGE_OPERATION, $targetUri);
 
-		$ch = curl_init($target);
-		curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$response = curl_exec($ch);
-
-		IOHelper::writeToFile($targetFile, $response);
+		IOHelper::writeToFile($targetFile, static::_extractRequestResponse($response));
 
 		return true;
 	}
