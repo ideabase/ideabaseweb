@@ -1,0 +1,64 @@
+{#
+ # Style Guide template
+ # -------------------
+ #}
+
+{% extends "_layout" %}
+	{% block content %}
+
+	<h1>{{ entry.title }}</h1> 
+
+	{% set currentSection = entry.styleGuideSection %}
+
+	{% set styleSection = craft.entries.section(currentSection).level(1) %}
+
+	    <ul>
+	        {% for sectionName in styleSection %}
+	            <li><a href="#{{sectionName.title}}">{{ sectionName.title }}</a></li>
+	        {% endfor %}
+	    </ul>
+
+	<main>
+
+	{% for item in styleSection %}
+
+		<h2 id="{{item.title}}">{{ item.title }}</h2>
+		{% if currentSection == 'visualStyleGuide' %}
+			{% for block in item.visualPattern %}
+					{% if block.type == "color" %}
+
+						<h3>{{ block.colorName }}</h3>
+						<p>{{ block.colorHexCode }}</p>
+						<p>{{ block.colorRgb }}</p>
+						<p>{{ block.colorPantone }}</p>
+
+					{% elseif block.type == "typography" %}
+
+						<h3>{{ block.typefaceName }}</h3>
+						<p>{{ block.typefaceCssValue}}</p>
+						<p>{{ block.typefaceWeight }}</p>
+
+					{% elseif block.type == "imageLogo" %}
+
+						<h3>{{ block.imageName }}</h3>
+							{% for asset in block.imageLogoFile %}
+						     		<img src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+						   	{% endfor %}
+						<p>{{ block.imageLogoUsageGuidelines }}</p>
+
+					{% elseif block.type == "visualStyleSample" %}
+
+						{{ block.visualStyleCode|e }}
+
+					{% endif %}
+			{% endfor %}
+		{% elseif currentSection == 'contentStyleGuide' %}
+			{{ item.contentPatternBody }}
+		{% endif %}
+	{% endfor %}
+
+	</main>
+
+	<a href="{{ siteUrl }}/style">Back to Style Guide</a>
+
+	{% endblock %}
