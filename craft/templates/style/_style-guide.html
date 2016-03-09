@@ -3,22 +3,24 @@
  # -------------------
  #}
 
-{% extends "_layout" %}
+{% extends "_style-layout" %}
 	{% block content %}
-
-	<h1>{{ entry.title }}</h1> 
 
 	{% set currentSection = entry.styleGuideSection %}
 
 	{% set styleSection = craft.entries.section(currentSection).level(1) %}
-
-	    <ul>
+	<div class="styleguide__container">
+	<nav class="nav__styleguide">
+	    <ul class="nav__styleguide__list">
 	        {% for sectionName in styleSection %}
-	            <li><a href="#{{sectionName.title}}">{{ sectionName.title }}</a></li>
+	            <li class="nav__item"><a href="#{{sectionName.title}}">{{ sectionName.title }}</a></li>
 	        {% endfor %}
 	    </ul>
+	</nav>
 
-	<main>
+	<main class="main__styleguide">
+
+	<h1>{{ entry.title }}</h1> 
 
 	{% for item in styleSection %}
 
@@ -48,7 +50,7 @@
 
 					{% elseif block.type == "visualStyleSample" %}
 
-						{{ block.visualStyleCode|e }}
+						<div>{{ block.visualStyleCode|raw }}</div>
 
 					{% endif %}
 			{% endfor %}
@@ -57,8 +59,8 @@
 		{% endif %}
 	{% endfor %}
 
+	<a class="button button-primary button-primary--reverse" href="{{ siteUrl }}/style">Back to Style Guide</a>
+
 	</main>
-
-	<a href="{{ siteUrl }}/style">Back to Style Guide</a>
-
+	</div>
 	{% endblock %}

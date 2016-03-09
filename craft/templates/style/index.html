@@ -3,12 +3,14 @@
  # -------------------
  #}
 
-{% extends "_layout" %}
+{% extends "_style-layout" %}
 	{% block content %}
 
-	<h1>IdeaBase Style Guide</h1>
-
-	<a href="{{ siteUrl }}style/visual">Visual Style</a>
-	<a href="{{ siteUrl }}style/content">Content Style</a>
+	<section class="section-body-button panel-primary">
+	<a class="button button-primary" href="{{ siteUrl }}style/visual">Visual Style</a>
+	</section>
+	<section class="section-body-button panel-primary">
+	<a class="button button-primary" href="{{ siteUrl }}style/content">Content Style</a>
+	</section>
 
 	{% endblock %}
