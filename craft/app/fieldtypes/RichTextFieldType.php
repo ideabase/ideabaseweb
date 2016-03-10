@@ -133,21 +133,11 @@ class RichTextFieldType extends BaseFieldType
 	 */
 	public function getInputHtml($name, $value)
 	{
-		$configJs = $this->_getConfigJs();
+		$configJs = $this->_getConfigJson();
 		$this->_includeFieldResources($configJs);
 
 		$id = craft()->templates->formatInputId($name);
 		$localeId = (isset($this->element) ? $this->element->locale : craft()->language);
-
-		if (isset($this->model) && $this->model->translatable)
-		{
-			$locale = craft()->i18n->getLocaleData($localeId);
-			$orientation = '"'.$locale->getOrientation().'"';
-		}
-		else
-		{
-			$orientation = 'Craft.orientation';
-		}
 
 		$settings = array(
 			'id'              => craft()->templates->namespaceInputId($id),
@@ -155,10 +145,16 @@ class RichTextFieldType extends BaseFieldType
 			'assetSources'    => $this->_getAssetSources($this->getSettings()->availableAssetSources),
 			'transforms'      => $this->_getTransforms(),
 			'elementLocale'   => $localeId,
-			'direction'       => $orientation,
-			'redactorConfig'  => JsonHelper::decode($configJs),
+			'redactorConfig'  => JsonHelper::decode(JsonHelper::removeComments($configJs)),
 			'redactorLang'    => static::$_redactorLang,
 		);
+
+		if (isset($this->model) && $this->model->translatable)
+		{
+			// Explicitly set the text direction
+			$locale = craft()->i18n->getLocaleData($localeId);
+			$settings['direction'] = $locale->getOrientation();
+		}
 
 		craft()->templates->includeJs('new Craft.RichTextInput('.JsonHelper::encode($settings).');');
 
@@ -472,24 +468,24 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Returns the Redactor config JS used by this field.
+	 * Returns the Redactor config JSON used by this field.
 	 *
 	 * @return string
 	 */
-	private function _getConfigJs()
+	private function _getConfigJson()
 	{
 		if ($this->getSettings()->configFile)
 		{
 			$configPath = craft()->path->getConfigPath().'redactor/'.$this->getSettings()->configFile;
-			$js = IOHelper::getFileContents($configPath);
+			$json = IOHelper::getFileContents($configPath);
 		}
 
-		if (empty($js))
+		if (empty($json))
 		{
-			$js = '{}';
+			$json = '{}';
 		}
 
-		return $js;
+		return $json;
 	}
 
 	/**

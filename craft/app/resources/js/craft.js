@@ -3310,7 +3310,7 @@ Craft.BaseElementIndexView = Garnish.Base.extend(
 
 				if (Garnish.hasAttr($element, 'data-editable'))
 				{
-					new Craft.ElementEditor($element);
+					this.createElementEditor($element);
 				}
 			});
 		}
@@ -3574,6 +3574,11 @@ Craft.BaseElementIndexView = Garnish.Base.extend(
 	{
 		this.settings.onSelectionChange();
 		this.trigger('selectionChange');
+	},
+
+	createElementEditor: function($element)
+	{
+		new Craft.ElementEditor($element);
 	},
 
 	disable: function()
@@ -9935,7 +9940,7 @@ Craft.ElementEditor = Garnish.Base.extend(
 
 	getBaseData: function()
 	{
-		var data = {};
+		var data = $.extend({}, this.settings.params);
 
 		if (this.settings.locale)
 		{
@@ -10214,6 +10219,7 @@ Craft.ElementEditor = Garnish.Base.extend(
 		elementType: null,
 		locale: null,
 		attributes: null,
+		params: null,
 
 		onShowHud: $.noop,
 		onHideHud: $.noop,
@@ -15453,6 +15459,20 @@ Craft.TableElementIndexView = Craft.BaseElementIndexView.extend(
 		Craft.cp.updateResponsiveTables();
 	},
 
+	createElementEditor: function($element)
+	{
+		new Craft.ElementEditor($element, {
+			params: {
+				includeTableAttributesForSource: this.elementIndex.sourceKey
+			},
+			onSaveElement: $.proxy(function(response) {
+				if (response.tableAttributes) {
+					this._updateTableAttributes($element, response.tableAttributes);
+				}
+			}, this)
+		});
+	},
+
 	destroy: function()
 	{
 		if (this.$table)
@@ -15681,6 +15701,16 @@ Craft.TableElementIndexView = Craft.BaseElementIndexView.extend(
 
 		// No need for two spinners
 		this.elementIndex.setIndexAvailable();
+	},
+
+	_updateTableAttributes: function($element, tableAttributes)
+	{
+		var $tr = $element.closest('tr');
+
+		for (var attr in tableAttributes)
+		{
+			$tr.children('td[data-attr="'+attr+'"]:first').html(tableAttributes[attr]);
+		}
 	}
 });
 

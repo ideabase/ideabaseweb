@@ -1042,6 +1042,8 @@ body.rtl .elementselect .progress-shade { right: 0; }
 
 .meta > .data > .heading { width: calc(50% - 14px); }
 
+.meta > .field > .heading > label { font-weight: normal; }
+
 .meta > .field > .heading > label.required:after { position: absolute; top: 6px; }
 body.ltr .meta > .field > .heading > label.required:after { left: -13px; }
 body.rtl .meta > .field > .heading > label.required:after { right: -13px; }
