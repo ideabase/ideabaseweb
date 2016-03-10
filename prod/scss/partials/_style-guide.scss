@@ -25,11 +25,24 @@
 }
 
 .styleguide__pane__link {
-	background-color: $blue;
+	background-size: cover;
+	background-position: center center;
 	display: block;
 	text-decoration: none;
+	position: relative;
+	background-blend-mode: multiply;
+	transition: .3s all ease-in-out;
+	&:after {
+	  position: absolute;
+	  height: 100%;
+	  width: 100%;
+	  top: 0;
+	  left: 0;
+	  display: block;
+	  content: "";
+	}
 	&:hover {
-		background-color: darken($blue,5%);
+		background-color: darken(rgba($blue,1),15%)
 	}
 	@media screen and (min-width: 800px) {
 		border: 1px solid white;
@@ -38,12 +51,55 @@
 	}
 }
 
+.styleguide__pane__link__visual {
+	background-color: rgba($blue,1);
+	&:after {
+		background-color: rgba($blue,.3);
+	}
+}
+
+.styleguide__pane__link__content {
+	background-color: lighten(rgba($cyan,1), 5%);
+	&:after {
+		background-color: rgba($cyan,.2);
+	}
+}
+
+.styleguide__pane__content__link {
+	text-transform: uppercase;
+	padding-top: 1em;
+	display: inline-block;
+	font-weight: bold;
+	letter-spacing: 1px;
+	position: relative;
+	padding-right: .5em;
+	&:after {
+		content: "";
+		background-image: url(../Images/global/arrow-right-white.svg);
+		background-size: auto;
+		background-repeat: no-repeat;
+		font-size: .5em;
+		height: 10px;
+		width: 10px;
+		position: absolute;
+		margin-left: 1em;
+		top: 58%;
+	}
+}
+
 .styleguide__pane__content {
 	text-align: center;
 	width: 70%;
 	display: block;
+	z-index:1000;
+	text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 	h2 {
 		color: white;
+		font-size: 1.8em;
+		margin-bottom: 1em;
+		@media screen and (min-width: 900px) {
+			font-size: 2.1em;
+		}
 	}
 }
 
@@ -71,15 +127,18 @@
 .styleguide__type {
 	margin-bottom: 1em;
 	margin-top: .5em;
+	padding-right: 1.5em;
 	span {
 		display: block;
 		color: $darkgray;
+		word-break: break-all;
+		margin-top: .5em;
 	}
 	h4 {
 		margin-bottom: .25em;
 	}
 	@media screen and (min-width: 900px) {
-		width: 50%;
+		width: 49%;
 		float: left;
 	}
 }
@@ -87,7 +146,7 @@
 .styleguide-title {
 	color: $blue;
 	margin-top: 0;
-	margin-bottom: .5em;
+	margin-bottom: .75em;
 	font-size: 1.9em;
 	@media screen and (min-width: 600px) {
 		text-align: right;
@@ -231,7 +290,7 @@
 	}
 }
 
-.styleguide__image:nth-child(even) {
+.styleguide__image:nth-child(even), .styleguide__type:nth-child(even) {
 	clear: left;
 }
 
@@ -279,5 +338,8 @@ nav.nav__styleguide li {
 	}
 	a {
 		color: white;
+		&:hover {
+			color: lighten($cyan,5%);
+		}
 	}
 }

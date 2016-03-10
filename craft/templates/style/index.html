@@ -12,18 +12,30 @@
 		}
 	}
 	</style>
-	<a class="styleguide__pane__link" href="{{entry.visualStyleGuideLink.first().url}}">
+	<a class="styleguide__pane__link styleguide__pane__link__visual" href="{{entry.visualStyleGuideLink.first().url}}" style="
+			{% if entry.visualGuideImage | length %}
+			    {% for asset in entry.visualGuideImage %}
+			        background-image: url({{ asset.getUrl() }});
+			    {% endfor %}
+			{% endif %}
+			">
 		<div class="styleguide__pane">
 			<div class="styleguide__pane__content">
 				<h2>{{entry.visualStyleGuideTitle}}
 				</h2>
 				<p>
 				{{entry.visualStyleGuideDescription}}</p>
-				{{entry.visualStyleGuideLinkName}}
+				<span class="styleguide__pane__content__link">{{entry.visualStyleGuideLinkName}}</span>
 			</div>
 		</div>	
 	</a>
-	<a class="styleguide__pane__link" href="{{entry.contentStyleGuideLink.first().url}}">
+	<a class="styleguide__pane__link styleguide__pane__link__content" href="{{entry.contentStyleGuideLink.first().url}}" style="
+			{% if entry.visualGuideImage | length %}
+			    {% for asset in entry.contentGuideImage %}
+			        background-image: url({{ asset.getUrl() }});
+			    {% endfor %}
+			{% endif %}
+			">
 		<div class="styleguide__pane">
 			<div class="styleguide__pane__content">
 				<h2>{{entry.contentStyleGuideTitle}}
@@ -31,7 +43,7 @@
 				<p>
 				{{entry.contentStyleGuideDescription}}
 				</p>
-				{{entry.contentStyleGuideLinkName}}
+				<span class="styleguide__pane__content__link">{{entry.contentStyleGuideLinkName}}</span>
 			</div>
 		</div>
 	</a>

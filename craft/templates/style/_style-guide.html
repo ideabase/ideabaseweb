@@ -13,7 +13,7 @@
 	<nav class="nav__styleguide">
 	    <ul class="nav__styleguide__list">
 	        {% for sectionName in styleSection %}
-	            <li class="nav__item"><a href="#{{sectionName.title}}">{{ sectionName.title }}</a></li>
+	            <li class="nav__item"><a href="#{{sectionName.title|replace(' ', '-')}}">{{ sectionName.title }}</a></li>
 	        {% endfor %}
 	        <li class="nav__item--back"><a href="{{siteUrl}}/style">Main Style Guide</a></li>
 	    </ul>
@@ -25,7 +25,7 @@
 
 	{% for item in styleSection %}
 	<section class="section-basic-page styleguide__section">
-		<h3 id="{{item.title}}">{{ item.title }}</h3>
+		<h3 id="{{item.title|replace(' ', '-')}}">{{ item.title }}</h3>
 		{% if currentSection == 'visualStyleGuide' %}
 			{% for block in item.visualPattern %}
 					{% if block.type == "color" %}
@@ -36,6 +36,7 @@
 							<span>{{ block.colorHexCode }}</span>
 							<span>{{ block.colorRgb }}</span>
 							<span>{{ block.colorPantone }}</span>
+							<span>{{ block.colorCmyk}}</span>
 						</div>
 
 					{% elseif block.type == "typography" %}
@@ -43,7 +44,9 @@
 							<h4>{{ block.typefaceName }}</h4>
 							<span>{{ block.typefaceCssValue}}<span>
 							<span>{{ block.typefaceWeight }}<span>
-							<span style="font-size: 1.2em; font-weight: {{ block.typefaceWeight }}; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+							<span style="font-size: 1.1em; font-weight: {{ block.typefaceWeight }}; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+							<span style="font-size: 1.1em; font-weight: {{ block.typefaceWeight }}; text-transform: uppercase; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+							<span>{{ block.typefaceUsage}}</span>
 						</div>
 
 					{% elseif block.type == "imageLogo" %}
