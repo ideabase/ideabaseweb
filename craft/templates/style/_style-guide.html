@@ -15,51 +15,79 @@
 	        {% for sectionName in styleSection %}
 	            <li class="nav__item"><a href="#{{sectionName.title}}">{{ sectionName.title }}</a></li>
 	        {% endfor %}
+	        <li class="nav__item--back"><a href="{{siteUrl}}/style">Main Style Guide</a></li>
 	    </ul>
 	</nav>
 
 	<main class="main__styleguide">
 
-	<h1>{{ entry.title }}</h1> 
+	<h2 class="styleguide__subtitle">{{ entry.title }}</h2> 
 
 	{% for item in styleSection %}
-
-		<h2 id="{{item.title}}">{{ item.title }}</h2>
+	<section class="section-basic-page styleguide__section">
+		<h3 id="{{item.title}}">{{ item.title }}</h3>
 		{% if currentSection == 'visualStyleGuide' %}
 			{% for block in item.visualPattern %}
 					{% if block.type == "color" %}
-
-						<h3>{{ block.colorName }}</h3>
-						<p>{{ block.colorHexCode }}</p>
-						<p>{{ block.colorRgb }}</p>
-						<p>{{ block.colorPantone }}</p>
+						<div class="styleguide__color">
+							<div style="background-color:{{ block.colorRgb }}" class="swatch">
+							</div>
+							<h4>{{ block.colorName }}</h4>
+							<span>{{ block.colorHexCode }}</span>
+							<span>{{ block.colorRgb }}</span>
+							<span>{{ block.colorPantone }}</span>
+						</div>
 
 					{% elseif block.type == "typography" %}
-
-						<h3>{{ block.typefaceName }}</h3>
-						<p>{{ block.typefaceCssValue}}</p>
-						<p>{{ block.typefaceWeight }}</p>
+						<div class="styleguide__type">
+							<h4>{{ block.typefaceName }}</h4>
+							<span>{{ block.typefaceCssValue}}<span>
+							<span>{{ block.typefaceWeight }}<span>
+							<span style="font-size: 1.2em; font-weight: {{ block.typefaceWeight }}; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+						</div>
 
 					{% elseif block.type == "imageLogo" %}
 
-						<h3>{{ block.imageName }}</h3>
-							{% for asset in block.imageLogoFile %}
-						     		<img src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
-						   	{% endfor %}
-						<p>{{ block.imageLogoUsageGuidelines }}</p>
+						<div class="styleguide__image">
+								{% for asset in block.imageLogoFile %}
+							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>
+							     			<h4>{{ block.imageName }} ({{block.imageFormat.label}})</h4>
+							     		</a>
+							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>
+							     			{% for preview in block.imageLogoPreviewFile %}
+							     			<img src="{{ preview.getUrl() }}" alt= "{{ preview.title}}">
+							     			{% endfor %}
+							     		</a>
+							   	{% endfor %}
+							<span>{{ block.imageLogoUsageGuidelines }}</span>
+						</div>
 
 					{% elseif block.type == "visualStyleSample" %}
 
-						<div>{{ block.visualStyleCode|raw }}</div>
+						<div class="panel-primary panel-primary--styleguide">{{ block.visualStyleCode|raw }}</div>
+
+					{% elseif block.type == "externalLink" %}
+
+						<div class="panel-button__styleguide panel-primary">
+							<a class="button button-primary" href="{{block.externalLinkAddress}}">
+								{{block.externalLinkName}}
+							</a>
+						</div>
+					{% elseif block.type == "textContent" %}
+
+						<div class="panel-button__styleguide">
+								{{block.text}}
+						</div>
 
 					{% endif %}
 			{% endfor %}
 		{% elseif currentSection == 'contentStyleGuide' %}
 			{{ item.contentPatternBody }}
 		{% endif %}
+		</section>
 	{% endfor %}
 
-	<a class="button button-primary button-primary--reverse" href="{{ siteUrl }}/style">Back to Style Guide</a>
+	<a class="button button-primary button--reverse" href="{{ siteUrl }}/style">Back to Main Style Guide</a>
 
 	</main>
 	</div>

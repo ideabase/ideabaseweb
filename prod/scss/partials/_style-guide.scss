@@ -9,6 +9,44 @@
 	}
 }
 
+.styleguide__pane {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2px;
+	height: calc(50vh - 80px); 
+	@media screen and (min-width: 600px) {
+		height: calc(50vh - 65px); 
+	}
+	@media screen and (min-width: 800px) {
+		height: calc(100vh - 130px); 
+	}
+}
+
+.styleguide__pane__link {
+	background-color: $blue;
+	display: block;
+	text-decoration: none;
+	&:hover {
+		background-color: darken($blue,5%);
+	}
+	@media screen and (min-width: 800px) {
+		border: 1px solid white;
+		float: left;
+		width: 50%;
+	}
+}
+
+.styleguide__pane__content {
+	text-align: center;
+	width: 70%;
+	display: block;
+	h2 {
+		color: white;
+	}
+}
+
 .main__styleguide {
 	h1, h2 {
 		text-align: left;
@@ -17,7 +55,7 @@
 
 .styleguide-title__link {
 	text-decoration: none;
-	@media screen and (min-width: 900px) {
+	@media screen and (min-width: 600px) {
 		width: 50%;
 		display: inline-block;
 		float: right;
@@ -25,11 +63,37 @@
 	}
 }
 
+.panel-button__styleguide {
+	@include clearfix;
+	clear: left;
+}
+
+.styleguide__type {
+	margin-bottom: 1em;
+	margin-top: .5em;
+	span {
+		display: block;
+		color: $darkgray;
+	}
+	h4 {
+		margin-bottom: .25em;
+	}
+	@media screen and (min-width: 900px) {
+		width: 50%;
+		float: left;
+	}
+}
+
 .styleguide-title {
 	color: $blue;
 	margin-top: 0;
-	margin-bottom: 1em;
-	font-size: 1.7em;
+	margin-bottom: .5em;
+	font-size: 1.9em;
+	@media screen and (min-width: 600px) {
+		text-align: right;
+		margin-top: 1.2em;
+		margin-bottom: 1em;
+	}
 	@media screen and (min-width: 900px) {
 		text-align: right;
 		font-size: 2em;
@@ -51,7 +115,7 @@
 	padding: 0 1em 3em 1em;
 	}
 	@media screen and (min-width: 900px) {
-		width: 75%;
+		width: 70%;
 	}
 }
 
@@ -60,8 +124,18 @@
 	margin: 0 auto;
 	display: block;
 	@media screen and (min-width: 600px) {
-		padding-left: 2em;
+		padding-left: 1em;
+		margin-top: 1.5em;
 	}
+	@media screen and (min-width: 800px) {
+		padding-left: 2em;
+		margin-top: 1.5em;
+	}
+}
+
+.styleguide__subtitle {
+	margin-top: 0;
+	margin-bottom: 0em;
 }
 
 .nav__styleguide__list {
@@ -75,15 +149,126 @@
 		margin-left: .5em;
 		padding-bottom: .5em;
 		float: right;
+		text-align: left;
+		max-width:175px;
 	}
 	@media screen and (min-width: 800px) {
-		padding: 2em;
-		padding-bottom: .5em;
+		padding: 2.5em;
+		padding-bottom: 1em;
+		max-width: 250px;
+	}
+}
+
+.swatch {
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 1em 0;
+	border: 1px solid gray;
+}
+
+.js .nav--show li.nav__item--back {
+	border-top: 1px solid white;
+	padding-top: 1.25em;
+}
+
+.nav__item--back {
+	@media screen and (min-width: 625px) {
+	padding-top: 1.25em;
+	padding-left: 1.25em;
+	position: relative;
+	border-top: 1px solid white;
+		&:before {
+			background-image: url(../Images/global/arrow-right-white.svg);
+			transform: scaleX(-1);
+			filter: FlipH;
+			background-size: auto;
+			background-repeat: no-repeat;
+			color: white;
+			content:"";
+			position: absolute;
+			left: -3px;
+			top: 55%;
+			height: 10px;
+			width: 10px;
+		}
+	}
+}
+
+.styleguide__section {
+	clear: left;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+	@include clearfix;
+	border-bottom: 1px solid $lightgray;
+}
+
+.ideabaselogo--styleguide img {
+	margin-top: 1em;
+	@media screen and (min-width: 600px) {
+		float:left;
+	}
+	@media screen and (min-width: 900px) {
+		margin-top: 0;
+	}
+}
+
+.styleguide__image {
+	float: left;
+	width: 45%;
+	margin-right: 5%;
+	margin-bottom: 2.5em;
+	text-align: center;
+	img {
+		max-height:100px;
+		text-align: left;
+	}
+	span {
+		display: block;
+		color: $darkgray;
+		font-size: .95em;
+		margin-top: .5em;
+	}
+}
+
+.styleguide__image:nth-child(even) {
+	clear: left;
+}
+
+.panel-primary--styleguide {
+	padding-top: .5em;
+}
+
+.styleguide__image__link {
+	font-size: .95em;
+	margin-top: .5em;
+	display: block;
+	color: $blue;
+	h4 {
+		color: $blue;
+	}
+}
+
+.styleguide__color {
+	float: left;
+	width: 50%;
+	margin-bottom: 1.5em;
+	h4 {
+		margin-bottom: .25em;
+		margin-top: 0;
+	}
+	span {
+		display: block;
+		color: $darkgray;
+	}
+	@media screen and (min-width: 900px) {
+		float: left;
+		width: 25%;
 	}
 }
 
 nav.nav__styleguide li {
-	font-size: .95em;
+	font-size: .75rem;
 	@media screen and (min-width: 600px) {
 		display: block;
 		margin: 0;

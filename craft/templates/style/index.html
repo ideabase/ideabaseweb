@@ -5,12 +5,35 @@
 
 {% extends "_style-layout" %}
 	{% block content %}
-
-	<section class="section-body-button panel-primary">
-	<a class="button button-primary" href="{{ siteUrl }}style/visual">Visual Style</a>
-	</section>
-	<section class="section-body-button panel-primary">
-	<a class="button button-primary" href="{{ siteUrl }}style/content">Content Style</a>
-	</section>
+	<style>
+		@media screen and (max-width: 600px) {
+		.js .nav__trigger {
+			display: none !important;
+		}
+	}
+	</style>
+	<a class="styleguide__pane__link" href="{{entry.visualStyleGuideLink.first().url}}">
+		<div class="styleguide__pane">
+			<div class="styleguide__pane__content">
+				<h2>{{entry.visualStyleGuideTitle}}
+				</h2>
+				<p>
+				{{entry.visualStyleGuideDescription}}</p>
+				{{entry.visualStyleGuideLinkName}}
+			</div>
+		</div>	
+	</a>
+	<a class="styleguide__pane__link" href="{{entry.contentStyleGuideLink.first().url}}">
+		<div class="styleguide__pane">
+			<div class="styleguide__pane__content">
+				<h2>{{entry.contentStyleGuideTitle}}
+				</h2>
+				<p>
+				{{entry.contentStyleGuideDescription}}
+				</p>
+				{{entry.contentStyleGuideLinkName}}
+			</div>
+		</div>
+	</a>
 
 	{% endblock %}
