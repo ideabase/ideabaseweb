@@ -15,7 +15,7 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 2px;
-	height: calc(50vh - 80px); 
+	min-height: 320px; 
 	@media screen and (min-width: 600px) {
 		height: calc(50vh - 65px); 
 	}
