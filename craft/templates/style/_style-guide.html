@@ -41,11 +41,15 @@
 
 					{% elseif block.type == "typography" %}
 						<div class="styleguide__type">
-							<h4>{{ block.typefaceName }}</h4>
-							<span>{{ block.typefaceCssValue}}<span>
-							<span>{{ block.typefaceWeight }}<span>
-							<span style="font-size: 1.1em; font-weight: {{ block.typefaceWeight }}; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
-							<span style="font-size: 1.1em; font-weight: {{ block.typefaceWeight }}; text-transform: uppercase; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+							<h4>
+								<a href="{{block.typefaceSourceLink}}">
+								{{ block.typefaceName }}
+								</a>
+							</h4>
+							<span><strong>CSS Value: </strong>{{ block.typefaceCssValue}}<span>
+							<span><strong>Weight: </strong>{{ block.typefaceWeight }}<span>
+							<span class="styleguide__type__sample styleguide__type__sample__upper" style="font-weight: {{ block.typefaceWeight }}; font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
+							<span class="styleguide__type__sample styleguide__type__sample__lower" style="font-weight: {{ block.typefaceWeight }};  font-family: {{ block.typefaceCssValue}}">abcdefghijklmnopqrstuvwxyz</span>
 							<span>{{ block.typefaceUsage}}</span>
 						</div>
 
@@ -53,9 +57,7 @@
 
 						<div class="styleguide__image">
 								{% for asset in block.imageLogoFile %}
-							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>
-							     			<h4>{{ block.imageName }} ({{block.imageFormat.label}})</h4>
-							     		</a>
+							     			<h4><a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>{{ block.imageName }} ({{block.imageFormat.label}})</a></h4>
 							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>
 							     			{% for preview in block.imageLogoPreviewFile %}
 							     			<img src="{{ preview.getUrl() }}" alt= "{{ preview.title}}">

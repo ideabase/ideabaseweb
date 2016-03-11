@@ -4,8 +4,14 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.4em;
-  color: rgb(0,168,225);
+  color: $cyan;
+  font-size: 1.6em;
+  @media screen and (min-width: 700px) {
+    font-size: 2.2em;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 3em;
+  }
 }
 h2 {
   font-family: 'Montserrat', sans-serif;
@@ -38,4 +44,11 @@ h4 {
   font-family: 'Source Sans Pro', sans-serif;
   color: $darkgray;
   font-size: 1.2em;
+}
+
+h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $darkgray;
+  font-size: 1.1em;
+  font-weight: 600;
 }

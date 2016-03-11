@@ -1,5 +1,5 @@
 .nav__styleguide {
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 	width: 25%;
 	float: left;
 	text-align: left;
@@ -144,7 +144,6 @@
 }
 
 .styleguide-title {
-	color: $blue;
 	margin-top: 0;
 	margin-bottom: .75em;
 	font-size: 1.9em;
@@ -168,7 +167,7 @@
 .main__styleguide {
 	padding: 2em;
 	width: 100%;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 	width: 65%;
 	float: right;
 	padding: 0 1em 3em 1em;
@@ -182,7 +181,7 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	display: block;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 		padding-left: 1em;
 		margin-top: 1.5em;
 	}
@@ -201,7 +200,7 @@
 	text-align: center;
 	margin: 0;
 	padding: .5em 0;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 		background-color: $blue;
 		padding: 1.5em;
 		position: fixed;
@@ -218,12 +217,29 @@
 	}
 }
 
+.styleguide__type__sample {
+	font-size: 1.1em; 
+	display: block;	
+}
+
+.styleguide__type__sample__upper {
+	text-transform: uppercase;
+}
+
+.styleguide__type__sample__lower {
+	padding-bottom: .5em;
+}
+
 .swatch {
 	width: 70px;
 	height: 70px;
 	display: inline-block;
 	margin: 1em 0;
 	border: 1px solid gray;
+}
+
+.js .nav__styleguide.nav--show {
+	max-height: 40em;
 }
 
 .js .nav--show li.nav__item--back {
@@ -264,7 +280,7 @@
 
 .ideabaselogo--styleguide img {
 	margin-top: 1em;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 		float:left;
 	}
 	@media screen and (min-width: 900px) {
@@ -296,6 +312,7 @@
 
 .panel-primary--styleguide {
 	padding-top: .5em;
+	text-align:left;
 }
 
 .styleguide__image__link {
@@ -328,7 +345,7 @@
 
 nav.nav__styleguide li {
 	font-size: .75rem;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 601px) {
 		display: block;
 		margin: 0;
 		margin-bottom: 1.5em;
