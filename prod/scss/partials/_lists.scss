@@ -41,6 +41,13 @@
 	}
 }
 
+.section-basic-page ol {
+	> li {
+		padding:.5em 8px; /* Add some spacing around the content */
+
+	}
+}
+
 .section-basic-page.panel-primary ol {
 	counter-reset:li; /* Initiate a counter */
 	margin-left:0; /* Remove the default left margin */
@@ -53,7 +60,6 @@
     > li {
     	position:relative; /* Create a positioning context */
     	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
-    	padding:.5em 8px; /* Add some spacing around the content */
     	list-style:none; /* Disable the normal item numbering */
     	border-top:2px solid $cyan;
     	font-size: .9em;

@@ -23723,6 +23723,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/craft\/config\/redactor\/StyleGuide.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/config\/redactor\/StyleGuide.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/craft\/config\/redactor\/StyleGuide-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/craft\/config\/routes.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24624,6 +24635,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/33\/33966ac3f18a93971790eced2797d8ba0c1c7c4a9400a6e84b9d0c354c52f4d2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/34\/3468ae76d12cbd55ff7ad7936b0418a8111e320d2fd1959f0adfbfd6235cbb06.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/34\/3468ae76d12cbd55ff7ad7936b0418a8111e320d2fd1959f0adfbfd6235cbb06.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
