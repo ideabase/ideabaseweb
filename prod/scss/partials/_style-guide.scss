@@ -235,7 +235,6 @@
 	height: 70px;
 	display: inline-block;
 	margin: 1em 0;
-	border: 1px solid gray;
 }
 
 .js .nav__styleguide.nav--show {
@@ -336,6 +335,7 @@
 	span {
 		display: block;
 		color: $darkgray;
+		margin-bottom: .25em;
 	}
 	@media screen and (min-width: 900px) {
 		float: left;
