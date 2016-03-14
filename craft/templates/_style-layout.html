@@ -49,6 +49,11 @@
 </script>
 <script type="text/javascript" src="{{ siteUrl }}/js/jquery.fixedcontent.min.js"></script>
 <script>
+  $(".js_fixedcontent").fixedcontent({
+    marginTop: 0,
+  });
+</script>
+<script>
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
