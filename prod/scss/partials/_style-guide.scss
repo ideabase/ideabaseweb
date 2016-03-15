@@ -3,6 +3,7 @@
 	width: 25%;
 	float: left;
 	text-align: left;
+	margin-left: 1.5em;
 	}
 	@media screen and (min-width: 900px) {
 		margin-top: .5em;
@@ -203,10 +204,7 @@
 	@media screen and (min-width: 601px) {
 		background-color: $blue;
 		padding: 1.5em;
-		position: fixed;
-		margin-left: .5em;
 		padding-bottom: .5em;
-		float: right;
 		text-align: left;
 		max-width:175px;
 	}
@@ -239,6 +237,7 @@
 
 .js .nav__styleguide.nav--show {
 	max-height: 40em;
+	margin-bottom: 2em;
 }
 
 .js .nav--show li.nav__item--back {
@@ -247,7 +246,7 @@
 }
 
 .nav__item--back {
-	@media screen and (min-width: 625px) {
+	@media screen and (min-width: 601px) {
 	padding-top: 1.25em;
 	padding-left: 1.25em;
 	position: relative;
@@ -275,6 +274,12 @@
 	padding-bottom: 2em;
 	@include clearfix;
 	border-bottom: 1px solid $lightgray;
+}
+
+.js_fixedcontent {
+	@media screen and (min-width: 600px) {
+		width:100% !important;
+	}
 }
 
 .ideabaselogo--styleguide img {
@@ -344,11 +349,15 @@
 }
 
 nav.nav__styleguide li {
-	font-size: .75rem;
+	font-size: .9em;
 	@media screen and (min-width: 601px) {
 		display: block;
 		margin: 0;
 		margin-bottom: 1.5em;
+		font-size: .7rem;
+	}
+	@media screen and (min-width: 800px) {
+		font-size: .9rem;
 	}
 	@media screen and (min-width: 1200px) {
 		font-size: 1.1em;

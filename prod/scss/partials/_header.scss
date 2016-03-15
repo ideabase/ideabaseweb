@@ -6,7 +6,7 @@ header {
   margin-bottom: 1em;
   max-width: 1200px;
   margin: 0 auto;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 601px) {
     margin-bottom: 1.5em;
   }
   @media screen and (min-width: 1000px) {
@@ -71,6 +71,10 @@ margin-top: .5em;
 
   .js .nav__trigger {
     display: block;
+    float: left;
+    width: 100%;
+    height: 50px;
+    text-align: center;
   }
 }
 
@@ -141,6 +145,8 @@ nav {
     max-height: 20em;
     background-color: $blue;
     padding-top: 1.25em;
+    float: left;
+    width: 100%;
 
     li {
       padding: 0 0 1.25em 0em;
@@ -210,7 +216,7 @@ nav li {
       color: $cyan;
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 601px) {
       display: inline;
       margin: 1.5em;
   }
