@@ -58,12 +58,14 @@
 					{% elseif block.type == "imageLogo" %}
 
 						<div class="styleguide__image">
+								<h4>{{ block.imageName }}</h4>
+								{% for preview in block.imageLogoPreviewFile %}
+									<img src="{{ preview.getUrl() }}" alt= "{{ preview.title}}">
+								{% endfor %}
 								{% for asset in block.imageLogoFile %}
-							     			<h4><a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>{{ block.imageName }} ({{block.imageFormat.label}})</a></h4>
-							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>
-							     			{% for preview in block.imageLogoPreviewFile %}
-							     			<img src="{{ preview.getUrl() }}" alt= "{{ preview.title}}">
-							     			{% endfor %}
+							     			<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>{{ block.imageName }} ({{asset.imageFormat.label}})
+							     			</a>
+							     		<a class="styleguide__image__link" href="{{ asset.getUrl() }}" download>						     			
 							     		</a>
 							   	{% endfor %}
 							<span>{{ block.imageLogoUsageGuidelines }}</span>

@@ -277,7 +277,7 @@
 }
 
 .js_fixedcontent {
-	@media screen and (min-width: 600px) {
+	@media screen and (max-width: 601px) {
 		width:100% !important;
 	}
 }
@@ -296,17 +296,18 @@
 	float: left;
 	width: 45%;
 	margin-right: 5%;
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 	text-align: center;
 	img {
-		max-height:100px;
+		max-height:80px;
 		text-align: left;
+		margin-bottom: .5em;
 	}
 	span {
 		display: block;
 		color: $darkgray;
 		font-size: .95em;
-		margin-top: .5em;
+		margin-top: 1em;
 	}
 }
 
