@@ -8,6 +8,11 @@
  */
 
 return array(
-	'showBetaUpdates' => true,
-	//'devMode' => true,
+	'*' => array(
+	       'extraAllowedFileExtensions' => 'eps',
+	       'maxUploadFileSize' => 33554432,
+	),
+	'ideabase.web' => array(
+	    'devMode' => true,
+	)
 );
