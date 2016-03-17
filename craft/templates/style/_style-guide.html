@@ -14,7 +14,7 @@
 		<div class="js_fixedcontent">
 		    <ul class="nav__styleguide__list">
 		        {% for sectionName in styleSection %}
-		            <li class="nav__item"><a href="#{{sectionName.title|replace(' ', '-')}}">{{ sectionName.title }}</a></li>
+		            <li class="nav__item"><a href="#{{sectionName.title|replace(' ', '-')|replace('&', '')}}">{{ sectionName.title }}</a></li>
 		        {% endfor %}
 		        <li class="nav__item--back"><a href="{{siteUrl}}/style">Main Style Guide</a></li>
 		    </ul>
@@ -27,7 +27,7 @@
 
 	{% for item in styleSection %}
 	<section class="section-basic-page styleguide__section">
-		<h3 id="{{item.title|replace(' ', '-')}}">{{ item.title }}</h3>
+		<h3 id="{{item.title|replace(' ', '-')|replace('&', '')}}">{{ item.title }}</h3>
 		{% if currentSection == 'visualStyleGuide' %}
 			{% for block in item.visualPattern %}
 					{% if block.type == "color" %}
