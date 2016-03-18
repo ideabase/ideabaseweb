@@ -322,8 +322,8 @@
 
 .styleguide__image__link {
 	font-size: .95em;
-	margin-top: .5em;
-	display: block;
+	margin: .5em .5em 0 .5em;
+	display: inline-block;
 	color: $blue;
 	h4 {
 		color: $blue;

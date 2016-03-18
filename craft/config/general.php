@@ -11,6 +11,7 @@ return array(
 	'*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
 	       'maxUploadFileSize' => 33554432,
+	       'overridePhpSessionLocation' => false
 	),
 	'ideabase.web' => array(
 	    'devMode' => true,
