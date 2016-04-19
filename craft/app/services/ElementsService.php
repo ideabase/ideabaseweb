@@ -426,6 +426,9 @@ class ElementsService extends BaseApplicationComponent
 			{
 				$targetPath = $sourcePath.'.'.$segment;
 
+				// Figure out the path mapping wants a custom order
+				$useCustomOrder = !empty($pathCriterias[$targetPath]['order']);
+
 				// Make sure we haven't already eager-loaded this target path
 				if (!isset($elementsByPath[$targetPath]))
 				{
@@ -449,20 +452,23 @@ class ElementsService extends BaseApplicationComponent
 
 						foreach ($map['map'] as $mapping)
 						{
-							$uniqueTargetElementIds[] = $mapping['target'];
+							if (!in_array($mapping['target'], $uniqueTargetElementIds))
+							{
+								$uniqueTargetElementIds[] = $mapping['target'];
+							}
+
 							$targetElementIdsBySourceIds[$mapping['source']][] = $mapping['target'];
 						}
 
-						$uniqueTargetElementIds = array_unique($uniqueTargetElementIds);
-
 						// Get the target elements
 						$customParams = array_merge(
+							// Default to no order and limit, but allow the element type/path criteria to override
+							array('order' => null, 'limit' => null),
 							(isset($map['criteria']) ? $map['criteria'] : array()),
 							(isset($pathCriterias[$targetPath]) ? $pathCriterias[$targetPath] : array())
 						);
 						$criteria = $this->getCriteria($map['elementType'], $customParams);
 						$criteria->id = $uniqueTargetElementIds;
-						$criteria->limit = null;
 						$targetElements = $this->findElements($criteria);
 
 						if ($targetElements)
@@ -470,12 +476,15 @@ class ElementsService extends BaseApplicationComponent
 							// Success! Store those elements on $elementsByPath FFR
 							$elementsByPath[$targetPath] = $targetElements;
 
-							// Index the target elements by their IDs
-							$targetElementsById = array();
-
-							foreach ($targetElements as $targetElement)
+							// Index the target elements by their IDs if we are using the map-defined order
+							if (!$useCustomOrder)
 							{
-								$targetElementsById[$targetElement->id] = $targetElement;
+								$targetElementsById = array();
+
+								foreach ($targetElements as $targetElement)
+								{
+									$targetElementsById[$targetElement->id] = $targetElement;
+								}
 							}
 						}
 					}
@@ -488,11 +497,26 @@ class ElementsService extends BaseApplicationComponent
 
 						if (isset($targetElementIdsBySourceIds[$sourceElementId]))
 						{
-							foreach ($targetElementIdsBySourceIds[$sourceElementId] as $targetElementId)
+							if ($useCustomOrder)
 							{
-								if (isset($targetElementsById[$targetElementId]))
+								// Assign the elements in the order they were returned from the query
+								foreach ($targetElements as $targetElement)
 								{
-									$targetElementsForSource[] = $targetElementsById[$targetElementId];
+									if (in_array($targetElement->id, $targetElementIdsBySourceIds[$sourceElementId]))
+									{
+										$targetElementsForSource[] = $targetElement;
+									}
+								}
+							}
+							else
+							{
+								// Assign the elements in the order defined by the map
+								foreach ($targetElementIdsBySourceIds[$sourceElementId] as $targetElementId)
+								{
+									if (isset($targetElementsById[$targetElementId]))
+									{
+										$targetElementsForSource[] = $targetElementsById[$targetElementId];
+									}
 								}
 							}
 						}
@@ -1358,6 +1382,10 @@ class ElementsService extends BaseApplicationComponent
 
 				if ($success)
 				{
+					// Save the new dateCreated and dateUpdated dates on the model
+					$element->dateCreated = new DateTime('@'.$elementRecord->dateCreated->getTimestamp());
+					$element->dateUpdated = new DateTime('@'.$elementRecord->dateUpdated->getTimestamp());
+
 					if ($isNewElement)
 					{
 						// Save the element id on the element model, in case {id} is in the URL format

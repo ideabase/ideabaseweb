@@ -1411,6 +1411,8 @@ body.rtl .field > .heading > label > .locale { margin-right: 7px; }
 body.ltr .field > .warning:before { margin: -2px 2px 0 0 ; }
 body.rtl .field > .warning:before { margin: -2px 0 0 2px ; }
 
+.field > .input:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
 /* toggles and nested fields */
 .nested-fields { margin: -24px; padding: 24px 24px 0; overflow: hidden; }
 

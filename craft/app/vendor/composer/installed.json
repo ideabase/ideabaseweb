@@ -1,17 +1,17 @@
 [
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.8.3",
-        "version_normalized": "2.8.3.0",
+        "version": "v2.8.4",
+        "version_normalized": "2.8.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "78c468665c9568c3faaa9c416a7134308f2d85c3"
+            "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/78c468665c9568c3faaa9c416a7134308f2d85c3",
-            "reference": "78c468665c9568c3faaa9c416a7134308f2d85c3",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/47d2d8cade9b1c3987573d2943bb9352536cdb87",
+            "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87",
             "shasum": ""
         },
         "require": {
@@ -28,7 +28,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2016-01-27 05:14:19",
+        "time": "2016-03-07 14:04:32",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -158,12 +158,12 @@
     },
     {
         "name": "imagine/imagine",
-        "version": "0.6.9",
-        "version_normalized": "0.6.9.0",
+        "version": "0.6.11",
+        "version_normalized": "0.6.11.0",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/Imagine",
-            "reference": "ddfb537990e42b2dd3957e77a8f1807e5c04402e"
+            "reference": "0b8a850e16d29b603ab24889bc240ed9d8a0decf"
         },
         "archive": {
             "exclude": [
@@ -188,7 +188,7 @@
             "ext-gmagick": "to use the Gmagick implementation",
             "ext-imagick": "to use the Imagick implementation"
         },
-        "time": "2016-02-29 14:22:54",
+        "time": "2016-03-28 18:56:07",
         "type": "library",
         "extra": {
             "branch-alias": {

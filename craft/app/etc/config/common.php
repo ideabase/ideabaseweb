@@ -97,6 +97,7 @@ $configArray = array(
 		'app.enums.RequirementResult',
 		'app.enums.SectionType',
 		'app.enums.TaskStatus',
+		'app.enums.TemplateMode',
 		'app.enums.UserStatus',
 		'app.enums.VersionUpdateStatus',
 		'app.etc.behaviors.AppBehavior',

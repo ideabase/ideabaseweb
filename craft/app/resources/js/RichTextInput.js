@@ -47,6 +47,8 @@ Craft.RichTextInput = Garnish.Base.extend(
 
 		this.redactorConfig.imageUpload = true;
 		this.redactorConfig.fileUpload = true;
+		this.redactorConfig.dragImageUpload = false;
+		this.redactorConfig.dragFileUpload = false;
 
 		// Prevent a JS error when calling core.destroy() when opts.plugins == false
 		if (typeof this.redactorConfig.plugins !== typeof [])
@@ -306,6 +308,7 @@ Craft.RichTextInput = Garnish.Base.extend(
 		{
 			this.assetLinkSelectionModal = Craft.createElementSelectorModal('Asset', {
 				storageKey: 'RichTextFieldType.LinkToAsset',
+				sources: this.assetSources,
 				criteria: { locale: this.elementLocale },
 				onSelect: $.proxy(function(assets)
 				{

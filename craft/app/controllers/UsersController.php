@@ -1090,7 +1090,7 @@ class UsersController extends BaseController
 			// Make sure a file was uploaded
 			if ($file)
 			{
-				$fileName = AssetsHelper::cleanAssetName($file->getName());
+				$fileName = AssetsHelper::cleanAssetName($file->getName(), false, true);
 
 				if (!ImageHelper::isImageManipulatable($file->getExtensionName()))
 				{
@@ -1098,7 +1098,7 @@ class UsersController extends BaseController
 				}
 
 				$user = craft()->users->getUserById($userId);
-				$userName = AssetsHelper::cleanAssetName($user->username, false);
+				$userName = AssetsHelper::cleanAssetName($user->username, false, true);
 
 				$folderPath = craft()->path->getTempUploadsPath().'userphotos/'.$userName.'/';
 
@@ -1175,7 +1175,7 @@ class UsersController extends BaseController
 			$source = UrlHelper::stripQueryString($source);
 
 			$user = craft()->users->getUserById($userId);
-			$userName = AssetsHelper::cleanAssetName($user->username, false);
+			$userName = AssetsHelper::cleanAssetName($user->username, false, true);
 
 			// make sure that this is this user's file
 			$imagePath = craft()->path->getTempUploadsPath().'userphotos/'.$userName.'/'.$source;
@@ -1568,7 +1568,7 @@ class UsersController extends BaseController
 		// If the user doesn't have CP access, see if a custom Set Password template exists
 		if (!$user->can('accessCp'))
 		{
-			craft()->path->setTemplatesPath(craft()->path->getSiteTemplatesPath());
+			craft()->templates->setTemplateMode(TemplateMode::Site);
 			$templatePath = craft()->config->getLocalized('setPasswordPath');
 
 			if (craft()->templates->doesTemplateExist($templatePath))
@@ -1579,7 +1579,7 @@ class UsersController extends BaseController
 		}
 
 		// Otherwise go with the CP's template
-		craft()->path->setTemplatesPath(craft()->path->getCpTemplatesPath());
+		craft()->templates->setTemplateMode(TemplateMode::CP);
 		$templatePath = craft()->config->getCpSetPasswordPath();
 		$this->renderTemplate($templatePath, $variables);
 	}
