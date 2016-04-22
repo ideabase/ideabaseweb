@@ -33,7 +33,9 @@
 		    			<a href="{{ entry.Url }}">
 							<h3 class="people-listing__name">{{ entry.profileFirstName }}
 							{{ entry.profileLastName }}</h3>
-							<p class="people-listing__title">{{ entry.profileJobTitle }}</p>
+							{% if entry.alumniCurrentPosition|length %}
+								<p class="people-listing__title">{{ entry.alumniCurrentPosition }}</p>
+							{% endif %}
 						</a>
 					</li>
 					{% endif %}

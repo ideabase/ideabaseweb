@@ -19,12 +19,23 @@
 		<h1 class="people__title">
 			{{ entry.title }}
 		</h1>
-		<p class="people__text">{{ entry.profileJobTitle }}</p>
+		{% if entry.alumniCurrentPosition|length %}
+			<p class="people__text">{{ entry.alumniCurrentPosition }}</p>
+		{% endif %}
+		{% if entry.alumniLightswitch %}
+		{% else %}
+			<p class="people__text">{{ entry.profileJobTitle }}</p>
+		{% endif %}
 		<p class="people__text">{{ entry.collegeDegree }}</p>
 
-		<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
-		{% if entry.profileContactEmail|length %}
-		<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
+		
+		{% if entry.alumniLightswitch and entry.profileJobTitle|length %}
+			<div class="people__bio"><p>{{ entry.profileFirstName }} worked as a {{ entry.profileJobTitle }} while at IdeaBase.</p></div>
+		{% else %}									
+			<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
+			{% if entry.profileContactEmail|length %}
+				<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
+			{% endif %}
 		{% endif %}
 		{% if entry.profileOfficePhoneNumber|length %}
 		<p class="people__phone"><a href="#">{{ entry.profileOfficePhoneNumber }}</a></p>
