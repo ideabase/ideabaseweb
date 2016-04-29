@@ -56,8 +56,11 @@ h2 {
   text-transform: uppercase;
 }
 
-.facts, .features {
-  width: 50%;
+.features {
+  width: 55%;
+}
+.facts {
+  width: 45%;
 }
 
 .features {
