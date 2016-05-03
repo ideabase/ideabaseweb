@@ -118,8 +118,6 @@ body.rtl #global-sidebar .bottombar #account-info { padding: 0 7px 0 17px; }
 
 /* container */
 #container { overflow: auto; display: block; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body.ltr #container { padding-left: 220px; }
-body.rtl #container { padding-right: 220px; }
 
 #container > .topbar, #container > #page-header, #container > #main, #container > #help-footer, #conatiner > #footer { min-height: -webkit-min-content; min-height: -moz-min-content; }
 
@@ -137,13 +135,14 @@ body.mobile #container { overflow-y: scroll; /* has to be scroll, not auto */ -w
 
 #main.single-pane .padded > .pane > .content > .sidebar + .body { width: calc(100% - 0); }
 
+@media only screen and (min-width: 993px) { body.ltr #container { padding-left: 220px; }
+  body.rtl #container { padding-right: 220px; } }
 @media only screen and (max-width: 992px) { #container { max-width: none; }
-  body.ltr #container { width: calc(100% + 220px); -webkit-transform: translate3d(-220px, 0, 0); -moz-transform: translate3d(-220px, 0, 0); -ms-transform: translate3d(-220px, 0, 0); -o-transform: translate3d(-220px, 0, 0); transform: translate3d(-220px, 0, 0); }
-  body.rtl #container { width: calc(100% + 220px); -webkit-transform: translate3d(220px, 0, 0); -moz-transform: translate3d(220px, 0, 0); -ms-transform: translate3d(220px, 0, 0); -o-transform: translate3d(220px, 0, 0); transform: translate3d(220px, 0, 0); }
   body.showing-nav #global-sidebar { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-  body.showing-nav #container { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  body.ltr:not(.showing-nav) #global-sidebar { -webkit-transform: translate3d(-220px, 0, 0); -moz-transform: translate3d(-220px, 0, 0); -ms-transform: translate3d(-220px, 0, 0); -o-transform: translate3d(-220px, 0, 0); transform: translate3d(-220px, 0, 0); }
-  body.rtl:not(.showing-nav) #global-sidebar { -webkit-transform: translate3d(220px, 0, 0); -moz-transform: translate3d(220px, 0, 0); -ms-transform: translate3d(220px, 0, 0); -o-transform: translate3d(220px, 0, 0); transform: translate3d(220px, 0, 0); } }
+  body.ltr.showing-nav #container { -webkit-transform: translate(220px, 0); -moz-transform: translate(220px, 0); -ms-transform: translate(220px, 0); -o-transform: translate(220px, 0); transform: translate(220px, 0); }
+  body.rtl.showing-nav #container { -webkit-transform: translate(-220px, 0); -moz-transform: translate(-220px, 0); -ms-transform: translate(-220px, 0); -o-transform: translate(-220px, 0); transform: translate(-220px, 0); }
+  body.ltr:not(.showing-nav) #global-sidebar { -webkit-transform: translate(-220px, 0); -moz-transform: translate(-220px, 0); -ms-transform: translate(-220px, 0); -o-transform: translate(-220px, 0); transform: translate(-220px, 0); }
+  body.rtl:not(.showing-nav) #global-sidebar { -webkit-transform: translate(220px, 0); -moz-transform: translate(220px, 0); -ms-transform: translate(220px, 0); -o-transform: translate(220px, 0); transform: translate(220px, 0); } }
 #tasks-hud { padding: 0; overflow: auto; }
 
 #tasks-hud .task { overflow: hidden; }
