@@ -238,6 +238,15 @@ p {
     height: auto;
 }
 
+
+/* Twitter Widget */
+
+#twitter-widget-0 {
+  padding: 5px !important;
+}
+
+
+
 /* Flickity */
 
 
