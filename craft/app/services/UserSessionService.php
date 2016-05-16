@@ -23,6 +23,7 @@ class UserSessionService extends \CWebUser
 	const FLASH_COUNTERS   = 'Craft.UserSessionService.flashcounters';
 	const AUTH_ACCESS_VAR  = '__auth_access';
 	const USER_IMPERSONATE_KEY = 'Craft.UserSessionService.prevImpersonateUserId';
+	const ELEVATED_SESSION_TIMEOUT_VAR = '__elevated_timeout';
 
 	// Properties
 	// =========================================================================
@@ -105,46 +106,12 @@ class UserSessionService extends \CWebUser
 		{
 			if (!isset($this->_userModel))
 			{
-				$userRow = $this->_getUserRow($this->getId());
+				$userRow = $this->_getValidUserRow($this->getId());
 
 				// Only return active and pending users.
 				if ($userRow)
 				{
-					$validUser = false;
-
-					// TODO: Remove after next breakpoint.
-					// Keeping extra logic here so the upgrade to 2.3 won't freak.
-					// First the pre 2.3 check.
-					if ((isset($userRow['status']) && $userRow['status'] == UserStatus::Active) || (isset($userRow['status']) && $userRow['status'] == UserStatus::Pending))
-					{
-						$validUser = true;
-					}
-
-					// Now the 2.3 check. If all 3 of these are false, then the user is active or pending.
-					if ((isset($userRow['suspended']) && isset($userRow['archived']) && isset($userRow['locked'])) && (!$userRow['suspended'] && !$userRow['archived'] && !$userRow['locked']))
-					{
-						$validUser = true;
-					}
-
-					// One last attempt.
-					if (!$validUser)
-					{
-						// If the previous user was an admin and we're impersonating the current user.
-						if ($previousUserId = craft()->httpSession->get(static::USER_IMPERSONATE_KEY))
-						{
-							$previousUser = craft()->users->getUserById($previousUserId);
-
-							if ($previousUser && $previousUser->admin)
-							{
-								$validUser = true;
-							}
-						}
-					}
-
-					if ($validUser)
-					{
-						$this->_userModel = UserModel::populateModel($userRow);
-					}
+					$this->_userModel = UserModel::populateModel($userRow);
 				}
 				else
 				{
@@ -373,7 +340,7 @@ class UserSessionService extends \CWebUser
 	 */
 	public function isGuest()
 	{
-		$user = $this->_getUserRow($this->getId());
+		$user = $this->_getValidUserRow($this->getId());
 		return empty($user);
 	}
 
@@ -1154,6 +1121,74 @@ class UserSessionService extends \CWebUser
 		return parent::getFlashes($delete);
 	}
 
+	/**
+	 * Returns how many seconds are left in the current elevated user session.
+	 *
+	 * @return int The number of seconds left in the current elevated user session
+	 */
+	public function getElevatedSessionTimeout()
+	{
+		// Are they logged in?
+		if (!$this->getIsGuest())
+		{
+			$expires = $this->getState(static::ELEVATED_SESSION_TIMEOUT_VAR);
+
+			if ($expires !== null)
+			{
+				$currentTime = time();
+
+				if ($expires > $currentTime)
+				{
+					return $expires - $currentTime;
+				}
+			}
+		}
+
+		return 0;
+	}
+
+	/**
+	 * Returns whether the user current has an elevated session.
+	 *
+	 * @return bool Whether the user has an elevated session
+	 */
+	public function hasElevatedSession()
+	{
+		return ($this->getElevatedSessionTimeout() != 0);
+	}
+
+	/**
+	 * Starts an elevated user session for the current user.
+	 *
+	 * @param string $password the current user’s password
+	 *
+	 * @return bool Whether the password was valid, and the user session has been elevated
+	 */
+	public function startElevatedSession($password)
+	{
+		// Get the current user
+		$user = $this->getUser();
+
+		if (!$user)
+		{
+			return false;
+		}
+
+		// Validate the password
+		$passwordModel = new PasswordModel();
+		$passwordModel->password = $password;
+
+		if ($passwordModel->validate() && craft()->users->validatePassword($user->password, $password))
+		{
+			// Set the elevated session expiration date
+			$this->setState(self::ELEVATED_SESSION_TIMEOUT_VAR, time() + craft()->config->getElevatedSessionDuration());
+
+			return true;
+		}
+
+		return false;
+	}
+
 	// Events
 	// -------------------------------------------------------------------------
 
@@ -1392,6 +1427,9 @@ class UserSessionService extends \CWebUser
 		{
 			$this->setState(static::AUTH_TIMEOUT_VAR, time()+$this->authTimeout);
 		}
+
+		// Clear out the elevated session, if there is one
+		$this->setState(self::ELEVATED_SESSION_TIMEOUT_VAR, null);
 	}
 
 	/**
@@ -1527,17 +1565,35 @@ class UserSessionService extends \CWebUser
 	 *
 	 * @return int
 	 */
-	private function _getUserRow($id)
+	private function _getValidUserRow($id)
 	{
 		if (!isset($this->_userRow))
 		{
 			if ($id)
 			{
-				$userRow = craft()->db->createCommand()
+				$impersonate = false;
+
+				if ($previousUserId = craft()->httpSession->get(static::USER_IMPERSONATE_KEY))
+				{
+					$previousUser = craft()->users->getUserById($previousUserId);
+
+					if ($previousUser && $previousUser->admin)
+					{
+						$impersonate = true;
+					}
+				}
+
+				$query = craft()->db->createCommand()
 					->select('*')
 					->from('users')
-					->where('id=:id', array(':id' => $id))
-					->queryRow();
+					->where('id=:id', array(':id' => $id));
+
+				if (!$impersonate)
+				{
+					$query->andWhere('suspended=0 AND archived=0 AND locked=0');
+				}
+
+				$userRow = $query->queryRow();
 
 				if ($userRow)
 				{
