@@ -22,12 +22,20 @@
     <section class="section-blog-entry panel-primary">
 	<article class="blog__entry">
 		<h1 class="blog__entry__title">{{ entry.title }}</h1>
-		<span class="blog__entry__author">
-			{% for entry in entry.blogAuthor %}
-			{{ entry.title }}
-			{% endfor %}
-		</span>
-		<span class="blog__entry__date">Posted on {{ entry.postDate.format('F d, Y') }}</span>
+		<div class="blog__entry__info">
+		{% set blogAuthor = entry.blogAuthor %}
+		{% set numberOfAuthors = entry.blogAuthor|length %}
+			{% if numberOfAuthors < 2 %}
+				{% for entry in blogAuthor %}
+				<span class="blog__entry__author">{{ entry.title }}</span>
+				{% endfor %}
+			{% else %}
+				{% for entry in blogAuthor %}
+				<span class="blog__entry__author blog-multiple__author">{{ entry.title }}</span>
+				{% endfor %}
+			{% endif %}
+			<date class="blog__entry__date">Posted on {{ entry.postDate.format('F d, Y') }}</date>
+		</div>
 		<div class="blog__entry__text">
 			{{ entry.blogContent}}
 			{% for block in entry.blogPostContent %}
@@ -89,7 +97,7 @@
 		</section>		
 		{% endfor %}
 		{% set tag = entry.blogTags %}
-		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ currentEntry.id).limit(3).order('RAND()').find() %}	
+		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).order('RAND()').find() %}	
 			{% if relatedEntries | length %}
 			<section class="people-posts people-posts--blog">
 			<h2 class="people-posts__title">Related Posts</h2>
