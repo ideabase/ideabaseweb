@@ -137,6 +137,13 @@ class Requirements
 				'<a href="http://craftcms.com">Craft CMS</a>',
 				Craft::t('Craft CMS requires the <a href="http://www.php.net/manual/en/book.mbstring.php">Multibyte String extension</a> with <a href="http://php.net/manual/en/mbstring.overload.php">Function Overloading</a> disabled in order to run.')
 			),
+			new Requirement(
+				Craft::t('fileinfo extension'),
+				extension_loaded('fileinfo'),
+				false,
+				'<a href="http://craftcms.com">Craft CMS</a>',
+				Craft::t('Used to try and guess the content type and encoding of files by looking for certain magic bytes sequences at specific positions within the file.')
+			),
 			new IconvRequirement(),
 			new WebRootExposedFolderRequirement(),
 		);
