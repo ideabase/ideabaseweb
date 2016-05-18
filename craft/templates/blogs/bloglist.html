@@ -23,27 +23,34 @@
 
 			     		<h1 class="blog-list__title">{{ entry.title }}</h2>
 			     		{% set blogAuthor = entry.blogAuthor %}
-						{% for entry in blogAuthor %}
-						<span class="blog-list__author">{{ entry.title }}</span>
-						{% endfor %}
-						<span class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</span>
+			     		{% set numberOfAuthors = entry.blogAuthor|length %}
+
+					    <div class="blog-list__info">
+						    {% if numberOfAuthors < 2 %}
+								{% for entry in blogAuthor %}
+								<span class="blog-list__author">{{ entry.title }}</span>
+								{% endfor %}
+							{% else %}
+								{% for entry in blogAuthor %}
+								<span class="blog-list__author blog-multiple__author">{{ entry.title }}</span>
+								{% endfor %}
+							{% endif %}
+							<date class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</date>
+						</div>
 							
 						{% set blogParagraphsIndex = entry.blogContent|split('.') %}
 						{% set firstBlogParagraphIndex = blogParagraphsIndex|first ~ '.' %}
 							<div class="blog-list__text">
 					    		{{ firstBlogParagraphIndex|raw }}
 					    	</div>
-					    {% set numberOfAuthors = entry.blogAuthor|length %}
 					    {% if numberOfAuthors < 2 %}
 						    {% for entry in blogAuthor %}
 							<p class="blog-teaser__link">
 								Read {{ entry.profileFirstName}}'s Post</p>
 							{% endfor %}
 						{% else %}
-							{% if numberOfAuthors >= 2 %}
 							<p class="blog-teaser__link">
 								Read the Post</p>
-							{% endif %}
 						{% endif %}
 					    
 						</a>	

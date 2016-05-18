@@ -74,11 +74,22 @@
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
-	        				{% for entry in entry.blogAuthor %}
-	        					<p class="blog-teaser__author">
-	        					{{ entry.title }}
-	        					</p>
-	        				{% endfor %}
+
+	        				{% set numberOfAuthors = entry.blogAuthor|length %}
+							{% if numberOfAuthors < 2 %}
+
+								{% for entry in entry.blogAuthor %}
+								<p class="blog-teaser__author">
+									{{ entry.title }}
+								</p>
+								{% endfor %}
+							{% else %}
+								<p class="blog-teaser__author">
+									{% for entry in entry.blogAuthor %}
+									<span class="blog-multiple__author">{{ entry.title }}</span>
+									{% endfor %}
+								</p>
+							{% endif %}
 	        				{% set caseStudyParagraphs = entry.blogContent|split('.') %}
 							{% set firstCaseStudyParagraph = caseStudyParagraphs|first ~ '.' %}
 								<div class="blog-teaser__text">
