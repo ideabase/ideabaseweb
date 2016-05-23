@@ -220,6 +220,13 @@
   }
 }
 
+.blog__entry__tags-link {
+  color: $blue;
+  &:hover, &focus {
+    color: $cyan;
+  }
+}
+
 .blog__entry-author {
   margin-bottom: 1.5em;
 }

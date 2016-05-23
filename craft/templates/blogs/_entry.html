@@ -118,7 +118,7 @@
 	<ul class="blog__entry__tags">
     	{% for tag in entry.blogTags %}
     		<li class="blog__entry__tags__single">
-          		{{ tag.title }}
+          		<a class="blog__entry__tags-link" href="{{ siteUrl }}blog/tags/{{ tag.title }}">{{ tag.title }}</a>
       		</li>
       	{% endfor %}
     </ul>	
