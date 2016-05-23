@@ -24512,6 +24512,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/100\/1266.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1748,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/100\/1266.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/100\/1266.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/100\/281.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -24541,6 +24552,17 @@
 		"initialSize": 1060,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1265.jpg",
 		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1265.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/30\/1266.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 840,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1266.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1266.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -24679,6 +24701,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/12\/12fd374c4424722f22f4fba79c93bb824b57554fee9d3839734c8f89da02ee6f.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/13\/13d6a7f11e495379a3a9fffcbf8d36a5d09b0a7d9b390750b3a31d208e210fa8.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/13\/13d6a7f11e495379a3a9fffcbf8d36a5d09b0a7d9b390750b3a31d208e210fa8.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24899,6 +24930,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/61\/613be859a06e43e1be41fdf5b81a3a37a3aab17a039dfeb770960f7d63693b62.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/61\/613be859a06e43e1be41fdf5b81a3a37a3aab17a039dfeb770960f7d63693b62.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/63\/63c3c0e6dcd98673cde8919711027d99ca181fecabf6515a442af15ee5cbc039.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24967,6 +25007,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/7b\/7b4b35d27c005b982f34e7ca57e3e280af153a67394e1ad5068c2c76bbd2b2bd.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/7b\/7ba55c164babebc69bbc2fdf22762dac1fdd255c893b3b582585ee48f23e100e.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/7b\/7ba55c164babebc69bbc2fdf22762dac1fdd255c893b3b582585ee48f23e100e.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -25277,6 +25326,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/c8\/c80927668684bd04e8c27386d37645cde4a2cb706d4d9311e7582be9c5b6ebb7.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/c8\/c80927668684bd04e8c27386d37645cde4a2cb706d4d9311e7582be9c5b6ebb7.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/ca\/ca641c74ea9313a3ca77a9152a790cdad35bdce3401e1cde98767620f99bc231.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -25322,11 +25380,29 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/d1\/d19d23dc5ffcae0d3be6180bae21bcfd21274fb8e73c6808829551609aeef53f.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d1\/d19d23dc5ffcae0d3be6180bae21bcfd21274fb8e73c6808829551609aeef53f.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/d2\/d28d3b09eafc8e1c89dc05759c90066685daadf3e41f1a6ccdd951a71a9c8a51.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d2\/d28d3b09eafc8e1c89dc05759c90066685daadf3e41f1a6ccdd951a71a9c8a51.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/d3\/d34c668c9947dfe4da69fc8aa7eb3d70a303c2c7b8782e7d1d0f2d66258b596c.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/d3\/d34c668c9947dfe4da69fc8aa7eb3d70a303c2c7b8782e7d1d0f2d66258b596c.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -25408,6 +25484,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e3\/e3fd06ddb6cc56660049e08655d875d3ce2fe9237c87a6157599e9fb5b904dcf.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e6\/e641846b4ed94b15d7589b36ebfe5b6f7d651ecd193da4c047d41af48c8c6a9e.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e6\/e641846b4ed94b15d7589b36ebfe5b6f7d651ecd193da4c047d41af48c8c6a9e.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -27670,6 +27755,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/featured\/_featureImageLarge\/blog-header_small.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 124471,
+		"inputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageLarge\/blog-header_small.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageLarge\/blog-header_small.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/featured\/_featureImageMedium\/24404869790_7f2b71e355_o.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -27681,6 +27777,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/prod\/Images\/featured\/_featureImageMedium\/blog-header_small.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31036,
+		"inputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageMedium\/blog-header_small.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageMedium\/blog-header_small.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/prod\/Images\/featured\/_featureImageSmall\/24404869790_7f2b71e355_o.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -27688,6 +27795,28 @@
 		"initialSize": 47217,
 		"inputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageSmall\/24404869790_7f2b71e355_o.jpg",
 		"outputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageSmall\/24404869790_7f2b71e355_o.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/featured\/_featureImageSmall\/blog-header_small.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21523,
+		"inputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageSmall\/blog-header_small.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/featured\/_featureImageSmall\/blog-header_small.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/Images\/featured\/blog-header_small.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45293,
+		"inputAbbreviatedPath": "\/prod\/Images\/featured\/blog-header_small.jpg",
+		"outputAbbreviatedPath": "\/prod\/Images\/featured\/blog-header_small.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

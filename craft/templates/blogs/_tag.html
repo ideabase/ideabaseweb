@@ -6,21 +6,38 @@
 {% extends "_layout" %}
 {% block content %}
 
-{% set photo = craft.entries.section('blogList').aboutImage %}
-
 <style type="text/css">
-		.section-header { 
-			    {% for asset in photo %}
-			        background-image: url({{ asset.getUrl('featureImageSmall') }});
-			    {% endfor %}
+	.blog.section-header { 
+		{% if blogHeader.aboutImage | length %}
+		    {% for asset in blogHeader.aboutImage %}
+		        background-image: url({{ asset.getUrl('featureImageSmall') }});
+		    {% endfor %}
+		{% endif %}
+	}
+	@media screen and (min-width: 600px) {
+		.blog.section-header {
+			{% if blogHeader.aboutImage | length %}
+		    {% for asset in blogHeader.aboutImage %}
+		        background-image: url({{ asset.getUrl('featureImageMedium') }});
+		    {% endfor %}
+		{% endif %}
 		}
+	}
+	@media screen and (min-width: 1000px) {
+		.blog.section-header {
+			{% if blogHeader.aboutImage | length %}
+		    {% for asset in blogHeader.aboutImage %}
+		        background-image: url({{ asset.getUrl('featureImageLarge') }});
+		    {% endfor %}
+		{% endif %}
+		}
+	}
 </style>
 
 {% set tag = craft.tags.title(tag).first() %}
 {% set entries = craft.entries.relatedTo(tag).order('title').limit(null) %}
-<!-- {% set Blog = craft.entries.section('blogPost').limit(null) %} -->
 
-<section class="section-header section-header--interior">
+<section class="blog section-header section-header--interior">
 	<div class="section-header__container">
 		<h1 class="section-header__title">Entries tagged with “{{ tag.title }}”</h1>
 	</div>
@@ -67,5 +84,4 @@
    		</ul>
    	</section>
 </div>
-
 {% endblock %}

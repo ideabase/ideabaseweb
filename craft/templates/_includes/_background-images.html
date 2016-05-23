@@ -24,6 +24,31 @@
 			{% endif %}
 			}
 		}
+		.blog.section-header { 
+			{% if blogHeader.aboutImage | length %}
+			    {% for asset in blogHeader.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageSmall') }});
+			    {% endfor %}
+			{% endif %}
+		}
+		@media screen and (min-width: 600px) {
+			.blog.section-header {
+				{% if blogHeader.aboutImage | length %}
+			    {% for asset in blogHeader.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageMedium') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
+		@media screen and (min-width: 1000px) {
+			.blog.section-header {
+				{% if blogHeader.aboutImage | length %}
+			    {% for asset in blogHeader.aboutImage %}
+			        background-image: url({{ asset.getUrl('featureImageLarge') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
 		.panel-background-image { 
 			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
 			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).order('RAND()') %}
