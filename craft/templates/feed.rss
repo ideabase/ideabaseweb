@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>{{ siteName }}</title>
+        <link>{{ siteUrl }}</link>
+        <atom:link href="{{ craft.request.url }}" rel="self" type="application/rss+xml" />
+        <description>IdeaBase Blog Feed</description>
+        <language>en-us</language>
+        <pubDate>{{ now.rss }}</pubDate>
+        <lastBuildDate>{{ now.rss }}</lastBuildDate>
+        {% set rss = craft.entries({ section: 'blogPost' }) %}
+        {% for entry in rss %}
+            <item>
+                <title>{{ entry.title }}</title>
+                <link>{{ entry.url }}</link>
+                <pubDate>{{ entry.postDate.rss }}</pubDate>
+                <author>{% set blogAuthor = entry.blogAuthor %}{% for entry in blogAuthor %}{{ entry.title }}{% endfor %}</author>
+                <guid>{{ entry.url }}</guid>
+                <description><![CDATA[
+                  {% set blogParagraphsIndex = entry.blogContent|split('.') %}
+                  {% set firstBlogParagraphIndex = blogParagraphsIndex|first ~ '.' %}
+                        {{ firstBlogParagraphIndex|raw }}
+                ]]></description>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>
