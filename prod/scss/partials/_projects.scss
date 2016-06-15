@@ -308,7 +308,7 @@
   margin-top: 2em;
   @media screen and (min-width: 600px) {
     font-size: .85em;
-    width: 200px;
+    width: 280px;
   }
   @media screen and (min-width: 700px) {
     margin-left: inherit;
@@ -434,8 +434,11 @@
   margin-bottom: 2em;
   margin-top: 2em;
   img {
-    width: 50px;
-    margin-right: 1.5em
+    width: 45px;
+    margin-right: 1.15em
+  }
+  a {
+    text-decoration: none;
   }
   p {
     font-size: 1.25em;
@@ -536,6 +539,10 @@
 }
 
 .project-list__item__image {
+  // delete this, for testing only
+  background: #999;
+  height: 200px;
+  //
   position: relative;
   z-index: 50;
   display: block;
@@ -560,6 +567,14 @@
     display: block;
     margin: 0 auto;
   }
+}
+
+.trophy-icon {
+  height:38px;width:38px;
+  position: absolute;
+  top: 2px;left: 2px;
+  background: white;
+  border-radius: 50%;
 }
 
 .project-list__item__description p {

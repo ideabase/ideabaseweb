@@ -1,0 +1,63 @@
+// Awards
+
+.awards {text-align: left}
+.award-individual__text {
+  color:$darkgray;
+  margin-bottom: 1.5em;
+}
+
+.award-list {
+  margin-top: 2em;
+  margin-bottom: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.award-individual {margin-bottom: 2em}
+
+.award-individual__date {
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+.award-individual__title {margin-top: 0}
+
+.award-individual__title a {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: .25em;
+  line-height: 1.2;
+  text-decoration: none;
+  color: $blue;
+}
+
+.award-individual__associated-project a {
+  color: $blue;
+  text-decoration: none;
+  position: relative;
+  &:hover, &:focus {
+    color: $cyan;
+  }
+}
+
+.award-individual__associated-project:after {
+  content:"/";
+}
+
+.award-individual__associated-project:last-child:after {
+  content:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
