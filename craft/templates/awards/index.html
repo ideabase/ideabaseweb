@@ -7,21 +7,34 @@
 
 {% block content %}
 
-	{% for entry in craft.entries.section('news').find() %}
-		<section class="award-individual">
-			<h3 class="award-individual__title">
-				<a href="{{ entry.url }}">
-					{{ entry.title }}
-				</a>
-			</h3>
-			<p class="award-individual__text">
-				Posted on {{ entry.postDate.format('F d, Y') }}
-			</p>
-			<p class="award-individual__text">
-				<a href="{{ entry.url }}">
-					Continue reading
-				</a>
-			</p>
-		</section>
-	{% endfor %}
+<section class="section-header section-header--interior">
+	<div class="section-header__container">
+		<h1 class="section-header__title">Awards</h1>
+	</div>
+</section>
+
+<div class="panel-primary-container">
+	<section class="panel-primary awards">
+		<ul class="award-list">
+			{% for entry in craft.entries.section('ideabaseAwards').order('awardDateAwarded desc') %}
+			<li class="award-individual">
+				<h5 class="award-individual__date">{{ entry.awardDateAwarded | date('M j, Y') }}</h5>
+				<h3 class="award-individual__title">
+					<a href="{{ entry.url }}">{{ entry.title }}</a>
+				</h3>
+				{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
+				<p class="award-individual__text">Award Winning Projects:
+					{% for entry in relatedProject %}
+						<span class="award-individual__associated-project">
+							<a href="{{ entry.url }}">{{ entry.title }}</a>
+						</span>
+					{% endfor %}
+				</p>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</div>
+
+	
 {% endblock %}
