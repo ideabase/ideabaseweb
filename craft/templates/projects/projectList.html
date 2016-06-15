@@ -3,7 +3,6 @@
 
 {% extends "_layout" %}
 
-
 {% block content %}
 {% include '_includes/_background-images.html' %}
 <section class="section-header section-header--interior">
@@ -11,7 +10,6 @@
 		<h1 class="section-header__title">{{ entry.projectHeadline }}</h1>
 	</div>
 </section>	
-
 
 {% set projectCategory = craft.categories.group('projectType') %}
 {% set Project = craft.entries.section('ideabaseProjects').order('title').limit(null) %}
@@ -34,32 +32,36 @@
 			
     		{% for entry in Project %}
     		<li class="project-list__item">
-					<a href="{{ entry.url }}">
-						{% set asset = entry.projectPicture %}
-						{% if asset|length %}
-							{% for asset in entry.projectPicture.limit(1) %}
-									<div class="project-list__item__image">
-							     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
-							     	</div>
-							     	{% endfor %}
-							     	{% else %}
-							     	<div class="project-list__item__image">
-							     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-							     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
-							     	     {% endfor %}
-							     	</div>
-						    {% endif %}
+				<a href="{{ entry.url }}">
+					{% set asset = entry.projectPicture %}
+					{% if asset|length %}
+						{% for asset in entry.projectPicture.limit(1) %}
+							<div class="project-list__item__image">
+								{% if entry.awardWinner %}
+									{% for asset in awardIcons.trophyBadgeIcon %}
+										<img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+						            {% endfor %}
+					            {% endif %}
+					     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+					     	</div>
+					     {% endfor %}
+					     {% else %}
+					     	<div class="project-list__item__image">
+					     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
+					     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+					     	     {% endfor %}
+					     	</div>
+					    {% endif %}
 
-			     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
+		     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
 
-						{% for entry in entry.forWhichClient %}
-        					<h3 class="project-list__item__client">{{ entry.title }}</h3>
-      					{% endfor %}
-						</a>	
-						</li>
+					{% for entry in entry.forWhichClient %}
+    					<h3 class="project-list__item__client">{{ entry.title }}</h3>
+  					{% endfor %}
+					</a>	
+				</li>
    			{% endfor %}
-   			
   		</ul>
 	</section>
-	</div>
-	{% endblock %}
+</div>
+{% endblock %}
