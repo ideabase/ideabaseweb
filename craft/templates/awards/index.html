@@ -3,7 +3,6 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
 
 {% block content %}
 
@@ -15,24 +14,33 @@
 
 <div class="panel-primary-container">
 	<section class="panel-primary awards">
-		<ul class="award-list">
-			{% for entry in craft.entries.section('ideabaseAwards').order('awardDateAwarded desc') %}
-			<li class="award-individual">
-				<h5 class="award-individual__date">{{ entry.awardDateAwarded | date('M j, Y') }}</h5>
-				<h3 class="award-individual__title">
-					<a href="{{ entry.url }}">{{ entry.title }}</a>
-				</h3>
-				{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
-				<p class="award-individual__text">Award Winning Projects:
-					{% for entry in relatedProject %}
-						<span class="award-individual__associated-project">
-							<a href="{{ entry.url }}">{{ entry.title }}</a>
-						</span>
-					{% endfor %}
-				</p>
-			</li>
-			{% endfor %}
-		</ul>
+
+		{% set awardList = craft.entries.section('ideabaseAwards').order('awardDateAwarded desc').find() %}
+		{% set awardListByYear = awardList|group('awardDateAwarded.year') %}
+
+		{% for year, entriesInYear in awardListByYear %}
+		    <h2>{{ year }}</h2>
+
+			<ul class="award-list">
+				{% for entry in entriesInYear %}
+				<li class="award-individual">
+					<h5 class="award-individual__date">{{ entry.awardDateAwarded | date('Y') }}</h5>
+					<h3 class="award-individual__title">
+						<a href="{{ entry.url }}">{{ entry.title }}</a>
+					</h3>
+					{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
+					<p class="award-individual__text">Award Winning Projects:
+						{% for entry in relatedProject %}
+							<span class="award-individual__associated-project">
+								<a href="{{ entry.url }}">{{ entry.title }}</a>
+							</span>
+						{% endfor %}
+					</p>
+				</li>
+				{% endfor %}
+			</ul>
+
+		{% endfor %}
 	</section>
 </div>
 
