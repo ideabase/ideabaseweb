@@ -539,6 +539,10 @@
 }
 
 .project-list__item__image {
+  // delete this, for testing only
+  background: #999;
+  height: 200px;
+  //
   position: relative;
   z-index: 50;
   display: block;
