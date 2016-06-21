@@ -6,9 +6,17 @@
   margin-bottom: 1.5em;
 }
 
+.award-year__group {margin: 2em 0 4em}
+
+.award-year {
+  padding-bottom: .5em;
+  border-bottom: solid 2px #ddd;
+  color: $darkgray;
+}
+
 .award-list {
-  margin-top: 2em;
-  margin-bottom: 0;
+  margin-top: 1em;
+  margin-bottom: 2em;
   padding: 0;
   list-style-type: none;
 }
