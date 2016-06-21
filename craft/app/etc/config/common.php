@@ -128,6 +128,7 @@ $configArray = array(
 		'app.etc.db.schemas.MysqlSchema',
 		'app.etc.elements.ElementRelationParamParser',
 		'app.etc.errors.DbConnectException',
+		'app.etc.errors.EmailTestException',
 		'app.etc.errors.ErrorException',
 		'app.etc.errors.ErrorHandler',
 		'app.etc.errors.EtException',
