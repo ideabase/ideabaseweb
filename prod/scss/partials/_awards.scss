@@ -1,14 +1,18 @@
 // Awards
 
-.awards {text-align: left}
+.awards {
+  text-align: left;
+  padding-bottom: 1em;
+}
 .award-individual__text {
   color:$darkgray;
   margin-bottom: 1.5em;
 }
 
-.award-year__group {margin: 2em 0 4em 0}
+.award-year__group {padding-top: 1em}
 
 .award-year {
+  margin-top: 0;
   padding-bottom: .5em;
   border-bottom: solid 2px #ddd;
   color: $darkgray;
