@@ -12,7 +12,7 @@
 </section>	
 
 {% set projectCategory = craft.categories.group('projectType') %}
-{% set Project = craft.entries.section('ideabaseProjects').order('title').limit(null) %}
+{% set Project = craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').order('title').limit(null) %}
 <div class="panel-primary-container">
 	<div class="project-category">
 		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
