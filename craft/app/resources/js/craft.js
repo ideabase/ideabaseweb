@@ -6515,10 +6515,11 @@ Craft.AssetSelectorModal = Craft.BaseElementSelectorModal.extend(
 		{
 			allowTransforms = true;
 
-				for (var i = 0; i < $selectedElements.length; i++)
+			for (var i = 0; i < $selectedElements.length; i++)
 			{
 				if (!$('.element.hasthumb:first', $selectedElements[i]).length)
 				{
+					allowTransforms = false;
 					break;
 				}
 			}
@@ -11843,6 +11844,10 @@ Craft.Grid = Garnish.Base.extend(
 	itemHeights: null,
 	leftPadding: null,
 
+	_refreshingCols: false,
+	_refreshColsAfterRefresh: false,
+	_setItems: null,
+
 	init: function(container, settings)
 	{
 		this.$container = $(container);
@@ -11919,6 +11924,13 @@ Craft.Grid = Garnish.Base.extend(
 
 	refreshCols: function(force, animate)
 	{
+		if (this._refreshingCols) {
+			this._refreshColsAfterRefresh = true;
+			return;
+		}
+
+		this._refreshingCols = true;
+
 		if (!this.items.length)
 		{
 			return;
@@ -12239,7 +12251,12 @@ Craft.Grid = Garnish.Base.extend(
 
 		// Resume container resize listening
 		this.addListener(this.$container, 'resize', this.handleContainerHeightProxy);
-	},
+		this._refreshingCols = false;
+		if (this._refreshColsAfterRefresh) {
+			this._refreshColsAfterRefresh = false;
+			this.refreshCols();
+		}
+	} ,
 
 	getItemWidth: function(colspan)
 	{
@@ -16391,7 +16408,7 @@ Craft.ui =
 
 		if (config.showCharsLeft && config.maxlength)
 		{
-			$input.css('padding-'(Craft.orientation == 'ltr' ? 'right' : 'left'), (7.2*config.maxlength.toString().length+14)+'px');
+			$input.css('padding-'+(Craft.orientation == 'ltr' ? 'right' : 'left'), (7.2*config.maxlength.toString().length+14)+'px');
 		}
 
 		if (config.placeholder || config.showCharsLeft)
