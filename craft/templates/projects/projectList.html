@@ -29,8 +29,7 @@
 	</div>
 	<section class="section-projects-all panel-primary-wide">
 		<ul class="project-list">
-			
-    		{% for entry in Project %}
+		{% for entry in Project %}
     		<li class="project-list__item">
 				<a href="{{ entry.url }}">
 					{% set asset = entry.projectPicture %}

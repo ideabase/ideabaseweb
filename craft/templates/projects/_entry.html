@@ -67,6 +67,8 @@
       {% if relatedAward | length %}
       <div class="project-single__info">
         <div class="project-entry__description__award project-entry__description__award--project-single">
+        
+        <a href="{{ siteUrl }}/awards">
           {% for entry in relatedAward %}
               {% for asset in awardIcons.trophyIcon %}
                 <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
@@ -79,6 +81,7 @@
               
 
           {% endfor %}
+          </a>
         </div>
       </div>
       {% endif %}
