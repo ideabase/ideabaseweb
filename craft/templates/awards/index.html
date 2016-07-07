@@ -15,14 +15,14 @@
 
 <div class="panel-primary-container">
 	<section class="panel-primary awards">
-		{% set awardList = craft.entries.section('ideabaseAwards').order('awardDateAwarded desc').find() %}
-		{% set awardListByYear = awardList|group('awardDateAwarded.year') %}
+		{% set awardList = craft.entries.section('ideabaseAwards').order("postDate desc").find() %}
+		{% set awardListByYear = awardList|group("postDate|date('Y')") %}
 		{% for year, entriesInYear in awardListByYear %}
-		<article class="award-year__group">
-		    <h3 class="award-year">{{ year }}</h3>
-			<ul class="award-list">
-				{% for entry in entriesInYear %}
-					{% set awardCategories = craft.categories.relatedTo(entry) %}
+			<article class="award-year__group">
+			    <h3 class="award-year">{{ year }}</h3>
+				<ul class="award-list">
+					{% for entry in entriesInYear %}
+						{% set awardCategories = craft.categories.group('awardType').relatedTo(entry) %}
 						<li class="award-individual">
 							{% for category in awardCategories %}
 								<h3 class="award-individual__title">
@@ -38,9 +38,9 @@
 								{% endfor %}
 							</p>
 						</li>
-				{% endfor %}
-			</ul>
-		</article>
+					{% endfor %}
+				</ul>
+			</article>
 		{% endfor %}
 	</section>
 </div>
