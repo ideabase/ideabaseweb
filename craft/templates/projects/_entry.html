@@ -70,8 +70,14 @@
           {% for entry in relatedAward %}
               {% for asset in awardIcons.trophyIcon %}
                 <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
-              {% endfor %} 
-              <p>{{ entry.title }}</p>
+              {% endfor %}
+
+              {% set awardContributor = craft.categories.group('awardContributor') %}
+              {% for category in awardContributor %}
+                <p>{{ entry.postDate.year }} {{ category.title }}</p>
+              {% endfor %}
+              
+
           {% endfor %}
         </div>
       </div>
