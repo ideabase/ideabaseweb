@@ -17,6 +17,12 @@
 </head>
 
 <body>
+    {% if entry is defined %}
+      {% set config = {
+        entry: entry,
+      } %}
+      {{ craft.adminbar.bar(config) }}
+    {% endif %}
 		{% include 'global/header.html' %}
 		<main id="content" role="main">
 			{% block content %}

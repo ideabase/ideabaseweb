@@ -42,7 +42,7 @@ margin-top: .5em;
     margin-top: 1.1em;
     height: 90px;
   }
-  nav {
+  nav[role="navigation"] {
     width: 59%;
     text-align: right;
     float: right;
@@ -59,7 +59,7 @@ margin-top: .5em;
 }
 
 @media screen and (max-width: 600px) {
-  .js nav {
+  .js nav[role="navigation"] {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in;
@@ -112,7 +112,7 @@ margin-top: .5em;
     }
   }
 
-nav {
+nav[role="navigation"] {
   transition: max-height 0.05s ease-out;
   a {
     color: $blue;
@@ -141,7 +141,7 @@ nav {
 
 // Styles Specific to Mobile Dropdown Menu //
 @media screen and (max-width: 600px) {
-  .js .nav--show {
+  .js nav[role="navigation"].nav--show {
     max-height: 20em;
     background-color: $blue;
     padding-top: 1.25em;
@@ -196,7 +196,7 @@ nav {
 
 // Navigation List Items //
 
-nav li {
+nav[role="navigation"] li {
   list-style-type: none;
   font-family: $mont;
   font-weight: 700;
