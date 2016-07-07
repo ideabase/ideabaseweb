@@ -197,7 +197,7 @@
   }
 	&[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg);
-  } 
+  }
 }
 
 .footer-info__legal {
@@ -211,7 +211,7 @@
 }
 
 .footer-info__logo {
-  width: 125px;
+  width: 225px;
   display: block;
   margin: 0 auto;
   margin-bottom: 1em;
@@ -219,13 +219,12 @@
   img {
     margin-bottom: 0;
     padding-bottom: 0;
-    height: 65px;
   }
   @media screen and (min-width: 900px) {
     float: right;
     display: inline-block;
-    width: 150px;
-    margin-top: -5px;
+    width: 220px;
+    margin-top: -10px;
   }
 }
 
