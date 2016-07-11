@@ -5,15 +5,17 @@
   background-position: center;
   padding: 4em 0em;
   position: relative;
+  background-color: lighten($blue,10%);
+  background-blend-mode: multiply;
   &:after {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	background-color: rgba(darken($blue, 10%),.75);
-  	top: 0;
-  	left: 0;
-  	display: block;
-  	content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: darken(rgba($blue,.3),15%);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
   }
   @media screen and (min-width: 500px) {
     padding: 5em 0em;
@@ -42,23 +44,13 @@
   justify-content: center;
 }
 
-.backgroundblendmode .section-header {
-  background-color: lighten($blue,10%);
-  background-blend-mode: multiply;
-  &:after {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: darken(rgba($blue,.3),15%);
-    top: 0;
-    left: 0;
-    display: block;
-    content: "";
-  }
-}
-
 .section-header--interior {
   background-position: center;
+  background-blend-mode: overlay;
+  background-color: rgba(26, 95, 171, 1);
+  &:after {
+    background-color: darken(rgba($blue,.35),20%) !important;
+  }
   @media screen and (min-width: 500px) {
     padding: 2em 2em;
   }
@@ -75,11 +67,16 @@
   }
 }
 
-.backgroundblendmode .section-header--interior {
-  background-blend-mode: overlay !important;
-  background-color: rgba(26, 95, 171, 1);
+.no-backgroundblendmode .section-header, .no-backgroundblendmode .section-header--interior {
   &:after {
-    background-color: darken(rgba($blue,.35),20%) !important;
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	background-color: rgba(darken($blue, 10%),.75);
+  	top: 0;
+  	left: 0;
+  	display: block;
+  	content: "";
   }
 }
 
