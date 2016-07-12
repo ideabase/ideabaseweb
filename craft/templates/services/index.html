@@ -11,12 +11,12 @@ Process Template
 		  <h1 class="section-header__title">{{ entry.processHeader }}</h1>
     </div>
   </section>
-  
+
   <div class="panel-primary-container">
   <section class="section-introduction panel-primary">
 		<div class="introduction">{{ entry.processDescription }}</div>
   </section>
-  </div>  
+  </div>
 		<!--
     <div class="service-index__image">
 
@@ -54,7 +54,7 @@ Process Template
           <p class="service-index__description">{{ block.homeProcessDescription }}</p>
              <ul class="service-index__examples">
               {% for row in block.homeProcessExampleTable %}
-                  <li class="service-index__examples__item">{{ row.examples }}</li> 
+                  <li class="service-index__examples__item">{{ row.examples }}</li>
               {% endfor %}
             </ul>
   </div>
@@ -65,6 +65,14 @@ Process Template
     </div>
 </section>
 </div>
+{% if entry.video | length %}
+<section class="section-body-video panel-primary">
+  <figure class="section-body-video__figure video-container">
+    {{ entry.video|videoEmbed }}
+  <figcaption class="section-body-image__caption">{{ entry.caption }}</figcaption>
+  </figure>
+</section>
+{% endif %}
 
     <div class="panel-secondary-container panel-background-image">
       <section class="section-price panel-secondary">
@@ -89,7 +97,6 @@ Process Template
 		<cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
     {% endfor %}
 </section>
-</div>    
+</div>
 
 {% endblock %}
-
