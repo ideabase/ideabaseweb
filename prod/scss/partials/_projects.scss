@@ -343,6 +343,8 @@
 
 .project-single__video {
   margin-bottom: 1.5em;
+  width: 90%;
+  max-width: 600px;
 }
 
 .project-single__images {
@@ -446,7 +448,7 @@
     font-weight: 600;
   }
   @media screen and (min-width: 600px) {
-    margin-top: 5.5em;    
+    margin-top: 5.5em;
     margin-left: auto;
   }
 }
@@ -765,5 +767,13 @@
 .section-projects-all-button {
   @media screen and (min-width: 800px) {
     margin-top: -1em;
+  }
+}
+
+.blog-teaser__link.blog-teaser__link--project {
+  font-size: 1.05em;
+  margin-top: .5em;
+  &:after {
+    height: 11px;
   }
 }
