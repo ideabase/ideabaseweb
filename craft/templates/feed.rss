@@ -46,7 +46,7 @@
                           {% if entry.blogFeaturedImage | length %}
                               {% for asset in entry.blogFeaturedImage %}
                               <figure>
-                                <img class="blog__entry__image" srcset="{{ asset.getUrl('featureImageLarge') }}" alt= "{{ asset.title}}">
+                                <img class="blog__entry__image" src="{{ asset.getUrl('featureImageLarge') }}" alt= "{{ asset.title}}">
                               </figure>
                               {% endfor %}
                           {% endif %}
@@ -63,30 +63,24 @@
 
                                 {% set image = block.image.first() %}
                                 {% if image %}
-                                  <section class="section-body-image panel-primary">
-                                    <figure class="section-body-image__figure">
+                                    <figure>
                                       <img class="section-body-image__image" src="{{ image.getUrl('basicPageImage') }}" alt="{{ image.title }}" />
-                                      <figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
+                                      <figcaption>{{ image.caption }}</figcaption>
                                     </figure>
-                                  </section>
                                 {% endif %}
 
                             {% elseif block.type == "video" %}
 
-                            <section class="section-body-video panel-primary">
-                              <figure class="section-body-video__figure video-container">
+                              <figure>
                                 {{ block.videoUrl|videoEmbed }}
-                                <figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
+                                <figcaption>{{ block.videoCaption }}</figcaption>
                               </figure>
-                            </section>
 
                             {% elseif block.type == "pullQuote" %}
 
-                                <section class="testimonial-entry panel-primary">
-                                    <blockquote class="testimonial-entry__text">{{ block.pullQuote }}
+                                    <blockquote>{{ block.pullQuote }}
                                     </blockquote>
-                                    <cite class="testimonial-entry__author">{{ block.pullQuoteAuthor }}</cite>
-                                </section>
+                                    <cite>{{ block.pullQuoteAuthor }}</cite>
 
                             {% endif %}
 
