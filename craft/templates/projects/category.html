@@ -35,7 +35,7 @@
 	</div>
 </section>	
 {% set projectCategory = craft.categories.group('projectType') %}
-{% set Project = craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').order('title').limit(null) %}
+{% set Project = craft.entries.section('ideabaseProjects').order('title').limit(null) %}
 
 <div class="panel-primary-container">
 	<div class="project-category">
@@ -55,7 +55,7 @@
 		<ul class="project-list">
 			
 
-{% for entry in craft.entries.section('ideabaseProjects').relatedTo(category) %}
+{% for entry in craft.entries.section('ideabaseProjects')archivedProject(' not 1 ').relatedTo(category) %}
     		<li class="project-list__item">
 					<a href="{{ entry.url }}">
 						{% set asset = entry.projectPicture %}
