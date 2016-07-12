@@ -66,6 +66,9 @@
                                     <cite>{{ block.pullQuoteAuthor }}</cite>
                             {% endif %}
                         {% endfor %}
+                        <footer>
+                        <small>© IdeaBase and Kent State University College of Communication and Information</small>
+                        </footer>
                         </article>
                       </body>
                       </html>
