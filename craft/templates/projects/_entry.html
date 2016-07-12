@@ -44,7 +44,7 @@
           </div>
       {% endif %}
       {% if entry.projectUrl | length %}
-      <a href="{{ entry.projectUrl }}" class="blog-teaser__link blog-teaser__link--project">View the Project</a>
+      <a href="{{ entry.projectUrl }}" class="blog-teaser__link blog-teaser__link--project">View {{ entry.title }}</a>
       {% endif %}
     </article>
     <aside class="project-single__aside">
