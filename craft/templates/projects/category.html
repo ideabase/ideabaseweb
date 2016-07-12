@@ -55,7 +55,7 @@
 		<ul class="project-list">
 			
 
-{% for entry in craft.entries.section('ideabaseProjects').relatedTo(category) %}
+{% for entry in craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').relatedTo(category) %}
     		<li class="project-list__item">
 					<a href="{{ entry.url }}">
 						{% set asset = entry.projectPicture %}
