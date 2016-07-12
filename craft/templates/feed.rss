@@ -51,39 +51,23 @@
                               {% endfor %}
                           {% endif %}
                         </header>
-
-                        {{ entry.blogContent}}
-
+                        {{ entry.blogContent }}
                         {% for block in entry.blogPostContent %}
-
                             {% if block.type == "text" %}
                                 {{ block.text }}
-
                             {% elseif block.type == "image" %}
-
                                 {% set image = block.image.first() %}
                                 {% if image %}
                                     <figure>
-                                      <img class="section-body-image__image" src="{{ image.getUrl('basicPageImage') }}" alt="{{ image.title }}" />
+                                      <img src="{{ image.getUrl('basicPageImage') }}" alt="{{ image.title }}" />
                                       <figcaption>{{ image.caption }}</figcaption>
                                     </figure>
                                 {% endif %}
-
-                            {% elseif block.type == "video" %}
-
-                              <figure>
-                                {{ block.videoUrl|videoEmbed }}
-                                <figcaption>{{ block.videoCaption }}</figcaption>
-                              </figure>
-
                             {% elseif block.type == "pullQuote" %}
-
                                     <blockquote>{{ block.pullQuote }}
                                     </blockquote>
                                     <cite>{{ block.pullQuoteAuthor }}</cite>
-
                             {% endif %}
-
                         {% endfor %}
                         </article>
                       </body>
