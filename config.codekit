@@ -26305,6 +26305,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/1f\/1f3b25df4f8486ebb15ff5a763b83e4f9ab5ccb1c1d0473f723c43391e4acc3d.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1f\/1f3b25df4f8486ebb15ff5a763b83e4f9ab5ccb1c1d0473f723c43391e4acc3d.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/1f\/1f87253c2ed615f6fb7ba697c28a7e29f366700dd6c28750611ddde9224894bf.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1f\/1f87253c2ed615f6fb7ba697c28a7e29f366700dd6c28750611ddde9224894bf.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/21\/213d14cb561e2ca8fa115cf12071a8c688922cd9ddfb3e08abde5763583abdbe.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -26391,6 +26409,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/2e\/2e3b0e98faa43ac2d1e831f102f8df49f795a44904476f5b5a2d4bef78593ea6.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/2f\/2f84622fb22d6d1961f792bb23b5e3554e4e2f7ea0f4ad76dc71ddec23348356.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/2f\/2f84622fb22d6d1961f792bb23b5e3554e4e2f7ea0f4ad76dc71ddec23348356.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -26508,6 +26535,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3e\/3eadf1a572bbb5cdf83ea5ed6f9d09f11fbf7f2938d9d0eb6f4d4b4ed8d58115.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/3f\/3fc98f6b78113af47febc5d5eb87621ae8efbb19e6430bd2d4aee7be031bd686.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3f\/3fc98f6b78113af47febc5d5eb87621ae8efbb19e6430bd2d4aee7be031bd686.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -26701,6 +26737,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/68\/681e8f749b4eee7c91738ed281aef901d1c7122888e010e4b095af1dc7e81e81.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/68\/681e8f749b4eee7c91738ed281aef901d1c7122888e010e4b095af1dc7e81e81.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/6a\/6a932d0df39167e487ed99cf168298d1895b24bfbf7688fb9bfc5303cf0a21bc.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -26881,6 +26926,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/81\/814a36ebb6c77f1c8cf0d5de903fef4144fef714df94466a9292b7f48841721f.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/81\/814a36ebb6c77f1c8cf0d5de903fef4144fef714df94466a9292b7f48841721f.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/81\/819c8934487ad1b35ec58b5014f988ee8fbc507297384363276e92b014e14781.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -26931,6 +26985,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/83\/83de74f95e870b512ba214da624f3cc651e262c936dc740f42a9063398bda092.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/85\/85a1889fca2aaba359a3c38ae64ef45b42793a0ef48367562ffb97730de0c437.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/85\/85a1889fca2aaba359a3c38ae64ef45b42793a0ef48367562ffb97730de0c437.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -27178,6 +27241,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/b0\/b026d0d2d6628038cef4f1ab6af5b809ffc0b4dd2326ec0281ae710ead78ef10.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/b0\/b026d0d2d6628038cef4f1ab6af5b809ffc0b4dd2326ec0281ae710ead78ef10.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/b2\/b2ea4c456750745bcefa312adff3f2156dc9e5a67e4b076beb148a8568ca573f.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -27259,6 +27331,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/c1\/c14f71aaf2c89ce81cec9016ac89066ce9a1aac623d63af13eecd65a4492ead8.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/c1\/c14f71aaf2c89ce81cec9016ac89066ce9a1aac623d63af13eecd65a4492ead8.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/c4\/c41b4b57e520936b9ea26eda3dba149965706bcd26a26dbde780e9c66b76fb61.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -27282,6 +27363,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/c5\/c57ebc1a74e408a9bc32ae5ef881e336369c4edbda2b42e69b915b16c7252e0b.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/c5\/c58fe6c079212de2a85441764e2eca05eed68276cf04229814b9ea356da02af4.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/c5\/c58fe6c079212de2a85441764e2eca05eed68276cf04229814b9ea356da02af4.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -27318,6 +27408,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/cd\/cde7d8605d93bfe45e00323eb86ad6c546bc707950647c647fc8b0a1ac72b644.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/ce\/ce9e685cb07b32209d382dd079c814837b5cb3c4028d1cf07aef028ad78478db.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/ce\/ce9e685cb07b32209d382dd079c814837b5cb3c4028d1cf07aef028ad78478db.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -27867,6 +27966,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/templates\/projects\/_entry.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/templates\/projects\/category.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/templates\/projects\/category.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
