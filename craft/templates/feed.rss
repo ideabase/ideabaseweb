@@ -38,9 +38,6 @@
                           {% for entry in entry.blogAuthor %}
                             <address>
                               <a href="{{ entry.url }}">{{ entry.title }}</a>
-                              {% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
-                        			{% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
-                        	    		{{ firstBioParagraph|raw }}
                             </address>
                           {% endfor %}
                           {% if entry.blogFeaturedImage | length %}
