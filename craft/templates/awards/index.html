@@ -7,16 +7,16 @@
 {% block content %}
 <style type="text/css">
 		.awards.section-header { 
-			{% if headerImages.aboutImage | length %}
-			    {% for asset in headerImages.aboutImage %}
+			{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageSmall') }});
 			    {% endfor %}
 			{% endif %}
 		}
 		@media screen and (min-width: 600px) {
 			.awards.section-header  {
-				{% if headerImages.aboutImage | length %}
-			    {% for asset in headerImages.aboutImage %}
+				{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageMedium') }});
 			    {% endfor %}
 			{% endif %}
@@ -24,8 +24,8 @@
 		}
 		@media screen and (min-width: 1000px) {
 			.awards.section-header  {
-				{% if headerImages.aboutImage | length %}
-			    {% for asset in headerImages.aboutImage %}
+				{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageLarge') }});
 			    {% endfor %}
 			{% endif %}
