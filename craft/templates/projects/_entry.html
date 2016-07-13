@@ -74,8 +74,8 @@
                 <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
               {% endfor %}
 
-              {% set awardContributor = craft.categories.group('awardContributor') %}
-              {% for category in awardContributor %}
+              {% set awardName = craft.categories.group('awardName') %}
+              {% for category in awardName %}
                 <p>{{ entry.postDate.year }} {{ category.title }}</p>
               {% endfor %}
 
