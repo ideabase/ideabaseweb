@@ -25,9 +25,7 @@
 						{% set awardCategories = craft.categories.group('awardType').relatedTo(entry) %}
 						<li class="award-individual">
 							{% for category in awardCategories %}
-								<h3 class="award-individual__title">
-									<a href="{{ category.awardUrl }}">{{ category.title }}</a>
-								</h3>
+								<h3 class="award-individual__title">{{ category.title }}</h3>
 							{% endfor %}
 							<p class="award-individual__text">
 								{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
