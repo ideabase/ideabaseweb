@@ -58,7 +58,11 @@
 								{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
 								{% for entry in relatedProject %}
 									<span class="award-individual__associated-project">
+									{% if entry.archivedProject %}
+										{{ entry.title }}
+									{% else %}
 										<a href="{{ entry.url }}">{{ entry.title }}</a>
+									{% endif %}
 									</span>
 								{% endfor %}
 							</p>

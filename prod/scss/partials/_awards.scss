@@ -43,8 +43,12 @@
   color: $blue;
 }
 
-.award-individual__associated-project a {
+.award-individual__associated-project {
   color: $blue;
+}
+
+.award-individual__associated-project a, {
+  color: inherit;
   text-decoration: none;
   position: relative;
   &:hover, &:focus {
