@@ -571,7 +571,8 @@
 .trophy-icon {
   height:38px;width:38px;
   position: absolute;
-  top: 2px;left: 2px;
+  z-index: 100;
+  top: -12px;left: -12px;
   background: white;
   border-radius: 50%;
 }
