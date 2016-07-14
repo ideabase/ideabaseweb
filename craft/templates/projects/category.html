@@ -28,7 +28,6 @@
 			}
 		}
 </style>
-{% include '_includes/_background-images.html' %}
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
 		<h1 class="section-header__title">IdeaBase Work: {{ category.title }}</h1>
@@ -54,31 +53,37 @@
 	<section class="section-projects-all panel-primary-wide">
 		<ul class="project-list">
 			
-
-{% for entry in craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').relatedTo(category) %}
+		{% for entry in craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').relatedTo(category) %}
     		<li class="project-list__item">
-					<a href="{{ entry.url }}">
-						{% set asset = entry.projectPicture %}
-						{% if asset|length %}
-							{% for asset in entry.projectPicture.limit(1) %}
-				     			<div class="project-list__item__image"><img class="" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}"></div>
-				     		{% endfor %}
-				     		{% else %}
-				     		<div class="project-list__item__image">
-				     		     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-				     		     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
-				     		     {% endfor %}
-				     	{% endif %}
-			     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
+				<a href="{{ entry.url }}">
+					{% set asset = entry.projectPicture %}
+					{% if asset|length %}
+						{% for asset in entry.projectPicture.limit(1) %}
+			     			<div class="project-list__item__image">
+			     				{% if entry.awardWinner %}
+									{% for asset in awardIcons.trophyBadgeIcon %}
+										<img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+						            {% endfor %}
+					            {% endif %}
+			     				<img class="" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+			     			</div>
+			     		{% endfor %}
+			     		{% else %}
+			     		<div class="project-list__item__image">
+			     		     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
+			     		     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+			     		     {% endfor %}
+			     	{% endif %}
+		     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
 
-						{% for entry in entry.forWhichClient %}
-        					<h3 class="project-list__item__client">{{ entry.title }}</h3>
-        				{% endfor %}	
-					</a>	
+					{% for entry in entry.forWhichClient %}
+    					<h3 class="project-list__item__client">{{ entry.title }}</h3>
+    				{% endfor %}	
+				</a>	
 			</li>
    		
-{% endfor %}
-</ul>
+		{% endfor %}
+		</ul>
 	</section>
 </div>
 {% endblock %}
