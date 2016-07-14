@@ -5,8 +5,35 @@
 {% extends "_layout" %}
 
 {% block content %}
+<style type="text/css">
+		.awards.section-header { 
+			{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
+			        background-image: url({{ asset.getUrl('featureImageSmall') }});
+			    {% endfor %}
+			{% endif %}
+		}
+		@media screen and (min-width: 600px) {
+			.awards.section-header  {
+				{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
+			        background-image: url({{ asset.getUrl('featureImageMedium') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
+		@media screen and (min-width: 1000px) {
+			.awards.section-header  {
+				{% if headerImages.awardHeaderImage | length %}
+			    {% for asset in headerImages.awardHeaderImage %}
+			        background-image: url({{ asset.getUrl('featureImageLarge') }});
+			    {% endfor %}
+			{% endif %}
+			}
+		}
+</style>
 
-<section class="section-header section-header--interior">
+<section class="awards section-header section-header--interior">
 	<div class="section-header__container">
 		<h1 class="section-header__title">Awards</h1>
 	</div>
@@ -25,15 +52,17 @@
 						{% set awardCategories = craft.categories.group('awardType').relatedTo(entry) %}
 						<li class="award-individual">
 							{% for category in awardCategories %}
-								<h3 class="award-individual__title">
-									<a href="{{ category.awardUrl }}">{{ category.title }}</a>
-								</h3>
+								<h3 class="award-individual__title">{{ category.title }}</h3>
 							{% endfor %}
 							<p class="award-individual__text">
 								{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
 								{% for entry in relatedProject %}
 									<span class="award-individual__associated-project">
+									{% if entry.archivedProject %}
+										{{ entry.title }}
+									{% else %}
 										<a href="{{ entry.url }}">{{ entry.title }}</a>
+									{% endif %}
 									</span>
 								{% endfor %}
 							</p>

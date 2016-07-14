@@ -1,6 +1,6 @@
 // Awards
 
-.awards {
+.panel-primary.awards {
   text-align: left;
   padding-bottom: 1em;
 }
@@ -34,8 +34,8 @@
 
 .award-individual__title {margin-top: 0}
 
-.award-individual__title a {
-  font-size: 1.2em;
+.award-individual__title {
+  font-size: 1.8em;
   font-weight: bold;
   margin-bottom: .25em;
   line-height: 1.2;
@@ -43,8 +43,12 @@
   color: $blue;
 }
 
-.award-individual__associated-project a {
+.award-individual__associated-project {
   color: $blue;
+}
+
+.award-individual__associated-project a, {
+  color: inherit;
   text-decoration: none;
   position: relative;
   &:hover, &:focus {

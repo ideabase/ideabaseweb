@@ -36,7 +36,8 @@
 					{% if asset|length %}
 						{% for asset in entry.projectPicture.limit(1) %}
 							<div class="project-list__item__image">
-								{% if entry.awardWinner %}
+								{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
+        						{% if relatedAward | length %}
 									{% for asset in awardIcons.trophyBadgeIcon %}
 										<img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
 						            {% endfor %}

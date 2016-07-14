@@ -571,9 +571,11 @@
 .trophy-icon {
   height:38px;width:38px;
   position: absolute;
-  top: 2px;left: 2px;
+  z-index: 100;
+  top: -12px;left: -12px;
   background: white;
   border-radius: 50%;
+  box-shadow: 2px 2px 12px -3px rgba(0, 0, 0, 0.3);
 }
 
 .project-list__item__description p {

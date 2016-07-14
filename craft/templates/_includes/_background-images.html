@@ -25,16 +25,16 @@
 			}
 		}
 		.blog.section-header { 
-			{% if blogHeader.aboutImage | length %}
-			    {% for asset in blogHeader.aboutImage %}
+			{% if headerImages.blogHeaderImage | length %}
+			    {% for asset in headerImages.blogHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageSmall') }});
 			    {% endfor %}
 			{% endif %}
 		}
 		@media screen and (min-width: 600px) {
 			.blog.section-header {
-				{% if blogHeader.aboutImage | length %}
-			    {% for asset in blogHeader.aboutImage %}
+				{% if headerImages.blogHeaderImage | length %}
+			    {% for asset in headerImages.blogHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageMedium') }});
 			    {% endfor %}
 			{% endif %}
@@ -42,8 +42,8 @@
 		}
 		@media screen and (min-width: 1000px) {
 			.blog.section-header {
-				{% if blogHeader.aboutImage | length %}
-			    {% for asset in blogHeader.aboutImage %}
+				{% if headerImages.blogHeaderImage | length %}
+			    {% for asset in headerImages.blogHeaderImage %}
 			        background-image: url({{ asset.getUrl('featureImageLarge') }});
 			    {% endfor %}
 			{% endif %}
