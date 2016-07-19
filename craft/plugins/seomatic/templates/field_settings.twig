@@ -236,6 +236,15 @@
         }) }}
     </div>
 
+    {{ forms.selectField({
+        label: "Default SEO Image Transform"|t,
+        instructions: "Set the default image transform to apply to the Site SEO Image."|t,
+        id: "seoImageTransform",
+        options: transformsList,
+        name: "seoImageTransform",
+        value: settings.seoImageTransform,
+    }) }}
+
 <!-- twitterCardType -->
 
     {{ forms.selectField({
@@ -258,6 +267,15 @@
         on: settings.twitterCardTypeChangeable,
     }) }}
 
+    {{ forms.selectField({
+        label: "Default Twitter Image Transform"|t,
+        instructions: "Set the default image transform to apply to the Twitter SEO Image.  Twitter recommends: 120 x 120 pixels minimum size, 1:1 aspect ratio, 1mb max size for Summary Card images, and 280x150 pixels minimum size, 1.86:1 aspect ratio, 1mb max size for Summary Card with Large Image images."|t,
+        id: "seoTwitterImageTransform",
+        options: transformsList,
+        name: "seoTwitterImageTransform",
+        value: settings.seoTwitterImageTransform,
+    }) }}
+
 <!-- openGraphType -->
 
     {{ forms.selectField({
@@ -278,6 +296,15 @@
         name: 'openGraphTypeChangeable',
         instructions: "Whether to allow the user to change the Facebook Open Graph Type while editing the entry"|t,
         on: settings.openGraphTypeChangeable,
+    }) }}
+
+    {{ forms.selectField({
+        label: "Default Facebook Image Transform"|t,
+        instructions: "Set the default image transform to apply to the Facebook SEO Image.  Facebook recommends: 1200 x 630 pixels minimum size, 1.9:1 aspect ratio, 8mb max size."|t,
+        id: "seoFacebookImageTransform",
+        options: transformsList,
+        name: "seoFacebookImageTransform",
+        value: settings.seoFacebookImageTransform,
     }) }}
 
 <!-- robots -->

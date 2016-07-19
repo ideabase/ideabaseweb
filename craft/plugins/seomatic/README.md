@@ -47,11 +47,21 @@ Some things to do, and ideas for potential features:
 * [bug] Get the Template Metas implemented with full `locale` support, so the settings can all be per-locale based
 * [bug] Enforce *required fields on the various settings pages in the Admin CP by doing proper validation
 * [bug] The `foundingDate` fields probably should be dateTimeField types on the Settings pages
-* [feature] Add support for `og:image:type`, `og:image:width`, and `og:image:height`
-* [feature] Change the preview to a live preview when editing things in SEOmatic
 * [feature] Provide SiteMap functionality.  Yes, it's SEO-related, but seems like it might be better to keep SEOmatic focused (?)
 
 ## Changelog
+
+### 1.1.24 -- 2016.07.18
+
+* [Added] You can now specify image transforms for your SEO Image, Twitter Image, and Facebook Image for Site Meta, Template Meta, and Entry Metas
+* [Added] Added og:image:type, og:image:width, and og:image:height to the OpenGraph meta
+* [Added] Added support for Breadcrumbs JSON-LD microdata
+* [Improved] the Twig array keys are now quoted in the display preview
+* [Improved] Trimmed the fat on some of the settings storage maxLength's
+* [Added] Added the ability to control the name of the GTM dataLayer variable
+* [Fixed] Added renderGoogleTagManagerScript in config.php
+* [Improved] The GTM script tags are now rendered when `devMode` is on, for debugging GTM
+* [Improved] Updated the README.md
 
 ### 1.1.23 -- 2016.07.08
 

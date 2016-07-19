@@ -1,5 +1,21 @@
 [
     {
+        "version": "1.1.24",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-07-18T11:00:00-11:00",
+        "notes": [
+            "[Added] You can now specify image transforms for your SEO Image, Twitter Image, and Facebook Image for Site Meta, Template Meta, and Entry Metas",
+            "[Added] Added og:image:type, og:image:width, and og:image:height to the OpenGraph meta",
+            "[Added] Added support for Breadcrumbs JSON-LD microdata",
+            "[Improved] the Twig array keys are now quoted in the display preview",
+            "[Improved] Trimmed the fat on some of the settings storage maxLength's",
+            "[Added] Added the ability to control the name of the GTM dataLayer variable",
+            "[Fixed] Added renderGoogleTagManagerScript in config.php",
+            "[Improved] The GTM script tags are now rendered when `devMode` is on, for debugging GTM",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
         "version": "1.1.23",
         "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
         "date": "2016-07-08T11:00:00-11:00",
