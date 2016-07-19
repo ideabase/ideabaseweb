@@ -2,9 +2,9 @@
 namespace Craft;
 
 define('CRAFT_VERSION', '2.6');
-define('CRAFT_BUILD', '2796');
+define('CRAFT_BUILD', '2797');
 define('CRAFT_SCHEMA_VERSION', '2.6.5');
-define('CRAFT_RELEASE_DATE', '1468185197');
+define('CRAFT_RELEASE_DATE', '1468864333');
 define('CRAFT_MIN_BUILD_REQUIRED', '2570');
 define('CRAFT_MIN_BUILD_URL', 'https://download.craftcdn.com/craft/2.1/2.1.2570/Craft-2.1.2570.zip');
 define('CRAFT_TRACK', 'stable');
