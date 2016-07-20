@@ -1,5 +1,17 @@
 [
     {
+        "version": "1.1.25",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-07-19T11:00:00-11:00",
+        "notes": [
+            "[Fixed] Fixed an issue with SEO images not rendering properly via the FieldType",
+            "[Fixed] Fixed a typo that would cause Template Metas to not save properly",
+            "[Improved] Added a fallback if `iconv` is not installed for UTF-8 conversion",
+            "[Improved] Explicitly state that the SEO Image must be in JPG, PNG, or GIF format",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
         "version": "1.1.24",
         "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
         "date": "2016-07-18T11:00:00-11:00",

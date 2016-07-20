@@ -51,6 +51,14 @@ Some things to do, and ideas for potential features:
 
 ## Changelog
 
+### 1.1.25 -- 2016.07.19
+
+* [Fixed] Fixed an issue with SEO images not rendering properly via the FieldType
+* [Fixed] Fixed a typo that would cause Template Metas to not save properly
+* [Improved] Added a fallback if `iconv` is not installed for UTF-8 conversion
+* [Improved] Explicitly state that the SEO Image must be in JPG, PNG, or GIF format
+* [Improved] Updated the README.md
+
 ### 1.1.24 -- 2016.07.18
 
 * [Added] You can now specify image transforms for your SEO Image, Twitter Image, and Facebook Image for Site Meta, Template Meta, and Entry Metas
