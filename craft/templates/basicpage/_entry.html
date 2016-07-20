@@ -6,6 +6,7 @@
 
 {% block content %}
 
+{% if entry.aboutImage | length %}
 {% include '_includes/_background-images.html' %}
 
 <section class="section-header section-header--interior">
@@ -13,12 +14,21 @@
 		<h1 class="section-header__title">{{ entry.title }}</h1>
 	</div>
 </section>
+{% else %}
+<div class="panel-primary-container">
+  <section class="section-introduction panel-primary">
+    <h1 class="project-single__name">{{ entry.title }}</h1>
+  </section>
+</div>
+{% endif %}
 
+{% if entry.introduction | length %}
 <div class="section-basic-page panel-primary-container">
 <section class="section-introduction panel-primary">
 		<div class="introduction">{{ entry.introduction }}</div>
 </section>
 </div>
+{% endif %}
 
 {% for block in entry.basicPageOptions %}
 
@@ -31,7 +41,7 @@
     	<section class="section-body-button panel-primary">
     		<a class="button button-primary" href="{{ block.buttonUrl }}">{{ block.buttonTitle }}</a>
     	</section>
-	
+
 	{% elseif block.type == "buttonInternalLink" %}
 		<section class="section-body-button panel-primary">
 			<a class="button button-primary" href="{{ block.buttonLinkInternal.first().url }}">{{ block.buttonNameInternal }}</a>
@@ -79,7 +89,7 @@
 
         <section class="testimonial-entry panel-primary">
         		<blockquote class="testimonial-entry__text">{{ block.pullQuote }}
-        		</blockquote>	
+        		</blockquote>
         		<cite class="testimonial-entry__author">{{ block.pullQuoteAuthor }}</cite>
         </section>
 
