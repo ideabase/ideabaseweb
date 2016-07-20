@@ -3,6 +3,11 @@ iframe {
 	max-width: 100%;
 }
 
+.section-body-video {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
 .section-body-video figure {
 	margin: 0 auto;
 	@media screen and (min-width: 600px) {
