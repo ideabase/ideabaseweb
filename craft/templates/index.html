@@ -6,9 +6,27 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include '_includes/_background-images.html' %}
+{# {% include '_includes/_background-images.html' %} #}
 	<!-- About Section -->
 			<section class="section-header">
+
+				{% if videoBackground | length %}
+
+				{% for asset in videoBackground.videoPlaceholder %}
+					<video autoplay loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
+				{% endfor %}
+
+					{% for asset in videoBackground.fileTypeOne %}
+						<source src="{{ asset.getUrl('fileTypeOne') }}" type="video/mp4">
+					{% endfor %}
+
+					{% for asset in videoBackground.fileTypeTwo %}
+						<source src="{{ asset.getUrl('fileTypeTwo') }}" type="video/webm">
+					{% endfor %}
+
+					</video>
+
+				{% endif %}
 
 			{%cache globally%}
 				<div class="section-header__container">
