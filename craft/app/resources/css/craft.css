@@ -1077,6 +1077,20 @@ body.rtl .meta > .field > .input > .datetimewrapper > .datewrapper, body.rtl .me
 
 .meta > .field > .input > .datewrapper, .meta > .field > .input > .timewrapper { display: block; width: 100%; }
 
+.meta > .field > .input > .elementselect > .elements > .element { height: 18px; float: none; margin: 0; }
+
+.meta > .field > .input > .elementselect > .elements > .element + .element { margin-top: 7px; }
+
+.meta > .field > .input > .elementselect > .elements > .element:not(.hasstatus):not(.hasthumb) { width: calc(100% - 14px); }
+
+.meta > .field > .input > .elementselect > .elements > .element.hasstatus:not(.hasthumb) { width: calc(100% - 32px); }
+
+.meta > .field > .input > .elementselect > .elements > .element.hasthumb:not(.hasstatus) { width: calc(100% - 54px); }
+
+.meta > .field > .input > .elementselect > .elements > .element.hasstatus.hasthumb { width: calc(100% - 72px); }
+
+.meta > .field > .input > .elementselect > .elements > .element > .label { width: calc(100% - 20px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) { .meta > .field > .input .select { display: block; margin: -8px 0; width: 100%; border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; background: none; }
   .meta > .field > .input .select select { width: 100%; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
   body.ltr .meta > .field > .input .select select { padding: 14px 12px 14px 0; }
@@ -1301,7 +1315,7 @@ body.rtl .daterange-hud .daterange-items ul li a[data-icon]:before, body.rtl .da
 
 .menu ul li a { display: block !important; font-size: 12px; }
 
-.menu ul li a:not(.sel):not(.disabled):hover, .menu ul li a:not(.sel):not(.disabled):hover .light, .menu:not(:hover) ul li a:not(.sel):not(.disabled).hover, .menu:not(:hover) ul li a:not(.sel):not(.disabled).hover .light, body .redactor-dropdown a:hover { color: #29323d; background-color: #d5d8dd; }
+.menu ul li a:not(.sel):not(.disabled):hover, .menu ul li a:not(.sel):not(.disabled):hover .light, .menu:not(:hover) ul li a:not(.disabled).hover, .menu:not(:hover) ul li a:not(.sel):not(.disabled).hover .light, body .redactor-dropdown a:hover { color: #29323d; background-color: #d5d8dd; }
 
 body .redactor-dropdown a:hover span { color: #29323d !important; }
 
@@ -1362,6 +1376,8 @@ body.rtl .tagmenu ul li a:before { margin: 3px -18px 0 0 ; }
 input.text, textarea.text, .text > input, .text > textarea, .textline, table.editable textarea, body .redactor-editor, .selectize-text > .selectize-control > .selectize-input { font-size: 13px; line-height: 16px; color: #29323d; min-height: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-appearance: none; }
 
 .selectize-text > .selectize-control > .selectize-input { line-height: 18px; }
+
+textarea.text.fullwidth { display: block; }
 
 .multitext .multitextrow .text { border-radius: 0; float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
@@ -1562,7 +1578,7 @@ body .redactor-box { margin-bottom: 0; }
 
 body .redactor-box.redactor-box-fullscreen { z-index: 100 !important; }
 
-body .redactor-toolbar { top: 0 !important; background: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+body .redactor-toolbar { top: 0; background: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
 body .redactor-toolbar.toolbar-fixed-box { background: #fff; -webkit-box-shadow: 0 0 0 1px #e3e5e8; -moz-box-shadow: 0 0 0 1px #e3e5e8; box-shadow: 0 0 0 1px #e3e5e8; z-index: 1 !important; }
 

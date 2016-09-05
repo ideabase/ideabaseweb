@@ -1,17 +1,17 @@
 [
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.8.7",
-        "version_normalized": "2.8.7.0",
+        "version": "v2.8.9",
+        "version_normalized": "2.8.9.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "2a6b8713f8bdb582058cfda463527f195b066110"
+            "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/2a6b8713f8bdb582058cfda463527f195b066110",
-            "reference": "2a6b8713f8bdb582058cfda463527f195b066110",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/889983a79a043dfda68f38c38b6dba092dd49cd8",
+            "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8",
             "shasum": ""
         },
         "require": {
@@ -28,7 +28,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2016-06-06 11:11:27",
+        "time": "2016-07-28 16:56:28",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -158,12 +158,12 @@
     },
     {
         "name": "imagine/imagine",
-        "version": "0.6.13",
-        "version_normalized": "0.6.13.0",
+        "version": "v0.6.14",
+        "version_normalized": "0.6.14.0",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/Imagine",
-            "reference": "321ce48efba858a932d1e5b9fd67e92249790925"
+            "reference": "391ac70546d2660bd4211370ddae492cb22d0f71"
         },
         "archive": {
             "exclude": [
@@ -188,7 +188,7 @@
             "ext-gmagick": "to use the Gmagick implementation",
             "ext-imagick": "to use the Imagick implementation"
         },
-        "time": "2016-06-21 11:58:06",
+        "time": "2016-08-30 07:09:01",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -222,20 +222,21 @@
     },
     {
         "name": "lsolesen/pel",
-        "version": "0.9.4",
-        "version_normalized": "0.9.4.0",
+        "version": "0.9.4.1",
+        "version_normalized": "0.9.4.1",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/pel",
-            "reference": "ba4a204f3f10425ab1e2ba9b48923e8fe49eb418"
+            "reference": "054b8220207c571df3a6882b895e19c1674fdbf2"
         },
         "require": {
             "php": ">=5.0.0"
         },
         "require-dev": {
-            "lastcraft/simpletest": ">=1.1"
+            "lastcraft/simpletest": ">=1.1",
+            "squizlabs/php_codesniffer": "2.*"
         },
-        "time": "2015-11-22 03:22:48",
+        "time": "2016-07-18 21:40:02",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -243,18 +244,28 @@
                 "lsolesen\\pel\\": "src/"
             }
         },
+        "license": [
+            "GPL-2.0"
+        ],
         "authors": [
             {
                 "name": "Lars Olesen",
                 "email": "lars@intraface.dk",
                 "homepage": "http://intraface.dk",
                 "role": "Developer"
+            },
+            {
+                "name": "Martin Geisler",
+                "email": "martin@geisler.net",
+                "homepage": "http://geisler.net",
+                "role": "Developer"
             }
         ],
         "description": "PHP Exif Library. A library for reading and writing Exif headers in JPEG and TIFF images using PHP.",
         "homepage": "http://lsolesen.github.com/pel/",
         "keywords": [
-            "template"
+            "exif",
+            "image"
         ]
     },
     {
@@ -403,12 +414,12 @@
     },
     {
         "name": "twig/twig",
-        "version": "1.24.1",
-        "version_normalized": "1.24.1.0",
+        "version": "1.24.1.1",
+        "version_normalized": "1.24.1.1",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/Twig",
-            "reference": "fa5387397a27db8284d2cb7ba97f69b296a85015"
+            "reference": "c49d824b19924e99db813a21f058959c4aa9b374"
         },
         "require": {
             "php": ">=5.2.7"
@@ -417,7 +428,7 @@
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~2.7"
         },
-        "time": "2016-03-06 03:36:05",
+        "time": "2016-07-14 23:35:41",
         "type": "library",
         "extra": {
             "branch-alias": {

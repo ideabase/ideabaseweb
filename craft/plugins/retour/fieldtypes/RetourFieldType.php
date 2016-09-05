@@ -132,17 +132,21 @@ class RetourFieldType extends BaseFieldType
         {
             $result = new Retour_RedirectsFieldModel($value);
         }
-        $urlParts = parse_url($this->element->uri);
-        $url = $urlParts['path'] ? '/' . $urlParts['path'] : $this->element->uri;
+        $urlParts = parse_url($this->element->url);
+        $url = $urlParts['path'] ? $urlParts['path'] : $this->element->url;
         $result->redirectDestUrl = $url;
         $result->associatedElementId = $this->element->id;
-        $result->locale = $this->element->locale;
+        if ($this->model->translatable)
+            $locale = $this->element->locale;
+        else
+            $locale = craft()->language;
+        $result->locale = $locale;
         if ($result->redirectMatchType == "exactmatch" && $result->redirectSrcUrl !== '')
             $result->redirectSrcUrl = '/' . ltrim($result->redirectSrcUrl, '/');
 
 /* -- Restore the default fields we don't let the user edit */
 
-        $oldRecord = craft()->retour->getRedirectByElementId($this->element->id, $this->element->locale);
+        $oldRecord = craft()->retour->getRedirectByElementId($this->element->id, $locale);
 
         if ($oldRecord)
         {
@@ -173,7 +177,12 @@ class RetourFieldType extends BaseFieldType
         if (!$value)
         {
             $value = new Retour_RedirectsFieldModel();
-            $result = craft()->retour->getRedirectByElementId($this->element->id, $this->element->locale);
+            if ($this->model->translatable)
+                $locale = $this->element->locale;
+            else
+                $locale = craft()->language;
+            $value->locale = $locale;
+            $result = craft()->retour->getRedirectByElementId($this->element->id, $locale);
             if ($result)
                 $value->setAttributes($result->getAttributes(), false);
             else

@@ -18,7 +18,11 @@ SEOmatic works on Craft 2.4.x, Craft 2.5.x, and Craft 2.6.x.
 
 ## Overview
 
-SEOmatic allows you to quickly get a website up and running with a robust, comprehensive SEO strategy.  It is also implemented in a Craft-y way, in that it is also flexible and customizable.
+### Video overview of SEOmatic:
+
+[![Video Overview of SEOmatic](https://img.youtube.com/vi/f1149YVEF_0/0.jpg)](https://www.youtube.com/watch?v=f1149YVEF_0)
+
+SEOmatic allows you to quickly get a website up and running with a robust, comprehensive SEO strategy.  It is also implemented in a Craft-y way, in that it is also flexible and customizable.  The SEOmetrics feature scans your content for focus keywords, and offers analysis on how to improve your SEO.
 
 It implements [JSON-LD](https://developers.google.com/schemas/formats/json-ld?hl=en) microdata, [Dublin Core](http://dublincore.org) core metadata, [Twitter Cards](https://dev.twitter.com/cards/overview) tags, [Facebook OpenGraph](https://developers.facebook.com/docs/sharing/opengraph) tags, [Humans.txt](http://humanstxt.org) authorship accreditation, and as well as HTML meta tags.
 
@@ -279,6 +283,7 @@ You can also dynamically change any of these SEO Meta fields in your Twig templa
 
 * **Title** - The human readable title for this SEO Template Meta
 * **Template Path** - Enter the path to the template to associate this meta with (just as you would on the Section settings). It will override the SEO Site Meta for this template. Leave any field blank if you want it to fall back on the default global settings for that field.
+* **Main Entity of Page** - The Main Entity of Page is a more specific, additional type that describes this page.  This additional JSON-LD structured data entity will be added to your page, more specifically describing the page's content.  It is accessible via the `seomaticMainEntityOfPage` Twig variable, should you wish to modify or add to it
 * **SEO Title** - This should be between 10 and 70 characters (spaces included). Make sure your title tag is explicit and contains your most important keywords. Be sure that each page has a unique title tag.
 * **SEO Description** - This should be between 70 and 160 characters (spaces included). Meta descriptions allow you to influence how your web pages are described and displayed in search results. Ensure that all of your web pages have a unique meta description that is explicit and contains your most important keywords.
 * **SEO Keywords** - Google ignores this tag; though other search engines do look at it. Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam. Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on.
@@ -310,6 +315,7 @@ If any fields are left blank in an Entry Meta, those fields are pulled from the 
 
 You can also dynamically change any of these SEO Meta fields in your Twig templates, and they will appear in the rendered SEO Meta.
 
+* **Main Entity of Page** - The Main Entity of Page is a more specific, additional type that describes this entry.  This additional JSON-LD structured data entity will be added to your page, more specifically describing the page's content.  It is accessible via the `seomaticMainEntityOfPage` Twig variable, should you wish to modify or add to it.
 * **SEO Title** - This should be between 10 and 70 characters (spaces included). Make sure your title tag is explicit and contains your most important keywords. Be sure that each page has a unique title tag.
 * **SEO Description** - This should be between 70 and 160 characters (spaces included). Meta descriptions allow you to influence how your web pages are described and displayed in search results. Ensure that all of your web pages have a unique meta description that is explicit and contains your most important keywords.
 * **SEO Keywords** - Google ignores this tag; though other search engines do look at it. Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam. Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on.
@@ -335,13 +341,54 @@ The **SEO Keywords** field also allows you to extract keywords automatically fro
 
 SEOmatic Meta FieldTypes also have default settings that allow you to control what the default settings should be for each meta field, and whether they can be changed by the person editing the entry.
 
-## SEOmetrics during Live Preview
+### Entry Meta Properties in your Templates
+
+If you're using an `SEOmatic Meta` FieldType in your entries, you can also access the properties of it in your templates.  This is useful, for instance, if you're iterating through `craft.entries` and want to be able to access the meta properties of each entry in the loop.
+
+Assume that we have an `SEOmatic Meta` FieldType with the handle `seoMeta` in our template, we can do things like:
+
+	{% for newsItem in craft.entries.section('news').limit(10) %}
+		{{ newsItem.seoMeta.seoTitle }}
+		{{ newsItem.seoMeta.seoDescription }}
+		{{ newsItem.seoMeta.seoKeywords }}
+		{{ newsItem.seoMeta.seoImage }}
+	{% endfor %}
+
+In addition, you can do:
+
+	{% set assetID = newsItem.seoMeta.seoImageId %}
+
+...to get the seoImage's AssetID, and you can also do:
+
+	{% set newsJsonLD =  newsItem.seoMeta.getJsonLD(newsItem) %}
+
+...to get the Main Entity of Page JSON-LD array for the entry, which you can then manipulate, or output via SEOmatic's Twig function:
+
+	{{ newsJsonLD | renderJSONLD }}
+
+## SEOmetrics Content Analysis
+
+The SEOmetrics feature in SEOmatic allows you to analyze your pages to measure the effectiveness of the SEO on them.  It can be accessed in two different places, either analyzing arbitrary URLs via the Admin CP, or analyzing specific Entries/Sections via Live Preview.
+
+### SEOmetrics in the Admin CP
+
+SEOmetrics Content Analysis will run a variety of tests on your web page, and offer you analysis with helpful tips on how to correct any problems it finds.  For each test, there is a `Learn More` link that will offer details on the thing being tested.
+
+You can enter any arbitrary URL in the **URL to Analyze** field, even URLs to external websites, should you wish to.
+
+You can enter **Focus Keyworks**, comma separated, for an additional analysis of how well optimized your page is for those specific SEO keywords.
+
+### SEOmetrics during Live Preview
 
 ![Screenshot](resources/screenshots/seomatic05.png)
 
-During Live Preview, a small SEOmatic icon is displayed in the lower-left corner of the Live Preview screen.  If you click on it, it will run a variety of tests on your web page, and offer you analysis with helpful tips on how to correct the problem.
+During Live Preview, a small SEOmatic icon is displayed in the lower-left corner of the Live Preview screen.  If you click on it, it will run a variety of tests on your web page, and offer you analysis with helpful tips on how to correct any problems it finds.
 
 You can enter **Focus Keyworks**, comma separated, for an additional analysis of how well optimized your page is for those specific SEO keywords.
+
+### Video SEOmetrics in Action:
+
+[![Video SEOmetrics in Action](https://img.youtube.com/vi/y7swBbGwEJE/0.jpg)](https://www.youtube.com/watch?v=y7swBbGwEJE)
 
 You can disable this feature by setting `displaySeoMetrics` to `false` in the `config.php`, should you wish to not have it displayed.
 
@@ -353,9 +400,9 @@ SEOmetrics during Live Preview only works if System Status is set to "on".
 
 If an SEOmatic FieldType is attached to a Craft Commerce Product, in addition to rendering the page SEO Meta, it will also generate [Product JSON-LD microdata](https://developers.google.com/structured-data/rich-snippets/products) that describes the product.
 
-It does this by pulling values from the `seomaticMeta` settings from the SEOmatic FieldType, as well as by pulling data from the Craft Commerce Product.  If you have an SEOmatic FieldType attached to a Craft Commerce Product, a new `seomaticProduct` array is injected into your page template:
+It does this by pulling values from the `seomaticMeta` settings from the SEOmatic FieldType, as well as by pulling data from the Craft Commerce Product.  If you have an SEOmatic FieldType attached to a Craft Commerce Product,  `seomaticMainEntityOfPage` array is injected into your page template:
 
-    {% set seomaticProduct = [
+    {% set seomaticMainEntityOfPage = [
         {
             type: "Product",
             name: "Romper for a Red Eye",
@@ -377,15 +424,48 @@ It does this by pulling values from the `seomaticMeta` settings from the SEOmati
 
 Since this is just a Twig array, you can alter it as you see fit, and whatever changes you make will be reflected in the JSON-LD that SEOmatic renders via the `{% hook 'seomaticRender' %}`  Because of the way that Twig handles arrays, you **must** include every field in the array when doing a `set` or `merge`, otherwise the fields you exclude will not exist.
 
-Or if you want to set just one variable in the array, you can use the Twig function [merge](http://twig.sensiolabs.org/doc/filters/merge.html):
+Or if you want to set just one variable in the array, you can use the Twig function [merge](http://twig.sensiolabs.org/doc/filters/merge.html).  Because this is an _array_ of Products, you need to do something like this to add to each Product in the array:
 
-    {% set seomaticProduct = seomaticProduct | merge({'brand': entry.brandInfo }) %}
+    {% if seomaticMainEntityOfPage is defined %}
+        {% set productBrand = {
+            'type': 'thing',
+            'name': product.title
+            }
+        %}
+        {% set tempMainEntityOfPage = [] %}
+        {% for productJsonLd in seomaticMainEntityOfPage %}
+            {% set productJsonLd = productJsonLd | merge({"brand": productBrand }) %}
+            {% set tempMainEntityOfPage = tempMainEntityOfPage |merge([productJsonLd])  %}
+        {% endfor %}
+        {% set seomaticMainEntityOfPage = tempMainEntityOfPage %}
+    {% endif %}
 
-You can change these `seomaticProduct` variables in your templates that `extends` your main `layout.twig` template, and due to the Twig rendering order, when `{% hook 'seomaticRender' %}` is called, they'll be populated in your rendered SEO Meta tags.
+You can change these `seomaticMainEntityOfPage` variables in your templates that `extends` your main `layout.twig` template, and due to the Twig rendering order, when `{% hook 'seomaticRender' %}` is called, they'll be populated in your rendered SEO Meta tags.
 
 See the section **Dynamic Twig SEO Meta** for more information on how to manipulate SEOmatic variables via Twig.
 
 SEOmatic also automatically strips HTML/PHP tags from the variables, and translates HTML entities to ensure that they are properly encoded.
+
+## Main Entity of Page Microdata
+
+![Screenshot](resources/screenshots/seomatic07.png)
+
+SEOmatic will automatically generate [Main Entity of Page](http://www.seoskeptic.com/how-to-use-schema-org-v2-0s-mainentityofpage-property/) JSON-LD microdata for Template and Entry SEO Meta.
+
+The Main Entity of Page is a more specific, additional type of information that describes the page. This additional JSON-LD structured data entity will be added to your page, more specifically describing the page's content. It is accessible via the `seomaticMainEntityOfPage` Twig variable.
+
+If an SEOmatic FieldType is attached to a Craft Commerce Product, SEOmatic will automatically extrapolate information from the Product. Otherwise, you can choose your own Main Entity of Page in the SEOmatic FieldType.
+
+SEOmatic fills in the basic information for whatever schema type you set as the Main Entity of Page, but since this is just a Twig array, you can alter it as you see fit, and whatever changes you make will be reflected in the JSON-LD that SEOmatic renders via the `{% hook 'seomaticRender' %}`  Because of the way that Twig handles arrays, you **must** include every field in the array when doing a `set` or `merge`, otherwise the fields you exclude will not exist.
+
+Here's an example of how you might add a `startDate` to an `Event` schema type:
+
+    {% if seomaticMainEntityOfPage is defined %}
+        {% set eventStartDate = entry.eventDate %}
+        {% set seomaticMainEntityOfPage = seomaticMainEntityOfPage | merge({'startDate': eventStartDate }) %}
+    {% endif %}
+
+Note that `Event` schema types require `startDate` and `location` to be set, which SEOmatic is unable to automatically fill in for you.  Additionally, you may want to add more information to any of the schema types used for Main Entity of Page to give search engines more information to add to their knowledge graph.
 
 ## Breadcrumbs Microdata
 
@@ -393,7 +473,9 @@ SEOmatic also automatically strips HTML/PHP tags from the variables, and transla
 
 SEOmatic will automatically generate [Breadcrumbs](https://developers.google.com/search/docs/data-types/breadcrumbs) JSON-LD microdata that is used by Google to display breadcrumbs on the SERP rich cards.
 
-By default, SEOmatic will generate breadcrumbs automatically for `Home` (the name is configurable via `breadcrumbsHomeName` in `config.json`), and for the current `entry`, `product`, or `category` the template is displaying.
+By default, SEOmatic will generate breadcrumbs automatically for `Home` (the name is configurable via `breadcrumbsHomeName` in `config.json`), and every element (category, entry, product, whatever) that has a URI matches the current URL segments.
+
+### Changing Breadcrumbs
 
 If you want to do your own custom breadcrumbs, you can set them yourself in the `breadcrumbs` array in the `seomaticMeta` variable like this:
 
@@ -405,6 +487,10 @@ If you want to do your own custom breadcrumbs, you can set them yourself in the 
 
 	{% set seomaticMeta = seomaticMeta | merge({'breadcrumbs': myBreadcrumbs }) %}
 
+    {% if seomaticMainEntityOfPage is defined and seomaticMainEntityOfPage.type == "WebPage" %}
+        {% set seomaticMainEntityOfPage = seomaticMainEntityOfPage | merge({'breadcrumbs': myBreadcrumbs }) %}
+    {% endif %}
+
 Since this is just a Twig array, you can alter it as you see fit, and whatever changes you make will be reflected in the JSON-LD that SEOmatic renders via the `{% hook 'seomaticRender' %}`  Because of the way that Twig handles arrays, you **must** include every field in the array when doing a `set` or `merge`, otherwise the fields you exclude will not exist.
 
 You can change these `breadcrumbs` variables in your templates that `extends` your main `layout.twig` template, and due to the Twig rendering order, when `{% hook 'seomaticRender' %}` is called, they'll be populated in your rendered SEO Meta tags.
@@ -412,6 +498,16 @@ You can change these `breadcrumbs` variables in your templates that `extends` yo
 See the section **Dynamic Twig SEO Meta** for more information on how to manipulate SEOmatic variables via Twig.
 
 SEOmatic also automatically strips HTML/PHP tags from the variables, and translates HTML entities to ensure that they are properly encoded.
+
+### Displaying Breadcrumbs on the Frontend
+
+Should you wish to display the breadcrumbs in your front-end templates so that they are visible to the user, you can do that with code like this:
+
+    <ul class="crumbs">
+        {% for crumbName, crumbUrl in seomaticMeta.breadcrumbs %}
+            <li class="crumbs"><a href="{{ crumbUrl }}">{{ crumbName }}</a></li>
+        {% endfor %}
+    </ul>
 
 ## Dynamic Twig SEO Meta
 
@@ -549,6 +645,18 @@ If you're using the `article` OpenGraph type, you'll see an additional `article`
 Or if you want to set just one variable in the array, you can use the Twig function [merge](http://twig.sensiolabs.org/doc/filters/merge.html):
 
     {% set seomaticMeta = seomaticMeta | merge({'seoDescription': entry.summary }) %}
+
+Here's an example of how to change just the `image` in Twitter:
+
+	{% set twitter = seomaticMeta.twitter %}
+	{% set twitter = twitter | merge({'image': someiImage}) %}
+	{% set seomaticMeta = seomaticMeta | merge({'twitter': twitter}) %}
+
+...and here's an example of how to change just the `image` in OpenGraph:
+
+	{% set og = seomaticMeta.og %}
+	{% set og = og | merge({'image': someiImage}) %}
+	{% set seomaticMeta = seomaticMeta | merge({'og': og}) %}
 
 You can change these `seomaticMeta` variables in your templates that `extends` your main `layout.twig` template, and due to the Twig rendering order, when `{% hook 'seomaticRender' %}` is called, they'll be populated in your rendered SEO Meta tags.
 

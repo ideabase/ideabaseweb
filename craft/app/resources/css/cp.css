@@ -129,7 +129,7 @@ body.mobile #container { overflow-y: scroll; /* has to be scroll, not auto */ -w
 
 #main.single-pane .padded { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
-#main.single-pane .padded > .pane { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; flex-grow: 1; -ms-flex: 1; border-radius: 0; }
+#main.single-pane .padded > .pane { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; flex-grow: 1; -ms-flex: 1; border-radius: 0; overflow-x: hidden; }
 
 #main.single-pane .padded > .pane > .content { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; }
 

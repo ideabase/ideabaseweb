@@ -10,6 +10,7 @@ class SeomaticService extends BaseApplicationComponent
 {
 
     protected $entryMeta = null;
+    protected $lastElement = null;
     protected $entrySeoCommerceVariants = null;
     protected $cachedSettings = array();
     protected $cachedSiteMeta = array();
@@ -19,6 +20,7 @@ class SeomaticService extends BaseApplicationComponent
     protected $cachedCreator = array();
     protected $cachedCreatorJSONLD = array();
     protected $cachedProductJSONLD = array();
+    protected $cachedMainEntityOfPageJSONLD = array();
     protected $cachedWebSiteJSONLD = array();
     protected $renderedMetaVars = null;
 
@@ -228,20 +230,20 @@ class SeomaticService extends BaseApplicationComponent
     } /* -- renderWebsite */
 
 /* --------------------------------------------------------------------------------
-    Render the Product JSON-LD
+    Render the Main Entity of Page JSON-LD
 -------------------------------------------------------------------------------- */
 
-    public function renderProduct($metaVars, $locale, $isPreview=false)
+    public function renderMainEntityOfPage($metaVars, $locale, $isPreview=false)
     {
         $htmlText = "";
 
-        if (isset($metaVars['seomaticProduct']))
+        if (isset($metaVars['seomaticMainEntityOfPage']))
         {
             $this->sanitizeMetaVars($metaVars);
-            $htmlText = $this->renderJSONLD($metaVars['seomaticProduct'], $isPreview);
+            $htmlText = $this->renderJSONLD($metaVars['seomaticMainEntityOfPage'], $isPreview);
         }
         return $htmlText;
-    } /* -- renderProduct */
+    } /* -- renderMainEntityOfPage */
 
 /* --------------------------------------------------------------------------------
     Render the Breadcrumbs JSON-LD
@@ -504,7 +506,6 @@ class SeomaticService extends BaseApplicationComponent
 /* -- See if there is an 'entry' automagically put into this template, and if it contains an Seomatic_Meta */
 
         $entryMeta = null;
-        $entryMetaUrl = "";
         if (isset($element) && $element)
         {
             $elemType = $element->getElementType();
@@ -519,116 +520,34 @@ class SeomaticService extends BaseApplicationComponent
                     {
                         if ($value->elementType == "Seomatic_FieldMeta")
                         {
-                            $entryMeta = $value;
-                            $entryMetaUrl = $this->getFullyQualifiedUrl($element->url);
-
-    /* -- If this is a Commerce Product, fill in some additional info */
-
-                            if ($elemType == "Commerce_Product" && craft()->config->get("renderCommerceProductJSONLD", "seomatic"))
+                            if ($this->isFieldHandleInEntry($element, $key))
                             {
-                                $commerceSettings = craft()->commerce_settings->getSettings();
-                                $variants = $element->getVariants();
-                                $commerceVariants = array();
+                                $entryMeta = $value;
+                                $this->lastElement = $element;
+        /* -- If this is a Commerce Product, fill in some additional info */
 
-                                foreach ($variants as $variant)
+                                if ($elemType == "Commerce_Product" && craft()->config->get("renderCommerceProductJSONLD", "seomatic"))
                                 {
-                                    $commerceVariant = array(
-                                        'seoProductDescription' => $variant->getDescription(),
-                                        'seoProductPrice' => number_format($variant->getPrice(), 2),
-                                        'seoProductCurrency' => $commerceSettings['defaultCurrency'],
-                                        'seoProductSku' => $variant->getSku(),
-                                    );
-                                    $commerceVariants[] = $commerceVariant;
+                                    $commerceSettings = craft()->commerce_settings->getSettings();
+                                    $variants = $element->getVariants();
+                                    $commerceVariants = array();
+
+                                    foreach ($variants as $variant)
+                                    {
+                                        $commerceVariant = array(
+                                            'seoProductDescription' => $variant->getDescription(),
+                                            'seoProductPrice' => number_format($variant->getPrice(), 2, '.', ''),
+                                            'seoProductCurrency' => $commerceSettings['defaultCurrency'],
+                                            'seoProductSku' => $variant->getSku(),
+                                        );
+                                        $commerceVariants[] = $commerceVariant;
+                                    }
+                                    if (!empty($commerceVariants))
+                                        $entryMeta['seoCommerceVariants'] = $commerceVariants;
                                 }
-                                if (!empty($commerceVariants))
-                                    $entryMeta['seoCommerceVariants'] = $commerceVariants;
                             }
 
     /* -- Swap in any SEOmatic fields that are pulling from other entry fields */
-
-                            switch ($entryMeta['seoTitleSource'])
-                            {
-                                case 'field':
-                                    if (isset($element[$entryMeta['seoTitleSourceField']]))
-                                    {
-                                        $entryMeta['seoTitle'] = $this->getTextFromEntryField($element[$entryMeta['seoTitleSourceField']]);
-                                    }
-                                break;
-
-                                case 'custom':
-                                    $entryMeta['seoTitle'] = craft()->config->parseEnvironmentString($entryMeta['seoTitle']);
-                                    try
-                                    {
-                                        $entryMeta['seoTitle'] = craft()->templates->renderObjectTemplate($entryMeta['seoTitle'], $element);
-                                    }
-                                    catch (Exception $e)
-                                    {
-                                        SeomaticPlugin::log("Template error in the `seoTitle` field.", LogLevel::Info, true);
-                                    }
-                                break;
-                            }
-
-                            switch ($entryMeta['seoDescriptionSource'])
-                            {
-                                case 'field':
-                                    if (isset($element[$entryMeta['seoDescriptionSourceField']]))
-                                    {
-                                        $entryMeta['seoDescription'] = $this->getTextFromEntryField($element[$entryMeta['seoDescriptionSourceField']]);
-                                    }
-                                break;
-
-                                case 'custom':
-                                    $entryMeta['seoDescription'] = craft()->config->parseEnvironmentString($entryMeta['seoDescription']);
-                                    try
-                                    {
-                                        $entryMeta['seoDescription'] = craft()->templates->renderObjectTemplate($entryMeta['seoDescription'], $element);
-                                    }
-                                    catch (Exception $e)
-                                    {
-                                        SeomaticPlugin::log("Template error in the `seoDescription` field.", LogLevel::Info, true);
-                                    }
-                               break;
-                            }
-
-                            switch ($entryMeta['seoKeywordsSource'])
-                            {
-                                case 'field':
-                                    if (isset($element[$entryMeta['seoKeywordsSourceField']]))
-                                    {
-                                        $entryMeta['seoKeywords'] = $this->getTextFromEntryField($element[$entryMeta['seoKeywordsSourceField']]);
-                                    }
-                                break;
-
-                                case 'keywords':
-                                    if (isset($element[$entryMeta['seoKeywordsSourceField']]))
-                                    {
-                                        $text = $this->getTextFromEntryField($element[$entryMeta['seoKeywordsSourceField']]);
-                                        $entryMeta['seoKeywords'] = $this->extractKeywords($text);
-                                    }
-                                break;
-
-                                case 'custom':
-                                    $entryMeta['seoKeywords'] = craft()->config->parseEnvironmentString($entryMeta['seoKeywords']);
-                                    try
-                                    {
-                                        $entryMeta['seoKeywords'] = craft()->templates->renderObjectTemplate($entryMeta['seoKeywords'], $element);
-                                    }
-                                    catch (Exception $e)
-                                    {
-                                        SeomaticPlugin::log("Template error in the `seoDescription` field.", LogLevel::Info, true);
-                                    }
-                               break;
-                            }
-
-                            switch ($entryMeta['seoImageIdSource'])
-                            {
-                                case 'field':
-                                    if (isset($element[$entryMeta['seoImageIdSourceField']]) && $element[$entryMeta['seoImageIdSourceField']]->first())
-                                    {
-                                        $entryMeta['seoImageId'] = $element[$entryMeta['seoImageIdSourceField']]->first()->id;
-                                    }
-                                break;
-                            }
 
                         }
                     }
@@ -637,6 +556,29 @@ class SeomaticService extends BaseApplicationComponent
         }
     return $entryMeta;
     } /* -- getMetaFromElement */
+
+/* --------------------------------------------------------------------------------
+    Is a given fieldHandle in a entry?
+-------------------------------------------------------------------------------- */
+
+    public function isFieldHandleInEntry($entryElement = null, $fieldHandle="")
+    {
+        $result = false;
+        if (!empty($entryElement) && is_object($entryElement))
+        {
+            $fieldLayoutFields = $entryElement->fieldLayout->getFields();
+            foreach ($fieldLayoutFields as $fieldLayoutField)
+            {
+                $field = $fieldLayoutField->field;
+                if ($field->handle == $fieldHandle)
+                {
+                    $result = true;
+                    return $result;
+                }
+            }
+        }
+        return $result;
+    } /* -- isFieldHandleInEntry */
 
 /* --------------------------------------------------------------------------------
     Extract text from a generix field, do different things based on the classHandle
@@ -648,6 +590,9 @@ class SeomaticService extends BaseApplicationComponent
         {
             switch ($srcField->elementType->classHandle)
             {
+                case "Neo":
+                    $result= $this->extractTextFromNeo($srcField);
+                    break;
                 case ElementType::MatrixBlock:
                     $result= $this->extractTextFromMatrix($srcField);
                     break;
@@ -686,7 +631,7 @@ class SeomaticService extends BaseApplicationComponent
     Extract text from a matrix field
 -------------------------------------------------------------------------------- */
 
-    public function extractTextFromMatrix($matrixBlocks)
+    public function extractTextFromMatrix($matrixBlocks, $fieldHandle="")
     {
         $result = "";
         foreach ($matrixBlocks as $block)
@@ -698,16 +643,46 @@ class SeomaticService extends BaseApplicationComponent
             {
                 if ($field->type == "PlainText"
                     || $field->type == "RichText"
-                    || $field->type == "RedactorI)"
+                    || $field->type == "RedactorI"
                     )
                     {
-                        $result .= strip_tags($block[$field->handle]) . " ";
+                        if (($field->handle == $fieldHandle) || ($fieldHandle == ""))
+                            $result .= strip_tags($block[$field->handle]) . " ";
                     }
             }
 
         }
         return $result;
     } /* -- extractTextFromMatrix */
+
+/* --------------------------------------------------------------------------------
+    Extract text from a Neo field
+-------------------------------------------------------------------------------- */
+
+    public function extractTextFromNeo($neoBlocks, $fieldHandle="")
+    {
+        $result = "";
+        foreach ($neoBlocks as $block)
+        {
+            $neoBlockTypeModel = $block->getType();
+            $fieldLayout = craft()->fields->getLayoutById($neoBlockTypeModel->fieldLayoutId);
+            $fieldLayoutFields = $fieldLayout->getFields();
+
+                foreach ($fieldLayoutFields as $fieldLayoutField)
+                {
+                    $field = $fieldLayoutField->field;
+                    if ($field->type == "PlainText"
+                        || $field->type == "RichText"
+                        || $field->type == "RedactorI"
+                        )
+                        {
+                            if (($field->handle == $fieldHandle) || ($fieldHandle == ""))
+                                $result .= strip_tags($block[$field->handle]) . " ";
+                        }
+                }
+        }
+        return $result;
+    } /* -- extractTextFromNeo */
 
 /* --------------------------------------------------------------------------------
     Set the entry-level meta
@@ -723,6 +698,8 @@ class SeomaticService extends BaseApplicationComponent
         if ($entryMeta)
         {
             $meta = array();
+            $meta['seoMainEntityCategory'] = $entryMeta->seoMainEntityCategory;
+            $meta['seoMainEntityOfPage'] = $entryMeta->seoMainEntityOfPage;
             $meta['seoTitle'] = $entryMeta->seoTitle;
             $meta['seoDescription'] = $entryMeta->seoDescription;
             $meta['seoKeywords'] = $entryMeta->seoKeywords;
@@ -771,8 +748,11 @@ class SeomaticService extends BaseApplicationComponent
                 $this->entrySeoCommerceVariants = $entryMeta->seoCommerceVariants;
             }
             $meta = array_filter($meta);
+            if (!isset($meta['seoMainEntityOfPage']))
+                $meta['seoMainEntityOfPage'] ="";
         }
         $this->entryMeta = $meta;
+        return $meta;
     } /* -- setEntryMeta */
 
 /* --------------------------------------------------------------------------------
@@ -898,6 +878,7 @@ class SeomaticService extends BaseApplicationComponent
             array_push($sameAs, $helper['instagramUrl']);
             array_push($sameAs, $helper['pinterestUrl']);
             array_push($sameAs, $helper['githubUrl']);
+            array_push($sameAs, $helper['vimeoUrl']);
             $sameAs = array_filter($sameAs);
             $sameAs = array_values($sameAs);
             if (!empty($sameAs))
@@ -913,6 +894,44 @@ class SeomaticService extends BaseApplicationComponent
                 $openGraphArticle['author'] = $helper['facebookUrl'];
                 $openGraphArticle['publisher'] = $helper['facebookUrl'];
                 $openGraphArticle['tag'] = array_map('trim', explode(',', $meta['seoKeywords']));
+
+    /* -- If an element was injected into the current template, scrape it for attribuates */
+
+                if ($this->lastElement)
+                {
+                    $elemType = $this->lastElement->getElementType();
+                    switch ($elemType)
+                    {
+                        case ElementType::Entry:
+                        {
+                            if ($this->lastElement->dateUpdated)
+                                $openGraphArticle['modified_time'] = $this->lastElement->dateUpdated->iso8601();
+                            if ($this->lastElement->postDate)
+                                $openGraphArticle['published_time'] = $this->lastElement->postDate->iso8601();
+                        }
+                        break;
+
+                        case "Commerce_Product":
+                        {
+                            if ($this->lastElement->dateUpdated)
+                                $openGraphArticle['modified_time'] = $this->lastElement->dateUpdated->iso8601();
+                            if ($this->lastElement->postDate)
+                                $openGraphArticle['published_time'] = $this->lastElement->postDate->iso8601();
+                        }
+                        break;
+
+                        case ElementType::Category:
+                        {
+                            if ($this->lastElement->dateUpdated)
+                                $openGraphArticle['modified_time'] = $this->lastElement->dateUpdated->iso8601();
+                            if ($this->lastElement->dateCreated)
+                                $openGraphArticle['published_time'] = $this->lastElement->dateCreated->iso8601();
+                        }
+                        break;
+
+                    }
+                }
+
                 $meta['article'] = $openGraphArticle;
             }
         }
@@ -962,6 +981,15 @@ class SeomaticService extends BaseApplicationComponent
         if ($this->entryMeta)
             $meta = array_merge($meta, $this->entryMeta);
 
+/* -- Merge with the global override config settings */
+
+        $globalMetaOverride = craft()->config->get("globalMetaOverride", "seomatic");
+        if (!empty($globalMetaOverride))
+        {
+            $globalMetaOverride = array_filter($globalMetaOverride);
+            $meta = array_merge($meta, $globalMetaOverride);
+        }
+
 /* -- Add the helper vars */
 
         $helper = array();
@@ -970,6 +998,25 @@ class SeomaticService extends BaseApplicationComponent
         $this->addCreatorHelpers($helper, $creator);
 
         $this->setSocialForMeta($meta, $siteMeta, $social, $helper, $identity, $locale);
+
+/* -- Fill in the breadcrumbs */
+
+        $meta['breadcrumbs'] = $this->getDefaultBreadcrumbs($meta);
+
+/* -- Swap in our JSON-LD objects */
+
+        $identity = $this->getIdentityJSONLD($identity, $helper, $locale);
+        $creator = $this->getCreatorJSONLD($creator, $helper, $locale);
+
+/* -- Handle the Main Entity of Page, if set */
+
+        $seomaticMainEntityOfPage = "";
+        $seomaticMainEntityOfPage = $this->getMainEntityOfPageJSONLD($meta, $identity, $locale, true);
+
+/* -- Special-case for Craft Commerce products */
+
+        if ($this->entryMeta && isset($this->entrySeoCommerceVariants) && !empty($this->entrySeoCommerceVariants))
+            $seomaticMainEntityOfPage = $this->getProductJSONLD($meta, $identity, $locale, true);
 
 /* -- Get rid of variables we don't want to expose */
 
@@ -981,6 +1028,8 @@ class SeomaticService extends BaseApplicationComponent
         unset($siteMeta['siteSeoFacebookImageTransform']);
         unset($siteMeta['siteSeoTwitterImageTransform']);
 
+        unset($meta['seoMainEntityCategory']);
+        unset($meta['seoMainEntityOfPage']);
         unset($meta['twitterCardType']);
         unset($meta['openGraphType']);
         unset($meta['seoImageId']);
@@ -994,10 +1043,6 @@ class SeomaticService extends BaseApplicationComponent
             'seomaticTemplatePath' => '',
         );
 
-/* -- Fill in the breadcrumbs */
-
-        $meta['breadcrumbs'] = $this->getDefaultBreadcrumbs($meta);
-
 /* -- Return everything is an array of arrays */
 
         $result = array('seomaticMeta' => $meta,
@@ -1008,12 +1053,10 @@ class SeomaticService extends BaseApplicationComponent
                         'seomaticCreator' => $creator,
                         );
 
-/* -- Swap in our JSON-LD objects */
+/* -- Fill in the main entity of the page */
 
-        $result['seomaticIdentity'] = $this->getIdentityJSONLD($result['seomaticIdentity'], $helper, $locale);
-        $result['seomaticCreator'] = $this->getCreatorJSONLD($result['seomaticCreator'], $helper, $locale);
-        if ($this->entryMeta && isset($this->entrySeoCommerceVariants) && !empty($this->entrySeoCommerceVariants))
-            $result['seomaticProduct'] = $this->getProductJSONLD($result, $locale);
+        if ($seomaticMainEntityOfPage)
+            $result['seomaticMainEntityOfPage'] = $seomaticMainEntityOfPage;
 
 /* -- Return our global variables */
 
@@ -1029,22 +1072,45 @@ class SeomaticService extends BaseApplicationComponent
     public function getDefaultBreadcrumbs($meta)
     {
         $result = array();
-        $homeName = craft()->config->get("breadcrumbsHomeName", "seomatic");
-        $result[$homeName] = $this->getFullyQualifiedUrl(craft()->getSiteUrl());
-        $element = craft()->urlManager->getMatchedElement();
+
+        $element = craft()->elements->getElementByUri("__home__");
         if ($element)
         {
-/* -- Undecided whether this is the best behavior
-            if ($element->uri == '__home__')
-                unset($result[$homeName]);
-*/
-            if ($element->uri != '__home__')
-                $result[$element->title] = $element->url;
+            $result[$element->title] = $this->getFullyQualifiedUrl($element->url);
         }
-        else if ($this->entryMeta)
+        else
         {
-            $result[$this->entryMeta['seoTitle']] = $meta['canonicalUrl'];
+            $homeName = craft()->config->get("breadcrumbsHomeName", "seomatic");
+            $result[$homeName] = $this->getFullyQualifiedUrl(craft()->getSiteUrl());
         }
+
+/* -- Build up the segments, and look for elements that match */
+
+        $uri = "";
+        $segments = craft()->request->getSegments();
+        if ($this->lastElement)
+        {
+            if ($this->lastElement->uri != "__home__" && $element->uri)
+            {
+                $path = parse_url($this->lastElement->url, PHP_URL_PATH);
+                $path = trim($path, "/");
+                $segments = explode("/", $path);
+            }
+        }
+
+/* -- Parse through the segments looking for elements that match */
+
+        foreach ($segments as $segment)
+        {
+            $uri .= $segment;
+            $element = craft()->elements->getElementByUri($uri);
+            if ($element && $element->uri)
+            {
+                $result[$element->title] = $this->getFullyQualifiedUrl($element->url);
+            }
+            $uri .= "/";
+        }
+
         return $result;
     } /* -- getDefaultBreadcrumbs */
 
@@ -1325,7 +1391,11 @@ class SeomaticService extends BaseApplicationComponent
         $identity['genericOwnerImageId'] = $settings['genericOwnerImageId'];
         $image = craft()->assets->getFileById($settings['genericOwnerImageId']);
         if ($image)
+        {
             $identity['genericOwnerImage'] = $this->getFullyQualifiedUrl($image->url);
+            $identity['genericOwnerImageHeight'] = $image->getHeight();
+            $identity['genericOwnerImageWidth'] = $image->getWidth();
+        }
         else
             $identity['genericOwnerImage'] = '';
         $identity['genericOwnerTelephone'] = $settings['genericOwnerTelephone'];
@@ -1453,13 +1523,26 @@ class SeomaticService extends BaseApplicationComponent
         array_push($sameAs, $helper['instagramUrl']);
         array_push($sameAs, $helper['pinterestUrl']);
         array_push($sameAs, $helper['githubUrl']);
+        array_push($sameAs, $helper['vimeoUrl']);
         $sameAs = array_filter($sameAs);
         $sameAs = array_values($sameAs);
         if (!empty($sameAs))
             $identityJSONLD['sameAs'] = $sameAs;
 
+        if ($identity['genericOwnerImage'])
+        {
+            $ownerImage = array(
+                "type" => "ImageObject",
+                "url" => $identity['genericOwnerImage'],
+                "height" => $identity['genericOwnerImageHeight'],
+                "width" => $identity['genericOwnerImageWidth'],
+                );
+        }
+        else
+            $ownerImage = "";
+
         if (isset($identity['genericOwnerImage']))
-            $identityJSONLD['image'] = $identity['genericOwnerImage'];
+            $identityJSONLD['image'] = $ownerImage;
         $identityJSONLD['telephone'] = $identity['genericOwnerTelephone'];
         $identityJSONLD['email'] = $identity['genericOwnerEmail'];
         $address = array(
@@ -1488,7 +1571,7 @@ class SeomaticService extends BaseApplicationComponent
         if ($identity['siteOwnerType'] == "Organization")
         {
             if (isset($identity['genericOwnerImage']))
-                $identityJSONLD['logo'] = $identity['genericOwnerImage'];
+                $identityJSONLD['logo'] = $ownerImage;
             $geo = array(
                 "type" => "GeoCoordinates",
                 "latitude" => $identity['genericOwnerGeoLatitude'],
@@ -1498,7 +1581,7 @@ class SeomaticService extends BaseApplicationComponent
 
             $locImage = "";
             if (isset($identity['genericOwnerImage']))
-                $locImage = $identity['genericOwnerImage'];
+                $locImage = $ownerImage;
 
             $location = array(
                 "type" => "Place",
@@ -1628,6 +1711,7 @@ class SeomaticService extends BaseApplicationComponent
         $social['instagramHandle'] = $settings['instagramHandle'];
         $social['pinterestHandle'] = $settings['pinterestHandle'];
         $social['githubHandle'] = $settings['githubHandle'];
+        $social['vimeoHandle'] = $settings['vimeoHandle'];
 
         $result = $social;
 
@@ -1682,7 +1766,11 @@ class SeomaticService extends BaseApplicationComponent
         $creator['genericCreatorImageId'] = $settings['genericCreatorImageId'];
         $image = craft()->assets->getFileById($settings['genericCreatorImageId']);
         if ($image)
+        {
             $creator['genericCreatorImage'] = $this->getFullyQualifiedUrl($image->url);
+            $creator['genericCreatorImageHeight'] = $image->getHeight();
+            $creator['genericCreatorImageWidth'] = $image->getWidth();
+        }
         else
             $creator['genericCreatorImage'] = '';
         $creator['genericCreatorTelephone'] = $settings['genericCreatorTelephone'];
@@ -1767,8 +1855,20 @@ class SeomaticService extends BaseApplicationComponent
         $creatorJSONLD['description'] = $creator['genericCreatorDescription'];
         $creatorJSONLD['url'] = $creator['genericCreatorUrl'];
 
+        if ($creator['genericCreatorImage'])
+        {
+            $creatorImage = array(
+                "type" => "ImageObject",
+                "url" => $creator['genericCreatorImage'],
+                "height" => $creator['genericCreatorImageHeight'],
+                "width" => $creator['genericCreatorImageWidth'],
+                );
+        }
+        else
+            $creatorImage = "";
+
         if (isset($creator['genericCreatorImage']))
-            $creatorJSONLD['image'] = $creator['genericCreatorImage'];
+            $creatorJSONLD['image'] = $creatorImage;
         $creatorJSONLD['telephone'] = $creator['genericCreatorTelephone'];
         $creatorJSONLD['email'] = $creator['genericCreatorEmail'];
         $address = array(
@@ -1810,7 +1910,7 @@ class SeomaticService extends BaseApplicationComponent
         if ($creator['siteCreatorType'] == "Organization" || $creator['siteCreatorType'] == "Corporation")
         {
             if (isset($creator['genericCreatorImage']))
-                $creatorJSONLD['logo'] = $creator['genericCreatorImage'];
+                $creatorJSONLD['logo'] = $creatorImage;
             $geo = array(
                 "type" => "GeoCoordinates",
                 "latitude" => $creator['genericCreatorGeoLatitude'],
@@ -1820,7 +1920,7 @@ class SeomaticService extends BaseApplicationComponent
 
             $locImage = "";
             if (isset($identity['genericCreatorImage']))
-                $locImage = $identity['genericCreatorImage'];
+                $locImage = $creatorImage;
 
             $location = array(
                 "type" => "Place",
@@ -1913,10 +2013,170 @@ class SeomaticService extends BaseApplicationComponent
     } /* -- getCreatorJSONLD */
 
 /* --------------------------------------------------------------------------------
+    Get the Main Entity of Page JSON-LD
+-------------------------------------------------------------------------------- */
+
+    public function getMainEntityOfPageJSONLD($meta, $identity, $locale, $isMainEntityOfPage)
+    {
+
+        $mainEntityOfPageJSONLD = array();
+        if (isset($meta['seoMainEntityCategory']) && isset($meta['seoMainEntityOfPage']))
+        {
+            $entityCategory = $meta['seoMainEntityCategory'];
+            $entityType = $meta['seoMainEntityCategory'];
+            if ($meta['seoMainEntityOfPage'])
+                $entityType = $meta['seoMainEntityOfPage'];
+
+    /* -- Cache it in our class; no need to fetch it more than once */
+
+            if ($isMainEntityOfPage)
+            {
+                if (isset($this->cachedMainEntityOfPageJSONLD[$locale]))
+                    return $this->cachedMainEntityOfPageJSONLD[$locale];
+            }
+
+            $title = "";
+            if (isset($meta['seoTitle']))
+                $title = $meta['seoTitle'];
+            $imageObject = $dateCreated = $dateModified = $datePublished = $copyrightYear = "";
+            if (isset($meta['seoImageId']))
+            {
+                $image = craft()->assets->getFileById($meta['seoImageId']);
+                if ($image)
+                {
+                    if (isset($meta['seoImageTransform']))
+                        $transform = $meta['seoImageTransform'];
+                    else
+                        $transform = '';
+                    $imgUrl = $image->getUrl($transform);
+                    $imageObject = array(
+                        "type" => "ImageObject",
+                        "url" => $this->getFullyQualifiedUrl($imgUrl),
+                        "width" => $image->getWidth($transform),
+                        "height" => $image->getHeight($transform),
+                        );
+                }
+            }
+
+    /* -- If an element was injected into the current template, scrape it for attribuates */
+
+            if ($this->lastElement)
+            {
+                $elemType = $this->lastElement->getElementType();
+                switch ($elemType)
+                {
+                    case ElementType::Entry:
+                    {
+                        $title = $this->lastElement->title;
+                        if ($this->lastElement->dateCreated)
+                            $dateCreated = $this->lastElement->dateCreated->iso8601();
+                        if ($this->lastElement->dateUpdated)
+                            $dateModified = $this->lastElement->dateUpdated->iso8601();
+                        if ($this->lastElement->postDate)
+                            $datePublished = $this->lastElement->postDate->iso8601();
+                        if ($this->lastElement->postDate)
+                            $copyrightYear = $this->lastElement->postDate->year();
+                    }
+                    break;
+
+                    case "Commerce_Product":
+                    {
+                        $title = $this->lastElement->title;
+                        if ($this->lastElement->dateCreated)
+                            $dateCreated = $this->lastElement->dateCreated->iso8601();
+                        if ($this->lastElement->dateUpdated)
+                            $dateModified = $this->lastElement->dateUpdated->iso8601();
+                        if ($this->lastElement->postDate)
+                            $datePublished = $this->lastElement->postDate->iso8601();
+                        if ($this->lastElement->postDate)
+                            $copyrightYear = $this->lastElement->postDate->year();
+                    }
+                    break;
+
+                    case ElementType::Category:
+                    {
+                        $title = $this->lastElement->title;
+                        if ($this->lastElement->dateCreated)
+                            $dateCreated = $this->lastElement->dateCreated->iso8601();
+                        if ($this->lastElement->dateUpdated)
+                            $dateModified = $this->lastElement->dateUpdated->iso8601();
+                        if ($this->lastElement->dateCreated)
+                            $datePublished = $this->lastElement->dateCreated->iso8601();
+                        if ($this->lastElement->dateCreated)
+                            $copyrightYear = $this->lastElement->dateCreated->year();
+                    }
+                    break;
+
+                }
+            }
+
+        /* -- Main Entity of Page common JSON-LD */
+
+            $mainEntityOfPageJSONLD['type'] = $entityType;
+            $mainEntityOfPageJSONLD['name'] = $title;
+            if (isset($meta['seoDescription']))
+                $mainEntityOfPageJSONLD['description'] = $meta['seoDescription'];
+            $mainEntityOfPageJSONLD['image'] = $imageObject;
+            if (isset($meta['canonicalUrl']))
+            {
+                $mainEntityOfPageJSONLD['url'] = $meta['canonicalUrl'];
+                if ($isMainEntityOfPage)
+                    $mainEntityOfPageJSONLD['mainEntityOfPage'] = $meta['canonicalUrl'];
+            }
+
+    /* -- Special-cased attributes */
+
+            switch ($entityCategory)
+            {
+                case "CreativeWork":
+                {
+                    $mainEntityOfPageJSONLD['inLanguage'] = craft()->language;
+                    $mainEntityOfPageJSONLD['headline'] = $title;
+                    if (isset($meta['seoKeywords']))
+                        $mainEntityOfPageJSONLD['keywords'] = $meta['seoKeywords'];
+                    $mainEntityOfPageJSONLD['dateCreated'] = $dateCreated;
+                    $mainEntityOfPageJSONLD['dateModified'] = $dateModified;
+                    $mainEntityOfPageJSONLD['datePublished'] = $datePublished;
+                    $mainEntityOfPageJSONLD['copyrightYear'] = $copyrightYear;
+
+                    $mainEntityOfPageJSONLD['author'] = $identity;
+                    $mainEntityOfPageJSONLD['publisher'] = $identity;
+                    $mainEntityOfPageJSONLD['copyrightHolder'] = $identity;
+                }
+                break;
+
+                case "Event":
+                {
+                }
+                break;
+
+                case "Product":
+                {
+                }
+                break;
+            }
+
+            if ((!empty($meta['breadcrumbs'])) && ($entityType == "WebPage"))
+            {
+                $crumbsJSON = $this->getBreadcrumbsJSONLD($meta['breadcrumbs']);
+                $mainEntityOfPageJSONLD['breadcrumb'] = $crumbsJSON;
+            }
+
+            $mainEntityOfPageJSONLD = array_filter($mainEntityOfPageJSONLD);
+
+            if ($isMainEntityOfPage)
+            {
+                $this->cachedMainEntityOfPageJSONLD[$locale] = $mainEntityOfPageJSONLD;
+            }
+        }
+        return $mainEntityOfPageJSONLD;
+    } /* -- getMainEntityOfPageJSONLD */
+
+/* --------------------------------------------------------------------------------
     Get the Product JSON-LD
 -------------------------------------------------------------------------------- */
 
-    public function getProductJSONLD($metaVars, $locale)
+    public function getProductJSONLD($meta, $identity, $locale)
     {
 
 /* -- Cache it in our class; no need to fetch it more than once */
@@ -1930,24 +2190,25 @@ class SeomaticService extends BaseApplicationComponent
         {
             $productJSONLD = array();
 
-    /* -- Settings generic to all Creator types */
+    /* -- Product JSON-LD */
 
             $productJSONLD['type'] = "Product";
             $productJSONLD['name'] = $variant['seoProductDescription'];
-            $productJSONLD['description'] = $metaVars['seomaticMeta']['seoDescription'];
-            $productJSONLD['image'] = $metaVars['seomaticMeta']['seoImage'];
-            $productJSONLD['logo'] = $metaVars['seomaticMeta']['seoImage'];
-            $productJSONLD['url'] = $metaVars['seomaticMeta']['canonicalUrl'];
+            $productJSONLD['description'] = $meta['seoDescription'];
+            $productJSONLD['image'] = $meta['seoImage'];
+            $productJSONLD['logo'] = $meta['seoImage'];
+            $productJSONLD['url'] = $meta['canonicalUrl'];
+            $productJSONLD['mainEntityOfPage'] = $meta['canonicalUrl'];
 
             $productJSONLD['sku'] = $variant['seoProductSku'];
 
             $offer = array(
                 "type" => "Offer",
-                "url" => $metaVars['seomaticMeta']['canonicalUrl'],
+                "url" => $meta['canonicalUrl'],
                 "price" =>  $variant['seoProductPrice'],
                 "priceCurrency" =>  $variant['seoProductCurrency'],
-                "offeredBy" =>  $metaVars['seomaticIdentity'],
-                "seller" =>  $metaVars['seomaticIdentity'],
+                "offeredBy" =>  $identity,
+                "seller" =>  $identity,
             );
             $offer = array_filter($offer);
             $productJSONLD['offers'] = $offer;
@@ -2040,6 +2301,7 @@ class SeomaticService extends BaseApplicationComponent
         array_push($sameAs, $metaVars['seomaticHelper']['instagramUrl']);
         array_push($sameAs, $metaVars['seomaticHelper']['pinterestUrl']);
         array_push($sameAs, $metaVars['seomaticHelper']['githubUrl']);
+        array_push($sameAs, $metaVars['seomaticHelper']['vimeoUrl']);
         $sameAs = array_filter($sameAs);
         $sameAs = array_values($sameAs);
         if (!empty($sameAs))
@@ -2095,6 +2357,9 @@ function parseAsTemplate($templateStr, $element)
                 $meta['seoTitle'] = $this->parseAsTemplate($metaRecord->seoTitle, $element);
                 $meta['seoDescription'] = $this->parseAsTemplate($metaRecord->seoDescription, $element);
                 $meta['seoKeywords'] = $this->parseAsTemplate($metaRecord->seoKeywords, $element);
+                $meta['seoMainEntityCategory'] = $metaRecord->seoMainEntityCategory;
+                $meta['seoMainEntityOfPage'] = $metaRecord->seoMainEntityOfPage;
+
                 if (isset($metaRecord->seoImageId))
                     $meta['seoImageId'] = $metaRecord->seoImageId;
                 else
@@ -2119,7 +2384,9 @@ function parseAsTemplate($templateStr, $element)
                     $image = craft()->assets->getFileById($meta['seoImageId']);
                     if ($image)
                     {
-                        $imgUrl = $image->getUrl($meta['seoImageTransform']);
+                        $imgUrl = "";
+                        if (isset($meta['seoImageTransform']))
+                            $imgUrl = $image->getUrl($meta['seoImageTransform']);
                         if (!$imgUrl)
                             $imgUrl = $image->url;
                         $meta['seoImage'] = $this->getFullyQualifiedUrl($imgUrl);
@@ -2323,6 +2590,13 @@ function parseAsTemplate($templateStr, $element)
         }
         else
             $helper['githubUrl'] = '';
+
+        if ($social['vimeoHandle'])
+        {
+            $helper['vimeoUrl'] = "https://vimeo.com/" . $social['vimeoHandle'];
+        }
+        else
+            $helper['vimeoUrl'] = '';
     } /* -- addSocialHelpers */
 
 /* --------------------------------------------------------------------------------
@@ -2456,8 +2730,8 @@ function parseAsTemplate($templateStr, $element)
         $seomaticSocial = $metaVars['seomaticSocial'];
         $seomaticCreator = $metaVars['seomaticCreator'];
 
-        if (isset($metaVars['seomaticProduct']))
-            $seomaticProduct = $metaVars['seomaticCreator'];
+        if (isset($metaVars['seomaticMainEntityOfPage']))
+            $seomaticMainEntityOfPage = $metaVars['seomaticMainEntityOfPage'];
 
 /* -- Set up the title prefix and suffix for the OpenGraph and Twitter titles */
 
@@ -2510,16 +2784,16 @@ function parseAsTemplate($templateStr, $element)
         $this->sanitizeArray($seomaticIdentity);
         $this->sanitizeArray($seomaticSocial);
         $this->sanitizeArray($seomaticCreator);
-        if (isset($metaVars['seomaticProduct']))
-            $this->sanitizeArray($seomaticProduct);
+        if (isset($metaVars['seomaticMainEntityOfPage']))
+            $this->sanitizeArray($seomaticMainEntityOfPage);
 
         $metaVars['seomaticMeta'] = $seomaticMeta;
         $metaVars['seomaticSiteMeta'] = $seomaticSiteMeta;
         $metaVars['seomaticIdentity'] = $seomaticIdentity;
         $metaVars['seomaticSocial'] = $seomaticSocial;
         $metaVars['seomaticCreator'] = $seomaticCreator;
-        if (isset($metaVars['seomaticProduct']))
-            $metaVars['seomaticCreator'] = $seomaticProduct;
+        if (isset($metaVars['seomaticMainEntityOfPage']))
+            $metaVars['seomaticMainEntityOfPage'] = $seomaticMainEntityOfPage;
 
     } /* -- sanitizeMetaVars */
 
@@ -2712,6 +2986,8 @@ public function getFullyQualifiedUrl($url)
             {
                 $value = craft()->config->parseEnvironmentString($value);
                 $value = strip_tags($value);
+/* -- Strip all control characters */
+                $value = preg_replace('/[\x00-\x1F\x7F]/', ' ', $value);;
                 if ($key === 'email')
                     $value = $this->encodeEmailAddress($value);
                 elseif ($key === 'url' || $key === 'image' || $key === 'logo')
