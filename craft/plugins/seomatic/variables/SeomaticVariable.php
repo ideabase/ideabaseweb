@@ -535,13 +535,33 @@ class SeomaticVariable
     } /* -- getSocial */
 
 /* --------------------------------------------------------------------------------
+    Get the template meta for $templatePath
+-------------------------------------------------------------------------------- */
+
+    public function getTemplateMeta($templatePath="", $locale=null)
+    {
+        if (!$locale)
+            $locale = craft()->language;
+        return craft()->seomatic->getMeta($templatePath);
+    } /* -- getTemplateMeta */
+
+/* --------------------------------------------------------------------------------
+    Return a human-readable file size
+-------------------------------------------------------------------------------- */
+
+    public function humanFileSize($size)
+    {
+        return craft()->seomatic->humanFileSize($size);
+    } /* -- humanFileSize */
+
+/* --------------------------------------------------------------------------------
     Get the plugin name
 -------------------------------------------------------------------------------- */
 
     function getPluginName()
     {
-        $retourPlugin = craft()->plugins->getPlugin('seomatic');
-        $result = $retourPlugin->getName();
+        $seomaticPlugin = craft()->plugins->getPlugin('seomatic');
+        $result = $seomaticPlugin->getName();
         return $result;
     } /* -- getPluginName */
 

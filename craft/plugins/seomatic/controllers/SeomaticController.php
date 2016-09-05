@@ -14,8 +14,8 @@ class SeomaticController extends BaseController
  */
     public function actionEditSettings()
     {
-        $retourPlugin = craft()->plugins->getPlugin('seomatic');
-        $settings = $retourPlugin->getSettings();
+        $seomaticPlugin = craft()->plugins->getPlugin('seomatic');
+        $settings = $seomaticPlugin->getSettings();
 
         $this->renderTemplate('seomatic/settings', array(
            'settings' => $settings
@@ -177,11 +177,32 @@ class SeomaticController extends BaseController
                     curl_setopt($ch, CURLOPT_URL, $pagespeedDesktopUrl);
                     $pagespeedDesktopResult = curl_exec($ch);
                     curl_close($ch);
+                    $pageSpeedPageStats = array();
                     if ($pagespeedDesktopResult)
                     {
                         $pagespeedJson = json_decode($pagespeedDesktopResult, true);
                         if ($pagespeedJson)
                         {
+                            if (!empty($pagespeedJson['pageStats']))
+                            {
+                                $pageSpeedPageStats = $pagespeedJson['pageStats'];
+                                if (empty($pageSpeedPageStats['htmlResponseBytes']))
+                                    $pageSpeedPageStats['htmlResponseBytes'] = 0;
+                                if (empty($pageSpeedPageStats['cssResponseBytes']))
+                                    $pageSpeedPageStats['cssResponseBytes'] = 0;
+                                if (empty($pageSpeedPageStats['imageResponseBytes']))
+                                    $pageSpeedPageStats['imageResponseBytes'] = 0;
+                                if (empty($pageSpeedPageStats['javascriptResponseBytes']))
+                                    $pageSpeedPageStats['javascriptResponseBytes'] = 0;
+                                if (empty($pageSpeedPageStats['otherResponseBytes']))
+                                    $pageSpeedPageStats['otherResponseBytes'] = 0;
+                                $pageSpeedPageStats['totalResponseBytes'] = $pageSpeedPageStats['htmlResponseBytes'] +
+                                    $pageSpeedPageStats['cssResponseBytes'] +
+                                    $pageSpeedPageStats['imageResponseBytes'] +
+                                    $pageSpeedPageStats['javascriptResponseBytes'] +
+                                    $pageSpeedPageStats['otherResponseBytes'];
+                            }
+
                             if (isset($pagespeedJson['responseCode']) && ($pagespeedJson['responseCode'] == "200" || $pagespeedJson['responseCode'] == "301" || $pagespeedJson['responseCode'] == "302"))
                             {
                                 if (isset($pagespeedJson['ruleGroups']['SPEED']['score']))
@@ -237,9 +258,10 @@ class SeomaticController extends BaseController
                     foreach($dom->find('script') as $element)
                         $element->outertext = '';
                     $strippedDom = html_entity_decode($dom->plaintext);
-                    $strippedDom = preg_replace('@[^0-9a-z\.\!]+@i', ', ', $strippedDom);
+//                    $strippedDom = preg_replace('@[^0-9a-z\.\!]+@i', ', ', $strippedDom);
+                    $strippedDom = stripslashes($strippedDom);
                     $htmlDom = html_entity_decode($dom->outertext);
-                    $htmlDom = preg_replace('@[^0-9a-z\.\!]+@i', '', $htmlDom);
+//                    $htmlDom = preg_replace('@[^0-9a-z\.\!]+@i', '', $htmlDom);
 
     /* -- SEO statistics */
 
@@ -292,8 +314,19 @@ class SeomaticController extends BaseController
 
                     $textToHtmlRatio = (strlen($strippedDom) / (strlen($htmlDom) - strlen($strippedDom))) * 100;
 
+                    $strippedDom = preg_replace('/\s+/', ' ', $strippedDom);
+
+/* -- Extract the page keywords, and clean them up a bit */
+
                     $pageKeywords = craft()->seomatic->extractKeywords($strippedDom);
-                    $pageKeywords = str_replace(",",", ", $pageKeywords);
+
+                    $pageKeywords = str_replace(",,",",", $pageKeywords);
+                    $pageKeywords = str_replace(" ,",",", $pageKeywords);
+                    $pageKeywords = str_replace(" .",".", $pageKeywords);
+                    $pageKeywords = preg_replace('/\.+/', '.', $pageKeywords);
+                    $pageKeywords = preg_replace('/,+/', ',', $pageKeywords);
+                    $pageKeywords = str_replace(",.,",",", $pageKeywords);
+                    $pageKeywords = html_entity_decode($pageKeywords, ENT_COMPAT, 'UTF-8');
 
     /* -- Focus keywords */
 
@@ -357,6 +390,7 @@ class SeomaticController extends BaseController
                         'validatorStatus' => $validatorStatus,
                         'validatorErrors' => $validatorErrors,
                         'validatorWarnings' => $validatorWarnings,
+                        'pageSpeedPageStats' => $pageSpeedPageStats,
                         'pagespeedDesktopScore' => $pagespeedDesktopScore,
                         'pagespeedDesktopUrl' => $pagespeedDesktopUrl,
                         'pagespeedMobileScore' => $pagespeedMobileScore,
@@ -510,6 +544,34 @@ class SeomaticController extends BaseController
             $variables['elements'] = array($asset);
         } else {
             $variables['elements'] = array();
+        }
+
+        // Set asset ID
+        $variables['siteSeoTwitterImageId'] = $variables['siteMeta']['siteSeoTwitterImageId'];
+
+        // Set asset elements
+        if ($variables['siteSeoTwitterImageId']) {
+            if (is_array($variables['siteSeoTwitterImageId'])) {
+                $variables['siteSeoTwitterImageId'] = $variables['siteSeoTwitterImageId'][0];
+            }
+            $asset = craft()->elements->getElementById($variables['siteSeoTwitterImageId']);
+            $variables['elementsTwitter'] = array($asset);
+        } else {
+            $variables['elementsTwitter'] = array();
+        }
+
+        // Set asset ID
+        $variables['siteSeoFacebookImageId'] = $variables['siteMeta']['siteSeoFacebookImageId'];
+
+        // Set asset elements
+        if ($variables['siteSeoFacebookImageId']) {
+            if (is_array($variables['siteSeoFacebookImageId'])) {
+                $variables['siteSeoFacebookImageId'] = $variables['siteSeoFacebookImageId'][0];
+            }
+            $asset = craft()->elements->getElementById($variables['siteSeoFacebookImageId']);
+            $variables['elementsFacebook'] = array($asset);
+        } else {
+            $variables['elementsFacebook'] = array();
         }
 
         // Set element type
@@ -705,6 +767,34 @@ class SeomaticController extends BaseController
             $variables['elements'] = array();
         }
 
+        // Set asset ID
+        $variables['seoTwitterImageId'] = $variables['meta']->seoTwitterImageId;
+
+        // Set asset elements
+        if ($variables['seoTwitterImageId']) {
+            if (is_array($variables['seoTwitterImageId'])) {
+                $variables['seoTwitterImageId'] = $variables['seoTwitterImageId'][0];
+            }
+            $asset = craft()->elements->getElementById($variables['seoTwitterImageId']);
+            $variables['elementsTwitter'] = array($asset);
+        } else {
+            $variables['elementsTwitter'] = array();
+        }
+
+        // Set asset ID
+        $variables['seoFacebookImageId'] = $variables['meta']->seoFacebookImageId;
+
+        // Set asset elements
+        if ($variables['seoFacebookImageId']) {
+            if (is_array($variables['seoFacebookImageId'])) {
+                $variables['seoFacebookImageId'] = $variables['seoFacebookImageId'][0];
+            }
+            $asset = craft()->elements->getElementById($variables['seoFacebookImageId']);
+            $variables['elementsFacebook'] = array($asset);
+        } else {
+            $variables['elementsFacebook'] = array();
+        }
+
         // Set element type
         $variables['elementType'] = craft()->elements->getElementType(ElementType::Asset);
 
@@ -782,6 +872,8 @@ class SeomaticController extends BaseController
         $model->openGraphType = craft()->request->getPost('openGraphType', $model->openGraphType);
         $model->robots = craft()->request->getPost('robots', $model->robots);
         $model->seoImageId = craft()->request->getPost('seoImageId', $model->seoImageId);
+        $model->seoTwitterImageId = craft()->request->getPost('seoTwitterImageId', $model->seoTwitterImageId);
+        $model->seoFacebookImageId = craft()->request->getPost('seoFacebookImageId', $model->seoFacebookImageId);
         $model->enabled = (bool)craft()->request->getPost('enabled', $model->enabled);
         $model->getContent()->title = craft()->request->getPost('title', $model->title);
 
@@ -870,6 +962,14 @@ class SeomaticController extends BaseController
         $record->siteSeoImageId = craft()->request->getPost('siteSeoImageId', $record->siteSeoImageId);
         $assetId = (!empty($record->siteSeoImageId) ? $record->siteSeoImageId[0] : null);
         $record->siteSeoImageId = $assetId;
+
+        $record->siteSeoTwitterImageId = craft()->request->getPost('siteSeoTwitterImageId', $record->siteSeoTwitterImageId);
+        $assetId = (!empty($record->siteSeoTwitterImageId) ? $record->siteSeoTwitterImageId[0] : null);
+        $record->siteSeoTwitterImageId = $assetId;
+
+        $record->siteSeoFacebookImageId = craft()->request->getPost('siteSeoFacebookImageId', $record->siteSeoFacebookImageId);
+        $assetId = (!empty($record->siteSeoFacebookImageId) ? $record->siteSeoFacebookImageId[0] : null);
+        $record->siteSeoFacebookImageId = $assetId;
 
         if ($record->save())
         {
