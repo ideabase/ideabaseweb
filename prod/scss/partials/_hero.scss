@@ -191,36 +191,29 @@
 // Homepage Video Background
 
 .hero-video {
-  display: block;
+  display: none;
   width: 100%;
+  position: absolute;
+  @media screen and (min-width: 600px) {
+    width: 120%;
+    display: block;
+  }
+  @media screen and (min-width: 700px) {
+    width: 145%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 120%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+  }
 }
 
-
 .video-background {
-
-  padding: 0;
   overflow: hidden;
-  max-height: 640px;
   &:after {
     background-color: #6596cc;
     mix-blend-mode: hard-light;
   }
-
-  @media screen and (min-width: 500px) {
-    padding: 0;
-  }
-  @media screen and (min-width: 1500px) {
-    max-height: 720px;
-  }
-  @media screen and (min-width: 1900px) {
-    max-height: 800px;
-  }
-
-  .section-header__container {
-    position: absolute;
-    z-index: 10;
-    padding: 10em;
-  }
-
 }
 
