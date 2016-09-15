@@ -26,7 +26,7 @@ body.rtl #alerts li:before { margin: -1px 0 0 3px ; }
 .topbar { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-align: stretch; align-items: stretch; }
 
 /* global sidebar */
-#global-sidebar { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; position: fixed; top: 0; width: 220px; height: 100vh; background: #333f4d; z-index: 100; overflow: auto; }
+#global-sidebar { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -ms-flex-direction: column; flex-direction: column; position: fixed; top: 0; width: 220px; height: 100vh; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: 600; background: #333f4d; z-index: 100; overflow: auto; }
 body.ltr #global-sidebar { left: 0; }
 body.rtl #global-sidebar { right: 0; }
 
@@ -224,7 +224,7 @@ body.rtl #notifications-wrapper { right: 0; }
 
 #notifications { text-align: center; }
 
-#notifications .notification { display: inline-block; padding: 5px 10px; border-radius: 0 0 3px 3px; border-width: 0 1px 1px; color: #fff !important; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
+#notifications .notification { display: inline-block; padding: 5px 10px; border-radius: 0 0 3px 3px; border-width: 0 1px 1px; color: #fff !important; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: 600; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); box-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
 
 #notifications .notification.notice { background: #5286d9; }
 
@@ -637,7 +637,7 @@ body.rtl .sidebar nav li a { border-radius: 2px 0 0 2px; }
 
 .sidebar nav li.expanded > ul { display: block; }
 
-.sidebar nav li a.sel { background: #737f8c; cursor: default; }
+.sidebar nav li a.sel { background: #737f8c; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: 600; cursor: default; }
 
 .sidebar nav li a.sel, .sidebar nav li a.sel + .toggle { color: #fff; }
 

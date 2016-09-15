@@ -522,7 +522,7 @@ body.rtl .btn.big[data-icon]:before, body.rtl .livepreviewbtn:before, body.rtl .
 .btngroup.big, .btngroup.big input.btn, .btn.big, .btn.big + .spinner { height: 36px; }
 
 /* submit buttons */
-.btn.submit { color: #fff; background-image: -webkit-linear-gradient(#da5a47, #cc5643); background-image: -moz-linear-gradient(#da5a47, #cc5643); background-image: -ms-linear-gradient(#da5a47, #cc5643); background-image: -o-linear-gradient(#da5a47, #cc5643); background-image: linear-gradient(#da5a47, #cc5643); }
+.btn.submit { color: #fff; background-image: -webkit-linear-gradient(#da5a47, #cc5643); background-image: -moz-linear-gradient(#da5a47, #cc5643); background-image: -ms-linear-gradient(#da5a47, #cc5643); background-image: -o-linear-gradient(#da5a47, #cc5643); background-image: linear-gradient(#da5a47, #cc5643); -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: 600; }
 
 .btn.submit:not(.disabled):not(.inactive):hover, .btn.submit:not(.disabled):not(.inactive).hover { background-image: -webkit-linear-gradient(#bf503f, #b34b3b); background-image: -moz-linear-gradient(#bf503f, #b34b3b); background-image: -ms-linear-gradient(#bf503f, #b34b3b); background-image: -o-linear-gradient(#bf503f, #b34b3b); background-image: linear-gradient(#bf503f, #b34b3b); }
 
@@ -721,7 +721,7 @@ body.rtl .datatablesorthelper .tableview .toggle { -webkit-transform: rotate(90d
 .element.sel, li.sel .element { border-radius: 3px; background: #d5d8dd; cursor: default; }
 .element.sel.hasthumb .elementthumb:after, li.sel .element.hasthumb .elementthumb:after { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; content: '.'; font-size: 0; background: rgba(35, 51, 76, 0.19); }
 .element.sel.loading:after, li.sel .element.loading:after { background-image: url(../images/spinner_element.gif); }
-.element.hasthumb .elementthumb img { display: block; max-width: 100%; max-height: 100%; background: url(../images/checkers.svg) 0 0; flex-shrink: 0; }
+.element.hasthumb .elementthumb img { display: block; max-width: 100%; max-height: 100%; background: url(../images/checkers.svg) 0 0; flex-shrink: 0; pointer-events: none; }
 .element .label { display: inline-block; }
 .element.small, .element.large:not(.hasthumb) { display: inline-block; padding: 6px 7px; }
 .element.small.hasstatus .status, .element.large:not(.hasthumb).hasstatus .status { position: absolute; top: calc(50% - 4px); }
