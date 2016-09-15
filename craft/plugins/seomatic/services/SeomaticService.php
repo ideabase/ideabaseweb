@@ -815,7 +815,7 @@ class SeomaticService extends BaseApplicationComponent
                 $imgId = 0;
                 if (isset($meta['seoImageId']))
                     $imgId = $meta['seoImageId'];
-                if (isset($meta['seoTwitterImageId']))
+                if (isset($meta['seoTwitterImageId']) && $meta['seoTwitterImageId'] != 0)
                     $imgId = $meta['seoTwitterImageId'];
                 if ($imgId)
                 {
@@ -858,7 +858,7 @@ class SeomaticService extends BaseApplicationComponent
             $imgId = 0;
             if (isset($meta['seoImageId']))
                 $imgId = $meta['seoImageId'];
-            if (isset($meta['seoFacebookImageId']))
+            if (isset($meta['seoFacebookImageId']) && $meta['seoFacebookImageId'] != 0)
                 $imgId = $meta['seoFacebookImageId'];
             if ($imgId)
             {
@@ -3095,8 +3095,9 @@ public function getFullyQualifiedUrl($url)
 
 /* -- remove excess whitespace */
 
-        $text = preg_replace('/\s+/', ' ', $text);
+        $text = preg_replace('/\s{2,}/', ' ', $text);
 
+        $text = html_entity_decode($text);
         return $text;
     } /* -- _cleanupText */
 
