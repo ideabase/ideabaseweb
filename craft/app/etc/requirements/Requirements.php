@@ -561,7 +561,7 @@ class WebRootExposedFolderRequirement extends Requirement
 	public function __construct()
 	{
 		parent::__construct(
-			Craft::t('Craft folders in public web root'),
+			Craft::t('Sensitive Craft folders should not be publicly accessible'),
 			null,
 			false,
 			'<a href="http://craftcms.com">Craft CMS</a>'
@@ -635,7 +635,7 @@ class WebRootExposedFolderRequirement extends Requirement
 		$pathToTest = IOHelper::normalizePathSeparators($pathToTest);
 
 		// Get the base path without the script name.
-		$subBasePath = IOHelper::normalizePathSeparators(mb_substr(craft()->request->getScriptFile(), 0, -mb_strlen(craft()->request->getScriptName())));
+		$subBasePath = IOHelper::normalizePathSeparators(mb_substr(craft()->request->getScriptFile(), 0, -mb_strlen(craft()->request->getScriptUrl())));
 
 		if (mb_strpos($pathToTest, $subBasePath) !== false)
 		{

@@ -1,8 +1,8 @@
 [
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.8.9",
-        "version_normalized": "2.8.9.0",
+        "version": "v2.8.11",
+        "version_normalized": "2.8.11.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
@@ -158,12 +158,12 @@
     },
     {
         "name": "imagine/imagine",
-        "version": "v0.6.14",
-        "version_normalized": "0.6.14.0",
+        "version": "0.6.14.1",
+        "version_normalized": "0.6.14.1",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/Imagine",
-            "reference": "391ac70546d2660bd4211370ddae492cb22d0f71"
+            "reference": "44e54d22b968850df86985047c1488b10a8f2c5f"
         },
         "archive": {
             "exclude": [
@@ -188,7 +188,7 @@
             "ext-gmagick": "to use the Gmagick implementation",
             "ext-imagick": "to use the Imagick implementation"
         },
-        "time": "2016-08-30 07:09:01",
+        "time": "2016-09-22 21:53:27",
         "type": "library",
         "extra": {
             "branch-alias": {

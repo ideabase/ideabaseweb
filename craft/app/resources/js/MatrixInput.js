@@ -476,7 +476,6 @@ var MatrixBlock = Garnish.Base.extend(
 			this.toggle();
 		}
 
-		this.addListener(this.$titlebar, 'dblclick', this._handleTitleBarClick);
 		this.addListener(this.$titlebar, 'doubletap', this._handleTitleBarClick);
 	},
 

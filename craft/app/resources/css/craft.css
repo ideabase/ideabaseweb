@@ -45,9 +45,9 @@ body, input, select, textarea { font-family: HelveticaNeue, sans-serif; }
 
 .last, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, p:last-child, .pane:last-child, .grid:last-child, .field:last-child, .toolbar:last-child, .buttons:last-child { margin-bottom: 0 !important; }
 
-body.rtl .input.ltr { text-align: right; direction: rtl; }
+body.rtl .input.ltr { text-align: left; direction: ltr; }
 
-body.ltr .input.rtl { text-align: left; direction: ltr; }
+body.ltr .input.rtl { text-align: right; direction: rtl; }
 
 body.rtl .text.ltr { text-align: right !important; direction: ltr !important; }
 
