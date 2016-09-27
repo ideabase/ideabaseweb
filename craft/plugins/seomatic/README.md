@@ -56,6 +56,25 @@ Some things to do, and ideas for potential features:
 
 ## Changelog
 
+### 1.1.39 -- 2016.09.23
+
+* [Improved] Don't redirect to the welcome page if we're being installed via Console command
+* [Improved] Updated the README.md
+
+### 1.1.38 -- 2016.09.22
+
+* [Fixed] Fixed an issue with Entry meta and Template Meta would not default Twitter and Facebook images properly
+* [Fixed] Fixed an issue where Facebook and Twitter image transforms were not properly applied with Entry and Template meta
+* [Fixed] Fixed an issue where elements with certain characters in them could cause invalid Breadcrumb JSON-LD to be generated
+* [Improved] The Javascript for the SEOmetrics `Analyze` button now returns false to eliminate the #
+* [Improved] Updated the README.md
+
+### 1.1.37 -- 2016.09.18
+
+* [Fixed] The Settings template now works with Craft < 2.5
+* [Fixed] Fixed a regression that would cause php errors on the settings pages on PHP < 5.5
+* [Improved] Updated the README.md
+
 ### 1.1.36 -- 2016.09.07
 
 * [Fixed] SEOmetrics will now work if `open_basedir` is set

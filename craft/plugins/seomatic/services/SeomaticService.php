@@ -257,6 +257,7 @@ class SeomaticService extends BaseApplicationComponent
         {
             $this->sanitizeMetaVars($metaVars);
             $crumbsJSON = $this->getBreadcrumbsJSONLD($metaVars['seomaticMeta']['breadcrumbs']);
+            $this->sanitizeArray($crumbsJSON);
             $htmlText = $this->renderJSONLD($crumbsJSON, $isPreview);
         }
         return $htmlText;
@@ -704,6 +705,10 @@ class SeomaticService extends BaseApplicationComponent
             $meta['seoDescription'] = $entryMeta->seoDescription;
             $meta['seoKeywords'] = $entryMeta->seoKeywords;
 
+            $meta['seoImageTransform'] = $entryMeta->seoImageTransform;
+            $meta['seoFacebookImageTransform'] = $entryMeta->seoFacebookImageTransform;
+            $meta['seoTwitterImageTransform'] = $entryMeta->seoTwitterImageTransform;
+
             if (isset($entryMeta->seoImageId[0]))
                 $meta['seoImageId'] = $entryMeta->seoImageId;
             else
@@ -712,12 +717,12 @@ class SeomaticService extends BaseApplicationComponent
             if (isset($entryMeta->seoTwitterImageId[0]))
                 $meta['seoTwitterImageId'] = $entryMeta->seoTwitterImageId;
             else
-                $meta['seoTwitterImageId'] = null;
+                $meta['seoTwitterImageId'] = $meta['seoImageId'];
 
             if (isset($entryMeta->seoFacebookImageId[0]))
                 $meta['seoFacebookImageId'] = $entryMeta->seoFacebookImageId;
             else
-                $meta['seoFacebookImageId'] = null;
+                $meta['seoFacebookImageId'] = $meta['seoImageId'];
 
             $meta['canonicalUrl'] =  $this->getFullyQualifiedUrl($entryMetaUrl);
 
@@ -2394,6 +2399,10 @@ function parseAsTemplate($templateStr, $element)
                 $meta['seoMainEntityCategory'] = $metaRecord->seoMainEntityCategory;
                 $meta['seoMainEntityOfPage'] = $metaRecord->seoMainEntityOfPage;
 
+                $meta['seoImageTransform'] = $metaRecord->seoImageTransform;
+                $meta['seoFacebookImageTransform'] = $metaRecord->seoFacebookImageTransform;
+                $meta['seoTwitterImageTransform'] = $metaRecord->seoTwitterImageTransform;
+
                 if (isset($metaRecord->seoImageId))
                     $meta['seoImageId'] = $metaRecord->seoImageId;
                 else
@@ -2402,12 +2411,12 @@ function parseAsTemplate($templateStr, $element)
                 if (isset($metaRecord->seoTwitterImageId))
                     $meta['seoTwitterImageId'] = $metaRecord->seoTwitterImageId;
                 else
-                    $meta['seoTwitterImageId'] = null;
+                    $meta['seoTwitterImageId'] = $meta['seoImageId'];
 
                 if (isset($metaRecord->seoFacebookImageId))
                     $meta['seoFacebookImageId'] = $metaRecord->seoFacebookImageId;
                 else
-                    $meta['seoFacebookImageId'] = null;
+                    $meta['seoFacebookImageId'] = $meta['seoImageId'];
 
                 $meta['twitterCardType'] = $metaRecord->twitterCardType;
                 if (!$meta['twitterCardType'])

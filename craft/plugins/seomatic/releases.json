@@ -1,5 +1,36 @@
 [
     {
+        "version": "1.1.39",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-09-23T11:00:00-11:00",
+        "notes": [
+            "[Improved] Don't redirect to the welcome page if we're being installed via Console command",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.1.38",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-09-22T11:00:00-11:00",
+        "notes": [
+            "[Fixed] Fixed an issue with Entry meta and Template Meta would not default Twitter and Facebook images properly",
+            "[Fixed] Fixed an issue where Facebook and Twitter image transforms were not properly applied with Entry and Template meta",
+            "[Fixed] Fixed an issue where elements with certain characters in them could cause invalid Breadcrumb JSON-LD to be generated",
+            "[Improved] The Javascript for the SEOmetrics `Analyze` button now returns false to eliminate the #",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.1.37",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-09-18T11:00:00-11:00",
+        "notes": [
+            "[Fixed] The Settings template now works with Craft < 2.5",
+            "[Fixed] Fixed a regression that would cause php errors on the settings pages on PHP < 5.5",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
         "version": "1.1.36",
         "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
         "date": "2016-09-07T11:00:00-11:00",
