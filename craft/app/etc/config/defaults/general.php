@@ -232,6 +232,15 @@ return array(
 	'defaultWeekStartDay' => 0,
 
 	/**
+	 * By default, Craft will require a 'password' field to be submitted on front-end, public
+	 * user registrations. Setting this to `true` will no longer require it on the initial registration form.
+	 * If you have email verification enabled, the will set their password once they've clicked on the
+	 * verification link in the email. If you don't, the only way they can set their password is to go
+	 * through your "forgot password" workflow.
+	 */
+	'deferPublicRegistrationPassword' => false,
+
+	/**
 	 * Determines whether the system is in Dev Mode or not.
 	 */
 	'devMode' => false,
@@ -680,6 +689,23 @@ return array(
 	 * Whether Craft should use XSendFile to serve files when possible.
 	 */
 	'useXSendFile' => false,
+
+	/**
+	 * If set to `true`, the following request parameters will need to be hashed to ensure they weren’t tampered with:
+	 *
+	 * - all `redirect` parameters
+	 * - possibly 3rd party plugin parameters
+	 *
+	 * To hash a value from a Twig template, you can pass it through the |hash filter. For example:
+	 *
+	 * ```twig
+	 * <input type="hidden" name="redirect" value="{{ 'my-page'|hash }}">
+	 * ```
+	 *
+	 * Enabling this will prevent certain Denial of Service (DoS) attack vectors. As an added benefit, Twig will no
+	 * longer operate in Safe Mode when processing the input values.
+	 */
+	'validateUnsafeRequestParams' => false,
 
 	/**
 	 * If set, should be a private, random, cryptographically secure key that is used to generate HMAC
