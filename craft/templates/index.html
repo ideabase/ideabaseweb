@@ -4,35 +4,38 @@
  #}
 
 {% extends "_layout" %}
+
 {% block content %}
+{# {% include '_includes/_background-images.html' %} #}
+	<!-- About Section -->
+			<section class="section-header video-background">
 
-<!-- About Section -->
-{% if videoBackground | length %}
-	<section class="section-header video-background">
+				{% if videoBackground | length %}
 
-	{% for asset in videoBackground.videoPlaceholder %}
-		<video autoplay loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
-	{% endfor %}
-		{% for asset in videoBackground.fileTypeOne %}
-			<source src="{{ asset.getUrl('fileTypeOne') }}" type="video/mp4">
-		{% endfor %}
-		{% for asset in videoBackground.fileTypeTwo %}
-			<source src="{{ asset.getUrl('fileTypeTwo') }}" type="video/webm">
-		{% endfor %}
-		</video>
+				{% for asset in videoBackground.videoPlaceholder %}
+					<video autoplay loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
+				{% endfor %}
 
-{% else %}
-	{% include '_includes/_background-images.html' %}
-	<section class="section-header">
-{% endif %}
+					{% for asset in videoBackground.fileTypeOne %}
+						<source src="{{ asset.getUrl('fileTypeOne') }}" type="video/mp4">
+					{% endfor %}
 
-	{%cache globally%}
-		<div class="section-header__container">
-		 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
-		 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
-		 </div>
-	</section>
-	{% endcache %}
+					{% for asset in videoBackground.fileTypeTwo %}
+						<source src="{{ asset.getUrl('fileTypeTwo') }}" type="video/webm">
+					{% endfor %}
+
+					</video>
+
+				{% endif %}
+
+			{%cache globally%}
+				<div class="section-header__container">
+				 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
+				 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
+				 </div>
+			<!-- End About Container -->	 
+			</section>
+			{% endcache %}
 	<!-- End About Section -->
 
 	<!-- Services List -->
