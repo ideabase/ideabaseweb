@@ -8,6 +8,7 @@
 
 <!-- About Section -->
 {% if videoBackground | length %}
+	<section class="section-header video-background">
 
 	{% for asset in videoBackground.videoPlaceholder %}
 		<video autoplay loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
@@ -22,9 +23,8 @@
 
 {% else %}
 	{% include '_includes/_background-images.html' %}
-{% endif %}
-	
 	<section class="section-header">
+{% endif %}
 
 	{%cache globally%}
 		<div class="section-header__container">

@@ -195,7 +195,17 @@
   width: 100%;
   position: absolute;
   @media screen and (min-width: 600px) {
+    width: 120%;
     display: block;
+  }
+  @media screen and (min-width: 700px) {
+    width: 145%;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 120%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 100%;
   }
 }
 
