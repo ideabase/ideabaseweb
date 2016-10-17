@@ -6,6 +6,8 @@
 {% extends "_layout" %}
 {% block content %}
 
+{% include '_includes/_background-images.html' %}
+
 {% if videoBackground | length %}
 
 	<!-- About Section -->
@@ -27,7 +29,7 @@
 
 {% else %}
 
-	{% include '_includes/_background-images.html' %}
+	
 	
 	<section class="section-header">
 	{% endif %}

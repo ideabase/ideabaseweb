@@ -6,13 +6,17 @@
 			    {% endfor %}
 			{% endif %}
 		}
+		
 		@media screen and (min-width: 600px) {
-			.section-header {
+			.section-header{
 				{% if entry.aboutImage | length %}
 			    {% for asset in entry.aboutImage %}
 			        background-image: url({{ asset.getUrl('featureImageMedium') }});
 			    {% endfor %}
 			{% endif %}
+			}
+			.video-background {
+				background-image: none;
 			}
 		}
 		@media screen and (min-width: 1000px) {
