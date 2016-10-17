@@ -212,7 +212,7 @@
 .video-background {
   overflow: hidden;
   &:after {
-    background-color: #6596cc;
+    background-color: $blue;
     mix-blend-mode: hard-light;
   }
 }
