@@ -189,30 +189,33 @@
 
 
 // Homepage Video Background
+.video-background {
+  overflow: hidden;
+  position: relative;
+  &:after {
+    background-color: $blue;
+    mix-blend-mode: hard-light;
+  }
+  @media screen and (min-width: 700px) {
+    background-image: none;
+  }
+}
+
 .hero-video {
   display: none;
   width: 100%;
   position: absolute;
-  @media screen and (min-width: 600px) {
-    width: 120%;
-    display: block;
-  }
+  top: 0;
+  left: 0;
   @media screen and (min-width: 700px) {
     width: 145%;
+    display: block;
   }
   @media screen and (min-width: 1000px) {
     width: 120%;
   }
   @media screen and (min-width: 1200px) {
     width: 100%;
-  }
-}
-
-.video-background {
-  overflow: hidden;
-  &:after {
-    background-color: $blue;
-    mix-blend-mode: hard-light;
   }
 }
 
