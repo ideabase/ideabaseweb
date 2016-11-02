@@ -199,11 +199,16 @@
   @media screen and (min-width: 700px) {
     background-image: none;
   }
+  @media screen and (min-width: 1280px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1480px) {
+    height: 800px;
+  }
 }
 
 .hero-video {
   display: none;
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -216,6 +221,9 @@
   }
   @media screen and (min-width: 1200px) {
     width: 100%;
+  }
+  @media screen and (min-width: 1480px) {
+    // top: -40px;
   }
 }
 

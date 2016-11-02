@@ -7,14 +7,13 @@
 {% block content %}
 
 {% include '_includes/_background-images.html' %}
-
-{% if videoBackground | length %}
+{% if videoBackground.fileTypeOne|length %}
 
 	<!-- About Section -->
 	<section class="section-header video-background">	
 
 	{% for asset in videoBackground.videoPlaceholder %}
-		<video autoplay loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
+		<video autoplay muted loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
 	{% endfor %}
 
 		{% for asset in videoBackground.fileTypeOne %}
@@ -28,6 +27,8 @@
 		</video>
 
 {% else %}
+
+	
 
 	<section class="section-header">
 	{% endif %}
