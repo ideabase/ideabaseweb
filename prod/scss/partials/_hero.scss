@@ -184,3 +184,46 @@
     transform: none;
   }
 }
+
+
+
+
+// Homepage Video Background
+.video-background {
+  overflow: hidden;
+  position: relative;
+  @media screen and (min-width: 700px) {
+    background-image: none;
+      &:after {
+      background-color: $blue;
+      mix-blend-mode: hard-light;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1480px) {
+    height: 800px;
+  }
+}
+
+.hero-video {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @media screen and (min-width: 700px) {
+    width: 145%;
+    display: block;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 120%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1480px) {
+    // top: -40px;
+  }
+}
+

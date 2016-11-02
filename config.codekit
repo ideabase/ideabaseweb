@@ -28099,15 +28099,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/templates\/_includes\/_background-images.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/templates\/_includes\/_background-images.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/craft\/templates\/_includes\/_critical-css.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -28284,15 +28275,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/templates\/global\/header.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/craft\/templates\/index.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/templates\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -31602,6 +31584,61 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/prod\/video\/_featureImageLarge\/placeholder_img.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 174549,
+		"inputAbbreviatedPath": "\/prod\/video\/_featureImageLarge\/placeholder_img.jpg",
+		"outputAbbreviatedPath": "\/prod\/video\/_featureImageLarge\/placeholder_img.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/video\/_featureImageMedium\/placeholder_img.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 60932,
+		"inputAbbreviatedPath": "\/prod\/video\/_featureImageMedium\/placeholder_img.jpg",
+		"outputAbbreviatedPath": "\/prod\/video\/_featureImageMedium\/placeholder_img.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/video\/_featureImageSmall\/placeholder_img.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25276,
+		"inputAbbreviatedPath": "\/prod\/video\/_featureImageSmall\/placeholder_img.jpg",
+		"outputAbbreviatedPath": "\/prod\/video\/_featureImageSmall\/placeholder_img.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/video\/Coffee-Shot.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 64389,
+		"inputAbbreviatedPath": "\/prod\/video\/Coffee-Shot.jpg",
+		"outputAbbreviatedPath": "\/prod\/video\/Coffee-Shot.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/video\/placeholder_img.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 133703,
+		"inputAbbreviatedPath": "\/prod\/video\/placeholder_img.jpg",
+		"outputAbbreviatedPath": "\/prod\/video\/placeholder_img.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/style.css": {
 		"fileType": 16,
