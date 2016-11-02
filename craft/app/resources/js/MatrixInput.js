@@ -470,11 +470,13 @@ var MatrixBlock = Garnish.Base.extend(
 			this.collapse();
 		}
 
-		this.addListener(this.$titlebar, 'dblclick', function(ev)
+		this._handleTitleBarClick = function(ev)
 		{
 			ev.preventDefault();
 			this.toggle();
-		});
+		}
+
+		this.addListener(this.$titlebar, 'doubletap', this._handleTitleBarClick);
 	},
 
 	toggle: function()

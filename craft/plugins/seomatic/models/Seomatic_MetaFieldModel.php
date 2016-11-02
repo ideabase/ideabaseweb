@@ -22,7 +22,11 @@ class Seomatic_MetaFieldModel extends Seomatic_MetaModel
             'seoKeywordsSource'				=> array(AttributeType::Enum, 'values' => "custom,keywords,field", 'default' => 'custom'),
             'seoKeywordsSourceField'		=> array(AttributeType::String, 'default' => ''),
             'seoImageIdSource'				=> array(AttributeType::Enum, 'values' => "custom,field", 'default' => 'custom'),
-            'seoImageIdSourceField'			=> array(AttributeType::String, 'default' => ''),
+            'seoImageIdSourceField'         => array(AttributeType::String, 'default' => ''),
+            'seoTwitterImageIdSource'       => array(AttributeType::Enum, 'values' => "custom,field", 'default' => 'custom'),
+            'seoTwitterImageIdSourceField'  => array(AttributeType::String, 'default' => ''),
+            'seoFacebookImageIdSource'      => array(AttributeType::Enum, 'values' => "custom,field", 'default' => 'custom'),
+            'seoFacebookImageIdSourceField' => array(AttributeType::String, 'default' => ''),
 /* -- For Commerce products */
             'seoCommerceVariants'           => array(AttributeType::Mixed),
         ));
@@ -57,6 +61,29 @@ class Seomatic_MetaFieldModel extends Seomatic_MetaModel
     {
         return $this->seoKeywordsUnparsed;
     }
+
+    /**
+     * Returns the Main Entity of Page JSON-LD for the entry, without mainEntryOfPage being set
+     *
+     * @return string
+     */
+    public function getJsonLD($element)
+    {
+        $locale = craft()->language;
+
+        if ($element)
+        {
+            $entryMeta = craft()->seomatic->getMetaFromElement($element);
+            if ($entryMeta)
+                $entryMeta = craft()->seomatic->setEntryMeta($entryMeta, $element->url);
+        }
+
+        $metaVars = craft()->seomatic->getGlobals('', $locale);
+        $result = craft()->seomatic->getMainEntityOfPageJSONLD($entryMeta, $metaVars['seomaticIdentity'], $locale, false);
+
+        return $result;
+    }
+
 
     /**
      * Returns whether the current user can edit the element.

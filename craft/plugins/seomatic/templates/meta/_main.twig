@@ -24,9 +24,55 @@
 	locale: meta.locale,
 }) }}
 
+<div class="field">
+    <div class="heading">
+        <label for="seoMainEntityOfPage">{{ "Main Entity of Page"|t}}{% if craft.isLocalized and meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
+        <div class="instructions"><p>{{ "The Main Entity of Page is a more specific, additional type that describes this page.  This additional JSON-LD structured data entity will be added to your page, more specifically describing the page's content.  It is accessible via the <code>seomaticMainEntityOfPage</code> Twig variable, should you wish to modify or add to it." |t |raw}}</p></div>
+    </div>
+    <div>
+        <div class="inline-item">
+			{{ forms.selectField({
+			    id: "seoMainEntityCategory",
+                class: "inline-item",
+                fieldClass: "inline-item",
+			    options: {
+			    	"CreativeWork": "CreativeWork",
+			    	"Event": "Event",
+                    "Person": "Person",
+			    	"Product": "Product",
+				},
+			    name: "seoMainEntityCategory",
+			    value: meta.seoMainEntityCategory,
+			    locale: meta.locale,
+			}) }}
+        </div>
+        <div class="inline-item">
+			{{ forms.selectField({
+				label: "&rarr;",
+                class: "inline-item",
+                fieldClass: "inline-item",
+			    id: "seoMainEntityOfPage",
+			    options: {
+				},
+			    name: "seoMainEntityOfPage",
+			    value: meta.seoMainEntityOfPage,
+			    locale: meta.locale,
+			}) }}
+        </div>
+        <div class="inline-item">
+        	<div class="inline-item inline-item-padding seomaticSchemaInfo">
+        	</div>
+        </div>
+	</div>
+</div>
+{% set myJs %}
+    setSelectedValue("{{ meta.seoMainEntityOfPage }}");
+{% endset %}
+{% includeJs myJs %}
+
 {{ forms.textField({
 	label: "SEO Title"|t,
-	instructions: "<a href='http://blog.woorank.com/2014/07/15-title-tag-optimization-guidelines-usability-seo/' target='_blank'>The SEO Title</a> should be between 10 and 70 characters (spaces included).  Make sure your title tag is explicit and contains your most important keywords. Be sure that each page has a unique title tag.  The <code>siteSeoName</code> length is subtracted from the 70 character limit automatically, since it is appended to the <code>seoTitle</code>." |t |raw,
+	instructions: "<a href='http://blog.woorank.com/2014/07/15-title-tag-optimization-guidelines-usability-seo/' target='_blank'>The SEO Title</a> should be between 10 and 70 characters (spaces included).  Make sure your title tag is explicit and contains your most important keywords. Be sure that each page has a unique title tag.  The <code>siteSeoName</code> length is subtracted from the 70 character limit automatically, since it is appended to the <code>seoTitle</code>.  <br /><br />You can include tags that output entry properties, such as <code>{title}</code> or <code>{myCustomField}</code> in the text field below." |t |raw,
 	id: 'seoTitle',
 	class: 'nicetext',
 	name: 'seoTitle',
@@ -41,7 +87,7 @@
 <div class="field" id="seoDescription-field">
 	<div class="heading">
 		<label for="seoDescription">{{ "SEO Description"|t}}{% if meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
-		<div class="instructions"><p>{{ "<a href='http://blog.woorank.com/2013/03/the-importance-of-meta-descriptions/' target='_blank'>The SEO Description</a> should be between 70 and 160 characters (spaces included).  Meta descriptions allow you to influence how your web pages are described and displayed in search results.  Ensure that all of your web pages have a unique meta description that is explicit and contains your most important keywords." |t |raw}}</p></div>
+		<div class="instructions"><p>{{ "<a href='http://blog.woorank.com/2013/03/the-importance-of-meta-descriptions/' target='_blank'>The SEO Description</a> should be between 70 and 160 characters (spaces included).  Meta descriptions allow you to influence how your web pages are described and displayed in search results.  Ensure that all of your web pages have a unique meta description that is explicit and contains your most important keywords.  <br /><br />You can include tags that output entry properties, such as <code>{title}</code> or <code>{myCustomField}</code> in the text field below." |t |raw}}</p></div>
 	</div>
 {{ forms.textarea({
 	id: 'seoDescription',
@@ -59,11 +105,11 @@
 <div class="field" id="seoKeywords-field">
 	<div class="heading">
 		<label for="seoDescription">{{ "SEO Keywords"|t}}{% if meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
-		<div class="instructions"><p>{{ "Google ignores <a href='http://blog.woorank.com/2014/06/meta-element-a-beguiners-guide/#metakeyword' target='_blank'>SEO Keywords tag</a>; though other search engines do look at it.  Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam.  Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on." |t |raw}}</p></div>
+		<div class="instructions"><p>{{ "Google ignores <a href='http://blog.woorank.com/2014/06/meta-element-a-beguiners-guide/#metakeyword' target='_blank'>SEO Keywords tag</a>; though other search engines do look at it.  Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam.  Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on.  <br /><br />You can include tags that output entry properties, such as <code>{title}</code> or <code>{myCustomField}</code> in the text field below." |t |raw}}</p></div>
 	</div>
 {{ forms.textarea({
 	label: "SEO Keywords"|t,
-	instructions: "Google ignores this tag; though other search engines do look at it.  Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam.  Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on." |t |raw,
+	instructions: "Google ignores this tag; though other search engines do look at it.  Utilize it carefully, as improper or spammy use most likely will hurt you, or even have your site marked as spam.  Avoid overstuffing the keywords and do not include keywords that are not related to the specific page you place them on.  <br /><br />You can include tags that output entry properties, such as <code>{title}</code> or <code>{myCustomField}</code> in the text field below." |t |raw,
 	id: 'seoKeywords',
 	class: 'nicetext',
 	name: 'seoKeywords',
@@ -79,7 +125,7 @@
 <div class="field" id="seoImageId-field">
 	<div class="heading">
 		<label for="seoImageId">{{ "SEO Image"|t}}{% if meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
-		<div class="instructions"><p>{{ "This is the image that will be used for display as the webpage brand for this template, as well as on Twitter Cards and Facebook OpenGraph that link to this page.  The image must be in JPG, PNG, or GIF format." |t |raw}}</p></div>
+		<div class="instructions"><p>{{ "This is the image that will be used for display as the webpage brand for this template, as well as on Twitter Cards and Facebook OpenGraph that link to this page, if they are not specified.  The image must be in JPG, PNG, or GIF format." |t |raw}}</p></div>
 	</div>
 	<div class="input">
 		{% if assetsSourceExists %}
@@ -130,9 +176,38 @@
 	locale: meta.locale,
 }) }}
 
+<div class="field" id="seoTwitterImageId-field">
+    <div class="heading">
+        <label for="seoTwitterImageId">{{ "Twitter Card Image"|t}}{% if meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
+        <div class="instructions"><p>{{ "This is the image that will be used for Twitter Cards that link to this page.  If no image is specified here, the Site SEO Image will be used for Twitter Cards instead.  The image must be in JPG, PNG, or GIF format." |t |raw}}</p></div>
+    </div>
+    <div class="input">
+        {% if assetsSourceExists %}
+            {{ forms.elementSelect({
+                elements: elementsTwitter,
+                id: 'seoTwitterImageId',
+                name: 'seoTwitterImageId',
+                elementType: elementType,
+                criteria: {
+                    'kind': ['image'],
+                    'localeEnabled': null,
+                    'locale': craft.locale,
+                },
+                sourceElementId: seoTwitterImageId,
+                jsClass: 'Craft.AssetSelectInput',
+                addButtonLabel: "Select Twitter Card Image" |t,
+                limit: 1,
+                locale: meta.locale,
+            }) }}
+        {% else %}
+            <p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+        {% endif %}
+    </div>
+</div>
+
 {{ forms.selectField({
-    label: "Twitter Image Transform"|t,
-    instructions: "The image transform to apply to the Twitter SEO Image.  Twitter recommends: 120 x 120 pixels minimum size, 1:1 aspect ratio, 1mb max size for Summary Card images, and 280x150 pixels minimum size, 1.86:1 aspect ratio, 1mb max size for Summary Card with Large Image images."|t,
+    label: "Twitter Card Image Transform"|t,
+    instructions: "The image transform to apply to the Twitter Card Image.  Twitter recommends: 120 x 120 pixels minimum size, 1:1 aspect ratio, 1mb max size for Summary Card images, and 280x150 pixels minimum size, 1.86:1 aspect ratio, 1mb max size for Summary Card with Large Image images."|t,
     id: "seoTwitterImageTransform",
     options: transformsList,
     name: "seoTwitterImageTransform",
@@ -142,8 +217,8 @@
 
 {{ forms.selectField({
     first: true,
-    label: "Facebook Open Graph Type"|t,
-    instructions: "Adding Open Graph tags to your website influences the performance of your links on social media by allowing you to control what appears when a user posts a link to your content on Facebook.  Setting it to a blank value means 'no change'."|t,
+    label: "Facebook OpenGraph Type"|t,
+    instructions: "Adding OpenGraph tags to your website influences the performance of your links on social media by allowing you to control what appears when a user posts a link to your content on Facebook.  Setting it to a blank value means 'no change'."|t,
     id: "openGraphType",
     options: {
 		"": "",
@@ -155,9 +230,38 @@
 	locale: meta.locale,
 }) }}
 
+<div class="field" id="seoFacebookImageId-field">
+    <div class="heading">
+        <label for="seoFacebookImageId">{{ "Facebook OpenGraph Image"|t}}{% if meta.locale %}<span class="locale">{{ meta.locale }}</span>{% endif %}</label>
+        <div class="instructions"><p>{{ "This is the image that will be used for Facebook posts that link to this page.  If no image is specified here, the Site SEO Image will be used for Facebook posts instead.  The image must be in JPG, PNG, or GIF format." |t |raw}}</p></div>
+    </div>
+    <div class="input">
+        {% if assetsSourceExists %}
+            {{ forms.elementSelect({
+                elements: elementsFacebook,
+                id: 'seoFacebookImageId',
+                name: 'seoFacebookImageId',
+                elementType: elementType,
+                criteria: {
+                    'kind': ['image'],
+                    'localeEnabled': null,
+                    'locale': craft.locale,
+                },
+                sourceElementId: seoFacebookImageId,
+                jsClass: 'Craft.AssetSelectInput',
+                addButtonLabel: "Select Facebook OpenGraph Image" |t,
+                limit: 1,
+                locale: meta.locale,
+            }) }}
+        {% else %}
+            <p class="error">No assets sources currently exist. <a href="{{ newAssetsSourceUrl }}">Create one now...</a></p>
+        {% endif %}
+    </div>
+</div>
+
 {{ forms.selectField({
     label: "Facebook Image Transform"|t,
-    instructions: "The image transform to apply to the Facebook SEO Image.  Facebook recommends: 1200 x 630 pixels minimum size, 1.9:1 aspect ratio, 8mb max size."|t,
+    instructions: "The image transform to apply to the Facebook OpenGraph Image.  Facebook recommends: 1200 x 630 pixels minimum size, 1.9:1 aspect ratio, 8mb max size."|t,
     id: "seoFacebookImageTransform",
     options: transformsList,
     name: "seoFacebookImageTransform",

@@ -288,10 +288,10 @@ class SeomaticVariable
     } /* -- renderWebsite */
 
 /* --------------------------------------------------------------------------------
-    Render the Product JSON-LD
+    Render the Main Enity of Page JSON-LD
 -------------------------------------------------------------------------------- */
 
-    function renderProduct($elementId=null, $locale=null, $isPreview=false)
+    function renderMainEntityOfPage($elementId=null, $locale=null, $isPreview=false)
     {
         if (!$locale)
             $locale = craft()->language;
@@ -308,10 +308,10 @@ class SeomaticVariable
         }
 
         $metaVars = craft()->seomatic->getGlobals('', $locale);
-        $result = craft()->seomatic->renderProduct($metaVars, $locale, $isPreview);
+        $result = craft()->seomatic->renderMainEntityOfPage($metaVars, $locale, $isPreview);
 
         return rtrim($result);
-    } /* -- renderProduct */
+    } /* -- renderMainEntityOfPage */
 
 /* --------------------------------------------------------------------------------
     Render the Breadcrumbs JSON-LD
@@ -535,13 +535,33 @@ class SeomaticVariable
     } /* -- getSocial */
 
 /* --------------------------------------------------------------------------------
+    Get the template meta for $templatePath
+-------------------------------------------------------------------------------- */
+
+    public function getTemplateMeta($templatePath="", $locale=null)
+    {
+        if (!$locale)
+            $locale = craft()->language;
+        return craft()->seomatic->getMeta($templatePath);
+    } /* -- getTemplateMeta */
+
+/* --------------------------------------------------------------------------------
+    Return a human-readable file size
+-------------------------------------------------------------------------------- */
+
+    public function humanFileSize($size)
+    {
+        return craft()->seomatic->humanFileSize($size);
+    } /* -- humanFileSize */
+
+/* --------------------------------------------------------------------------------
     Get the plugin name
 -------------------------------------------------------------------------------- */
 
     function getPluginName()
     {
-        $retourPlugin = craft()->plugins->getPlugin('seomatic');
-        $result = $retourPlugin->getName();
+        $seomaticPlugin = craft()->plugins->getPlugin('seomatic');
+        $result = $seomaticPlugin->getName();
         return $result;
     } /* -- getPluginName */
 

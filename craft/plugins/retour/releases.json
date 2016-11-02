@@ -1,5 +1,29 @@
 [
     {
+        "version": "1.0.17",
+        "downloadUrl": "https://github.com/nystudio107/retour/archive/master.zip",
+        "date": "2016-08-31T12:00:00-05:00",
+        "notes": [
+            "[Improved] Query strings are now stripped from the incoming URI before redirect detection is done",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.0.16",
+        "downloadUrl": "https://github.com/nystudio107/retour/archive/master.zip",
+        "date": "2016-08-30T12:00:00-05:00",
+        "notes": [
+            "[Fixed] FieldTypes in multi-locale setups that are not translatable are now handled properly",
+            "[Fixed] Fixed missing locale prefix for localized entries in the FieldType",
+            "[Fixed] Fixed an issue where FieldType redirects had an errant / prepended to them",
+            "[Improved] Better importing of `.htaccess` files",
+            "[Improved] Better error handling when importing malformed `.htaccess` files",
+            "[Fixed] Trailing /'s are no longer stripped from URLs added via the `+` icon from the Statistics page",
+            "[Fixed] Fixed an issue that would prevent RegEx's from matching as they should in FieldTypes",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
         "version": "1.0.15",
         "downloadUrl": "https://github.com/nystudio107/retour/archive/master.zip",
         "date": "2016-07-12T12:00:00-05:00",

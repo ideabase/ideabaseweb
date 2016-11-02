@@ -16,6 +16,8 @@ class Seomatic_MetaRecord extends BaseRecord
             'elementId'			        => array(AttributeType::Number, 'default' => 0),
             'metaType'                  => array(AttributeType::Enum, 'values' => "default,template", 'default' => 'template'),
             'metaPath'                  => array(AttributeType::String, 'default' => ''),
+            'seoMainEntityCategory'     => array(AttributeType::String, 'default' => ''),
+            'seoMainEntityOfPage'       => array(AttributeType::String, 'default' => ''),
             'seoTitle'                  => array(AttributeType::String, 'default' => ''),
             'seoDescription'            => array(AttributeType::String, 'default' => ''),
             'seoKeywords'               => array(AttributeType::String, 'default' => ''),
@@ -39,6 +41,8 @@ class Seomatic_MetaRecord extends BaseRecord
         return array(
             'element'  => array(static::BELONGS_TO, 'ElementRecord', 'id', 'required' => true, 'onDelete' => static::CASCADE),
             'seoImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
+            'seoTwitterImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
+            'seoFacebookImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
         );
     }
 

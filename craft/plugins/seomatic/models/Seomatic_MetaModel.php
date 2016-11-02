@@ -16,6 +16,8 @@ class Seomatic_MetaModel extends BaseElementModel
             'elementId'                 => array(AttributeType::Number, 'default' => 0),
             'metaType'                  => array(AttributeType::Enum, 'values' => "default,template", 'default' => 'template'),
             'metaPath'                  => array(AttributeType::String, 'default' => ''),
+            'seoMainEntityCategory'     => array(AttributeType::String, 'default' => 'CreativeWork'),
+            'seoMainEntityOfPage'       => array(AttributeType::String, 'default' => 'WebPage'),
             'seoTitle'                  => array(AttributeType::String, 'default' => ''),
             'seoDescription'            => array(AttributeType::String, 'default' => ''),
             'seoKeywords'               => array(AttributeType::String, 'default' => ''),
@@ -25,7 +27,9 @@ class Seomatic_MetaModel extends BaseElementModel
             'twitterCardType'           => array(AttributeType::String, 'default' => ''),
             'openGraphType'             => array(AttributeType::String, 'default' => ''),
             'robots'                    => array(AttributeType::String, 'default' => ''),
-            'seoImageId'                => array(AttributeType::Number, 'default' => 0),
+            'seoImageId'                => array(AttributeType::Number, 'default' => null),
+            'seoTwitterImageId'           => array(AttributeType::Number, 'default' => null),
+            'seoFacebookImageId'          => array(AttributeType::Number, 'default' => null),
         ));
     }
 

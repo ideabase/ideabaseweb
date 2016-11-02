@@ -53,6 +53,18 @@
                 if (url == "" || typeof url == 'undefined')
                     url = seomatic.options.missing_image;
                 $('#' + seomatic.options.prefix + seomatic.options.id + 'seoImageIdSource-preview').attr('src', url);
+
+                var handle = $('#' + seomatic.options.prefix + seomatic.options.id + 'seoTwitterImageIdSourceField').val();
+                var url = seomatic.options.fieldImage[handle];
+                if (url == "" || typeof url == 'undefined')
+                    url = seomatic.options.missing_image;
+                $('#' + seomatic.options.prefix + seomatic.options.id + 'seoTwitterImageIdSource-preview').attr('src', url);
+
+                var handle = $('#' + seomatic.options.prefix + seomatic.options.id + 'seoFacebookImageIdSourceField').val();
+                var url = seomatic.options.fieldImage[handle];
+                if (url == "" || typeof url == 'undefined')
+                    url = seomatic.options.missing_image;
+                $('#' + seomatic.options.prefix + seomatic.options.id + 'seoFacebookImageIdSource-preview').attr('src', url);
                 }
 
             $(function () {
@@ -61,6 +73,16 @@
                 $('#' + seomatic.options.prefix + seomatic.options.id + 'seoKeywords').tokenfield({
                     createTokensOnBlur: true,
                     });
+
+                $('#' + seomatic.options.prefix + 'preview-seometrics').on('click', function(e) {
+
+                    // Prevents the default action to be triggered.
+                    e.preventDefault();
+
+                    // Triggering bPopup when click event is fired
+                    $('#' + seomatic.options.prefix + 'preview-seometrics-popup').bPopup();
+
+                });
 
                 $('#' + seomatic.options.prefix + 'preview-tags').on('click', function(e) {
 

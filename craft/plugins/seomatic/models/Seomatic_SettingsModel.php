@@ -25,6 +25,8 @@ class Seomatic_SettingsModel extends BaseModel
             'siteTwitterCardType'               => array(AttributeType::String, 'default' => 'summary'),
             'siteOpenGraphType'                 => array(AttributeType::String, 'default' => 'website'),
             'siteSeoImageId'                    => array(AttributeType::Number, 'default' => null),
+            'siteSeoTwitterImageId'               => array(AttributeType::Number, 'default' => null),
+            'siteSeoFacebookImageId'              => array(AttributeType::Number, 'default' => null),
             'siteSeoImageTransform'             => array(AttributeType::String, 'default' => ''),
             'siteSeoFacebookImageTransform'     => array(AttributeType::String, 'default' => ''),
             'siteSeoTwitterImageTransform'      => array(AttributeType::String, 'default' => ''),
@@ -110,6 +112,7 @@ class Seomatic_SettingsModel extends BaseModel
             'instagramHandle'                   => array(AttributeType::String, 'default' => ''),
             'pinterestHandle'                   => array(AttributeType::String, 'default' => ''),
             'githubHandle'                      => array(AttributeType::String, 'default' => ''),
+            'vimeoHandle'                       => array(AttributeType::String, 'default' => ''),
 
 /* --------------------------------------------------------------------------------
     CEATOR settings

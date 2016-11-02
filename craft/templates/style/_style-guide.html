@@ -10,7 +10,7 @@
 
 	{% set styleSection = craft.entries.section(currentSection).level(1) %}
 	<div class="styleguide__container">
-	<nav class="nav__styleguide">
+	<nav role="navigation" class="nav__styleguide">
 		<div class="js_fixedcontent">
 		    <ul class="nav__styleguide__list">
 		        {% for sectionName in styleSection %}
@@ -23,7 +23,7 @@
 
 	<main class="main__styleguide">
 
-	<h2 class="styleguide__subtitle">{{ entry.title }}</h2> 
+	<h2 class="styleguide__subtitle">{{ entry.title }}</h2>
 
 	{% for item in styleSection %}
 	<section class="section-basic-page styleguide__section">

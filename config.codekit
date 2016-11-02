@@ -1424,15 +1424,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/craft\/app\/etc\/requirements\/5f67cd0d-9ebd-4c8b-9077-f5f74247b1f3.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/etc\/requirements\/5f67cd0d-9ebd-4c8b-9077-f5f74247b1f3.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/craft\/app\/etc\/requirements\/Requirements.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3823,6 +3814,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/framework\/i18n\/data\/lv.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/framework\/i18n\/data\/ms.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/framework\/i18n\/data\/ms.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/framework\/i18n\/data\/ms_my.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/framework\/i18n\/data\/ms_my.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -10068,6 +10077,33 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/app\/migrations\/m160829_000000_pending_user_content_cleanup.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160829_000000_pending_user_content_cleanup.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/migrations\/m160830_000000_asset_index_uri_increase.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160830_000000_asset_index_uri_increase.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/migrations\/m160919_000000_usergroup_handle_title_unique.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/migrations\/m160919_000000_usergroup_handle_title_unique.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/app\/models\/AccountSettingsModel.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -13260,6 +13296,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/craft\/app\/resources\/lib\/datepicker-i18n\/datepicker-pt.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/datepicker-i18n\/datepicker-pt.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/datepicker-i18n\/min\/datepicker-pt-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/craft\/app\/resources\/lib\/element-resize-detector.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -13304,23 +13351,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/craft\/app\/resources\/lib\/garnish-0.1.js": {
+	"\/craft\/app\/resources\/lib\/garnish.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/garnish-0.1.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/garnish-0.1-min.js",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/garnish.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/garnish-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/craft\/app\/resources\/lib\/garnish-0.1.min.js": {
+	"\/craft\/app\/resources\/lib\/garnish.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/garnish-0.1.min.js",
-		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/garnish-0.1.min-min.js",
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/garnish.min.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/garnish.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -13418,6 +13465,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery.fitvids.js",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery.fitvids-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/jquery.mobile-events.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery.mobile-events.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery.mobile-events-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/jquery.mobile-events.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/jquery.mobile-events.min.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/min\/jquery.mobile-events.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -13603,6 +13672,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/nl.js",
 		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/nl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/app\/resources\/lib\/redactor\/lang\/pt.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/pt.js",
+		"outputAbbreviatedPath": "\/craft\/app\/resources\/lib\/redactor\/lang\/min\/pt-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -16039,6 +16119,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/app\/translations\/no.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/app\/translations\/pt.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/app\/translations\/pt.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24852,6 +24941,42 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/plugins\/seomatic\/migrations\/m160723_000000_seomatic_addSeoMainEntityOfPage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/migrations\/m160723_000000_seomatic_addSeoMainEntityOfPage.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/seomatic\/migrations\/m160724_000000_seomatic_addSeoMainEntityCategory.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/migrations\/m160724_000000_seomatic_addSeoMainEntityCategory.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/seomatic\/migrations\/m160811_000000_seomatic_addVimeo.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/migrations\/m160811_000000_seomatic_addVimeo.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/plugins\/seomatic\/migrations\/m160904_000000_seomatic_addTwitterFacebookImages.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/migrations\/m160904_000000_seomatic_addTwitterFacebookImages.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/plugins\/seomatic\/models\/Seomatic_CreatorModel.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -25041,6 +25166,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/plugins\/seomatic\/resources\/images\/seometrics_badge.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2702,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/images\/seometrics_badge.png",
+		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/images\/seometrics_badge.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/plugins\/seomatic\/resources\/js\/bootstrap-tokenfield.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -25102,6 +25238,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/js\/jquery.bpopup.min.js",
 		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/js\/min\/jquery.bpopup.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/plugins\/seomatic\/resources\/js\/main_entity_type_list.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/js\/main_entity_type_list.js",
+		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/js\/min\/main_entity_type_list-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -25235,6 +25382,28 @@
 		"initialSize": 124728,
 		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic06.png",
 		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic06.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic07.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 247343,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic07.png",
+		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic07.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic08.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 541341,
+		"inputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic08.png",
+		"outputAbbreviatedPath": "\/craft\/plugins\/seomatic\/resources\/screenshots\/seomatic08.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -27827,6 +27996,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e6\/e677ce111b91eb48d0a92ccb75b2452e08672c51aa28d90e91288aa049d04ace.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/e9\/e9b9e79e9b25f1a3a045466936050fd0496796867d6e2f011e950fc8786f3c73.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/e9\/e9b9e79e9b25f1a3a045466936050fd0496796867d6e2f011e950fc8786f3c73.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

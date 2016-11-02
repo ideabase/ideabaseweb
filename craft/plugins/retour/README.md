@@ -22,7 +22,7 @@ Retour allows you to intelligently redirect legacy URLs, so that you don't lose 
 
 In addition to supporting traditional exact and RegEx matching of URL patterns, Retour also has a Retour Redirect FieldType that you can add to your entries. This allows you to have dynamic entry redirects that have access to the data in your entries when matching URL patterns.
 
-Retour will also automatically create a redirect for you if you change an entry's slug.
+Retour will also automatically create a redirect for you if you change an entry's slug, or move an entry around in a Structure.
 
 Retour is written to be performant. There is no impact on your website's performance until a 404 exception happens; and even then the resulting matching happens with minimal impact.
 
@@ -132,7 +132,9 @@ It asks your browser to look for only `text` files to upload; if the `.htaccess`
 
 ### Renamed Slug Redirects
 
-If you rename an entry's `slug` (and the Section the entry is in has URLs), Retour will automatically create a static redirect for you to keep traffic going to the right place.  It will appear listed under the "Static Redirects" section like any other static redirect.
+If you rename an entry's `slug` (and the Section the entry is in has URLs), Retour will automatically create a static redirect for you to keep traffic going to the right place.  It will also automatically create a static redirect if you move an entry around in a Structure.
+
+It will appear listed under the "Static Redirects" section like any other static redirect.
 
 ## Retour Statistics
 
@@ -201,6 +203,22 @@ Some things to do, and ideas for potential features:
 * Add the ability to mass-import redirects from a CSV file
 
 ## Retour Changelog
+
+### 1.0.17 -- 2016.08.31
+
+* [Improved] Query strings are now stripped from the incoming URI before redirect detection is done
+* [Improved] Updated the README.md
+
+### 1.0.16 -- 2016.08.30
+
+* [Fixed] FieldTypes in multi-locale setups that are not translatable are now handled properly
+* [Fixed] Fixed missing locale prefix for localized entries in the FieldType
+* [Fixed] Fixed an issue where FieldType redirects had an errant / prepended to them
+* [Improved] Better importing of `.htaccess` files
+* [Improved] Better error handling when importing malformed `.htaccess` files
+* [Fixed] Trailing /'s are no longer stripped from URLs added via the `+` icon from the Statistics page
+* [Fixed] Fixed an issue that would prevent RegEx's from matching as they should in FieldTypes
+* [Improved] Updated the README.md
 
 ### 1.0.15 -- 2016.07.12
 

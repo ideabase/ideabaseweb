@@ -112,6 +112,7 @@ $configArray = array(
 		'app.etc.cache.WinCache',
 		'app.etc.cache.XCache',
 		'app.etc.cache.ZendDataCache',
+		'app.etc.cache.dependencies.AppPathCacheDependency',
 		'app.etc.components.BaseApplicationComponent',
 		'app.etc.components.BaseComponentType',
 		'app.etc.components.BaseSavableComponentType',

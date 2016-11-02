@@ -26,12 +26,12 @@ class SeomaticPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.1.25';
+        return '1.1.39';
     }
 
     public function getSchemaVersion()
     {
-        return '1.1.18';
+        return '1.1.22';
     }
 
     public function getDeveloper()
@@ -77,10 +77,10 @@ class SeomaticPlugin extends BasePlugin
                     'seomaticHelper' => $seomaticHelper,
                 );
 
-/* -- For Craft Commerce products */
+/* -- Main Entity of Page info, which is optional */
 
-                if (isset($context['seomaticProduct']))
-                    $metaVars['seomaticProduct'] = $context['seomaticProduct'];
+                if (isset($context['seomaticMainEntityOfPage']))
+                    $metaVars['seomaticMainEntityOfPage'] = $context['seomaticMainEntityOfPage'];
 
 /* -- Render the seomaticMeta, this is where the magic happens */
 
@@ -142,7 +142,8 @@ class SeomaticPlugin extends BasePlugin
 
 /* -- Show our "Welcome to SEOmatic" message */
 
-    craft()->request->redirect(UrlHelper::getCpUrl('seomatic/welcome'));
+       if (!craft()->isConsole())
+            craft()->request->redirect(UrlHelper::getCpUrl('seomatic/welcome'));
 
     }
 
