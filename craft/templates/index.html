@@ -13,7 +13,7 @@
 	<section class="section-header video-background">	
 
 	{% for asset in videoBackground.videoPlaceholder %}
-		<video autoplay muted loop data-placeholder="{{ asset.getUrl() }}" class="hero-video">
+		<video autoplay muted loop poster="{{ asset.getUrl() }}" class="hero-video">
 	{% endfor %}
 
 		{% for asset in videoBackground.fileTypeOne %}
