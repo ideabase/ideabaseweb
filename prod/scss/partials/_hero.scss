@@ -192,12 +192,12 @@
 .video-background {
   overflow: hidden;
   position: relative;
-  &:after {
-    background-color: $blue;
-    mix-blend-mode: hard-light;
-  }
   @media screen and (min-width: 700px) {
     background-image: none;
+      &:after {
+      background-color: $blue;
+      mix-blend-mode: hard-light;
+    }
   }
   @media screen and (min-width: 1280px) {
     height: 700px;
