@@ -25,6 +25,21 @@ $( "#footer-form-toggle" ).click(function() {
   $( ".contact__trigger__link--show" ).text(contactclose);
 });
 
+// Load Google Fonts
+
+WebFontConfig = {
+    google: { families: [ 'Montserrat:700', 'Source+Sans+Pro:600,700,400,400italic' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+
 // Smooth scroll the user down to the contact form, while also opening the contact form and adjusting the text to open/closed //
 $( "#contact-toggle" ).click(function() {
   $( "#footer-form" ).addClass( "form--show" );
