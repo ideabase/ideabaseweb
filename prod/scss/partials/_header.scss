@@ -41,9 +41,12 @@ margin-top: .5em;
     margin-left: 1em;
     margin-top: 1.1em;
     height: 90px;
+    img {
+      width: 325px;
+    }
   }
   nav[role="navigation"] {
-    width: 59%;
+    width: 55%;
     text-align: right;
     float: right;
     margin-right: 1.4em;

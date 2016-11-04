@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,400,400italic);
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+img {
+  max-width: 100%; }
+
+html, body {
+  height: 100%; }

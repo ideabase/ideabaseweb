@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:600,700,400,400italic);
+
+@import 'partials/_variables';
+@import 'partials/_clearfix';
+@import 'partials/_reset';
+@import 'partials/_header';
+@import 'partials/_hero';
+@import 'partials/_headings';
+@import 'partials/_paragraphs';
+@import 'partials/_layout';
+@import 'partials/_panels';
+@import 'partials/_services';
+
+body {
+  font-family: $source;
+}
+
+img {
+  max-width: 100%;
+}
+
+html, body {
+   height: 100%;
+}

@@ -1,5 +1,4 @@
 .section-header {
-  animation: fadeIn 1s;
   text-align: center;
   background-size: 150% auto;
   background-position: center;
@@ -7,6 +6,9 @@
   position: relative;
   background-color: lighten($blue,10%);
   background-blend-mode: multiply;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
   &:after {
     position: absolute;
     height: 100%;
@@ -192,7 +194,7 @@
 .video-background {
   overflow: hidden;
   position: relative;
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1000px) {
     background-image: none;
       &:after {
       background-color: $blue;
@@ -212,12 +214,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  @media screen and (min-width: 700px) {
-    width: 145%;
-    display: block;
-  }
   @media screen and (min-width: 1000px) {
     width: 120%;
+    display: block;
   }
   @media screen and (min-width: 1200px) {
     width: 100%;
@@ -226,4 +225,3 @@
     // top: -40px;
   }
 }
-
