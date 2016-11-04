@@ -17,3 +17,7 @@
 #plugins .plugin-infos .details .name .light { margin-left: 6px; }
 
 #plugins .plugin-infos .details .description { font-weight: normal; }
+
+#plugins:not(.collapsed) .plugin-infos .details { min-width: 150px; }
+
+#plugins:not(.collapsed) .status-cell { white-space: nowrap; }

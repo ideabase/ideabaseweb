@@ -243,7 +243,6 @@ class ElementsService extends BaseApplicationComponent
 		$locale = $criteria->locale;
 		$elementType = $criteria->getElementType();
 		$indexBy = $criteria->indexBy;
-		$lastElement = null;
 
 		foreach ($results as $result)
 		{
@@ -326,21 +325,9 @@ class ElementsService extends BaseApplicationComponent
 			{
 				$elements[] = $element;
 			}
-
-			if ($lastElement)
-			{
-				$lastElement->setNext($element);
-				$element->setPrev($lastElement);
-			}
-			else
-			{
-				$element->setPrev(false);
-			}
-
-			$lastElement = $element;
 		}
 
-		$lastElement->setNext(false);
+		ElementHelper::setNextPrevOnElements($elements);
 
 		// Should we eager-load some elements onto these?
 		if ($criteria->with)
@@ -1550,6 +1537,12 @@ class ElementsService extends BaseApplicationComponent
 							// Don't bother with any of the other locales
 							$success = false;
 							break;
+						}
+
+						// Go ahead and re-do search index keywords to grab things like "title" in multi-locale installs.
+						if ($isNewElement)
+						{
+							craft()->search->indexElementAttributes($localizedElement);
 						}
 
 						ElementHelper::setUniqueUri($localizedElement);
