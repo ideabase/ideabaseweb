@@ -10,10 +10,10 @@
 {% if videoBackground.fileTypeOne|length %}
 
 	<!-- About Section -->
-	<section class="section-header video-background">	
+	<section class="section-header video-background">
 
 	{% for asset in videoBackground.videoPlaceholder %}
-		<video autoplay muted loop poster="{{ asset.getUrl() }}" class="hero-video">
+		<video autoplay muted loop class="hero-video">
 	{% endfor %}
 
 		{% for asset in videoBackground.fileTypeOne %}
@@ -28,16 +28,16 @@
 
 {% else %}
 
-	
+
 
 	<section class="section-header">
 	{% endif %}
 	{%cache globally%}
 		<div class="section-header__container">
-		 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2> 
+		 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2>
 		 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
 		</div>
-		<!-- End About Container -->	 
+		<!-- End About Container -->
 
 	</section>
 	{% endcache %}
@@ -51,18 +51,18 @@
 		<h2>{{ entry.designHeadline }}</h2>
 			<ul class="section-services__list">
 				{% for entry in craft.entries.section('processIndex') %}
-						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}					
+						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
 							<li class="section-services__list__item">
 								{% for asset in block.homepageIcon %}
 							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
-							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3> 
+							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3>
 							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
-							</li>    		
-						{% endfor %}	
+							</li>
+						{% endfor %}
 				{% endfor %}
-			</ul>		
-		<!-- End Process List -->	
+			</ul>
+		<!-- End Process List -->
 		<a class="button button-primary" href="{{ entry.servicesButtonLink.first().url }}">{{ entry.servicesButtonLinkName }}</a>
 	</section>
 	</div>
@@ -77,7 +77,7 @@
 		<ul class="section-projects__list">
 		{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
 
-		{% for entry in featured.limit(3) %} 
+		{% for entry in featured.limit(3) %}
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 				    {% if entry.projectPicture|length %}
@@ -106,12 +106,12 @@
 		<h2>{{ entry.peopleSectionTitle }}</h2>
 		<p>{{ entry.peopleSectionDescription }}</p>
 		{% for block in entry.projectMatrix.type('homeProjects') %}
-			<ul class="section-people__logos">	
+			<ul class="section-people__logos">
      			{% for asset in block.projectImageLogo %}
            			<li class="section-people__logos__item"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></li>
-        		{% endfor %}	
+        		{% endfor %}
 			</ul>
-		{% endfor %}	
+		{% endfor %}
 		<a class="button button-primary" href="{{ entry.peopleButtonLink.first().url }}">{{ entry.peopleButtonName }}</a>
 	</section>
 	</div>
