@@ -43,7 +43,10 @@
 						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
 							<li class="section-services__list__item">
 								{% for asset in block.homepageIcon %}
-							       		<img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+                        <noscript>
+                          <img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+                        </noscript>
+							       		<img class="lazy section-services__list__item__icon" data-original="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3>
 							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
@@ -71,8 +74,8 @@
 				    <a href="{{ entry.url }}">
 				    {% if entry.projectPicture|length %}
 							{% for asset in entry.projectPicture.limit(1) %}
-     							<img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
-   							{% endfor %}
+                  <img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+                {% endfor %}
    						{% else %}
    						{% for asset in imagePlaceholder.aboutImage %}
    					   		<img class="section-projects__list__item__thumb"  src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
@@ -98,7 +101,12 @@
 		{% for block in entry.projectMatrix.type('homeProjects') %}
 			<ul class="section-people__logos">
      			{% for asset in block.projectImageLogo %}
-           			<li class="section-people__logos__item"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></li>
+           			<li class="section-people__logos__item">
+                  <noscript>
+                    <img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+                  </noscript>
+                  <img class="lazy" data-original="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+                </li>
         		{% endfor %}
 			</ul>
 		{% endfor %}

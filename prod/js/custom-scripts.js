@@ -87,3 +87,12 @@ $(document).ready(function(){
    // Target your .container, .wrapper, .post, etc.
    $(".video-container").fitVids();
  });
+
+
+// Call Lazy Loaded Images //
+
+$(function() {
+    $("img.lazy").lazyload({
+      threshold : 300
+    });
+});
