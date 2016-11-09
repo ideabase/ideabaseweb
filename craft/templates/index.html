@@ -7,29 +7,18 @@
 {% block content %}
 
 {% include '_includes/_background-images.html' %}
-{% if videoBackground.fileTypeOne|length %}
 
+{% if videoBackground.fileTypeOne|length %}
+  {%cache globally%}
 	<!-- About Section -->
 	<section class="section-header video-background">
-
-	{% for asset in videoBackground.videoPlaceholder %}
 		<video autoplay muted loop class="hero-video">
-	{% endfor %}
-
 		{% for asset in videoBackground.fileTypeOne %}
 			<source src="{{ asset.getUrl('fileTypeOne') }}" type="video/mp4">
 		{% endfor %}
-
-		{% for asset in videoBackground.fileTypeTwo %}
-			<source src="{{ asset.getUrl('fileTypeTwo') }}" type="video/webm">
-		{% endfor %}
-
 		</video>
-
+    {% endcache %}
 {% else %}
-
-
-
 	<section class="section-header">
 	{% endif %}
 	{%cache globally%}
@@ -67,7 +56,7 @@
 	</section>
 	</div>
 	{% endcache %}
-
+  {%cache globally%}
 	<!-- Projects List -->
 	<div class="panel-secondary-container panel-background-image">
 	<section class="section-projects panel-secondary">
@@ -99,6 +88,7 @@
 		</section>
 	</section>
 	</div>
+  {% endcache %}
 	<!-- End Projects List -->
 	{%cache globally%}
 	<div class="panel-primary-container">

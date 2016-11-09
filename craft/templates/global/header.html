@@ -8,21 +8,20 @@
     	<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
 	</span>
 	{% endcache %}
+	{% cache globally %}
 	<nav role="navigation">
 				<ul>
 					<li class="nav__item">
-						<a href="{{ url('services') }}" 
-						{% if craft.request.firstSegment == 'services' %}class="active-page"{% endif %}>Services</a>
+						<a href="{{ url('services') }}">Services</a>
 					</li>
 					<li class="nav__item">
-						<a href="{{ url('work') }}" 
-						{% if craft.request.firstSegment == 'work' %}class="active-page"{% endif %}>Work</a>
+						<a href="{{ url('work') }}">Work</a>
 					</li>
 					<li class="nav__item">
-						<a href="{{ url('people') }}" 
-						{% if craft.request.firstSegment == 'people' %}class="active-page"{% endif %}>People</a>
+						<a href="{{ url('people') }}">People</a>
 					</li>
       				<li class="nav__contact"><a href="#footer-form" id="contact-toggle"><span>Contact Us</span></a></li>
-      			</ul> 
+      			</ul>
 	</nav>
+	{% endcache %}
 </header>
