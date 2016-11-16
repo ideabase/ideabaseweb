@@ -10,9 +10,16 @@ $( "#navshow" ).click(function() {
 
 // Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
 $( "#categorytrigger" ).click(function() {
-  $( "#categorytriggerlist" ).toggleClass( "project--show" );
-  $( "#categorytrigger" ).toggleClass( "button--show" );
+  $( ".overlay" ).fadeIn(300);
+  $("html").addClass("no-scroll");
+  $( "#categorytrigger" ).addClass( "button--show" );
 });
+
+$(".hide-overlay").click(function() {
+  $( ".overlay" ).fadeOut(300);
+  $("html").removeClass("no-scroll");
+  $( "#categorytrigger" ).removeClass( "button--show" );
+})
 
 $(document).ready(function() {
   var path = window.location.href; // because the 'href' property of the DOM element is the absolute path

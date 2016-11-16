@@ -613,7 +613,6 @@
 
 .project-category {
   text-align:center;
-  position: relative;
 }
 
 .js .project-category .nav__trigger__link.button--show {
@@ -626,14 +625,13 @@
   padding: 1em;
   width: 60%;
   margin: 0 auto;
-  background-color: $darkgray;
   transition: .3s all ease-in-out;
 }
 
 .project-category__list__item {
   padding-top: .75em;
   font-size: 1em;
-  color: white;
+  color: $blue;
   &:first-child {
     padding-top: .75em;
   }
@@ -641,7 +639,7 @@
     padding-bottom: 1.25em
   }
   a {
-    color: white;
+    color: inherit;
     text-decoration: none;
     display: block;
     width: 100%;
@@ -649,7 +647,6 @@
       background-color: $blue;
     }
   }
-
 }
 
 .project-category .nav__trigger__link {
@@ -671,28 +668,34 @@
   }
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10vh;
+  background-color: white;
+}
+
+.hide-overlay {
+  cursor: pointer;
+}
+
 .js .project-category__list {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-  padding: 0 1em;
-  position: absolute;
-  z-index:1000;
-  margin: 0 auto;
-  width: 67.8%;
-  margin-top: -1.1em;
-  left: 16%;
+
 }
 
 .project-category__list.project--show {
-  max-height: 1000px;
-  
-  //border:1px solid white;
+
 }
 
 .nav__trigger__link.button--show {
   background-color: $cyan;
 }
+
 
 @media screen and (min-width: 600px) {
 
