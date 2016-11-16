@@ -4,7 +4,6 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include '_includes/_background-images.html' %}
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
 		<h1 class="section-header__title">{{ entry.projectHeadline }}</h1>
@@ -17,12 +16,12 @@
 	<div class="project-category">
 		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
 		<ul class="project-category__list" id="categorytriggerlist">
-		<li class="project-category__list__item">
-			<a href="{{ siteUrl }}/work/all">All</a>
-		</li>
+			<li class="project-category__list__item">
+				<a href="{{ siteUrl }}/work/all">All</a>
+			</li>
 			{%  for category in projectCategory.order('title asc') %}
 				<li class="project-category__list__item">
-					<a href="{{ category.url }}">{{category.title}}</a>
+					<a class="category-link" href="{{ category.url }}">{{category.title}}</a>
 				</li>
 			{% endfor %}	
 		</ul>	
