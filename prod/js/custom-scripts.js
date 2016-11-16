@@ -14,6 +14,15 @@ $( "#categorytrigger" ).click(function() {
   $( "#categorytrigger" ).toggleClass( "button--show" );
 });
 
+$(document).ready(function() {
+  var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+  $(".category-link").each(function() {
+    if (this.href === path) {
+      $(this).addClass("current");
+    }
+  });
+});
+
 
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
 $( "#footer-form-toggle" ).click(function() {
