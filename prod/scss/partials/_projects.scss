@@ -676,12 +676,27 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  padding-top: 10vh;
   background-color: white;
 }
 
 .hide-overlay {
   cursor: pointer;
+  background-image: url(../Images/global/IdeaBase_Close-X.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  display: block;
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  span {
+    position: absolute;
+    left: -10000px;
+  }
+}
+
+.category-window {
+  padding-top: 5vh;
 }
 
 .js .project-category__list {

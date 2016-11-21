@@ -11,7 +11,7 @@ $( "#navshow" ).click(function() {
 // Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
 $( "#categorytrigger" ).click(function() {
   $( ".overlay" ).fadeIn(300);
-  $("html").addClass("no-scroll");
+  $("html").addClass("no-scroll"); // Disable scrolling on main page while menu is visible
   $( "#categorytrigger" ).addClass( "button--show" );
 });
 
