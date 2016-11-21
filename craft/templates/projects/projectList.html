@@ -21,14 +21,20 @@
 				<label class="hide-overlay">
 					<span>close</span>
 				</label>
-				<h2>Categories</h2>
+				<h3>Categories</h3>
 				<ul class="project-category__list">
 					<li class="project-category__list__item">
-						<a href="{{ siteUrl }}/work/all">All</a>
+						<a href="{{ siteUrl }}/work/all"><h2 class="category-link__title">All</h2></a>
+
 					</li>
 					{%  for category in projectCategory.order('title asc') %}
 						<li class="project-category__list__item">
-							<a class="category-link" href="{{ category.url }}">{{category.title}}</a>
+						{% for asset in category.categoryIcon %}
+							<a class="category-link" href="{{ category.url }}">
+								<div class="category-link__icon" style="background-image:url({{ asset.getUrl() }})"></div>
+								<h2 class="category-link__title">{{category.title}}</h2>
+								{% endfor %}
+							</a>
 						</li>
 					{% endfor %}	
 				</ul>
