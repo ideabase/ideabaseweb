@@ -622,11 +622,12 @@
 
 .project-category__list {
   list-style-type: none;
-  padding: 1em;
+  padding: 0;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  text-align: left;
   transition: .3s all ease-in-out;
 }
 
@@ -635,26 +636,22 @@
   font-size: 1em;
   color: $blue;
   width: 100%;
-  max-width: 320px;
-  a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    &.current {
-      background-color: $blue;
-    }
-  }
-}
-.category-link__icon {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 80px;
 }
 
-.category-link__title {
+.category-link {
   display: block;
+  font-family: $mont;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-indent: 46px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  padding: 15px 0;
 }
 
 .project-category .nav__trigger__link {
@@ -695,7 +692,7 @@
   height: 30px;
   width: 30px;
   display: block;
-  position: absolute;
+  position: fixed;
   top: 2vh;
   right: 2vh;
   span {
