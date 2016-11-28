@@ -701,14 +701,12 @@
   font-size: 1em;
   color: $blue;
   width: 100%;
-  a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
 }
 
 .category-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
   font-family: $mont;
   font-size: 1.3em;
   font-weight: bold;
@@ -744,6 +742,10 @@
 
   .project-list {
     @include clearfix;
+  }
+
+  .overlay {
+    overflow-y: auto;
   }
 
   .project-category__list {
@@ -783,6 +785,11 @@
     clear: left;
   }
 
+
+}
+
+@media screen and (min-width: 1130px) {
+
   .project-category__list__item {
     width: 25%;
     &:last-child .category-link {
@@ -797,8 +804,6 @@
     background-size: 100px;
     background-position: center 0;
   }
-
-
 }
 
 .project-list__item--featured {
