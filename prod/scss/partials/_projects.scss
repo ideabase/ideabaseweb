@@ -675,7 +675,7 @@
   }
 }
 
-.category-window {
+.overlay-window {
   display: none;
   padding-top: 3em;
 }
@@ -782,7 +782,6 @@
     clear: left;
   }
 
-  
 }
 
 @media screen and (min-width: 900px) {
@@ -790,7 +789,7 @@
     background-color: rgba(0,0,0,0.35);
   }
 
-  .category-window {
+  .overlay-window {
     background-color: white;
     margin-top: 60px;
     max-width: 900px;
@@ -807,7 +806,7 @@
 
 @media screen and (min-width: 1240px) {
 
-  .category-window {
+  .overlay-window {
     max-width: 1200px;
   }
 

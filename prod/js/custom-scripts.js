@@ -9,19 +9,31 @@ $( "#navshow" ).click(function() {
 });
 
 // Show and Hide the Project Menu, while also changing the menu text to describe open/closed
-$( "#categorytrigger" ).click(function() {
-  $( ".overlay" ).fadeIn(350, "easeOutSine");
-  $( ".category-window" ).delay(100).fadeIn(250, "easeInSine");
-
+var overlyShow = function() {
+  $(".overlay").fadeIn(300, "easeOutSine");
+  $(".overlay-window").delay(100).fadeIn(200, "easeInSine");
   $("html").addClass("no-scroll-mobile"); // Disable scrolling on main page while menu is visible
-  $( "#categorytrigger" ).addClass( "button--show" );
+}
+var overlayHide = function() {
+  $(".overlay-window").fadeOut(250, "easeOutSine");
+  $(".overlay").delay(100).fadeOut(150, "easeInSine");
+  $("html").removeClass("no-scroll-mobile");
+}
+
+$("#categorytrigger").click(function() {
+  overlyShow(); // Show overlay when trigger is clicked
 });
 
 $(".hide-overlay").click(function() {
-  $( ".category-window" ).fadeOut(250, "easeOutSine");
-  $( ".overlay" ).delay(100).fadeOut(150, "easeInSine");
-  $("html").removeClass("no-scroll-mobile");
-  $( "#categorytrigger" ).removeClass( "button--show" );
+  overlayHide(); // Hide overlay when 'x' is clicked
+})
+
+$(".overlay").click(function(){
+  overlayHide(); // Hide overlay when click outside the content area...
+});
+
+$(".overlay-window").click(function(e){
+  e.stopPropagation(); // ...but not when click inside the content area
 })
 
 $(document).ready(function() {
