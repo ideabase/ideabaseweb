@@ -650,7 +650,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
@@ -667,8 +667,8 @@
   width: 20px;
   display: block;
   position: fixed;
-  top: 14px;
-  right: 10px;
+  top: 18px;
+  right: 18px;
   span {
     position: absolute;
     left: -10000px;
@@ -676,6 +676,7 @@
 }
 
 .category-window {
+  display: none;
   padding-top: 3em;
 }
 
@@ -744,10 +745,6 @@
     @include clearfix;
   }
 
-  .overlay {
-    overflow-y: auto;
-  }
-
   .project-category__list {
     padding-top: 4em;
   }
@@ -785,10 +782,34 @@
     clear: left;
   }
 
-
+  
 }
 
-@media screen and (min-width: 1130px) {
+@media screen and (min-width: 900px) {
+  .overlay {
+    background-color: rgba(0,0,0,0.35);
+  }
+
+  .category-window {
+    background-color: white;
+    margin-top: 60px;
+    max-width: 900px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 3px 30px -5px rgba(0, 0, 0, 0.33);
+  }
+
+  .hide-overlay {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+
+  .category-window {
+    max-width: 1200px;
+  }
 
   .project-category__list__item {
     width: 25%;
@@ -805,6 +826,8 @@
     background-position: center 0;
   }
 }
+
+
 
 .project-list__item--featured {
   margin-bottom: 3em;

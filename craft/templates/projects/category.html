@@ -39,16 +39,30 @@
 <div class="panel-primary-container">
 	<div class="project-category">
 		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
-		<ul class="project-category__list" id="categorytriggerlist">
-			<li class="project-category__list__item">
-				<a href="{{ siteUrl }}/work/all">All</a>
-			</li>
-			{%  for category in projectCategory.order('title asc') %}
-				<li class="project-category__list__item">
-					<a class="category-link" href="{{ category.url }}">{{category.title}}</a>
-				</li>
-			{% endfor %}	
-		</ul>	
+
+		<div class="overlay">
+			<section class="panel-primary-wide category-window">
+				<label class="hide-overlay">
+					<span>close</span>
+				</label>
+				<h3 class="category-list__title">Browse by Category</h3>
+				<ul class="project-category__list">
+					{%  for category in projectCategory.order('title asc') %}
+					<li class="project-category__list__item">
+						{% for asset in category.categoryIcon %}
+						<a class="category-link" href="{{ category.url }}" style="background-image:url({{ asset.getUrl() }})">
+							{{category.title}}
+						</a>
+						{% endfor %}
+					</li>
+					{% endfor %}
+					<li class="project-category__list__item">
+						<a class="button button-primary" href="{{ siteUrl }}/work/all">See All Work</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+
 	</div>
 	<section class="section-projects-all panel-primary-wide">
 		<ul class="project-list">

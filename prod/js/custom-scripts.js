@@ -8,16 +8,19 @@ $( "#navshow" ).click(function() {
   $( ".nav__trigger__link--show" ).text(menuclose);
 });
 
-// Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
+// Show and Hide the Project Menu, while also changing the menu text to describe open/closed
 $( "#categorytrigger" ).click(function() {
-  $( ".overlay" ).fadeIn(300);
-  $("html").addClass("no-scroll"); // Disable scrolling on main page while menu is visible
+  $( ".overlay" ).fadeIn(350, "easeOutSine");
+  $( ".category-window" ).delay(100).fadeIn(250, "easeInSine");
+
+  $("html").addClass("no-scroll-mobile"); // Disable scrolling on main page while menu is visible
   $( "#categorytrigger" ).addClass( "button--show" );
 });
 
 $(".hide-overlay").click(function() {
-  $( ".overlay" ).fadeOut(300);
-  $("html").removeClass("no-scroll");
+  $( ".category-window" ).fadeOut(250, "easeOutSine");
+  $( ".overlay" ).delay(100).fadeOut(150, "easeInSine");
+  $("html").removeClass("no-scroll-mobile");
   $( "#categorytrigger" ).removeClass( "button--show" );
 })
 
