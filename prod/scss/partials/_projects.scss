@@ -786,17 +786,18 @@
 
 @media screen and (min-width: 900px) {
   .overlay {
-    background-color: rgba(0,0,0,0.35);
+    background-color: rgba(0,0,0,0.5);
   }
 
   .overlay-window {
     background-color: white;
     margin-top: 60px;
+    width: 92%;
     max-width: 900px;
     position: absolute;
     left: 0;
     right: 0;
-    box-shadow: 0px 3px 30px -5px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 3px 30px -5px rgba(0, 0, 0, 0.4);
   }
 
   .hide-overlay {
