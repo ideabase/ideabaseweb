@@ -11,7 +11,22 @@
 </section>	
 
 {% set projectCategory = craft.categories.group('projectType') %}
-{% set Project = craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').order('title').limit(null) %}
+
+{% set query = {
+    section : 'ideabaseProjects',
+    archivedProject : 'not 1',
+    order : 'title',
+    limit : null
+} %}
+
+{% if category is defined %}
+    {% set query = query|merge({
+        categories: '~category.slug'
+    }) %}
+{% endif %}
+
+{% set Project = craft.entries(query) %}
+
 <div class="panel-primary-container">
 	<div class="project-category">
 		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
@@ -78,3 +93,4 @@
 	</section>
 </div>
 {% endblock %}
+
