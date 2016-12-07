@@ -128,7 +128,7 @@ $(".category-link").click(function(e){
 
   e.preventDefault();
   var $filter = $(e.currentTarget);
-  var href = $filter.attr('href');
+  var href = $filter.attr("href");
 
   if (historySupport) {
     // Update the browser's address bar
@@ -139,7 +139,6 @@ $(".category-link").click(function(e){
     url: href,
     success: function(result) {
       $(".section-projects-all").html($(result).find(".project-list"));
-     
     }
   });
 
@@ -152,7 +151,7 @@ $(".category-link").click(function(e){
   $(".overlay-window, .overlay").fadeOut(250, "easeOutSine");
   $("html").removeClass("no-scroll-mobile");
 
-  var category = $(this).text();
-  $(".section-header__title span").html(":" + category);
+  var category = $(this).attr("title");
+  $(".category-header").html(category);
 
 });

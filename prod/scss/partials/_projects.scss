@@ -1,5 +1,14 @@
 /* headings */
 
+.category-header{
+  &:before {
+    content: ": ";
+  }
+  &:empty:before {
+    content: "";
+  }
+}
+
 .section-projects {
   text-align: center;
 }
@@ -718,7 +727,7 @@
   background-repeat: no-repeat;
   background-size: 42px;
   padding: 15px 0;
-  &.current {
+  &.current:not(.button) {
     color: $cyan;
   }
 }

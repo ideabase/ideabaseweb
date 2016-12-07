@@ -6,7 +6,7 @@
 {% block content %}
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
-		<h1 class="section-header__title">{{ entry.projectHeadline }}<span></span></h1>
+		<h1 class="section-header__title">{{ entry.projectHeadline }}<span class="category-header"></span></h1>
 	</div>
 </section>	
 
@@ -41,14 +41,14 @@
 					{%  for category in projectCategory.order('title asc') %}
 					<li class="project-category__list__item">
 						{% for asset in category.categoryIcon %}
-						<a class="category-link" href="{{ category.url }}" style="background-image:url({{ asset.getUrl() }})">
+						<a class="category-link" title="{{category.title}}" href="{{ category.url }}" style="background-image:url({{ asset.getUrl() }})">
 							{{category.title}}
 						</a>
 						{% endfor %}
 					</li>
 					{% endfor %}
 					<li class="project-category__list__item">
-						<a class="button button-primary" href="{{ siteUrl }}/work/all">See All Work</a>
+						<a class="button button-primary category-link" title="" href="{{ siteUrl }}/work/all">See All Work</a>
 					</li>
 				</ul>
 			</section>
