@@ -770,6 +770,10 @@
 
 }
 
+.category__title {
+  display: none;
+}
+
 @media screen and (min-width: 850px) {
   .project-list__item {
     width: 30%;
