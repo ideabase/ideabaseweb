@@ -27458,6 +27458,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/craft\/storage\/runtime\/assets\/thumbs\/30\/1493.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 943,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1493.jpg",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/assets\/thumbs\/30\/1493.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/craft\/storage\/runtime\/assets\/thumbs\/60\/1491.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -27843,6 +27854,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/92\/9252d8991d66f5dd01457cb78fd25fb76af5ae3fbc038aac165f86650daadffd.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/9c\/9c1fc9091b69f9b3cd48c107e0f6c25a5cf28c0ebb223d9013bed49098152d73.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/9c\/9c1fc9091b69f9b3cd48c107e0f6c25a5cf28c0ebb223d9013bed49098152d73.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -31089,6 +31109,17 @@
 		"initialSize": 91651,
 		"inputAbbreviatedPath": "\/prod\/images\/global\/bricks-final.jpg",
 		"outputAbbreviatedPath": "\/prod\/images\/global\/bricks-final.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/prod\/images\/global\/bricks-resized.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32666,
+		"inputAbbreviatedPath": "\/prod\/images\/global\/bricks-resized.jpg",
+		"outputAbbreviatedPath": "\/prod\/images\/global\/bricks-resized.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
