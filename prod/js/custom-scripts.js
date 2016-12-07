@@ -128,37 +128,16 @@ $(function() {
     });
 });
 
-// Check if the browser supports HTML5 history
-  var historySupport = !!(window.history && history.pushState);
 
-  // Add an event listener for filter clicks
-  $(function () {
-      $('body').on('click', '.category-link', onFilterClick);
-  });
 
-// Event handler for the filter click
-function onFilterClick (e)
-{
-    e.preventDefault();
-    var $filter = $(e.currentTarget);
-    var href = $filter.attr('href');
-    if (historySupport) {
-        // Update the browser's address bar
-        history.pushState(null, null, href);  
-    }
-    $.ajax($filter.attr('href'), {
-        dataType : 'html',
-        success : function (response) {
-            refreshProjects(response);
-        }
-    });
-}
+$(".category-link").click(function(e){
 
-function refreshProjects (html)
-{
-    // Update the <title> tag
-    document.title = $('html').filter('title').text();
-    // Update the .projects DOM element with new HTML
-    var $html = $('<div>').append(html);
-    $('.project-list').html($html.find('.project-list').html());
-}
+  e.preventDefault();
+  var $filter = $(e.currentTarget);
+  var href = $filter.attr('href');
+
+  $.ajax({url: href, success: function(result){
+    $(".project-list").html(result);
+  }});
+
+})
