@@ -28,7 +28,7 @@
 		.panel-background-image {
 			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
 			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}
-			        background-image: url({{ asset.getUrl('brickMedium') }});
+			        background-image: url({{ asset.getUrl() }});
 			    {% endfor %}
 			{% endif %}
 		}
