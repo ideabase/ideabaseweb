@@ -730,6 +730,9 @@
   &.current:not(.button) {
     color: $cyan;
   }
+  &.button {
+    text-indent: 0;
+  }
 }
 
 
@@ -825,9 +828,6 @@
   .project-category__list__item {
     width: 25%;
     text-align: center;
-    &:last-child .category-link {
-      padding-top: 2em;
-    }
   }
   .category-link {
     text-align: center;
