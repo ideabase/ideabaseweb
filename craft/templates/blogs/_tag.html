@@ -6,40 +6,14 @@
 {% extends "_layout" %}
 {% block content %}
 
-<style type="text/css">
-	.blog.section-header { 
-		{% if blogHeader.aboutImage | length %}
-		    {% for asset in blogHeader.aboutImage %}
-		        background-image: url({{ asset.getUrl('featureImageSmall') }});
-		    {% endfor %}
-		{% endif %}
-	}
-	@media screen and (min-width: 600px) {
-		.blog.section-header {
-			{% if blogHeader.aboutImage | length %}
-		    {% for asset in blogHeader.aboutImage %}
-		        background-image: url({{ asset.getUrl('featureImageMedium') }});
-		    {% endfor %}
-		{% endif %}
-		}
-	}
-	@media screen and (min-width: 1000px) {
-		.blog.section-header {
-			{% if blogHeader.aboutImage | length %}
-		    {% for asset in blogHeader.aboutImage %}
-		        background-image: url({{ asset.getUrl('featureImageLarge') }});
-		    {% endfor %}
-		{% endif %}
-		}
-	}
-</style>
+{% include '_includes/_blog_background-images.html' %}
 
 {% set tag = craft.tags.title(tag).first() %}
 {% set entries = craft.entries.relatedTo(tag).order('title').limit(null) %}
 
 <section class="blog section-header section-header--interior">
 	<div class="section-header__container">
-		<h1 class="section-header__title">Entries tagged with “{{ tag.title }}”</h1>
+		<h1 class="section-header__title">Posts tagged with “{{ tag.title }}”</h1>
 	</div>
 </section>
 
@@ -77,11 +51,12 @@
 						{% else %}
 							<p class="blog-teaser__link">
 								Read the Post</p>
-						{% endif %}				    
+						{% endif %}
 					</a>
 				</li>
    			{% endfor %}
    		</ul>
+      <a class="button button-primary button--reverse" href="{{ siteUrl }}blog">Back to Blog</a>
    	</section>
 </div>
 {% endblock %}

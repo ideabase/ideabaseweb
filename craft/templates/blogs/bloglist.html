@@ -4,7 +4,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include '_includes/_background-images.html' %}
+{% include '_includes/_blog_background-images.html' %}
 
 <section class="blog section-header section-header--interior">
 	<div class="section-header__container">
@@ -37,7 +37,7 @@
 							{% endif %}
 							<date class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</date>
 						</div>
-							
+
 						{% set blogParagraphsIndex = entry.blogContent|split('.') %}
 						{% set firstBlogParagraphIndex = blogParagraphsIndex|first ~ '.' %}
 							<div class="blog-list__text">
@@ -52,8 +52,8 @@
 							<p class="blog-teaser__link">
 								Read the Post</p>
 						{% endif %}
-					    
-						</a>	
+
+						</a>
 			</li>
    			{% endfor %}
    		</ul>
