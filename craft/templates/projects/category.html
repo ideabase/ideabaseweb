@@ -31,7 +31,7 @@
 </style>
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
-		<h1 class="section-header__title">IdeaBase Work: {{ category.title }}</h1>
+		<h1 class="section-header__title">IdeaBase Work<span>: {{ category.title }}</span></h1>
 	</div>
 </section>	
 {% set projectCategory = craft.categories.group('projectType') %}
@@ -67,8 +67,6 @@
 	</div>
 	<section class="section-projects-all panel-primary-wide">
 		<ul class="project-list">
-
-<li class="category__title">{{ category.title }}</li>
 			
 {% for entry in craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').relatedTo(category) %}
 	<li class="project-list__item">

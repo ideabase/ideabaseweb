@@ -139,6 +139,7 @@ $(".category-link").click(function(e){
     url: href,
     success: function(result) {
       $(".section-projects-all").html($(result).find(".project-list"));
+     
     }
   });
 
@@ -151,7 +152,7 @@ $(".category-link").click(function(e){
   $(".overlay-window, .overlay").fadeOut(250, "easeOutSine");
   $("html").removeClass("no-scroll-mobile");
 
-  var category = $(".category__title").text();
+  var category = $(this).text();
   $(".section-header__title span").html(":" + category);
 
-})
+});
