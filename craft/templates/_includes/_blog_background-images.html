@@ -1,29 +1,23 @@
 <style type="text/css">
+{% if headerImages.blogHeaderImage | length %}
+
+{% set image = headerImages.blogHeaderImage.first %}
+
 		.blog.section-header {
-			{% if headerImages.blogHeaderImage | length %}
-			    {% for asset in headerImages.blogHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageSmall') }});
-			    {% endfor %}
-			{% endif %}
+			        background-image: url({{ image.getUrl('featureImageSmall') }});
 		}
 		@media screen and (min-width: 600px) {
 			.blog.section-header {
-				{% if headerImages.blogHeaderImage | length %}
-			    {% for asset in headerImages.blogHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageMedium') }});
-			    {% endfor %}
-			{% endif %}
+			        background-image: url({{ image.getUrl('featureImageMedium') }});
 			}
 		}
 		@media screen and (min-width: 1000px) {
 			.blog.section-header {
-				{% if headerImages.blogHeaderImage | length %}
-			    {% for asset in headerImages.blogHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageLarge') }});
-			    {% endfor %}
-			{% endif %}
+			        background-image: url({{ image.getUrl('featureImageLarge') }});
 			}
 		}
+{% endif %}
+
 		.panel-background-image {
 			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
 			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}

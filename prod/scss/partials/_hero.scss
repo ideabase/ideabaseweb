@@ -5,7 +5,7 @@
   padding: 4em 0em;
   position: relative;
   background-color: lighten($blue,10%);
-  background-blend-mode: multiply;
+  background-blend-mode: hard-light;
   animation: fadeIn 2s;
   animation-fill-mode: forwards;
   opacity: 0;
