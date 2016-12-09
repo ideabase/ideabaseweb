@@ -175,11 +175,12 @@
 			<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
 			<div class="panel-secondary--left">
 			  <p>{{ entry.workForIdeabaseDescription }}</p>
+        <a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
 			</div>
 			{% else %}
 			<p>{{ entry.workForIdeabaseDescription }}</p>
+      <a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
 		{% endif %}
-		<a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
 	</section>
 	</div>
 

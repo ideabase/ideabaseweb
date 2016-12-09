@@ -112,11 +112,12 @@
 		<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
 		<div class="panel-secondary--left">
 		  {{ entry.classroomExperienceDescription }}
+      <a class="button button-primary" href="{{ siteUrl }}/classes">{{ entry.classroomButton }}</a>
 		</div>
 		{% else %}
 		{{ entry.classroomExperienceDescription }}
+    <a class="button button-primary" href="{{ siteUrl }}/classes">{{ entry.classroomButton }}</a>
 		{% endif %}
-		<a class="button button-primary" href="{{ siteUrl }}/classes">{{ entry.classroomButton }}</a>
 	</section>
 	</div>
 	<!-- End Case Study List -->
