@@ -550,7 +550,7 @@
   max-width: 250px;
   margin: 0 auto;
   border:4px solid transparent;
-  transition: .3s all ease-in-out;
+  transition: .3s border-color ease-in-out;
   &:before {
     transition: .3s all ease-in-out;
     background-color: rgba($blue,0);
