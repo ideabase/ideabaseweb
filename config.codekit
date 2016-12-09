@@ -27572,6 +27572,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/craft\/storage\/runtime\/compiled_templates\/1a\/1a23c5231d288160212d71daccd1d944a3de48df29a214a2af5e5f90783e10c7.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/1a\/1a23c5231d288160212d71daccd1d944a3de48df29a214a2af5e5f90783e10c7.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/craft\/storage\/runtime\/compiled_templates\/1e\/1e5dfa7a93a46a039a5a8dbfd3a4cb129f64dec8eb80afe0379f7f84b5a5028c.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -27721,6 +27730,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/37\/37fee0c35f2345474f2186eda9bbe74cd6703b2d0651daf8b0e25edf6591dc7d.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/compiled_templates\/3a\/3a549918e2337d0f4fff42a2a83c0f2f3bc97f7f693bfcfd8e93ab11f9a4bf7b.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/compiled_templates\/3a\/3a549918e2337d0f4fff42a2a83c0f2f3bc97f7f693bfcfd8e93ab11f9a4bf7b.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -28669,6 +28687,1052 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/elementactions\/BaseElementAction.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/elementactions\/BaseElementAction.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/etc\/config\/defaults\/db.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/etc\/config\/defaults\/db.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/etc\/et\/Et.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/etc\/et\/Et.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/helpers\/IOHelper.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/helpers\/IOHelper.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/helpers\/UpdateHelper.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/helpers\/UpdateHelper.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/Info.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/Info.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/compressed\/craft.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/compressed\/craft.js",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/compressed\/min\/craft-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft.js",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/min\/craft-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/AssetIndex.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/AssetIndex.js",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/min\/AssetIndex-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/BaseElementIndex.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/BaseElementIndex.js",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/js\/craft\/min\/BaseElementIndex-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/lib\/redactor\/redactor.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/lib\/redactor\/redactor.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/lib\/redactor\/redactor.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/lib\/redactor\/redactor.js",
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/resources\/lib\/redactor\/min\/redactor-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/services\/InstallService.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/services\/InstallService.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/services\/TemplateCacheService.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/services\/TemplateCacheService.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/fr.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/fr.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/hu.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/hu.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/ja.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/ja.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/pt.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/translations\/pt.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/autoload.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/autoload.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_classmap.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_classmap.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_namespaces.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_namespaces.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_real.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_real.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_static.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/autoload_static.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/installed.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/installed.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/composer\/installed-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/CHANGELOG.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/CHANGELOG.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/CHANGELOG.html",
+		"outputFormat": 0,
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/composer.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/composer.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/composer-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Draw\/DrawerInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Draw\/DrawerInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Effects\/EffectsInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Effects\/EffectsInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/Exception.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/Exception.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/InvalidArgumentException.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/InvalidArgumentException.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/NotSupportedException.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/NotSupportedException.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/OutOfBoundsException.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/OutOfBoundsException.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/RuntimeException.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Exception\/RuntimeException.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Border.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Border.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Canvas.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Canvas.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Grayscale.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/Grayscale.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/OnPixelBased.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/OnPixelBased.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/RelativeResize.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Advanced\/RelativeResize.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/ApplyMask.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/ApplyMask.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Autorotate.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Autorotate.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Copy.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Copy.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Crop.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Crop.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Fill.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Fill.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/FlipHorizontally.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/FlipHorizontally.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/FlipVertically.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/FlipVertically.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Paste.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Paste.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Resize.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Resize.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Rotate.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Rotate.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Save.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Save.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Show.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Show.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Strip.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Strip.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Thumbnail.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/Thumbnail.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/WebOptimization.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Basic\/WebOptimization.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/FilterInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/FilterInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/ImagineAware.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/ImagineAware.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Transformation.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Filter\/Transformation.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Drawer.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Drawer.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Effects.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Effects.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Font.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Font.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Image.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Image.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Imagine.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Imagine.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Layers.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gd\/Layers.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Drawer.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Drawer.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Effects.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Effects.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Font.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Font.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Image.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Image.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Imagine.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Imagine.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Layers.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Gmagick\/Layers.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractFont.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractFont.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractImage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractImage.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractImagine.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractImagine.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractLayers.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/AbstractLayers.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Box.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Box.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/BoxInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/BoxInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/FillInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/FillInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Horizontal.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Horizontal.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Linear.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Linear.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Vertical.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Fill\/Gradient\/Vertical.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/FontInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/FontInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Histogram\/Bucket.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Histogram\/Bucket.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Histogram\/Range.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Histogram\/Range.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ImageInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ImageInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ImagineInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ImagineInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/LayersInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/LayersInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ManipulatorInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ManipulatorInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/AbstractMetadataReader.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/AbstractMetadataReader.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/DefaultMetadataReader.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/DefaultMetadataReader.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/ExifMetadataReader.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/ExifMetadataReader.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/MetadataBag.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/MetadataBag.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/MetadataReaderInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Metadata\/MetadataReaderInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/CMYK.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/CMYK.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/CMYK.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/CMYK.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/ColorInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/ColorInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/Gray.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/Gray.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/RGB.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Color\/RGB.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/ColorParser.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/ColorParser.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Grayscale.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/Grayscale.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/PaletteInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/PaletteInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/RGB.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Palette\/RGB.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Point.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Point.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Point\/Center.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Point\/Center.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/PointInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/PointInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Profile.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/Profile.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ProfileInterface.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Image\/ProfileInterface.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Drawer.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Drawer.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Effects.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Effects.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Font.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Font.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Image.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Image.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Imagick.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Imagick.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Imagine.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Imagine.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Layers.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/lib\/Imagine\/Imagick\/Layers.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/README.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/README.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/craft\/storage\/runtime\/temp\/80377baa-424f-4d08-b673-62df96667fa8\/app\/vendor\/pixelandtonic\/imagine\/README.html",
+		"outputFormat": 0,
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
 		},
 	"\/craft\/templates\/404.html": {
 		"fileType": 8192,
