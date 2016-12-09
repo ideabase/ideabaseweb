@@ -505,10 +505,13 @@
 }
 
 .section-projects-featured .project-list {
-  width: 100%;
+  width: 90%;
   @media screen and (min-width: 600px) {
-    width: 95%;
+    width: 80%;
     margin-top: 1.5em
+  }
+  @media screen and (min-width: 850px) {
+    width: 90%;
   }
 }
 
@@ -544,7 +547,7 @@
   position: relative;
   z-index: 50;
   display: block;
-  max-width: 350px;
+  max-width: 250px;
   margin: 0 auto;
   border:4px solid transparent;
   transition: .3s all ease-in-out;

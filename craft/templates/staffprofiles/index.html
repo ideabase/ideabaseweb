@@ -10,8 +10,8 @@
 	<div class="section-header__container">
 		<h1 class="section-header__title">{{ entry.staffIndexHeader }}</h1>
 	</div>
-</section>		
-		<!-- 
+</section>
+		<!--
 		<div class="people-index__image">
 			{% for asset in entry.peopleFeaturedImage %}
      			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
@@ -34,8 +34,8 @@
 	{% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
 	{% set staff = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1') %}
 <div class="panel-primary-container">
-<section class="section-people panel-primary-wide"> 
-   <section class="people">	
+<section class="section-people panel-primary-wide">
+   <section class="people">
     		{% for entry in leader.relatedTo(leaderGroup).order('profileLastName asc') %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
     			{% if entry.staffHeadshot|length %}
@@ -47,13 +47,13 @@
 				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
 				     	{% endfor %}
 				{% endif %}
-	    		
+
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
-							
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
-		     				
+
+							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
+
 							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
@@ -75,8 +75,8 @@
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
-							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>	
+							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
+							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
   	</section>
 
   		<section class="section-blog-teaser">
-  		<h3>From Our Blog</h3>
+  		<h2>From Our Blog</h2>
   		<ul class="blog-teaser-list">
   		{% for entry in craft.entries.section('blogPost').limit(2) %}
   		{% set BlogAuthorName = entry.blogAuthor %}
@@ -102,23 +102,23 @@
 							{{ entry.title }}</p>
 						{% endfor %}
 					{% else %}
-						
+
 						<p class="blog-teaser__author">
 						{% for entry in entry.blogAuthor %}
 							<span class="blog-multiple__author">{{ entry.title }}</span>
 							{% endfor %}
 						</p>
-						
+
 					{% endif %}
-					
+
 					{% set blogParagraphs = entry.blogContent|split('.') %}
 					{% set firstBlogParagraph = blogParagraphs|first ~ '.' %}
 							<div class="blog-teaser__text">
 					    		{{ firstBlogParagraph|raw }}
 					    	</div>
-					
+
 					{% if numberOfAuthors < 2 %}
-						{% for entry in BlogAuthorName %}    	
+						{% for entry in BlogAuthorName %}
 						<p class="blog-teaser__link">Read {{ entry.profileFirstName }}'s Post</p>
 						{% endfor %}
 					{% else %}
@@ -127,14 +127,14 @@
 					{% endif %}
 			</a>
 		</li>
-		{% endfor %}	
+		{% endfor %}
 		</ul>
 			<section class="section-body-button panel-primary">
 				<a class="button button-primary" href="{{ siteUrl }}/blog">Read More In Our Staff Blog</a>
 			</section>
 		</section>
 
-		<section class="people">	
+		<section class="people">
 
    			{% for entry in staff.relatedTo(staffGroup).order('profileLastName asc').offset(2) %}
     		<a href="{{ entry.Url }}" class="people__profile-item">
@@ -147,17 +147,17 @@
 				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
 				     	{% endfor %}
 				{% endif %}
-	    		
+
 	    		<div class="people__profile-item__info">
 
 	    			<div class="people__profile-item__info__container">
 
-								
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>	
+
+							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
 							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
 							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-								
+
 					</div>
 				</div>
 			</a>
@@ -180,7 +180,7 @@
 			<p>{{ entry.workForIdeabaseDescription }}</p>
 		{% endif %}
 		<a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
-	</section>	
+	</section>
 	</div>
 
 {% endblock %}
