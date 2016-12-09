@@ -32327,6 +32327,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/prod\/js\/min\/scroll-reveal-fire-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prod\/js\/min\/scroll-reveal-fire-min.js",
+		"outputAbbreviatedPath": "\/prod\/js\/min\/min\/scroll-reveal-fire-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/prod\/js\/modernizr-custom.min.js": {
 		"fileType": 64,
 		"ignore": 0,

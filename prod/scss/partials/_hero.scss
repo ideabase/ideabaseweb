@@ -6,7 +6,7 @@
   position: relative;
   background-color: lighten($blue,10%);
   background-blend-mode: hard-light;
-  animation: fadeIn 2s;
+  animation: fadeIn .7s ease-in;
   animation-fill-mode: forwards;
   opacity: 0;
   &:after {
