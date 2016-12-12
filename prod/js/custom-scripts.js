@@ -35,6 +35,10 @@ $(".overlay-window").click(function(e) {
   // ...but not when click inside the content area
 });
 
+$(document).keyup(function(e) {
+  if (e.keyCode === 27) overlayHide();   // Hide overlay with esc key
+});
+
 
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
 $( "#footer-form-toggle" ).click(function() {
