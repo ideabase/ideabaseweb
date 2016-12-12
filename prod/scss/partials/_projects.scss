@@ -632,7 +632,6 @@
   color: white;
 }
 
-
 .project-category .nav__trigger__link {
   display: none;
 }
@@ -652,7 +651,6 @@
     right: 10px;
   }
 }
-
 
 .nav__trigger__link.button--show {
   background-color: $cyan;
@@ -695,7 +693,7 @@
 }
 
 .category-list__title {
-  color: $lightgray;
+  color: $darkgray;
   text-align: left;
   margin-top: 0;
 }
@@ -739,7 +737,6 @@
     text-indent: 0px;
   }
 }
-
 
 @media screen and (min-width: 600px) {
 

@@ -24,17 +24,13 @@ $("#categorytrigger").click(function() {
   overlyShow(); // Show overlay when trigger is clicked
 });
 
-$(".hide-overlay").click(function() {
+$(".hide-overlay, .overlay").click(function() {
   overlayHide(); // Hide overlay when 'x' is clicked
-})
-
-$(".overlay").click(function(){
-  overlayHide(); // Hide overlay when click outside the content area...
 });
 
 $(".overlay-window").click(function(e){
   e.stopPropagation(); // ...but not when click inside the content area
-})
+});
 
 
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
