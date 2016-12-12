@@ -500,6 +500,8 @@
   padding-bottom: 0;
   padding-top: 0;
   margin-top:2em;
+  opacity: 1;
+  transition: opacity .5s;
 }
 
 .section-projects-featured .section-projects-all {
@@ -546,6 +548,9 @@
   a {
     text-decoration: none;
   }
+}
+
+.js .project-list {
 }
 
 .project-list__item {

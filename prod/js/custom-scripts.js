@@ -21,15 +21,18 @@ var overlayHide = function() {
 }
 
 $("#categorytrigger").click(function() {
-  overlyShow(); // Show overlay when trigger is clicked
+  overlyShow();
+  // Show overlay when trigger is clicked
 });
 
 $(".hide-overlay, .overlay").click(function() {
-  overlayHide(); // Hide overlay when 'x' is clicked
+  overlayHide();
+  // Hide overlay when 'x' is clicked and when click outside window...
 });
 
-$(".overlay-window").click(function(e){
-  e.stopPropagation(); // ...but not when click inside the content area
+$(".overlay-window").click(function(e) {
+  e.stopPropagation();
+  // ...but not when click inside the content area
 });
 
 
@@ -115,8 +118,6 @@ $(function() {
     });
 });
 
-
-
 $(".category-link").click(function(e){
 
   // Check if the browser supports HTML5 history
@@ -131,10 +132,13 @@ $(".category-link").click(function(e){
     history.pushState(null, null, href);  
   }
 
+  $(".section-projects-all").addClass("transparent");
+
   $.ajax({
     url: href,
     success: function(result) {
       $(".section-projects-all").html($(result).find(".project-list"));
+      $(".section-projects-all").removeClass("transparent");
     }
   });
 
