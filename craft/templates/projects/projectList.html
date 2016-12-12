@@ -4,6 +4,7 @@
 {% extends "_layout" %}
 
 {% block content %}
+{% include '_includes/_background-images.html' %}
 <section class="section-header section-header--interior">
 	<div class="section-header__container">
 		<h1 class="section-header__title">{{ entry.projectHeadline }}<span class="category-header"></span></h1>
@@ -67,16 +68,16 @@
 								{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
         						{% if relatedAward | length %}
 									{% for asset in awardIcons.trophyBadgeIcon %}
-										<!-- <img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}"> -->
+										<img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
 						            {% endfor %}
 					            {% endif %}
-					     		<!-- <img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}"> -->
+					     		<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "{{ asset.title}}">
 					     	</div>
 					     {% endfor %}
 					     {% else %}
 					     	<div class="project-list__item__image">
 					     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-					     	     	<!-- <img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found"> -->
+					     	     	<img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
 					     	     {% endfor %}
 					     	</div>
 					    {% endif %}
