@@ -11,3 +11,14 @@ img {
 html, body {
    height: 100%;
 }
+
+.no-scroll, .no-scroll-mobile  {
+	overflow: hidden;
+}
+
+@media screen and (min-width: 900px) {
+	.no-scroll-mobile {
+		overflow: auto;
+	}
+}
+

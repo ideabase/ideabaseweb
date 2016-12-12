@@ -8,11 +8,33 @@ $( "#navshow" ).click(function() {
   $( ".nav__trigger__link--show" ).text(menuclose);
 });
 
-// Show and Hide the Project Menu, while also changing the menu text to describe open/closed //
-$( "#categorytrigger" ).click(function() {
-  $( "#categorytriggerlist" ).toggleClass( "project--show" );
-  $( "#categorytrigger" ).toggleClass( "button--show" );
+// Show and Hide the Project Menu, while also changing the menu text to describe open/closed
+var overlyShow = function() {
+  $(".overlay").fadeIn(300, "easeOutSine");
+  $(".overlay-window").delay(100).fadeIn(200, "easeInSine");
+  $("html").addClass("no-scroll-mobile"); // Disable scrolling on main page while menu is visible
+}
+var overlayHide = function() {
+  $(".overlay-window").fadeOut(250, "easeOutSine");
+  $(".overlay").delay(100).fadeOut(150, "easeInSine");
+  $("html").removeClass("no-scroll-mobile");
+}
+
+$("#categorytrigger").click(function() {
+  overlyShow(); // Show overlay when trigger is clicked
 });
+
+$(".hide-overlay").click(function() {
+  overlayHide(); // Hide overlay when 'x' is clicked
+})
+
+$(".overlay").click(function(){
+  overlayHide(); // Hide overlay when click outside the content area...
+});
+
+$(".overlay-window").click(function(e){
+  e.stopPropagation(); // ...but not when click inside the content area
+})
 
 
 // Toggle the contact form when the Get in Touch button is clicked.  Also changes the text of the button to describe open/closed //
@@ -95,4 +117,41 @@ $(function() {
     $("img.lazy").lazyload({
       threshold : 300
     });
+});
+
+
+
+$(".category-link").click(function(e){
+
+  // Check if the browser supports HTML5 history
+  var historySupport = !!(window.history && history.pushState);
+
+  e.preventDefault();
+  var $filter = $(e.currentTarget);
+  var href = $filter.attr("href");
+
+  if (historySupport) {
+    // Update the browser's address bar
+    history.pushState(null, null, href);  
+  }
+
+  $.ajax({
+    url: href,
+    success: function(result) {
+      $(".section-projects-all").html($(result).find(".project-list"));
+    }
+  });
+
+  var path = window.location.href;
+  if (this.href === path) {
+    $(this).addClass("current");
+    $(this).parent().siblings().find(".category-link").removeClass("current")
+  }
+
+  $(".overlay-window, .overlay").fadeOut(250, "easeOutSine");
+  $("html").removeClass("no-scroll-mobile");
+
+  var category = $(this).attr("title");
+  $(".category-header").html(category);
+
 });
