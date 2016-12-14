@@ -735,11 +735,17 @@
   background-repeat: no-repeat;
   background-size: 42px;
   padding: 15px 0;
-  &.current:not(.button) {
+  transition: .15s all ease-in-out;
+  &:hover {
     color: $cyan;
   }
+
   &.button {
-    text-indent: 0px;
+    // See All Work button
+    text-indent: 0;
+    &:hover {
+      color: white;
+    }
   }
 }
 
