@@ -126,6 +126,7 @@ $(function() {
     });
 });
 
+
 $(".category-link").click(function(e){
 
   // Check if the browser supports HTML5 history
@@ -153,7 +154,7 @@ $(".category-link").click(function(e){
   var path = window.location.href;
   if (this.href === path) {
     $(this).addClass("current");
-    $(this).parent().siblings().find(".category-link").removeClass("current")
+    $(this).parent().siblings().find(".category-link").removeClass("current");
   }
 
   $(".overlay-window, .overlay").fadeOut(250, "easeOutSine");
