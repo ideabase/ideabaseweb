@@ -1,9 +1,10 @@
 {%cache globally%}
 <footer role="contentinfo" class="global-footer">
 	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
-	{% for asset in footer.formIcon %}
+	<!--{% for asset in footer.formIcon %}
 		<img src="{{ asset.getUrl('formIconNormal') }}" class="global-footer__image" alt= "{{ asset.title}}">
-	{% endfor %}
+	{% endfor %}-->
+	<svg class="global-footer__image"><use xlink:href="{{siteUrl}}/svg/svg-defs.svg#lightbulb" /></svg>
 	<section class="footer-form" id="footer-form">
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
@@ -28,8 +29,8 @@
 				</div>
 				<a href="{{siteUrl}}/directions" class="global-footer__directions">Directions &amp; Parking</a>
 			</section>
-			<section class="footer-info__contact">		
-				<div class="global-footer__text">		
+			<section class="footer-info__contact">
+				<div class="global-footer__text">
 					<span class="global-footer__text__name">P:</span>{{ footer.phoneNumber }}
 				</div>
 				<div class="global-footer__text">
@@ -40,7 +41,7 @@
 			<!-- Social Media -->
 			<section class="footer-info__social footer-info__social--footer">
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
-     			<a href="{{ block.socialMediaLink }}" class="footer-info__social__icon">{{ block.socialMediaName }}</a>
+     			<a href="{{ block.socialMediaLink }}"><svg class="footer-info__social__icon"><use xlink:href="{{siteUrl}}/svg/svg-defs.svg#{{ block.socialMediaName|striptags }}" /></svg></a>
 			{% endfor %}
 			</section>
 			<!-- End Social Media -->
@@ -55,13 +56,13 @@
 				<div class="footer-info__bottom">
 					{% for asset in footer.kentStateLogo %}
 				     	<div class="footer-info__logo"><img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}"></div>
-				    {% endfor %}	
+				    {% endfor %}
 					<div class="footer-info__legal">
 						{{ footer.copyright }}
 					</div>
 				</div>
-			</section>	
-		</section>	
-	</div>	
+			</section>
+		</section>
+	</div>
 </footer>
 {% endcache %}
