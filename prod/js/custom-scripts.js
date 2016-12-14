@@ -1,3 +1,7 @@
+// Prepends - CodeKit should automatically compile the following JS dependencies at the top of this file //
+// jquery.min.js, jquery.easing.1.3.js, scrollreveal.min.js, flicktiymin.js, jquery.fitvids.js, jquery.lazyload.min.js, picturefill.min.js//
+
+
 // Show and Hide the Navigation Menu, while also changing the menu text to describe open/closed //
 $( "#navshow" ).click(function() {
   $( "nav" ).toggleClass( "nav--show" );
@@ -133,7 +137,7 @@ $(".category-link").click(function(e){
 
   if (historySupport) {
     // Update the browser's address bar
-    history.pushState(null, null, href);  
+    history.pushState(null, null, href);
   }
 
   $(".section-projects-all").addClass("transparent");
