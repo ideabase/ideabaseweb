@@ -151,7 +151,6 @@
   text-indent: -9999px;
   transform: scale(.95);
   transition: .1s transform ease-in;
-	background-image: url(../Images/global/website.svg);
   @media screen and (min-width: 700px) {
     width: 35px;
     height: 35px;
@@ -198,6 +197,9 @@
 	&[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg);
   }
+	&[href*="*.com"] {
+		background-image: url(../Images/global/website.svg);
+	}
 }
 
 .footer-info__legal {

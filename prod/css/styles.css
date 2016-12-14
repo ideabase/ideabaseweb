@@ -700,8 +700,7 @@ th {
   margin-right: .15rem;
   text-indent: -9999px;
   transform: scale(0.95);
-  transition: .1s transform ease-in;
-  background-image: url(../Images/global/website.svg); }
+  transition: .1s transform ease-in; }
   @media screen and (min-width: 700px) {
     .footer-info__social__icon {
       width: 35px;
@@ -734,6 +733,8 @@ th {
     background-image: url(../Images/global/tumblr.svg); }
   .footer-info__social__icon[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg); }
+  .footer-info__social__icon[href*="*.com"] {
+    background-image: url(../Images/global/website.svg); }
 
 .footer-info__legal {
   margin: 0;
