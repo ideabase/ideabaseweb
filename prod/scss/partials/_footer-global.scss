@@ -197,7 +197,7 @@
 	&[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg);
   }
-	&[href*="*.com"] {
+	&[href$=".com"] {
 		background-image: url(../Images/global/website.svg);
 	}
 }

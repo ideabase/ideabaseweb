@@ -733,7 +733,7 @@ th {
     background-image: url(../Images/global/tumblr.svg); }
   .footer-info__social__icon[href*="pinterest.com"] {
     background-image: url(../Images/global/pinterest.svg); }
-  .footer-info__social__icon[href*="*.com"] {
+  .footer-info__social__icon[href$=".com"] {
     background-image: url(../Images/global/website.svg); }
 
 .footer-info__legal {
