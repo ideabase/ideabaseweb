@@ -11,3 +11,22 @@ img {
 html, body {
    height: 100%;
 }
+
+.no-scroll, .no-scroll-mobile  {
+	overflow: hidden;
+}
+
+.transparent {
+	opacity: 0;
+}
+
+.opaque {
+	opacity: 1;
+}
+
+@media screen and (min-width: 900px) {
+	.no-scroll-mobile {
+		overflow: auto;
+	}
+}
+

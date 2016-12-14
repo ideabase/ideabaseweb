@@ -1,5 +1,14 @@
 /* headings */
 
+.category-header{
+  &:before {
+    content: ": ";
+  }
+  &:empty:before {
+    content: "";
+  }
+}
+
 .section-projects {
   text-align: center;
 }
@@ -491,6 +500,8 @@
   padding-bottom: 0;
   padding-top: 0;
   margin-top:2em;
+  opacity: 1;
+  transition: opacity .5s;
 }
 
 .section-projects-featured .section-projects-all {
@@ -537,6 +548,9 @@
   a {
     text-decoration: none;
   }
+}
+
+.js .project-list {
 }
 
 .project-list__item {
@@ -615,40 +629,12 @@
 }
 
 .project-category {
-  text-align:center;
-  position: relative;
+  text-align: center;
 }
 
 .js .project-category .nav__trigger__link.button--show {
   background-color: lighten($darkgray,15%);
   color: white;
-}
-
-.project-category__list {
-  list-style-type: none;
-  padding: 1em;
-  width: 60%;
-  margin: 0 auto;
-  background-color: $darkgray;
-  transition: .3s all ease-in-out;
-}
-
-.project-category__list__item {
-  padding-top: .75em;
-  font-size: 1em;
-  color: white;
-  &:first-child {
-    padding-top: .5em;
-  }
-  &:last-child {
-    padding-bottom: 1.25em;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-  }
 }
 
 .project-category .nav__trigger__link {
@@ -661,6 +647,7 @@
   background-color: $lightgray;
   color: $darkgray;
   cursor: pointer;
+  text-align: center;
   &:after {
     background-image: url(../Images/global/downarrowgray.svg);
     background-size: 50% auto;
@@ -670,25 +657,90 @@
   }
 }
 
-.project-category__list {
-  max-height: 0px;
-  overflow: hidden;
-  padding: 0 1em;
-  position: absolute;
-  z-index:1000;
-  margin: 0 auto;
-  width: 67.8%;
-  margin-top: -1.1em;
-  left: 16%;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.project-category__list.project--show {
-  max-height: 2000px;
-}
-
 .nav__trigger__link.button--show {
   background-color: $cyan;
+}
+
+// Project category overlay
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+}
+
+.hide-overlay {
+  cursor: pointer;
+  background-image: url(../Images/global/IdeaBase_Close-X.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  span {
+    position: absolute;
+    left: -10000px;
+  }
+}
+
+.overlay-window {
+  display: none;
+  padding-top: 3em;
+}
+
+.category-list__title {
+  color: $darkgray;
+  text-align: left;
+  margin-top: 0;
+}
+
+.project-category__list {
+  list-style-type: none;
+  padding: 2.5em 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: left;
+  transition: .3s all ease-in-out;
+}
+
+.project-category__list__item {
+  padding-bottom: 2em;
+  font-size: 1em;
+  color: $blue;
+  width: 100%;
+}
+
+.category-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  font-family: $mont;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-indent: 52px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-size: 42px;
+  padding: 15px 0;
+  &.current:not(.button) {
+    color: $cyan;
+  }
+  &.button {
+    text-indent: 0px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -714,6 +766,31 @@
   .project-list {
     @include clearfix;
   }
+
+  .project-category__list {
+    padding-top: 4em;
+  }
+
+  .project-category__list__item {
+    width: 50%;
+    max-width: 380px;
+    &:last-child {
+      width: 100%;
+      text-align: center;
+      padding-top: 1em;
+      .category-link {
+        text-indent: 0;
+      }
+    }
+  }
+  .category-list__title {
+    text-align: center;
+  }
+
+}
+
+.category__title {
+  display: none;
 }
 
 @media screen and (min-width: 850px) {
@@ -722,14 +799,49 @@
     float: left;
     margin: 0em 1.667% 3em 1.667%;
   }
-
   .project-list .project-list__item:nth-child(odd) {
     margin: 0em 1.667% 3em 1.667%;
     clear: none;
   }
-
   .project-list .project-list__item:nth-child(3n+1) {
     clear: left;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .overlay {
+    background-color: rgba(0,0,0,0.5);
+  }
+  .overlay-window {
+    background-color: white;
+    margin-top: 60px;
+    width: 92%;
+    max-width: 900px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 3px 30px -5px rgba(0, 0, 0, 0.4);
+  }
+  .hide-overlay {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+
+  .overlay-window {
+    max-width: 1200px;
+  }
+  .project-category__list__item {
+    width: 25%;
+    text-align: center;
+  }
+  .category-link {
+    text-align: center;
+    text-indent: 0;
+    padding-top: 130px;
+    background-size: 100px;
+    background-position: center 0;
   }
 }
 
