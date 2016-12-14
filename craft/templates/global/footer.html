@@ -4,7 +4,7 @@
 	<!--{% for asset in footer.formIcon %}
 		<img src="{{ asset.getUrl('formIconNormal') }}" class="global-footer__image" alt= "{{ asset.title}}">
 	{% endfor %}-->
-		<svg class="global-footer__image"><use xlink:href="{{siteUrl}}/svg/svg-defs.svg#lightbulb" /></svg>
+		<svg class="global-footer__image"><use xlink:href="#lightbulb" /></svg>
 	<section class="footer-form" id="footer-form">
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
@@ -41,7 +41,7 @@
 			<!-- Social Media -->
 			<section class="footer-info__social footer-info__social--footer">
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
-     			<a href="{{ block.socialMediaLink }}"><svg class="footer-info__social__icon"><use xlink:href="{{siteUrl}}/svg/svg-defs.svg#{{ block.socialMediaName|striptags }}" /></svg></a>
+     			<a href="{{ block.socialMediaLink }}"><svg class="footer-info__social__icon"><use xlink:href="#{{ block.socialMediaName|striptags }}" /></svg></a>
 			{% endfor %}
 			</section>
 			<!-- End Social Media -->

@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <!-- Include SVG Sprite Sheet -->
+    {% include '_includes/_svg-defs.svg' %}
+    <!-- End SVG Sprite Sheet -->
     {% if entry is defined %}
       {% set config = {
         entry: entry,
