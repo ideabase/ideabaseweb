@@ -33,7 +33,7 @@
 
 .section-services__list__item__icon {
   max-width: 125px;
-  display: inline-block;
+  display: inline-block !important; // had to add important because lazy load was trying to change it //
   @media screen and (min-width: 600px) {
   	float: left;
   	margin-right: 2em;
