@@ -648,17 +648,10 @@
   color: $darkgray;
   cursor: pointer;
   text-align: center;
+  padding: .9em 2em 1em 2em;
   &:after {
-    background-image: url(../Images/global/downarrowgray.svg);
-    background-size: 50% auto;
-    top: 40%;
-    width: 20px;
-    right: 10px;
+    content: none;
   }
-}
-
-.nav__trigger__link.button--show {
-  background-color: $cyan;
 }
 
 // Project category overlay
