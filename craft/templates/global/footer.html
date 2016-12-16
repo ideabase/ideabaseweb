@@ -1,10 +1,20 @@
 {%cache globally%}
 <footer role="contentinfo" class="global-footer">
 	<h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
-	<!--{% for asset in footer.formIcon %}
-		<img src="{{ asset.getUrl('formIconNormal') }}" class="global-footer__image" alt= "{{ asset.title}}">
-	{% endfor %}-->
-		<svg class="global-footer__image"><use xlink:href="#lightbulb" /></svg>
+	<div class="global-footer__image__container">
+			<svg class="global-footer__image" viewBox="0 0 356.8 376.8" enable-background="new 0 0 502 502" xml:space="preserve">
+				<g>
+					    <path d="M324.8,167.1a104.38,104.38,0,0,0-164.2,126h0l0.4,0.7c0,0.1.1,0.1,0.1,0.2l44.5,77h0a53.42,53.42,0,0,0,8.5,11.2,52.15,52.15,0,0,0,73.8,0,50.21,50.21,0,0,0,8.5-11.2h0l45-77.9h0A104.35,104.35,0,0,0,324.8,167.1Z" transform="translate(-72.6 -62.6)" style="fill:#07a7e0"/>
+					<rect class="line" x="161.2" y="197.7" width="34.4" height="123.9" />
+					<polygon points="124.2 293.3 124.2 343.2 157.8 376.8 199 376.8 232.6 343.2 232.6 293.3 124.2 293.3" style="fill:#1c60ab"/>
+					<line class="line3"  x1="178.4" y1="51" x2="178.4" style="fill:none;stroke:#1c60ab;stroke-miterlimit:10;stroke-width:22.944700241088867px"/>
+					<line class="line1" x1="51.1" y1="178.1" y2="178.1" style="fill:none;stroke:#1c60ab;stroke-miterlimit:10;stroke-width:22.944700241088867px"/>
+					<line class="line5"  x1="305.7" y1="178.1" x2="356.8" y2="178.1" style="fill:none;stroke:#1c60ab;stroke-miterlimit:10;stroke-width:22.944700241088867px"/>
+					<line class="line4" x1="271.6" y1="85.1" x2="307.7" y2="49" style="fill:none;stroke:#1c60ab;stroke-miterlimit:10;stroke-width:22.944700241088867px"/>
+					<line class="line2" x1="85.2" y1="85.1" x2="49.1" y2="49" style="fill:none;stroke:#1c60ab;stroke-miterlimit:10;stroke-width:22.944700241088867px"/>
+				</g>
+		</svg>
+	</div>
 	<section class="footer-form" id="footer-form">
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>

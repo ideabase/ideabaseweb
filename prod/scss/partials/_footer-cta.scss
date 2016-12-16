@@ -20,6 +20,57 @@
 	margin-bottom:.25em;
 }
 
+/* Lightbulb Icon Animations */
+
+.line1, .line2, .line3, .line4, .line5 {
+	opacity: 0;
+}
+
+.start .line1 {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  .9s;
+}
+
+.start .line2 {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  1s;
+}
+
+.start .line3 {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  1.1s;
+}
+
+.start .line4 {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  1.2s;
+}
+
+.start .line5 {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  1.3s;
+}
+
+.line {
+	opacity: 0;
+}
+
+.start .line {
+	animation:  fadeIn .5s ease-in;
+	animation-fill-mode: forwards;
+	animation-delay:  .6s;
+	fill: yellow;
+}
+
+
+
+
+
 .global-footer__invitation {
 	font-size: 1.1em;
 	margin-bottom: 2em;

@@ -62,11 +62,47 @@ $('.section-projects__list').flickity({
 // Reveal the Contact Us Button on Scroll //
 
 window.sr = ScrollReveal({ reset: false });
-sr.reveal('.footer-form__button__container', { duration: 1200, scale: 1   } );
+sr.reveal('.footer-form__button__container', { delay: 200, duration: 1200, scale: 1   } );
 sr.reveal('.section-people__logos', { duration: 500, scale: 1  } );
 sr.reveal('.section-services__list__item__icon', { delay: 75, duration: 500 } );
 sr.reveal('.section-header__title', { delay: 75, scale: 1, duration: 500 } );
 sr.reveal('.section-projects__list', { scale: 1, duration: 500 } );
+//sr.reveal('.global-footer__image__container', { delay: 0, scale: 1, opacity: 0, duration: 500 } );
+
+// Check Animation and Start Animation on Lightbulb //
+
+function isElementInViewport(elem) {
+    var $elem = $(elem);
+
+    // Get the scroll position of the page.
+    var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    var viewportTop = $(scrollElem).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    // Get the position of the element on the page.
+    var elemTop = Math.round( $elem.offset().top );
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+}
+
+// Check if it's time to start the animation.
+function checkAnimation() {
+    var $elem = $('.global-footer__image__container');
+
+    // If the animation has already been started
+    if ($elem.hasClass('start')) return;
+
+    if (isElementInViewport($elem)) {
+        // Start the animation
+        $elem.addClass('start');
+    }
+}
+
+// Capture scroll events
+$(window).scroll(function(){
+    checkAnimation();
+});
 
 
 // Fit Videos into their place //
