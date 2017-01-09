@@ -320,13 +320,17 @@ class HTMLPurifier_Printer_ConfigForm_default extends HTMLPurifier_Printer
                     foreach ($array as $val => $b) {
                         $value[] = $val;
                     }
-                    //TODO does this need a break?
+                //TODO does this need a break?
                 case HTMLPurifier_VarParser::ALIST:
                     $value = implode(PHP_EOL, $value);
                     break;
                 case HTMLPurifier_VarParser::HASH:
                     $nvalue = '';
                     foreach ($value as $i => $v) {
+                        if (is_array($v)) {
+                            // HACK
+                            $v = implode(";", $v);
+                        }
                         $nvalue .= "$i:$v" . PHP_EOL;
                     }
                     $value = $nvalue;
@@ -357,10 +361,10 @@ class HTMLPurifier_Printer_ConfigForm_default extends HTMLPurifier_Printer
             }
             $ret .= $this->end('select');
         } elseif ($type === HTMLPurifier_VarParser::TEXT ||
-                $type === HTMLPurifier_VarParser::ITEXT ||
-                $type === HTMLPurifier_VarParser::ALIST ||
-                $type === HTMLPurifier_VarParser::HASH ||
-                $type === HTMLPurifier_VarParser::LOOKUP) {
+            $type === HTMLPurifier_VarParser::ITEXT ||
+            $type === HTMLPurifier_VarParser::ALIST ||
+            $type === HTMLPurifier_VarParser::HASH ||
+            $type === HTMLPurifier_VarParser::LOOKUP) {
             $attr['cols'] = $this->cols;
             $attr['rows'] = $this->rows;
             $ret .= $this->start('textarea', $attr);

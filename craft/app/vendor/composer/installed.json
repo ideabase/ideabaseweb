@@ -1,8 +1,8 @@
 [
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.8.14",
-        "version_normalized": "2.8.14.0",
+        "version": "v2.8.15",
+        "version_normalized": "2.8.15.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
@@ -167,17 +167,17 @@
     },
     {
         "name": "lsolesen/pel",
-        "version": "0.9.4.1",
-        "version_normalized": "0.9.4.1",
+        "version": "0.9.4.2",
+        "version_normalized": "0.9.4.2",
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/pel.git",
-            "reference": "054b8220207c571df3a6882b895e19c1674fdbf2"
+            "reference": "997acac523a62753da50450d2d2944ccef12b083"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pixelandtonic/pel/zipball/054b8220207c571df3a6882b895e19c1674fdbf2",
-            "reference": "054b8220207c571df3a6882b895e19c1674fdbf2",
+            "url": "https://api.github.com/repos/pixelandtonic/pel/zipball/997acac523a62753da50450d2d2944ccef12b083",
+            "reference": "997acac523a62753da50450d2d2944ccef12b083",
             "shasum": ""
         },
         "require": {
@@ -187,7 +187,7 @@
             "lastcraft/simpletest": ">=1.1",
             "squizlabs/php_codesniffer": "2.*"
         },
-        "time": "2016-07-18 21:40:02",
+        "time": "2016-12-30 22:03:09",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -219,7 +219,7 @@
             "image"
         ],
         "support": {
-            "source": "https://github.com/pixelandtonic/pel/tree/0.9.4.1"
+            "source": "https://github.com/pixelandtonic/pel/tree/0.9.4.2"
         }
     },
     {
@@ -263,17 +263,17 @@
     },
     {
         "name": "phpmailer/phpmailer",
-        "version": "5.2.15",
-        "version_normalized": "5.2.15.0",
+        "version": "v5.2.21",
+        "version_normalized": "5.2.21.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/pixelandtonic/PHPMailer.git",
-            "reference": "6806100d6fb909784d987df0667390b3b8c57414"
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "1d51856b76c06fc687fcd9180efa7a0bed0d761e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pixelandtonic/PHPMailer/zipball/6806100d6fb909784d987df0667390b3b8c57414",
-            "reference": "6806100d6fb909784d987df0667390b3b8c57414",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/1d51856b76c06fc687fcd9180efa7a0bed0d761e",
+            "reference": "1d51856b76c06fc687fcd9180efa7a0bed0d761e",
             "shasum": ""
         },
         "require": {
@@ -284,10 +284,9 @@
             "phpunit/phpunit": "4.7.*"
         },
         "suggest": {
-            "league/oauth2-client": "Needed for XOAUTH2 authentication",
-            "league/oauth2-google": "Needed for Gmail XOAUTH2"
+            "league/oauth2-google": "Needed for Google XOAUTH2 authentication"
         },
-        "time": "2015-11-22 02:58:38",
+        "time": "2016-12-28 15:35:48",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -301,17 +300,18 @@
                 "extras/ntlm_sasl_client.php"
             ]
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "LGPL-2.1"
         ],
         "authors": [
             {
-                "name": "Marcus Bointon",
-                "email": "phpmailer@synchromedia.co.uk"
-            },
-            {
                 "name": "Jim Jagielski",
                 "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
             },
             {
                 "name": "Andy Prevost",
@@ -321,10 +321,7 @@
                 "name": "Brent R. Matzelle"
             }
         ],
-        "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-        "support": {
-            "source": "https://github.com/pixelandtonic/PHPMailer/tree/5.2.15"
-        }
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
     },
     {
         "name": "pixelandtonic/imagine",
@@ -516,18 +513,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/pixelandtonic/yii.git",
-            "reference": "8d3256255fc7a1d453cb8d3537408604da738d89"
+            "reference": "3b0c867e107663bff6d089c13f0ee5d40728a482"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pixelandtonic/yii/zipball/8d3256255fc7a1d453cb8d3537408604da738d89",
-            "reference": "8d3256255fc7a1d453cb8d3537408604da738d89",
+            "url": "https://api.github.com/repos/pixelandtonic/yii/zipball/3b0c867e107663bff6d089c13f0ee5d40728a482",
+            "reference": "3b0c867e107663bff6d089c13f0ee5d40728a482",
             "shasum": ""
         },
         "require": {
             "php": ">=5.1.0"
         },
-        "time": "2016-11-07 20:53:59",
+        "time": "2016-12-30 21:43:47",
         "bin": [
             "framework/yiic"
         ],
