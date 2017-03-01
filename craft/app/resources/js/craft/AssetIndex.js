@@ -33,6 +33,15 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		if (this.settings.context == 'index')
 		{
 			this._initIndexPageMode();
+			this.addListener(Garnish.$win, 'resize,scroll', '_positionProgressBar');
+		}
+		else
+		{
+			this.addListener(this.$main, 'scroll', '_positionProgressBar');
+
+			if (this.settings.modal) {
+				this.settings.modal.on('updateSizeAndPosition', $.proxy(this, '_positionProgressBar'));
+			}
 		}
 	},
 
@@ -1469,19 +1478,21 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 	_positionProgressBar: function()
 	{
 		var $container = $(),
+			scrollTop = 0,
 			offset = 0;
 
 		if (this.settings.context == 'index')
 		{
 			$container = this.progressBar.$progressBar.closest('#content');
+			scrollTop = Garnish.$win.scrollTop();
 		}
 		else
 		{
 			$container = this.progressBar.$progressBar.closest('.main');
+			scrollTop = this.$main.scrollTop();
 		}
 
 		var containerTop = $container.offset().top;
-		var scrollTop = Garnish.$doc.scrollTop();
 		var diff = scrollTop - containerTop;
 		var windowHeight = Garnish.$win.height();
 
@@ -1492,6 +1503,11 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 		else
 		{
 			offset = ($container.height() / 2) - 6;
+		}
+
+		if(this.settings.context != 'index')
+		{
+			offset = scrollTop + (($container.height() / 2) - 6);
 		}
 
 		this.progressBar.$progressBar.css({
