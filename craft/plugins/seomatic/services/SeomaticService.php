@@ -1102,6 +1102,12 @@ class SeomaticService extends BaseApplicationComponent
         if ($this->entryMeta)
             $meta = array_merge($meta, $this->entryMeta);
 
+/* -- If this is a 404, set the canonicalUrl to nothing */
+
+        if (http_response_code() == 404) {
+            $meta['canonicalUrl'] = "";
+        }
+
 /* -- Merge with the global override config settings */
 
         $globalMetaOverride = craft()->config->get("globalMetaOverride", "seomatic");
@@ -2277,8 +2283,18 @@ class SeomaticService extends BaseApplicationComponent
                     $mainEntityOfPageJSONLD['copyrightYear'] = $copyrightYear;
 
                     $mainEntityOfPageJSONLD['author'] = $identity;
-                    $mainEntityOfPageJSONLD['publisher'] = $identity;
                     $mainEntityOfPageJSONLD['copyrightHolder'] = $identity;
+                    $mainEntityOfPageJSONLD['publisher'] = $identity;
+                    // There are a number of properties that Google apparently doesn't like for 'publisher'
+                    if ($mainEntityOfPageJSONLD['publisher']['type'] !== "Person") {
+                        $mainEntityOfPageJSONLD['publisher']['type'] = "Organization";
+                    }
+                    unset($mainEntityOfPageJSONLD['publisher']['priceRange']);
+                    unset($mainEntityOfPageJSONLD['publisher']['tickerSymbol']);
+                    unset($mainEntityOfPageJSONLD['publisher']['openingHoursSpecification']);
+                    unset($mainEntityOfPageJSONLD['publisher']['servesCuisine']);
+                    unset($mainEntityOfPageJSONLD['publisher']['menu']);
+                    unset($mainEntityOfPageJSONLD['publisher']['acceptsReservations']);
                 }
                 break;
 
@@ -3067,8 +3083,12 @@ public function getFullyQualifiedUrl($url)
         }
         $result = $siteUrl . $result;
     }
+    // Add a trailing / if `addTrailingSlashesToUrls` is set, but only if there's on extension
     if (craft()->config->get('addTrailingSlashesToUrls')) {
-        $result = rtrim($result, '/') . '/';
+        $path = parse_url($result, PHP_URL_PATH);
+        $pathExtension = pathinfo($path,PATHINFO_EXTENSION);
+        if (empty($pathExtension))
+            $result = rtrim($result, '/') . '/';
     }
 
     return $result;

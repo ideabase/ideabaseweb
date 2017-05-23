@@ -51,14 +51,14 @@ class HTMLPurifier_Filter_YouTube extends HTMLPurifier_Filter
     {
         $url = $this->armorUrl($matches[1]);
         return '<object width="425" height="350" type="application/x-shockwave-flash" ' .
-            'data="//www.youtube.com/' . $url . '">' .
-            '<param name="movie" value="//www.youtube.com/' . $url . '"></param>' .
-            '<!--[if IE]>' .
-            '<embed src="//www.youtube.com/' . $url . '"' .
-            'type="application/x-shockwave-flash"' .
-            'wmode="transparent" width="425" height="350" />' .
-            '<![endif]-->' .
-            '</object>';
+        'data="//www.youtube.com/' . $url . '">' .
+        '<param name="movie" value="//www.youtube.com/' . $url . '"></param>' .
+        '<!--[if IE]>' .
+        '<embed src="//www.youtube.com/' . $url . '"' .
+        'type="application/x-shockwave-flash"' .
+        'wmode="transparent" width="425" height="350" />' .
+        '<![endif]-->' .
+        '</object>';
     }
 }
 

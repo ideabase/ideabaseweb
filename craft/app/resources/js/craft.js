@@ -1,4 +1,4 @@
-/*! Craft  - 2017-02-23 */
+/*! Craft  - 2017-04-12 */
 (function($){
 
 // Set all the standard Craft.* stuff
@@ -4424,7 +4424,14 @@ Craft.BaseElementSelectorModal = Garnish.Modal.extend(
 				});
 
 				// Double-clicking or double-tapping should select the elements
-				this.addListener(this.elementIndex.$elements, 'doubletap', 'selectElements');
+				this.addListener(this.elementIndex.$elements, 'doubletap', function(ev, touchData) {
+					// Make sure the touch targets are the same
+					// (they may be different if Command/Ctrl/Shift-clicking on multiple elements quickly)
+					if (touchData.firstTap.target === touchData.secondTap.target)
+					{
+						this.selectElements();
+					}
+				});
 			}
 
 		}, this));
@@ -9597,7 +9604,7 @@ Craft.EditableTable = Garnish.Base.extend(
 		else
 		{
             // Give everything a chance to initialize
-            Garnish.requestAnimationFrame($.proxy(this, 'initializeIfVisible'));
+			setTimeout($.proxy(this, 'initializeIfVisible'), 500);
 		}
 	},
 

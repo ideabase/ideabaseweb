@@ -35,7 +35,7 @@ body, html { background: #ebedef; }
 
 html.noscroll, html.noscroll body { overflow: hidden; }
 
-body { font-size: 13px; line-height: 18px; color: #29323d; }
+body { font-size: 13px; line-height: 18px; color: #29323d; -webkit-font-smoothing: subpixel-antialiased; }
 
 body.rtl { direction: rtl; }
 
@@ -189,7 +189,7 @@ body.rtl a.fieldtoggle:before { right: -6px; }
 /* emphasis */
 em, i { font-style: italic; }
 
-strong, b, i em { font-weight: bold; font-family: sans-serif; }
+strong, b, i em { font-weight: bold; }
 
 /* text styles */
 .topalign { vertical-align: top; }
