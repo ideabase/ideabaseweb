@@ -6,10 +6,10 @@ $appPath = realpath(dirname(dirname(dirname(__FILE__))));
 
 if (isset($appPath[0]) && isset($appPath[1]))
 {
-    if ($appPath[0] !== '\\' && $appPath[1] !== '\\')
-    {
-        $appPath = str_replace('\\', '/', $appPath);
-    }
+	if ($appPath[0] !== '\\' && $appPath[1] !== '\\')
+	{
+		$appPath = str_replace('\\', '/', $appPath);
+	}
 }
 
 $frontConfigPath = false;
@@ -22,7 +22,7 @@ if (isset($_SERVER['argv']))
 		if (strpos($arg, '--configPath=') !== false)
 		{
 			$parts = explode('=', $arg);
-			$frontConfigPath = rtrim($parts[1], '/').'/';
+			$frontConfigPath = realpath($parts[1]).'/';
 			unset($_SERVER['argv'][$key]);
 			break;
 		}

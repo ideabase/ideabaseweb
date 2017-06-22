@@ -182,12 +182,12 @@ class Text_Highlighter_Renderer_Console extends Text_Highlighter_Renderer
     }
 
     function replaceCallback()
-     {
-         $nlines = substr_count($this->_output, "\n") + 1;
-         $len = strlen($nlines);
-         $i = 1;
-         return " " . str_pad($i++, $len, " ", STR_PAD_LEFT) . ": ";
-     }
+    {
+        $nlines = substr_count($this->_output, "\n") + 1;
+        $len = strlen($nlines);
+        $i = 1;
+        return " " . str_pad($i++, $len, " ", STR_PAD_LEFT) . ": ";
+    }
 
     /**
      * Get generated output

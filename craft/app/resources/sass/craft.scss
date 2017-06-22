@@ -23,7 +23,7 @@ body, html { background: $bgcolor; }
 html.noscroll,
 html.noscroll body { overflow: hidden; }
 
-body { font-size: 13px; line-height: 18px; color: $textcolor; }
+body { font-size: 13px; line-height: 18px; color: $textcolor; -webkit-font-smoothing: subpixel-antialiased; }
 body.rtl { direction: rtl; }
 body, input, select, textarea { font-family: HelveticaNeue, sans-serif; }
 
@@ -166,7 +166,7 @@ a.fieldtoggle:before { display: block; position: absolute; top: -2px; @include l
 
 /* emphasis */
 em, i { font-style: italic; }
-strong, b, i em { font-weight: bold; font-family: sans-serif; }
+strong, b, i em { font-weight: bold; }
 
 /* text styles */
 .topalign { vertical-align: top; }

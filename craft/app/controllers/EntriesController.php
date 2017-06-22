@@ -321,9 +321,13 @@ class EntriesController extends BaseEntriesController
 			(craft()->isLocalized() && craft()->getLanguage() != $variables['localeId'] ? '/'.$variables['localeId'] : '');
 
 		// Can the user delete the entry?
-		$variables['canDeleteEntry'] = $variables['entry']->id && (
-			($variables['entry']->authorId == $currentUser->id && $currentUser->can('deleteEntries'.$variables['permissionSuffix'])) ||
-			($variables['entry']->authorId != $currentUser->id && $currentUser->can('deletePeerEntries'.$variables['permissionSuffix']))
+		$variables['canDeleteEntry'] = (
+			$variables['entry']->getClassHandle() === 'Entry' &&
+			$variables['entry']->id &&
+			(
+				($variables['entry']->authorId == $currentUser->id && $currentUser->can('deleteEntries'.$variables['permissionSuffix'])) ||
+				($variables['entry']->authorId != $currentUser->id && $currentUser->can('deletePeerEntries'.$variables['permissionSuffix']))
+			)
 		);
 
 		// Full page form variables
@@ -745,6 +749,8 @@ class EntriesController extends BaseEntriesController
 
 		if (empty($variables['entry']))
 		{
+			$entry = false;
+
 			if (!empty($variables['entryId']))
 			{
 				if (!empty($variables['draftId']))
@@ -758,16 +764,20 @@ class EntriesController extends BaseEntriesController
 				else
 				{
 					$variables['entry'] = craft()->entries->getEntryById($variables['entryId'], $variables['localeId']);
+					$entry = true;
+				}
 
-					if ($variables['entry'])
+				$versions = craft()->entryRevisions->getVersionsByEntryId($variables['entry']->id, $variables['localeId'], 1, true);
+
+				if (isset($versions[0]))
+				{
+					if ($entry)
 					{
-						$versions = craft()->entryRevisions->getVersionsByEntryId($variables['entryId'], $variables['localeId'], 1, true);
-
-						if (isset($versions[0]))
-						{
-							$variables['entry']->revisionNotes = $versions[0]->revisionNotes;
-						}
+						$variables['entry']->revisionNotes = $versions[0]->revisionNotes;
 					}
+
+					$variables['currentRevisionEditor'] = $versions[0]->creator;
+					$variables['currentRevisionEditTime'] = $versions[0]->dateUpdated;
 				}
 
 				if (!$variables['entry'])
