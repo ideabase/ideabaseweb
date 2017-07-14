@@ -24,7 +24,7 @@
 	{% set alumni = craft.entries.section('people').order('profileLastName asc') %}
 
 <div class="panel-primary-container">
-<section class="section-people-listing panel-primary"> 
+<section class="section-people-listing panel-primary">
    <section class="people-listing">
    			<ul class="people-listing__list">
     		{% for entry in alumni.limit(null) %}
@@ -43,7 +43,7 @@
    			</ul>
    	</section>
   	<div class="section-body-button">
-  		<a class="button button-primary button--reverse" href="{{ siteUrl }}/people">Return to People</a>
+  		<a class="button button-primary button--reverse" href="{{ siteUrl }}people">Return to People</a>
   	</div>
 </section>
 

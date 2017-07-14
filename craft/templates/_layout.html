@@ -22,6 +22,10 @@
   <!-- End Critical CSS -->
   <!-- Modernizer helps test for things like JavaScript and flexbox -->
   <script async type="text/javascript" src="{{ siteUrl }}js/modernizr-custom.min.js"></script>
+  {% if craft.config.devMode %}
+  <!-- Live Reload - For local environment only -->
+    <script src="//localhost:35729/livereload.js"></script>
+  {% endif %}
 </head>
 <body>
     <!-- Include SVG Sprite Sheet, which holds some common icons used in the site -->

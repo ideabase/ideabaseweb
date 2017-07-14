@@ -28,10 +28,10 @@
 		{% endif %}
 		<p class="people__text">{{ entry.collegeDegree }}</p>
 
-		
+
 		{% if entry.alumniLightswitch and entry.profileJobTitle|length %}
 			<div class="people__bio"><p>{{ entry.profileFirstName }} worked as a {{ entry.profileJobTitle }} while at IdeaBase.</p></div>
-		{% else %}									
+		{% else %}
 			<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
 			{% if entry.profileContactEmail|length %}
 				<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
@@ -47,7 +47,7 @@
 			{% for block in entry.staffSocialMedia %}
      			<a class="footer-info__social__icon footer-info__social__icon--profile" target="_blank" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
 			{% endfor %}
-		</section>	
+		</section>
 		{% endif %}
 		<!-- End Staff Social Media -->
 		{# Check for Related Projects #}
@@ -56,7 +56,7 @@
 		{% if allRelatedEntries|length %}
 		<section class="people-projects">
 			<h2 class="people-projects__title">Projects</h2>
-				<ul class="people-projects__list">		
+				<ul class="people-projects__list">
 					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
 					    	<li class="people-projects__list__item">
 			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
@@ -78,13 +78,13 @@
 			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
 			       			</li>
 			    		{% endfor %}
-			    </ul>		
+			    </ul>
     	</section>
     	{% endif %}
     	<div class="section-body-button">
-    		<a class="button button-primary button--reverse" href="{{ siteUrl }}/people">See More Bios</a>
-    	</div>	
-    </div>	
+    		<a class="button button-primary button--reverse" href="{{ siteUrl }}people">See More Bios</a>
+    	</div>
+    </div>
 </section>
 </div>
 {% endblock %}

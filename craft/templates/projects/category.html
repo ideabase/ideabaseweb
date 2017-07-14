@@ -58,7 +58,7 @@
 					</li>
 					{% endfor %}
 					<li class="project-category__list__item">
-						<a class="button button-primary category-link" title="" href="{{ siteUrl }}/work/all">See All Work</a>
+						<a class="button button-primary category-link" title="" href="{{ siteUrl }}work/all">See All Work</a>
 					</li>
 				</ul>
 			</section>
@@ -67,7 +67,7 @@
 	</div>
 	<section class="section-projects-all panel-primary-wide">
 		<ul class="project-list">
-			
+
 		{% for entry in craft.entries.section('ideabaseProjects').archivedProject(' not 1 ').relatedTo(category) %}
 			<li class="project-list__item">
 				<a href="{{ entry.url }}">
@@ -94,8 +94,8 @@
 
 					{% for entry in entry.forWhichClient %}
 						<h3 class="project-list__item__client">{{ entry.title }}</h3>
-					{% endfor %}	
-				</a>	
+					{% endfor %}
+				</a>
 			</li>
 		{% endfor %}
 		</ul>

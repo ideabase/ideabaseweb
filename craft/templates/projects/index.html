@@ -55,7 +55,7 @@
 			</li>
 			{% endfor %}
 			</ul>
-			<a class="button button-primary" href="{{siteUrl}}/work/all">{{ entry.moreProjectsButton }}</a>
+			<a class="button button-primary" href="{{siteUrl}}work/all">{{ entry.moreProjectsButton }}</a>
 	</section>
 </div>
 
@@ -113,11 +113,11 @@
 		<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
 		<div class="panel-secondary--left">
 		  {{ entry.classroomExperienceDescription }}
-      <a class="button button-primary" href="{{ siteUrl }}/classes">{{ entry.classroomButton }}</a>
+      <a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
 		</div>
 		{% else %}
 		{{ entry.classroomExperienceDescription }}
-    <a class="button button-primary" href="{{ siteUrl }}/classes">{{ entry.classroomButton }}</a>
+    <a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
 		{% endif %}
 	</section>
 	</div>

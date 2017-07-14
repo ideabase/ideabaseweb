@@ -14,3 +14,5 @@ _paragraphs.scssc
 _reset.scssc
 craft/config/.DS_Store
 craft/plugins/.DS_Store
+.sass-cache
+node_modules
