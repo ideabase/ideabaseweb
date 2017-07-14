@@ -8,12 +8,25 @@
  */
 
 return array(
-	'*' => array(
+  '*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
+         'siteUrl' => 'https://www.ideabasekent.com',
+         'enableCsrfProtection' => true,
+         'omitScriptNameInUrls' => true,
+         'cpTrigger' => 'admin',
 	       'maxUploadFileSize' => 33554432,
-	       'overridePhpSessionLocation' => false
+	       'overridePhpSessionLocation' => false,
+         'environmentVariables' => array(
+          'basePath' => '',
+          'baseUrl'  => 'https://www.ideabasekent.com'
+        )
 	),
 	'ideabase.web' => array(
 	    'devMode' => true,
+      'siteUrl' => 'http://ideabase.web',
+      'environmentVariables' => array(
+       'basePath' => '',
+       'baseUrl'  => 'http://ideabase.web'
+     )
 	)
 );
