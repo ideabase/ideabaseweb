@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-        'css/style.css': 'scss/styles.scss',
+        'css/styles.css': 'scss/styles.scss',
         '../craft/templates/_includes/critical-home.css': '../craft/templates/_includes/critical-home.css'
         }
       }
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 width: 1500,
                 height: 1200,
                 outputfile: "../craft/templates/_includes/critical-home.css",
-                filename: "css/style.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                filename: "css/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
                 buffer: 800*1024,
                 ignoreConsole: true,
                 restoreFontFaces: true
@@ -40,13 +40,13 @@ module.exports = function(grunt) {
     autoprefixer: {
       your_target: {
         files: {
-          'css/style.css': 'css/style.css'
+          'css/styles.css': 'css/styles.css'
         }
       },
     },
     watch: {
       css: {
-				files: '**/scss/*.scss',
+				files: ['**/scss/*.scss', '**/scss/partials/*.scss'],
 				tasks: ['sass', 'autoprefixer'],
         options: {
           livereload: true,
