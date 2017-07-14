@@ -76,7 +76,7 @@ class YiiBase
 	 */
 	public static function getVersion()
 	{
-		return '1.1.18';
+		return '1.1.19';
 	}
 
 	/**
@@ -485,7 +485,7 @@ class YiiBase
 				}
 			}
 		}
-		self::$_logger->log($msg, $level, false, $category);
+		self::$_logger->log($msg,$level,false,$category);
 	}
 
 	/**

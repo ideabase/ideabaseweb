@@ -1,7 +1,7 @@
 # Craft – Admin Bar
 Front-end shortcuts for clients logged into [Craft CMS](https://craftcms.com).
 
-> The "hey, it's been a while" release
+> NOTE: This is the Craft 2.x version of Admin Bar. [Here's the Craft 3 version](https://github.com/wbrowar/craft-3-adminbar).
 
 ## Requirements
 * Craft 2.6+
@@ -128,6 +128,7 @@ Here are some settings you can change with the config file:
 | `cacheBar` | *true* | Enable caching of Admin Bar links |
 | `displayGreeting` | *true* | Displays the logged in user's photo (if it's set) and "Hi, [friendlyname]" |
 | `displayDashboardLink` | *true* | A link to the CP Dashboard |
+| `displayDefaultEditSection` | *true* | Display the name of the section in the default entry/category edit link |
 | `displaySettingsLink` | *true* | A link to the CP Settings page that appears only to admins |
 | `displayLogout` | *true* | Logs you out of Craft CMS |
 | `enableMobileMenu` | *true* | Enables Admin Bar to display a separate mobile theme below a width of 600 pixels |

@@ -1,5 +1,11 @@
 # SEOmatic Changelog
 
+## 1.1.47 - 2017.06.08
+### Changed
+* Fixed an issue with Live Preview and a previous or draft version of an entry
+* Fixed a problem where the `dataLayer` wasn't passed down to the Google Tag Manager script
+* Commerce products now have the `name` set to the variant + title
+
 ## 1.1.46 - 2017.04.08
 ### Changed
 * Force `publisher` to be a `Person` or `Organization` for news articles

@@ -25,7 +25,7 @@ html.noscroll body { overflow: hidden; }
 
 body { font-size: 13px; line-height: 18px; color: $textcolor; -webkit-font-smoothing: subpixel-antialiased; }
 body.rtl { direction: rtl; }
-body, input, select, textarea { font-family: HelveticaNeue, sans-serif; }
+body, input, select, textarea { font-family: "Helvetica Neue", HelveticaNeue, sans-serif; }
 
 .first, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child, hr:first-child, .pane:first-child, .grid:first-child, .field:first-child, .toolbar:first-child, .buttons:first-child { margin-top: 0 !important; }
 .last,  h2:last-child,  h3:last-child,  h4:last-child,  h5:last-child,  h6:last-child,  p:last-child,                  .pane:last-child,  .grid:last-child,  .field:last-child,  .toolbar:last-child,  .buttons:last-child  { margin-bottom: 0 !important; }
@@ -96,7 +96,7 @@ body.rtl [data-icon-after=structure]:after { content: attr('structurertl'); }
 
 /* headings */
 @mixin h6-styles { margin: 14px 0 3px; font-size: 10px; line-height: 1.2; color: $lighttextcolor; text-transform: uppercase; font-weight: bold; }
-h1 { margin-bottom: 24px; font-family: HelveticaNeue-Light, HelveticaNeue, sans-serif; font-size: 24px; line-height: 1; color: $submitcolor; }
+h1 { margin-bottom: 24px; font-family: "Helvetica Neue-Light", HelveticaNeue-Light, "Helvetica Neue", HelveticaNeue, sans-serif; font-size: 24px; line-height: 1; color: $submitcolor; }
 h2 { margin: 14px 0; font-size: 15px; font-weight: bold; line-height: 1.2; }
 h3 { margin: 14px 0; font-weight: bold; line-height: 1.2; }
 h4 { margin: 14px 0; font-weight: bold; line-height: 1.2; color: $mediumtextcolor; }
@@ -1333,11 +1333,12 @@ textarea.text.fullwidth { display: block; }
 .chars-left.negative-chars-left { color: $errorcolor; }
 
 .field { position: relative; margin: 24px 0; }
-.field > .heading { margin-bottom: 4px; }
+.field > .heading { margin-bottom: 5px; }
 .field > .heading > label { position: relative; font-weight: bold; color: $mediumdarktextcolor; }
 .field > .heading > label > .locale { display: inline-block; border-radius: $btnBorderRadius; @include margin-left(7px); padding: 0 4px; font-size: 11px; color: $mediumtextcolor; background: $bgcolor; }
-.field > .heading > .instructions { margin-top: 4px; font-size: 11px; line-height: 1.4; color: $mediumtextcolor; }
-.field > .warning { margin: 4px 0 0; font-size: 11px; }
+.field > .heading > .instructions,
+.checkboxfield.has-instructions .instructions { margin-top: 2px; color: $mediumtextcolor; }
+.field > .warning { margin: 2px 0 0; }
 .field > .warning:before { @include margin(-2px, 2px, 0, 0); @include icon; content: 'alert'; }
 .field > .input:after { @include clearafter; }
 
@@ -1388,6 +1389,7 @@ input.checkbox:indeterminate:focus + label:before,
 :focus div.checkbox.indeterminate:before { background: hsla(205, 100%, 60%, 0.5); }
 
 .checkboxfield:not(.has-instructions) + .checkboxfield:not(.has-instructions) { margin-top: -22px; }
+.checkboxfield.has-instructions .instructions { @include padding-left(20px); }
 
 .text:not(.selectize-text),
 .textline,
@@ -1552,6 +1554,18 @@ body .selectize-dropdown .active { @include menu-option-active-styles; }
 .ui-datepicker-header { padding: 8px 8px 4px; }
 .ui-datepicker-prev { @include floatleft; }
 .ui-datepicker-next { @include floatright; }
+.ui-datepicker-prev span,
+.ui-datepicker-next span { display: none; }
+.ui-datepicker-prev:after,
+.ui-datepicker-next:after { @include icon; width: 20px; margin-top: -2px; line-height: 20px !important; text-align: center; }
+.ui-datepicker-prev:after {
+	body.ltr & { content: 'leftangle'; }
+	body.rtl & { content: 'rightangle'; }
+}
+.ui-datepicker-next:after {
+	body.ltr & { content: 'rightangle'; }
+	body.rtl & { content: 'leftangle'; }
+}
 .ui-datepicker-title { text-align: center; }
 .ui-datepicker-calendar th,
 .ui-datepicker-calendar td { padding: 2px; }

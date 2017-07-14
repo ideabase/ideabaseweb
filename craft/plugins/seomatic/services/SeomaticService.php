@@ -615,7 +615,7 @@ class SeomaticService extends BaseApplicationComponent
                                         foreach ($variants as $variant)
                                         {
                                             $commerceVariant = array(
-                                                'seoProductDescription' => $variant->getDescription(),
+                                                'seoProductDescription' => $variant->getDescription() . ' - ' . $element->title,
                                                 'seoProductPrice' => number_format($variant->getPrice(), 2, '.', ''),
                                                 'seoProductCurrency' => craft()->commerce_paymentCurrencies->getPrimaryPaymentCurrency(),
                                                 'seoProductSku' => $variant->getSku(),
@@ -626,7 +626,7 @@ class SeomaticService extends BaseApplicationComponent
                                     else
                                     {
                                         $commerceVariant = array(
-                                            'seoProductDescription' => $element->getDescription(),
+                                            'seoProductDescription' => $element->getDescription() . ' - ' . $element->title,
                                             'seoProductPrice' => number_format($element->getPrice(), 2, '.', ''),
                                             'seoProductCurrency' => craft()->commerce_paymentCurrencies->getPrimaryPaymentCurrency(),
                                             'seoProductSku' => $element->getSku(),
@@ -1224,7 +1224,7 @@ class SeomaticService extends BaseApplicationComponent
         {
             if ($this->lastElement->uri != "__home__" && $element->uri)
             {
-                $path = parse_url($this->lastElement->url, PHP_URL_PATH);
+                $path = parse_url($this->lastElement->uri, PHP_URL_PATH);
                 $path = trim($path, "/");
                 $segments = explode("/", $path);
             }
@@ -1238,7 +1238,7 @@ class SeomaticService extends BaseApplicationComponent
             $element = craft()->elements->getElementByUri($uri);
             if ($element && $element->uri)
             {
-                $result[$element->title] = $this->getFullyQualifiedUrl($element->url);
+                $result[$element->title] = $this->getFullyQualifiedUrl($element->uri);
             }
             $uri .= "/";
         }

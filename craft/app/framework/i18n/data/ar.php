@@ -11,7 +11,7 @@
  */
 return array (
   'version' => '8671',
-  'numberSymbols' =>
+  'numberSymbols' => 
   array (
     'decimal' => '.',
     'group' => ',',
@@ -28,7 +28,7 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #0.00;¤ #0.00-',
-  'currencySymbols' =>
+  'currencySymbols' => 
   array (
     'AUD' => 'AU$',
     'BRL' => 'R$',
@@ -73,9 +73,9 @@ return array (
     'XXX' => '***',
     'YER' => 'ر.ي.‏',
   ),
-  'monthNames' =>
+  'monthNames' => 
   array (
-    'wide' =>
+    'wide' => 
     array (
       1 => 'يناير',
       2 => 'فبراير',
@@ -90,7 +90,7 @@ return array (
       11 => 'نوفمبر',
       12 => 'ديسمبر',
     ),
-    'abbreviated' =>
+    'abbreviated' => 
     array (
       1 => 'يناير',
       2 => 'فبراير',
@@ -106,9 +106,9 @@ return array (
       12 => 'ديسمبر',
     ),
   ),
-  'monthNamesSA' =>
+  'monthNamesSA' => 
   array (
-    'narrow' =>
+    'narrow' => 
     array (
       1 => 'ي',
       2 => 'ف',
@@ -123,7 +123,7 @@ return array (
       11 => 'ب',
       12 => 'د',
     ),
-    'abbreviated' =>
+    'abbreviated' => 
     array (
       1 => 'يناير',
       2 => 'فبراير',
@@ -138,7 +138,7 @@ return array (
       11 => 'نوفمبر',
       12 => 'ديسمبر',
     ),
-    'wide' =>
+    'wide' => 
     array (
       1 => 'يناير',
       2 => 'فبراير',
@@ -154,9 +154,9 @@ return array (
       12 => 'ديسمبر',
     ),
   ),
-  'weekDayNames' =>
+  'weekDayNames' => 
   array (
-    'wide' =>
+    'wide' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -166,7 +166,7 @@ return array (
       5 => 'الجمعة',
       6 => 'السبت',
     ),
-    'abbreviated' =>
+    'abbreviated' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -176,7 +176,7 @@ return array (
       5 => 'الجمعة',
       6 => 'السبت',
     ),
-    'short' =>
+    'short' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -187,9 +187,9 @@ return array (
       6 => 'السبت',
     ),
   ),
-  'weekDayNamesSA' =>
+  'weekDayNamesSA' => 
   array (
-    'narrow' =>
+    'narrow' => 
     array (
       0 => 'ح',
       1 => 'ن',
@@ -199,7 +199,7 @@ return array (
       5 => 'ج',
       6 => 'س',
     ),
-    'abbreviated' =>
+    'abbreviated' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -209,7 +209,7 @@ return array (
       5 => 'الجمعة',
       6 => 'السبت',
     ),
-    'short' =>
+    'short' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -219,7 +219,7 @@ return array (
       5 => 'الجمعة',
       6 => 'السبت',
     ),
-    'wide' =>
+    'wide' => 
     array (
       0 => 'الأحد',
       1 => 'الاثنين',
@@ -230,32 +230,32 @@ return array (
       6 => 'السبت',
     ),
   ),
-  'eraNames' =>
+  'eraNames' => 
   array (
-    'abbreviated' =>
+    'abbreviated' => 
     array (
       0 => 'ق.م',
       1 => 'م',
     ),
-    'wide' =>
+    'wide' => 
     array (
       0 => 'قبل الميلاد',
       1 => 'ميلادي',
     ),
-    'narrow' =>
+    'narrow' => 
     array (
       0 => 'ق.م',
       1 => 'م',
     ),
   ),
-  'dateFormats' =>
+  'dateFormats' => 
   array (
     'full' => 'EEEE، d MMMM، y',
     'long' => 'd MMMM، y',
     'medium' => 'dd‏/MM‏/y',
     'short' => 'd‏/M‏/y',
   ),
-  'timeFormats' =>
+  'timeFormats' => 
   array (
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
@@ -266,7 +266,7 @@ return array (
   'amName' => 'ص',
   'pmName' => 'م',
   'orientation' => 'rtl',
-  'languages' =>
+  'languages' => 
   array (
     'aa' => 'الأفارية',
     'ab' => 'الأبخازية',
@@ -794,7 +794,7 @@ return array (
     'zxx' => 'بدون محتوى لغوي',
     'zza' => 'زازا',
   ),
-  'scripts' =>
+  'scripts' => 
   array (
     'arab' => 'العربية الفارسية',
     'armn' => 'الأرمينية',
@@ -912,7 +912,7 @@ return array (
     'zyyy' => 'عام',
     'zzzz' => 'نظام كتابة غير معروف',
   ),
-  'territories' =>
+  'territories' => 
   array (
     '001' => 'العالم',
     '002' => 'أفريقيا',
@@ -1205,7 +1205,7 @@ return array (
     'zw' => 'زيمبابوي',
     'zz' => 'منطقة غير معروفة',
   ),
-  'pluralRules' =>
+  'pluralRules' => 
   array (
     0 => 'n==0',
     1 => 'n==1',

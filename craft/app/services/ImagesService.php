@@ -1,6 +1,7 @@
 <?php
 namespace Craft;
 
+use enshrined\svgSanitize\Sanitizer;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTag;
 use lsolesen\pel\PelDataWindow;
@@ -168,16 +169,42 @@ class ImagesService extends BaseApplicationComponent
 	}
 
 	/**
-	 * Cleans an image by it's path, clearing embedded JS and PHP code.
+	 * Cleans an image by it's path, clearing embedded potentially malicious embedded code.
 	 *
 	 * @param string $filePath
 	 *
 	 * @return bool
+	 * @throws Exception
 	 */
 	public function cleanImage($filePath)
 	{
 		$cleanedByRotation = false;
 		$cleanedByStripping = false;
+
+		// Special case for SVG files.
+		if (IOHelper::getExtension($filePath) === 'svg')
+		{
+			if (craft()->config->get('sanitizeSvgUploads'))
+			{
+				if (!extension_loaded('dom'))
+				{
+					throw new Exception('Craft needs the PHP DOM extension (http://www.php.net/manual/en/book.dom.php) enabled to upload SVG files.');
+				}
+
+				$sanitizer = new Sanitizer();
+				$svgContents = IOHelper::getFileContents($filePath);
+				$svgContents = $sanitizer->sanitize($svgContents);
+
+				if (!$svgContents)
+				{
+					throw new Exception('There was a problem sanitizing the SVG file contents, likely due to malformed XML.');
+				}
+
+				IOHelper::writeToFile($filePath, $svgContents);
+			}
+
+			return true;
+		}
 
 		try
 		{
@@ -185,6 +212,7 @@ class ImagesService extends BaseApplicationComponent
 			{
 				$cleanedByRotation = $this->rotateImageByExifData($filePath);
 			}
+
 			$cleanedByStripping = $this->stripOrientationFromExifData($filePath);
 		}
 		catch (\Exception $e)
@@ -198,7 +226,9 @@ class ImagesService extends BaseApplicationComponent
 			return true;
 		}
 
-		return $this->loadImage($filePath)->saveAs($filePath, true);
+		$this->loadImage($filePath)->saveAs($filePath, true);
+
+		return true;
 	}
 
 	/**
