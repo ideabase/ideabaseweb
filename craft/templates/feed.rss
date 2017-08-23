@@ -63,9 +63,9 @@
                                     </figure>
                                 {% endif %}
                             {% elseif block.type == "pullQuote" %}
-                                    <blockquote>{{ block.pullQuote }}
-                                    </blockquote>
-                                    <cite>{{ block.pullQuoteAuthor }}</cite>
+                                    <aside>{{ block.pullQuote }}
+                                      <cite>{{ block.pullQuoteAuthor }}</cite>
+                                    </aside>
                             {% endif %}
                         {% endfor %}
                         <footer>
