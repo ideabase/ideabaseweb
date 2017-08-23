@@ -35,6 +35,8 @@
                           <h1>{{ entry.title }}</h1>
                           <!-- The date and time when your article was originally published -->
                           <time class="op-published" datetime="{{ entry.postDate.rss }}">{{ entry.postDate.format('F d, Y') }}</time>
+                          <!-- The date and time when your article was last updated -->
+                          <time class="op-modified" dateTime="{{entry.dateUpdated.rss }}"> | <em>Modified {{ entry.dateUpdated.format('F d, Y g:i a') }})</em></time>
                           {% for entry in entry.blogAuthor %}
                             <address>
                               <a href="{{ entry.url }}">{{ entry.title }}</a>
