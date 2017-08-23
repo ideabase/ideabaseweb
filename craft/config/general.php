@@ -11,7 +11,6 @@ return array(
   '*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
          'siteUrl' => 'https://www.ideabasekent.com',
-         'enableCsrfProtection' => true,
          'omitScriptNameInUrls' => true,
          'cpTrigger' => 'admin',
 	       'maxUploadFileSize' => 33554432,
