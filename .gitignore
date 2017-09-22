@@ -16,3 +16,4 @@ craft/config/.DS_Store
 craft/plugins/.DS_Store
 .sass-cache
 node_modules
+/httpdocs/wiki/LocalSettings.php
