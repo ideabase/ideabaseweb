@@ -45,7 +45,14 @@
 			{% block content %}
 			{% endblock %}
 		</main>
-		{% include 'global/footer.html' %}
+    <!-- Use entry.slug to determine which footer to include !-->
+     {% if entry.slug == 'graphic-design-services' %}
+      {% include 'global/landingCTA.html' %}
+
+    {% else %}
+      	{% include 'global/footer.html' %}
+    {% endif %}
+
     <!-- Bring in the main stylesheet -->
     <link href="{{ siteUrl }}css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
     <!-- Create the picture element, for old versions of IE -->
