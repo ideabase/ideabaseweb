@@ -14,7 +14,7 @@
 {% for block in entry.sellingPoints %}
       {% if block.type == "sellingPoint" %}
         <li>
-          <h4 align= center>{{block.point}}</h4>
+          <h4>{{block.point}}</h4>
         </li>
       {%endif%}
 {% endfor %}
@@ -22,7 +22,7 @@
 
 
 {% for block in entry.serviceHomepageMatrix %}
-    <h3 align=center>{{block.homeProcessName}}</h3>
+    <h3>{{block.homeProcessName}}</h3>
 {% endfor %}
 
 
@@ -45,7 +45,7 @@
 
 <h2>What customers are saying:</h2>
 {% for entry in entry.relatedTestimonial %}
-<p align = center>
+<p>
   "{{entry.testimonialQuote}}"
 -{{entry.testimonialNameOfQuoter}}
 </p>
