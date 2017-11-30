@@ -28,26 +28,42 @@
 
 <h2>Our Graphic Design Work:</h2>
 <!-- add in images later !-->
-{% for entry in entry.relatedWork %}
-<a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
-{%endfor%}
+<section class="section-projects-all panel-primary-wide">
+  <ul class="project-list">
 
-<h2>A day in the life at IdeaBase:</h2>
-{% for entry in entry.relatedBlog %}
-<a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
-{%endfor%}
+  {% for entry in entry.relatedWork %}
+    {% include '_includes/_relatedWork.html' %}
+  {% endfor %}
+  </ul>
+</section>
+
+
+<section class="section-blog-teaser">
+<h2>A Day in The Life at IdeaBase</h2>
+<ul class="blog-teaser-list">
+{% for entry in entry.relatedBlog.limit(2) %}
+{% include '_includes/_blogPreview.html' %}
+{% endfor %}
+</ul>
+<section class="section-body-button panel-primary">
+  <a class="button button-primary" href="{{ siteUrl }}blog">Read More In Our Staff Blog</a>
+</section>
+</section>
+</section>
+
+
+
 
 <h2>People</h2>
-{% for entry in entry.relatedPeople %}
-<a href="{{entry.url}}"><h3>{{entry.profileFirstName}} {{entry.profileLastName}}</h3></a>
-<!-- Add images -->
-{%endfor%}
+{% set entries = entry.relatedPeople %}
+{% include '_includes/_peopleSmall.html' %}
+
 
 <h2>What customers are saying:</h2>
-{% for entry in entry.relatedTestimonial %}
-<p>
-  "{{entry.testimonialQuote}}"
--{{entry.testimonialNameOfQuoter}}
-</p>
-{%endfor%}
+<div class="panel-primary-container">
+<section class="testimonial-entry panel-primary">
+{% set quote = entry.relatedTestimonial %}
+{% include '_includes/_testimonial.html' %}
+</section>
+</div>
 {% endblock %}

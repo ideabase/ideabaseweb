@@ -1,0 +1,19 @@
+<aside class="blog__entry__sidebar">
+{% for entry in entries %}
+<section class="blog__entry-author">
+  <div class="blog__entry__author__image">
+    {% for asset in entry.staffHeadshot %}
+        <img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
+      {% endfor %}
+   </div>
+   <span class="blog__entry__author__name">{{ entry.title }}
+   </span>
+  <span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
+  <div class="blog__entry__author__description">
+  {% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
+  {% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
+      {{ firstBioParagraph|raw }}
+  </div>
+  <a href="{{ entry.url }}" class="blog-teaser__link blog-teaser__link--blog">Read More About {{ entry.profileFirstName }}</a>
+</section>
+{%endfor%}

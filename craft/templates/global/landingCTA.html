@@ -1,6 +1,6 @@
 {%cache globally%}
 <footer role="contentinfo" class="global-footer">
-	<h2 class="global-footer__cta">{{ landingPageFooter.footerHeadline }}</h2>
+	<h2 class="global-footer__cta">{{ entry.footerHeadline }}</h2>
 	<div class="global-footer__image__container">
 			<svg class="global-footer__image" viewBox="0 0 356.8 376.8" enable-background="new 0 0 502 502" xml:space="preserve">
 				<g>
@@ -18,13 +18,13 @@
 	<section class="footer-form" id="footer-form">
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
-		<div class="global-footer__invitation">{{ landingPageFooter.contactFormDescription }}</div>
+		<div class="global-footer__invitation">{{ entry.contactFormDescription }}</div>
 		<!-- Contact Form -->
 		<div class="contact-form">{% include 'global/contactform.html' %}</div>
 		<!-- End Contact Form -->
 	</section>
 	<div class="footer-form__button__container">
-		<a tabindex="0" id="footer-form-toggle" class="footer-form__button button button-primary button--large">{{ landingPageFooter.ctaButton }}</a>
+		<a tabindex="0" id="footer-form-toggle" class="footer-form__button button button-primary button--large">{{ entry.ctaButton }}</a>
 	</div>
 	<div class="footer-info__container">
 		<section class="footer-info">

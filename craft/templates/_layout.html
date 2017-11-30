@@ -45,10 +45,9 @@
 			{% block content %}
 			{% endblock %}
 		</main>
-    <!-- Use entry.slug to determine which footer to include !-->
-     {% if entry.slug == 'graphic-design' %}
-      {% include 'global/landingCTA.html' %}
 
+     {% if entry.section.handle == 'landingPage'%}
+        {% include 'global/landingCTA.html' %}
     {% else %}
       	{% include 'global/footer.html' %}
     {% endif %}
