@@ -11,22 +11,28 @@
 
   <h2>IdeaBase Can Help With:</h2>
 <ul>
-{% for block in entry.sellingPoints %}
-      {% if block.type == "sellingPoint" %}
-        <li>
-          <h4>{{block.point}}</h4>
-        </li>
-      {%endif%}
-{% endfor %}
+
+  {% for block in entry.serviceHomepageMatrix %}
+      <li align="center">
+
+      <h3>{{block.homeProcessName}}</h3></li>
+  {% endfor %}
+                                {#
+                              {% for block in entry.sellingPoints %}
+                                    {% if block.type == "sellingPoint" %}
+                                      <li>
+                                        <h4 align="center">{{block.point}}</h4>
+                                      </li>
+                                    {%endif%}
+                              {% endfor %} #}
 </ul>
 
+<p align:"center">
+  Need something else? In addition to these services, IdeaBase offers a <a href="#">wide variety of
+  research & design services</a> that will help you get the most of out of your project.
+</p>
 
-{% for block in entry.serviceHomepageMatrix %}
-    <h3>{{block.homeProcessName}}</h3>
-{% endfor %}
-
-
-<h2>Our Graphic Design Work:</h2>
+<h2 align:"center">Our Graphic Design Work:</h2>
 <!-- add in images later !-->
 <section class="section-projects-all panel-primary-wide">
   <ul class="project-list">
@@ -37,9 +43,22 @@
   </ul>
 </section>
 
+<div class="panel-primary-container">
+<section class="testimonial-entry panel-primary">
+{% set quote = entry.relatedTestimonial %}
+{% include '_includes/_testimonial.html' %}
+</section>
+</div>
+
 
 <section class="section-blog-teaser">
-<h2>A Day in The Life at IdeaBase</h2>
+<h2>Meet our graphic designers</h2>
+{% set entries = entry.relatedPeople %}
+{% include '_includes/_peopleSmall.html' %}
+<h2>Learn about the graphic design process</h2>
+<p align="center">
+  {{entry.body}}
+</p>
 <ul class="blog-teaser-list">
 {% for entry in entry.relatedBlog.limit(2) %}
 {% include '_includes/_blogPreview.html' %}
@@ -52,18 +71,4 @@
 </section>
 
 
-
-
-<h2>People</h2>
-{% set entries = entry.relatedPeople %}
-{% include '_includes/_peopleSmall.html' %}
-
-
-<h2>What customers are saying:</h2>
-<div class="panel-primary-container">
-<section class="testimonial-entry panel-primary">
-{% set quote = entry.relatedTestimonial %}
-{% include '_includes/_testimonial.html' %}
-</section>
-</div>
 {% endblock %}
