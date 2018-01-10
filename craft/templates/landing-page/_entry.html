@@ -5,39 +5,42 @@
 <img src="{{asset.url}}" alt={{asset.title}} />
 {% endfor %}
 
+<div class="layout-three-wide">
+
 <h1>{{entry.title}}</h1>
-
+<div class="introduction">
 {% include '_includes/basicPageContent.html' %}
+</div>
 
-  <h2>IdeaBase Can Help With:</h2>
-<ul>
 
+
+  <h2>Our {{entry.title}} Services </h2>
+
+<ul class="service-index__examples">
   {% for block in entry.serviceHomepageMatrix %}
-      <li align="center">
-
-      <h3>{{block.homeProcessName}}</h3></li>
+<li class="service-index__examples__item">{{block.homeProcessName}}</li>
   {% endfor %}
-                                {#
-                              {% for block in entry.sellingPoints %}
-                                    {% if block.type == "sellingPoint" %}
-                                      <li>
-                                        <h4 align="center">{{block.point}}</h4>
-                                      </li>
-                                    {%endif%}
-                              {% endfor %} #}
 </ul>
 
-<p align:"center">
+<div class="service-index__examples__supplemental panel-primary">
+<p>
   Need something else? In addition to these services, IdeaBase offers a <a href="#">wide variety of
   research & design services</a> that will help you get the most of out of your project.
 </p>
+</div>
 
-<h2 align:"center">Our {{entry.title}} Work:</h2>
+<div class="panel-primary-container">
+  <section class="section-title panel-primary">
+    <h2>Our {{entry.title}} Work:</h2>
+  </section>
+</div>
+
 <!-- add in images later !-->
 <section class="section-projects-all panel-primary-wide">
-  <ul class="project-list">
 
+<ul class="project-list">
   {% for entry in entry.relatedWork %}
+
     {% include '_includes/_relatedWork.html' %}
   {% endfor %}
   </ul>
@@ -56,7 +59,7 @@
 {% set entries = entry.relatedPeople %}
 {% include '_includes/_peopleSmall.html' %}
 <h2>Learn about the {{entry.title}} process</h2>
-<p align="center">
+<p>
   {{entry.body}}
 </p>
 <ul class="blog-teaser-list">
@@ -70,5 +73,6 @@
 </section>
 </section>
 
+</div>
 
 {% endblock %}
