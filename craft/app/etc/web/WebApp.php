@@ -684,6 +684,12 @@ class WebApp extends \CWebApplication
 			return;
 		}
 
+		// Because: https://bugs.php.net/bug.php?id=74980
+		if (version_compare(PHP_VERSION, '7.1', '>=') && strpos($message, 'Narrowing occurred during type inference. Please file a bug report') !== false)
+		{
+			return;
+		}
+
 		parent::handleError($code, $message, $file, $line);
 	}
 
@@ -1012,14 +1018,15 @@ class WebApp extends \CWebApplication
 			}
 
 			$actionSegs = $this->request->getActionSegments();
+			$singleAction = $this->request->isSingleActionRequest();
 
 			if ($actionSegs && (
-				$actionSegs == array('users', 'login') ||
-				$actionSegs == array('users', 'logout') ||
+				($actionSegs == array('users', 'login')) ||
+				($actionSegs == array('users', 'logout') && $singleAction) ||
+				($actionSegs == array('users', 'verifyemail') && $singleAction) ||
+				($actionSegs == array('users', 'setpassword') && $singleAction) ||
 				$actionSegs == array('users', 'forgotpassword') ||
 				$actionSegs == array('users', 'sendPasswordResetEmail') ||
-				$actionSegs == array('users', 'setpassword') ||
-				$actionSegs == array('users', 'verifyemail') ||
 				$actionSegs[0] == 'update'
 			))
 			{

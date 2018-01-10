@@ -92,6 +92,25 @@ class UsersController extends BaseController
 				}
 			}
 		}
+
+		// Make sure that either the site is online or they are specifically
+		// requesting the login path
+		if (!craft()->isSystemOn())
+		{
+			if (craft()->request->isCpRequest())
+			{
+				$loginPath = craft()->config->getCpLoginPath();
+			}
+			else
+			{
+				$loginPath = trim(craft()->config->getLocalized('loginPath'), '/');
+			}
+
+			if (craft()->request->getPath() !== $loginPath)
+			{
+				throw new HttpException(503);
+			}
+		}
 	}
 
 	/**
@@ -583,7 +602,13 @@ class UsersController extends BaseController
 
 					if (craft()->userSession->isAdmin())
 					{
-						$statusActions[] = array('id' => 'copy-passwordreset-url', 'label' => Craft::t('Copy activation URL'));
+						// If they already have a password (like from a front-end user registration), no
+						// need to show the "Copy activation URL" option
+						if (!$variables['account']->password)
+						{
+							$statusActions[] = array('id' => 'copy-passwordreset-url', 'label' => Craft::t('Copy activation URL'));
+						}
+
 						$statusActions[] = array('action' => 'users/activateUser', 'label' => Craft::t('Activate account'));
 					}
 
@@ -1157,28 +1182,29 @@ class UsersController extends BaseController
 
 				$user = craft()->users->getUserById($userId);
 				$userName = AssetsHelper::cleanAssetName($user->username, false, true);
-
 				$folderPath = craft()->path->getTempUploadsPath().'userphotos/'.$userName.'/';
+				$fullPath = $folderPath.$fileName;
 
 				IOHelper::clearFolder($folderPath);
-
 				IOHelper::ensureFolderExists($folderPath);
 
-				move_uploaded_file($file->getTempName(), $folderPath.$fileName);
+				move_uploaded_file($file->getTempName(), $fullPath);
 
 				// Test if we will be able to perform image actions on this image
-				if (!craft()->images->checkMemoryForImage($folderPath.$fileName))
+				if (!craft()->images->checkMemoryForImage($fullPath))
 				{
-					IOHelper::deleteFile($folderPath.$fileName);
+					IOHelper::deleteFile($fullPath);
 					$this->returnErrorJson(Craft::t('The uploaded image is too large'));
 				}
 
-				craft()->images->
-					loadImage($folderPath.$fileName)->
-					scaleToFit(500, 500, false)->
-					saveAs($folderPath.$fileName);
+				craft()->images->cleanImage($fullPath);
 
-				list ($width, $height) = ImageHelper::getImageSize($folderPath.$fileName);
+				craft()->images->
+					loadImage($fullPath)->
+					scaleToFit(500, 500, false)->
+					saveAs($fullPath);
+
+				list ($width, $height) = ImageHelper::getImageSize($fullPath);
 
 				// If the file is in the format badscript.php.gif perhaps.
 				if ($width && $height)
@@ -1198,6 +1224,8 @@ class UsersController extends BaseController
 		}
 		catch (Exception $exception)
 		{
+			// Don't leave the file hanging around in a temp folder in case it was malicious.
+			IOHelper::deleteFile($fullPath);
 			$this->returnErrorJson($exception->getMessage());
 		}
 
@@ -1742,79 +1770,97 @@ class UsersController extends BaseController
 	 * @param UserModel $user
 	 *
 	 * @return null
+	 * @throws HttpException if the user account doesn't have permission to assign the attempted permissions/groups
 	 */
 	private function _processUserGroupsPermissions(UserModel $user)
 	{
-		// Make sure there are assignUserPermissions
-		if (craft()->userSession->checkPermission('assignUserPermissions'))
+		if (craft()->getEdition() >= Craft::Client && craft()->userSession->checkPermission('assignUserPermissions'))
 		{
-			// Only Craft Pro has user groups
-			if (craft()->getEdition() == Craft::Pro)
+			// Save any user permissions
+			if ($user->admin)
 			{
-				// Save any user groups
-				$groupIds = craft()->request->getPost('groups');
+				$permissions = array();
+			}
+			else
+			{
+				$permissions = craft()->request->getPost('permissions');
 
-				if ($groupIds !== null)
+				// it will be an empty string if no permissions were assigned during user saving.
+				if ($permissions === '')
 				{
-					if (is_array($groupIds))
+					$permissions = array();
+				}
+			}
+
+			if (is_array($permissions))
+			{
+				// See if there are any new permissions in here
+				$hasNewPermissions = false;
+
+				foreach ($permissions as $permission)
+				{
+					if (!$user->can($permission))
 					{
-						// See if there are any new groups in here
-						$oldGroupIds = array();
+						$hasNewPermissions = true;
 
-						foreach ($user->getGroups() as $group)
+						// Make sure the current user even has permission to assign it
+						if (!craft()->userSession->checkPermission($permission))
 						{
-							$oldGroupIds[] = $group->id;
+							throw new HttpException(403, "Your account doesn't have permission to assign the {$permission} permission to a user.");
 						}
+					}
+				}
 
-						foreach ($groupIds as $groupId)
+				if ($hasNewPermissions)
+				{
+					$this->requireElevatedSession();
+				}
+
+				craft()->userPermissions->saveUserPermissions($user->id, $permissions);
+			}
+		}
+
+		// Only Craft Pro has user groups
+		if (craft()->getEdition() == Craft::Pro && craft()->userSession->checkPermission('assignUserGroups'))
+		{
+			// Save any user groups
+			$groupIds = craft()->request->getPost('groups');
+
+			if ($groupIds !== null)
+			{
+				if (is_array($groupIds))
+				{
+					// See if there are any new groups in here
+					$oldGroupIds = array();
+
+					foreach ($user->getGroups() as $group)
+					{
+						$oldGroupIds[] = $group->id;
+					}
+
+					$hasNewGroups = false;
+
+					foreach ($groupIds as $groupId)
+					{
+						if (!in_array($groupId, $oldGroupIds))
 						{
-							if (!in_array($groupId, $oldGroupIds))
+							$hasNewGroups = true;
+
+							// Make sure the current user even has permission to assign it
+							if (!craft()->userSession->checkPermission('assignUserGroup:'.$groupId))
 							{
-								// Yep. This will require an elevated session
-								$this->requireElevatedSession();
-								break;
+								throw new HttpException(403, "Your account doesn't have permission to assign user group {$groupId} to a user.");
 							}
 						}
 					}
 
-					craft()->userGroups->assignUserToGroups($user->id, $groupIds);
-				}
-			}
-
-			// Craft Client+ has user permissions.
-			if (craft()->getEdition() >= Craft::Client)
-			{
-				// Save any user permissions
-				if ($user->admin)
-				{
-					$permissions = array();
-				}
-				else
-				{
-					$permissions = craft()->request->getPost('permissions');
-
-					// it will be an empty string if no permissions were assigned during user saving.
-					if ($permissions === '')
+					if ($hasNewGroups)
 					{
-						$permissions = array();
+						$this->requireElevatedSession();
 					}
 				}
 
-				if (is_array($permissions))
-				{
-					// See if there are any new permissions in here
-					foreach ($permissions as $permission)
-					{
-						if (!$user->can($permission))
-						{
-							// Yep. This will require an elevated session
-							$this->requireElevatedSession();
-							break;
-						}
-					}
-
-					craft()->userPermissions->saveUserPermissions($user->id, $permissions);
-				}
+				craft()->userGroups->assignUserToGroups($user->id, $groupIds);
 			}
 		}
 	}

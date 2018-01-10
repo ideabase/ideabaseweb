@@ -1,4 +1,4 @@
-/*! Craft  - 2017-07-19 */
+/*! Craft  - 2018-01-02 */
 (function($){
 
 // Set all the standard Craft.* stuff
@@ -2067,6 +2067,11 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 
 		if (this.getSelectedSortAttribute() == 'structure')
 		{
+			if (typeof this.instanceState.collapsedElementIds === 'undefined')
+			{
+				this.instanceState.collapsedElementIds = [];
+			}
+
 			params.collapsedElementIds = this.instanceState.collapsedElementIds;
 		}
 
@@ -6837,14 +6842,13 @@ Craft.AuthManager = Garnish.Base.extend(
 			{
 				if (textStatus == 'success')
 				{
-					this.updateAuthTimeout(jqXHR.responseJSON.timeout);
-
-					this.submitLoginIfLoggedOut = false;
-
 					if (typeof jqXHR.responseJSON.csrfTokenValue !== 'undefined' && typeof Craft.csrfTokenValue !== 'undefined')
 					{
 						Craft.csrfTokenValue = jqXHR.responseJSON.csrfTokenValue;
 					}
+
+					this.updateAuthTimeout(jqXHR.responseJSON.timeout);
+					this.submitLoginIfLoggedOut = false;
 				}
 				else
 				{
@@ -16353,6 +16357,12 @@ Craft.TagSelectInput = Craft.BaseElementSelectInput.extend(
 
 			Craft.postActionRequest('tags/searchForTags', data, $.proxy(function(response, textStatus)
 			{
+				// Just in case
+				if (this.searchMenu)
+				{
+					this.killSearchMenu();
+				}
+
 				this.$spinner.addClass('hidden');
 
 				if (textStatus == 'success')
@@ -16369,7 +16379,7 @@ Craft.TagSelectInput = Craft.BaseElementSelectInput.extend(
 					if (!response.exactMatch)
 					{
 						var $li = $('<li/>').appendTo($ul);
-						$('<a data-icon="+"/>').appendTo($li).text(data.search);
+						$('<a data-icon="+"/>').appendTo($li).text(Craft.escapeHtml(data.search));
 					}
 
 					$ul.find('> li:first-child > a').addClass('hover');
