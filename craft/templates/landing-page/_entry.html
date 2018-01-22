@@ -1,13 +1,14 @@
 {% extends "_layout" %}
 {% block content %}
 
-{% for asset in entry.aboutImage %}
-<img src="{{asset.url}}" alt={{asset.title}} />
-{% endfor %}
+
 
 <div class="panel-primary">
+  {% for asset in entry.aboutImage %}
+  <img src="{{asset.url}}" alt={{asset.title}} />
+  {% endfor %}
 
-<h1>{{entry.title}}</h1>
+
 <div class="introduction">
 {% include '_includes/basicPageContent.html' %}
 </div>
