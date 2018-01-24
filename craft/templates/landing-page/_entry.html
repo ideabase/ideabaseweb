@@ -5,34 +5,38 @@
 
 <div class="panel-primary">
   {% for asset in entry.aboutImage %}
-  <img src="{{asset.url}}" alt={{asset.title}} />
+  <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
   {% endfor %}
 
 
 <div class="introduction">
-{% include '_includes/basicPageContent.html' %}
+  {{ entry.introduction }}
 </div>
 
-
-
-  <h2>Our {{entry.title}} Services </h2>
+<h2>Our {{entry.title}} Services </h2>
 
 <ul class="service-index__examples">
-  {% for block in entry.serviceHomepageMatrix %}
+{% for block in entry.serviceHomepageMatrix %}
 <li class="service-index__examples__item">{{block.homeProcessName}}</li>
-  {% endfor %}
+{% endfor %}
 </ul>
 
 <section class="service-index__examples__supplemental panel-primary">
 <p>
-  Need something else? In addition to these services, IdeaBase offers a <a href="#">wide variety of
-  research & design services</a> that will help you get the most of out of your project.
+  Need something else? In addition to these services, IdeaBase offers a <a href="{{siteUrl}}/services">wide variety of
+ services</a> that will help you get the most of out of your project.
 </p>
 </section>
 
+
+{% include '_includes/basicPageContent.html' %}
+
 <div class="panel-primary-container">
   <section class="section-title panel-primary">
-    <h2>Our {{entry.title}} Work:</h2>
+    <h2>Our Work Speaks for Itself</h2>
+    <p>
+      You’ll love working with IdeaBase! Here are just a few samples of the successful {{entry.title}} work we’ve done for past clients.
+    </p>
   </section>
 </div>
 
@@ -56,24 +60,22 @@
 
 
 <section class="section-blog-teaser">
-<h2>Meet our staff</h2>
+<h2>Meet Our Team</h2>
+<p>
+    If you like highly collaborative, creative people, you’ll love working with our designers. They come from a wide variety of backgrounds and expertise.
+</p>
 {% set entries = entry.relatedPeople %}
 {% include '_includes/_peopleSmall.html' %}
-<h2>Learn about the {{entry.title}} process</h2>
+<h2>Learn About Our {{entry.title}} process</h2>
 <p>
-  {{entry.body}}
+  If you’re new to {{entry.title}}, you might want to hear more about how to get started. Our employee-powered blog is a great place to begin.
 </p>
 <ul class="blog-teaser-list">
 {% for entry in entry.relatedBlog.limit(2) %}
 {% include '_includes/_blogPreview.html' %}
 {% endfor %}
 </ul>
-<section class="section-body-button panel-primary">
-  <a class="button button-primary" href="{{ siteUrl }}blog">Read More In Our Staff Blog</a>
 </section>
-</section>
-</section>
-
 </div>
 
 {% endblock %}

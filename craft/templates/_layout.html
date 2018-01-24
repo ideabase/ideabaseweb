@@ -46,11 +46,8 @@
 			{% endblock %}
 		</main>
 
-     {% if entry.section.handle == 'landingPage'%}
-        {% include 'global/landingCTA.html' %}
-    {% else %}
-      	{% include 'global/footer.html' %}
-    {% endif %}
+    {% include 'global/footer.html' %}
+
 
     <!-- Bring in the main stylesheet -->
     <link href="{{ siteUrl }}css/styles.css" type="text/css" rel="stylesheet" media="screen"/>

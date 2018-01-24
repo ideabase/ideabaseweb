@@ -9,11 +9,12 @@
    <span class="blog__entry__author__name">{{ entry.title }}
    </span>
   <span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
-{#  <div class="blog__entry__author__description">
+  <div class="blog__entry__author__description">
   {% set bioParagraphs = entry.profileBiographyDescription|split('</p>') %}
   {% set firstBioParagraph = bioParagraphs|first ~ '</p>' %}
       {{ firstBioParagraph|raw }}
-  </div> #}
+  </div>
   <a href="{{ entry.url }}" class="blog-teaser__link blog-teaser__link--blog">Read More About {{ entry.profileFirstName }}</a>
 </section>
 {% endfor %}
+</aside>

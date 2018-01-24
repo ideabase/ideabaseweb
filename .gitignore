@@ -18,3 +18,5 @@ craft/plugins/.DS_Store
 node_modules
 /httpdocs/wiki/LocalSettings.php
 db-default.php
+/httpdocs/package-lock.json
+/craft/templates/_includes/readme.md
