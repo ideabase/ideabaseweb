@@ -10,4 +10,5 @@ return array(
     'enshrined\\svgSanitize\\' => array($vendorDir . '/enshrined/svg-sanitize/src'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'LitEmoji\\' => array($vendorDir . '/elvanto/litemoji/src'),
 );

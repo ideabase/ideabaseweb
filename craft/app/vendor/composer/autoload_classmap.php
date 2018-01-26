@@ -325,6 +325,7 @@ return array(
     'Imagine\\Imagick\\Imagick' => $vendorDir . '/pixelandtonic/imagine/lib/Imagine/Imagick/Imagick.php',
     'Imagine\\Imagick\\Imagine' => $vendorDir . '/pixelandtonic/imagine/lib/Imagine/Imagick/Imagine.php',
     'Imagine\\Imagick\\Layers' => $vendorDir . '/pixelandtonic/imagine/lib/Imagine/Imagick/Layers.php',
+    'LitEmoji\\LitEmoji' => $vendorDir . '/elvanto/litemoji/src/LitEmoji.php',
     'PHPMailer' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
     'PHPMailerOAuth' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauth.php',
     'PHPMailerOAuthGoogle' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
