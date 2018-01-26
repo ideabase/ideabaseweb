@@ -99,6 +99,13 @@
   margin-bottom: .75em;
   display: inline-block;
   width: 100%;
+  a {
+    color: $blue;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: $cyan;
+    }
+  }
 }
 
 .service-index__examples__supplemental p {

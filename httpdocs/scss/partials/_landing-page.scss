@@ -1,6 +1,87 @@
  .landing-feature-image {
    padding: 0 2em;
    max-width: 550px;
-   width: 100%; 
+   width: 100%;
    margin-top: -1em;
+   margin-bottom: 1.5em;
  }
+
+.panel-primary--landing .panel-primary-container:before {
+  content: "";
+  width: 1.75rem;
+  white-space: pre;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  background-color: $blue;
+  display: block;
+}
+
+.panel-primary--landing .service-index__examples__supplemental {
+  margin-bottom: 3em;
+  a {
+    color: $blue;
+  }
+}
+
+.panel-primary--landing .project-list__item__name {
+  color: $blue;
+}
+
+.panel-primary--landing .testimonial-entry {
+  margin-bottom: 0;
+}
+
+.panel-primary--landing {
+  @media screen and (min-width: 700px) {
+    blockquote {
+    font-size: 1.4em;
+    margin-top: 2em;
+    }
+    cite {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.panel-primary--landing .blog__entry__sidebar {
+  text-align: center;
+}
+
+.landing-page-staff {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  .blog__entry-author {
+    margin-bottom: 2.5em;
+    min-width: 240px;
+    &:hover, &:focus {
+      .blog__entry__author__name, .blog__entry__author__info {
+          color: $cyan;
+        }
+    }
+  }
+  @media screen and (min-width: 850px) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .blog__entry-author {
+      width: 30%;
+      margin-bottom: 1em;
+    }
+    .blog__entry__author__image {
+      margin-bottom: 1em;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .panel-primary--landing {
+    padding: 1.5em 2em 0em 2em
+  }
+}

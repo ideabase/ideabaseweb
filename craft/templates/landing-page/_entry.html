@@ -3,7 +3,7 @@
 
 
 
-<div class="panel-primary">
+<div class="panel-primary panel-primary--landing">
   {% for asset in entry.aboutImage %}
   <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
   {% endfor %}
@@ -13,7 +13,7 @@
   {{ entry.introduction }}
 </div>
 
-<h2>Our {{entry.title}} Services </h2>
+<h2>A Wide Range of {{entry.title}} Services</h2>
 
 <ul class="service-index__examples">
 {% for block in entry.serviceHomepageMatrix %}
@@ -33,9 +33,9 @@
 
 <div class="panel-primary-container">
   <section class="section-title panel-primary">
-    <h2>Our Work Speaks for Itself</h2>
+    <h2>Proven Success</h2>
     <p>
-      You’ll love working with IdeaBase! Here are just a few samples of the successful {{entry.title}} work we’ve done for past clients.
+      You’ll love working with IdeaBase.  Here's just a few examples of the successful {{entry.title}} work we’ve done for past clients.
     </p>
   </section>
 </div>
@@ -44,32 +44,55 @@
 <section class="section-projects-all panel-primary-wide">
 
 <ul class="project-list">
-  {% for entry in entry.relatedWork %}
-
-    {% include '_includes/_relatedWork.html' %}
+  {% for entry in entry.relatedWork.limit(3) %}
+  <li class="project-list__item--featured">
+    <a href="{{ entry.url }}">
+      {% set asset = entry.projectPicture %}
+      {% if asset|length %}
+        {% for asset in entry.projectPicture.limit(1) %}
+            <div class="project-list__item__image">
+              <img class="" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+            </div>
+          {% endfor %}
+          {% else %}
+          <div class="project-list__item__image">
+               {% for asset in imagePlaceholder.aboutImage.limit(1) %}
+                <img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+               {% endfor %}
+        {% endif %}
+        <h2 class="project-list__item__name">{{ entry.title }}</h2>
+    </a>
+  </li>
   {% endfor %}
   </ul>
 </section>
-
-<div class="panel-primary-container">
 <section class="testimonial-entry panel-primary">
 {% set quote = entry.relatedTestimonial %}
 {% include '_includes/_testimonial.html' %}
 </section>
-</div>
 
-
-<section class="section-blog-teaser">
-<h2>Meet Our Team</h2>
+<section class="panel-primary-container section-blog-teaser">
+<h2>A Passionate &amp; Skilled Team</h2>
 <p>
-    If you like highly collaborative, creative people, you’ll love working with our designers. They come from a wide variety of backgrounds and expertise.
+    If you enjoy working with highly collaborative, creative people, you’ll love working with our diverse team of designers. Learn about our team and how they work together on {{entry.title}} projects.
 </p>
 {% set entries = entry.relatedPeople %}
-{% include '_includes/_peopleSmall.html' %}
-<h2>Learn About Our {{entry.title}} process</h2>
-<p>
-  If you’re new to {{entry.title}}, you might want to hear more about how to get started. Our employee-powered blog is a great place to begin.
-</p>
+<div class="landing-page-staff">
+{% for entry in entries %}
+<section class="blog__entry-author">
+  <a href="{{ entry.url }}">
+  <div class="blog__entry__author__image">
+    {% for asset in entry.staffHeadshot %}
+        <img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
+      {% endfor %}
+   </div>
+   <span class="blog__entry__author__name">{{ entry.title }}
+   </span>
+  <span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
+  </a>
+</section>
+{% endfor %}
+</div>
 <ul class="blog-teaser-list">
 {% for entry in entry.relatedBlog.limit(2) %}
 {% include '_includes/_blogPreview.html' %}

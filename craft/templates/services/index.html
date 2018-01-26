@@ -54,7 +54,15 @@ Process Template
           <p class="service-index__description">{{ block.homeProcessDescription }}</p>
              <ul class="service-index__examples">
               {% for row in block.homeProcessExampleTable %}
-                  <li class="service-index__examples__item">{{ row.examples }}</li>
+                  <li class="service-index__examples__item">
+                    {% if row.link | length %}
+                      <a href="{{siteUrl}}{{row.link}}">
+                    {% endif %}
+                    {{ row.examples }}
+                    {% if row.link | length %}
+                      </a>
+                    {% endif %}
+                  </li>
               {% endfor %}
             </ul>
   </div>
