@@ -2,10 +2,6 @@
 {% block content %}
 
 
-
-
-
-
 {% for asset in entry.aboutImage %}
 <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
 {% endfor %}
@@ -13,6 +9,15 @@
 <h1>{{entry.title}}</h1>
 
 <p>{{entry.body}}</p>
+
+{% for block in entry.howTo %}
+{% if block.type == "step" %}
+  <p>{{block.text}}</p>
+  {% set testImg = block.image.first()%}
+  <img src="{{testImg.url}}" />
+{%endif %}
+
+{% endfor %}
 
 
 {%endblock%}
