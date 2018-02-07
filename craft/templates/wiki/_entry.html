@@ -1,0 +1,18 @@
+{% extends "_layout" %}
+{% block content %}
+
+
+
+
+
+
+{% for asset in entry.aboutImage %}
+<img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
+{% endfor %}
+
+<h1>{{entry.title}}</h1>
+
+<p>{{entry.body}}</p>
+
+
+{%endblock%}

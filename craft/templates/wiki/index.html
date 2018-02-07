@@ -1,0 +1,9 @@
+{% extends "_layout" %}
+{% block content %}
+{{entry.title}}
+
+{% for cat in craft.categories.group('wikiTaxonomy') %}
+{{cat.title}}
+{% endfor %}
+
+{% endblock %}
