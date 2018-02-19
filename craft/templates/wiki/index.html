@@ -2,7 +2,7 @@
 {% block content %}
 {% for category in craft.categories.group('wikiTaxonomy') %}
   {% set entries = craft.entries.section('wiki').relatedTo(category) %}
-  {% if category.entries | length > 0 %}
+  {% if entries | length > 0 %}
   <h1>{{category.title}}</h1>
   <p>{{category.body}}</p>
     {% for entry in entries %}
