@@ -1,4 +1,4 @@
-{% extends "_layout" %}
+{% extends "_wiki-layout" %}
 {% block content %}
 
 
@@ -9,12 +9,13 @@
 <h1>{{entry.title}}</h1>
 
 <p>{{entry.body}}</p>
-
+{% set stepCounter = 1 %}
 {% for block in entry.howTo %}
 {% if block.type == "step" %}
-  <p>{{block.text}}</p>
+  <p>{{stepCounter |striptags }}. {{block.text}}</p>
   {% set testImg = block.image.first()%}
   <img src="{{testImg.url}}" />
+  {% set stepCounter = stepCounter + 1 %}
 {%endif %}
 
 {% endfor %}

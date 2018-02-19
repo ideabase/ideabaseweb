@@ -1,0 +1,25 @@
+{% extends "_wiki-layout" %}
+{% block content %}
+
+<h1>Search Results</h1>
+
+
+{% set query = craft.request.getParam('searchQuery') %}
+{% set entries = craft.entries.section('wiki').search(query) %}
+
+{% if entries|length %}
+    <p>{{ entries|length }} results:</p>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>Your search for “{{ query }}” didn’t return any results.</p>
+
+{% endif %}
+
+
+{% endblock %}
