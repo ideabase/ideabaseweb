@@ -13,7 +13,7 @@
   {{ entry.body }}
 </div>
 
-<h2>A Wide Range of {{entry.title}} Services</h2>
+<h2>We provide a wide range of services</h2>
 
 <ul class="service-index__examples">
 {% for block in entry.sellingPoints %}
@@ -23,8 +23,7 @@
 
 <section class="service-index__examples__supplemental panel-primary">
 <p>
-  Need something else? In addition to these services, IdeaBase offers a <a href="{{siteUrl}}services">wide variety of
- services</a> that will help you get the most of out of your project.
+  Need something else? <a href="{{siteUrl}}services">See what other services IdeaBase provides.</a>
 </p>
 </section>
 
@@ -35,7 +34,7 @@
   <section class="section-title panel-primary">
     <h2>Proven Success</h2>
     <p>
-      You’ll love working with IdeaBase.  Here's just a few examples of the successful {{entry.title}} work we’ve done for past clients.
+      Take a look at a few examples of our past work:
     </p>
   </section>
 </div>
@@ -72,10 +71,8 @@
 </section>
 
 <section class="panel-primary-container section-blog-teaser">
-<h2>A Passionate &amp; Skilled Team</h2>
-<p>
-    If you enjoy working with highly collaborative, creative people, you’ll love working with our diverse team of designers. Learn about our team and how they work together on {{entry.title}} projects.
-</p>
+<h2>Meet Our Team</h2>
+
 {% set entries = entry.relatedPeople %}
 <div class="landing-page-staff">
 {% for entry in entries.limit(3) %}
@@ -93,6 +90,7 @@
 </section>
 {% endfor %}
 </div>
+<h2>Hear the Latest from IdeaBase:</h2>
 <ul class="blog-teaser-list">
 {% for entry in entry.relatedBlog.limit(2) %}
 {% include '_includes/_blogPreview.html' %}
