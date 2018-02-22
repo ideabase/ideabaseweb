@@ -23,7 +23,7 @@
 
 <section class="service-index__examples__supplemental panel-primary">
 <p>
-  Need something else? <a href="{{siteUrl}}services">See what other services IdeaBase provides.</a>
+  Need something else? <a href="{{siteUrl}}services">See what other services we provide.</a>
 </p>
 </section>
 
@@ -74,6 +74,7 @@
 <h2>Meet Our Team</h2>
 
 {% set entries = entry.relatedPeople %}
+
 <div class="landing-page-staff">
 {% for entry in entries.limit(3) %}
 <section class="blog__entry-author">
@@ -90,10 +91,16 @@
 </section>
 {% endfor %}
 </div>
-<h2>Hear the Latest from IdeaBase:</h2>
 <ul class="blog-teaser-list">
-{% for entry in entry.relatedBlog.limit(2) %}
-{% include '_includes/_blogPreview.html' %}
+{% set entries = entry.relatedBlog.limit(2) %}
+{% for entry in entries %}
+  {% if entries|length == 1 %}
+  <div class="blog-single">
+    {% include '_includes/_blogPreview.html' %}
+  </div>
+  {% else %}
+  {% include '_includes/_blogPreview.html' %}
+  {% endif %}
 {% endfor %}
 </ul>
 </section>
