@@ -20,6 +20,10 @@
 {% else %}
 <h1>{{entry.title}}</h1>
 <p>{{entry.body}}</p>
+<h1>Downloads: </h1>
+{% for file in entry.downloads %}
+  <a href="{{file.url}}">{{file.title}}</a>
+{% endfor %}
 {% set stepCounter = 1 %}
 {% for block in entry.howTo %}
 {% if block.type == "step" %}
