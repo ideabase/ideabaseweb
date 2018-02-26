@@ -6,8 +6,19 @@
 <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
 {% endfor %}
 
-<h1>{{entry.title}}</h1>
 
+{% if entry.hasDescendants() %}
+<h1>{{entry.title}}</h1>
+<ul>
+  {% set children = entry.descendants() %}
+    {% for child in children %}
+      <li>
+        <a href="{{child.url}}">{{child.title}}</a>
+      </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h1>{{entry.title}}</h1>
 <p>{{entry.body}}</p>
 {% set stepCounter = 1 %}
 {% for block in entry.howTo %}
@@ -20,5 +31,5 @@
 
 {% endfor %}
 
-
+{% endif %}
 {%endblock%}
