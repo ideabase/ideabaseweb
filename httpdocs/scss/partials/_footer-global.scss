@@ -327,7 +327,7 @@
 		border: 1px solid $lightgray;
 		position: relative;
 		z-index: 1;
-		font-size: .85em;
+		font-size: 16px;
 		max-width: 160px;
 		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 			color: $lightgray;
@@ -340,6 +340,9 @@
 		}
 		&:-moz-placeholder { /* Firefox 18- */
 			color: $lightgray;
+		}
+		@media screen and (min-width: 900px) {
+			font-size: 14px;
 		}
 	}
 
@@ -355,9 +358,14 @@
 		text-align: center;
 		background-color: $blue;
 		letter-spacing: normal;
-		padding-bottom: 0.15em;
+		padding-bottom: 0.15px;
+		border-radius: 0;
 		&:hover, &:focus {
 			background-color: darken($blue, 10%);
+		}
+		@media screen and (min-width: 900px) {
+			padding-bottom: 0.15em;
+			border-radius: 3px;
 		}
 	}
 }
