@@ -54,6 +54,20 @@
 			{% for block in socMedia.socialMediaRepeater.type('socialName') %}
      			<a href="{{ block.socialMediaLink }}"><svg class="footer-info__social__icon"><use xlink:href="#{{ block.socialMediaName|striptags }}" /></svg></a>
 			{% endfor %}
+			<!-- Begin MailChimp Signup Form -->
+			<div class="footer-info__email">
+					<h3 class="footer-info__email__heading">Newsletter</h3>
+					<div id="mc_embed_signup" class="footer-info__email__signup">
+					<form action="https://ideabasekent.us9.list-manage.com/subscribe/post?u=768657c2485cb25aa8053c28d&amp;id=076d5d160f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					    <div id="mc_embed_signup_scroll" class="footer-info__email__signup__form">
+								<input type="email" value="" name="EMAIL" class="footer-info__email__signup__form__field" id="mce-EMAIL" placeholder="Your email address" required>
+					    	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_768657c2485cb25aa8053c28d_076d5d160f" tabindex="-1" value=""></div>
+					    	<div class="clear"><input type="submit" value="+" name="subscribe" id="mc-embedded-subscribe" class="footer-info__email__signup__form__button"></div>
+					    </div>
+					</form>
+					</div>
+			</div>
 			</section>
 			<!-- End Social Media -->
 			<section class="footer-info__supplemental">
@@ -62,7 +76,7 @@
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}blog">Blog</a></li>
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}classes">Classes</a></li>
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}jobs">Jobs</a></li>
-					<li class="footer-info__nav__item"><a href="{{siteUrl}}ux">UX Lab</a></li>
+					<li class="footer-info__nav__item"><a href="{{siteUrl}}support">Support Us</a></li>
 				</ul>
 				<div class="footer-info__bottom">
 					{% for asset in footer.kentStateLogo %}
