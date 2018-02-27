@@ -11,13 +11,13 @@
   {% set children = entry.descendants() %}
     {% for child in children %}
       <li>
-        <a href="{{child.url}}">{{child.title}}</a>
+        <a href="{{child.url}}">-----{{child.title}}</a>
       </li>
-      {%endfor%}
-
-{% else %}
+    {% endfor %}
+{# if entry has no parents, print entry #}
+{% elseif ( entry.getParent() | length < 1) %}
 <li><a href="{{entry.url}}">{{entry.title}}</li></a>
-{%endif%}
+{% endif %}
 <hr />
 {% endfor %}
 </ul>

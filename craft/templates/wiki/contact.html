@@ -1,0 +1,48 @@
+{% extends "_wiki-layout" %}
+{% block content %}
+
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+<form method="post" action="" accept-charset="UTF-8">
+
+    <input type="hidden" name="action" value="contact-form/send">
+
+    <h3><label for="new-or-existing">New or Existing</label></h3>
+    <input id="new" type="radio" name="new" value="{{ message.newOrExisting ?? '' }}">
+    <label for="new">New</label>
+    <input id="existing" type="radio" name="existing" value="{{ message.fromName ?? '' }}">
+    <label for="existing">Existing</label>
+    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+    <h3><label for="from-name">Your Name</label></h3>
+    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+    <h3><label for="from-email">Your Email</label></h3>
+    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+    <h3><label for="subject">Subject</label></h3>
+    <input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+    <h3><label for="message">Message</label></h3>
+    <textarea rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
+    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+    <input type="submit" value="Send">
+</form>
+
+
+
+{% endblock %}
