@@ -20,3 +20,4 @@ node_modules
 db-default.php
 /httpdocs/package-lock.json
 /craft/templates/_includes/readme.md
+/httpdocs/sitemap.xml
