@@ -34,7 +34,7 @@
     {% set stepCounter = stepCounter + 1 %}
   {%endif %}
   {% if block.type == "code" %}
-    <pre><code class="language-{{block.language}}">{{block.code}}</code></pre>
+    <pre class="line-numbers"><code class="language-{{block.language}}">{{block.code}}</code></pre>
   {% endif %}
 {% endfor %}
 
