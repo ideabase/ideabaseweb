@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'js/custom-scripts-min.js': ['js/jquery.min.js','js/jquery.easy.1.3.js','js/scrollreveal.min.js','js/flickity.min.js','js/jquery.fitvids.js','js/jquery.lazyload.min.js','js/picturefill.min.js','js/custom-scripts.js'],
+          'js/custom-scripts-min.js': ['js/jquery.min.js','js/jquery.easing.1.3.js','js/scrollreveal.min.js','js/flickity.min.js','js/jquery.fitvids.js','js/prism.js','js/jquery.lazyload.min.js','js/picturefill.min.js','js/custom-scripts.js'],
           'js/project-scripts-min.js': ['js/project-scripts.js']
         }
       }
