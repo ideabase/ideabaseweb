@@ -1,8 +1,9 @@
 
 <footer role="contentinfo" class="global-footer">
-
-	{% if entry.section.handle == 'landingPage'%}
+{% if entry is defined %}
+	{% if entry.section.handle == 'landingPage' %}
 		 <h2 class="global-footer__cta">{{ entry.footerHeadline }}</h2>
+		 {% endif %}
  {% else %}
 		 <h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
  {% endif %}

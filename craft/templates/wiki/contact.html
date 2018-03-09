@@ -13,16 +13,26 @@
 
 {% from _self import errorList %}
 
+
 <form method="post" action="" accept-charset="UTF-8">
 
-    <input type="hidden" name="action" value="contact-form/send">
+  {{ getCsrfInput() }}
 
+  <input type="hidden" name="redirect" value="{{ siteUrl }}success">
+  <input type="hidden" name="action" value="contactForm/sendMessage">
+
+{#
     <h3><label for="new-or-existing">New or Existing</label></h3>
     <input id="new" type="radio" name="new" value="{{ message.newOrExisting ?? '' }}">
     <label for="new">New</label>
     <input id="existing" type="radio" name="existing" value="{{ message.fromName ?? '' }}">
     <label for="existing">Existing</label>
     {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+    #}
+
+    <h3>Is this a new or existing problem?</h3>
+    <label><input type="radio" name="message[Services][]" value="New"> New</label>
+    <label><input type="radio" name="message[Services][]" value="Existing"> Existing</label>
 
     <h3><label for="from-name">Your Name</label></h3>
     <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
@@ -37,10 +47,14 @@
     {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
     <h3><label for="message">Message</label></h3>
-    <textarea rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
+    <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message ?? '' }}</textarea>
     {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
+
+
     <input type="submit" value="Send">
+
+    <input type="hidden" name="redirect" value="wiki/send.html?from={fromName}">
 </form>
 
 

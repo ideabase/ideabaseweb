@@ -16,6 +16,9 @@
 <br />
 <br />
 
+
+
+
 <h3>Common help topics: </h3>
 {% for category in craft.categories.group('wikiTaxonomy') %}
 <li><a href="{{category.url}}"> {{category.title}}</a></li>
@@ -27,22 +30,18 @@
 <p>
   Submit the content update/request form, and we’ll be sure to make the change.
 </p>
-<input type="submit" />
-
-
-
+<a href="{{url('wiki/contact.html') }}" type="submit">Submit</a>
 
 {#
 
   {% set entries = craft.entries.section('wiki').relatedTo(category) %}
   {% if entries | length > 0 %}
-
   <p>{{category.body}}</p>
     {% for entry in entries %}
   <li><a href="{{entry.url}}"><h4>{{entry.title}}</h4></a></li>
   {% endfor %}
   {%endif%}
-  #}
+#}
 
 
 
