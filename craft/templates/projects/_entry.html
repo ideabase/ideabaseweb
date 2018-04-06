@@ -76,15 +76,12 @@
 
                     <a href="{{ siteUrl }}/awards">
                     {% for entry in relatedAward %}
+                        <div class="project-single__info__award">
                         {% for asset in awardIcons.trophyIcon %}
                             <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
                         {% endfor %}
-
-                        {% set awardName = craft.categories.group('awardName') %}
-                        {% for category in awardName %}
-                            <p>{{ entry.postDate.year }} {{ category.title }}</p>
-                        {% endfor %}
-
+                          <p>{{ entry.title }}</p>
+                        </div>
                     {% endfor %}
                     </a>
                 </div>

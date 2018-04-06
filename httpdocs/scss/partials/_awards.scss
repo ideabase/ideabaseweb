@@ -64,16 +64,12 @@
   content:none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.project-single__info__award {
+  display: block;
+  margin-bottom: 1.5em;
+  width: 100%;
+  float: left;
+  p {
+    margin-top: .5em;
+  }
+}
