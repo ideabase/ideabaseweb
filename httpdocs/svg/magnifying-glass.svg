@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="259px" height="259px" viewBox="0 0 259 259" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>IdeaBase_Icons_MagGlass</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home---Desktop" transform="translate(-585.000000, -123.000000)">
+            <g id="IdeaBase_Icons_MagGlass" transform="translate(598.000000, 136.000000)">
+                <rect id="Rectangle-path" fill="#1C60AB" fill-rule="nonzero" transform="translate(158.685920, 158.974460) rotate(135.000000) translate(-158.685920, -158.974460) " x="139.586103" y="137.574665" width="38.1996337" height="42.7995895"></rect>
+                <circle id="Oval" stroke="#1C60AB" stroke-width="26.994" fill="#57B4E2" fill-rule="nonzero" cx="84.4" cy="84.7" r="83.8"></circle>
+                <rect id="Rectangle-path" fill="#07A7E0" fill-rule="nonzero" transform="translate(196.880955, 197.166285) rotate(-45.000000) translate(-196.880955, -197.166285) " x="172.631188" y="152.666712" width="48.4995349" height="88.9991465"></rect>
+                <path d="M52.4,116.6 C36,100.3 36,73.7 52.4,57.4" id="Shape" stroke="#FFFFFF" stroke-width="17.996"></path>
+            </g>
+        </g>
+    </g>
+</svg>

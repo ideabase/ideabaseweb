@@ -9,25 +9,32 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% include '_includes/_metadata.html' %}
+  <title>IdeaBase Knowledgebase (KB){% if entry.title is defined %}- {{ entry.title }} - {% endif %}</title>
 	{% include '_includes/_favicons.html' %}
 </head>
-<header>
-<a class="ideabaselogo ideabaselogo--styleguide" href="{{ siteUrl }}">
-	{% for image in header.headerLogo %}
-		<img src="{{ image.getUrl }}" alt="{{ image.title }}">
-	{% endfor %}
-</a>
-<a class="styleguide-title__link" href="{{ siteUrl }}wiki"><h1 class="styleguide-title">_kb</h1></a>
-     <span class="nav__trigger">
-    	<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
-	</span>
-
+{% if craft.config.devMode %}
+<!-- Live Reload - For local environment only -->
+  <script src="//localhost:35729/livereload.js"></script>
+{% endif %}
+<header class="wiki-header">
+  <div class="wiki-header__inner">
+    <a class="wiki-subheader" href="{{ siteUrl }}wiki"><h1 class="wiki-subheader__title"><span>_</span>kb</h1></a>
+    <a class="ideabaselogo" href="{{ siteUrl }}">
+    	{% for image in header.headerLogo %}
+    		<img src="{{ image.getUrl }}" alt="{{ image.title }}">
+    	{% endfor %}
+    </a>
+  </div>
 </header>
 
-<body>
+<main id="content" role="main">
 			{% block content %}
 			{% endblock %}
+</main>
+
+<footer role="contentinfo" class="wiki-footer">
+  Copyright <a href="https://www.ideabasekent.com">IdeaBase</a> 2018.  All Rights Reserved.
+</footer>
 <link href="{{ siteUrl }}css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
 <script type="text/javascript" src="{{ siteUrl }}js/modernizr-custom.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -1,49 +1,51 @@
 {% extends "_wiki-layout" %}
 {% block content %}
-<ul>
 
-<h1>Get help here.</h1>
-<p>
-  Welcome to the IdeaBase Staff Knowledebase (KB), your one- stop destination for office procedures, technical documentation and common design templates.
-</p>
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text">
+    <h1>Find help here.</h1>
+    <p>
+      Welcome to the IdeaBase Staff Knowledebase (KB), your one-stop destination for office procedures, technical documentation and common design templates.
+    </p>
+    <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
+      <input type="text" placeholder="Type Your Question Here" name="searchQuery"/ />
+      <input type="submit" value="Go" />
+    </form>
+  </div>
+  <div class="wiki-search__image">
+    <img src="../svg/magnifying-glass.svg" alt="Magnifying Glass Icon" />
+  </div>
+</div>
+</section>
 
-<form action="{{url('wiki/results.html') }}">
-  <input type="text" name="searchQuery"/ />
-  <input type="submit" value="Go" />
-</form>
-
-<br />
-<br />
-<br />
-
-
-
-
-<h3>Common help topics: </h3>
-{% for category in craft.categories.group('wikiTaxonomy') %}
-<li><a href="{{category.url}}"> {{category.title}}</a></li>
-{% endfor %}
-</ul>
-<hr />
-
-<h3>Having trouble finding something?</h3>
-<p>
-  Submit the content update/request form, and we’ll be sure to make the change.
-</p>
-<a href="{{url('wiki/contact.html') }}" type="submit">Submit</a>
-
-{#
-
-  {% set entries = craft.entries.section('wiki').relatedTo(category) %}
-  {% if entries | length > 0 %}
-  <p>{{category.body}}</p>
-    {% for entry in entries %}
-  <li><a href="{{entry.url}}"><h4>{{entry.title}}</h4></a></li>
+<section class="wiki-topics">
+  <div class="panel-primary">
+  <h4>Common Topics </h4>
+  <ul class="wiki-topics__list">
+  {% for category in craft.categories.group('wikiTaxonomy').order('title') %}
+    <li class="wiki-topics__list__item"><a class="wiki-topics__list__link" href="{{category.url}}"> {{category.title}}</a></li>
   {% endfor %}
-  {%endif%}
-#}
+  </ul>
+  </div>
+</section>
 
-
+<section class="wiki-request">
+  <div class="panel-primary">
+    <hr />
+      <h4>Having trouble finding something?</h4>
+      <div class="wiki-request__inner">
+        <div class="wiki-request__text">
+      <p>
+        Submit the content update/request form, and we’ll be sure to make the change.
+      </p>
+      </div>
+      <div class="wiki-request__link">
+        <a class="button button-primary" href="{{url('wiki/contact.html') }}" type="submit">Submit an Update</a>
+      </div>
+  </div>
+  </div>
+</section>
 
 
 {% endblock %}

@@ -1,0 +1,199 @@
+.wiki-header {
+  max-width: inherit;
+  margin-bottom: 0;
+  @media screen and (min-width: 800px) {
+    border-top: 8px solid $blue;
+  }
+  .ideabaselogo {
+    margin-top: 0;
+    img {
+      max-width: 300px;
+      padding: 1em;
+    }
+    @media screen and (min-width: 800px) {
+      text-align: left;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.wiki-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wiki-subheader {
+  display: block;
+  background-color: $blue;
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  transition: .3s all ease-in-out;
+  &:hover, &:focus {
+    background-color: $cyan;
+    span {
+      color: white;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+}
+
+.wiki-subheader__title {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-transform: lowercase;
+  span {
+    color: $cyan;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 1.9em;
+  }
+}
+
+.wiki-search {
+  background-color: lighten($lightgray, 20%);
+  padding-bottom: 2em;
+  h1 {
+    text-align: left;
+    @media screen and (min-width: 800px) {
+      font-size: 2.5em;
+    }
+  }
+  .panel-primary {
+    text-align: left;
+    clear: left;
+    display: flex;
+    overflow: hidden;
+    @media screen and (min-width: 800px) {
+      overflow: inherit;
+    }
+  }
+}
+
+.wiki-search-form {
+  display: block;
+  input {
+    float:  none;
+    height: 50px;
+  }
+  input[type="text"] {
+    width: 65%;
+    padding-left: .5em;
+    margin-right: 5px;
+    margin-top: -2px;
+  }
+}
+
+.wiki-search__text {
+  @media screen and (min-width: 600px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 800px) {
+    width: 65%;
+  }
+}
+
+.wiki-search__image {
+  margin-right: -45px;
+  width: 350px;
+
+  @media screen and (min-width: 600px) {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    width: 200px;
+    margin-right: inherit;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 300px;
+    bottom: -50px;
+    top: inherit;
+    right: 0;
+  }
+}
+
+.wiki-topics {
+  .panel-primary {
+    text-align: left;
+  }
+}
+
+.wiki-topics__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.wiki-topics__list__link {
+  background-color: lighten($lightgray, 15%);
+  font-weight: 600;
+  display: block;
+  color: $blue;
+  text-align: center;
+  padding: .75em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s all ease-in-out;
+  &:hover,&:focus {
+    background-color: lighten($lightgray, 10%);
+  }
+}
+
+.wiki-request {
+  margin-top: 2em;
+  hr {
+    height: 1px;
+    border: none;
+    background: $lightgray;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3em;
+  }
+  .panel-primary {
+    text-align: left;
+  }
+}
+
+.wiki-request__inner {
+  @media screen and (min-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.wiki-request__text {
+    @media screen and (min-width: 800px) {
+      width: 60%;
+      margin-right: 3em;
+    }
+}
+
+.wiki-footer {
+  background-color: $blue;
+  margin-top: 4em;
+  padding: 3em;
+  text-align: center;
+  color: white;
+  font-size: .8em;
+  a {
+    color: white;
+  }
+}
