@@ -1,18 +1,30 @@
 {% extends "_wiki-layout" %}
 {% block content %}
 
-<h1>Search Results</h1>
-
-
 {% set query = craft.request.getParam('searchQuery') %}
+
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>Search Results</h1>
+    <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
+      <input type="text" placeholder="Type Your Question Here" value="{{query}}" name="searchQuery"/ />
+      <input type="submit" value="Go" />
+    </form>
+  </div>
+</div>
+</section>
+
+<section class="panel-primary wiki__results">
+
 {% set entries = craft.entries.section('wiki').search(query) %}
 
 {% if entries|length %}
-    <p>{{ entries|length }} results:</p>
+    <p>{{ entries|length }} result(s) for "{{ query }}":</p>
 
-    <ul>
+    <ol>
         {% for entry in entries %}
-            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+            <li><a class="wiki-topics__title" href="{{ entry.url }}">{{ entry.title }}</a></li>
         {% endfor %}
     </ul>
 
@@ -20,6 +32,10 @@
     <p>Your search for “{{ query }}” didn’t return any results.</p>
 
 {% endif %}
+
+</section>
+
+{% include '_includes/_wiki-request.html' %}
 
 
 {% endblock %}

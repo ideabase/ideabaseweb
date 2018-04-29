@@ -11,8 +11,16 @@
     {% endif %}
 {% endmacro %}
 
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>Submit a KB Request</h1>
+  </div>
+</div>
+</section>
 {% from _self import errorList %}
 
+<section class="panel-primary wiki__form">
 
 <form method="post" action="" accept-charset="UTF-8">
 
@@ -57,6 +65,6 @@
     <input type="hidden" name="redirect" value="wiki/send.html?from={fromName}">
 </form>
 
-
+</section>
 
 {% endblock %}

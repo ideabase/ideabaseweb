@@ -1,37 +1,54 @@
 {% extends "_wiki-layout" %}
 {% block content %}
 
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>{{category.title}}</h1>
+      {{category.body}}
+    <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
+      <input type="text" placeholder="Type Your Question Here" name="searchQuery"/ />
+      <input type="submit" value="Go" />
+    </form>
+  </div>
+  <div class="wiki-search__link">
+    <a href="/wiki" class="blog-teaser__link blog-teaser__link--reverse">Go Back Home</a>
+  </div>
+</div>
+</section>
 
-<h1>{{category.title}}</h1>
 {% set entries = craft.entries.section('wiki').relatedTo(category) %}
-<ul>
-{% for entry in entries %}
-{% if entry.hasDescendants() %}
-<li><a href="{{entry.url}}">{{entry.title}}</li></a>
-  {% set children = entry.descendants() %}
-    {% for child in children %}
-      <li>
-        <a href="{{child.url}}">-----{{child.title}}</a>
-      </li>
-    {% endfor %}
-{# if entry has no parents, print entry #}
-{% elseif ( entry.getParent() | length < 1) %}
-<li><a href="{{entry.url}}">{{entry.title}}</li></a>
-{% endif %}
-<hr />
-{% endfor %}
-</ul>
 
-
-{# ignore this is reference for nick
-{% for category in craft.categories.group('wikiTaxonomy') %}
-  {% set entries = craft.entries.section('wiki').relatedTo(category) %}
-  {% if entries | length > 0 %}
-  <p>{{category.body}}</p>
+{% if entries | length %}
+<section class="wiki-topics panel-primary wiki-topics--category">
     {% for entry in entries %}
-  <li><a href="{{entry.url}}"><h4>{{entry.title}}</h4></a></li>
-  {% endfor %}
-  {%endif%}
-{%endfor%}
-#}
-  {% endblock %}
+    {% if entry.hasDescendants() %}
+    <div class="wiki-topics__section">
+      <h4 class="wiki-topics__level1"><a href="{{entry.url}}">{{entry.title}}</a></h4>
+        <ul class="wiki-topics__list wiki-topics__list--category">
+          {% set children = entry.descendants() %}
+            {% for child in children %}
+              <li>
+                <a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a>
+              </li>
+            {% endfor %}
+        </ul>
+    </div>
+        {# if entry has no parents, print entry #}
+        {% elseif ( entry.getParent() | length < 1) %}
+        <div class="wiki-topics__section">
+          <h4 class="wiki-topics__level1"><a href="{{entry.url}}">{{entry.title}}</a></h4>
+        </div>
+        {% endif %}
+        {% endfor %}
+</section>
+{% else %}
+<section class="panel-primary">
+  <p>This category doesn't have any assigned wiki articles yet.</p>
+</section>
+{% endif %}
+
+{% include '_includes/_wiki-request.html' %}
+
+
+{% endblock %}

@@ -12,6 +12,13 @@
   <title>IdeaBase Knowledgebase (KB){% if entry.title is defined %}- {{ entry.title }} - {% endif %}</title>
 	{% include '_includes/_favicons.html' %}
 </head>
+<body>
+  {% if entry is defined %}
+    {% set config = {
+      entry: entry,
+    } %}
+    {{ craft.adminbar.bar(config) }}
+  {% endif %}
 {% if craft.config.devMode %}
 <!-- Live Reload - For local environment only -->
   <script src="//localhost:35729/livereload.js"></script>
@@ -35,6 +42,7 @@
 <footer role="contentinfo" class="wiki-footer">
   Copyright <a href="https://www.ideabasekent.com">IdeaBase</a> 2018.  All Rights Reserved.
 </footer>
+</body>
 <link href="{{ siteUrl }}css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
 <script type="text/javascript" src="{{ siteUrl }}js/modernizr-custom.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

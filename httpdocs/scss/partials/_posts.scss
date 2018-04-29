@@ -74,6 +74,16 @@
    }
 }
 
+.blog-teaser__link--reverse {
+  padding-left: 1.2em;
+  padding-right: inherit;
+  &:after {
+    left: 0;
+    transform: rotate(-180deg);
+    right: inherit;
+  }
+}
+
 .blog-teaser__title {
   margin-top: 1.25em;
   font-size: 1.2em;
