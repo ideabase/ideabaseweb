@@ -25,7 +25,7 @@
 {% endif %}
 <header class="wiki-header">
   <div class="wiki-header__inner">
-    <a class="wiki-subheader" href="{{ siteUrl }}wiki"><h1 class="wiki-subheader__title"><span>_</span>kb</h1></a>
+    <a class="wiki-subheader" href="{{ siteUrl }}wiki"><h1 class="wiki-subheader__title"><span>_</span>wiki</h1></a>
     <a class="ideabaselogo" href="{{ siteUrl }}">
     	{% for image in header.headerLogo %}
     		<img src="{{ image.getUrl }}" alt="{{ image.title }}">
@@ -62,29 +62,5 @@
   ga('send', 'pageview');
 
 </script>
-{# <script type="text/javascript" src="{{ siteUrl }}js/jquery.fixedcontent.min.js"></script>
-<script>
-  $(".js_fixedcontent").fixedcontent({
-    marginTop: 0,
-    minWidth: 602,
-  });
-</script>
-<script>
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-</script>
-#}
 </body>
 </html>

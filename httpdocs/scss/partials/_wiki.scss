@@ -30,6 +30,9 @@
   text-decoration: none;
   padding: 1em;
   transition: .3s all ease-in-out;
+  span {
+    transition: .3s all ease-in-out;
+  }
   &:hover, &:focus {
     background-color: $cyan;
     span {
