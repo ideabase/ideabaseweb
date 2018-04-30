@@ -7,7 +7,7 @@
   <div class="wiki-search__text wiki-search__text--category">
     <h1>{{entry.title}}</h1>
     <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
-      <input type="text" placeholder="Type Your Question Here" name="searchQuery"/ />
+      <input type="text" placeholder="Type Keywords Here" name="searchQuery"/ />
       <input type="submit" value="Go" />
     </form>
   </div>
@@ -73,7 +73,10 @@
 {% set stepCounter = 1 %}
 {% for block in entry.howTo %}
   {% if block.type == "step" %}
-    <p>{{stepCounter |striptags }}. {{block.text}}</p>
+    <div class="wiki__step">
+      <span class="wiki__step__number">{{stepCounter |striptags }}.</span>
+      <div class="wiki__step__text">{{block.text}}</div>
+    </div>
     {% for img in block.image %}
     <section class="section-body-image panel-primary">
       <figure class="section-body-image__figure">
@@ -91,7 +94,7 @@
 
 {% if entry.downloads | length %}
 <aside class="wiki__downloads">
-  <h5>Related Downloads</h5>
+  <h5>Downloads</h5>
   {% for file in entry.downloads %}
     <a href="{{file.url}}">{{file.title}} ({{file.extension}})</a>
   {% endfor %}
