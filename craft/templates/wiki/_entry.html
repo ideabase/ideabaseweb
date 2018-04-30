@@ -51,7 +51,9 @@
           <span class="wiki-breadcrumbs__link"><a href="{{cat.url}}">{{cat.title}}</a></span>
         {% endfor %}
       {% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+      {% if parent %}
           <span class="wiki-breadcrumbs__link"><a href="{{parent.url}}">{{parent.title}}</a></span>
+      {% endif %}
       </a>
 		</div>
   </div>
