@@ -18,7 +18,7 @@
 </section>
 
 {% set entries = craft.entries.section('wiki').relatedTo(category) %}
-
+{% set counter = 0 %}
 {% if entries | length %}
 <section class="wiki-topics panel-primary wiki-topics--category">
     {% for entry in entries %}    {% set parent = entry.getParent() %}
@@ -29,14 +29,15 @@
         <ul class="wiki-topics__list wiki-topics__list--category">
           {% set children = entry.descendants() %} {# children of parent #}
             {% for child in children %}
-              {% if child.wikiTaxonomy | length < 2 %}
-                <li><a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a></li>
+              {% if child.wikiTaxonomy | length > 1 %} {# if its assigned to more one category #}
+                {% set counter = counter + 1 %}
               {% endif %}
+              <li><a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a></li>
             {% endfor %}
         </ul>
     </div>
 
-        {% elseif not entry.hasDescendants() %}
+        {% elseif counter != 1 %}
           <h4 class="wiki-topics__level1"><a href="{{entry.url}}">{{entry.title}}</a></h4>
 
         {# if entry has no parents, print entry #}
