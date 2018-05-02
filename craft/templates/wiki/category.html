@@ -30,7 +30,7 @@
           {% set children = entry.descendants() %} {# children of parent #}
             {% for child in children %}
               {% if child.wikiTaxonomy | length > 1 %} {# if its assigned to more one category #}
-                {% set counter = counter + 1 %}
+                {% set counter = 1 %}
               {% endif %}
               <li><a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a></li>
             {% endfor %}
