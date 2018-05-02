@@ -37,7 +37,7 @@
         </ul>
     </div>
 
-        {% elseif counter != 1 %}
+        {% elseif counter != 1 and counter != 0 %}
           <h4 class="wiki-topics__level1"><a href="{{entry.url}}">{{entry.title}}</a></h4>
 
         {# if entry has no parents, print entry #}
