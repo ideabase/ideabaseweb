@@ -159,48 +159,48 @@
   &:hover, &:focus {
     transform: scale(1.05);
   }
-  &[href*="facebook.com"] {
+	&[href$=".com"], &[href$=".com/"] {
+		background-image: url(../images/global/website.svg);
+	}
+  &[href*="facebook.com"],&[href*="facebook.com/"] {
     background-image: url(../images/global/facebook.svg);
   }
-  &[href*="flickr.com"] {
+  &[href*="flickr.com"],&[href*="flickr.com/"] {
     background-image: url(../images/global/flickr.svg);
   }
-  &[href*="linkedin.com"] {
+  &[href*="linkedin.com"],&[href*="linkedin.com/"] {
     background-image: url(../images/global/linkedin.svg);
   }
-  &[href*="twitter.com"] {
+  &[href*="twitter.com"], &[href*="twitter.com/"] {
     background-image: url(../images/global/twitter.svg);
   }
-  &[href*="youtube.com"] {
+  &[href*="youtube.com"],&[href*="youtube.com/"] {
     background-image: url(../images/global/youtube.svg);
   }
-  &[href*="instagram.com"] {
+  &[href*="instagram.com"],&[href*="instagram.com/"] {
     background-image: url(../images/global/instagram.svg);
   }
 	&[href*="wordpress.com"] {
     background-image: url(../images/global/wordpress.svg);
   }
-	&[href*="dribbble.com"] {
+	&[href*="dribbble.com"],&[href*="dribbble.com/"] {
     background-image: url(../images/global/dribbble.svg);
   }
-	&[href*="behance.net"] {
+	&[href*="behance.net"],&[href*="behance.net/"] {
     background-image: url(../images/global/behance.svg);
   }
 	&[href*="codepen.io"] {
     background-image: url(../images/global/codepen.svg);
   }
-	&[href*="github.com"] {
+	&[href*="github.com"],&[href*="github.com/"] {
     background-image: url(../images/global/github.svg);
   }
-	&[href*="tumblr.com"] {
+	&[href*="tumblr.com"],&[href*="tumblr.com/"] {
     background-image: url(../images/global/tumblr.svg);
   }
 	&[href*="pinterest.com"] {
     background-image: url(../images/global/pinterest.svg);
   }
-	&[href$=".com"] {
-		background-image: url(../images/global/website.svg);
-	}
 }
 
 .footer-info__legal {
