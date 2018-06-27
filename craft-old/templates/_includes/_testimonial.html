@@ -1,0 +1,4 @@
+{% for entry in quote.limit(1) %}
+<blockquote class="testimonial-entry__text">{{ entry.testimonialQuote }}</blockquote>
+<cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
+{% endfor %}

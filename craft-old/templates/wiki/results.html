@@ -1,0 +1,46 @@
+{% extends "_wiki-layout" %}
+{% block content %}
+
+{# to display search without conjoined words #}
+{% set searchQuery = craft.request.getParam('searchQuery') %}
+{% set query = craft.request.getParam('searchQuery')|split(' ')|join(' OR ') %}
+{% set entries = craft.entries.section('wiki').search(query).order('score') %}
+
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>Search Results</h1>
+    <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
+      <input type="text" placeholder="Type Keywords Here" value="{{searchQuery}}" name="searchQuery"/ />
+      <input type="submit" value="Go" />
+    </form>
+    <div class="wiki-search__link">
+      <a href="/wiki" class="blog-teaser__link blog-teaser__link--reverse">Go Back Home</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="panel-primary wiki__results">
+
+
+
+{% if entries|length %}
+    <p>{{ entries|length }} result(s) for "{{ searchQuery }}":</p>
+
+    <ol>
+        {% for entry in entries %}
+            <li><a class="wiki-topics__title" href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>Your search for “{{ searchQuery }}” didn’t return any results.</p>
+{% endif %}
+
+</section>
+
+{% include '_includes/_wiki-request.html' %}
+
+
+{% endblock %}

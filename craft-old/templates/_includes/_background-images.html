@@ -1,0 +1,29 @@
+<style type="text/css">
+{% if entry.aboutImage | length %}
+
+		{% set image = entry.aboutImage.first %}
+
+		.section-header {
+			        background-image: url({{ image.getUrl('featureImageSmall') }});
+		}
+
+		@media screen and (min-width: 600px) {
+			.section-header{
+			        background-image: url({{ image.getUrl('featureImageMedium') }});
+			}
+		}
+		@media screen and (min-width: 1000px) {
+			.section-header {
+			        background-image: url({{ image.getUrl('featureImageLarge') }});
+			}
+		}
+{% endif %}
+
+		.panel-background-image {
+			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
+			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}
+			        background-image: url({{ asset.getUrl() }});
+			    {% endfor %}
+			{% endif %}
+		}
+</style>

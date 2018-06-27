@@ -1,0 +1,46 @@
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+<div class="contact-form">
+<form method="post" action="" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <div class="contact-form__column">
+        <input type="hidden" name="action" value="contactForm/sendMessage">
+        <input type="hidden" name="redirect" value="{{ siteUrl }}success">
+        <input type="hidden" name="redirectOnFailure" value="{{ siteUrl }}work">
+
+            <label for="fromName">Your Name</label>
+            <input placeholder="Name" id="fromName" type="text" name="message[Client Name]" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+            <!--{{ message is defined and message ? errorList(message.getErrors('fromName')) }}-->
+
+            <label for="fromEmailAddress">Your Email</label>
+            <input placeholder="Email" id="fromEmailAddress" type="text" name="message[Email Address]" value="{% if message is defined %}{{ message.fromEmailAddress }}{% endif %}">
+            <!--{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}-->
+
+
+    </div>
+    <div class="contact-form__column">
+            <label for="company">Company</label>
+            <input placeholder="Company Name" id="company" type="text" name="message[Company Name]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            <!--{{ message is defined and message ? errorList(message.getErrors('subject')) }}-->
+
+            <label for="phone">Phone</label>
+            <input placeholder="Phone" id="phone" type="text" name="message[Phone]" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            <!--{{ message is defined and message ? errorList(message.getErrors('subject')) }}-->
+    </div>
+            <label for="message">How Can We Help?</label>
+            <textarea placeholder="How Can We Help?" rows="5" cols="40" id="message" name="message[Body]">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+            <!--{{ message is defined and message ? errorList(message.getErrors('message')) }}-->
+
+    <input type="submit" value="Send">
+</form>
+</div>

@@ -1,0 +1,90 @@
+{#
+ # Staff Profile entry template
+ #}
+
+{% extends "_layout" %}
+{% block content %}
+<div class="panel-primary-container">
+	<section class="people panel-primary-wide">
+
+	<div class="people__image">
+		{% if entry.staffHeadshot|length %}
+			{% for asset in entry.staffHeadshot %}
+	     		<img src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}">
+	   		{% endfor %}
+	   	{% endif %}
+   	</div>
+
+   	<div class="people__info">
+		<h1 class="people__title">
+			{{ entry.title }}
+		</h1>
+		{% if entry.alumniCurrentPosition|length %}
+			<p class="people__text">{{ entry.alumniCurrentPosition }}</p>
+		{% endif %}
+		{% if entry.alumniLightswitch %}
+		{% else %}
+			<p class="people__text">{{ entry.profileJobTitle }}</p>
+		{% endif %}
+		<p class="people__text">{{ entry.collegeDegree }}</p>
+
+
+		{% if entry.alumniLightswitch and entry.profileJobTitle|length %}
+			<div class="people__bio"><p>{{ entry.profileFirstName }} worked as a {{ entry.profileJobTitle }} while at IdeaBase.</p></div>
+		{% else %}
+			<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
+			{% if entry.profileContactEmail|length %}
+				<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
+			{% endif %}
+		{% endif %}
+		{% if entry.profileOfficePhoneNumber|length %}
+		<p class="people__phone"><a href="#">{{ entry.profileOfficePhoneNumber }}</a></p>
+		{% endif %}
+
+		{% if entry.staffSocialMedia|length %}
+		<!-- Staff Social Media -->
+		<section class="footer-info__social footer-info__social--profile">
+			{% for block in entry.staffSocialMedia %}
+     			<a class="footer-info__social__icon footer-info__social__icon--profile" target="_blank" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
+			{% endfor %}
+		</section>
+		{% endif %}
+		<!-- End Staff Social Media -->
+		{# Check for Related Projects #}
+		{% set allRelatedEntries = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
+		{# If related entries, then go ahead and output code #}
+		{% if allRelatedEntries|length %}
+		<section class="people-projects">
+			<h2 class="people-projects__title">Projects</h2>
+				<ul class="people-projects__list">
+					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
+					    	<li class="people-projects__list__item">
+			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       			</li>
+			    		{% endfor %}
+			    </ul>
+		</section>
+		{% endif %}
+
+		{# Check for Related Blog Posts #}
+		{% set allRelatedEntries = craft.entries.section('blogPost').relatedTo(entry) %}
+		{# If related entries, then go ahead and output code #}
+		{% if allRelatedEntries|length %}
+		<section class="people-posts">
+			<h2 class="people-posts__title">Blog Posts</h2>
+				<ul class="people-posts__list">
+			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
+			    			<li class="people-posts__list__item">
+			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       			</li>
+			    		{% endfor %}
+			    </ul>
+    	</section>
+    	{% endif %}
+    	<div class="section-body-button">
+    		<a class="button button-primary button--reverse" href="{{ siteUrl }}people">See More Bios</a>
+    	</div>
+    </div>
+</section>
+</div>
+{% endblock %}

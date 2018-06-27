@@ -1,0 +1,143 @@
+{% extends "_wiki-layout" %}
+{% block content %}
+
+{% if entry.hasDescendants() %}
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>{{entry.title}}</h1>
+    <form class="wiki-search-form" action="{{url('wiki/results.html') }}">
+      <input type="text" placeholder="Type Keywords Here" name="searchQuery"/ />
+      <input type="submit" value="Go" />
+    </form>
+  </div>
+  <div class="wiki-search__link">
+    <a href="/wiki" class="blog-teaser__link blog-teaser__link--reverse">Go Back Home</a>
+  </div>
+</div>
+</section>
+<section class="wiki-topics panel-primary wiki-topics--category">
+<ul class="wiki-topics__list wiki-topics__list--category">
+  {% set children = entry.descendants() %}
+    {% for child in children %}
+      <li>
+        <a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a>
+      </li>
+    {% endfor %}
+</ul>
+</section>
+{% else %}
+
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>{{entry.title}}</h1>
+    <div class="blog__entry__info">
+		{% set blogAuthor = entry.blogAuthor %}
+		{% set numberOfAuthors = entry.blogAuthor|length %}
+			{% if numberOfAuthors < 2 %}
+				{% for entry in blogAuthor %}
+				<span class="blog__entry__author">Written by {{ entry.title }}</span>
+				{% endfor %}
+			{% else %}
+				{% for entry in blogAuthor %}
+				<span class="blog__entry__author blog-multiple__author">{{ entry.title }}</span>
+				{% endfor %}
+			{% endif %}
+			<date class="blog__entry__date">Posted on {{ entry.postDate.format('F d, Y') }}</date>
+      <div class="wiki-breadcrumbs">
+      {% set category = entry.wikiTaxonomy %}
+        {% for cat in category %}
+          <span class="wiki-breadcrumbs__link"><a href="{{cat.url}}">{{cat.title}}</a></span>
+        {% endfor %}
+      {% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+      {% if parent %}
+          <span class="wiki-breadcrumbs__link"><a href="{{parent.url}}">{{parent.title}}</a></span>
+      {% endif %}
+      </a>
+		</div>
+  </div>
+  <div class="wiki-search__link">
+    <a href="/wiki" class="blog-teaser__link blog-teaser__link--reverse">Go Back Home</a>
+  </div>
+</div>
+</section>
+<div class="panel-primary-container">
+    <section class="panel-primary">
+
+{% if entry.downloads | length %}
+<div class="wiki__dual">
+{% endif %}
+  <article class="wiki__entry blog__entry">
+
+  {{entry.body}}
+
+{% set stepCounter = 1 %}
+{% for block in entry.howTo %}
+  {% if block.type == "step" %}
+    <div class="wiki__step">
+      <span class="wiki__step__number">{{stepCounter |striptags }}.</span>
+      <div class="wiki__step__text">{{block.text}}</div>
+    </div>
+    {% for img in block.image %}
+    <section class="section-body-image panel-primary">
+      <figure class="section-body-image__figure">
+        <img class="section-body-image__image" src="{{ img.getUrl('blogInlineImage') }}" alt="{{ img.title }}" />
+      </figure>
+    </section>
+    {% endfor %}
+    {% set stepCounter = stepCounter + 1 %}
+  {%endif %}
+  {% if block.type == "code" %}
+    <pre class="line-numbers"><code class="language-{{block.language}}">{{block.code}}</code></pre>
+  {% endif %}
+{% endfor %}
+</article>
+
+{% if entry.downloads | length %}
+<aside class="wiki__downloads">
+  <h5>Downloads</h5>
+  {% for file in entry.downloads %}
+    <a href="{{file.url}}">{{file.title}} ({{file.extension}})</a>
+  {% endfor %}
+</aside>
+</div>
+{% endif %}
+
+<!-- Show related articles -->
+{% set tag = entry.wikiTags %}
+{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).order('RAND()').find() %}
+  {% if relatedEntries | length %}
+  <section class="people-posts people-posts--blog">
+  <h2 class="people-posts__title">Related Articles</h2>
+  <ul class="people-posts__list">
+      {% for entry in relatedEntries %}
+          <li class="people-posts__list__item">
+            <a href="{{ entry.url }}">
+              {{ entry.title }}
+            </a>
+          </li>
+      {% endfor %}
+  </ul>
+  </section>
+  {% endif %}
+
+<!-- Begin Tags -->
+{% if entry.wikiTags | length %}
+<ul class="blog__entry__tags">
+    {% for tag in entry.wikiTags %}
+      <li class="blog__entry__tags__single">
+            <a class="blog__entry__tags-link" href="{{ siteUrl }}blog/tags/{{ tag.title }}">{{ tag.title }}</a>
+        </li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+{% endif %}
+
+</section>
+</div>
+
+{% include '_includes/_wiki-request.html' %}
+
+{%endblock%}

@@ -1,0 +1,18 @@
+{#
+ # Case Study Index Template 
+ #}
+
+{% extends "_layout" %}
+{% set title = "Case Studies" %}
+
+{% block content %}
+	<h1>Case Studies</h1>
+
+	{% for entry in craft.entries.section('caseStudy').find() %}
+		<section class="case-entry">
+			<h3 class="case-entry__title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			<p class="case-entry__text">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+			<p class="case-entry__text"><a href="{{ entry.url }}">Continue reading</a></p>
+		</section>
+	{% endfor %}
+{% endblock %}

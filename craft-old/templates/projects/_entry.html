@@ -1,0 +1,115 @@
+{#
+ # Project entry template
+ # -------------------
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+	<section class="project-single panel-primary">
+    <article>
+        <h1 class="project-single__name">{{ entry.title }}</h1>
+        {% set numberOfPhotos = entry.projectPicture|length %}
+
+        {% if numberOfPhotos > 1 %}
+            <ul class="project-single__images">
+            {% for asset in entry.projectPicture %}
+                <li class="project-single__images__item">
+                    <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
+                </li>
+            {% endfor %}
+            </ul>
+
+        {% elseif numberOfPhotos == 1 %}
+            <ul class="project-single__images--single">
+            {% for asset in entry.projectPicture %}
+                <li class="project-single__images__item">
+                    <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h3 class="project-single__client">
+        {% for entry in entry.forWhichClient %}
+            {{ entry.title }}
+        {% endfor %}
+        </h3>
+
+        {% if entry.projectDescription | length %}
+        <div class="project-single__description">
+            <p>{{ entry.projectDescription }}</p>
+        </div>
+        {% endif %}
+
+        {% if entry.video | length %}
+            <div class="project-single__video video-container">
+                {{ entry.video|videoEmbed }}
+            </div>
+        {% endif %}
+
+        {% if entry.projectUrl | length %}
+            <a href="{{ entry.projectUrl }}" class="blog-teaser__link blog-teaser__link--project">View {{ entry.title }}</a>
+        {% endif %}
+    </article>
+
+    <aside class="project-single__aside">
+        {% if entry.contributor | length %}
+            <div class="project-single__team">
+                <h4 class="project-single__team__title">Team</h4>
+                <ul class="project-single__team__list">
+                {% for entry in entry.contributor %}
+                    <li class="project-single__team__list__item">
+                        <a href="{{ entry.Url }}">
+                        {{ entry.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
+        {% if relatedAward | length %}
+            <div class="project-single__info">
+                <div class="project-entry__description__award project-entry__description__award--project-single">
+
+                    <a href="{{ siteUrl }}/awards">
+                    {% for entry in relatedAward %}
+                        <div class="project-single__info__award">
+                        {% for asset in awardIcons.trophyIcon %}
+                            <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
+                        {% endfor %}
+                          <p>{{ entry.title }}</p>
+                        </div>
+                    {% endfor %}
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+
+    </aside>
+    {% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
+    {% if relatedTestimonial | length %}
+    <section class="testimonial-entry--project panel-primary">
+      {% for entry in relatedTestimonial %}
+        <blockquote class="testimonial-entry__text">{{ entry.testimonialQuote }}</blockquote>
+        <cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    <ul class="blog__entry__tags">
+      {% for entry in entry.projectCategory %}
+      <li>
+        <a href="{{ entry.url }}" class="blog__entry__tags__item">
+          {{ entry.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+      <a class="button button-primary button--reverse" href="{{ siteUrl }}work/all">Back to Work</a>
+
+   	</section>
+{% endblock %}

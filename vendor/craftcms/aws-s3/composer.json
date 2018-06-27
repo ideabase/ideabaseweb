@@ -1,0 +1,43 @@
+{
+  "name": "craftcms/aws-s3",
+  "description": "Amazon S3 integration for Craft CMS",
+  "version": "1.0.8",
+  "type": "craft-plugin",
+  "keywords": [
+    "aws",
+    "cms",
+    "craftcms",
+    "flysystem",
+    "s3",
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/aws-s3/issues?state=open",
+    "source": "https://github.com/craftcms/aws-s3",
+    "docs": "https://github.com/craftcms/aws-s3",
+    "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
+  },
+  "require": {
+    "craftcms/cms": "^3.0.0-RC4",
+    "league/flysystem-aws-s3-v3": "^1.0.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\awss3\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Amazon S3",
+    "handle": "aws-s3",
+    "changelogUrl": "https://raw.githubusercontent.com/craftcms/aws-s3/master/CHANGELOG.md",
+    "downloadUrl": "https://github.com/craftcms/aws-s3/archive/master.zip"
+  }
+}

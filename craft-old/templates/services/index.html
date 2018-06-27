@@ -1,0 +1,107 @@
+{#
+Process Template
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+{% include '_includes/_background-images.html' %}
+	<section class="section-header section-header--interior">
+    <div class="section-header__container">
+		  <h1 class="section-header__title">{{ entry.processHeader }}</h1>
+    </div>
+  </section>
+
+  <div class="panel-primary-container">
+  <section class="section-introduction panel-primary">
+		<div class="introduction">{{ entry.processDescription }}</div>
+  </section>
+  </div>
+		<!--
+    <div class="service-index__image">
+
+			{% for asset in entry.processFeaturedImage %}
+       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+    		{% endfor %}
+    	</div>
+    </section>
+    <section class="service-index-entry">
+    -->
+<div class="layout-three-wide">
+{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+
+  <div class="panel-primary-container">
+    <section class="service-index panel-primary">
+      <h2 class="service-index__title">{{ block.homeProcessName }}</h2>
+        <div class="service-index__icons">
+            {% for asset in block.icon1 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		 {% for asset in block.icon2 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		{% for asset in block.icon3 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+
+        		{% for asset in block.icon4 %}
+           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+        		{% endfor %}
+          </div>
+
+          <p class="service-index__description">{{ block.homeProcessDescription }}</p>
+             <ul class="service-index__examples">
+              {% for row in block.homeProcessExampleTable %}
+                  <li class="service-index__examples__item">
+                    {% if row.link | length %}
+                      <a href="{{siteUrl}}{{row.link}}">
+                    {% endif %}
+                    {{ row.examples }}
+                    {% if row.link | length %}
+                      </a>
+                    {% endif %}
+                  </li>
+              {% endfor %}
+            </ul>
+  </div>
+
+{% endfor %}
+    <div class="service-index__examples__supplemental panel-primary">{{ entry.uxTestingLabDescription }}
+    <a class="button button-primary" href="{{ siteUrl }}ux">{{ entry.uxLabButton }}</a>
+    </div>
+</section>
+</div>
+{% if entry.video | length %}
+<section class="section-body-video panel-primary">
+  <figure class="section-body-video__figure video-container">
+    {{ entry.video|videoEmbed }}
+  <figcaption class="section-body-image__caption">{{ entry.caption }}</figcaption>
+  </figure>
+</section>
+{% endif %}
+
+    <div class="panel-secondary-container panel-background-image">
+      <section class="section-price panel-secondary">
+        <h2>{{ entry.priceHeadline}}</h2>
+        {% set image = entry.calloutImage.first() %}
+        {% if entry.calloutImage | length %}
+          <img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+          <div class="panel-secondary--left">
+            {{ entry.priceDescription }}
+          </div>
+          {% else %}
+          {{ entry.priceDescription }}
+        {% endif %}
+      </section>
+    </div>
+
+<div class="panel-primary-container">
+<section class="testimonial-entry panel-primary">
+{% set quote = craft.entries.section('testimonials').order('RAND()').limit(1) %}
+{% include '_includes/_testimonial.html' %}
+</section>
+</div>
+
+{% endblock %}

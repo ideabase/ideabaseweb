@@ -1,0 +1,16 @@
+{#
+Services Template
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+	<section class="service"
+		<h1 class="service__title">
+			{{ entry.title }}
+		</h1>
+		<p class="service__text">
+			{{ entry.serviceDescription }}
+		</p>
+	</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "_wiki-layout" %}
+{% block content %}
+
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+<section class="wiki-search">
+<div class="panel-primary">
+  <div class="wiki-search__text wiki-search__text--category">
+    <h1>Submit a KB Request</h1>
+  </div>
+</div>
+</section>
+{% from _self import errorList %}
+
+<section class="panel-primary wiki__form">
+
+<form method="post" action="" accept-charset="UTF-8">
+
+  {{ getCsrfInput() }}
+
+  <input type="hidden" name="redirect" value="{{ siteUrl }}success">
+  <input type="hidden" name="action" value="contactForm/sendMessage">
+
+{#
+    <label for="new-or-existing">New or Existing</label>
+    <input id="new" type="radio" name="new" value="{{ message.newOrExisting ?? '' }}">
+    <label for="new">New</label>
+    <input id="existing" type="radio" name="existing" value="{{ message.fromName ?? '' }}">
+    <label for="existing">Existing</label>
+    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+    #}
+
+    <div class="wiki__field">
+    <label for="new-or-existing">Is this a request for a new or existing article?</label>
+    <label><input type="radio" name="message[Services][]" value="New"> New</label>
+    <label><input type="radio" name="message[Services][]" value="Existing"> Existing</label>
+    </div>
+    <div class="wiki__field">
+    <label for="from-name">Your Name</label>
+    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+    </div>
+    <div class="wiki__field">
+    <label for="from-email">Your Email</label>
+    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+    </div>
+    <div class="wiki__field">
+    <label for="message">Requested Update or New Content</label>
+    <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message ?? '' }}</textarea>
+    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+    </div>
+    <input type="submit" value="Send">
+
+    <input type="hidden" name="redirect" value="wiki/send.html">
+</form>
+
+</section>
+
+{% endblock %}
