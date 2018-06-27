@@ -21,7 +21,7 @@ Process Template
     <div class="service-index__image">
 
 			{% for asset in entry.processFeaturedImage %}
-       			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+       			<img src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
     		{% endfor %}
     	</div>
     </section>
@@ -35,19 +35,19 @@ Process Template
       <h2 class="service-index__title">{{ block.homeProcessName }}</h2>
         <div class="service-index__icons">
             {% for asset in block.icon1 %}
-           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+           			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
         		 {% for asset in block.icon2 %}
-           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+           			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
         		{% for asset in block.icon3 %}
-           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+           			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
         		{% for asset in block.icon4 %}
-           			<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+           			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
           </div>
 
@@ -76,7 +76,10 @@ Process Template
 {% if entry.video | length %}
 <section class="section-body-video panel-primary">
   <figure class="section-body-video__figure video-container">
-    {{ entry.video|videoEmbed }}
+		{% set embed = craft.videoEmbedder.getEmbedUrl(entry.video) %}
+		{% if embed|length %}
+			<iframe src="{{ embed }}" height="400"></iframe>
+		{% endif %}
   <figcaption class="section-body-image__caption">{{ entry.caption }}</figcaption>
   </figure>
 </section>
@@ -87,7 +90,7 @@ Process Template
         <h2>{{ entry.priceHeadline}}</h2>
         {% set image = entry.calloutImage.first() %}
         {% if entry.calloutImage | length %}
-          <img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+          <img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
           <div class="panel-secondary--left">
             {{ entry.priceDescription }}
           </div>

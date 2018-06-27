@@ -10,7 +10,7 @@
 	<div class="people__image">
 		{% if entry.staffHeadshot|length %}
 			{% for asset in entry.staffHeadshot %}
-	     		<img src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}">
+	     		<img src="{{ asset.url('thumb') }}" alt= "{{ asset.title}}">
 	   		{% endfor %}
 	   	{% endif %}
    	</div>
@@ -59,7 +59,7 @@
 				<ul class="people-projects__list">
 					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
 					    	<li class="people-projects__list__item">
-			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       				<a href="{{ entry.url }}">{{ entry.title }}</a>
 			       			</li>
 			    		{% endfor %}
 			    </ul>
@@ -75,7 +75,7 @@
 				<ul class="people-posts__list">
 			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
 			    			<li class="people-posts__list__item">
-			       				<a href="{{ entry.getUrl }}">{{ entry.title }}</a>
+			       				<a href="{{ entry.url }}">{{ entry.title }}</a>
 			       			</li>
 			    		{% endfor %}
 			    </ul>

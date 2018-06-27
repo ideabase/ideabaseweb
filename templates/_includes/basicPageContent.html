@@ -22,7 +22,7 @@
         {% if image %}
         	<section class="section-body-image panel-primary">
         		<figure class="section-body-image__figure">
-        			<img class="section-body-image__image" src="{{ image.getUrl('basicPageImage') }}" alt="{{ image.title }}" />
+        			<img class="section-body-image__image" src="{{ image.url('basicPageImage') }}" alt="{{ image.title }}" />
         			<figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
         		</figure>
         	</section>
@@ -32,7 +32,10 @@
 
     <section class="section-body-video panel-primary">
     	<figure class="section-body-video__figure video-container">
-    		{{ block.videoURL|videoEmbed }}
+        {% set embed = craft.videoEmbedder.getEmbedUrl(block.videoURL) %}
+        {% if embed|length %}
+    		  <iframe src="{{ embed }}" height="400"></iframe>
+        {% endif %}
     		<figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
     	</figure>
     </section>
@@ -44,7 +47,7 @@
         <h2>{{ block.callOut }}</h2>
         {% set image = block.callOutImage.first() %}
         {% if image %}
-        	<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
+        	<img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
             <div class="panel-secondary--left">
                 {{ block.callOutText }}
             </div>

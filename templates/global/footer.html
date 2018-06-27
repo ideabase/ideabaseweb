@@ -82,7 +82,7 @@
 				<div class="footer-info__bottom">
 					{% for asset in footer.kentStateLogo %}
 				     	<div class="footer-info__logo">
-								<img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+								<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
 							</div>
 				    {% endfor %}
 					<div class="footer-info__legal">

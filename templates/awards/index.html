@@ -9,7 +9,7 @@
 		.awards.section-header { 
 			{% if headerImages.awardHeaderImage | length %}
 			    {% for asset in headerImages.awardHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageSmall') }});
+			        background-image: url({{ asset.url('featureImageSmall') }});
 			    {% endfor %}
 			{% endif %}
 		}
@@ -17,7 +17,7 @@
 			.awards.section-header  {
 				{% if headerImages.awardHeaderImage | length %}
 			    {% for asset in headerImages.awardHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageMedium') }});
+			        background-image: url({{ asset.url('featureImageMedium') }});
 			    {% endfor %}
 			{% endif %}
 			}
@@ -26,7 +26,7 @@
 			.awards.section-header  {
 				{% if headerImages.awardHeaderImage | length %}
 			    {% for asset in headerImages.awardHeaderImage %}
-			        background-image: url({{ asset.getUrl('featureImageLarge') }});
+			        background-image: url({{ asset.url('featureImageLarge') }});
 			    {% endfor %}
 			{% endif %}
 			}

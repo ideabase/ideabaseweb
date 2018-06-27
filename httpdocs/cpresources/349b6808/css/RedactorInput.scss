@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@import "../../../../../lib/craftcms-sass/mixins";
+
+body {
+  #redactor-overlay {
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  .redactor-modal {
+    @include sans-serif-font;
+    border-radius: $paneBorderRadius;
+    background: #fff;
+    z-index: 1052;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+  }
+
+  .redactor-dropdown {
+    @include sans-serif-font;
+    font-size: 14px;
+  }
+
+  .redactor-dropdown-format {
+    .redactor-dropdown-item-h1,
+    .redactor-dropdown-item-h2,
+    .redactor-dropdown-item-h3,
+    .redactor-dropdown-item-h4,
+    .redactor-dropdown-item-h5,
+    .redactor-dropdown-item-h6 {
+      font-weight: 600;
+    }
+
+    .redactor-dropdown-item-h1 {
+      font-size: 32px;
+    }
+
+    .redactor-dropdown-item-h2 {
+      font-size: 24px;
+    }
+
+    .redactor-dropdown-item-h3 {
+      font-size: 20px;
+    }
+
+    .redactor-dropdown-item-h4 {
+      font-size: 16px;
+    }
+
+    .redactor-dropdown-item-h5 {
+      font-size: 14px;
+    }
+
+    .redactor-dropdown-item-h6 {
+      font-size: 13.6px;
+      color: $mediumTextColor;
+    }
+
+    .redactor-dropdown-item-pre {
+      @include fixed-width-font;
+    }
+  }
+}
+
+.input {
+  &.errors > div.redactor-box {
+    border: 1px solid $errorColor !important;
+  }
+
+  .redactor-dropdown {
+    @include menu-styles;
+  }
+
+  .redactor-dropdown a {
+    @include menu-option-styles;
+  }
+
+  .redactor-dropdown a:hover {
+    @include menu-option-active-styles;
+  }
+
+  .redactor-dropdown a:hover span {
+    color: $textColor !important;
+  }
+
+  .redactor-box:not(.redactor-box-fullscreen) {
+    @include text-input-styles;
+  }
+
+  .redactor-box.focus:not(.redactor-box-fullscreen) {
+    border-color: $darkHairlineColorAlpha !important;
+  }
+
+  /* redactor */
+  .redactor-box,
+  .redactor-toolbar,
+  .redactor-box textarea {
+    z-index: auto !important;
+  }
+
+  .redactor-toolbar-fixed {
+    z-index: 2 !important;
+    background-color: #ffffff !important;
+  }
+
+  .redactor-box {
+    margin-bottom: 0;
+  }
+
+  .redactor-box.redactor-box-fullscreen {
+    z-index: 100 !important;
+  }
+
+  .redactor-toolbar,
+  .redactor-air {
+    @include sans-serif-font;
+  }
+
+  .redactor-toolbar {
+    top: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .redactor-toolbar a,
+  .redactor-air a {
+    box-shadow: inset 0 0 0 1px transparent, 0 0 0 1px rgba(0, 0, 0, 0.025), 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .redactor-toolbar.toolbar-fixed-box {
+    @include pane;
+    z-index: 102 !important;
+  }
+
+  .redactor-toolbar li a {
+    color: $textColor;
+  }
+
+  .redactor-toolbar li a:hover {
+    background-color: $lightSelColor;
+    color: $textColor;
+    text-decoration: none;
+  }
+
+  .redactor-toolbar li a:active,
+  .redactor-toolbar li a.redactor-act {
+    background-color: $darkSelColor;
+    color: #fff;
+  }
+
+  .redactor-toolbar li:first-child a {
+    border-top-left-radius: 2px;
+  }
+
+  .redactor-dropdown {
+    z-index: 100;
+  }
+
+  .redactor-dropdown li {
+    border-bottom: none;
+    background: none;
+  }
+
+  .redactor-box:not(.redactor-box-fullscreen) .redactor-layer {
+    background: none;
+    border: none;
+    border-top: 1px solid $hairlineColor;
+  }
+
+  .redactor-box textarea {
+    display: block;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .redactor-link-tooltip {
+    z-index: 101;
+  }
+
+  .redactor-toolbar {
+    z-index: 102;
+  }
+
+  .redactor-layer {
+    border: none;
+    border-top: 1px solid $hairlineColor;
+  }
+
+  .redactor-styles {
+    @include readable;
+    @include sans-serif-font;
+    font-size: 16px;
+    line-height: 22px;
+    color: $textColor;
+
+    pre, time, small, var, code, kbd, mark {
+      @include fixed-width-font;
+      color: $textColor;
+    }
+
+    small {
+      font-size: 0.7em !important;
+    }
+  }
+}
+
+.redactor-box-fullscreen {
+  z-index: 100 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}

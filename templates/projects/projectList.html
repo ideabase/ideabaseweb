@@ -42,7 +42,7 @@
 					{%  for category in projectCategory.order('title asc') %}
 					<li class="project-category__list__item">
 						{% for asset in category.categoryIcon %}
-						<a class="category-link" title="{{category.title}}" href="{{ category.url }}" style="background-image:url({{ asset.getUrl() }})">
+						<a class="category-link" title="{{category.title}}" href="{{ category.url }}" style="background-image:url({{ asset.url() }})">
 							{{category.title}}
 						</a>
 						{% endfor %}
@@ -67,16 +67,16 @@
 								{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
         						{% if relatedAward | length %}
 									{% for asset in awardIcons.trophyBadgeIcon %}
-										<img class="trophy-icon" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+										<img class="trophy-icon" src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
 						            {% endfor %}
 					            {% endif %}
-					     		<img src="{{ asset.getURL('projectThumb') }}" alt= "{{ asset.title}}">
+					     		<img src="{{ asset.url('projectThumb') }}" alt= "{{ asset.title}}">
 					     	</div>
 					     {% endfor %}
 					     {% else %}
 					     	<div class="project-list__item__image">
 					     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-					     	     	<img src="{{ asset.getURL('projectThumb') }}" alt= "No Image Found">
+					     	     	<img src="{{ asset.url('projectThumb') }}" alt= "No Image Found">
 					     	     {% endfor %}
 					     	</div>
 					    {% endif %}

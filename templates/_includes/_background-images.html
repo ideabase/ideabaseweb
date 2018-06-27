@@ -1,28 +1,28 @@
 <style type="text/css">
 {% if entry.aboutImage | length %}
 
-		{% set image = entry.aboutImage.first %}
+		{% set image = entry.aboutImage.one() %}
 
 		.section-header {
-			        background-image: url({{ image.getUrl('featureImageSmall') }});
+			        background-image: url({{ image.url('featureImageSmall') }});
 		}
 
 		@media screen and (min-width: 600px) {
 			.section-header{
-			        background-image: url({{ image.getUrl('featureImageMedium') }});
+			        background-image: url({{ image.url('featureImageMedium') }});
 			}
 		}
 		@media screen and (min-width: 1000px) {
 			.section-header {
-			        background-image: url({{ image.getUrl('featureImageLarge') }});
+			        background-image: url({{ image.url('featureImageLarge') }});
 			}
 		}
 {% endif %}
 
 		.panel-background-image {
 			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
-			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}
-			        background-image: url({{ asset.getUrl() }});
+			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).all() %}
+			        background-image: url({{ asset.url() }});
 			    {% endfor %}
 			{% endif %}
 		}

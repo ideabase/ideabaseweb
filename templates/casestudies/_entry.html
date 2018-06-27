@@ -7,7 +7,7 @@
 
 <section class="section-header-blog-basic-page">
 		{% for asset in entry.blogFeaturedImage %}
-		  <img class="blog__entry__image" src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		  <img class="blog__entry__image" src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
 		{% endfor %}
 </section>
 <div class="panel-primary-container">
@@ -33,7 +33,7 @@
 			        {% if image %}
 			        	<section class="section-body-image panel-primary">
 			        		<figure class="section-body-image__figure">
-			        			<img class="section-body-image__image" src="{{ image.getUrl('thumb') }}" alt="{{ image.title }}" />
+			        			<img class="section-body-image__image" src="{{ image.url('thumb') }}" alt="{{ image.title }}" />
 			        			<figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
 			        		</figure>
 			        	</section>
@@ -65,7 +65,7 @@
 		{% for entry in entry.blogAuthor %}
 		<div class="blog__entry__author__image">
 			{% for asset in entry.staffHeadshot %}
-		     	<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
+		     	<img src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
 		   	{% endfor %}
 		 </div>
 		 <span class="blog__entry__author__name">{{ entry.title }}

@@ -17,23 +17,23 @@
 	<meta itemprop="name" content="entry.title">
 	{% if entry.aboutImage is defined and entry.aboutImage is not null %}
 	    {% for asset in entry.aboutImage %}
-	        <meta itemprop="image" content="{{ asset.getUrl('featureImageSmall') }}">
-	        <meta name="twitter:image:src" content="{{ asset.getUrl('featureImageSmall') }}">
-	        <meta property="og:image" content="{{ asset.getUrl('featureImageSmall') }}">
+	        <meta itemprop="image" content="{{ asset.url('featureImageSmall') }}">
+	        <meta name="twitter:image:src" content="{{ asset.url('featureImageSmall') }}">
+	        <meta property="og:image" content="{{ asset.url('featureImageSmall') }}">
 	    {% endfor %}
 	{% endif %}
 	{% if entry.blogFeaturedImage is defined and entry.blogFeaturedImage is not null %}
 	    {% for asset in entry.blogFeaturedImage %}
-	        <meta itemprop="image" content="{{ asset.getUrl() }}">
-	        <meta name="twitter:image:src" content="{{ asset.getUrl() }}">
-	        <meta property="og:image" content="{{ asset.getUrl() }}">
+	        <meta itemprop="image" content="{{ asset.url() }}">
+	        <meta name="twitter:image:src" content="{{ asset.url() }}">
+	        <meta property="og:image" content="{{ asset.url() }}">
 	    {% endfor %}
 	{% endif %}
 	{% if entry.staffHeadshot is defined and entry.staffHeadshot is not null %}
 	    {% for asset in entry.staffHeadshot %}
-	        <meta itemprop="image" content="{{ asset.getUrl() }}">
-	        <meta name="twitter:image:src" content="{{ asset.getUrl() }}">
-	        <meta property="og:image" content="{{ asset.getUrl() }}">
+	        <meta itemprop="image" content="{{ asset.url() }}">
+	        <meta name="twitter:image:src" content="{{ asset.url() }}">
+	        <meta property="og:image" content="{{ asset.url() }}">
 	    {% endfor %}
 	{% endif %}
 	<!-- Twitter -->

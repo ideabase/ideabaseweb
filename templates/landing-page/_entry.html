@@ -50,13 +50,13 @@
       {% if asset|length %}
         {% for asset in entry.projectPicture.limit(1) %}
             <div class="project-list__item__image">
-              <img class="" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+              <img class="" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
             </div>
           {% endfor %}
           {% else %}
           <div class="project-list__item__image">
                {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-                <img src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+                <img src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
                {% endfor %}
         {% endif %}
         <h2 class="project-list__item__name">{{ entry.title }}</h2>
@@ -81,7 +81,7 @@
   <a href="{{ entry.url }}">
   <div class="blog__entry__author__image">
     {% for asset in entry.staffHeadshot %}
-        <img src="{{ asset.getUrl('staffCircle') }}" alt= "{{ asset.title}}">
+        <img src="{{ asset.url('staffCircle') }}" alt= "{{ asset.title}}">
       {% endfor %}
    </div>
    <span class="blog__entry__author__name">{{ entry.title }}

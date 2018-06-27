@@ -14,7 +14,7 @@
 	<section class="section-header video-background">
 		<video autoplay muted loop class="hero-video">
 		{% for asset in videoBackground.fileTypeOne %}
-			<source src="{{ asset.getUrl('fileTypeOne') }}" type="video/mp4">
+			<source src="{{ asset.url('fileTypeOne') }}" type="video/mp4">
 		{% endfor %}
 		</video>
     {% endcache %}
@@ -44,9 +44,9 @@
 							<li class="section-services__list__item">
 								{% for asset in block.homepageIcon %}
                         <noscript>
-                          <img class="section-services__list__item__icon" src="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+                          <img class="section-services__list__item__icon" src="{{ asset.url() }}" alt= "{{ asset.title}}">
                         </noscript>
-							       		<img class="lazy section-services__list__item__icon" data-original="{{ asset.getUrl() }}" alt= "{{ asset.title}}">
+							       		<img class="lazy section-services__list__item__icon" data-original="{{ asset.url() }}" alt= "{{ asset.title}}">
 							    {% endfor %}
 							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3>
 							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
@@ -74,11 +74,11 @@
 				    <a href="{{ entry.url }}">
 				    {% if entry.projectPicture|length %}
 							{% for asset in entry.projectPicture.limit(1) %}
-                  <img class="section-projects__list__item__thumb" src="{{ asset.getUrl('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+                  <img class="section-projects__list__item__thumb" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
                 {% endfor %}
    						{% else %}
    						{% for asset in imagePlaceholder.aboutImage %}
-   					   		<img class="section-projects__list__item__thumb"  src="{{ asset.getURL('thumbnailLandscape') }}" alt= "No Image Found">
+   					   		<img class="section-projects__list__item__thumb"  src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
    					 	{% endfor %}
    					 {% endif %}
 				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
@@ -103,9 +103,9 @@
      			{% for asset in block.projectImageLogo %}
            			<li class="section-people__logos__item">
                   <noscript>
-                    <img src="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+                    <img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
                   </noscript>
-                  <img class="lazy" data-original="{{ asset.getUrl('') }}" alt= "{{ asset.title}}">
+                  <img class="lazy" data-original="{{ asset.url('') }}" alt= "{{ asset.title}}">
                 </li>
         		{% endfor %}
 			</ul>

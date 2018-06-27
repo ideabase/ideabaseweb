@@ -24,7 +24,7 @@
 			.section-header { 
 				{% if fourofour.aboutImage | length %}
 				    {% for asset in fourofour.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageSmall') }});
+				        background-image: url({{ asset.url('featureImageSmall') }});
 				    {% endfor %}
 				{% endif %}
 			}
@@ -32,7 +32,7 @@
 				.section-header {
 					{% if fourofour.aboutImage | length %}
 				    {% for asset in fourofour.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageMedium') }});
+				        background-image: url({{ asset.url('featureImageMedium') }});
 				    {% endfor %}
 				{% endif %}
 				}
@@ -41,7 +41,7 @@
 				.section-header {
 					{% if fourofour.aboutImage | length %}
 				    {% for asset in fourofour.aboutImage %}
-				        background-image: url({{ asset.getUrl('featureImageLarge') }});
+				        background-image: url({{ asset.url('featureImageLarge') }});
 				    {% endfor %}
 				{% endif %}
 				}

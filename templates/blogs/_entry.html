@@ -10,10 +10,10 @@
 <section class="section-header-blog-basic-page">
 		{% for asset in entry.blogFeaturedImage %}
 		<picture>
-		  <source media="(max-width: 639px)" srcset="{{ asset.getUrl('featureImageSmall') }}" >
-		  <source media="(min-width: 1024px)" srcset="{{ asset.getUrl('featureImageLarge') }}">
-		  <source media="(min-width: 640px)" srcset="{{ asset.getUrl('featureImageMedium') }}">
-		  <img class="blog__entry__image" srcset="{{ asset.getUrl('featureImageLarge') }}" alt= "{{ asset.title}}">
+		  <source media="(max-width: 639px)" srcset="{{ asset.url('featureImageSmall') }}" >
+		  <source media="(min-width: 1024px)" srcset="{{ asset.url('featureImageLarge') }}">
+		  <source media="(min-width: 640px)" srcset="{{ asset.url('featureImageMedium') }}">
+		  <img class="blog__entry__image" srcset="{{ asset.url('featureImageLarge') }}" alt= "{{ asset.title}}">
 		</picture>
 		{% endfor %}
 </section>
@@ -49,7 +49,7 @@
 			        {% if image %}
 			        	<section class="section-body-image panel-primary">
 			        		<figure class="section-body-image__figure">
-			        			<img class="section-body-image__image" src="{{ image.getUrl('blogInlineImage') }}" alt="{{ image.title }}" />
+			        			<img class="section-body-image__image" src="{{ image.url('blogInlineImage') }}" alt="{{ image.title }}" />
 			        			<figcaption class="section-body-image__caption">{{ image.caption }}</figcaption>
 			        		</figure>
 			        	</section>
@@ -59,7 +59,10 @@
 
 			    <section class="section-body-video panel-primary">
 			    	<figure class="section-body-video__figure video-container">
-			    		{{ block.videoUrl|videoEmbed }}
+							{% set embed = craft.videoEmbedder.getEmbedUrl(block.videoURL) %}
+			        {% if embed|length %}
+			    		  <iframe src="{{ embed }}" height="400"></iframe>
+			        {% endif %}
 			    		<figcaption class="section-body-image__caption">{{ block.videoCaption }}</figcaption>
 			    	</figure>
 			    </section>

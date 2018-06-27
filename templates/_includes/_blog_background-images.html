@@ -4,16 +4,16 @@
 {% set image = headerImages.blogHeaderImage.first %}
 
 		.blog.section-header {
-			        background-image: url({{ image.getUrl('featureImageSmall') }});
+			        background-image: url({{ image.url('featureImageSmall') }});
 		}
 		@media screen and (min-width: 600px) {
 			.blog.section-header {
-			        background-image: url({{ image.getUrl('featureImageMedium') }});
+			        background-image: url({{ image.url('featureImageMedium') }});
 			}
 		}
 		@media screen and (min-width: 1000px) {
 			.blog.section-header {
-			        background-image: url({{ image.getUrl('featureImageLarge') }});
+			        background-image: url({{ image.url('featureImageLarge') }});
 			}
 		}
 {% endif %}
@@ -21,7 +21,7 @@
 		.panel-background-image {
 			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
 			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}
-			        background-image: url({{ asset.getUrl('brickMedium') }});
+			        background-image: url({{ asset.url('brickMedium') }});
 			    {% endfor %}
 			{% endif %}
 		}

@@ -45,7 +45,7 @@
                           {% if entry.blogFeaturedImage | length %}
                               {% for asset in entry.blogFeaturedImage %}
                               <figure>
-                                <img class="blog__entry__image" src="{{ asset.getUrl('featureImageLarge') }}" alt= "{{ asset.title}}">
+                                <img class="blog__entry__image" src="{{ asset.url('featureImageLarge') }}" alt= "{{ asset.title}}">
                               </figure>
                               {% endfor %}
                           {% endif %}
@@ -58,7 +58,7 @@
                                 {% set image = block.image.first() %}
                                 {% if image %}
                                     <figure>
-                                      <img src="{{ image.getUrl('basicPageImage') }}" alt="{{ image.title }}" />
+                                      <img src="{{ image.url('basicPageImage') }}" alt="{{ image.title }}" />
                                       <figcaption>{{ image.caption }}</figcaption>
                                     </figure>
                                 {% endif %}

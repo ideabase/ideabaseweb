@@ -6,7 +6,7 @@
     {% set numberOfAuthors = entry.blogAuthor|length %}
 
     {% if numberOfAuthors < 2 %}
-      {% for entry in entry.blogAuthor %}
+      {% for entry in entry.blogAuthor.all() %}
       <p class="blog-teaser__author">
         {{ entry.title }}</p>
       {% endfor %}
@@ -27,7 +27,7 @@
           </div>
 
     {% if numberOfAuthors < 2 %}
-      {% for entry in BlogAuthorName %}
+      {% for entry in BlogAuthorName.all() %}
       <p class="blog-teaser__link">Read {{ entry.profileFirstName }}'s Post</p>
       {% endfor %}
     {% else %}

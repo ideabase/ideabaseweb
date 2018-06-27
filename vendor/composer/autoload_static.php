@@ -45,16 +45,23 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'm' => 
         array (
             'modules\\' => 8,
+            'mikestecker\\videoembedder\\' => 26,
             'mikehaertl\\shellcommand\\' => 24,
         ),
         'e' => 
         array (
             'enshrined\\svgSanitize\\' => 22,
         ),
+        'd' => 
+        array (
+            'dolphiq\\sitemap\\' => 16,
+        ),
         'c' => 
         array (
             'creocoder\\nestedsets\\' => 21,
             'craftcms\\oauth2\\client\\' => 23,
+            'craft\\redactor\\' => 15,
+            'craft\\contactform\\' => 18,
             'craft\\composer\\' => 15,
             'craft\\awss3\\' => 12,
             'craft\\' => 6,
@@ -99,6 +106,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             'JsonSchema\\' => 11,
             'JmesPath\\' => 9,
+            'Jaybizzle\\CrawlerDetect\\' => 24,
         ),
         'G' => 
         array (
@@ -108,6 +116,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         ),
         'E' => 
         array (
+            'Embed\\' => 6,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -196,6 +205,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             0 => __DIR__ . '/../..' . '/modules',
         ),
+        'mikestecker\\videoembedder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src',
+        ),
         'mikehaertl\\shellcommand\\' => 
         array (
             0 => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src',
@@ -204,6 +217,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
         ),
+        'dolphiq\\sitemap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dolphiq/sitemap/src',
+        ),
         'creocoder\\nestedsets\\' => 
         array (
             0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
@@ -211,6 +228,14 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craftcms\\oauth2\\client\\' => 
         array (
             0 => __DIR__ . '/..' . '/craftcms/oauth2-craftid/src',
+        ),
+        'craft\\redactor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/craftcms/redactor/src',
+        ),
+        'craft\\contactform\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/craftcms/contact-form/src',
         ),
         'craft\\composer\\' => 
         array (
@@ -316,6 +341,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
         ),
+        'Jaybizzle\\CrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -327,6 +356,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Embed\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/embed/embed/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -1159,6 +1192,93 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Warning.php',
+        'Embed\\Adapters\\Adapter' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Adapter.php',
+        'Embed\\Adapters\\Archive' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Archive.php',
+        'Embed\\Adapters\\Cadenaser' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Cadenaser.php',
+        'Embed\\Adapters\\Carto' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Carto.php',
+        'Embed\\Adapters\\Cnn' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Cnn.php',
+        'Embed\\Adapters\\Facebook' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Facebook.php',
+        'Embed\\Adapters\\File' => __DIR__ . '/..' . '/embed/embed/src/Adapters/File.php',
+        'Embed\\Adapters\\Flickr' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Flickr.php',
+        'Embed\\Adapters\\Github' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Github.php',
+        'Embed\\Adapters\\Google' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Google.php',
+        'Embed\\Adapters\\Howcast' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Howcast.php',
+        'Embed\\Adapters\\Ideone' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Ideone.php',
+        'Embed\\Adapters\\Imageshack' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Imageshack.php',
+        'Embed\\Adapters\\Jsfiddle' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Jsfiddle.php',
+        'Embed\\Adapters\\Lavozdegalicia' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Lavozdegalicia.php',
+        'Embed\\Adapters\\Line' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Line.php',
+        'Embed\\Adapters\\N500px' => __DIR__ . '/..' . '/embed/embed/src/Adapters/N500px.php',
+        'Embed\\Adapters\\Parleys' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Parleys.php',
+        'Embed\\Adapters\\Pastebin' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Pastebin.php',
+        'Embed\\Adapters\\Pastie' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Pastie.php',
+        'Embed\\Adapters\\Pinterest' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Pinterest.php',
+        'Embed\\Adapters\\Sassmeister' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Sassmeister.php',
+        'Embed\\Adapters\\Slides' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Slides.php',
+        'Embed\\Adapters\\Snipplr' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Snipplr.php',
+        'Embed\\Adapters\\Webpage' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Webpage.php',
+        'Embed\\Adapters\\Wikipedia' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Wikipedia.php',
+        'Embed\\Adapters\\Youtube' => __DIR__ . '/..' . '/embed/embed/src/Adapters/Youtube.php',
+        'Embed\\Bag' => __DIR__ . '/..' . '/embed/embed/src/Bag.php',
+        'Embed\\DataInterface' => __DIR__ . '/..' . '/embed/embed/src/DataInterface.php',
+        'Embed\\Embed' => __DIR__ . '/..' . '/embed/embed/src/Embed.php',
+        'Embed\\Exceptions\\EmbedException' => __DIR__ . '/..' . '/embed/embed/src/Exceptions/EmbedException.php',
+        'Embed\\Exceptions\\InvalidUrlException' => __DIR__ . '/..' . '/embed/embed/src/Exceptions/InvalidUrlException.php',
+        'Embed\\Http\\AbstractResponse' => __DIR__ . '/..' . '/embed/embed/src/Http/AbstractResponse.php',
+        'Embed\\Http\\CurlDispatcher' => __DIR__ . '/..' . '/embed/embed/src/Http/CurlDispatcher.php',
+        'Embed\\Http\\CurlResult' => __DIR__ . '/..' . '/embed/embed/src/Http/CurlResult.php',
+        'Embed\\Http\\DispatcherInterface' => __DIR__ . '/..' . '/embed/embed/src/Http/DispatcherInterface.php',
+        'Embed\\Http\\ImageResponse' => __DIR__ . '/..' . '/embed/embed/src/Http/ImageResponse.php',
+        'Embed\\Http\\Redirects' => __DIR__ . '/..' . '/embed/embed/src/Http/Redirects.php',
+        'Embed\\Http\\Response' => __DIR__ . '/..' . '/embed/embed/src/Http/Response.php',
+        'Embed\\Http\\Url' => __DIR__ . '/..' . '/embed/embed/src/Http/Url.php',
+        'Embed\\Providers\\Api\\Archive' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Archive.php',
+        'Embed\\Providers\\Api\\Facebook' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Facebook.php',
+        'Embed\\Providers\\Api\\Gist' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Gist.php',
+        'Embed\\Providers\\Api\\GoogleMaps' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/GoogleMaps.php',
+        'Embed\\Providers\\Api\\Imageshack' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Imageshack.php',
+        'Embed\\Providers\\Api\\Soundcloud' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Soundcloud.php',
+        'Embed\\Providers\\Api\\Wikipedia' => __DIR__ . '/..' . '/embed/embed/src/Providers/Api/Wikipedia.php',
+        'Embed\\Providers\\Dcterms' => __DIR__ . '/..' . '/embed/embed/src/Providers/Dcterms.php',
+        'Embed\\Providers\\Html' => __DIR__ . '/..' . '/embed/embed/src/Providers/Html.php',
+        'Embed\\Providers\\Linkpulse' => __DIR__ . '/..' . '/embed/embed/src/Providers/Linkpulse.php',
+        'Embed\\Providers\\OEmbed' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed.php',
+        'Embed\\Providers\\OEmbed\\Amcharts' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Amcharts.php',
+        'Embed\\Providers\\OEmbed\\Bambuser' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Bambuser.php',
+        'Embed\\Providers\\OEmbed\\DOM' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/DOM.php',
+        'Embed\\Providers\\OEmbed\\Dailymotion' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Dailymotion.php',
+        'Embed\\Providers\\OEmbed\\Deviantart' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Deviantart.php',
+        'Embed\\Providers\\OEmbed\\Dotsub' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Dotsub.php',
+        'Embed\\Providers\\OEmbed\\Embedly' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Embedly.php',
+        'Embed\\Providers\\OEmbed\\EndPoint' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/EndPoint.php',
+        'Embed\\Providers\\OEmbed\\EndPointInterface' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/EndPointInterface.php',
+        'Embed\\Providers\\OEmbed\\Facebook' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Facebook.php',
+        'Embed\\Providers\\OEmbed\\Flickr' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Flickr.php',
+        'Embed\\Providers\\OEmbed\\Iframely' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Iframely.php',
+        'Embed\\Providers\\OEmbed\\Imgur' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Imgur.php',
+        'Embed\\Providers\\OEmbed\\Infogram' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Infogram.php',
+        'Embed\\Providers\\OEmbed\\Instagram' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Instagram.php',
+        'Embed\\Providers\\OEmbed\\Jsbin' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Jsbin.php',
+        'Embed\\Providers\\OEmbed\\Kickstarter' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Kickstarter.php',
+        'Embed\\Providers\\OEmbed\\Meetup' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Meetup.php',
+        'Embed\\Providers\\OEmbed\\Photobucket' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Photobucket.php',
+        'Embed\\Providers\\OEmbed\\Polldaddy' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Polldaddy.php',
+        'Embed\\Providers\\OEmbed\\Reddit' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Reddit.php',
+        'Embed\\Providers\\OEmbed\\Scribd' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Scribd.php',
+        'Embed\\Providers\\OEmbed\\Shoudio' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Shoudio.php',
+        'Embed\\Providers\\OEmbed\\Smugmug' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Smugmug.php',
+        'Embed\\Providers\\OEmbed\\Soundcloud' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Soundcloud.php',
+        'Embed\\Providers\\OEmbed\\Spotify' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Spotify.php',
+        'Embed\\Providers\\OEmbed\\Tumblr' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Tumblr.php',
+        'Embed\\Providers\\OEmbed\\Twitter' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Twitter.php',
+        'Embed\\Providers\\OEmbed\\Ustream' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Ustream.php',
+        'Embed\\Providers\\OEmbed\\WordPress' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/WordPress.php',
+        'Embed\\Providers\\OEmbed\\Youtube' => __DIR__ . '/..' . '/embed/embed/src/Providers/OEmbed/Youtube.php',
+        'Embed\\Providers\\OpenGraph' => __DIR__ . '/..' . '/embed/embed/src/Providers/OpenGraph.php',
+        'Embed\\Providers\\Provider' => __DIR__ . '/..' . '/embed/embed/src/Providers/Provider.php',
+        'Embed\\Providers\\Sailthru' => __DIR__ . '/..' . '/embed/embed/src/Providers/Sailthru.php',
+        'Embed\\Providers\\TwitterCards' => __DIR__ . '/..' . '/embed/embed/src/Providers/TwitterCards.php',
+        'Embed\\Utils' => __DIR__ . '/..' . '/embed/embed/src/Utils.php',
         'GuzzleHttp\\Client' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Client.php',
         'GuzzleHttp\\ClientInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/ClientInterface.php',
         'GuzzleHttp\\Cookie\\CookieJar' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Cookie/CookieJar.php',
@@ -1546,6 +1666,11 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Imagine\\Imagick\\Imagick' => __DIR__ . '/..' . '/pixelandtonic/imagine/lib/Imagine/Imagick/Imagick.php',
         'Imagine\\Imagick\\Imagine' => __DIR__ . '/..' . '/pixelandtonic/imagine/lib/Imagine/Imagick/Imagine.php',
         'Imagine\\Imagick\\Layers' => __DIR__ . '/..' . '/pixelandtonic/imagine/lib/Imagine/Imagick/Layers.php',
+        'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Exclusions' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Exclusions.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Headers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Headers.php',
         'JmesPath\\AstRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/AstRuntime.php',
         'JmesPath\\CompilerRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/CompilerRuntime.php',
         'JmesPath\\DebugRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/DebugRuntime.php',
@@ -2424,6 +2549,12 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\console\\controllers\\InstallController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/InstallController.php',
         'craft\\console\\controllers\\MigrateController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/MigrateController.php',
         'craft\\console\\controllers\\SetupController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/SetupController.php',
+        'craft\\contactform\\Mailer' => __DIR__ . '/..' . '/craftcms/contact-form/src/Mailer.php',
+        'craft\\contactform\\Plugin' => __DIR__ . '/..' . '/craftcms/contact-form/src/Plugin.php',
+        'craft\\contactform\\controllers\\SendController' => __DIR__ . '/..' . '/craftcms/contact-form/src/controllers/SendController.php',
+        'craft\\contactform\\events\\SendEvent' => __DIR__ . '/..' . '/craftcms/contact-form/src/events/SendEvent.php',
+        'craft\\contactform\\models\\Settings' => __DIR__ . '/..' . '/craftcms/contact-form/src/models/Settings.php',
+        'craft\\contactform\\models\\Submission' => __DIR__ . '/..' . '/craftcms/contact-form/src/models/Submission.php',
         'craft\\controllers\\AppController' => __DIR__ . '/..' . '/craftcms/cms/src/controllers/AppController.php',
         'craft\\controllers\\AssetTransformsController' => __DIR__ . '/..' . '/craftcms/cms/src/controllers/AssetTransformsController.php',
         'craft\\controllers\\AssetsController' => __DIR__ . '/..' . '/craftcms/cms/src/controllers/AssetsController.php',
@@ -2894,6 +3025,16 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\records\\Volume' => __DIR__ . '/..' . '/craftcms/cms/src/records/Volume.php',
         'craft\\records\\VolumeFolder' => __DIR__ . '/..' . '/craftcms/cms/src/records/VolumeFolder.php',
         'craft\\records\\Widget' => __DIR__ . '/..' . '/craftcms/cms/src/records/Widget.php',
+        'craft\\redactor\\Field' => __DIR__ . '/..' . '/craftcms/redactor/src/Field.php',
+        'craft\\redactor\\FieldData' => __DIR__ . '/..' . '/craftcms/redactor/src/FieldData.php',
+        'craft\\redactor\\Plugin' => __DIR__ . '/..' . '/craftcms/redactor/src/Plugin.php',
+        'craft\\redactor\\assets\\field\\FieldAsset' => __DIR__ . '/..' . '/craftcms/redactor/src/assets/field/FieldAsset.php',
+        'craft\\redactor\\assets\\redactor\\RedactorAsset' => __DIR__ . '/..' . '/craftcms/redactor/src/assets/redactor/RedactorAsset.php',
+        'craft\\redactor\\controllers\\DefaultController' => __DIR__ . '/..' . '/craftcms/redactor/src/controllers/DefaultController.php',
+        'craft\\redactor\\events\\RegisterLinkOptionsEvent' => __DIR__ . '/..' . '/craftcms/redactor/src/events/RegisterLinkOptionsEvent.php',
+        'craft\\redactor\\events\\RegisterPluginPathsEvent' => __DIR__ . '/..' . '/craftcms/redactor/src/events/RegisterPluginPathsEvent.php',
+        'craft\\redactor\\migrations\\Install' => __DIR__ . '/..' . '/craftcms/redactor/src/migrations/Install.php',
+        'craft\\redactor\\migrations\\m180430_204710_remove_old_plugins' => __DIR__ . '/..' . '/craftcms/redactor/src/migrations/m180430_204710_remove_old_plugins.php',
         'craft\\search\\SearchQuery' => __DIR__ . '/..' . '/craftcms/cms/src/search/SearchQuery.php',
         'craft\\search\\SearchQueryTerm' => __DIR__ . '/..' . '/craftcms/cms/src/search/SearchQueryTerm.php',
         'craft\\search\\SearchQueryTermGroup' => __DIR__ . '/..' . '/craftcms/cms/src/search/SearchQueryTermGroup.php',
@@ -3108,12 +3249,26 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craftcms\\oauth2\\client\\provider\\CraftIdUser' => __DIR__ . '/..' . '/craftcms/oauth2-craftid/src/provider/CraftIdUser.php',
         'creocoder\\nestedsets\\NestedSetsBehavior' => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src/NestedSetsBehavior.php',
         'creocoder\\nestedsets\\NestedSetsQueryBehavior' => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src/NestedSetsQueryBehavior.php',
+        'dolphiq\\sitemap\\Sitemap' => __DIR__ . '/..' . '/dolphiq/sitemap/src/Sitemap.php',
+        'dolphiq\\sitemap\\assetbundles\\Sitemap\\SitemapAsset' => __DIR__ . '/..' . '/dolphiq/sitemap/src/assetbundles/sitemap/SitemapAsset.php',
+        'dolphiq\\sitemap\\assetbundles\\indexcpsection\\IndexCPSectionAsset' => __DIR__ . '/..' . '/dolphiq/sitemap/src/assetbundles/indexcpsection/IndexCPSectionAsset.php',
+        'dolphiq\\sitemap\\controllers\\SettingsController' => __DIR__ . '/..' . '/dolphiq/sitemap/src/controllers/SettingsController.php',
+        'dolphiq\\sitemap\\controllers\\SitemapController' => __DIR__ . '/..' . '/dolphiq/sitemap/src/controllers/SitemapController.php',
+        'dolphiq\\sitemap\\migrations\\Install' => __DIR__ . '/..' . '/dolphiq/sitemap/src/migrations/Install.php',
+        'dolphiq\\sitemap\\migrations\\m171217_220906_c_crawler_visit_table' => __DIR__ . '/..' . '/dolphiq/sitemap/src/migrations/m171217_220906_c_crawler_visit_table.php',
+        'dolphiq\\sitemap\\models\\Settings' => __DIR__ . '/..' . '/dolphiq/sitemap/src/models/Settings.php',
+        'dolphiq\\sitemap\\records\\SitemapCrawlerVisit' => __DIR__ . '/..' . '/dolphiq/sitemap/src/records/SitemapCrawlerVisit.php',
+        'dolphiq\\sitemap\\records\\SitemapEntry' => __DIR__ . '/..' . '/dolphiq/sitemap/src/records/SitemapEntry.php',
+        'dolphiq\\sitemap\\services\\SitemapService' => __DIR__ . '/..' . '/dolphiq/sitemap/src/services/SitemapService.php',
         'enshrined\\svgSanitize\\Sanitizer' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/Sanitizer.php',
         'enshrined\\svgSanitize\\data\\AllowedAttributes' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AllowedAttributes.php',
         'enshrined\\svgSanitize\\data\\AllowedTags' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AllowedTags.php',
         'enshrined\\svgSanitize\\data\\AttributeInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AttributeInterface.php',
         'enshrined\\svgSanitize\\data\\TagInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/TagInterface.php',
         'mikehaertl\\shellcommand\\Command' => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src/Command.php',
+        'mikestecker\\videoembedder\\VideoEmbedder' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/VideoEmbedder.php',
+        'mikestecker\\videoembedder\\services\\VideoEmbedderService' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/services/VideoEmbedderService.php',
+        'mikestecker\\videoembedder\\variables\\VideoEmbedderVariable' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/variables/VideoEmbedderVariable.php',
         'modules\\Module' => __DIR__ . '/../..' . '/modules/Module.php',
         'wbrowar\\adminbar\\AdminBar' => __DIR__ . '/..' . '/wbrowar/adminbar/src/AdminBar.php',
         'wbrowar\\adminbar\\assetbundles\\AdminBar\\AdminBarAsset' => __DIR__ . '/..' . '/wbrowar/adminbar/src/assetbundles/adminbar/AdminBarAsset.php',

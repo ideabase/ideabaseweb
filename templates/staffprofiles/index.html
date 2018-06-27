@@ -5,147 +5,134 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% include '_includes/_background-images.html' %}
-<section class="section-header section-header--interior">
-	<div class="section-header__container">
-		<h1 class="section-header__title">{{ entry.staffIndexHeader }}</h1>
-	</div>
-</section>
-		<!--
-		<div class="people-index__image">
-			{% for asset in entry.peopleFeaturedImage %}
-     			<img src="{{ asset.getUrl('featuredImageTop') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
-    	</div> -->
-<div class="panel-primary-container">
-<section class="section-introduction panel-primary">
-		<div class="introduction">{{ entry.staffIndexDescription }}</div>
-	</section>
-</div>
+  {% include '_includes/_background-images.html' %}
+  <section class="section-header section-header--interior">
+    <div class="section-header__container">
+      <h1 class="section-header__title">{{ entry.staffIndexHeader }}</h1>
+    </div>
+  </section>
+  <div class="panel-primary-container">
+    <section class="section-introduction panel-primary">
+      <div class="introduction">{{ entry.staffIndexDescription }}</div>
+    </section>
+  </div>
 
-<!--<div class="panel-primary-container">
-<section class="section-introduction panel-primary">
-    	<h2>{{ entry.qualityHeadline}}</h2>
-    	<p>{{ entry.qualityDescription }}</p>
-   </section>
- </div>	-->
-    {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
-	{% set leader = craft.entries.section('people').relatedTo(leaderGroup).alumniLightswitch('not 1') %}
-	{% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
-	{% set staff = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1') %}
-<div class="panel-primary-container">
-<section class="section-people panel-primary-wide">
-   <section class="people">
-    		{% for entry in leader.relatedTo(leaderGroup).order('profileLastName asc') %}
-    		<a href="{{ entry.Url }}" class="people__profile-item">
-    			{% if entry.staffHeadshot|length %}
-    				{% for asset in entry.staffHeadshot %}
-				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}" />
-				     {% endfor %}
-				     {% else %}
-				     	{% for asset in imagePlaceholder.aboutImage %}
-				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
-				     	{% endfor %}
-				{% endif %}
+  {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
+  {% set leader = craft.entries.section('people').relatedTo(leaderGroup).alumniLightswitch('not 1') %}
+  {% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
+  {% set staff = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1') %}
+  <div class="panel-primary-container">
+    <section class="section-people panel-primary-wide">
+      <section class="people">
+        {% for entry in leader.relatedTo(leaderGroup).orderBy('profileLastName asc').all() %}
+          <a href="{{ entry.Url }}" class="people__profile-item">
+            {% if entry.staffHeadshot | length %}
+              {% for asset in entry.staffHeadshot.all() %}
+                <img class="people__profile-item__photo" src="{{ asset.url('thumb') }}" alt="{{ asset.title}}"/>
+              {% endfor %}
+            {% else %}
+              {% for asset in imagePlaceholder.aboutImage %}
+                <img src="{{ asset.url('thumb') }}" alt="No Image Found">
+              {% endfor %}
+            {% endif %}
 
-	    		<div class="people__profile-item__info">
+            <div class="people__profile-item__info">
 
-	    			<div class="people__profile-item__info__container">
+              <div class="people__profile-item__info__container">
 
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
+                <h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
 
-							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
+                <h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
-							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-					</div>
-				</div>
-			</a>
-   			{% endfor %}
-   			{% for entry in staff.relatedTo(staffGroup).order('profileLastName asc').limit(2) %}
-    		<a href="{{ entry.Url }}" class="people__profile-item">
-    			{% if entry.staffHeadshot|length %}
-    				{% for asset in entry.staffHeadshot %}
-				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}">
-				     {% endfor %}
-				     {% else %}
-				     	{% for asset in imagePlaceholder.aboutImage %}
-				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
-						{% endfor %}
-				{% endif %}
-	    		<div class="people__profile-item__info">
+                <p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+        {% for entry in staff.relatedTo(staffGroup).orderBy('profileLastName asc').limit(2).all() %}
+          <a href="{{ entry.Url }}" class="people__profile-item">
+            {% if entry.staffHeadshot | length %}
+              {% for asset in entry.staffHeadshot.all() %}
+                <img class="people__profile-item__photo" src="{{ asset.url('thumb') }}" alt="{{ asset.title}}">
+              {% endfor %}
+            {% else %}
+              {% for asset in imagePlaceholder.aboutImage %}
+                <img src="{{ asset.url('thumb') }}" alt="No Image Found">
+              {% endfor %}
+            {% endif %}
+            <div class="people__profile-item__info">
 
-	    			<div class="people__profile-item__info__container">
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
-							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
-							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
-					</div>
-				</div>
-			</a>
-   			{% endfor %}
+              <div class="people__profile-item__info__container">
+                <h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
+                <h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
+                <p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
 
-  	</section>
+      </section>
 
-  		<section class="section-blog-teaser">
-  		<h2>From Our Blog</h2>
-  		<ul class="blog-teaser-list">
-  		{% for entry in craft.entries.section('blogPost').limit(2) %}
-  		{% set BlogAuthorName = entry.blogAuthor %}
-  		{% include '_includes/_blogPreview.html' %}
-		{% endfor %}
-		</ul>
-			<section class="section-body-button panel-primary">
-				<a class="button button-primary" href="{{ siteUrl }}blog">Read More In Our Staff Blog</a>
-			</section>
-		</section>
+      <section class="section-blog-teaser">
+        <h2>From Our Blog</h2>
+        <ul class="blog-teaser-list">
+          {% for entry in craft.entries.section('blogPost').limit(2).all() %}
+            {% set BlogAuthorName = entry.blogAuthor %}
+            {% include '_includes/_blogPreview.html' %}
+          {% endfor %}
+        </ul>
+        <section class="section-body-button panel-primary">
+          <a class="button button-primary" href="{{ siteUrl }}blog">Read More In Our Staff Blog</a>
+        </section>
+      </section>
 
-		<section class="people">
+      <section class="people">
 
-   			{% for entry in staff.relatedTo(staffGroup).order('profileLastName asc').offset(2) %}
-    		<a href="{{ entry.Url }}" class="people__profile-item">
-    			{% if entry.staffHeadshot|length %}
-    				{% for asset in entry.staffHeadshot %}
-				     	<img class="people__profile-item__photo" src="{{ asset.getUrl('thumb') }}" alt= "{{ asset.title}}">
-				     {% endfor %}
-				     {% else %}
-				     	{% for asset in imagePlaceholder.aboutImage %}
-				     		<img src="{{ asset.getURL('thumb') }}" alt= "No Image Found">
-				     	{% endfor %}
-				{% endif %}
+        {% for entry in staff.relatedTo(staffGroup).orderBy('profileLastName asc').offset(2).all() %}
+          <a href="{{ entry.Url }}" class="people__profile-item">
+            {% if entry.staffHeadshot | length %}
+              {% for asset in entry.staffHeadshot.all() %}
+                <img class="people__profile-item__photo" src="{{ asset.url('thumb') }}" alt="{{ asset.title}}">
+              {% endfor %}
+            {% else %}
+              {% for asset in imagePlaceholder.aboutImage %}
+                <img src="{{ asset.url('thumb') }}" alt="No Image Found">
+              {% endfor %}
+            {% endif %}
 
-	    		<div class="people__profile-item__info">
+            <div class="people__profile-item__info">
 
-	    			<div class="people__profile-item__info__container">
+              <div class="people__profile-item__info__container">
 
+                <h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
+                <h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
 
-							<h3 class="people__profile-item__first-name">{{ entry.profileFirstName }}</h3>
-							<h3 class="people__profile-item__last-name">{{ entry.profileLastName }}</h3>
+                <p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
 
-							<p class="people__profile-item__title">{{ entry.profileJobTitle }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
 
-					</div>
-				</div>
-			</a>
-   			{% endfor %}
+      </section>
 
-  	</section>
+    </section>
 
-  	</section>
+    <div class="panel-secondary-container panel-background-image">
+      <section class="section-price panel-secondary">
+        <h2>{{ entry.workForIdeabaseTitle}}</h2>
+        {% set image = entry.calloutImage.one() %}
+        {% if entry.calloutImage | length %}
+          <img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt="{{ image.title }}"/>
+          <div class="panel-secondary--left">
+            <p>{{ entry.workForIdeabaseDescription }}</p>
+            <a class="button button-primary" href="{{ entry.workForIdeabaseLink.one().url }}">{{ entry.workForIdeabaseTitle }}</a>
+          </div>
+        {% else %}
+          <p>{{ entry.workForIdeabaseDescription }}</p>
+          <a class="button button-primary" href="{{ entry.workForIdeabaseLink.one().url }}">{{ entry.workForIdeabaseTitle }}</a>
+        {% endif %}
+      </section>
+    </div>
 
-  	<div class="panel-secondary-container panel-background-image">
-	<section class="section-price panel-secondary">
-		<h2>{{ entry.workForIdeabaseTitle}}</h2>
-		{% set image = entry.calloutImage.first() %}
-		{% if entry.calloutImage | length %}
-			<img class="panel-secondary__thumbnail" src="{{ image.getUrl('panelCallout') }}" alt ="{{ image.title }}" />
-			<div class="panel-secondary--left">
-			  <p>{{ entry.workForIdeabaseDescription }}</p>
-        <a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
-			</div>
-			{% else %}
-			<p>{{ entry.workForIdeabaseDescription }}</p>
-      <a class="button button-primary" href="{{ entry.workForIdeabaseLink.first().url }}">{{ entry.workForIdeabaseTitle }}</a>
-		{% endif %}
-	</section>
-	</div>
-
-{% endblock %}
+  {% endblock %}

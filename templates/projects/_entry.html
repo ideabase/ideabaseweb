@@ -15,7 +15,7 @@
             <ul class="project-single__images">
             {% for asset in entry.projectPicture %}
                 <li class="project-single__images__item">
-                    <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
+                    <img src="{{ asset.url('projectLarge') }}" alt= "{{ asset.title}}">
                 </li>
             {% endfor %}
             </ul>
@@ -24,7 +24,7 @@
             <ul class="project-single__images--single">
             {% for asset in entry.projectPicture %}
                 <li class="project-single__images__item">
-                    <img src="{{ asset.getUrl('projectLarge') }}" alt= "{{ asset.title}}">
+                    <img src="{{ asset.url('projectLarge') }}" alt= "{{ asset.title}}">
                 </li>
             {% endfor %}
             </ul>
@@ -44,7 +44,10 @@
 
         {% if entry.video | length %}
             <div class="project-single__video video-container">
-                {{ entry.video|videoEmbed }}
+								{% set embed = craft.videoEmbedder.getEmbedUrl(entry.video) %}
+								{% if embed|length %}
+									<iframe src="{{ embed }}" height="400"></iframe>
+								{% endif %}
             </div>
         {% endif %}
 
@@ -78,7 +81,7 @@
                     {% for entry in relatedAward %}
                         <div class="project-single__info__award">
                         {% for asset in awardIcons.trophyIcon %}
-                            <img src="{{ asset.getUrl('featuredImageTop') }}" alt="{{ asset.title}}">
+                            <img src="{{ asset.url('featuredImageTop') }}" alt="{{ asset.title}}">
                         {% endfor %}
                           <p>{{ entry.title }}</p>
                         </div>

@@ -47,4 +47,90 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/aws-s3/master/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/aws-s3/archive/master.zip',
   ),
+  'craftcms/redactor' => 
+  array (
+    'class' => 'craft\\redactor\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/redactor/src',
+    'handle' => 'redactor',
+    'aliases' => 
+    array (
+      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
+    ),
+    'name' => 'Redactor',
+    'version' => '2.1.0',
+    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/redactor',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor/master/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/redactor/archive/master.zip',
+  ),
+  'craftcms/contact-form' => 
+  array (
+    'class' => 'craft\\contactform\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/contact-form/src',
+    'handle' => 'contact-form',
+    'aliases' => 
+    array (
+      '@craft/contactform' => $vendorDir . '/craftcms/contact-form/src',
+    ),
+    'name' => 'Contact Form',
+    'version' => '2.1.1',
+    'description' => 'Add a simple contact form to your Craft CMS site',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/contact-form',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/contact-form/archive/v2.zip',
+    'components' => 
+    array (
+      'mailer' => 'craft\\contactform\\Mailer',
+    ),
+  ),
+  'dolphiq/sitemap' => 
+  array (
+    'class' => 'dolphiq\\sitemap\\Sitemap',
+    'basePath' => $vendorDir . '/dolphiq/sitemap/src',
+    'handle' => 'sitemap',
+    'aliases' => 
+    array (
+      '@dolphiq/sitemap' => $vendorDir . '/dolphiq/sitemap/src',
+    ),
+    'name' => 'XML Sitemap',
+    'version' => '1.0.9',
+    'schemaVersion' => '1.0.2',
+    'description' => 'Craft 3 plugin that provides an easy way to provide and manage a XML sitemap for search engines like Google and Bing',
+    'developer' => 'Dolphiq',
+    'developerUrl' => 'https://dolphiq.nl/',
+    'documentationUrl' => 'https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/README.md',
+    'changelogUrl' => 'https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => false,
+    'components' => 
+    array (
+      'sitemapService' => 'dolphiq\\sitemap\\services\\SitemapService',
+    ),
+  ),
+  'mikestecker/craft-videoembedder' => 
+  array (
+    'class' => 'mikestecker\\videoembedder\\VideoEmbedder',
+    'basePath' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    'handle' => 'video-embedder',
+    'aliases' => 
+    array (
+      '@mikestecker/videoembedder' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    ),
+    'name' => 'Video Embedder',
+    'version' => '1.0.9',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Craft plugin to generate an embed URL from a YouTube or Vimeo URL.',
+    'developer' => 'Mike Stecker',
+    'developerUrl' => 'http://github.com/mikestecker',
+    'documentationUrl' => 'https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/mikestecker/craft-videoembedder/v1/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
 );

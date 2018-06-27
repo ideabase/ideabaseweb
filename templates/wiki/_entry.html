@@ -82,7 +82,7 @@
     {% for img in block.image %}
     <section class="section-body-image panel-primary">
       <figure class="section-body-image__figure">
-        <img class="section-body-image__image" src="{{ img.getUrl('blogInlineImage') }}" alt="{{ img.title }}" />
+        <img class="section-body-image__image" src="{{ img.url('blogInlineImage') }}" alt="{{ img.title }}" />
       </figure>
     </section>
     {% endfor %}
