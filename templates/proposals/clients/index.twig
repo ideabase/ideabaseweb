@@ -9,24 +9,24 @@
 {% set clients = craft.categories.group('clients').orderBy('title').all() %}
 
 {% block content %}
+  <div class="proposals-index-container">
+    {# page title #}
+    <h1>Clients</h1>
 
-  {# page title #}
-  <h1>Clients</h1>
-
-  <table>
-    <thead>
-      <th>Name</th>
-    </thead>
-    <tbody>
-      {# begin clients loop #}
-      {% for client in clients %}
-        <tr>
-          <td><div><a href="{{ client.url }}">{{ client.title }}</a></div></td>
-        </tr>
-      {% endfor %}
-      {# end clients loop #}
-    </tbody>
-  </table>
-
+    <table class="proposals-index-table proposals-clients-table">
+      <thead>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        {# begin clients loop #}
+        {% for client in clients %}
+          <tr>
+            <td><div><a href="{{ client.url }}">{{ client.title }}</a></div></td>
+          </tr>
+        {% endfor %}
+        {# end clients loop #}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
 {# end content block #}

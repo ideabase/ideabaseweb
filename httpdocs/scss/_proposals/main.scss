@@ -1,3 +1,48 @@
+.proposals-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 900px;
+
+  h1 {
+    width: 100%;
+  }
+
+  a {
+    &:not(:last-of-type) {
+      margin-right: 2em;
+    }
+  }
+}
+
+.proposals-index-table {
+  th,
+  td {
+    border: 2px solid lighten($lightgray, 10);
+    line-height: 2;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  th {
+    background-color: $blue;
+    color: $color-white;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+}
+
+.proposals-clients-table {
+  td {
+    text-align: center;
+  }
+}
+
+////////////////////////////////////////
+// proposal document                  //
+////////////////////////////////////////
+
 ///////////////////////////
 // both screen and print //
 ///////////////////////////
@@ -278,11 +323,13 @@
 .page-summary {
   .table-subtotal,
   .table-total {
-    td {
-      &:last-child {
-        width: 20%;
-      }
+    td:last-child {
+      width: 20%;
     }
+  }
+
+  .table-subtotal {
+    width: 100%;
   }
 
   .table-total {
@@ -292,9 +339,15 @@
     margin-top: .5em;
     text-transform: uppercase;
 
-    td {
-      border: 0;
-      line-height: 1.25;
+    tr {
+      td {
+        border: 0;
+        line-height: 1.25;
+
+        &:not(:last-child) {
+          text-align: center;
+        }
+      }
     }
   }
 

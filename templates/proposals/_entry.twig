@@ -229,10 +229,18 @@
             {% set elementHours = block.estimatedHours %}
             {{ block.description }}
             <table class="table-element">
-              <tr>
-                <td>{{ elementHours }}</td>
-                <td>{{ entry.pricePerHour.value|currency('USD', [], [], true) }}</td>
-              </tr>
+              <thead>
+                <th>Est. Hours</th>
+                <th>Rate/Hour</th>
+                <th>Element Subtotal</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ elementHours }}</td>
+                  <td>{{ entry.pricePerHour.value|currency('USD', [], [], true) }}</td>
+                  <td>{{ (elementHours * entry.pricePerHour.value)|currency('USD', [], [], true) }}</td>
+                </tr>
+              </tbody>
             </table>
             {% set totalCost = totalCost + (elementHours * entry.pricePerHour.value) %}
           </div>
