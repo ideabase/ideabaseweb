@@ -11,5 +11,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-criticalcss": "^2.1.0",
     "grunt-shell": "^2.1.0"
+  },
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
   }
 }

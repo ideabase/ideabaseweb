@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
         files: {
         'css/styles.css': 'scss/styles.scss',
-        '../craft/templates/_includes/critical-home.css': '../craft/templates/_includes/critical-home.css'
+        'css/proposals.css': 'scss/proposals.scss'
         }
       }
     },
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           url: "http://ideabase.web",
                 width: 1500,
                 height: 1200,
-                outputfile: "../craft/templates/_includes/critical-home.css",
+                outputfile: "../templates/_includes/critical-home.css",
                 filename: "css/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
                 buffer: 800*1024,
                 ignoreConsole: true,
@@ -40,7 +40,8 @@ module.exports = function(grunt) {
     autoprefixer: {
       your_target: {
         files: {
-          'css/styles.css': 'css/styles.css'
+          'css/styles.css': 'css/styles.css',
+          'css/proposals.css': 'css/proposals.css'
         }
       },
     },

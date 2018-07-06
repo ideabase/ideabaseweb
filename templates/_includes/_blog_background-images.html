@@ -1,28 +1,28 @@
 <style type="text/css">
-{% if headerImages.blogHeaderImage | length %}
+  {% if headerImages.blogHeaderImage | length %}
 
-{% set image = headerImages.blogHeaderImage.first %}
+    {% set image = headerImages.blogHeaderImage.one() %}
 
-		.blog.section-header {
-			        background-image: url({{ image.url('featureImageSmall') }});
-		}
-		@media screen and (min-width: 600px) {
-			.blog.section-header {
-			        background-image: url({{ image.url('featureImageMedium') }});
-			}
-		}
-		@media screen and (min-width: 1000px) {
-			.blog.section-header {
-			        background-image: url({{ image.url('featureImageLarge') }});
-			}
-		}
-{% endif %}
+    .blog.section-header {
+      background-image: url({{ image.url('featureImageSmall') }});
+    }
+    @media screen and (min-width: 600px) {
+      .blog.section-header {
+        background-image: url({{ image.url('featureImageMedium') }});
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      .blog.section-header {
+        background-image: url({{ image.url('featureImageLarge') }});
+      }
+    }
+  {% endif %}
 
-		.panel-background-image {
-			{% if backgroundBrickPatterns.brickBackgroundPattern | length %}
-			    {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1) %}
-			        background-image: url({{ asset.url('brickMedium') }});
-			    {% endfor %}
-			{% endif %}
-		}
+  .panel-background-image {
+    {% if backgroundBrickPatterns.brickBackgroundPattern | length %}
+      {% for asset in backgroundBrickPatterns.brickBackgroundPattern.limit(1).all() %}
+        background-image: url({{ asset.url('brickMedium') }});
+      {% endfor %}
+    {% endif %}
+  }
 </style>

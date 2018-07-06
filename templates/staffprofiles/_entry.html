@@ -9,7 +9,7 @@
 
 	<div class="people__image">
 		{% if entry.staffHeadshot|length %}
-			{% for asset in entry.staffHeadshot %}
+			{% for asset in entry.staffHeadshot.all() %}
 	     		<img src="{{ asset.url('thumb') }}" alt= "{{ asset.title}}">
 	   		{% endfor %}
 	   	{% endif %}
@@ -44,7 +44,7 @@
 		{% if entry.staffSocialMedia|length %}
 		<!-- Staff Social Media -->
 		<section class="footer-info__social footer-info__social--profile">
-			{% for block in entry.staffSocialMedia %}
+			{% for block in entry.staffSocialMedia.all() %}
      			<a class="footer-info__social__icon footer-info__social__icon--profile" target="_blank" href="{{ block.staffSocLink }}">{{ block.staffSocName }}</a>
 			{% endfor %}
 		</section>
@@ -57,7 +57,7 @@
 		<section class="people-projects">
 			<h2 class="people-projects__title">Projects</h2>
 				<ul class="people-projects__list">
-					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4) %}
+					    {% for entry in craft.entries.section('ideabaseProjects').relatedTo(entry).limit(4).all() %}
 					    	<li class="people-projects__list__item">
 			       				<a href="{{ entry.url }}">{{ entry.title }}</a>
 			       			</li>
@@ -73,7 +73,7 @@
 		<section class="people-posts">
 			<h2 class="people-posts__title">Blog Posts</h2>
 				<ul class="people-posts__list">
-			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2) %}
+			    		{% for entry in craft.entries.section('blogPost').relatedTo(entry).limit(2).all() %}
 			    			<li class="people-posts__list__item">
 			       				<a href="{{ entry.url }}">{{ entry.title }}</a>
 			       			</li>

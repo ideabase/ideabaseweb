@@ -13,7 +13,7 @@
 
         {% if numberOfPhotos > 1 %}
             <ul class="project-single__images">
-            {% for asset in entry.projectPicture %}
+            {% for asset in entry.projectPicture.all() %}
                 <li class="project-single__images__item">
                     <img src="{{ asset.url('projectLarge') }}" alt= "{{ asset.title}}">
                 </li>
@@ -31,7 +31,7 @@
         {% endif %}
 
         <h3 class="project-single__client">
-        {% for entry in entry.forWhichClient %}
+        {% for entry in entry.forWhichClient.all() %}
             {{ entry.title }}
         {% endfor %}
         </h3>
@@ -61,7 +61,7 @@
             <div class="project-single__team">
                 <h4 class="project-single__team__title">Team</h4>
                 <ul class="project-single__team__list">
-                {% for entry in entry.contributor %}
+                {% for entry in entry.contributor.all() %}
                     <li class="project-single__team__list__item">
                         <a href="{{ entry.Url }}">
                         {{ entry.title }}

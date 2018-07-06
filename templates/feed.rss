@@ -55,7 +55,7 @@
                             {% if block.type == "text" %}
                                 {{ block.text }}
                             {% elseif block.type == "image" %}
-                                {% set image = block.image.first() %}
+                                {% set image = block.image.one() %}
                                 {% if image %}
                                     <figure>
                                       <img src="{{ image.url('basicPageImage') }}" alt="{{ image.title }}" />

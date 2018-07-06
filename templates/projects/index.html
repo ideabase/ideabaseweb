@@ -29,11 +29,11 @@
 		<ul class="project-list">
 			{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
 
-			{% for entry in featured.limit(3) %}
+			{% for entry in featured.limit(3).all() %}
 			<li class="project-list__item--featured">
 			<a href="{{ entry.url }}">
 					{% if entry.projectPicture | length %}
-						{% for asset in entry.projectPicture.limit(1) %}
+						{% for asset in entry.projectPicture.limit(1).all() %}
 						<div class="project-list__item__image">
 				     		<img src="{{ asset.url('projectThumb') }}" alt= "{{ asset.title}}">
 				     	</div>
@@ -71,7 +71,7 @@
 
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
-			{% for entry in caseStudy.relatedTo(blogGroup).limit(2) %}
+			{% for entry in caseStudy.relatedTo(blogGroup).limit(2).all() %}
 	    			<li class="blog-teaser">
 	    				<a href="{{ entry.url }}">
 	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
@@ -79,7 +79,7 @@
 	        				{% set numberOfAuthors = entry.blogAuthor|length %}
 							{% if numberOfAuthors < 2 %}
 
-								{% for entry in entry.blogAuthor %}
+								{% for entry in entry.blogAuthor.all() %}
 								<p class="blog-teaser__author">
 									{{ entry.title }}
 								</p>
@@ -108,7 +108,7 @@
 
 	<section class="section-price panel-secondary">
 		<h2>{{ entry.classroomExperienceHeadline }}</h2>
-		{% set image = entry.calloutImage.first() %}
+		{% set image = entry.calloutImage.one() %}
 		{% if entry.calloutImage | length %}
 		<img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
 		<div class="panel-secondary--left">

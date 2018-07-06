@@ -30,7 +30,7 @@
 </div>
 {% endif %}
 
-{% for block in entry.basicPageOptions %}
+{% for block in entry.basicPageOptions.all() %}
 
     {% if block.type == "text" %}
     	<section class="section-basic-page panel-primary">
@@ -44,12 +44,12 @@
 
 	{% elseif block.type == "buttonInternalLink" %}
 		<section class="section-body-button panel-primary">
-			<a class="button button-primary" href="{{ block.buttonLinkInternal.first().url }}">{{ block.buttonNameInternal }}</a>
+			<a class="button button-primary" href="{{ block.buttonLinkInternal.one().url }}">{{ block.buttonNameInternal }}</a>
 		</section>
 
     {% elseif block.type == "image" %}
 
-        {% set image = block.image.first() %}
+        {% set image = block.image.one() %}
         {% if image %}
         	<section class="section-body-image panel-primary">
         		<figure class="section-body-image__figure">
@@ -76,7 +76,7 @@
     <div class="panel-secondary-container panel-background-image">
     <section class="section-price panel-secondary">
         <h2>{{ block.callOut }}</h2>
-        {% set image = block.callOutImage.first() %}
+        {% set image = block.callOutImage.one() %}
         {% if image %}
         	<img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
             <div class="panel-secondary--left">

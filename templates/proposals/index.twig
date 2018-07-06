@@ -1,0 +1,17 @@
+{# /templates/proposals/index.twig #}
+
+{% requireLogin %}
+{% requirePermission "accessCp" %}
+
+{% extends '_proposals' %}
+
+{% block content %}
+
+  {# page title #}
+  <h1>Client Proposals</h1>
+
+  <a href="proposals/list" class="button button-primary">Proposals</a>
+  <a href="proposals/clients" class="button button-primary">Clients</a>
+
+{% endblock %}
+{# end content block #}

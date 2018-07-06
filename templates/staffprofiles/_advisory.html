@@ -11,7 +11,7 @@
 		<h1 class="project-single__name">{{ entry.title }}</h1>
 		<div class="introduction">{{ entry.introduction }}</div>
 	</section>
-	{% set image = entry.aboutImage.first() %}
+	{% set image = entry.aboutImage.one() %}
 	{% if image %}
 		<section class="section-body-image panel-primary">
 			<figure class="section-body-image__figure">
@@ -29,7 +29,7 @@
    <section class="people-listing">
    			<h2>Professional Advisory Board Members</h2>
    			<ul class="people-listing__list">
-    		{% for entry in board.relatedTo(boardGroup).order('profileLastName') %}
+    		{% for entry in board.relatedTo(boardGroup).orderBy('profileLastName') %}
     				<li class="people-listing__item">
 		    			<a href="{{ entry.Url }}">
 							<h3 class="people-listing__name">{{ entry.profileFirstName }}

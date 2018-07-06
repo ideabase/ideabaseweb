@@ -1,0 +1,37 @@
+{% spaceless %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	{% include '_global/head' %}
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700%7CSource+Sans+Pro:600,700,400,400italic,300" media="all">
+
+	{# include proposal stylesheet #}
+	<link href="{{ siteUrl }}css/proposals.css" type="text/css" rel="stylesheet" media="screen, projection, print"/>
+
+	{# block search indexing #}
+	<meta name="robots" content="noindex">
+</head>
+
+<body>
+	{# Helper code for the Admin toolbar, only shown when logged in #}
+	{% if entry is defined %}
+		{{ adminbar({ entry: entry }) }}
+	{% endif %}
+
+	{# Start the main content block #}
+	<main role="main">
+		{% block content %}
+		{% endblock %}
+	</main>
+
+  {% if getenv('ENVIRONMENT') == 'dev' %}
+	  {# Live Reload - For local environment only #}
+	  <script src="//localhost:35729/livereload.js"></script>
+  {% endif %}
+
+</body>
+</html>
+
+{% endspaceless %}

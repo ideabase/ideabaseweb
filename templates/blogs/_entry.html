@@ -8,7 +8,7 @@
 
 {% if entry.blogFeaturedImage | length %}
 <section class="section-header-blog-basic-page">
-		{% for asset in entry.blogFeaturedImage %}
+		{% for asset in entry.blogFeaturedImage.all() %}
 		<picture>
 		  <source media="(max-width: 639px)" srcset="{{ asset.url('featureImageSmall') }}" >
 		  <source media="(min-width: 1024px)" srcset="{{ asset.url('featureImageLarge') }}">
@@ -26,11 +26,11 @@
 		{% set blogAuthor = entry.blogAuthor %}
 		{% set numberOfAuthors = entry.blogAuthor|length %}
 			{% if numberOfAuthors < 2 %}
-				{% for entry in blogAuthor %}
+				{% for entry in blogAuthor.all() %}
 				<span class="blog__entry__author">{{ entry.title }}</span>
 				{% endfor %}
 			{% else %}
-				{% for entry in blogAuthor %}
+				{% for entry in blogAuthor.all() %}
 				<span class="blog__entry__author blog-multiple__author">{{ entry.title }}</span>
 				{% endfor %}
 			{% endif %}
@@ -38,14 +38,14 @@
 		</div>
 		<div class="blog__entry__text">
 			{{ entry.blogContent}}
-			{% for block in entry.blogPostContent %}
+			{% for block in entry.blogPostContent.all() %}
 
 			    {% if block.type == "text" %}
 			        {{ block.text }}
 
 			    {% elseif block.type == "image" %}
 
-			        {% set image = block.image.first() %}
+			        {% set image = block.image.one() %}
 			        {% if image %}
 			        	<section class="section-body-image panel-primary">
 			        		<figure class="section-body-image__figure">
@@ -83,12 +83,12 @@
   {% set entries = entry.blogAuthor %}
   {% include '_includes/_peopleSmall.html' %}
 		{% set tag = entry.blogTags %}
-		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).order('RAND()').find() %}
+		{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).orderBy('RAND()').all() %}
 			{% if relatedEntries | length %}
 			<section class="people-posts people-posts--blog">
 			<h2 class="people-posts__title">Related Posts</h2>
 			<ul class="people-posts__list">
-			    {% for entry in relatedEntries %}
+			    {% for entry in relatedEntries.all() %}
 			        <li class="people-posts__list__item">
 			        	<a href="{{ entry.url }}">
 			        		{{ entry.title }}
@@ -102,7 +102,7 @@
 	<!-- Begin Tags -->
 	{% if entry.blogTags | length %}
 	<ul class="blog__entry__tags">
-    	{% for tag in entry.blogTags %}
+    	{% for tag in entry.blogTags.all() %}
     		<li class="blog__entry__tags__single">
           		<a class="blog__entry__tags-link" href="{{ siteUrl }}blog/tags/{{ tag.title }}">{{ tag.title }}</a>
       		</li>

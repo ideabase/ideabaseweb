@@ -1,0 +1,26 @@
+////////////////
+// print only //
+////////////////
+@media print {
+  @page {
+    margin: .75in;
+  }
+
+  // make containers 100% of page height, to vertical center page-cover
+  html,
+  body,
+  main,
+  .proposal {
+    height: 100%;
+  }
+
+  // hide everything except proposal
+  .print-hide {
+    display: none;
+  }
+
+  // page-break after every .page class
+  .page {
+    page-break-after: always;
+  }
+}

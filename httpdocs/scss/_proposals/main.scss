@@ -1,0 +1,344 @@
+///////////////////////////
+// both screen and print //
+///////////////////////////
+
+.proposal-header {
+  margin: 0 auto 2em;
+  max-width: 8.5in;
+
+  * {
+    line-height: .5;
+  }
+
+  .button {
+    margin-top: 0;
+  }
+}
+
+// cover page
+.page-cover {
+  align-items: flex-end;
+  background-color: $blue;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 5% 10%;
+
+  > * {
+    width: 100%;
+  }
+}
+
+// cover page text
+.page-cover-text {
+  align-self: flex-end;
+  margin-top: 50%;
+
+  * {
+    color: $color-white;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    letter-spacing: .1em;
+    line-height: .5;
+  }
+
+  table {
+    margin-top: 3em;
+  }
+
+  tr {
+    font-size: 1.15em;
+    line-height: 1.5em;
+
+    :first-child { // first column
+      letter-spacing: .05em;
+      margin-right: 1.25em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    :nth-child(2) { // second column
+      font-weight: 300;
+      letter-spacing: .015em;
+    }
+  }
+}
+
+// cover page logos
+.page-cover-logos {
+  display: flex;
+  justify-content: space-between;
+
+  .logo-ideabase-white {
+    width: 45%; // ratio calculated from ideabase and glyphix logo heights
+  }
+
+  .logo-glyphix-white {
+    width: 32%; // ratio calculated from ideabase and glyphix logo heights
+  }
+}
+
+// letter
+.page-letter {
+  @include list-style-type-square;
+
+  color: $darkgray;
+  display: flex;
+  flex-direction: column;
+  font-size: .9em;
+  height: 100%; // push footer to bottom when printing
+
+  .page-letter-text {
+    flex-grow: 1;
+    position: relative;
+
+    .logo-ideabase-stacked {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20%;
+    }
+  }
+
+  .address {
+    line-height: 1.25;
+  }
+
+  .mt-0 {
+    margin-top: 0;
+  }
+
+  .container-footer {
+    color: $lightgray;
+    display: flex;
+    flex-direction: column;
+    font-family: $mont;
+    font-size: .75em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    hr {
+      border: 1px solid $cyan;
+      width: 100%;
+    }
+
+    .container-footer-info {
+      display: flex;
+      justify-items: space-between;
+      width: 100%;
+
+      p {
+        flex: 1 1 auto;
+        margin-bottom: 0;
+
+        &:nth-child(2) {
+          text-align: center;
+        }
+
+        &:nth-child(3) {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.container-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  img {
+    align-self: center;
+    flex-shrink: 0; // container-element can grow, don't want img to shrink
+    width: 20%;
+  }
+
+  h1,
+  h2 {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 2.25em;
+    letter-spacing: .05em;
+    margin-top: .25em;
+  }
+
+  .h1-separator {
+    @include separator-after;
+  }
+
+  h2 {
+    letter-spacing: .05em;
+    margin-bottom: .75em;
+    margin-top: .25em;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  h4 {
+    margin-bottom: .5em;
+    margin-top: .5em;
+  }
+
+  th,
+  td {
+    border: 2px solid lighten($lightgray, 10);
+    line-height: 2;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  th {
+    background-color: $blue;
+    color: $color-white;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    &:last-child {
+      background-color: $darkgray;
+    }
+  }
+
+  td {
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+// scope of work page
+.page-scope {
+  @include list-style-type-bullet;
+
+  p {
+    &:first-of-type {
+      @include separator-after(0, 1em);
+
+      color: $darkgray;
+      font-size: 1.25em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// container for element stuff before phase subtotal
+.container-element {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+// element pages
+.page-element {
+  @include list-style-type-bullet;
+
+  .h3-element {
+    color: $darkgray;
+  }
+
+  .table-element {
+    align-self: flex-start;
+  }
+}
+
+// phase subtotal
+.phase-subtotal {
+  @include separator-before;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+
+  h4 {
+    color: $color-black;
+    font-family: $mont;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-style: italic;
+    line-height: 1.25;
+    margin-bottom: 0;
+    text-align: center;
+    width: 70%;
+  }
+}
+
+// summary page
+.page-summary {
+  .table-subtotal,
+  .table-total {
+    td {
+      &:last-child {
+        width: 20%;
+      }
+    }
+  }
+
+  .table-total {
+    align-self: flex-end;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: .5em;
+    text-transform: uppercase;
+
+    td {
+      border: 0;
+      line-height: 1.25;
+    }
+  }
+
+  .p-note {
+    font-style: italic;
+    line-height: 1.25;
+    margin-bottom: .5em;
+  }
+
+  h2 {
+    margin-top: 1em;
+  }
+
+  p {
+    &:not(.p-note) {
+      margin: 0;
+    }
+  }
+}
+
+// agreement page
+.page-agreement {
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+// terms page
+.page-terms {
+  h1 {
+    @include separator-after;
+
+    margin-top: 0;
+  }
+
+  p {
+    font-size: .9em;
+    line-height: 1.25em;
+    margin-bottom: 0;
+  }
+
+  pre {
+    margin-top: .25em;
+  }
+}

@@ -17,7 +17,7 @@
 <div class="panel-primary-container">
 <section class="section-blog-all panel-primary">
 	<ul class="blog-list">
-		{% for entry in Blog %}
+		{% for entry in Blog.all() %}
     		<li class="blog-list__item">
 					<a href="{{ entry.url }}">
 
@@ -27,11 +27,11 @@
 
 					    <div class="blog-list__info">
 						    {% if numberOfAuthors < 2 %}
-								{% for entry in blogAuthor %}
+								{% for entry in blogAuthor.all() %}
 								<span class="blog-list__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% else %}
-								{% for entry in blogAuthor %}
+								{% for entry in blogAuthor.all() %}
 								<span class="blog-list__author blog-multiple__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% endif %}
@@ -44,7 +44,7 @@
 					    		{{ firstBlogParagraphIndex|raw }}
 					    	</div>
 					    {% if numberOfAuthors < 2 %}
-						    {% for entry in blogAuthor %}
+						    {% for entry in blogAuthor.all() %}
 							<p class="blog-teaser__link">
 								Read {{ entry.profileFirstName}}'s Post</p>
 							{% endfor %}

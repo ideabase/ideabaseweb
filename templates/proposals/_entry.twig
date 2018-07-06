@@ -1,0 +1,356 @@
+{# /templates/proposals/_entry.twig #}
+
+{% extends '_proposals' %}
+
+{# set client = user selected entry category #}
+{% set client = craft.categories.group('clients').relatedTo(entry).one() %}
+
+{# set contact = first contact listed in client category #}
+{% set contact = client.contacts.one() %}
+
+{# set address = first address listed in client category #}
+{% set address = client.addresses.one() %}
+
+{% set suffixes = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'] %}
+
+{% block content %}
+
+  <div class="proposal-header print-hide">
+    <h1>{{ entry.title }}</h1>
+
+    {% if entry.projectId|length %}
+      <p><strong>Project ID:</strong> {{ entry.projectId }}</p>
+    {% endif %}
+
+    {% if entry.billingNumber|length %}
+      <p><strong>KSU Billing Number:</strong> {{ entry.billingNumber }}</p>
+    {% endif %}
+
+    <a class="button button-primary" onclick="window.print()" href="">Print</a>
+  </div>
+
+  {# start proposal document #}
+  <section class="proposal">
+
+    <section class="page page-cover">
+      <div class="page-cover-text">
+        {# proposal header #}
+        <h1>Proposal</h1>
+        <h1>of Engagement</h1>
+
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>For:</strong></td>
+              <td>{{  client.title }}{% if client.organization|length %}&nbsp;&sol;&nbsp;{{  client.organization }}{% endif %}</td>
+            </tr>
+            <tr>
+              {# IMPORTANT: UPDATE 'clients/_category' AS WELL IF YOU CHANGE HOW CONTACT NAMES ARE DISPLAYED #}
+              <td><strong>To:</strong></td>
+              <td>
+                {%- if contact.prefix|length -%}
+                  {{-  contact.prefix -}}&nbsp;
+                {%- endif -%}
+                {{-  contact.firstName -}}&nbsp;
+                {{-  contact.lastName -}}
+                {%- if contact.suffix|length -%}
+                  {%- if contact.suffix|upper in suffixes -%}
+                    &nbsp;{{-  contact.suffix -}}&nbsp;
+                  {%- else -%}
+                    &comma;&nbsp;{{-  contact.suffix -}}&nbsp;
+                  {%- endif -%}
+                {%- endif -%}
+                {%- if contact.contactTitle|length -%}
+                  &sol;&nbsp;{{-  contact.contactTitle -}}
+                {%- endif -%}
+              </td>
+            </tr>
+            <tr>
+              <td><strong>From:</strong></td>
+              <td>IdeaBase, a Design Agency at Kent State University</td>
+            </tr>
+            <tr>
+              <td><strong>Date:</strong></td>
+              <td>{{ entry.date }}</td>
+            </td>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-cover-logos">
+        <img src="{{ ideabaseLogoWhite.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoWhite.proposalImageAlt }}"{% if ideabaseLogoWhite.proposalImageTitle|length %} title="{{ ideabaseLogoWhite.proposalImageTitle }}"{% endif %} class="logo-ideabase-white">
+
+        {% if entry.projectType.options[1].selected %}
+          <img src="{{ glyphixLogoWhite.proposalImage.one().getUrl }}" alt="{{ glyphixLogoWhite.proposalImageAlt }}"{% if glyphixLogoWhite.proposalImageTitle|length %} title="{{ glyphixLogoWhite.proposalImageTitle }}"{% endif %} class="logo-glyphix-white">
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="page page-letter">
+      <div class="page-letter-text">
+        <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %} class="logo-ideabase-stacked">
+
+        <p class="mt-0">{{ entry.date }}</p>
+        <br>
+        <p class="address">{{ client.title }}<br>{{ address.address1 }}{% if address.address2 is not empty %}<br>{{ address.address2 }}{% endif %}<br>{{ address.city }} {{ address.state|upper }} {{ address.zipCode }}</p>
+
+        {# thank you note #}
+        <p>Dear {{ contact.firstName }},</p>
+        <p>Thank you for engaging IdeaBase to prepare a quotation for {{ client.title }}. This Proposal of Engagement will outline the scope of our engagement and the projected hours and costs associated with its completion.</p>
+
+        {# working with IdeaBase global #}
+        {{ proposalWorking.redactor }}
+
+        <br>
+
+        <p>Sincerely,</p>
+        <br>
+        {# TODO: signature #}
+        <p>Kristin Dowling<br>Director, IdeaBase</p>
+      </div>
+
+      <div class="container-footer">
+        <hr>
+        <div class="container-footer-info">
+          <p>138 E Main Street, Suite 203, Kent OH 44240</p>
+          <p>(330) 672-IDEA (4332)</p>
+          <p>ideabasekent.com</p>
+        </div>
+      </div>
+    </section>
+
+    {# project scope #}
+    {% if entry.situation|length %}
+      <section class="page page-scope container-page">
+        <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
+
+        <div>
+          <h1>Scope of Work</h1>
+
+          {# extensive project description (situation) #}
+          {{ entry.situation }}
+        </div>
+      </section>
+    {% endif %}
+
+    {# check if project elements are separated by phase #}
+    {% set phases = false %}
+    {% for block in entry.elements.all() if not phases %}
+      {% if block.phase|length %}
+        {% set phases = true %}
+      {% endif %}
+    {% endfor %}
+
+    {# initialize variables outside of the logic #}
+    {% set totalCost, elementHours = 0, 0 %}
+
+    {# begin phases #}
+    {% if phases %}
+      {# if there are phases, count the number of phases #}
+      {% set phaseCount = 0 %}
+      {% for block in entry.elements.all() %}
+        {% if block.phase > phaseCount %}
+          {% set phaseCount = block.phase %}
+        {% endif %}
+      {% endfor %}
+
+      {# print a page for each phase #}
+      {% for phase in 1..phaseCount %}
+        {# IMPORTANT: IF YOU EDIT THIS PAGE, YOU MUST ALSO EDIT THE NON-PHASE PAGE BELOW #}
+        <section class="page page-element container-page">
+          {# initialize phase cost outside of loop #}
+          {% set phaseCost = 0 %}
+          {% set phaseHours = 0 %}
+
+          <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
+
+          <div class="container-element">
+            <h1 class="h1-separator">Project Elements</h1>
+            <h2>Phase {{ phase }}</h2>
+            {% for block in entry.elements.all() %}
+              {% if block.phase == phase %}
+                <h3 class="h3-element">{{ block.elementTitle }}</h3>
+
+                {% set elementHours = block.estimatedHours %}
+                {% set phaseCost = phaseCost + elementHours * entry.pricePerHour.value %}
+                {% set phaseHours = phaseHours + elementHours %}
+                {{ block.description }}
+
+                <table class="table-element">
+                  <thead>
+                    <th>Est. Hours</th>
+                    <th>Rate/Hour</th>
+                    <th>Element Subtotal</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ elementHours }}</td>
+                      <td>{{ entry.pricePerHour.value|currency('USD', [], [], true) }}</td>
+                      <td>{{ (elementHours * entry.pricePerHour.value)|currency('USD', [], [], true) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                {% set totalCost = totalCost + (elementHours * entry.pricePerHour.value) %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="phase-subtotal">
+            {# phase subtotal #}
+            <h4>Phase {{ phase }} Subtotal</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Est. Hours</th>
+                  <th>Rate/Hour</th>
+                  <th>Phase Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ phaseHours }}</td>
+                  <td>{{ entry.pricePerHour.value|currency('USD', [], [], true) }}</td>
+                  <td>{{ phaseCost|currency('USD', [], [], true) }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Payment for Phase {{ phase }} and signoff will be required at this point in the project before proceeding with the next phase.</p>
+          </div>
+        </section>
+      {% endfor %}
+    {% else %}
+      {% for block in entry.elements.all() %}
+      {# IMPORTANT: IF YOU EDIT THIS PAGE, YOU MUST ALSO EDIT THE PHASE PAGE ABOVE #}
+        <section class="page page-element container-page">
+          <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
+          <div class="container-element">
+            <h1 class="h1-separator">Project Elements</h1>
+            <h3 class="h3-element">{{ block.elementTitle }}</h3>
+
+            {% set elementHours = block.estimatedHours %}
+            {{ block.description }}
+            <table class="table-element">
+              <tr>
+                <td>{{ elementHours }}</td>
+                <td>{{ entry.pricePerHour.value|currency('USD', [], [], true) }}</td>
+              </tr>
+            </table>
+            {% set totalCost = totalCost + (elementHours * entry.pricePerHour.value) %}
+          </div>
+        </section>
+      {% endfor %}
+    {% endif %}
+    {# end phases #}
+
+    {# cost/timeline summary page #}
+    <section class="page page-summary container-page">
+      <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
+
+      <h1 class="h1-separator">Cost / Timeline Summary</h1>
+
+      {% if entry.timeline|length %}
+        <table class="table-subtotal">
+          <thead>
+            <tr>
+              {% if phases %}
+                <th>Phase</th>
+              {% endif %}
+              <th>Element Name</th>
+              <th>Hours</th>
+              <th>Completion</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for block in entry.elements.all() %}
+              <tr>
+                {% if phases %}
+                  <td>{{ block.phase }}</td>
+                {% endif %}
+                <td>{{ block.elementTitle }}</td>
+                <td>{{ block.estimatedHours }}</td>
+                <td>{{ block.estimatedTime }}</td>
+                <td>{{ (block.estimatedHours * entry.pricePerHour.value)|currency('USD', [], [], true) }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      {% endif %}
+
+      {# display total cost #}
+      <table class="table-total">
+        {% if entry.discount|length %}
+          <tr>
+            <td>Estimated Total</td>
+            <td>{{ (totalCost)|currency('USD', [], [], true) }}</td>
+          </tr>
+          <tr>
+            <td>Discount ({{ entry.discount }} hours at {{ entry.pricePerHour.value|currency('USD', [], [], true) }}/hour)</td>
+            <td>{{ (entry.discount * entry.pricePerHour.value)|currency('USD', [], [], true) }}
+          </tr>
+          {% set totalCost = totalCost - (entry.discount * entry.pricePerHour.value) %}
+          {% set elementHours = elementHours - entry.discount %}
+          <tr>
+            <td>Discounted Total</td>
+            <td>{{ totalCost|currency('USD', [], [], true) }}</td>
+          </tr>
+        {% else %}
+          <tr>
+            <td>Estimated Total</td>
+            <td>{{ totalCost|currency('USD', [], [], true) }}</td>
+          </tr>
+        {% endif %}
+      </table>
+
+      {# printing costs #}
+      {% if entry.printingCosts|length %}
+        <p class="p-note">Please note this estimate includes print coordination only, not actual printing costs.</p>
+      {% endif %}
+
+      {# allowance for client revisions #}
+      {% if entry.clientRevisions|length %}
+        <p class="p-note">Please note this estimate allows for 2-3 client revisions. If more than 2-3 sets of client revisions are needed, additional hours will be added to the final invoice.</p>
+      {% endif %}
+
+      {# payment schedule #}
+      {# {% if entry.paymentSchedule|length %} #}
+        <h2>Payment Schedule</h2>
+        <p>We project the following payment schedule through the completion of the project.</p>
+        {# TODO #}
+      {# {% endif %} #}
+
+      {# additional costs #}
+      {% if entry.additionalCosts|length %}
+        <h2>Additional Costs</h2>
+
+        <table>
+          {% for row in entry.additionalCosts %}
+            <tr>
+              <td>{{ row.description }}</td>
+              <td>{{ row.estimatedCost }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </section>
+
+    {# agreement page #}
+    <section class="page page-agreement container-page">
+      <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
+
+      <h1 class="h1-separator">Agreement</h1>
+
+      {# proposal agreement global #}
+      {{ proposalAgreement.redactor }}
+
+      {# TODO: signature field #}
+    </section>
+
+    {# terms page #}
+    <section class="page page-terms container-page">
+      {# terms and conditions global #}
+      {{ proposalTerms.redactor }}
+    </section>
+  </section>
+  {# end proposal #}
+
+{% endblock %}
+{# end content block #}

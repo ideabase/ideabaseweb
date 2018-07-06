@@ -1,95 +1,91 @@
-{#
- #}
-
 {% extends "_layout" %}
 
 {% block content %}
-{% include '_includes/_background-images.html' %}
-<section class="section-header section-header--interior">
-	<div class="section-header__container">
-		<h1 class="section-header__title">{{ entry.projectHeadline }}<span class="category-header"></span></h1>
-	</div>
-</section>
+  {% include '_includes/_background-images.html' %}
+  <section class="section-header section-header--interior">
+    <div class="section-header__container">
+      <h1 class="section-header__title">{{ entry.projectHeadline }}
+        <span class="category-header"></span></h1>
+    </div>
+  </section>
 
-{% set projectCategory = craft.categories.group('projectType') %}
+  {% set projectCategory = craft.categories.group('projectType') %}
 
-{% set query = {
-    section : 'ideabaseProjects',
-    archivedProject : 'not 1',
-    order : 'title',
-    limit : null
-} %}
+  {% set query = {
+    section: 'ideabaseProjects',
+    archivedProject: 'not 1',
+    orderBy: 'title',
+    limit: null
+  } %}
 
-{% if category is defined %}
-    {% set query = query|merge({
-        categories: '~category.slug'
-    }) %}
-{% endif %}
+  {% if category is defined %}
+    {% set query = query | merge({categories: '~category.slug'}) %}
+  {% endif %}
 
-{% set Project = craft.entries(query) %}
+  {% set Project = craft.entries(query) %}
 
-<div class="panel-primary-container">
-	<div class="project-category">
-		<a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
+  <div class="panel-primary-container">
+    <div class="project-category">
+      <a class="nav__trigger__link" id="categorytrigger">Browse by Category</a>
 
-		<div class="overlay">
-			<section class="panel-primary-wide overlay-window">
-				<label class="hide-overlay">
-					<span>close</span>
-				</label>
-				<h3 class="category-list__title">Browse by Category</h3>
-				<ul class="project-category__list">
-					{%  for category in projectCategory.order('title asc') %}
-					<li class="project-category__list__item">
-						{% for asset in category.categoryIcon %}
-						<a class="category-link" title="{{category.title}}" href="{{ category.url }}" style="background-image:url({{ asset.url() }})">
-							{{category.title}}
-						</a>
-						{% endfor %}
-					</li>
-					{% endfor %}
-					<li class="project-category__list__item">
-						<a class="button button-primary category-link" title="" href="{{ siteUrl }}work/all">See All Work</a>
-					</li>
-				</ul>
-			</section>
-		</div>
-	</div>
-	<section class="section-projects-all panel-primary-wide">
-		<ul class="project-list">
-		{% for entry in Project %}
-    		<li class="project-list__item">
-				<a href="{{ entry.url }}">
-					{% set asset = entry.projectPicture %}
-					{% if asset|length %}
-						{% for asset in entry.projectPicture.limit(1) %}
-							<div class="project-list__item__image">
-								{% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
-        						{% if relatedAward | length %}
-									{% for asset in awardIcons.trophyBadgeIcon %}
-										<img class="trophy-icon" src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
-						            {% endfor %}
-					            {% endif %}
-					     		<img src="{{ asset.url('projectThumb') }}" alt= "{{ asset.title}}">
-					     	</div>
-					     {% endfor %}
-					     {% else %}
-					     	<div class="project-list__item__image">
-					     	     {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-					     	     	<img src="{{ asset.url('projectThumb') }}" alt= "No Image Found">
-					     	     {% endfor %}
-					     	</div>
-					    {% endif %}
+      <div class="overlay">
+        <section class="panel-primary-wide overlay-window">
+          <label class="hide-overlay">
+            <span>close</span>
+          </label>
+          <h3 class="category-list__title">Browse by Category</h3>
+          <ul class="project-category__list">
+            {% for category in projectCategory.orderBy('title asc').all() %}
+              <li class="project-category__list__item">
+                {% for asset in category.categoryIcon.all() %}
+                  <a class="category-link" title="{{category.title}}" href="{{ category.url }}" style="background-image:url({{ asset.url() }})">
+                    {{category.title}}
+                  </a>
+                {% endfor %}
+              </li>
+            {% endfor %}
+            <li class="project-category__list__item">
+              <a class="button button-primary category-link" title="" href="{{ siteUrl }}work/all">See All Work</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <section class="section-projects-all panel-primary-wide">
+      <ul class="project-list">
+        {% for entry in Project.all() %}
+          <li class="project-list__item">
+            <a href="{{ entry.url }}">
+              {% set asset = entry.projectPicture %}
+              {% if asset | length %}
+                {% for asset in entry.projectPicture.limit(1).all() %}
+                  <div class="project-list__item__image">
+                    {% set relatedAward = craft.entries.section('ideabaseAwards').relatedTo(entry) %}
+                    {% if relatedAward | length %}
+                      {% for asset in awardIcons.trophyBadgeIcon.all() %}
+                        <img class="trophy-icon" src="{{ asset.url('featuredImageTop') }}" alt="{{ asset.title}}">
+                      {% endfor %}
+                    {% endif %}
+                    <img src="{{ asset.url('projectThumb') }}" alt="{{ asset.title}}">
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="project-list__item__image">
+                  {% for asset in imagePlaceholder.aboutImage.limit(1).all() %}
+                    <img src="{{ asset.url('projectThumb') }}" alt="No Image Found">
+                  {% endfor %}
+                </div>
+              {% endif %}
 
-		     		<h2 class="project-list__item__name">{{ entry.title }}</h2>
+              <h2 class="project-list__item__name">{{ entry.title }}</h2>
 
-					{% for entry in entry.forWhichClient %}
-    					<h3 class="project-list__item__client">{{ entry.title }}</h3>
-  					{% endfor %}
-					</a>
-				</li>
-   			{% endfor %}
-  		</ul>
-	</section>
-</div>
+              {% for entry in entry.forWhichClient.all() %}
+                <h3 class="project-list__item__client">{{ entry.title }}</h3>
+              {% endfor %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 {% endblock %}

@@ -1,8 +1,8 @@
 <aside class="blog__entry__sidebar">
-{% for entry in entries %}
+{% for entry in entries.all() %}
 <section class="blog__entry-author">
   <div class="blog__entry__author__image">
-    {% for asset in entry.staffHeadshot %}
+    {% for asset in entry.staffHeadshot.all() %}
         <img src="{{ asset.url('staffCircle') }}" alt= "{{ asset.title}}">
       {% endfor %}
    </div>

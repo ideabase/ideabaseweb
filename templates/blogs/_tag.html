@@ -8,8 +8,8 @@
 
 {% include '_includes/_blog_background-images.html' %}
 
-{% set tag = craft.tags.title(tag).first() %}
-{% set entries = craft.entries.relatedTo(tag).order('title').limit(null) %}
+{% set tag = craft.tags.title(tag).one() %}
+{% set entries = craft.entries.relatedTo(tag).orderBy('title').limit(null) %}
 
 <section class="blog section-header section-header--interior">
 	<div class="section-header__container">

@@ -50,7 +50,7 @@
         {% for cat in category %}
           <span class="wiki-breadcrumbs__link"><a href="{{cat.url}}">{{cat.title}}</a></span>
         {% endfor %}
-      {% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+      {% set parent = craft.entries.ancestorOf(entry).level(1).one() %}
       {% if parent %}
           <span class="wiki-breadcrumbs__link"><a href="{{parent.url}}">{{parent.title}}</a></span>
       {% endif %}
@@ -106,7 +106,7 @@
 
 <!-- Show related articles -->
 {% set tag = entry.wikiTags %}
-{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).order('RAND()').find() %}
+{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).orderBy('RAND()').find() %}
   {% if relatedEntries | length %}
   <section class="people-posts people-posts--blog">
   <h2 class="people-posts__title">Related Articles</h2>

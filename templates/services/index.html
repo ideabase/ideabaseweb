@@ -17,36 +17,26 @@ Process Template
 		<div class="introduction">{{ entry.processDescription }}</div>
   </section>
   </div>
-		<!--
-    <div class="service-index__image">
-
-			{% for asset in entry.processFeaturedImage %}
-       			<img src="{{ asset.url('featuredImageTop') }}" alt= "{{ asset.title}}">
-    		{% endfor %}
-    	</div>
-    </section>
-    <section class="service-index-entry">
-    -->
 <div class="layout-three-wide">
-{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+{% for block in entry.serviceHomepageMatrix.type('processMatrix').all() %}
 
   <div class="panel-primary-container">
     <section class="service-index panel-primary">
       <h2 class="service-index__title">{{ block.homeProcessName }}</h2>
         <div class="service-index__icons">
-            {% for asset in block.icon1 %}
+            {% for asset in block.icon1.all() %}
            			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
-        		 {% for asset in block.icon2 %}
+        		 {% for asset in block.icon2.all() %}
            			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
-        		{% for asset in block.icon3 %}
+        		{% for asset in block.icon3.all() %}
            			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
 
-        		{% for asset in block.icon4 %}
+        		{% for asset in block.icon4.all() %}
            			<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
         		{% endfor %}
           </div>
@@ -88,7 +78,7 @@ Process Template
     <div class="panel-secondary-container panel-background-image">
       <section class="section-price panel-secondary">
         <h2>{{ entry.priceHeadline}}</h2>
-        {% set image = entry.calloutImage.first() %}
+        {% set image = entry.calloutImage.one() %}
         {% if entry.calloutImage | length %}
           <img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
           <div class="panel-secondary--left">
@@ -102,7 +92,7 @@ Process Template
 
 <div class="panel-primary-container">
 <section class="testimonial-entry panel-primary">
-{% set quote = craft.entries.section('testimonials').order('RAND()').limit(1) %}
+{% set quote = craft.entries.section('testimonials').orderBy('RAND()').limit(1) %}
 {% include '_includes/_testimonial.html' %}
 </section>
 </div>

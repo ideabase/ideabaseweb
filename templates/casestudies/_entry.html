@@ -29,7 +29,7 @@
 
 			    {% elseif block.type == "image" %}
 
-			        {% set image = block.image.first() %}
+			        {% set image = block.image.one() %}
 			        {% if image %}
 			        	<section class="section-body-image panel-primary">
 			        		<figure class="section-body-image__figure">

@@ -11,7 +11,7 @@
 		<h1 class="project-single__name">{{ entry.title }}</h1>
 		<div class="introduction">{{ entry.introduction }}</div>
 	</section>
-	{% set image = entry.aboutImage.first() %}
+	{% set image = entry.aboutImage.one() %}
 	{% if image %}
 		<section class="section-body-image panel-primary">
 			<figure class="section-body-image__figure">
@@ -21,7 +21,7 @@
 	{% endif %}
 </div>
 
-	{% set alumni = craft.entries.section('people').order('profileLastName asc') %}
+	{% set alumni = craft.entries.section('people').orderBy('profileLastName asc') %}
 
 <div class="panel-primary-container">
 <section class="section-people-listing panel-primary">

@@ -12,7 +12,7 @@
 		}
 	}
 	</style>
-	<a class="styleguide__pane__link styleguide__pane__link__visual" href="{{entry.visualStyleGuideLink.first().url}}" style="
+	<a class="styleguide__pane__link styleguide__pane__link__visual" href="{{entry.visualStyleGuideLink.one().url}}" style="
 			{% if entry.visualGuideImage | length %}
 			    {% for asset in entry.visualGuideImage %}
 			        background-image: url({{ asset.url() }});
@@ -29,7 +29,7 @@
 			</div>
 		</div>	
 	</a>
-	<a class="styleguide__pane__link styleguide__pane__link__content" href="{{entry.contentStyleGuideLink.first().url}}" style="
+	<a class="styleguide__pane__link styleguide__pane__link__content" href="{{entry.contentStyleGuideLink.one().url}}" style="
 			{% if entry.visualGuideImage | length %}
 			    {% for asset in entry.contentGuideImage %}
 			        background-image: url({{ asset.url() }});

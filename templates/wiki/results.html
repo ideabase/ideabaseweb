@@ -4,7 +4,7 @@
 {# to display search without conjoined words #}
 {% set searchQuery = craft.request.getParam('searchQuery') %}
 {% set query = craft.request.getParam('searchQuery')|split(' ')|join(' OR ') %}
-{% set entries = craft.entries.section('wiki').search(query).order('score') %}
+{% set entries = craft.entries.section('wiki').search(query).orderBy('score') %}
 
 <section class="wiki-search">
 <div class="panel-primary">

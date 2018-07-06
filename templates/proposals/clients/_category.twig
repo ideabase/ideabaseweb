@@ -1,0 +1,94 @@
+{# /templates/proposals/clients/_category.twig #}
+
+{% requireLogin %}
+{% requirePermission "accessCp" %}
+
+{% extends '_proposals' %}
+
+{% set suffixes = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'] %}
+
+{% block content %}
+
+  {# page title #}
+  <h1>{{ category.title }}{% if category.organization is not empty %}&nbsp;&sol;&nbsp;{{ category.organization }}{% endif %}</h1>
+
+  {# contacts #}
+  {% if category.contacts.all()|length %}
+    <h2>
+      {% if category.contacts.all()|length == 1 %}Contact{% else %}Contacts{% endif %}
+    </h2>
+    {# begin contacts loop #}
+    {% for block in category.contacts.all() %}
+      {# IMPORTANT: UPDATE 'proposals/_entry' AS WELL IF YOU CHANGE HOW CONTACT NAMES ARE DISPLAYED #}
+      <p>{%- if block.prefix is not empty -%}
+        {{- block.prefix -}}&nbsp;
+        {%- endif -%}
+        {{- block.firstName -}}&nbsp;
+        {{- block.lastName -}}
+        {%- if block.suffix is not empty -%}
+          {%- if block.suffix in suffixes -%}
+            &nbsp;{{- block.suffix -}}&nbsp;
+          {%- else -%}
+            &comma;&nbsp;{{- block.suffix -}}&nbsp;
+          {%- endif -%}
+        {%- endif -%}
+        {%- if block.contactTitle is not empty -%}
+          &sol;&nbsp;{{- block.contactTitle -}}
+        {%- endif -%}</p>
+
+      {% if block.phoneNumber is not empty %}
+        <p>{{ block.phoneNumber }}</p>
+      {% endif %}
+
+      {% if block.email is not empty %}
+        <a href="mailto:{{ block.email }}" alt="Email {{ block.email }}" title="Email {{ block.email }}">{{ block.email }}</a>
+      {% endif %}
+
+      {% if block.otherInformation is not empty %}
+        <p>{{ block.otherInformation }}</p>
+      {% endif %}
+      {% endfor %}
+    {# end contacts loop #}
+  {% endif %}
+
+  {# addresses #}
+  {% if category.addresses.all()|length %}
+    <h2>
+      {% if category.addresses.all()|length == 1 %}Address{% else %}Addresses{% endif %}
+    </h2>
+    {# begin addresses loop #}
+    {% for block in category.addresses.all() %}
+      <p>{{ block.address1 }}</p>
+
+      {% if block.address2 is not empty %}
+        <p>{{ block.address2 }}</p>
+      {% endif %}
+
+      <p>{{ block.city }}&comma;&nbsp;{{ block.state }}&nbsp;{{ block.zipCode }}</p>
+
+      {% set gMapsQuery = (block.address1 ~ ' ' ~ block.address2 ~ ', ' ~ block.city ~ ' ' ~ block.state ~ ' ' ~ block.zipCode)|url_encode %}
+
+      <a href="https://www.google.com/maps/search/?api=1&query={{ gMapsQuery }}" alt="Open in Google Maps" title="Open in Google Maps" target="_blank">Google Maps</a>
+
+      {% if block.description is not empty %}
+        <p>{{ block.description }}</p>
+      {% endif %}
+    {% endfor %}
+    {# end addresses loop #}
+  {% endif %}
+
+  {# proposals #}
+  {% if craft.entries.section('proposals').relatedTo(category).all()|length %}
+    <h2>
+      {% if craft.categories.group('clients').title(category.title).all()|length == 1 %}Proposal{% else %}Proposals{% endif %}
+    </h2>
+
+    {# begin proposals loop #}
+    {% for entry in craft.entries.section('proposals').relatedTo(category).all() %}
+      <a href="{{ entry.url }}" class="button button-primary">{{ entry.title }}</a>
+    {% endfor %}
+    {# end proposals loop #}
+  {% endif %}
+
+{% endblock %}
+{# end content block #}

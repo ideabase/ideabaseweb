@@ -42,7 +42,7 @@
 
 <div class="panel-primary-container">
 	<section class="panel-primary awards">
-		{% set awardList = craft.entries.section('ideabaseAwards').order("postDate desc").find() %}
+		{% set awardList = craft.entries.section('ideabaseAwards').orderBy("postDate desc").find() %}
 		{% set awardListByYear = awardList|group("postDate|date('Y')") %}
 		{% for year, entriesInYear in awardListByYear %}
 			<article class="award-year__group">

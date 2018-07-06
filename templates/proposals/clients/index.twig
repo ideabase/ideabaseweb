@@ -1,0 +1,32 @@
+{# /templates/proposals/clients/index.twig #}
+
+{% requireLogin %}
+{% requirePermission "accessCp" %}
+
+{% extends '_proposals' %}
+
+{# set clients = list of clients ordered by title #}
+{% set clients = craft.categories.group('clients').orderBy('title').all() %}
+
+{% block content %}
+
+  {# page title #}
+  <h1>Clients</h1>
+
+  <table>
+    <thead>
+      <th>Name</th>
+    </thead>
+    <tbody>
+      {# begin clients loop #}
+      {% for client in clients %}
+        <tr>
+          <td><div><a href="{{ client.url }}">{{ client.title }}</a></div></td>
+        </tr>
+      {% endfor %}
+      {# end clients loop #}
+    </tbody>
+  </table>
+
+{% endblock %}
+{# end content block #}

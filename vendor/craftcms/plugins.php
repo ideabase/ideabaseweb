@@ -133,4 +133,56 @@ return array (
     'hasCpSettings' => false,
     'hasCpSection' => false,
   ),
+  'nystudio107/craft-seomatic' => 
+  array (
+    'class' => 'nystudio107\\seomatic\\Seomatic',
+    'basePath' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    'handle' => 'seomatic',
+    'aliases' => 
+    array (
+      '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    ),
+    'name' => 'SEOmatic',
+    'version' => '3.0.25',
+    'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
+    'developer' => 'nystudio107',
+    'developerUrl' => 'https://nystudio107.com',
+    'documentationUrl' => 'https://github.com/nystudio107/craft-seomatic/blob/v3/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/nystudio107/craft-seomatic/v3/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'frontendTemplates' => 'nystudio107\\seomatic\\services\\FrontendTemplates',
+      'helper' => 'nystudio107\\seomatic\\services\\Helper',
+      'jsonLd' => 'nystudio107\\seomatic\\services\\JsonLd',
+      'link' => 'nystudio107\\seomatic\\services\\Link',
+      'metaBundles' => 'nystudio107\\seomatic\\services\\MetaBundles',
+      'metaContainers' => 'nystudio107\\seomatic\\services\\MetaContainers',
+      'redirects' => 'nystudio107\\seomatic\\services\\Redirects',
+      'script' => 'nystudio107\\seomatic\\services\\Script',
+      'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
+      'tag' => 'nystudio107\\seomatic\\services\\Tag',
+      'title' => 'nystudio107\\seomatic\\services\\Title',
+    ),
+  ),
+  'craftcms/redactor-clips' => 
+  array (
+    'class' => 'craft\\redactorclips\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/redactor-clips/src',
+    'handle' => 'redactor-clips',
+    'aliases' => 
+    array (
+      '@craft/redactorclips' => $vendorDir . '/craftcms/redactor-clips/src',
+    ),
+    'name' => 'Redactor Clips',
+    'version' => '2.0.0',
+    'description' => 'This plugin Adds Redactor’s “Clips” plugin to Rich Text fields in Craft, which lets you insert predefined code snippets.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/redactor-clips',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor-clips/v2/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/redactor-clips/archive/v2.zip',
+  ),
 );

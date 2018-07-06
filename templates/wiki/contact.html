@@ -24,7 +24,7 @@
 
 <form method="post" action="" accept-charset="UTF-8">
 
-  {{ getCsrfInput() }}
+  {{ csrfInput() }}
 
   <input type="hidden" name="redirect" value="{{ siteUrl }}success">
   <input type="hidden" name="action" value="contactForm/sendMessage">

@@ -10,10 +10,10 @@
 
 {% if videoBackground.fileTypeOne|length %}
   {%cache globally%}
-	<!-- About Section -->
+	{# About Section #}
 	<section class="section-header video-background">
 		<video autoplay muted loop class="hero-video">
-		{% for asset in videoBackground.fileTypeOne %}
+		{% for asset in videoBackground.fileTypeOne.all() %}
 			<source src="{{ asset.url('fileTypeOne') }}" type="video/mp4">
 		{% endfor %}
 		</video>
@@ -26,23 +26,23 @@
 		 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2>
 		 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
 		</div>
-		<!-- End About Container -->
+		{# End About Container #}
 
 	</section>
 	{% endcache %}
-	<!-- End About Section -->
+	{# End About Section #}
 
-	<!-- Services List -->
+	{# Services List #}
 	{%cache globally%}
 	<div class="panel-primary-container">
 	<section class="section-services panel-primary">
-		<!-- Process List -->
+		{# Process List #}
 		<h2>{{ entry.designHeadline }}</h2>
 			<ul class="section-services__list">
-				{% for entry in craft.entries.section('processIndex') %}
-						{% for block in entry.serviceHomepageMatrix.type('processMatrix') %}
+				{% for entry in craft.entries.section('processIndex').all() %}
+						{% for block in entry.serviceHomepageMatrix.type('processMatrix').all() %}
 							<li class="section-services__list__item">
-								{% for asset in block.homepageIcon %}
+								{% for asset in block.homepageIcon.all() %}
                         <noscript>
                           <img class="section-services__list__item__icon" src="{{ asset.url() }}" alt= "{{ asset.title}}">
                         </noscript>
@@ -54,13 +54,13 @@
 						{% endfor %}
 				{% endfor %}
 			</ul>
-		<!-- End Process List -->
-		<a class="button button-primary" href="{{ entry.servicesButtonLink.first().url }}">{{ entry.servicesButtonLinkName }}</a>
+		{# End Process List #}
+		<a class="button button-primary" href="{{ entry.servicesButtonLink.one().url }}">{{ entry.servicesButtonLinkName }}</a>
 	</section>
 	</div>
 	{% endcache %}
   {%cache globally%}
-	<!-- Projects List -->
+	{# Projects List #}
 	<div class="panel-secondary-container panel-background-image">
 	<section class="section-projects panel-secondary">
 		<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
@@ -69,11 +69,11 @@
 		<ul class="section-projects__list">
 		{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
 
-		{% for entry in featured.limit(3) %}
+		{% for entry in featured.limit(3).all() %}
 			    <li class="section-projects__list__item">
 				    <a href="{{ entry.url }}">
 				    {% if entry.projectPicture|length %}
-							{% for asset in entry.projectPicture.limit(1) %}
+							{% for asset in entry.projectPicture.limit(1).all() %}
                   <img class="section-projects__list__item__thumb" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
                 {% endfor %}
    						{% else %}
@@ -87,20 +87,20 @@
 		{% endfor %}
 		</ul>
 		<section class="section-body-button panel-primary">
-			<a class="button button-primary" href="{{ entry.projectButtonLink.first().url }}">{{ entry.projectsButtonLinkName }}</a>
+			<a class="button button-primary" href="{{ entry.projectButtonLink.one().url }}">{{ entry.projectsButtonLinkName }}</a>
 		</section>
 	</section>
 	</div>
   {% endcache %}
-	<!-- End Projects List -->
+	{# End Projects List #}
 	{%cache globally%}
 	<div class="panel-primary-container">
 	<section class="section-people-home panel-primary">
 		<h2>{{ entry.peopleSectionTitle }}</h2>
 		<p>{{ entry.peopleSectionDescription }}</p>
-		{% for block in entry.projectMatrix.type('homeProjects') %}
+		{% for block in entry.projectMatrix.type('homeProjects').all() %}
 			<ul class="section-people__logos">
-     			{% for asset in block.projectImageLogo %}
+     			{% for asset in block.projectImageLogo.all() %}
            			<li class="section-people__logos__item">
                   <noscript>
                     <img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
@@ -110,7 +110,7 @@
         		{% endfor %}
 			</ul>
 		{% endfor %}
-		<a class="button button-primary" href="{{ entry.peopleButtonLink.first().url }}">{{ entry.peopleButtonName }}</a>
+		<a class="button button-primary" href="{{ entry.peopleButtonLink.one().url }}">{{ entry.peopleButtonName }}</a>
 	</section>
 	</div>
 	{% endcache %}
