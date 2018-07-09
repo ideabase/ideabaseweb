@@ -196,6 +196,7 @@
   }
 }
 
+// container for pages except cover, letter, and terms
 .container-page {
   display: flex;
   flex-direction: column;
@@ -278,7 +279,7 @@
   }
 }
 
-// container for element stuff before phase subtotal
+// container to separate elements before phase subtotal
 .container-element {
   display: flex;
   flex-direction: column;
@@ -384,14 +385,23 @@
 
 // terms page
 .page-terms {
+  img {
+    align-self: center;
+    flex-shrink: 0; // container-element can grow, don't want img to shrink
+    width: 20%;
+  }
+
   h1 {
     @include separator-after;
 
+    font-size: 2.25em;
+    letter-spacing: .05em;
     margin-top: 0;
+    text-align: left;
   }
 
   p {
-    font-size: .9em;
+    font-size: .8em;
     line-height: 1.25em;
     margin-bottom: 0;
   }

@@ -20,7 +20,8 @@
   {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
   {% set leader = craft.entries.section('people').relatedTo(leaderGroup).alumniLightswitch('not 1') %}
   {% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
-  {% set staff = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1') %}
+  {% set staffUpper = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').limit(2).all() %}
+  {% set staffLower = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').offset(2).all() %}
   <div class="panel-primary-container">
     <section class="section-people panel-primary-wide">
       <section class="people">
@@ -49,7 +50,7 @@
             </div>
           </a>
         {% endfor %}
-        {% for entry in staff.relatedTo(staffGroup).orderBy('profileLastName asc').limit(2).all() %}
+        {% for entry in staffUpper %}
           <a href="{{ entry.Url }}" class="people__profile-item">
             {% if entry.staffHeadshot | length %}
               {% for asset in entry.staffHeadshot.all() %}
@@ -87,8 +88,7 @@
       </section>
 
       <section class="people">
-
-        {% for entry in staff.relatedTo(staffGroup).orderBy('profileLastName asc').offset(2).all() %}
+        {% for entry in staffLower %}
           <a href="{{ entry.Url }}" class="people__profile-item">
             {% if entry.staffHeadshot | length %}
               {% for asset in entry.staffHeadshot.all() %}

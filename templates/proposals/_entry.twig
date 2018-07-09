@@ -86,6 +86,7 @@
       </div>
     </section>
 
+    {# letter to clients #}
     <section class="page page-letter">
       <div class="page-letter-text">
         <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %} class="logo-ideabase-stacked">
@@ -135,13 +136,13 @@
 
     {# check if project elements are separated by phase #}
     {% set phases = false %}
-    {% for block in entry.elements.all() if not phases %}
+    {% for block in entry.elements.all() if not phases %} {# break if phases #}
       {% if block.phase|length %}
         {% set phases = true %}
       {% endif %}
     {% endfor %}
 
-    {# initialize variables outside of the logic #}
+    {# initialize variables outside of loops #}
     {% set totalCost, elementHours = 0, 0 %}
 
     {# begin phases #}
@@ -218,6 +219,7 @@
         </section>
       {% endfor %}
     {% else %}
+    {# if not phases, else use one page per element #}
       {% for block in entry.elements.all() %}
       {# IMPORTANT: IF YOU EDIT THIS PAGE, YOU MUST ALSO EDIT THE PHASE PAGE ABOVE #}
         <section class="page page-element container-page">
@@ -255,6 +257,7 @@
 
       <h1 class="h1-separator">Cost / Timeline Summary</h1>
 
+      {# if timeline checkbox is checked #}
       {% if entry.timeline|length %}
         <table class="table-subtotal">
           <thead>
@@ -283,7 +286,7 @@
           </tbody>
       {% endif %}
 
-      {# display total cost #}
+      {# display total cost and discount if available #}
       <table class="table-total">
         {% if entry.discount|length %}
           <tr>
@@ -353,7 +356,7 @@
     </section>
 
     {# terms page #}
-    <section class="page page-terms container-page">
+    <section class="page page-terms">
       {# terms and conditions global #}
       {{ proposalTerms.redactor }}
     </section>

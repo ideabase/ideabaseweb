@@ -7,7 +7,6 @@ namespace mikehaertl\shellcommand;
  * This class represents a shell command.
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
- * @version 1.2.2
  * @license http://www.opensource.org/licenses/MIT
  */
 class Command
@@ -164,7 +163,7 @@ class Command
 
             // Absolute path. If it's a relative path, let it slide.
             if ($position) {
-                $command = sprintf($command[$position - 1].': && cd %s && %s', escapeshellarg(dirname($command)), basename($command));
+                $command = sprintf($command[$position - 1].': && cd %s && %s', escapeshellarg(dirname($command)), escapeshellarg(basename($command)));
             }
         }
         $this->_command = $command;

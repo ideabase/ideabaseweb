@@ -6,21 +6,24 @@
     margin: .75in;
   }
 
-  // make containers 100% of page height, to vertical center page-cover
   html,
   body,
   main,
   .proposal {
-    height: 100%;
+    height: 100%; // make containers 100% of page height, in order to vertical center .page-cover-text
   }
 
-  // hide everything except proposal
   .print-hide {
-    display: none;
+    display: none; // hide everything in .print-hide when printing
   }
 
-  // page-break after every .page class
   .page {
-    page-break-after: auto;
+    page-break-after: auto; // auto break after every main page (moz is broken with value: always)
+
+    .container-element,
+    .page-element,
+    p {
+      page-break-inside: avoid; // avoid breaks inside elements
+    }
   }
 }
