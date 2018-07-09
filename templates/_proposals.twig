@@ -13,21 +13,34 @@
 </head>
 
 <body>
-	{# Helper code for the Admin toolbar, only shown when logged in #}
+	{# admin bar hidden by default in scss/_proposals/main.scss #}
 	{% if entry is defined %}
 		{{ adminbar({ entry: entry }) }}
 	{% endif %}
 
-	{# Start the main content block #}
+	{# content block #}
 	<main role="main">
 		{% block content %}
 		{% endblock %}
 	</main>
 
-	<script type="text/javascript" src="{{ siteUrl }}js/custom-scripts-min.js"></script>
+	{# we need different fonts than the main site, and we don't need the custom scripts #}
+	<script type="text/javascript">
+		WebFontConfig = {
+	    google: { families: [ 'Montserrat:700', 'Source+Sans+Pro:600,700,400,400italic,300' ] }
+	  };
+		  (function() {
+		    var wf = document.createElement('script');
+		    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		    wf.type = 'text/javascript';
+		    wf.async = 'true';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(wf, s);
+		  })();
+	</script>
 
   {% if getenv('ENVIRONMENT') == 'dev' %}
-	  {# Live Reload - For local environment only #}
+	  {# live Reload - For local environment only #}
 	  <script src="//localhost:35729/livereload.js"></script>
   {% endif %}
 

@@ -47,14 +47,14 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-				files: ['**/scss/**/*.scss'],
+				files: '**/scss/**/*.scss',
 				tasks: ['sass', 'autoprefixer'],
         options: {
           livereload: true,
         },
 			},
       js: {
-				files: '**/js/*.js',
+				files: ['**/js/*.js', '!*min.js'],
 				tasks: ['uglify'],
         options: {
           livereload: true,
