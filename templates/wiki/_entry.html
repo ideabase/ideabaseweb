@@ -33,7 +33,7 @@
   <div class="wiki-search__text wiki-search__text--category">
     <h1>{{entry.title}}</h1>
     <div class="blog__entry__info">
-		{% set blogAuthor = entry.blogAuthor %}
+		{% set blogAuthor = entry.blogAuthor.all() %}
 		{% set numberOfAuthors = entry.blogAuthor|length %}
 			{% if numberOfAuthors < 2 %}
 				{% for entry in blogAuthor %}
@@ -46,7 +46,7 @@
 			{% endif %}
 			<date class="blog__entry__date">Posted on {{ entry.postDate.format('F d, Y') }}</date>
       <div class="wiki-breadcrumbs">
-      {% set category = entry.wikiTaxonomy %}
+      {% set category = entry.wikiTaxonomy.all() %}
         {% for cat in category %}
           <span class="wiki-breadcrumbs__link"><a href="{{cat.url}}">{{cat.title}}</a></span>
         {% endfor %}
@@ -73,13 +73,13 @@
   {{entry.body}}
 
 {% set stepCounter = 1 %}
-{% for block in entry.howTo %}
+{% for block in entry.howTo.all() %}
   {% if block.type == "step" %}
     <div class="wiki__step">
       <span class="wiki__step__number">{{stepCounter |striptags }}.</span>
       <div class="wiki__step__text">{{block.text}}</div>
     </div>
-    {% for img in block.image %}
+    {% for img in block.image.all() %}
     <section class="section-body-image panel-primary">
       <figure class="section-body-image__figure">
         <img class="section-body-image__image" src="{{ img.url('blogInlineImage') }}" alt="{{ img.title }}" />
@@ -97,7 +97,7 @@
 {% if entry.downloads | length %}
 <aside class="wiki__downloads">
   <h5>Downloads</h5>
-  {% for file in entry.downloads %}
+  {% for file in entry.downloads.all() %}
     <a href="{{file.url}}">{{file.title}} ({{file.extension}})</a>
   {% endfor %}
 </aside>
@@ -106,7 +106,7 @@
 
 <!-- Show related articles -->
 {% set tag = entry.wikiTags %}
-{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).orderBy('RAND()').find() %}
+{% set relatedEntries = craft.entries.relatedTo(tag).id('not ' ~ entry.id).limit(3).orderBy('RAND()').all() %}
   {% if relatedEntries | length %}
   <section class="people-posts people-posts--blog">
   <h2 class="people-posts__title">Related Articles</h2>
@@ -125,7 +125,7 @@
 <!-- Begin Tags -->
 {% if entry.wikiTags | length %}
 <ul class="blog__entry__tags">
-    {% for tag in entry.wikiTags %}
+    {% for tag in entry.wikiTags.all() %}
       <li class="blog__entry__tags__single">
             <a class="blog__entry__tags-link" href="{{ siteUrl }}blog/tags/{{ tag.title }}">{{ tag.title }}</a>
         </li>

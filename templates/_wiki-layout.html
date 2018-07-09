@@ -13,13 +13,10 @@
 	{% include '_includes/_favicons.html' %}
 </head>
 <body>
-  {% if entry is defined %}
-    {% set config = {
-      entry: entry,
-    } %}
-    {{ craft.adminbar.bar(config) }}
-  {% endif %}
-{% if craft.config.devMode %}
+	{% if entry is defined %}
+		{{ adminbar({ entry: entry }) }}
+	{% endif %}
+{% if getenv('ENVIRONMENT') == 'dev' %}
 <!-- Live Reload - For local environment only -->
   <script src="//localhost:35729/livereload.js"></script>
 {% endif %}
@@ -27,7 +24,7 @@
   <div class="wiki-header__inner">
     <a class="wiki-subheader" href="{{ siteUrl }}wiki"><h1 class="wiki-subheader__title"><span>_</span>wiki</h1></a>
     <a class="ideabaselogo" href="{{ siteUrl }}">
-    	{% for image in header.headerLogo %}
+    	{% for image in header.headerLogo.all() %}
     		<img src="{{ image.url }}" alt="{{ image.title }}">
     	{% endfor %}
     </a>

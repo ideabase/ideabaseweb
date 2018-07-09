@@ -29,7 +29,7 @@
    <section class="people-listing">
    			<h2>Professional Advisory Board Members</h2>
    			<ul class="people-listing__list">
-    		{% for entry in board.relatedTo(boardGroup).orderBy('profileLastName') %}
+    		{% for entry in board.relatedTo(boardGroup).orderBy('profileLastName').all() %}
     				<li class="people-listing__item">
 		    			<a href="{{ entry.Url }}">
 							<h3 class="people-listing__name">{{ entry.profileFirstName }}

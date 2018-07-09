@@ -5,8 +5,6 @@
 <head>
 	{% include '_global/head' %}
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700%7CSource+Sans+Pro:600,700,400,400italic,300" media="all">
-
 	{# include proposal stylesheet #}
 	<link href="{{ siteUrl }}css/proposals.css" type="text/css" rel="stylesheet" media="screen, projection, print"/>
 
@@ -25,6 +23,8 @@
 		{% block content %}
 		{% endblock %}
 	</main>
+
+	<script type="text/javascript" src="{{ siteUrl }}js/custom-scripts-min.js"></script>
 
   {% if getenv('ENVIRONMENT') == 'dev' %}
 	  {# Live Reload - For local environment only #}

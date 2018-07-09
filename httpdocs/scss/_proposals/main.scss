@@ -1,3 +1,8 @@
+// hide adminbar in proposals
+#adminbar {
+  display: none;
+}
+
 .proposals-index-container {
   display: flex;
   flex-wrap: wrap;

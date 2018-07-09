@@ -13,7 +13,7 @@
 	<nav role="navigation" class="nav__styleguide">
 		<div class="js_fixedcontent">
 		    <ul class="nav__styleguide__list">
-		        {% for sectionName in styleSection %}
+		        {% for sectionName in styleSection.all() %}
 		            <li class="nav__item"><a href="#{{sectionName.title|replace(' ', '-')|replace('&', '')}}">{{ sectionName.title }}</a></li>
 		        {% endfor %}
 		        <li class="nav__item--back"><a href="{{siteUrl}}style">Main Style Guide</a></li>
@@ -25,11 +25,11 @@
 
 	<h2 class="styleguide__subtitle">{{ entry.title }}</h2>
 
-	{% for item in styleSection %}
+	{% for item in styleSection.all() %}
 	<section class="section-basic-page styleguide__section">
 		<h3 id="{{item.title|replace(' ', '-')|replace('&', '')}}">{{ item.title }}</h3>
 		{% if currentSection == 'visualStyleGuide' %}
-			{% for block in item.visualPattern %}
+			{% for block in item.visualPattern.all() %}
 					{% if block.type == "color" %}
 						<div class="styleguide__color">
 							<div style="background-color:{{ block.colorRgb }}" class="swatch">
@@ -59,10 +59,10 @@
 
 						<div class="styleguide__image">
 								<h4>{{ block.imageName }}</h4>
-								{% for preview in block.imageLogoPreviewFile %}
+								{% for preview in block.imageLogoPreviewFile.all() %}
 									<img src="{{ preview.url() }}" alt= "{{ preview.title}}">
 								{% endfor %}
-								{% for asset in block.imageLogoFile %}
+								{% for asset in block.imageLogoFile.all() %}
 							     		<a class="styleguide__image__link" href="{{ asset.url() }}" download>{{asset.imageFormat.label}}
 							     			</a>
 							   	{% endfor %}

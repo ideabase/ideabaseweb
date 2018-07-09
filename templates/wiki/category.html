@@ -21,14 +21,14 @@
 {% set counter = 0 %}
 {% if entries | length %}
 <section class="wiki-topics panel-primary wiki-topics--category">
-    {% for entry in entries %}    {% set parent = entry.getParent() %}
+    {% for entry in entries.all() %}    {% set parent = entry.getParent() %}
     {% if entry.hasDescendants() %} {# if parent then list the children #}
 
     <div class="wiki-topics__section">
       <h4 class="wiki-topics__level1"><a href="{{entry.url}}">{{entry.title}}</a></h4>
         <ul class="wiki-topics__list wiki-topics__list--category">
           {% set children = entry.descendants() %} {# children of parent #}
-            {% for child in children %}
+            {% for child in children.all() %}
               {% if child.wikiTaxonomy | length > 1 %} {# if its assigned to more one category #}
                 {% set counter = 1 %}
               {% endif %}
