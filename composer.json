@@ -28,7 +28,8 @@
     "dolphiq/sitemap": "v1.0.9",
     "mikestecker/craft-videoembedder": "1.0.9",
     "nystudio107/craft-seomatic": "3.0.25",
-    "craftcms/redactor-clips": "2.0.0"
+    "craftcms/redactor-clips": "2.0.0",
+    "craftcms/contact-form-honeypot": "1.0.2"
   },
   "autoload": {
     "psr-4": {

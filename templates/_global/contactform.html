@@ -12,15 +12,15 @@
 {% from _self import errorList %}
 
 <form method="post" action="" accept-charset="UTF-8">
-    {{ csrfInput() }}
+    {# {{ csrfInput() }} #}
     <div class="contact-form__column">
       <input type="hidden" name="action" value="contact-form/send">
       {{ redirectInput('/success') }}
 
-      <input placeholder="Name" id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+      <input placeholder="Name" id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" required>
       {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
-      <input placeholder="Email" id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+      <input placeholder="Email" id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" required>
       {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
     </div>
     <div class="contact-form__column">
@@ -31,9 +31,10 @@
       {{ message is defined and message ? errorList(message.getErrors('phone')) }}
     </div>
 
-    <textarea placeholder="How Can We Help" rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
+    <textarea placeholder="How Can We Help" rows="10" cols="40" id="message" name="message[body]" required>{{ message.message ?? '' }}</textarea>
     {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
+    <input id="justforfun" name="justforfun" type="text"> {# honeypot #}
     <input type="submit" value="Send">
 </form>
 

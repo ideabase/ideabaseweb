@@ -21,9 +21,9 @@
 
 {% block content %}
 	<style type="text/css">
-			.section-header { 
+			.section-header {
 				{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage %}
+				    {% for asset in fourofour.aboutImage.all() %}
 				        background-image: url({{ asset.url('featureImageSmall') }});
 				    {% endfor %}
 				{% endif %}
@@ -31,7 +31,7 @@
 			@media screen and (min-width: 600px) {
 				.section-header {
 					{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage %}
+				    {% for asset in fourofour.aboutImage.all() %}
 				        background-image: url({{ asset.url('featureImageMedium') }});
 				    {% endfor %}
 				{% endif %}
@@ -40,7 +40,7 @@
 			@media screen and (min-width: 1000px) {
 				.section-header {
 					{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage %}
+				    {% for asset in fourofour.aboutImage.all() %}
 				        background-image: url({{ asset.url('featureImageLarge') }});
 				    {% endfor %}
 				{% endif %}

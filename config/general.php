@@ -4,7 +4,7 @@ return [
     // Global settings
     '*' => [
         'defaultWeekStartDay' => 0,
-        'enableCsrfProtection' => true,
+        'enableCsrfProtection' => false,
         'extraAllowedFileExtensions' => 'eps',
         'omitScriptNameInUrls' => true,
         'cpTrigger' => 'admin',

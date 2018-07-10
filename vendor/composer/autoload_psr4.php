@@ -33,6 +33,7 @@ return array(
     'craft\\vue\\' => array($vendorDir . '/craftcms/vue-asset'),
     'craft\\redactorclips\\' => array($vendorDir . '/craftcms/redactor-clips/src'),
     'craft\\redactor\\' => array($vendorDir . '/craftcms/redactor/src'),
+    'craft\\contactform\\honeypot\\' => array($vendorDir . '/craftcms/contact-form-honeypot/src'),
     'craft\\contactform\\' => array($vendorDir . '/craftcms/contact-form/src'),
     'craft\\composer\\' => array($vendorDir . '/craftcms/plugin-installer/src'),
     'craft\\awss3\\' => array($vendorDir . '/craftcms/aws-s3/src'),

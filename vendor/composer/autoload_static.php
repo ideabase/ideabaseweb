@@ -67,6 +67,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
             'craft\\vue\\' => 10,
             'craft\\redactorclips\\' => 20,
             'craft\\redactor\\' => 15,
+            'craft\\contactform\\honeypot\\' => 27,
             'craft\\contactform\\' => 18,
             'craft\\composer\\' => 15,
             'craft\\awss3\\' => 12,
@@ -251,6 +252,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\redactor\\' => 
         array (
             0 => __DIR__ . '/..' . '/craftcms/redactor/src',
+        ),
+        'craft\\contactform\\honeypot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/craftcms/contact-form-honeypot/src',
         ),
         'craft\\contactform\\' => 
         array (
@@ -2609,6 +2614,8 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\contactform\\Plugin' => __DIR__ . '/..' . '/craftcms/contact-form/src/Plugin.php',
         'craft\\contactform\\controllers\\SendController' => __DIR__ . '/..' . '/craftcms/contact-form/src/controllers/SendController.php',
         'craft\\contactform\\events\\SendEvent' => __DIR__ . '/..' . '/craftcms/contact-form/src/events/SendEvent.php',
+        'craft\\contactform\\honeypot\\Plugin' => __DIR__ . '/..' . '/craftcms/contact-form-honeypot/src/Plugin.php',
+        'craft\\contactform\\honeypot\\Settings' => __DIR__ . '/..' . '/craftcms/contact-form-honeypot/src/Settings.php',
         'craft\\contactform\\models\\Settings' => __DIR__ . '/..' . '/craftcms/contact-form/src/models/Settings.php',
         'craft\\contactform\\models\\Submission' => __DIR__ . '/..' . '/craftcms/contact-form/src/models/Submission.php',
         'craft\\controllers\\AppController' => __DIR__ . '/..' . '/craftcms/cms/src/controllers/AppController.php',

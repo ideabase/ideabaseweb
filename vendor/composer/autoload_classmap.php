@@ -2157,6 +2157,8 @@ return array(
     'craft\\contactform\\Plugin' => $vendorDir . '/craftcms/contact-form/src/Plugin.php',
     'craft\\contactform\\controllers\\SendController' => $vendorDir . '/craftcms/contact-form/src/controllers/SendController.php',
     'craft\\contactform\\events\\SendEvent' => $vendorDir . '/craftcms/contact-form/src/events/SendEvent.php',
+    'craft\\contactform\\honeypot\\Plugin' => $vendorDir . '/craftcms/contact-form-honeypot/src/Plugin.php',
+    'craft\\contactform\\honeypot\\Settings' => $vendorDir . '/craftcms/contact-form-honeypot/src/Settings.php',
     'craft\\contactform\\models\\Settings' => $vendorDir . '/craftcms/contact-form/src/models/Settings.php',
     'craft\\contactform\\models\\Submission' => $vendorDir . '/craftcms/contact-form/src/models/Submission.php',
     'craft\\controllers\\AppController' => $vendorDir . '/craftcms/cms/src/controllers/AppController.php',

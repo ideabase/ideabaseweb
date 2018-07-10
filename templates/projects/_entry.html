@@ -22,7 +22,7 @@
 
         {% elseif numberOfPhotos == 1 %}
             <ul class="project-single__images--single">
-            {% for asset in entry.projectPicture %}
+            {% for asset in entry.projectPicture.all() %}
                 <li class="project-single__images__item">
                     <img src="{{ asset.url('projectLarge') }}" alt= "{{ asset.title}}">
                 </li>
@@ -78,9 +78,9 @@
                 <div class="project-entry__description__award project-entry__description__award--project-single">
 
                     <a href="{{ siteUrl }}/awards">
-                    {% for entry in relatedAward %}
+                    {% for entry in relatedAward.all() %}
                         <div class="project-single__info__award">
-                        {% for asset in awardIcons.trophyIcon %}
+                        {% for asset in awardIcons.trophyIcon.all() %}
                             <img src="{{ asset.url('featuredImageTop') }}" alt="{{ asset.title}}">
                         {% endfor %}
                           <p>{{ entry.title }}</p>
@@ -95,7 +95,7 @@
     {% set relatedTestimonial = craft.entries.section('testimonials').relatedTo(entry) %}
     {% if relatedTestimonial | length %}
     <section class="testimonial-entry--project panel-primary">
-      {% for entry in relatedTestimonial %}
+      {% for entry in relatedTestimonial.all() %}
         <blockquote class="testimonial-entry__text">{{ entry.testimonialQuote }}</blockquote>
         <cite class="testimonial-entry__author">{{ entry.testimonialNameOfQuoter }}</cite>
       {% endfor %}
@@ -103,7 +103,7 @@
     {% endif %}
 
     <ul class="blog__entry__tags">
-      {% for entry in entry.projectCategory %}
+      {% for entry in entry.projectCategory.all() %}
       <li>
         <a href="{{ entry.url }}" class="blog__entry__tags__item">
           {{ entry.title }}

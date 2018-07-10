@@ -565,6 +565,56 @@
         }
     },
     {
+        "name": "craftcms/contact-form-honeypot",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/craftcms/contact-form-honeypot/zipball/57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+            "reference": "57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+            "shasum": ""
+        },
+        "require": {
+            "craftcms/cms": "^3.0.0-beta.20"
+        },
+        "time": "2017-12-05T00:55:45+00:00",
+        "type": "craft-plugin",
+        "extra": {
+            "name": "Contact Form Honeypot",
+            "handle": "contact-form-honeypot",
+            "changelogUrl": "https://raw.githubusercontent.com/craftcms/contact-form-honeypot/master/CHANGELOG.md",
+            "downloadUrl": "https://github.com/craftcms/contact-form-honeypot/archive/master.zip"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "craft\\contactform\\honeypot\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pixel & Tonic",
+                "homepage": "https://pixelandtonic.com/"
+            }
+        ],
+        "description": "Add a honeypot captcha to your Craft CMS contact form",
+        "keywords": [
+            "cms",
+            "craftcms",
+            "yii2"
+        ],
+        "support": {
+            "email": "support@craftcms.com",
+            "issues": "https://github.com/craftcms/contact-form-honeypot/issues?state=open",
+            "source": "https://github.com/craftcms/contact-form-honeypot",
+            "docs": "https://github.com/craftcms/contact-form-honeypot",
+            "rss": "https://github.com/craftcms/contact-form-honeypot/commits/master.atom"
+        }
+    },
+    {
         "name": "craftcms/oauth2-craftid",
         "version": "1.0.0.1",
         "version_normalized": "1.0.0.1",

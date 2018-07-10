@@ -13,7 +13,7 @@
     {% else %}
 
       <p class="blog-teaser__author">
-        {% for entry in entry.blogAuthor %}
+        {% for entry in entry.blogAuthor.all() %}
           <span class="blog-multiple__author">{{ entry.title }}</span>
         {% endfor %}
       </p>

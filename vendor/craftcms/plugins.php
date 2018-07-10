@@ -185,4 +185,23 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor-clips/v2/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/redactor-clips/archive/v2.zip',
   ),
+  'craftcms/contact-form-honeypot' => 
+  array (
+    'class' => 'craft\\contactform\\honeypot\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/contact-form-honeypot/src',
+    'handle' => 'contact-form-honeypot',
+    'aliases' => 
+    array (
+      '@craft/contactform/honeypot' => $vendorDir . '/craftcms/contact-form-honeypot/src',
+    ),
+    'name' => 'Contact Form Honeypot',
+    'version' => '1.0.2',
+    'description' => 'Add a honeypot captcha to your Craft CMS contact form',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/contact-form-honeypot',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form-honeypot/master/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/contact-form-honeypot/archive/master.zip',
+  ),
 );

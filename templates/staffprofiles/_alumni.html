@@ -27,7 +27,7 @@
 <section class="section-people-listing panel-primary">
    <section class="people-listing">
    			<ul class="people-listing__list">
-    		{% for entry in alumni.limit(null) %}
+    		{% for entry in alumni.all() %}
     				{% if entry.alumniLightswitch %}
     				<li class="people-listing__item">
 		    			<a href="{{ entry.Url }}">

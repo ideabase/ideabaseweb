@@ -117,11 +117,9 @@
 	@extend .button-primary--inactive;
 }
 
-.contact-form label {
-	display: none;
-}
-
-.contact-form input[type="text"], .contact-form textarea {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
 	width: 100%;
 	padding: .75em;
 	margin-bottom: .75em;

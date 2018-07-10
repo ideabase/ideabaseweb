@@ -1,5 +1,5 @@
 
-{% for block in entry.basicPageOptions %}
+{% for block in entry.basicPageOptions.all() %}
 
     {% if block.type == "text" %}
     	<section class="section-basic-page panel-primary">

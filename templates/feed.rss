@@ -3,18 +3,18 @@
     <channel>
         <title>{{ siteName }}</title>
         <link>{{ siteUrl }}</link>
-        <atom:link href="{{ craft.request.url }}" rel="self" type="application/rss+xml" />
+        <atom:link href="{{ craft.app.request.absoluteUrl }}" rel="self" type="application/rss+xml" />
         <description>Latest blog posts from IdeaBase, a design agency in Kent, Ohio.</description>
         <language>en-us</language>
-        <pubDate>{{ now.rss }}</pubDate>
-        <lastBuildDate>{{ now.rss }}</lastBuildDate>
+        <pubDate>{{ now|rss }}</pubDate>
+        <lastBuildDate>{{ now|rss }}</lastBuildDate>
         {% set rss = craft.entries({ section: 'blogPost' }) %}
-        {% for entry in rss %}
+        {% for entry in rss.all %}
             <item>
                 <title>{{ entry.title }}</title>
                 <link>{{ entry.url }}</link>
-                <pubDate>{{ entry.postDate.rss }}</pubDate>
-                {% set blogAuthor = entry.blogAuthor %}{% for entry in blogAuthor %}<author>{{ entry.title }}</author>{% endfor %}
+                <pubDate>{{ entry.postDate|rss }}</pubDate>
+                {% set blogAuthor = entry.blogAuthor %}{% for entry in blogAuthor.all() %}<author>{{ entry.title }}</author>{% endfor %}
                 <guid>{{ entry.url }}</guid>
                 <description><![CDATA[
                   {% set blogParagraphsIndex = entry.blogContent|split('.') %}
@@ -34,16 +34,16 @@
                         <header>
                           <h1>{{ entry.title }}</h1>
                           <!-- The date and time when your article was originally published -->
-                          <time class="op-published" datetime="{{ entry.postDate.rss }}">{{ entry.postDate.format('F d, Y') }}</time>
+                          <time class="op-published" datetime="{{ entry.postDate|rss }}">{{ entry.postDate.format('F d, Y') }}</time>
                           <!-- The date and time when your article was last updated -->
-                          <time class="op-modified" dateTime="{{entry.dateUpdated.rss }}"> | <em>Modified {{ entry.dateUpdated.format('F d, Y g:i a') }})</em></time>
-                          {% for entry in entry.blogAuthor %}
+                          <time class="op-modified" dateTime="{{entry.dateUpdated|rss }}"> | <em>Modified {{ entry.dateUpdated.format('F d, Y g:i a') }})</em></time>
+                          {% for entry in entry.blogAuthor.all() %}
                             <address>
                               <a href="{{ entry.url }}">{{ entry.title }}</a>
                             </address>
                           {% endfor %}
                           {% if entry.blogFeaturedImage | length %}
-                              {% for asset in entry.blogFeaturedImage %}
+                              {% for asset in entry.blogFeaturedImage.all() %}
                               <figure>
                                 <img class="blog__entry__image" src="{{ asset.url('featureImageLarge') }}" alt= "{{ asset.title}}">
                               </figure>
@@ -51,7 +51,7 @@
                           {% endif %}
                         </header>
                         {{ entry.blogContent }}
-                        {% for block in entry.blogPostContent %}
+                        {% for block in entry.blogPostContent.all() %}
                             {% if block.type == "text" %}
                                 {{ block.text }}
                             {% elseif block.type == "image" %}

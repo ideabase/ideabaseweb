@@ -4,7 +4,7 @@
 
 
 <div class="panel-primary panel-primary--landing">
-  {% for asset in entry.aboutImage %}
+  {% for asset in entry.aboutImage.all() %}
   <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
   {% endfor %}
 
@@ -43,12 +43,12 @@
 <section class="section-projects-all panel-primary-wide">
 
 <ul class="project-list">
-  {% for entry in entry.relatedWork.limit(3) %}
+  {% for entry in entry.relatedWork.limit(3).all() %}
   <li class="project-list__item--featured">
     <a href="{{ entry.url }}">
       {% set asset = entry.projectPicture %}
       {% if asset|length %}
-        {% for asset in entry.projectPicture.limit(1) %}
+        {% for asset in entry.projectPicture.one() %}
             <div class="project-list__item__image">
               <img class="" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
             </div>
@@ -76,11 +76,11 @@
 {% set entries = entry.relatedPeople %}
 
 <div class="landing-page-staff">
-{% for entry in entries.limit(3) %}
+{% for entry in entries.limit(3).all() %}
 <section class="blog__entry-author">
   <a href="{{ entry.url }}">
   <div class="blog__entry__author__image">
-    {% for asset in entry.staffHeadshot %}
+    {% for asset in entry.staffHeadshot.all() %}
         <img src="{{ asset.url('staffCircle') }}" alt= "{{ asset.title}}">
       {% endfor %}
    </div>
@@ -93,7 +93,7 @@
 </div>
 <ul class="blog-teaser-list">
 {% set entries = entry.relatedBlog.limit(2) %}
-{% for entry in entries %}
+{% for entry in entries.all() %}
   {% if entries|length == 1 %}
   <div class="blog-single">
     {% include '_includes/_blogPreview.html' %}
