@@ -14,7 +14,7 @@
 	<section class="section-header video-background">
 		<video autoplay muted loop class="hero-video">
 		{% for asset in videoBackground.fileTypeOne.all() %}
-			<source src="{{ asset.url('fileTypeOne') }}" type="video/mp4">
+			<source src="{{ asset.url }}" type="video/mp4">
 		{% endfor %}
 		</video>
     {% endcache %}

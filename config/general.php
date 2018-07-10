@@ -3,7 +3,6 @@
 return [
     // Global settings
     '*' => [
-        'siteUrl' => 'https://www.ideabasekent.com',
         'defaultWeekStartDay' => 0,
         'enableCsrfProtection' => true,
         'extraAllowedFileExtensions' => 'eps',
@@ -15,8 +14,7 @@ return [
         'securityKey' => getenv('SECURITY_KEY'),
         'aliases' => [
           'basePath' => '',
-          'baseUrl' =>
-          'https://www.ideabasekent.com',
+          'baseUrl' => '',
         ],
     ],
 
@@ -37,6 +35,11 @@ return [
 
     // Production environment settings
     'production' => [
-        'siteUrl' => null,
+        'siteUrl' => 'https://www.ideabasekent.com',
+        'aliases' => [
+          'basePath' => '',
+          'baseUrl' =>
+          'https://www.ideabasekent.com',
+        ],
     ],
 ];
