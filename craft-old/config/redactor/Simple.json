@@ -1,5 +1,0 @@
-{
-	"buttons": ["bold","italic","formatting","link"],
-	"toolbarFixed": true,
-	"formatting": ['p', 'blockquote', 'h2', 'h3', 'h4']
-}

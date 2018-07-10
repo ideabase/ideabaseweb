@@ -20,10 +20,8 @@
 
     {% endif %}
 
-    {% set blogParagraphs = entry.blogContent | split('.') %}
-    {% set firstBlogParagraph = blogParagraphs | first ~ '.' %}
     <div class="blog-teaser__text">
-      {{ firstBlogParagraph|raw }}
+      {{ entry.blogContent|raw }}
     </div>
 
     {% if numberOfAuthors < 2 %}

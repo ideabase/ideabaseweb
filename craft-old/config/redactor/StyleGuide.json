@@ -1,5 +1,0 @@
-{
-	"buttons": ["html","formatting","bold","italic","unorderedlist","orderedlist","link"],"plugins":["fullscreen"],
-	"toolbarFixed": true,
-	"formatting": ['p', 'blockquote', 'h4', 'h5']
-}
