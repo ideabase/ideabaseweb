@@ -9,6 +9,7 @@ return [
         'extraAllowedFileExtensions' => 'eps',
         'omitScriptNameInUrls' => true,
         'cpTrigger' => 'admin',
+        'loginPath' => 'admin/login',
         'maxUploadFileSize' => 33554432,
         'overridePhpSessionLocation' => false,
         'securityKey' => getenv('SECURITY_KEY'),
