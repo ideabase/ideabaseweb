@@ -1,0 +1,8 @@
+{
+	"buttons": ["clips","html","format","bold","italic","deleted","image","link","file","horizontalrule"],
+	"plugins": ["clips","fullscreen"],
+	"toolbarFixed": true,
+	"clips": [
+		["example", "<p>This is an example clip.</p>"]
+	]
+}
