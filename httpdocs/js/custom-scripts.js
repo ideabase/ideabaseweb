@@ -23,8 +23,9 @@ $( "#footer-form-toggle" ).click(function() {
   $( ".contact__trigger__link--show" ).text(contactclose);
 });
 
+// block contact form submit if honeypot field contains a value
 $("form[name='contact-form']").on("submit", function(event) {
-  if (!$("#justforfun").val()) {
+  if ($("#justforfun").val()) {
     event.preventDefault();
     event.stopPropagation();
   }
