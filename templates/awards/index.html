@@ -6,9 +6,9 @@
 
 {% block content %}
 <style type="text/css">
-		.awards.section-header { 
+		.awards.section-header {
 			{% if headerImages.awardHeaderImage | length %}
-			    {% for asset in headerImages.awardHeaderImage %}
+			    {% for asset in headerImages.awardHeaderImage.all() %}
 			        background-image: url({{ asset.url('featureImageSmall') }});
 			    {% endfor %}
 			{% endif %}
@@ -16,7 +16,7 @@
 		@media screen and (min-width: 600px) {
 			.awards.section-header  {
 				{% if headerImages.awardHeaderImage | length %}
-			    {% for asset in headerImages.awardHeaderImage %}
+			    {% for asset in headerImages.awardHeaderImage.all() %}
 			        background-image: url({{ asset.url('featureImageMedium') }});
 			    {% endfor %}
 			{% endif %}
@@ -25,7 +25,7 @@
 		@media screen and (min-width: 1000px) {
 			.awards.section-header  {
 				{% if headerImages.awardHeaderImage | length %}
-			    {% for asset in headerImages.awardHeaderImage %}
+			    {% for asset in headerImages.awardHeaderImage.all() %}
 			        background-image: url({{ asset.url('featureImageLarge') }});
 			    {% endfor %}
 			{% endif %}
@@ -42,7 +42,7 @@
 
 <div class="panel-primary-container">
 	<section class="panel-primary awards">
-		{% set awardList = craft.entries.section('ideabaseAwards').orderBy("postDate desc").find() %}
+		{% set awardList = craft.entries.section('ideabaseAwards').orderBy("postDate desc").all() %}
 		{% set awardListByYear = awardList|group("postDate|date('Y')") %}
 		{% for year, entriesInYear in awardListByYear %}
 			<article class="award-year__group">
@@ -51,12 +51,12 @@
 					{% for entry in entriesInYear %}
 						{% set awardCategories = craft.categories.group('awardType').relatedTo(entry) %}
 						<li class="award-individual">
-							{% for category in awardCategories %}
+							{% for category in awardCategories.all() %}
 								<h3 class="award-individual__title">{{ category.title }}</h3>
 							{% endfor %}
 							<p class="award-individual__text">
 								{% set relatedProject = craft.entries.section('ideabaseProjects').relatedTo(entry) %}
-								{% for entry in relatedProject %}
+								{% for entry in relatedProject.all() %}
 									<span class="award-individual__associated-project">
 									{% if entry.archivedProject %}
 										{{ entry.title }}
@@ -74,5 +74,5 @@
 	</section>
 </div>
 
-	
+
 {% endblock %}

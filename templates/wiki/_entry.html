@@ -19,11 +19,11 @@
 <section class="wiki-topics panel-primary wiki-topics--category">
 <ul class="wiki-topics__list wiki-topics__list--category">
   {% set children = entry.descendants() %}
-    {% for child in children %}
-      <li>
-        <a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a>
-      </li>
-    {% endfor %}
+  {% for child in children.all() %}
+    <li>
+      <a class="wiki-topics__title" href="{{child.url}}">{{child.title}}</a>
+    </li>
+  {% endfor %}
 </ul>
 </section>
 {% else %}

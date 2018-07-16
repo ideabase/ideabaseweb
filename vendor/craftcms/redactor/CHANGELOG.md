@@ -1,5 +1,24 @@
 # Release Notes for Redactor
 
+## 2.1.2 - 2018-07-14
+
+### Fixed
+- Fixed a Javascript error for Redactor fields with no buttons defined in the config. ([#68](https://github.com/craftcms/redactor/issues/68))
+
+## 2.1.1 - 2018-07-13
+
+### Changed
+- Updated Redactor to 3.0.11.
+- 6th level headings are no longer displayed in all-uppercase in the editor. ([craftcms/cms#2927](https://github.com/craftcms/cms/issues/2927))
+
+### Fixed
+- Fixed IE11 compatibility. ([#46](https://github.com/craftcms/redactor/issues/46))
+- Fixed a bug where it wasn’t possible to edit links created using the File modal. ([#54](https://github.com/craftcms/redactor/issues/54))
+- Fixed a bug where links created using the File modal would overwrite the selected text with the file title. ([#54](https://github.com/craftcms/redactor/issues/54))
+- Fixed a bug where it was possible to initiate drag-and-drop uploading, which isn’t supported. ([craftcms/cms#2920](https://github.com/craftcms/cms/issues/2920))
+- Fixed a bug where `File` and `Image` buttons were missing.
+- Fixed a bug where File modal was generating incorrect links.
+
 ## 2.1.0 - 2018-05-15
 
 ### Changed

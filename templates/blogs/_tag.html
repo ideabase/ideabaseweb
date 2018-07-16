@@ -32,7 +32,7 @@
 									<span class="blog-list__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% else %}
-								{% for entry in blogAuthor %}
+								{% for entry in blogAuthor.all() %}
 									<span class="blog-list__author blog-multiple__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% endif %}

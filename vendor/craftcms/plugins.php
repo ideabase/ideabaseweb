@@ -47,25 +47,6 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/aws-s3/master/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/aws-s3/archive/master.zip',
   ),
-  'craftcms/redactor' => 
-  array (
-    'class' => 'craft\\redactor\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/redactor/src',
-    'handle' => 'redactor',
-    'aliases' => 
-    array (
-      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
-    ),
-    'name' => 'Redactor',
-    'version' => '2.1.0',
-    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/redactor',
-    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor/master/CHANGELOG.md',
-    'downloadUrl' => 'https://github.com/craftcms/redactor/archive/master.zip',
-  ),
   'craftcms/contact-form' => 
   array (
     'class' => 'craft\\contactform\\Plugin',
@@ -133,39 +114,6 @@ return array (
     'hasCpSettings' => false,
     'hasCpSection' => false,
   ),
-  'nystudio107/craft-seomatic' => 
-  array (
-    'class' => 'nystudio107\\seomatic\\Seomatic',
-    'basePath' => $vendorDir . '/nystudio107/craft-seomatic/src',
-    'handle' => 'seomatic',
-    'aliases' => 
-    array (
-      '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
-    ),
-    'name' => 'SEOmatic',
-    'version' => '3.0.25',
-    'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
-    'developer' => 'nystudio107',
-    'developerUrl' => 'https://nystudio107.com',
-    'documentationUrl' => 'https://github.com/nystudio107/craft-seomatic/blob/v3/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/nystudio107/craft-seomatic/v3/CHANGELOG.md',
-    'hasCpSettings' => true,
-    'hasCpSection' => true,
-    'components' => 
-    array (
-      'frontendTemplates' => 'nystudio107\\seomatic\\services\\FrontendTemplates',
-      'helper' => 'nystudio107\\seomatic\\services\\Helper',
-      'jsonLd' => 'nystudio107\\seomatic\\services\\JsonLd',
-      'link' => 'nystudio107\\seomatic\\services\\Link',
-      'metaBundles' => 'nystudio107\\seomatic\\services\\MetaBundles',
-      'metaContainers' => 'nystudio107\\seomatic\\services\\MetaContainers',
-      'redirects' => 'nystudio107\\seomatic\\services\\Redirects',
-      'script' => 'nystudio107\\seomatic\\services\\Script',
-      'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
-      'tag' => 'nystudio107\\seomatic\\services\\Tag',
-      'title' => 'nystudio107\\seomatic\\services\\Title',
-    ),
-  ),
   'craftcms/redactor-clips' => 
   array (
     'class' => 'craft\\redactorclips\\Plugin',
@@ -203,5 +151,57 @@ return array (
     'documentationUrl' => 'https://github.com/craftcms/contact-form-honeypot',
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form-honeypot/master/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/contact-form-honeypot/archive/master.zip',
+  ),
+  'craftcms/redactor' => 
+  array (
+    'class' => 'craft\\redactor\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/redactor/src',
+    'handle' => 'redactor',
+    'aliases' => 
+    array (
+      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
+    ),
+    'name' => 'Redactor',
+    'version' => '2.1.2',
+    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/redactor',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor/master/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/redactor/archive/master.zip',
+  ),
+  'nystudio107/craft-seomatic' => 
+  array (
+    'class' => 'nystudio107\\seomatic\\Seomatic',
+    'basePath' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    'handle' => 'seomatic',
+    'aliases' => 
+    array (
+      '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    ),
+    'name' => 'SEOmatic',
+    'version' => '3.1.1',
+    'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
+    'developer' => 'nystudio107',
+    'developerUrl' => 'https://nystudio107.com',
+    'documentationUrl' => 'https://github.com/nystudio107/craft-seomatic/blob/v3/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/nystudio107/craft-seomatic/v3/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'frontendTemplates' => 'nystudio107\\seomatic\\services\\FrontendTemplates',
+      'helper' => 'nystudio107\\seomatic\\services\\Helper',
+      'jsonLd' => 'nystudio107\\seomatic\\services\\JsonLd',
+      'link' => 'nystudio107\\seomatic\\services\\Link',
+      'metaBundles' => 'nystudio107\\seomatic\\services\\MetaBundles',
+      'metaContainers' => 'nystudio107\\seomatic\\services\\MetaContainers',
+      'redirects' => 'nystudio107\\seomatic\\services\\Redirects',
+      'script' => 'nystudio107\\seomatic\\services\\Script',
+      'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
+      'tag' => 'nystudio107\\seomatic\\services\\Tag',
+      'title' => 'nystudio107\\seomatic\\services\\Title',
+    ),
   ),
 );

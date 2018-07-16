@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "83f4ecf924b047ac778b137e4344becc",
+    "content-hash": "83df9049065a86ba2431b78dcb802708",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.62.10",
+            "version": "3.63.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b45b916eceb20d3c9e2b36e9e93e926a278d97ca",
-                "reference": "b45b916eceb20d3c9e2b36e9e93e926a278d97ca",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d67dc8846739f4a1f93f25ce5d5cbfb3a555530d",
+                "reference": "d67dc8846739f4a1f93f25ce5d5cbfb3a555530d",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-07-06T17:41:33+00:00"
+            "time": "2018-07-13T21:46:58+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -685,11 +685,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.1.0",
+            "version": "2.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/7d72a873e12ea7c92a8a6d00e025e303089d504e",
-                "reference": "7d72a873e12ea7c92a8a6d00e025e303089d504e",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/d49309d7c251d15c729093e208dd21b9cfc05a19",
+                "reference": "d49309d7c251d15c729093e208dd21b9cfc05a19",
                 "shasum": ""
             },
             "require": {
@@ -731,7 +731,7 @@
                 "docs": "https://github.com/craftcms/redactor",
                 "rss": "https://github.com/craftcms/redactor/commits/master.atom"
             },
-            "time": "2018-05-15T21:58:54+00:00"
+            "time": "2018-07-14T09:42:21+00:00"
         },
         {
             "name": "craftcms/redactor-clips",
@@ -1863,11 +1863,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.0.25",
+            "version": "3.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/38cbb3f414b56ba0f8331b74950778f595383fa1",
-                "reference": "38cbb3f414b56ba0f8331b74950778f595383fa1",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/010d6b1fa9853ce3154788f9799152725fdcf0ab",
+                "reference": "010d6b1fa9853ce3154788f9799152725fdcf0ab",
                 "shasum": ""
             },
             "require": {
@@ -1932,7 +1932,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-07-03T19:15:04+00:00"
+            "time": "2018-07-14T14:21:49+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2326,16 +2326,20 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.1.1",
+            "version": "v6.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
-                "reference": "aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
                 "shasum": ""
             },
             "require": {
                 "egulias/email-validator": "~2.0",
                 "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.3@dev"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses",
@@ -2352,6 +2356,7 @@
                     "lib/swift_required.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2371,7 +2376,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-04T11:12:44+00:00"
+            "time": "2018-07-13T07:04:35+00:00"
         },
         {
             "name": "symfony/console",
@@ -2577,6 +2582,56 @@
             "time": "2017-06-01T21:01:25+00:00"
         },
         {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.8.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
+                "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2018-04-30T19:57:29+00:00"
+        },
+        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.8.0",
             "dist": {
@@ -2676,15 +2731,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.8",
+            "version": "v2.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7b604c89da162034bdf4bb66310f358d313dd16d",
-                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6a5f676b77a90823c2d4eaf76137b771adf31323",
+                "reference": "6a5f676b77a90823c2d4eaf76137b771adf31323",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
+                "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
@@ -2695,7 +2751,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -2724,16 +2780,16 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
+            "homepage": "https://twig.symfony.com",
             "keywords": [
                 "templating"
             ],
-            "time": "2018-04-02T09:24:19+00:00"
+            "time": "2018-07-13T07:18:09+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

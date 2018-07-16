@@ -16,6 +16,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
     );
 
@@ -87,6 +88,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
@@ -296,6 +298,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\Process\\' => 
         array (
@@ -614,6 +620,8 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Aws\\Crypto\\MetadataStrategyInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/MetadataStrategyInterface.php',
         'Aws\\DAX\\DAXClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DAX/DAXClient.php',
         'Aws\\DAX\\Exception\\DAXException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DAX/Exception/DAXException.php',
+        'Aws\\DLM\\DLMClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DLM/DLMClient.php',
+        'Aws\\DLM\\Exception\\DLMException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DLM/Exception/DLMException.php',
         'Aws\\DataPipeline\\DataPipelineClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataPipeline/DataPipelineClient.php',
         'Aws\\DataPipeline\\Exception\\DataPipelineException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataPipeline/Exception/DataPipelineException.php',
         'Aws\\DatabaseMigrationService\\DatabaseMigrationServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DatabaseMigrationService/DatabaseMigrationServiceClient.php',
@@ -2017,6 +2025,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Symfony\\Component\\Process\\Process' => __DIR__ . '/..' . '/symfony/process/Process.php',
         'Symfony\\Component\\Process\\ProcessBuilder' => __DIR__ . '/..' . '/symfony/process/ProcessBuilder.php',
         'Symfony\\Component\\Process\\ProcessUtils' => __DIR__ . '/..' . '/symfony/process/ProcessUtils.php',
+        'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Twig\\Cache\\CacheInterface' => __DIR__ . '/..' . '/twig/twig/src/Cache/CacheInterface.php',
         'Twig\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/FilesystemCache.php',
@@ -3383,6 +3392,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'nystudio107\\seomatic\\migrations\\m180314_002756_base_install' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/migrations/m180314_002756_base_install.php',
         'nystudio107\\seomatic\\migrations\\m180403_002756_field_type' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/migrations/m180403_002756_field_type.php',
         'nystudio107\\seomatic\\migrations\\m180502_202319_remove_field_metabundles' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/migrations/m180502_202319_remove_field_metabundles.php',
+        'nystudio107\\seomatic\\migrations\\m180711_024947_commerce_products' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/migrations/m180711_024947_commerce_products.php',
         'nystudio107\\seomatic\\models\\EditableTemplate' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/EditableTemplate.php',
         'nystudio107\\seomatic\\models\\Entity' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/Entity.php',
         'nystudio107\\seomatic\\models\\FrontendTemplateContainer' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/FrontendTemplateContainer.php',
@@ -3999,6 +4009,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'nystudio107\\seomatic\\models\\jsonld\\Winery' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/Winery.php',
         'nystudio107\\seomatic\\models\\jsonld\\WriteAction' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/WriteAction.php',
         'nystudio107\\seomatic\\models\\jsonld\\Zoo' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/Zoo.php',
+        'nystudio107\\seomatic\\models\\metalink\\CanonicalLink' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metalink/CanonicalLink.php',
         'nystudio107\\seomatic\\models\\metatag\\DescriptionTag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metatag/DescriptionTag.php',
         'nystudio107\\seomatic\\models\\metatag\\OgDescriptionTag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metatag/OgDescriptionTag.php',
         'nystudio107\\seomatic\\models\\metatag\\OgImageTag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metatag/OgImageTag.php',

@@ -6,7 +6,7 @@
 
 @mixin list-style-type-square {
   ul {
-    font-size: 1.1em;
+    font-size: 1em;
     padding-left: 0;
 
     li {
@@ -33,7 +33,7 @@
 
 @mixin list-style-type-bullet {
   ul {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.25;
     list-style-type: none;
     padding-left: 30px;

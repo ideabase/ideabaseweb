@@ -36,6 +36,12 @@ class MetaValue
         'twitter:site',
         'twitter:creator',
     ];
+    const NO_PARSING = [
+        'siteLinksSearchTarget',
+    ];
+    const PARSE_ONCE = [
+        'target',
+    ];
 
     // Static Properties
     // =========================================================================
@@ -55,23 +61,28 @@ class MetaValue
 
     /**
      * @param string $metaValue
-     * @param bool   $resolveAliases
+     * @param bool   $resolveAliases Whether @ aliases should be resolved in this string
+     * @param bool   $parseAsTwig    Whether items should be parsed as a Twig template in this string
+     * @param int    $tries The number of times to parse the string
      *
      * @return string
      */
-    public static function parseString($metaValue, bool $resolveAliases = true)
-    {
+    public static function parseString(
+        $metaValue,
+        bool $resolveAliases = true,
+        bool $parseAsTwig = true,
+        $tries = self::MAX_PARSE_TRIES
+    ) {
         // If it's a string, and there are no dynamic tags, just return the template
         if (\is_string($metaValue) && !StringHelper::contains($metaValue, '{')) {
-            return self::parseMetaString($metaValue, $resolveAliases) ?? $metaValue;
+            return self::parseMetaString($metaValue, $resolveAliases, $parseAsTwig) ?? $metaValue;
         }
         // Parse it repeatedly until it doesn't change
-        $tries = self::MAX_PARSE_TRIES;
         $value = '';
         while ($metaValue !== $value && $tries) {
             $tries--;
             $value = $metaValue;
-            $metaValue = self::parseMetaString($value) ?? $metaValue;
+            $metaValue = self::parseMetaString($value, $resolveAliases, $parseAsTwig) ?? $metaValue;
         }
 
         return $metaValue;
@@ -79,16 +90,26 @@ class MetaValue
 
     /**
      * @param array $metaArray
-     * @param bool  $resolveAliases
+     * @param bool  $resolveAliases Whether @ aliases should be resolved in this array
+     * @param bool  $parseAsTwig    Whether items should be parsed as a Twig template in this array
      */
-    public static function parseArray(array &$metaArray, bool $resolveAliases = true)
+    public static function parseArray(array &$metaArray, bool $resolveAliases = true, bool $parseAsTwig = true)
     {
         foreach ($metaArray as $key => $value) {
+            $shouldParse = $parseAsTwig;
+            $shouldAlias = $resolveAliases;
+            $tries = self::MAX_PARSE_TRIES;
             if (\in_array($key, self::NO_ALIASES, true)) {
-                $resolveAliases = false;
+                $shouldAlias = false;
+            }
+            if (\in_array($key, self::NO_PARSING, true)) {
+                $shouldParse = false;
+            }
+            if (\in_array($key, self::PARSE_ONCE, true)) {
+                $tries = 1;
             }
             if ($value !== null) {
-                $metaArray[$key] = self::parseString($value, $resolveAliases);
+                $metaArray[$key] = self::parseString($value, $shouldAlias, $shouldParse, $tries);
             }
         }
         $metaArray = array_filter($metaArray);
@@ -155,11 +176,12 @@ class MetaValue
 
     /**
      * @param string|Asset $metaValue
-     * @param bool         $resolveAliases
+     * @param bool   $resolveAliases Whether @ aliases should be resolved in this string
+     * @param bool   $parseAsTwig    Whether items should be parsed as a Twig template in this string
      *
      * @return null|string
      */
-    protected static function parseMetaString($metaValue, bool $resolveAliases = true)
+    protected static function parseMetaString($metaValue, bool $resolveAliases = true, bool $parseAsTwig = true)
     {
         // Handle being passed in a string
         if (\is_string($metaValue)) {
@@ -171,7 +193,7 @@ class MetaValue
                 }
             }
             // If there are no dynamic tags, just return the template
-            if (!StringHelper::contains($metaValue, '{')) {
+            if (!$parseAsTwig || !StringHelper::contains($metaValue, '{')) {
                 return html_entity_decode($metaValue, ENT_NOQUOTES, 'UTF-8');
             }
             $oldTemplateMode = self::$view->getTemplateMode();

@@ -23,6 +23,13 @@ $( "#footer-form-toggle" ).click(function() {
   $( ".contact__trigger__link--show" ).text(contactclose);
 });
 
+$("form[name='contact-form']").on("submit", function(event) {
+  if (!$("#justforfun").val()) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+});
+
 // Load Google Fonts
 
 WebFontConfig = {

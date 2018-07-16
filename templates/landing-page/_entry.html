@@ -16,8 +16,8 @@
 <h2>We provide a wide range of services</h2>
 
 <ul class="service-index__examples">
-{% for block in entry.sellingPoints %}
-<li class="service-index__examples__item">{{block.point}}</li>
+{% for block in entry.sellingPoints.all() %}
+  <li class="service-index__examples__item">{{block.point}}</li>
 {% endfor %}
 </ul>
 

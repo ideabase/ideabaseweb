@@ -19,6 +19,8 @@ use nystudio107\seomatic\helpers\DynamicMeta as DynamicMetaHelper;
 use nystudio107\seomatic\helpers\ImageTransform as ImageTransformHelper;
 use nystudio107\seomatic\models\MetaBundle;
 use nystudio107\seomatic\models\MetaScriptContainer;
+use nystudio107\seomatic\services\FrontendTemplates;
+use nystudio107\seomatic\services\MetaBundles;
 
 use Craft;
 use craft\elements\Asset;
@@ -28,8 +30,9 @@ use craft\helpers\UrlHelper;
 use craft\models\Site;
 use craft\web\Controller;
 
-use nystudio107\seomatic\services\FrontendTemplates;
-use nystudio107\seomatic\services\MetaBundles;
+use craft\commerce\Plugin as CommercePlugin;
+use craft\commerce\elements\Product;
+
 use yii\base\InvalidConfigException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
@@ -487,9 +490,9 @@ class SettingsController extends Controller
             $siteId
         );
         // Pass in the pull fields
-        $groupName = 'Entry';
+        $groupName = ucfirst($metaBundle->sourceType);
         $this->setContentFieldSourceVariables($sourceBundleType, $sourceHandle, $groupName, $variables);
-        $uri = $this->uriFromSourceBundle($sourceBundleType, $sourceHandle);
+        $uri = $this->uriFromSourceBundle($sourceBundleType, $sourceHandle, $siteId);
         // Preview the meta containers
         Seomatic::$plugin->metaContainers->previewMetaContainers(
             $uri,
@@ -523,6 +526,9 @@ class SettingsController extends Controller
                 break;
             case MetaBundles::CATEGORYGROUP_META_BUNDLE:
                 $elementName = 'category';
+                break;
+            case MetaBundles::PRODUCT_META_BUNDLE:
+                $elementName = 'product';
                 break;
             default:
                 $elementName = '';
@@ -959,7 +965,7 @@ class SettingsController extends Controller
      *
      * @return string
      */
-    protected function uriFromSourceBundle(string $sourceBundleType, string $sourceHandle): string
+    protected function uriFromSourceBundle(string $sourceBundleType, string $sourceHandle, $siteId): string
     {
         $uri = '';
         // Pick an Element to be used for the preview
@@ -969,19 +975,29 @@ class SettingsController extends Controller
                 break;
 
             case MetaBundles::SECTION_META_BUNDLE:
-                $entry = Entry::find()->section($sourceHandle)->one();
+                $entry = Entry::find()->section($sourceHandle)->siteId($siteId)->one();
                 if ($entry) {
                     $uri = $entry->uri;
                 }
                 break;
 
             case MetaBundles::CATEGORYGROUP_META_BUNDLE:
-                $category = Category::find()->group($sourceHandle)->one();
+                $category = Category::find()->group($sourceHandle)->siteId($siteId)->one();
                 if ($category) {
                     $uri = $category->uri;
                 }
                 break;
-            // @TODO: handle commerce products
+            case MetaBundles::PRODUCT_META_BUNDLE:
+                if (Seomatic::$commerceInstalled) {
+                    $commerce = CommercePlugin::getInstance();
+                    if ($commerce !== null) {
+                        $product = Product::find()->type($sourceHandle)->siteId($siteId)->one();
+                        if ($product) {
+                            $uri = $product->uri;
+                        }
+                    }
+                }
+                break;
         }
         if (($uri === '__home__') || ($uri === null)) {
             $uri = '/';

@@ -238,6 +238,10 @@
     margin-top: .5em;
   }
 
+  p {
+    font-size: 1em;
+  }
+
   th,
   td {
     border: 2px solid lighten($lightgray, 10);
@@ -400,8 +404,12 @@
     text-align: left;
   }
 
+  p,
+  pre {
+    font-size: .95em;
+  }
+
   p {
-    font-size: .8em;
     line-height: 1.25em;
     margin-bottom: 0;
   }
