@@ -5,7 +5,7 @@ This plugin allows you to add an email contact form to your website.
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.20 or later. (For Craft 2 use the [`v1` branch](https://github.com/craftcms/contact-form/tree/v1).)
+This plugin requires Craft CMS 3.0.0-RC11 or later. (For Craft 2 use the [`v1` branch](https://github.com/craftcms/contact-form/tree/v1).)
 
 
 ## Installation
@@ -14,11 +14,15 @@ To install the plugin, follow these instructions.
 
 1. Open your terminal and go to your Craft project:
 
-        cd /path/to/project
+    ```bash
+    cd /path/to/project
+    ```
 
 2. Then tell Composer to load the plugin:
 
-        composer require craftcms/contact-form
+    ```bash
+    composer require craftcms/contact-form
+    ```
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Contact Form.
 
@@ -42,7 +46,7 @@ Your contact form template can look something like this:
 <form method="post" action="" accept-charset="UTF-8">
     {{ csrfInput() }}
     <input type="hidden" name="action" value="contact-form/send">
-    <input type="hidden" name="redirect" value="{{ 'contact/thanks'|hash }}">
+    {{ redirectInput('contact/thanks') }}
 
     <h3><label for="from-name">Your Name</label></h3>
     <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
@@ -76,7 +80,9 @@ If you have a `redirect` hidden input, the user will get redirected to it upon s
 
 For example, if you wanted to redirect to a `contact/thanks` page and pass the sender’s name to it, you could set the input like this:
 
-    <input type="hidden" name="redirect" value="{{ 'contact/thanks?from={fromName}'|hash }}">
+```twig
+{{ redirectInput('contact/thanks?from={fromName}') }}
+```
 
 On your `contact/thanks.html` template, you can access that `from` parameter using `craft.app.request.getQueryParam()`:
 
@@ -104,7 +110,7 @@ You can add additional fields to your form by splitting your `message` field int
 
 ```twig
 <h3><label for="message">Message</label></h3>
-<textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message ?? '' }}</textarea>
+<textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
 
 <h3><label for="phone">Your phone number</label></h3>
 <input id="phone" type="text" name="message[Phone]" value="">
@@ -146,39 +152,50 @@ a handy way to have different settings across multiple environments.
 Here’s what that config file might look like along with a list of all of the possible values you can override.
 
 ```php
-    <?php
+<?php
 
-    return [
-        'toEmail'             => 'bond@007.com',
-        'prependSubject'      => '',
-        'prependSender'       => '',
-        'allowAttachments'    => false,
-        'successFlashMessage' => 'Message sent!'
-    ];
+return [
+    'toEmail'             => 'bond@007.com',
+    'prependSubject'      => '',
+    'prependSender'       => '',
+    'allowAttachments'    => false,
+    'successFlashMessage' => 'Message sent!'
+];
 ```
 
 ### Dynamically adding email recipients
 
 You can programmatically add email recipients from your template by adding a hidden input field named `toEmail` like so:
 
-    <input type="hidden" name="toEmail" value="{{ 'me@example.com'|hash }}">
+```twig
+<input type="hidden" name="toEmail" value="{{ 'me@example.com'|hash }}">
+```
 
 If you want to add multiple recipients, you can provide a comma separated list of emails like so:
 
-    <input type="hidden" name="toEmail" value="{{ 'me@example.com,me2@example.com'|hash }}">
+```twig
+<input type="hidden" name="toEmail" value="{{ 'me@example.com,me2@example.com'|hash }}">
+```
 
-Then from your `craft/config/contact-form.php` config file, you’ll need to add a bit of logic:
+Then from your `config/contact-form.php` config file, you’ll need to add a bit of logic:
 
 ```php
 <?php
 
-return [
-    'toEmail' => Craft::$app->request->getValidatedBodyParam('toEmail'),
-    // ...
-];
+$config = [];
+$request = Craft::$app->request;
+
+if (
+    !$request->getIsConsoleRequest() &&
+    ($toEmail = $request->getValidatedBodyParam('toEmail')) !== null
+) {
+    $config['toEmail'] = $toEmail;
+}
+
+return $config;
 ```
 
-In this example if `$toEmail` does not exist or fails validation (it was tampered with), the plugin will fallback to the “To Email” defined in the plugin settings, so you must have that defined as well.
+In this example if `toEmail` does not exist or fails validation (it was tampered with), the plugin will fallback to the “To Email” defined in the plugin settings, so you must have that defined as well.
 
 ### File attachments
 
@@ -200,7 +217,8 @@ $('#my-form').submit(function(ev) {
     ev.preventDefault();
 
     // Send it to the server
-    $.post('/', {
+    $.post({
+        url: '/',
         dataType: 'json',
         data: $(this).serialize(),
         success: function(response) {
@@ -276,3 +294,7 @@ Event::on(Mailer::class, Mailer::EVENT_AFTER_SEND, function(SendEvent $e) {
     // custom logic...
 });
 ```
+
+### Using a “Honeypot” field
+
+Support for the [honeypot captcha technique](https://haacked.com/archive/2007/09/11/honeypot-captcha.aspx/) to fight spam has been moved to a [separate plugin](https://github.com/craftcms/contact-form-honeypot) that complements this one.

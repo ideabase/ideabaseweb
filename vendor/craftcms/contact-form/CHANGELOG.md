@@ -1,5 +1,18 @@
-Changelog
-=========
+# Release Notes for Contact Form
+
+## 2.2.0 - 2017-07-18
+
+### Added
+- Contact Form is now translated into Arabic. ([#125](https://github.com/craftcms/contact-form/pull/125))
+
+### Changed
+- Contact emails no longer list the Name field if none was provided. ([#126](https://github.com/craftcms/contact-form/issues/126))
+- Event listeners for `craft\contactform\Mailer::EVENT_BEFORE_SEND` can now make changes to `craft\contactform\events\SendEvent::$toEmails`, and they will be respected. ([#112](https://github.com/craftcms/contact-form/pull/112))  
+
+### Fixed
+- Fixed a bug where single carriage returns in email message bodies were being ignored. ([#118](https://github.com/craftcms/contact-form/issues/118))
+- Fixed a bug where HTML in email bodies wasn’t getting escaped. ([#104](https://github.com/craftcms/contact-form/issues/104))
+- Fixed an error that occurred when submitting a contact form with an empty file attachment field. ([#116](https://github.com/craftcms/contact-form/pull/116))
 
 ## 2.1.1 - 2017-12-04
 

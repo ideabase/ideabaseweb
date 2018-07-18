@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://craftcms.com/
+ * @link https://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
- * @license   MIT
+ * @license MIT
  */
 
 namespace craft\contactform\models;
@@ -49,7 +49,7 @@ class Settings extends Model
 
         if ($this->prependSubject === null) {
             $this->prependSubject = \Craft::t('contact-form', 'New message from {siteName}', [
-                'siteName' => \Craft::$app->getSites()->currentSite->name
+                'siteName' => \Craft::$app->getSites()->getCurrentSite()->name
             ]);
         }
 

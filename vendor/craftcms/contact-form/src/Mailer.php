@@ -6,12 +6,12 @@ use Craft;
 use craft\contactform\events\SendEvent;
 use craft\contactform\models\Submission;
 use craft\elements\User;
-use craft\helpers\ArrayHelper;
 use craft\helpers\FileHelper;
 use craft\helpers\StringHelper;
 use craft\mail\Message;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
+use yii\helpers\Html;
 use yii\helpers\Markdown;
 
 class Mailer extends Component
@@ -36,8 +36,7 @@ class Mailer extends Component
      * Sends an email submitted through a contact form.
      *
      * @param Submission $submission
-     * @param bool       $runValidation Whether the section should be validated
-     *
+     * @param bool $runValidation Whether the section should be validated
      * @throws InvalidConfigException if the plugin settings don't validate
      * @return bool
      */
@@ -72,6 +71,9 @@ class Mailer extends Component
 
         if ($submission->attachment !== null) {
             foreach ($submission->attachment as $attachment) {
+                if (!$attachment) {
+                    continue;
+                }
                 $message->attach($attachment->tempName, [
                     'fileName' => $attachment->name,
                     'contentType' => FileHelper::getMimeType($attachment->tempName),
@@ -95,7 +97,7 @@ class Mailer extends Component
             return true;
         }
 
-        foreach ($toEmails as $toEmail) {
+        foreach ($event->toEmails as $toEmail) {
             $message->setTo($toEmail);
             $mailer->send($message);
         }
@@ -105,7 +107,7 @@ class Mailer extends Component
             $this->trigger(self::EVENT_AFTER_SEND, new SendEvent([
                 'submission' => $submission,
                 'message' => $message,
-                'toEmails' => $toEmails,
+                'toEmails' => $event->toEmails,
             ]));
         }
 
@@ -116,7 +118,6 @@ class Mailer extends Component
      * Returns the "From" email value on the given mailer $from property object.
      *
      * @param string|array|User|User[]|null $from
-     *
      * @return string
      * @throws InvalidConfigException if it can’t be determined
      */
@@ -143,7 +144,6 @@ class Mailer extends Component
      * Compiles the "From" name value from the submitted name.
      *
      * @param string|null $fromName
-     *
      * @return string
      */
     public function compileFromName(string $fromName = null): string
@@ -156,7 +156,6 @@ class Mailer extends Component
      * Compiles the real email subject from the submitted subject.
      *
      * @param string|null $subject
-     *
      * @return string
      */
     public function compileSubject(string $subject = null): string
@@ -169,22 +168,24 @@ class Mailer extends Component
      * Compiles the real email textual body from the submitted message.
      *
      * @param Submission $submission
-     *
      * @return string
      */
     public function compileTextBody(Submission $submission): string
     {
-        $fields = [
-            Craft::t('contact-form', 'Name') => $submission->fromName,
-            Craft::t('contact-form', 'Email') => $submission->fromEmail,
-        ];
+        $fields = [];
+
+        if ($submission->fromName) {
+            $fields[Craft::t('contact-form', 'Name')] = $submission->fromName;
+        }
+
+        $fields[Craft::t('contact-form', 'Email')] = $submission->fromEmail;
 
         if (is_array($submission->message)) {
             $body = $submission->message['body'] ?? '';
             $fields = array_merge($fields, $submission->message);
             unset($fields['body']);
         } else {
-            $body = (string) $submission->message;
+            $body = (string)$submission->message;
         }
 
         $text = '';
@@ -199,6 +200,7 @@ class Mailer extends Component
         }
 
         if ($body !== '') {
+            $body = preg_replace('/\R/', "\n\n", $body);
             $text .= "\n\n".$body;
         }
 
@@ -209,16 +211,12 @@ class Mailer extends Component
      * Compiles the real email HTML body from the compiled textual body.
      *
      * @param string $textBody
-     *
      * @return string
      */
     public function compileHtmlBody(string $textBody): string
     {
-        $html = Markdown::process($textBody);
-
-        // Prevent Twig tags from getting parsed
-        // TODO: probably safe to remove?
-        $html = str_replace(['{%', '{{', '}}', '%}'], ['&lbrace;%', '&lbrace;&lbrace;', '&rbrace;&rbrace;', '%&rbrace;'], $html);
+        $html = Html::encode($textBody);
+        $html = Markdown::process($html);
 
         return $html;
     }

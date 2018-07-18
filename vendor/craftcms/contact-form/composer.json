@@ -1,11 +1,13 @@
 {
   "name": "craftcms/contact-form",
   "description": "Add a simple contact form to your Craft CMS site",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "type": "craft-plugin",
   "keywords": [
     "cms",
     "craftcms",
+    "contact",
+    "form",
     "yii2"
   ],
   "license": "MIT",
@@ -23,7 +25,7 @@
     "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
   },
   "require": {
-    "craftcms/cms": "^3.0.0-beta.27"
+    "craftcms/cms": "^3.0.0-RC11"
   },
   "autoload": {
     "psr-4": {

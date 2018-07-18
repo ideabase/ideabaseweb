@@ -23,16 +23,7 @@ $( "#footer-form-toggle" ).click(function() {
   $( ".contact__trigger__link--show" ).text(contactclose);
 });
 
-// block contact form submit if honeypot field contains a value
-$("form[name='contact-form']").on("submit", function(event) {
-  if ($("#justforfun").val()) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-});
-
 // Load Google Fonts
-
 WebFontConfig = {
     google: { families: [ 'Montserrat:700', 'Source+Sans+Pro:600,700,400,400italic' ] }
   };

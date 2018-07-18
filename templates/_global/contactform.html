@@ -34,7 +34,7 @@
       <textarea placeholder="How Can We Help" rows="10" cols="40" id="message" name="message[body]" required>{{ message.message ?? '' }}</textarea>
       {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-      <input id="justforfun" name="justforfun" type="text"> {# honeypot #}
+      <input id="email" name="email" type="text"> {# honeypot #}
       <input type="submit" value="Send">
   </form>
 
