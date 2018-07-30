@@ -48,10 +48,6 @@ class RequirementsChecker
     var $dbUser;
     var $dbPassword;
 
-    var $iconvMessage;
-    var $iniSetMessage;
-    var $memoryMessage;
-    var $webRootFolderMessage;
     var $result;
 
     var $requiredMySqlVersion = '5.5.0';
@@ -66,7 +62,7 @@ class RequirementsChecker
      *                                   requirements. If a string, it is treated as the path of the file, which
      *                                   contains the requirements;
      *
-     * @return static The instance of the class.
+     * @return static self reference
      */
     function check($requirements)
     {
@@ -117,7 +113,7 @@ class RequirementsChecker
     /**
      * Performs the check for the Craft core requirements.
      *
-     * @return RequirementsChecker The instance of the class.
+     * @return static self reference
      */
     function checkCraft()
     {
@@ -127,7 +123,7 @@ class RequirementsChecker
     /**
      * Return the check results.
      *
-     * @return array|null check results in format:
+     * The results will be returned in this format:
      *
      * ```php
      * array(
@@ -146,6 +142,8 @@ class RequirementsChecker
      *     ),
      * )
      * ```
+     *
+     * @return array|null The check results
      */
     function getResult()
     {
@@ -183,7 +181,7 @@ class RequirementsChecker
      * @param string $version       The required PHP extension version.
      * @param string $compare       The comparison operator, by default '>='.
      *
-     * @return boolean If the PHP extension version matches or not.
+     * @return bool Whether the PHP extension version matches
      */
     function checkPhpExtensionVersion($extensionName, $version, $compare = '>=')
     {
@@ -209,7 +207,7 @@ class RequirementsChecker
      *
      * @param string $name The configuration option name.
      *
-     * @return boolean If the option is on or not.
+     * @return bool Whether the option is on
      */
     function checkPhpIniOn($name)
     {
@@ -227,7 +225,7 @@ class RequirementsChecker
      *
      * @param string $name The configuration option name.
      *
-     * @return boolean If the option is off or not.
+     * @return bool Whether the option is off
      */
     function checkPhpIniOff($name)
     {
@@ -245,7 +243,7 @@ class RequirementsChecker
      *
      * @param string $value The verbose size representation.
      *
-     * @return integer The actual size in bytes.
+     * @return int|float The actual size in bytes
      */
     function getByteSize($value)
     {
@@ -280,7 +278,7 @@ class RequirementsChecker
      * @param array   $_data_     The data to be extracted and made available to the view file.
      * @param boolean $_return_   Whether the rendering result should be returned as a string.
      *
-     * @return string The rendering result. Null if the rendering result is not required.
+     * @return string|null The rendering result, or `null` if the rendering result is not required
      */
     function renderViewFile($_viewFile_, $_data_ = null, $_return_ = false)
     {
@@ -309,7 +307,7 @@ class RequirementsChecker
      * @param array   $requirement    The raw requirement.
      * @param integer $requirementKey The requirement key in the list.
      *
-     * @return array normalized requirement.
+     * @return array The normalized requirement
      */
     function normalizeRequirement($requirement, $requirementKey = 0)
     {
@@ -354,7 +352,7 @@ class RequirementsChecker
     /**
      * Returns the server information.
      *
-     * @return string The server information.
+     * @return string The server information
      */
     function getServerInfo()
     {
@@ -364,7 +362,7 @@ class RequirementsChecker
     /**
      * Returns the current date if possible in string representation.
      *
-     * @return string The current date.
+     * @return string The current date
      */
     function getCurrentDate()
     {
@@ -401,7 +399,7 @@ class RequirementsChecker
      * @param PDO    $conn
      * @param string $requiredVersion
      *
-     * @return bool|mixed
+     * @return bool
      * @throws Exception
      */
     function checkDatabaseServerVersion($conn, $requiredVersion)
@@ -413,7 +411,7 @@ class RequirementsChecker
      * Checks to see if the MySQL InnoDB storage engine is installed and enabled.
      *
      * @param PDO $conn
-     * @return boolean
+     * @return bool
      */
     function isInnoDbSupported($conn)
     {
@@ -429,151 +427,132 @@ class RequirementsChecker
     }
 
     /**
-     * @return boolean
+     * @return array
      */
-    function checkIniSet()
+    function iniSetRequirement()
     {
         $oldValue = ini_get('memory_limit');
-
         set_error_handler(array($this, 'muteErrorHandler'));
         $result = ini_set('memory_limit', '442M');
         $newValue = ini_get('memory_limit');
+        ini_set('memory_limit', $oldValue);
         restore_error_handler();
+
+        $mandatory = true;
 
         // ini_set can return false or an empty string depending on your php version / FastCGI.
         // If ini_set has been disabled in php.ini, the value will be null because of our muted error handler
         if ($result === null) {
-            $this->iniSetMessage = 'It looks like <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> has been disabled in your php.ini file. Craft requires that to operate.';
-
-            return false;
+            $memo = 'It looks like <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> has been disabled in your <code>php.ini</code> file. Craft requires that to operate.';
+            $condition = false;
         }
 
         // ini_set can return false or an empty string or the current value of memory_limit depending on your php
         // version and FastCGI. Regard, calling it didn't work, but there was no error.
-        if ($result === false || $result === '' || $result === $newValue) {
-            $this->iniSetMessage = 'It appears calls to <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> are not working for Craft. You may need to increase some settings in your php.ini file such as <a target="_blank" href="http://php.net/manual/en/ini.core.php#ini.memory-limit">memory_limit</a> and <a target="_blank" href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time">max_execution_time</a> for long running operations like updating and asset transformations.';
+        else if ($result === false || $result === '' || $result === $newValue) {
+            $memo = 'It appears calls to <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> are not working for Craft. You may need to increase some settings in your php.ini file such as <a target="_blank" href="http://php.net/manual/en/ini.core.php#ini.memory-limit">memory_limit</a> and <a target="_blank" href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time">max_execution_time</a> for long running operations like updating and asset transformations.';
 
-            // Return true here so it's not a "fatal" error, but will be treated as a warning.
-            return true;
+            // Set mandatory to false here so it's not a "fatal" error, but will be treated as a warning.
+            $mandatory = false;
+            $condition = false;
+        } else {
+            $memo = 'Calls to <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> are working correctly.';
+            $condition = true;
         }
 
-        // Resetting should work, but might as well be extra careful.
-        set_error_handler(array($this, 'muteErrorHandler'));
-        ini_set('memory_limit', $oldValue);
-        restore_error_handler();
-
-        $this->iniSetMessage = 'Calls to <a target="_blank" href="http://php.net/manual/en/function.ini-set.php">ini_set</a> are working correctly.';
-
-        return true;
+        return array(
+            'name' => 'ini_set calls',
+            'mandatory' => $mandatory,
+            'condition' => $condition,
+            'memo' => $memo,
+        );
     }
 
     /**
-     * @return boolean
+     * @return array
      *
      * @see http://php.net/manual/en/ini.core.php#ini.memory-limit
      */
-    function checkMemory()
+    function memoryLimitRequirement()
     {
         $memoryLimit = ini_get('memory_limit');
-        $memoryLimitInBytes = $this->getByteSize($memoryLimit);
+        $bytes = $this->getByteSize($memoryLimit);
 
-        // -1 == no limit
-        if ($memoryLimitInBytes === -1) {
-            $this->memoryMessage = 'Your PHP configuration does not impose a memory limit.';
+        $memoLimit = $memoryLimit . ($memoryLimit === -1 ? ' (no limit)' : '');
+        $memo = "Craft requires a minimum PHP memory limit of 32M, and at least 256M is recommended. The memory_limit directive in php.ini is currently set to {$memoLimit}.";
 
-            return true;
-        }
-
-        // 32M check
-        if ($memoryLimitInBytes <= 33554432) {
-            $this->memoryMessage = 'Craft CMS requires at least 32M of memory allocated to PHP to operate smoothly.';
-
-            return false;
-        }
-
-        // 128M check
-        if ($memoryLimitInBytes <= 134217728) {
-            $this->memoryMessage = 'You have 128M allocated to PHP which should be fine for most sites. If you will be processing very large images or having Craft CMS automatically backup a large database, you might need to increase this to 256M or higher.';
-
-            return false;
-        }
-
-        $this->memoryMessage = 'There is '.$memoryLimit.' of memory allocated to PHP.';
-
-        return true;
+        return array(
+            'name' => 'Memory Limit',
+            'mandatory' => false,
+            'condition' => $bytes === -1 || $bytes >= 268435456,
+            'memo' => $memo,
+        );
     }
 
     /**
-     * @return boolean
+     * @return array
      */
-    function checkWebRoot()
+    function webrootRequirement()
     {
         $pathService = Craft::$app->getPath();
-        $publicFolders = array();
-
-        // The paths to check.
         $folders = array(
-            'storage' => $pathService->getStoragePath(),
             'config' => $pathService->getConfigPath(),
+            'storage' => $pathService->getStoragePath(),
             'templates' => $pathService->getSiteTemplatesPath(),
             'translations' => $pathService->getSiteTranslationsPath(),
+            'vendor' => $pathService->getVendorPath(),
         );
 
+        // figure out which ones are public
+        $publicFolders = array();
         foreach ($folders as $key => $path) {
-            if ($path && $realPath = realpath($path)) {
-                $folders[$key] = $this->isPathInsideWebroot($realPath);
-            } else {
-                $folders[$key] = false;
-            }
-        }
-
-        foreach ($folders as $key => $result) {
-
-            // We were able to connect to one of our exposed folder checks.
-            if ($result === true) {
+            if (
+                $path &&
+                ($realPath = realpath($path)) &&
+                $this->isPathInsideWebroot($realPath)
+            ) {
                 $publicFolders[] = $key;
             }
         }
 
-        $totalPublicFolders = count($publicFolders);
-
-        if ($totalPublicFolders > 0) {
+        if ($condition = empty($publicFolders)) {
+            $memo = 'All of your Craft folders appear to be above your web root.';
+        } else {
+            $total = count($publicFolders);
             $folderString = '';
 
-            for ($counter = 0; $counter < $totalPublicFolders; $counter++) {
-                $folderString .= '“craft/'.$publicFolders[$counter].'”';
-
-                if (isset($publicFolders[$counter + 1]) && $totalPublicFolders > 2) {
+            foreach ($publicFolders as $i => $folder) {
+                if ($total >= 3 && $i > 0) {
                     $folderString .= ', ';
-                }
-
-                if (isset($publicFolders[$counter + 1]) && $counter + 2 === $totalPublicFolders) {
-                    if ($totalPublicFolders === 2) {
-                        $folderString .= ' and ';
-                    } else {
+                    if ($i === $total - 2) {
                         $folderString .= 'and ';
                     }
+                } else if ($total === 2 && $i === 1) {
+                    $folderString .= ' and ';
                 }
+
+                $folderString .= "<code>{$folder}/</code>";
             }
 
-            if ($totalPublicFolders > 1) {
-                $folderString .= ' folders';
+            if ($total > 1) {
+                $memo = "Your {$folderString} folders appear to be publicly accessible, which is a security risk. They should be moved above your web root.";
             } else {
-                $folderString .= ' folder';
+                $memo = "Your {$folderString} folder appears to be publicly accessible, which is a security risk. It should be moved above your web root.";
             }
-
-            $this->webRootFolderMessage = 'Your Craft CMS '.$folderString.' appear to be publicly accessible which is a security risk. You should strongly consider moving them above your web root or blocking access to them via .htaccess or web.config files.';
-
-            return false;
         }
 
-        return true;
+        return array(
+            'name' => 'Sensitive folders should not be publicly accessible',
+            'mandatory' => false,
+            'condition' => $condition,
+            'memo' => $memo,
+        );
     }
 
     /**
      * @param string $pathToTest
      *
-     * @return boolean
+     * @return bool
      */
     function isPathInsideWebroot($pathToTest)
     {

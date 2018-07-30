@@ -496,7 +496,9 @@ class SettingsController extends Controller
         // Preview the meta containers
         Seomatic::$plugin->metaContainers->previewMetaContainers(
             $uri,
-            (int)$variables['currentSiteId']
+            (int)$variables['currentSiteId'],
+            false,
+            false
         );
 
         // Render the template
@@ -681,6 +683,10 @@ class SettingsController extends Controller
                     $this->prepEntitySettings($settings);
                     $metaBundle->metaSiteVars->creator->setAttributes($settings);
                     $siteSettings['creator'] = $metaBundle->metaSiteVars->creator;
+                }
+                if (!empty($siteSettings['additionalSitemapUrls'])) {
+                    $siteSettings['additionalSitemapUrlsDateUpdated'] = new \DateTime;
+                    Seomatic::$plugin->sitemaps->submitCustomSitemap($siteId);
                 }
                 $metaBundle->metaSiteVars->setAttributes($siteSettings);
             }
@@ -882,6 +888,7 @@ class SettingsController extends Controller
             return null;
         }
 
+        Seomatic::$plugin->clearAllCaches();
         Craft::$app->getSession()->setNotice(Craft::t('app', 'Plugin settings saved.'));
 
         return $this->redirectToPostedUrl();

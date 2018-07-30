@@ -20,6 +20,7 @@
 ^Java\/
 ^Jeode\/
 ^Jetty\/
+^Mail\/
 ^Mget
 ^Microsoft URL Control
 ^NG\/[0-9\.]
@@ -192,6 +193,7 @@ Comodo SSL Checker
 contactbigdatafr
 contentkingapp
 convera
+CookieReports\.com
 copyright sheriff
 CopyRightCheck
 Copyscape
@@ -350,6 +352,7 @@ gofetch
 GomezAgent
 gooblog
 Goodzer\/[0-9]
+GoogleCloudMonitoring
 Google favicon
 Google Keyword Suggestion
 Google Keyword Tool
@@ -516,6 +519,7 @@ Kml-Google
 knows\.is
 KOCMOHABT
 kouio
+kube-probe
 kulturarw3
 KumKie
 L\.webis
@@ -586,6 +590,7 @@ MetaURI
 MFC_Tear_Sample
 Microsearch
 Microsoft Office 
+Microsoft Outlook
 Microsoft Windows Network Diagnostics
 Microsoft-WebDAV-MiniRedir
 Microsoft\ Data\ Access
@@ -686,6 +691,7 @@ Optimizer
 Orbiter
 OrgProbe\/[0-9]
 orion-semantics
+Outlook-Express
 ow\.ly
 Owler
 ownCloud News
@@ -898,6 +904,7 @@ SpaceBison
 Spammen
 Spanner
 spaziodati
+SPDYCheck
 Specificfeeds
 speedy
 SPEng
@@ -1146,5 +1153,6 @@ Zermelo
 Zeus
 zgrab
 ZnajdzFoto
+Zombie\.js
 ZyBorg
 [a-z0-9\-_]*(bot|crawler|archiver|transcoder|spider|uptime|validator|fetcher)

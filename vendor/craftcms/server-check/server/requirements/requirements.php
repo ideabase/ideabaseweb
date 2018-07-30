@@ -58,12 +58,7 @@ switch ($this->dbDriver) {
 
 // Only run this requirement check if we're running in the context of Craft.
 if (class_exists('Craft')) {
-    $requirements[] = array(
-        'name' => 'Sensitive Craft folders should not be publicly accessible',
-        'mandatory' => false,
-        'condition' => $this->checkWebRoot(),
-        'memo' => $this->webRootFolderMessage,
-    );
+    $requirements[] = $this->webrootRequirement();
 }
 
 $requirements = array_merge($requirements, array(
@@ -115,26 +110,18 @@ $requirements = array_merge($requirements, array(
         'condition' => extension_loaded('curl'),
         'memo' => 'The <a target="_blank" href="http://php.net/manual/en/book.curl.php">cURL</a> extension is required.',
     ),
-    array(
-        'name' => 'ini_set calls',
-        'mandatory' => true,
-        'condition' => $this->checkIniSet(),
-        'memo' => $this->iniSetMessage,
-    ),
+    $this->iniSetRequirement(),
     array(
         'name' => 'Intl extension',
         'mandatory' => false,
         'condition' => $this->checkPhpExtensionVersion('intl', '1.0.2', '>='),
-        'memo' => 'The <a target="_blank" href="http://www.php.net/manual/en/book.intl.php">Intl</a> extension version 1.0.2 is highly '.
-            'recommended especially if you will be using any non-English languages for this Craft CMS installation.'
+        'memo' => 'The <a target="_blank" href="http://www.php.net/manual/en/book.intl.php">Intl</a> extension (version 1.0.2+) is recommended.'
     ),
     array(
         'name' => 'Fileinfo extension',
-        'mandatory' => false,
+        'mandatory' => true,
         'condition' => extension_loaded('fileinfo'),
-        'memo' => 'The <a target="_blank" href="http://php.net/manual/en/book.fileinfo.php">Fileinfo</a> extension is recommended for more accurate '.
-            'mime-type detection for uploaded files. If it is not available a Craft CMS will fall back to determining the mime-type '.
-            'by the file extension.'
+        'memo' => 'The <a target="_blank" href="http://php.net/manual/en/book.fileinfo.php">Fileinfo</a> extension required.'
     ),
     array(
         'name' => 'DOM extension',
@@ -148,24 +135,7 @@ $requirements = array_merge($requirements, array(
         'condition' => function_exists('iconv'),
         'memo' => '<a target="_blank" href="http://php.net/manual/en/book.iconv.php">iconv</a> is recommended for more robust character set conversion support.',
     ),
-    array(
-        'name' => 'Max Upload File Size',
-        'mandatory' => false,
-        'condition' => true,
-        'memo' => 'upload_max_filesize is set to '.ini_get('upload_max_filesize').'.',
-    ),
-    array(
-        'name' => 'Max POST Size',
-        'mandatory' => false,
-        'condition' => true,
-        'memo' => 'post_max_size is set to '.ini_get('post_max_size').'.',
-    ),
-    array(
-        'name' => 'Memory Limit',
-        'mandatory' => false,
-        'condition' => $this->checkMemory(),
-        'memo' => $this->memoryMessage,
-    ),
+    $this->memoryLimitRequirement(),
     array(
         'name' => 'password_hash()',
         'mandatory' => true,
@@ -177,6 +147,42 @@ $requirements = array_merge($requirements, array(
         'mandatory' => true,
         'condition' => extension_loaded('zip'),
         'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/book.zip.php">zip</a> extension is required for zip and unzip operations.',
+    ),
+    array(
+        'name' => 'JSON extension',
+        'mandatory' => true,
+        'condition' => extension_loaded('json'),
+        'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/book.json.php">JSON</a> extension is required for JSON encoding and decoding.',
+    ),
+    array(
+        'name' => 'proc_open()',
+        'mandatory' => false,
+        'condition' => function_exists('proc_open'),
+        'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/function.proc-open.php">proc_open()</a> function is required for Plugin Store operations as well as sending emails.',
+    ),
+    array(
+        'name' => 'proc_get_status()',
+        'mandatory' => false,
+        'condition' => function_exists('proc_get_status'),
+        'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/function.proc-get-status.php">proc_get_status()</a> function is required for Plugin Store operations as well as sending emails.',
+    ),
+    array(
+        'name' => 'proc_close()',
+        'mandatory' => false,
+        'condition' => function_exists('proc_close'),
+        'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/function.proc_close.php">proc_close()</a> function is required for Plugin Store operations as well as sending emails.',
+    ),
+    array(
+        'name' => 'proc_terminate()',
+        'mandatory' => false,
+        'condition' => function_exists('proc_terminate'),
+        'memo' => 'The <a target="_blank" href="https://secure.php.net/manual/en/function.proc_terminate.php">proc_terminate()</a> function is required for Plugin Store operations as well as sending emails.',
+    ),
+    array(
+        'name' => 'allow_url_fopen',
+        'mandatory' => false,
+        'condition' => ini_get('allow_url_fopen'),
+        'memo' => '<a target="_blank" href="https://secure.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen">allow_url_fopen</a> must be enabled in your PHP configuration for Plugin Store and updating operations.',
     ),
 ));
 

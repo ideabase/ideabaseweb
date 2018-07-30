@@ -1,6 +1,24 @@
 Changelog
 =========
 
+## 1.1.4 - 2018-07-25
+
+### Changed
+- Added `proc_open`, `proc_close`, `proc_terminate`, and `proc_get_status` methods as optional.
+- `allow_url_fopen` is now checked to see if it is enabled for Plugin Store and updating operations.
+
+## 1.1.3 - 2018-07-18
+
+### Changed
+- The JSON extension is now required. ([#7](https://github.com/craftcms/server-check/issues/7))
+
+## 1.1.2 - 2018-07-18
+
+### Changed
+- The Fileinfo extension is now required, not recommended. ([#6](https://github.com/craftcms/server-check/issues/6))
+- Improved the wording of some requirement memos. ([#5](https://github.com/craftcms/server-check/issues/5))
+- Removed the “Max Upload File Size” and “Max POST Size” requirement checks, as they weren’t actually checking anything.
+
 ## 1.1.1 - 2017-12-15
 
 ### Changed

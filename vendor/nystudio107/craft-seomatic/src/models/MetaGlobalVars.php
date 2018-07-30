@@ -79,6 +79,16 @@ class MetaGlobalVars extends VarsModel
     /**
      * @var string
      */
+    public $seoImageWidth;
+
+    /**
+     * @var string
+     */
+    public $seoImageHeight;
+
+    /**
+     * @var string
+     */
     public $seoImageDescription;
 
     /**
@@ -119,6 +129,16 @@ class MetaGlobalVars extends VarsModel
     /**
      * @var string
      */
+    public $ogImageWidth;
+
+    /**
+     * @var string
+     */
+    public $ogImageHeight;
+
+    /**
+     * @var string
+     */
     public $ogImageDescription;
 
     /**
@@ -154,6 +174,16 @@ class MetaGlobalVars extends VarsModel
     /**
      * @var string
      */
+    public $twitterImageWidth;
+
+    /**
+     * @var string
+     */
+    public $twitterImageHeight;
+
+    /**
+     * @var string
+     */
     public $twitterImageDescription;
 
     // Public Methods
@@ -172,6 +202,20 @@ class MetaGlobalVars extends VarsModel
     /**
      * @inheritdoc
      */
+    public function init()
+    {
+        parent::init();
+        // If we have potentially unsafe Twig code, strip it out
+        if (!empty($this->canonicalUrl)) {
+            if (strpos($this->canonicalUrl, 'craft.app.request.pathInfo') !== false) {
+                $this->canonicalUrl = '{seomatic.helper.safeCanonicalUrl()}';
+            }
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules(): array
     {
         return [
@@ -184,6 +228,8 @@ class MetaGlobalVars extends VarsModel
                     'seoDescription',
                     'seoKeywords',
                     'seoImage',
+                    'seoImageWidth',
+                    'seoImageHeight',
                     'seoImageDescription',
                     'robots',
                     'ogType',
@@ -191,6 +237,8 @@ class MetaGlobalVars extends VarsModel
                     'ogSiteNamePosition',
                     'ogDescription',
                     'ogImage',
+                    'ogImageWidth',
+                    'ogImageHeight',
                     'ogImageDescription',
                     'twitterCard',
                     'twitterCreator',
@@ -198,6 +246,8 @@ class MetaGlobalVars extends VarsModel
                     'twitterSiteNamePosition',
                     'twitterDescription',
                     'twitterImage',
+                    'twitterImageHeight',
+                    'twitterImageWidth',
                     'twitterImageDescription',
                     'canonicalUrl',
                 ],

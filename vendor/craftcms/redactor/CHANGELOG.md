@@ -1,4 +1,25 @@
-# Release Notes for Redactor
+# Release Notes for Redactor for Craft CMS
+
+## 2.1.5 - 2018-07-30
+
+### Added
+- The plugin is now translated into Hungarian. ([#73](https://github.com/craftcms/redactor/pull/73))
+
+### Fixed
+- Fixed a PHP error that could occur when editing elements with Redactor fields. ([#74](https://github.com/craftcms/redactor/issues/74))
+
+## 2.1.4 - 2018-07-27
+
+### Added
+- The plugin is now translated into Dutch. ([#55](https://github.com/craftcms/redactor/pull/55))
+
+### Fixed
+- Fixed a bug where the fixed toolbar wan’t working. ([#9](https://github.com/craftcms/redactor/issues/9))
+
+## 2.1.3 - 2018-07-25
+
+- Fixed a bug where the fixed toolbar was not working. ([#9](https://github.com/craftcms/redactor/issues/9))
+- Fixed a bug where it was impossible to define translation overrides. ([#63](https://github.com/craftcms/redactor/issues/63))
 
 ## 2.1.2 - 2018-07-14
 

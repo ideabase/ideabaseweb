@@ -1,17 +1,73 @@
 [
     {
-        "name": "aws/aws-sdk-php",
-        "version": "3.63.2",
-        "version_normalized": "3.63.2.0",
+        "name": "albertcht/invisible-recaptcha",
+        "version": "v1.8.3",
+        "version_normalized": "1.8.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/aws/aws-sdk-php.git",
-            "reference": "ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d"
+            "url": "https://github.com/albertcht/invisible-recaptcha.git",
+            "reference": "6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d",
-            "reference": "ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d",
+            "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
+            "reference": "6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "^6.2",
+            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+            "php": "^5.6.4 || ^7.0"
+        },
+        "time": "2018-05-15T01:31:25+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "AlbertCht\\InvisibleReCaptcha\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Albert Chen",
+                "homepage": "https://www.albert-chen.com"
+            }
+        ],
+        "description": "Invisible reCAPTCHA For Laravel.",
+        "keywords": [
+            "captcha",
+            "invisible",
+            "invisible-recaptcha",
+            "laravel",
+            "laravel5",
+            "no-captcha",
+            "php",
+            "recaptcha"
+        ]
+    },
+    {
+        "name": "aws/aws-sdk-php",
+        "version": "3.64.0",
+        "version_normalized": "3.64.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aws/aws-sdk-php.git",
+            "reference": "6f2443e77da201ef074a2a9a608b9f2f38a49003"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6f2443e77da201ef074a2a9a608b9f2f38a49003",
+            "reference": "6f2443e77da201ef074a2a9a608b9f2f38a49003",
             "shasum": ""
         },
         "require": {
@@ -42,7 +98,7 @@
             "ext-curl": "To send requests using cURL",
             "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
         },
-        "time": "2018-07-17T15:31:13+00:00",
+        "time": "2018-07-26T21:58:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -468,17 +524,17 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.16",
-        "version_normalized": "3.0.16.0",
+        "version": "3.0.17.1",
+        "version_normalized": "3.0.17.1",
         "source": {
             "type": "git",
             "url": "https://github.com/craftcms/cms.git",
-            "reference": "9190983d804212b1d24b464bd01757fb2bf007d3"
+            "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/9190983d804212b1d24b464bd01757fb2bf007d3",
-            "reference": "9190983d804212b1d24b464bd01757fb2bf007d3",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
+            "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
             "shasum": ""
         },
         "require": {
@@ -525,7 +581,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-07-17T17:33:53+00:00",
+        "time": "2018-07-24T20:54:02+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -554,23 +610,23 @@
     },
     {
         "name": "craftcms/contact-form",
-        "version": "2.2.0",
-        "version_normalized": "2.2.0.0",
+        "version": "2.2.2",
+        "version_normalized": "2.2.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/craftcms/contact-form.git",
-            "reference": "54e352a87a72410698a286e017c62ec792fe5657"
+            "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/contact-form/zipball/54e352a87a72410698a286e017c62ec792fe5657",
-            "reference": "54e352a87a72410698a286e017c62ec792fe5657",
+            "url": "https://api.github.com/repos/craftcms/contact-form/zipball/8e6d41d68736b955a324e7dc34790bbc7f419a55",
+            "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55",
             "shasum": ""
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC11"
         },
-        "time": "2018-07-18T12:52:02+00:00",
+        "time": "2018-07-19T18:09:16+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "Contact Form",
@@ -765,23 +821,23 @@
     },
     {
         "name": "craftcms/redactor",
-        "version": "2.1.2",
-        "version_normalized": "2.1.2.0",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/craftcms/redactor.git",
-            "reference": "d49309d7c251d15c729093e208dd21b9cfc05a19"
+            "reference": "6a508a603c07b55720f17132e2524420525c285a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/redactor/zipball/d49309d7c251d15c729093e208dd21b9cfc05a19",
-            "reference": "d49309d7c251d15c729093e208dd21b9cfc05a19",
+            "url": "https://api.github.com/repos/craftcms/redactor/zipball/6a508a603c07b55720f17132e2524420525c285a",
+            "reference": "6a508a603c07b55720f17132e2524420525c285a",
             "shasum": ""
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC15"
         },
-        "time": "2018-07-14T09:42:21+00:00",
+        "time": "2018-07-30T13:40:33+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "Redactor",
@@ -880,20 +936,20 @@
     },
     {
         "name": "craftcms/server-check",
-        "version": "1.1.1",
-        "version_normalized": "1.1.1.0",
+        "version": "1.1.4",
+        "version_normalized": "1.1.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/craftcms/server-check.git",
-            "reference": "a39dea7f05c66751532a0ad09d51cae46da3f9cf"
+            "reference": "5d6a2c6033db666fd775c301b6c92b9a86487ace"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/server-check/zipball/a39dea7f05c66751532a0ad09d51cae46da3f9cf",
-            "reference": "a39dea7f05c66751532a0ad09d51cae46da3f9cf",
+            "url": "https://api.github.com/repos/craftcms/server-check/zipball/5d6a2c6033db666fd775c301b6c92b9a86487ace",
+            "reference": "5d6a2c6033db666fd775c301b6c92b9a86487ace",
             "shasum": ""
         },
-        "time": "2017-12-15T16:00:57+00:00",
+        "time": "2018-07-25T19:16:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -901,7 +957,6 @@
                 "server/requirements"
             ]
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
@@ -1108,6 +1163,71 @@
         "homepage": "https://github.com/DaveChild/Text-Statistics"
     },
     {
+        "name": "doctrine/inflector",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/inflector.git",
+            "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
+            "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "time": "2017-07-22T12:18:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "inflection",
+            "pluralize",
+            "singularize",
+            "string"
+        ]
+    },
+    {
         "name": "doctrine/lexer",
         "version": "v1.0.1",
         "version_normalized": "1.0.1.0",
@@ -1288,27 +1408,23 @@
     },
     {
         "name": "elvanto/litemoji",
-        "version": "1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "1.4.1",
+        "version_normalized": "1.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/elvanto/litemoji.git",
-            "reference": "7c0276dd0e5004bc78b7865e12030f3d2b6b8d0e"
+            "reference": "b30d679cad29531ec16ca1afadebc78c4495fa10"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/elvanto/litemoji/zipball/7c0276dd0e5004bc78b7865e12030f3d2b6b8d0e",
-            "reference": "7c0276dd0e5004bc78b7865e12030f3d2b6b8d0e",
+            "url": "https://api.github.com/repos/elvanto/litemoji/zipball/b30d679cad29531ec16ca1afadebc78c4495fa10",
+            "reference": "b30d679cad29531ec16ca1afadebc78c4495fa10",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4"
         },
-        "require-dev": {
-            "milesj/emojibase": "*",
-            "phpunit/phpunit": "^5.0"
-        },
-        "time": "2018-05-25T04:37:05+00:00",
+        "time": "2018-07-24T06:21:15+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1316,7 +1432,6 @@
                 "LitEmoji\\": "src/"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
@@ -1652,24 +1767,131 @@
         ]
     },
     {
-        "name": "jaybizzle/crawler-detect",
-        "version": "v1.2.64",
-        "version_normalized": "1.2.64.0",
+        "name": "illuminate/contracts",
+        "version": "v5.5.40",
+        "version_normalized": "5.5.40.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-            "reference": "f62200a42fdc5ea53c873f38c123a8e6b54ca0de"
+            "url": "https://github.com/illuminate/contracts.git",
+            "reference": "04fbae936ed14e673dddd18a39662f49e7d199f5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/f62200a42fdc5ea53c873f38c123a8e6b54ca0de",
-            "reference": "f62200a42fdc5ea53c873f38c123a8e6b54ca0de",
+            "url": "https://api.github.com/repos/illuminate/contracts/zipball/04fbae936ed14e673dddd18a39662f49e7d199f5",
+            "reference": "04fbae936ed14e673dddd18a39662f49e7d199f5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/container": "~1.0",
+            "psr/simple-cache": "~1.0"
+        },
+        "time": "2018-03-20T15:34:35+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Contracts\\": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Contracts package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "illuminate/support",
+        "version": "v5.5.40",
+        "version_normalized": "5.5.40.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/support.git",
+            "reference": "5d2ccb17e526ad537bffc16abc1d516457ae5587"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/5d2ccb17e526ad537bffc16abc1d516457ae5587",
+            "reference": "5d2ccb17e526ad537bffc16abc1d516457ae5587",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.1",
+            "ext-mbstring": "*",
+            "illuminate/contracts": "5.5.*",
+            "nesbot/carbon": "^1.24.1",
+            "php": ">=7.0"
+        },
+        "replace": {
+            "tightenco/collect": "<5.5.33"
+        },
+        "suggest": {
+            "illuminate/filesystem": "Required to use the composer class (5.5.*).",
+            "symfony/process": "Required to use the composer class (~3.3).",
+            "symfony/var-dumper": "Required to use the dd function (~3.3)."
+        },
+        "time": "2018-03-10T15:44:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Support\\": ""
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Support package.",
+        "homepage": "https://laravel.com"
+    },
+    {
+        "name": "jaybizzle/crawler-detect",
+        "version": "v1.2.65",
+        "version_normalized": "1.2.65.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+            "reference": "1ea1c897018c93e3c2ac76e008519085b24e339e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/1ea1c897018c93e3c2ac76e008519085b24e339e",
+            "reference": "1ea1c897018c93e3c2ac76e008519085b24e339e",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2018-06-22T20:32:56+00:00",
+        "require-dev": {
+            "phpunit/phpunit": "^4.8|^5.5|^6.5",
+            "satooshi/php-coveralls": "1.*"
+        },
+        "time": "2018-07-24T17:53:06+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1677,6 +1899,7 @@
                 "Jaybizzle\\CrawlerDetect\\": "src/"
             }
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
@@ -2117,18 +2340,70 @@
         ]
     },
     {
-        "name": "nystudio107/craft-seomatic",
-        "version": "3.1.2",
-        "version_normalized": "3.1.2.0",
+        "name": "nesbot/carbon",
+        "version": "1.32.0",
+        "version_normalized": "1.32.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/nystudio107/craft-seomatic.git",
-            "reference": "1533b86d9b81a1a31231b4d5753081386519eecb"
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "64563e2b9f69e4db1b82a60e81efa327a30ff343"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/1533b86d9b81a1a31231b4d5753081386519eecb",
-            "reference": "1533b86d9b81a1a31231b4d5753081386519eecb",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/64563e2b9f69e4db1b82a60e81efa327a30ff343",
+            "reference": "64563e2b9f69e4db1b82a60e81efa327a30ff343",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "symfony/translation": "~2.6 || ~3.0 || ~4.0"
+        },
+        "time": "2018-07-05T06:59:26+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Carbon\\Laravel\\ServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            }
+        ],
+        "description": "A simple API extension for DateTime.",
+        "homepage": "http://carbon.nesbot.com",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "nystudio107/craft-seomatic",
+        "version": "3.1.6",
+        "version_normalized": "3.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nystudio107/craft-seomatic.git",
+            "reference": "0b0ec4965ebeb568983dedd555f5034cc350d1b8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/0b0ec4965ebeb568983dedd555f5034cc350d1b8",
+            "reference": "0b0ec4965ebeb568983dedd555f5034cc350d1b8",
             "shasum": ""
         },
         "require": {
@@ -2138,7 +2413,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2018-07-17T19:10:45+00:00",
+        "time": "2018-07-25T18:25:05+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",
@@ -2353,6 +2628,56 @@
         ]
     },
     {
+        "name": "psr/container",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-02-14T16:28:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
         "name": "psr/http-message",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -2452,6 +2777,117 @@
             "psr",
             "psr-3"
         ]
+    },
+    {
+        "name": "psr/simple-cache",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/simple-cache.git",
+            "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+            "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-10-23T01:57:42+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\SimpleCache\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interfaces for simple caching",
+        "keywords": [
+            "cache",
+            "caching",
+            "psr",
+            "psr-16",
+            "simple-cache"
+        ]
+    },
+    {
+        "name": "rias/craft-contact-form-extensions",
+        "version": "1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Rias500/craft-contact-form-extensions.git",
+            "reference": "b64a450eb1c6be1041e464443fb7c8e59a0e76d1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/b64a450eb1c6be1041e464443fb7c8e59a0e76d1",
+            "reference": "b64a450eb1c6be1041e464443fb7c8e59a0e76d1",
+            "shasum": ""
+        },
+        "require": {
+            "albertcht/invisible-recaptcha": "^1.8",
+            "craftcms/cms": "^3.0.0-RC1",
+            "craftcms/contact-form": "^2.1"
+        },
+        "time": "2018-07-13T10:50:54+00:00",
+        "type": "craft-plugin",
+        "extra": {
+            "name": "Contact Form Extensions",
+            "handle": "contact-form-extensions",
+            "schemaVersion": "1.0.0",
+            "hasCpSettings": true,
+            "hasCpSection": true,
+            "changelogUrl": "https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md",
+            "components": {
+                "contactFormExtensionsService": "rias\\contactformextensions\\services\\ContactFormExtensionsService"
+            },
+            "class": "rias\\contactformextensions\\ContactFormExtensions"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "rias\\contactformextensions\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rias",
+                "homepage": "https://rias.be"
+            }
+        ],
+        "description": "Adds extensions to the Craft CMS contact form plugin.",
+        "keywords": [
+            "cms",
+            "craft",
+            "craft contact form extensions",
+            "craft-plugin",
+            "craftcms"
+        ],
+        "support": {
+            "docs": "https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md",
+            "issues": "https://github.com/Rias500/craft-contact-form-extensions/issues"
+        }
     },
     {
         "name": "seld/cli-prompt",
@@ -3111,6 +3547,66 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "symfony/translation",
+        "version": "v3.3.6",
+        "version_normalized": "3.3.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "35dd5fb003c90e8bd4d8cabdf94bf9c96d06fdc3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/35dd5fb003c90e8bd4d8cabdf94bf9c96d06fdc3",
+            "reference": "35dd5fb003c90e8bd4d8cabdf94bf9c96d06fdc3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/config": "<2.8",
+            "symfony/yaml": "<3.3"
+        },
+        "suggest": {
+            "psr/log": "To use logging capability in translator",
+            "symfony/config": "",
+            "symfony/yaml": ""
+        },
+        "time": "2017-06-24T16:45:30+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Translation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Translation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
         "name": "true/punycode",
         "version": "v2.1.1",
         "version_normalized": "2.1.1.0",
@@ -3224,17 +3720,17 @@
     },
     {
         "name": "vlucas/phpdotenv",
-        "version": "v2.5.0",
-        "version_normalized": "2.5.0.0",
+        "version": "v2.5.1",
+        "version_normalized": "2.5.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/vlucas/phpdotenv.git",
-            "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a"
+            "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
-            "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
+            "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+            "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
             "shasum": ""
         },
         "require": {
@@ -3243,7 +3739,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8.35 || ^5.0"
         },
-        "time": "2018-07-01T10:25:50+00:00",
+        "time": "2018-07-29T20:33:41+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

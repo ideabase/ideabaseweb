@@ -191,9 +191,7 @@ class Elements extends Component
         $query = $elementType::find();
         $query->id = $elementId;
         $query->siteId = $siteId;
-        $query->status = null;
-        $query->enabledForSite = false;
-
+        $query->anyStatus();
         return $query->one();
     }
 
@@ -710,8 +708,7 @@ class Elements extends Component
         $query = $element::find()
             ->descendantOf($element)
             ->descendantDist(1)
-            ->status(null)
-            ->enabledForSite(false)
+            ->anyStatus()
             ->siteId($element->siteId);
 
         if ($queue) {
@@ -1097,8 +1094,7 @@ class Elements extends Component
                 $refNames = array_keys($tokensByName);
                 $elementQuery = $elementType::find()
                     ->siteId($siteId)
-                    ->status(null)
-                    ->limit(null);
+                    ->anyStatus();
 
                 if ($refType === 'id') {
                     $elementQuery->id($refNames);
@@ -1206,7 +1202,10 @@ class Elements extends Component
                 $targetPath = $sourcePath . '.' . $segment;
 
                 // Figure out the path mapping wants a custom order
-                $useCustomOrder = !empty($pathCriterias[$targetPath]['order']);
+                $useCustomOrder = (
+                    !empty($pathCriterias[$targetPath]['orderBy']) ||
+                    !empty($pathCriterias[$targetPath]['order'])
+                );
 
                 // Make sure we haven't already eager-loaded this target path
                 if (!isset($elementsByPath[$targetPath])) {
