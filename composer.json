@@ -29,8 +29,7 @@
     "mikestecker/craft-videoembedder": "1.0.9",
     "nystudio107/craft-seomatic": "3.1.6",
     "craftcms/redactor-clips": "2.0.0",
-    "craftcms/contact-form-honeypot": "1.0.2",
-    "rias/craft-contact-form-extensions": "1.0.7"
+    "rias/craft-contact-form-extensions": "1.0.8"
   },
   "autoload": {
     "psr-4": {
