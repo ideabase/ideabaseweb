@@ -57,17 +57,17 @@
     },
     {
         "name": "aws/aws-sdk-php",
-        "version": "3.64.0",
-        "version_normalized": "3.64.0.0",
+        "version": "3.64.2",
+        "version_normalized": "3.64.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/aws/aws-sdk-php.git",
-            "reference": "6f2443e77da201ef074a2a9a608b9f2f38a49003"
+            "reference": "3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6f2443e77da201ef074a2a9a608b9f2f38a49003",
-            "reference": "6f2443e77da201ef074a2a9a608b9f2f38a49003",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2",
+            "reference": "3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2",
             "shasum": ""
         },
         "require": {
@@ -98,7 +98,7 @@
             "ext-curl": "To send requests using cURL",
             "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
         },
-        "time": "2018-07-26T21:58:51+00:00",
+        "time": "2018-07-31T19:57:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -524,17 +524,17 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.17.1",
-        "version_normalized": "3.0.17.1",
+        "version": "3.0.18",
+        "version_normalized": "3.0.18.0",
         "source": {
             "type": "git",
             "url": "https://github.com/craftcms/cms.git",
-            "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed"
+            "reference": "d547e55fb9022bfa08e92cf6b194589c7fa101a4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
-            "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/d547e55fb9022bfa08e92cf6b194589c7fa101a4",
+            "reference": "d547e55fb9022bfa08e92cf6b194589c7fa101a4",
             "shasum": ""
         },
         "require": {
@@ -545,7 +545,7 @@
             "creocoder/yii2-nested-sets": "~0.9.0",
             "danielstjules/stringy": "^3.1.0",
             "elvanto/litemoji": "^1.3.1",
-            "enshrined/svg-sanitize": "~0.8.2",
+            "enshrined/svg-sanitize": "~0.9.0",
             "ext-curl": "*",
             "ext-dom": "*",
             "ext-json": "*",
@@ -581,7 +581,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-07-24T20:54:02+00:00",
+        "time": "2018-07-31T18:57:08+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1493,24 +1493,20 @@
     },
     {
         "name": "enshrined/svg-sanitize",
-        "version": "0.8.2",
-        "version_normalized": "0.8.2.0",
+        "version": "0.9.0",
+        "version_normalized": "0.9.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-            "reference": "432fc4fc7e95b8a866790ba27e35076b9dd96ebe"
+            "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
-            "reference": "432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
+            "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/509455b32ddfcb6db993ed3564f0670166c6c4c7",
+            "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7",
             "shasum": ""
         },
-        "require-dev": {
-            "codeclimate/php-test-reporter": "^0.1.2",
-            "phpunit/phpunit": "^4.7"
-        },
-        "time": "2017-12-06T15:31:26+00:00",
+        "time": "2018-07-19T17:21:27+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1518,7 +1514,6 @@
                 "enshrined\\svgSanitize\\": "src"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "GPL-2.0+"
         ],
@@ -1768,8 +1763,8 @@
     },
     {
         "name": "illuminate/contracts",
-        "version": "v5.5.40",
-        "version_normalized": "5.5.40.0",
+        "version": "v5.5.41",
+        "version_normalized": "5.5.41.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/contracts.git",
@@ -1799,6 +1794,7 @@
                 "Illuminate\\Contracts\\": ""
             }
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
@@ -1813,17 +1809,17 @@
     },
     {
         "name": "illuminate/support",
-        "version": "v5.5.40",
-        "version_normalized": "5.5.40.0",
+        "version": "v5.5.41",
+        "version_normalized": "5.5.41.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
-            "reference": "5d2ccb17e526ad537bffc16abc1d516457ae5587"
+            "reference": "b93ddc422cf2b14e3d0237c775e5deb57d849bd8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/support/zipball/5d2ccb17e526ad537bffc16abc1d516457ae5587",
-            "reference": "5d2ccb17e526ad537bffc16abc1d516457ae5587",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/b93ddc422cf2b14e3d0237c775e5deb57d849bd8",
+            "reference": "b93ddc422cf2b14e3d0237c775e5deb57d849bd8",
             "shasum": ""
         },
         "require": {
@@ -1841,7 +1837,7 @@
             "symfony/process": "Required to use the composer class (~3.3).",
             "symfony/var-dumper": "Required to use the dd function (~3.3)."
         },
-        "time": "2018-03-10T15:44:32+00:00",
+        "time": "2018-06-08T13:45:23+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1857,6 +1853,7 @@
                 "helpers.php"
             ]
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
@@ -1871,17 +1868,17 @@
     },
     {
         "name": "jaybizzle/crawler-detect",
-        "version": "v1.2.65",
-        "version_normalized": "1.2.65.0",
+        "version": "v1.2.66",
+        "version_normalized": "1.2.66.0",
         "source": {
             "type": "git",
             "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-            "reference": "1ea1c897018c93e3c2ac76e008519085b24e339e"
+            "reference": "55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/1ea1c897018c93e3c2ac76e008519085b24e339e",
-            "reference": "1ea1c897018c93e3c2ac76e008519085b24e339e",
+            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1",
+            "reference": "55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1",
             "shasum": ""
         },
         "require": {
@@ -1891,7 +1888,7 @@
             "phpunit/phpunit": "^4.8|^5.5|^6.5",
             "satooshi/php-coveralls": "1.*"
         },
-        "time": "2018-07-24T17:53:06+00:00",
+        "time": "2018-07-30T20:23:10+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4287,17 +4284,17 @@
     },
     {
         "name": "zendframework/zend-feed",
-        "version": "2.10.2",
-        "version_normalized": "2.10.2.0",
+        "version": "2.10.3",
+        "version_normalized": "2.10.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/zendframework/zend-feed.git",
-            "reference": "5253f949f4ad999086ab9b408908b6c6776f24db"
+            "reference": "6641f4cf3f4586c63f83fd70b6d19966025c8888"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-feed/zipball/5253f949f4ad999086ab9b408908b6c6776f24db",
-            "reference": "5253f949f4ad999086ab9b408908b6c6776f24db",
+            "url": "https://api.github.com/repos/zendframework/zend-feed/zipball/6641f4cf3f4586c63f83fd70b6d19966025c8888",
+            "reference": "6641f4cf3f4586c63f83fd70b6d19966025c8888",
             "shasum": ""
         },
         "require": {
@@ -4323,7 +4320,7 @@
             "zendframework/zend-servicemanager": "Zend\\ServiceManager component, for easily extending ExtensionManager implementations",
             "zendframework/zend-validator": "Zend\\Validator component, for validating email addresses used in Atom feeds and entries when using the Writer subcomponent"
         },
-        "time": "2018-06-18T20:14:01+00:00",
+        "time": "2018-08-01T13:53:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
