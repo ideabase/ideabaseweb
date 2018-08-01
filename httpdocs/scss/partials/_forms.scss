@@ -58,3 +58,7 @@ label[for=category].ie9 select {
 label[for=category] select:focus {
   outline: 1px dotted #A9A9A9;
 }
+
+textarea#message {
+  resize: none;
+}
