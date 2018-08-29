@@ -54,7 +54,16 @@ class Helper extends Component
         } catch (InvalidConfigException $e) {
             Craft::error($e->getMessage(), __METHOD__);
         }
+        // Remove the query string
         $url = UrlHelper::stripQueryString($url);
+        // HTML decode the entities, then strip out any tags
+        $url = html_entity_decode($url, ENT_NOQUOTES, 'UTF-8');
+        $url = strip_tags($url);
+
+        // If this is a >= 400 status code, set the canonical URL to nothing
+        if (Craft::$app->getResponse()->statusCode >= 400) {
+            $url = '';
+        }
 
         return UrlHelper::absoluteUrlWithProtocol($url);
     }
@@ -292,12 +301,13 @@ class Helper extends Component
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string URL to the transformed image
      */
-    public function socialTransform($asset, string $transformName = '', $siteId = null): string
+    public function socialTransform($asset, string $transformName = '', $siteId = null, $transformMode = null): string
     {
-        return ImageTransformHelper::socialTransform($asset, $transformName, $siteId);
+        return ImageTransformHelper::socialTransform($asset, $transformName, $siteId, $transformMode);
     }
 
     /**
@@ -307,12 +317,17 @@ class Helper extends Component
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string URL to the transformed image
      */
-    public function socialTransformWidth($asset, string $transformName = '', $siteId = null): string
-    {
-        return ImageTransformHelper::socialTransformWidth($asset, $transformName, $siteId);
+    public function socialTransformWidth(
+        $asset,
+        string $transformName = '',
+        $siteId = null,
+        $transformMode = null
+    ): string {
+        return ImageTransformHelper::socialTransformWidth($asset, $transformName, $siteId, $transformMode);
     }
 
     /**
@@ -322,11 +337,16 @@ class Helper extends Component
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string URL to the transformed image
      */
-    public function socialTransformHeight($asset, string $transformName = '', $siteId = null): string
-    {
-        return ImageTransformHelper::socialTransformHeight($asset, $transformName, $siteId);
+    public function socialTransformHeight(
+        $asset,
+        string $transformName = '',
+        $siteId = null,
+        $transformMode = null
+    ): string {
+        return ImageTransformHelper::socialTransformHeight($asset, $transformName, $siteId, $transformMode);
     }
 }

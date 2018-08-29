@@ -216,6 +216,22 @@ Section Sitemaps are automatically submitted to search engines whenever a new El
 
 If you have custom URLs that are not in the CMS, you can manually add them to their own Sitemap Index via **Site Settings** → **Miscellaneous**.
 
+You can also add to it via a plugin:
+
+```php
+use nystudio107\seomatic\events\RegisterSitemapUrlsEvent;
+use nystudio107\seomatic\models\SitemapCustomTemplate;
+use yii\base\Event;
+Event::on(SitemapCustomTemplate::class, SitemapCustomTemplate::EVENT_REGISTER_SITEMAP_URLS, function(RegisterSitemapUrlsEvent $e) {
+$e->sitemapUrls[] = [
+         'loc' => $url,
+         'changefreq' => $changeFreq,
+         'priority' => $priority,
+         'lastmod' => $lastMod,
+     ];
+ });
+```
+
 #### Content SEO AdminCP Fields
 
 The fields in the AdminCP Content SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
@@ -527,6 +543,43 @@ It's up to Google whether or not to display the emojis that you add to your SEO 
 
 On the Mac, you can invoke an Emoji keyboard inside of any text field by hitting Command Control Space. This works in any Mac application, not just web browsers or SEOmatic.
 
+## Google AMP Support
+
+SEOmatic works great with [Google AMP](https://www.ampproject.org/)! In fact, it will provide the [JSON-LD structured data](https://www.ampproject.org/docs/fundamentals/spec) that is _required_ by the AMP spec.
+
+Since AMP [doesn't allow for third-party JavaScript](https://medium.com/google-developers/how-to-avoid-common-mistakes-when-publishing-accelerated-mobile-pages-9ea61abf530f), you might want to add this to your AMP templates:
+```twig
+{% do seomatic.script.container().include(false) %}
+```
+
+This will cause SEOmatic to not render _any_ custom scripts you might have enabled (such as Google Analytics, gtag, etc.)
+
+Then you can include Google AMP Analytics as per [Adding Analytics to your AMP pages](https://developers.google.com/analytics/devguides/collection/amp-analytics/) (this assumes you're using `gtag`):
+```
+{% set script = seomatic.script.get('gtag') %}
+{% set analyticsId = script.vars.googleAnalyticsId.value ?? '' %}
+<amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": "{{ analyticsId }}"
+            },
+            "triggers": {
+                "trackPageview": {
+                    "on": "visible",
+                    "request": "pageview"
+                }
+            }
+        }
+    </script>
+</amp-analytics>
+```
+## Single Page App (SPA) Support
+
+SEOmatic fully supports working with SPAs, allowing you to receive the metadata needed for a given route either as an array, or as DOM elements ready to be inserted.
+
+See the **Headless SPA API** section for details.
+
 ## Using SEOmatic
 
 ### Twig Templating
@@ -534,6 +587,14 @@ On the Mac, you can invoke an Emoji keyboard inside of any text field by hitting
 SEOmatic can work fully without any Twig templating code at all. However, it provides a robust API that you can tap into from your Twig templates should you desire to do so.
 
 SEOmatic makes a global `seomatic` variable available in your Twig templates that allows you to work with the SEOmatic variables and functions.
+
+#### A Word About `{% cache %}` Tags
+
+If you use Craft's built-in `{% cache %}` tags, ensure that you don't have any of SEOmatic's tags (listed below) inside of them. The reason is that SEOmatic dynamically generates the tags on each request, using its own caching system for performance reasons.
+
+When you surround any Twig code in a `{% cache %}` tag, that code will only ever be executed once. On subsequent runs, the HTML result of what was inside of the `{% cache %}` tag is just returned, and the Twig code inside of it is never executed.
+
+For more information on how the `{% cache %}` tag works, see the [The Craft {% cache %} Tag In-Depth](https://nystudio107.com/blog/the-craft-cache-tag-in-depth) article.
 
 #### SEOmatic Variables
 
@@ -981,6 +1042,16 @@ Get the existing **BreadcrumbList** as generated automatically by SEOmatic to mo
 {% set crumbs = seomatic.jsonLd.get('breadcrumbList') %}
 ```
 
+Display the breadcrumbs on the page:
+
+```twig
+{% set crumbList = seomatic.jsonLd.get('breadcrumbList').itemListElement %}
+{% for crumb in crumbList %}
+    <a href="{{ crumb.item['@id'] }}">{{ crumb.item['name'] }}</a>
+    {% if not loop.last %}&raquo;{% endif %}
+{% endfor %}
+```
+
 Get the existing **Identity** as set in the Site Settings AdminCP section to modify it:
 ```twig
 {% set identity = seomatic.jsonLd.get('identity') %}
@@ -1130,6 +1201,11 @@ This will return to you an array of meta containers, with the render-ready meta 
     "MetaScriptContainer": "",
     "MetaJsonLdContainer": "<script type=\"application/ld+json\">{\"@context\":\"http://schema.org\",\"@type\":\"WebPage\",\"image\":{\"@type\":\"ImageObject\",\"height\":\"804\",\"width\":\"1200\"},\"inLanguage\":\"en-us\",\"mainEntityOfPage\":\"http://craft3.test/\",\"name\":\"Homepage\",\"url\":\"http://craft3.test/\"}</script><script type=\"application/ld+json\">{\"@context\":\"http://schema.org\",\"@type\":\"BreadcrumbList\",\"description\":\"Breadcrumbs list\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":{\"@id\":\"http://craft3.test/\",\"name\":\"Homepage\"},\"position\":1}],\"name\":\"Breadcrumbs\"}</script>"
 }
+```
+If you need to request a URI from a specific site in a multi-site setup, you can do that with the optional `siteId=SITE_ID` parameter:
+
+```
+/actions/seomatic/meta-container/all-meta-containers/?uri=/&siteId=2
 ```
 
 Should you wish to have the items in the meta containers return as an array of data instead, you can do that with the optional `asArray=true` parameter:

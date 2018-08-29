@@ -861,7 +861,7 @@ table.editable tbody .datewrapper, table.editable tbody .timewrapper { width: 10
 body.ltr table.editable tbody .datewrapper .text:placeholder-shown + div[data-icon], body.ltr table.editable tbody .timewrapper .text:placeholder-shown + div[data-icon] { left: 10px; }
 body.rtl table.editable tbody .datewrapper .text:placeholder-shown + div[data-icon], body.rtl table.editable tbody .timewrapper .text:placeholder-shown + div[data-icon] { right: 10px; }
 table.editable + .btn.add { display: block; border-radius: 0 0 2px 2px; border: 1px dashed rgba(0, 0, 20, 0.4); border-top-width: 0; background: none; -webkit-box-shadow: none; box-shadow: none; }
-table.editable + .btn.add:focus { border-style: solid; }
+table.editable + .btn.add:focus { border-style: solid; border-color: #0D99F2; }
 
 .border-box + .buttons, .shadow-box + .buttons { margin-top: 7px; }
 
@@ -1071,7 +1071,7 @@ body.rtl .hud .tip-right { left: -15px; }
 .hud .elementeditor .main { padding: 8px 0; }
 .hud .elementeditor .main .meta .image-preview-container { position: relative; margin: -8px 0 8px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 190px; background: #222; }
 .hud .elementeditor .main .meta .image-preview-container .image-preview { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%; }
-.hud .elementeditor .main .meta .image-preview-container .image-preview img { display: block; }
+.hud .elementeditor .main .meta .image-preview-container .image-preview img { display: block; max-width: 100%; max-height: 190px; }
 .hud .elementeditor .main .meta .image-preview-container.editable { cursor: pointer; }
 .hud .elementeditor .main .meta .image-preview-container.editable .btn { opacity: 0; position: absolute; top: 10px; background: rgba(34, 34, 34, 0.9); color: #fff; border: 1px solid rgba(153, 153, 153, 0.9); background-clip: padding-box; -webkit-box-shadow: none; box-shadow: none; -webkit-transition: opacity linear 100ms; transition: opacity linear 100ms; }
 body.ltr .hud .elementeditor .main .meta .image-preview-container.editable .btn { right: 10px; }
@@ -1111,7 +1111,11 @@ body.ltr .element-hud-form .buttons .spinner { right: -24px; }
 body.rtl .element-hud-form .buttons .spinner { left: -24px; }
 
 /* logout warning/login/elevated session modals */
+.logoutwarningmodalshade, .loginmodalshade { z-index: 101; }
+
 #logoutwarningmodal, #loginmodal, #elevatedsessionmodal { width: 500px; }
+
+#logoutwarningmodal, #loginmodal { z-index: 101; }
 
 #loginmodal .inputcontainer, #elevatedsessionmodal .inputcontainer { position: relative; }
 #loginmodal .inputcontainer .spinner, #elevatedsessionmodal .inputcontainer .spinner { position: absolute; top: 0; margin-top: 0; }
@@ -2194,5 +2198,9 @@ html.noscroll, html.noscroll body { overflow: hidden; height: 100%; }
 .menu.dark li a { color: #fff; }
 
 .menu.dark ul li a:not(.sel):not(.disabled):hover { color: #444; }
+
+_:-ms-lang(x), .elements .tableview td.checkbox-cell input.checkbox + label, .elements .tableview td.checkbox-cell div.checkbox { top: 16px; }
+
+_:-ms-lang(x), input.checkbox + label:empty, div:empty.checkbox { display: block; }
 
 /*# sourceMappingURL=craft.css.map */

@@ -1,5 +1,89 @@
 # SEOmatic Changelog
 
+## 3.1.17 - 2018.08.29
+### Changed
+* Fixed an error trying to access a property of a non-object in MetaContainers.php
+* Prevent classname conflict with older versions of PHP
+* Fix an issue where transform modes didn't work with Custom Image sources
+* Scale the `logo` to fit to 600x60 as per [Google specs](https://developers.google.com/search/docs/data-types/article#amp_logo_guidelines)
+
+## 3.1.16 - 2018.08.23
+### Changed
+* Handle elements that don't exist on other sites better
+* Don't include hreflang in sitemaps for sites where it has been disabled, whether through Content SEO or SEO Settings field settings
+* Hide Transform Image and Transform Type in the SEO Settings field if they aren't enabled
+* Fixed a conflicting use \craft\helpers\Json import
+
+## 3.1.15 - 2018.08.16
+### Changed
+* Fixed an issue where sitemap caches were not getting properly cleared
+* Fixed an issue where elements disabled in a site were showing up in the `hreflang`
+* Fixed namespaces and custom sitemap event triggering
+
+## 3.1.14 - 2018.08.14
+### Added
+* Added in the ability to override sitemap settings on a per-Entry/Category Group/Product basis
+* Implement `Json::decode()` to avoid large integers being converted to floats
+* If the SEO Settings field for an entry has **Robots** set to `none` or has sitemaps disabled, it isn't included in the `hreflang`
+* Added a setting to control whether `hreflang` tags are automatically added
+
+### Changed
+* Ensure that the sitemap index cache gets invalidated when entries are modified
+* Specify `rel="noopener"` for external links.
+* Fix the order that the field migration happens to let the mapping magic happen
+* SEOmatic now requires Craft CMS 3.0.20 or later
+* Fixed an issue with paginated pages that have no results on them
+
+## 3.1.13.1 - 2018.08.07
+### Changed
+* Fixed a potential `undefined index` error with pull fields, resulting from the new cropping modes
+
+## 3.1.13 - 2018.08.07
+### Added
+* Added the ability to choose between **Crop** (the default), **Fit**, or **Stretch** for the SEO, Twitter, and Facebook image transforms
+
+### Changed
+* Brought back the missing ** Transform Facebook OpenGraph Image** field
+* Don't do anything with pagination on console requests
+
+## 3.1.12 - 2018.08.06
+### Changed
+* Make the base `Container` class extend `FluentModel` so that containers can be accessed via templates just like MetaTags are
+* Ensure that we check to see if a container's `include` property is set before rendering it
+* Use a unique cache key for everything for the request, including the pagination and URI
+* Prep script containers for inclusion in `includeScriptBodyHtml()`
+
+## 3.1.11 - 2018.08.05
+### Changed
+* Fixed a regression that caused an error loading entries
+
+## 3.1.10 - 2018.08.05
+### Changed
+* Cleaned up how the pagination cache key works
+* Add the current request path into the mix for the meta container cache key
+* Force social media values to be displayed as strings
+
+## 3.1.9 - 2018.08.04
+### Changed
+* Fixed an issue where SEOmatic wouldn't find Entry metadata if the entry was first saved as a Draft, then published
+* Include the pagination page in the cache key to ensure paginated pages are uniquely cached
+
+## 3.1.8 - 2018.08.03
+### Changed
+* Fixed a regression that caused you to be unable to save **Custom URL** for an image source in the AdminCP
+
+## 3.1.7 - 2018.08.02
+### Changed
+* Fixed an issue where Content SEO permissions were not respected properly in the AdminCP
+* Display the Tracking Scripts status in the AdminCP regardless of `devMode` setting
+
+### Added
+* Don't render a canonical url for http status codes >= 400
+* Set meta robots tag to `none` for http status codes >= 400
+
+### Security
+* Decode HTML entities, then strip tags in `safeCanonicalUrl()`
+
 ## 3.1.6 - 2018.07.25
 ### Changed
 * Really ensure that paginated pages are cached separately in the second-level cache

@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-33CCFF.svg)](https://opensource.org/licenses/MIT)
 [![composer.lock](https://poser.pugx.org/php-science/textrank/composerlock)](https://packagist.org/packages/php-science/textrank)
 
-This source code is an implementation of the TextRank algorithm (Automatic summarization) on PHP7 strict mode. This package is also compatible with the HHVM engine in PHP7 mode, see the details below. It can summarize a text, article for example to a short paragraph. Before it would start the summarizing it removes the junk words what are defined in the Stopwords namespace. It is possible to extend it with another languages.
+This source code is an implementation of the TextRank algorithm (Automatic summarization) on PHP7 strict mode. It can summarize a text, article for example to a short paragraph. Before it would start the summarizing it removes the junk words what are defined in the Stopwords namespace. It is possible to extend it with another languages.
 
 <img src="http://iceducation.ca/wp-content/uploads/2018/01/Science.png" />
 
@@ -18,6 +18,7 @@ Riccardo Marton | @riccardomarton
 Syndesi | @Syndesi 
 vincentsch | @vincentsch
 Andrew Welch | @khalwat 
+Andrey Astashov | @mvcaaa
 
 ## TextRank or Automatic summarization
 > Automatic summarization is the process of reducing a text document with a computer program in order to create a summary that retains the most important points of the original document. Technologies that can make a coherent summary take into account variables such as length, writing style and syntax. Automatic data summarization is part of machine learning and data mining. The main idea of summarization is to find a representative subset of the data, which contains the information of the entire set. Summarization technologies are used in a large number of sectors in industry today. - Wikipedia
@@ -35,7 +36,7 @@ The algorithm of this implementation is:
 composer require php-science/textrank
 ```
 
-## Test with PHP7
+## Test
 ```
 cd project-folder
 composer test
@@ -44,17 +45,6 @@ or
 ```
 cd project-folder
 phpunit --colors='always' $(pwd)/tests
-```
-
-## Test with HHVM
-```
-cd project-folder
-composer test-hhvm
-```
-or
-```
-cd project-folder
-hhvm -d hhvm.php7.scalar_types=true /usr/local/bin/phpunit --colors='always' $(pwd)/tests
 ```
 
 ## Examples

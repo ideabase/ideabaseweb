@@ -50,6 +50,12 @@ class ImageTransform
             'width' => 800,
             'height' => 418,
         ],
+        'schema-logo' => [
+            'width' => 600,
+            'height' => 60,
+            'mode' => 'fit',
+            'format' => 'png'
+        ],
     ];
 
     // Static Methods
@@ -62,13 +68,22 @@ class ImageTransform
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string URL to the transformed image
      */
-    public static function socialTransform($asset, string $transformName = '', $siteId = null): string
-    {
+    public static function socialTransform(
+        $asset,
+        string $transformName = '',
+        $siteId = null,
+        $transformMode = null
+    ): string {
         $url = '';
         $transform = self::createSocialTransform($transformName);
+        // Let them override the mode
+        if ($transform !== null) {
+            $transform->mode = $transformMode ?? $transform->mode;
+        }
         $asset = self::assetFromAssetOrId($asset, $siteId);
         if (($asset !== null) && ($asset instanceof Asset)) {
             // Generate a transformed image
@@ -86,13 +101,22 @@ class ImageTransform
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string width of the transformed image
      */
-    public static function socialTransformWidth($asset, string $transformName = '', $siteId = null): string
-    {
+    public static function socialTransformWidth(
+        $asset,
+        string $transformName = '',
+        $siteId = null,
+        $transformMode = null
+    ): string {
         $width = '';
         $transform = self::createSocialTransform($transformName);
+        // Let them override the mode
+        if ($transform !== null) {
+            $transform->mode = $transformMode ?? $transform->mode;
+        }
         $asset = self::assetFromAssetOrId($asset, $siteId);
         if (($asset !== null) && ($asset instanceof Asset)) {
             $width = (string)$asset->getWidth($transform);
@@ -108,13 +132,22 @@ class ImageTransform
      * @param int|Asset $asset         the Asset or Asset ID
      * @param string    $transformName the name of the transform to apply
      * @param int|null  $siteId
+     * @param string    $transformMode
      *
      * @return string width of the transformed image
      */
-    public static function socialTransformHeight($asset, string $transformName = '', $siteId = null): string
-    {
+    public static function socialTransformHeight(
+        $asset,
+        string $transformName = '',
+        $siteId = null,
+        $transformMode = null
+    ): string {
         $height = '';
         $transform = self::createSocialTransform($transformName);
+        // Let them override the mode
+        if ($transform !== null) {
+            $transform->mode = $transformMode ?? $transform->mode;
+        }
         $asset = self::assetFromAssetOrId($asset, $siteId);
         if (($asset !== null) && ($asset instanceof Asset)) {
             $height = (string)$asset->getHeight($transform);
@@ -165,7 +198,10 @@ class ImageTransform
      */
     protected static function assetFromAssetOrId($asset, $siteId = null)
     {
-        return \is_int($asset) ? Craft::$app->getAssets()->getAssetById($asset, $siteId) : $asset;
+        if (empty($asset)) {
+            return null;
+        }
+        return ($asset instanceof Asset) ? $asset : Craft::$app->getAssets()->getAssetById($asset, $siteId);
     }
 
     /**
@@ -188,5 +224,4 @@ class ImageTransform
 
         return $transform;
     }
-
 }

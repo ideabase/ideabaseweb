@@ -82,7 +82,7 @@ class MetaContainers extends Component
     /**
      * @var string The current page number of paginated pages
      */
-    public $paginationPage = '';
+    public $paginationPage = '1';
 
     // Protected Properties
     // =========================================================================
@@ -95,15 +95,16 @@ class MetaContainers extends Component
     /**
      * @var null|MetaBundle
      */
-    protected $matchedMetaBundle = null;
+    protected $matchedMetaBundle;
 
     /**
      * @var null|TagDependency
      */
-    protected $containerDependency = null;
+    protected $containerDependency;
 
     /**
-     * @var bool Whether or not the matched element should be included in the meta containers
+     * @var bool Whether or not the matched element should be included in the
+     *      meta containers
      */
     protected $includeMatchedElement = true;
 
@@ -116,6 +117,11 @@ class MetaContainers extends Component
     public function init()
     {
         parent::init();
+        // Get the page number of this request
+        $request = Craft::$app->getRequest();
+        if (!$request->isConsoleRequest) {
+            $this->paginationPage = (string)$request->pageNum;
+        }
     }
 
     /**
@@ -143,12 +149,27 @@ class MetaContainers extends Component
                     ?? Craft::$app->getSites()->primarySite->id
                     ?? 1;
             }
+            // Handle pagination
+            $paginationPage = 'page'.$this->paginationPage;
+            // Get the path for the current request
+            $request = Craft::$app->getRequest();
+            $requestPath = '/';
+            if (!$request->getIsConsoleRequest()) {
+                try {
+                    $requestPath = $request->getPathInfo();
+                } catch (InvalidConfigException $e) {
+                    Craft::error($e->getMessage(), __METHOD__);
+                }
+            }
+            // Get our cache key
+            $cacheKey = $uri.$siteId.$paginationPage.$requestPath;
             // Load the meta containers
             $dependency = new TagDependency([
                 'tags' => [
                     $this::GLOBAL_METACONTAINER_CACHE_TAG,
                     $this::METACONTAINER_CACHE_TAG.$metaBundleSourceId,
                     $this::METACONTAINER_CACHE_TAG.$uri.$siteId,
+                    $this::METACONTAINER_CACHE_TAG.$cacheKey,
                 ],
             ]);
             $this->containerDependency = $dependency;
@@ -160,7 +181,7 @@ class MetaContainers extends Component
             } else {
                 $cache = Craft::$app->getCache();
                 list($this->metaGlobalVars, $this->metaSiteVars, $this->metaSitemapVars, $this->metaContainers) = $cache->getOrSet(
-                    $this::CACHE_KEY.$uri.$siteId,
+                    $this::CACHE_KEY.$cacheKey,
                     function () use ($uri, $siteId) {
                         Craft::info(
                             'Meta container cache miss: '.$uri.'/'.$siteId,
@@ -193,7 +214,7 @@ class MetaContainers extends Component
     {
         Craft::beginProfile('MetaContainers::includeScriptBodyHtml', __METHOD__);
         $dependency = $this->containerDependency;
-        $uniqueKey = $dependency->tags[2].$bodyPosition;
+        $uniqueKey = $dependency->tags[3].$bodyPosition ?? $bodyPosition;
         $scriptData = Craft::$app->getCache()->getOrSet(
             $this::GLOBALS_CACHE_KEY.$uniqueKey,
             function () use ($uniqueKey, $bodyPosition) {
@@ -205,10 +226,12 @@ class MetaContainers extends Component
                 $scriptContainers = $this->getContainersOfType(MetaScriptContainer::CONTAINER_TYPE);
                 foreach ($scriptContainers as $scriptContainer) {
                     /** @var MetaScriptContainer $scriptContainer */
-                    foreach ($scriptContainer->data as $metaScript) {
-                        /** @var MetaScript $metaScript */
-                        if (!empty($metaScript->bodyTemplatePath) && ($metaScript->bodyPosition === $bodyPosition)) {
-                            $scriptData[] = $metaScript->renderBodyHtml();
+                    if ($scriptContainer->prepForInclusion()) {
+                        foreach ($scriptContainer->data as $metaScript) {
+                            /** @var MetaScript $metaScript */
+                            if (!empty($metaScript->bodyTemplatePath) && ($metaScript->bodyPosition === $bodyPosition)) {
+                                $scriptData[] = $metaScript->renderBodyHtml();
+                            }
                         }
                     }
                 }
@@ -232,12 +255,10 @@ class MetaContainers extends Component
     {
         Craft::beginProfile('MetaContainers::includeMetaContainers', __METHOD__);
         // If this page is paginated, we need to factor that into the cache key
-        $paginationPage = empty($this->paginationPage) ? '' : 'page'.$this->paginationPage;
         // We also need to re-add the hreflangs
-        if (!empty($paginationPage)) {
+        if ($this->paginationPage !== '1') {
             DynamicMetaHelper::addMetaLinkHrefLang();
         }
-        $this->containerDependency->tags[3] = $this->containerDependency->tags[2].$paginationPage;
         // Add in our http headers
         DynamicMetaHelper::includeHttpHeaders();
         $this->parseGlobalVars();
@@ -256,7 +277,7 @@ class MetaContainers extends Component
     public function parseGlobalVars()
     {
         $dependency = $this->containerDependency;
-        $uniqueKey = $dependency->tags[2];
+        $uniqueKey = $dependency->tags[3] ?? $this::GLOBALS_CACHE_KEY;
         list($this->metaGlobalVars, $this->metaSiteVars) = Craft::$app->getCache()->getOrSet(
             $this::GLOBALS_CACHE_KEY.$uniqueKey,
             function () use ($uniqueKey) {
@@ -284,8 +305,10 @@ class MetaContainers extends Component
      *
      * @param string   $uri
      * @param int|null $siteId
-     * @param bool     $parseVariables Whether or not the variables should be parsed as Twig
-     * @param bool     $includeElement Whether or not the matched element should be factored into the preview
+     * @param bool     $parseVariables Whether or not the variables should be
+     *                                 parsed as Twig
+     * @param bool     $includeElement Whether or not the matched element
+     *                                 should be factored into the preview
      */
     public function previewMetaContainers(
         string $uri = '',
@@ -456,6 +479,7 @@ class MetaContainers extends Component
         /** @var  $metaContainer MetaContainer */
         foreach ($this->metaContainers as $metaContainer) {
             if ($metaContainer::CONTAINER_TYPE === $type && $metaContainer->include) {
+                /** @noinspection SlowArrayOperationsInLoopInspection */
                 $htmlArray = array_merge($htmlArray, $metaContainer->renderArray());
             }
         }
@@ -504,7 +528,7 @@ class MetaContainers extends Component
         $element = Seomatic::$matchedElement;
         if ($element) {
             $sourceType = '';
-            switch (\get_class($element)) {
+            switch (FieldHelper::getElementRootClass($element)) {
                 case Entry::class:
                     /** @var  $element Entry */
                     $sourceType = MetaBundles::SECTION_META_BUNDLE;
@@ -554,7 +578,6 @@ class MetaContainers extends Component
             $parsedAttributes,
             [ArrayHelper::class, 'preserveBools']
         );
-        //Craft::dd($parsedAttributes);
         $attributes = array_intersect_key($attributes, $parsedAttributes);
         // Add the attributes in
         $attributes = array_filter(

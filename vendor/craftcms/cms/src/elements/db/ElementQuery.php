@@ -548,10 +548,7 @@ class ElementQuery extends Query implements ElementQueryInterface
     // -------------------------------------------------------------------------
 
     /**
-     * Sets the [[$inReverse]] property.
-     *
-     * @param bool $value The property value
-     * @return static self reference
+     * @inheritdoc
      * @uses $inReverse
      */
     public function inReverse(bool $value = true)
@@ -749,19 +746,6 @@ class ElementQuery extends Query implements ElementQueryInterface
     }
 
     /**
-     * Sets the [[$leaves]] property.
-     *
-     * @param bool $value The property value.
-     * @return static self reference
-     * @uses $leaves
-     */
-    public function leaves(bool $value = true)
-    {
-        $this->leaves = $value;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      * @uses $relatedTo
      */
@@ -885,6 +869,16 @@ class ElementQuery extends Query implements ElementQueryInterface
     public function hasDescendants(bool $value = true)
     {
         $this->hasDescendants = $value;
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     * @uses $leaves
+     */
+    public function leaves(bool $value = true)
+    {
+        $this->leaves = $value;
         return $this;
     }
 
@@ -1104,7 +1098,7 @@ class ElementQuery extends Query implements ElementQueryInterface
         }
 
         if ($this->uri) {
-            $this->subQuery->andWhere(Db::parseParam('elements_sites.uri', $this->uri));
+            $this->subQuery->andWhere(Db::parseParam('elements_sites.uri', $this->uri, '=', true));
         }
 
         if ($this->enabledForSite) {
@@ -1610,7 +1604,7 @@ class ElementQuery extends Query implements ElementQueryInterface
                 $handle = $field->handle;
 
                 // In theory all field handles will be accounted for on the ElementQueryBehavior, but just to be safe...
-                if (isset($fieldAttributes->$handle)) {
+                if ($handle !== 'owner' && isset($fieldAttributes->$handle)) {
                     $fieldAttributeValue = $fieldAttributes->$handle;
                 } else {
                     $fieldAttributeValue = null;
@@ -1655,7 +1649,7 @@ class ElementQuery extends Query implements ElementQueryInterface
         $condition = ['or'];
 
         foreach ($statuses as $status) {
-            $status = StringHelper::toLowerCase($status);
+            $status = strtolower($status);
             $statusCondition = $this->statusCondition($status);
 
             if ($statusCondition === false) {

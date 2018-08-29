@@ -12,9 +12,9 @@
 namespace nystudio107\seomatic\models;
 
 use nystudio107\seomatic\base\VarsModel;
+use nystudio107\seomatic\helpers\Json as JsonHelper;
 
 use Craft;
-use craft\helpers\Json as JsonHelper;
 use craft\validators\ArrayValidator;
 use craft\validators\DateTimeValidator;
 
@@ -204,6 +204,13 @@ class MetaSiteVars extends VarsModel
             if (!empty($value) && \is_string($value)) {
                 $this->$property = JsonHelper::decodeIfJson($value);
             }
+        }
+        // Make sure these are strings
+        if (!empty($this->facebookProfileId)) {
+            $this->facebookProfileId = (string)$this->facebookProfileId;
+        }
+        if (!empty($this->facebookAppId)) {
+            $this->facebookAppId = (string)$this->facebookAppId;
         }
         // Identity
         if ($this->identity !== null && \is_array($this->identity)) {

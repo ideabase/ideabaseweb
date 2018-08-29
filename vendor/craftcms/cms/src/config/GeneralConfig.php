@@ -51,7 +51,7 @@ class GeneralConfig extends BaseObject
      */
     public $addTrailingSlashesToUrls = false;
     /**
-     * @var array Any custom Yii [aliases](http://www.yiiframework.com/doc-2.0/guide-concept-aliases.html) that should be defined for every request.
+     * @var array Any custom Yii [aliases](https://www.yiiframework.com/doc/guide/2.0/en/concept-aliases) that should be defined for every request.
      */
     public $aliases = [];
     /**
@@ -400,7 +400,7 @@ class GeneralConfig extends BaseObject
      * @var string The maximum amount of memory Craft will try to reserve during memory intensive operations such as zipping,
      * unzipping and updating. Defaults to an empty string, which means it will use as much memory as it possibly can.
      *
-     * See http://php.net/manual/en/faq.using.php#faq.using.shorthandbytes for a list of acceptable values.
+     * See <http://php.net/manual/en/faq.using.php#faq.using.shorthandbytes> for a list of acceptable values.
      */
     public $phpMaxMemoryLimit = '';
     /**

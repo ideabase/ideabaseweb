@@ -11,7 +11,6 @@
 
 namespace nystudio107\seomatic\services;
 
-use craft\commerce\models\ProductTypeSite;
 use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\helpers\ArrayHelper;
 use nystudio107\seomatic\helpers\Config as ConfigHelper;
@@ -27,6 +26,8 @@ use craft\base\Element;
 use craft\db\Query;
 use craft\elements\Category;
 use craft\elements\Entry;
+use craft\models\EntryDraft;
+use craft\models\EntryVersion;
 use craft\models\Section_SiteSettings;
 use craft\models\CategoryGroup_SiteSettings;
 use craft\models\CategoryGroup;
@@ -36,6 +37,7 @@ use craft\models\Site;
 use craft\commerce\Plugin as CommercePlugin;
 use craft\commerce\elements\Product;
 use craft\commerce\models\ProductType;
+use craft\commerce\models\ProductTypeSite;
 
 use yii\base\InvalidConfigException;
 use yii\db\StaleObjectException;
@@ -402,12 +404,11 @@ class MetaBundles extends Component
                     .$sourceSiteId,
                     __METHOD__
                 );
+                $metaBundleInvalidated = true;
                 if (!$isNew) {
-                    $sourceType = '';
-                    $metaBundleInvalidated = true;
                     Seomatic::$plugin->metaContainers->invalidateContainerCacheByPath($uri, $sourceSiteId);
                     // Invalidate the sitemap cache
-                    $metaBundle = $this->getMetaBundleBySourceId($sourceType, $sourceId, $sourceSiteId);
+                    $metaBundle = $this->getMetaBundleBySourceId($sourceBundleType, $sourceId, $sourceSiteId);
                     if ($metaBundle) {
                         if ($element) {
                             $dateUpdated = $element->dateUpdated ?? $element->dateCreated;
@@ -422,14 +423,15 @@ class MetaBundles extends Component
                                 $metaBundle->sourceHandle,
                                 $metaBundle->sourceSiteId
                             );
+                            Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
                         }
                     }
                 }
             }
-        }
-        // If we've invalidated a meta bundle, we need to invalidate the sitemap index, too
-        if ($metaBundleInvalidated) {
-            Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
+            // If we've invalidated a meta bundle, we need to invalidate the sitemap index, too
+            if ($metaBundleInvalidated) {
+                Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
+            }
         }
     }
 
@@ -528,7 +530,9 @@ class MetaBundles extends Component
         // See if this is a section we are tracking
         switch (\get_class($element)) {
             case Entry::class:
-                /** @var  $element Entry */
+            case EntryDraft::class:
+            case EntryVersion::class:
+            /** @var  $element Entry */
                 $sourceId = $element->sectionId;
                 $sourceSiteId = $element->siteId;
                 $sourceHandle = $element->section->handle;

@@ -72,9 +72,9 @@ return [
                 ],
                 'logo'          => [
                     'type'   => 'ImageObject',
-                    'url'    => '{seomatic.site.identity.genericImage}',
-                    'width'  => '{seomatic.site.identity.genericImageWidth}',
-                    'height' => '{seomatic.site.identity.genericImageHeight}',
+                    'url'    => '{seomatic.helper.socialTransform(seomatic.site.identity.genericImageIds[0], "schema-logo")}',
+                    'width'  => '{seomatic.helper.socialTransformWidth(seomatic.site.identity.genericImageIds[0], "schema-logo")}',
+                    'height' => '{seomatic.helper.socialTransformHeight(seomatic.site.identity.genericImageIds[0], "schema-logo")}',
                 ],
                 'address'       => [
                     'type'            => 'PostalAddress',
@@ -129,9 +129,9 @@ return [
                 ],
                 'logo'          => [
                     'type'   => 'ImageObject',
-                    'url'    => '{seomatic.site.creator.genericImage}',
-                    'width'  => '{seomatic.site.creator.genericImageWidth}',
-                    'height' => '{seomatic.site.creator.genericImageHeight}',
+                    'url'    => '{seomatic.helper.socialTransform(seomatic.site.creator.genericImageIds[0], "schema-logo")}',
+                    'width'  => '{seomatic.helper.socialTransformWidth(seomatic.site.creator.genericImageIds[0], "schema-logo")}',
+                    'height' => '{seomatic.helper.socialTransformHeight(seomatic.site.creator.genericImageIds[0], "schema-logo")}',
                 ],
                 'address'       => [
                     'type'            => 'PostalAddress',
