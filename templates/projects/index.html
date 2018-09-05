@@ -1,6 +1,3 @@
-{#
- #}
-
 {% extends "_layout" %}
 
 {% block content %}
@@ -13,15 +10,15 @@
 </section>
 
 <div class="panel-primary-container">
-<section class="section-introduction panel-primary">
-		<div class="introduction">{{ entry.projectsSubDescription }}</div>
-</section>
+	<section class="section-introduction panel-primary">
+			<div class="introduction">{{ entry.projectsSubDescription }}</div>
+	</section>
 </div>
 
 <div class="panel-primary-container">
-<section class="section-title panel-primary">
-	<h2>Featured Work</h2>
-</section>
+	<section class="section-title panel-primary">
+		<h2>Featured Work</h2>
+	</section>
 </div>
 
 <div class="panel-primary-container panel-secondary-container section-projects-featured panel-background-image">
@@ -30,32 +27,33 @@
 			{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
 
 			{% for entry in featured.limit(3).all() %}
-			<li class="project-list__item--featured">
-			<a href="{{ entry.url }}">
-					{% if entry.projectPicture | length %}
-						{% for asset in entry.projectPicture.limit(1).all() %}
-						<div class="project-list__item__image">
-				     		<img src="{{ asset.url('projectThumb') }}" alt= "{{ asset.title}}">
-				     	</div>
-				     	{% endfor %}
-				     	{% else %}
-				     	<div class="project-list__item__image">
-				     	     {% for asset in imagePlaceholder.aboutImage %}
-				     	     	<img src="{{ asset.url('projectThumb') }}" alt= "No Image Found">
-				     	     {% endfor %}
-				     	</div>
-			     	{% endif %}
+				<li class="project-list__item--featured">
+					<a href="{{ entry.url }}">
+						{% if entry.projectPicture | length %}
+							{% for asset in entry.projectPicture.limit(1).all() %}
+								<div class="project-list__item__image">
+									<img src="{{ asset.url('projectThumb') }}" alt= "{{ asset.title}}">
+								</div>
+							{% endfor %}
+						{% else %}
+							<div class="project-list__item__image">
+								{% for asset in imagePlaceholder.aboutImage %}
+									<img src="{{ asset.url('projectThumb') }}" alt= "No Image Found">
+								{% endfor %}
+							</div>
+						{% endif %}
 
-			     	<h2 class="project-list__item__name">{{ entry.title }}
-			     	</h2>
-			     	{% set descriptionParagraph = entry.projectDescription|split('.') %}
-			     	{% set firstDescriptionParagraph = descriptionParagraph|first ~ '.' %}
-					<div class="project-list__item__description">{{ firstDescriptionParagraph|raw }}</div>
-			</a>
-			</li>
+						<h2 class="project-list__item__name">{{ entry.title }}</h2>
+						
+						<div class="project-list__item__description">
+							{% set stripped = entry.projectDescription|striptags %}
+							<p>{{ stripped|length > 180 ? stripped|slice(0, 181)|split(' ')|slice(0, -1)|join(' ') ~ '…' : stripped }}</p>
+						</div>
+					</a>
+				</li>
 			{% endfor %}
-			</ul>
-			<a class="button button-primary" href="{{siteUrl}}work/all">{{ entry.moreProjectsButton }}</a>
+		</ul>
+		<a class="button button-primary" href="{{siteUrl}}work/all">{{ entry.moreProjectsButton }}</a>
 	</section>
 </div>
 
@@ -71,35 +69,34 @@
 
 		<section class="section-blog-teaser">
 			<ul class="blog-teaser-list">
-			{% for entry in caseStudy.relatedTo(blogGroup).limit(2).all() %}
-	    			<li class="blog-teaser">
-	    				<a href="{{ entry.url }}">
-	        				<h1 class="blog-teaser__title">{{ entry.title }}</h1>
+				{% for entry in caseStudy.relatedTo(blogGroup).limit(2).all() %}
+					<li class="blog-teaser">
+						<a href="{{ entry.url }}">
+							<h1 class="blog-teaser__title">{{ entry.title }}</h1>
 
-	        				{% set numberOfAuthors = entry.blogAuthor|length %}
+							{% set numberOfAuthors = entry.blogAuthor|length %}
 							{% if numberOfAuthors < 2 %}
 
 								{% for entry in entry.blogAuthor.all() %}
-								<p class="blog-teaser__author">
-									{{ entry.title }}
-								</p>
+									<p class="blog-teaser__author">
+										{{ entry.title }}
+									</p>
 								{% endfor %}
 							{% else %}
 								<p class="blog-teaser__author">
 									{% for entry in entry.blogAuthor %}
-									<span class="blog-multiple__author">{{ entry.title }}</span>
+										<span class="blog-multiple__author">{{ entry.title }}</span>
 									{% endfor %}
 								</p>
 							{% endif %}
-	        				{% set caseStudyParagraphs = entry.blogContent|split('.') %}
-							{% set firstCaseStudyParagraph = caseStudyParagraphs|first ~ '.' %}
-								<div class="blog-teaser__text">
-    							{{ firstCaseStudyParagraph|striptags|raw }}
-    							</div>
-	        				<p class="blog-teaser__link">Read the Case Study</p>
-	        			</a>
-	    			</li>
-			{% endfor %}
+							<div class="blog-teaser__text">
+								{% set stripped = entry.blogContent|striptags %}
+								<p>{{ stripped|length > 180 ? stripped|slice(0, 181)|split(' ')|slice(0, -1)|join(' ') ~ '…' : stripped }}</p>
+							</div>
+							<p class="blog-teaser__link">Read the Case Study</p>
+						</a>
+					</li>
+				{% endfor %}
 			</ul>
 		</section>
 	</section>

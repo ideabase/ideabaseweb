@@ -19,7 +19,7 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "craftcms/cms": "3.0.22",
+    "craftcms/cms": "3.0.23.1",
     "vlucas/phpdotenv": "^2.4.0",
     "wbrowar/adminbar": "3.1.6",
     "craftcms/aws-s3": "1.0.8",
@@ -27,7 +27,7 @@
     "craftcms/contact-form": "2.2.2",
     "dolphiq/sitemap": "v1.0.9",
     "mikestecker/craft-videoembedder": "1.0.9",
-    "nystudio107/craft-seomatic": "3.1.17",
+    "nystudio107/craft-seomatic": "3.1.19",
     "craftcms/redactor-clips": "2.0.0",
     "rias/craft-contact-form-extensions": "1.0.10"
   },
