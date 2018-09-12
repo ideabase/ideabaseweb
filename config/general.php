@@ -22,7 +22,7 @@ return [
     'dev' => [
         'siteUrl' => 'http://ideabase.web',
         'devMode' => true,
-        'alises' => [
+        'aliases' => [
           'basePath' => '',
           'baseUrl' => 'http://ideabase.web',
         ],

@@ -17,4 +17,4 @@ db-default.php
 
 /.env
 /.idea
-*.DS_Store
+**/.DS_Store
