@@ -2,11 +2,11 @@
 	<title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
 	{% if entry.description is defined and entry.description is not null %}
-	    <meta name="description" content="{{ entry.description }}">
-	    <meta property="og:description" content="{{ entry.description }}">
-	    <meta itemprop="description" content="{{ entry.description }}">
-	    <meta name="twitter:card" content="{{ entry.description }}">
-	    <meta name="twitter:description" content="{{ entry.description }}">
+    <meta name="description" content="{{ entry.description }}">
+    <meta property="og:description" content="{{ entry.description }}">
+    <meta itemprop="description" content="{{ entry.description }}">
+    <meta name="twitter:card" content="{{ entry.description }}">
+    <meta name="twitter:description" content="{{ entry.description }}">
 	{% else %}
 		<meta name="description" content="{{ metadata.description }}">
 		<meta property="og:description" content="{{ metadata.description }}">
@@ -16,25 +16,25 @@
 	{% endif %}
 	<meta itemprop="name" content="entry.title">
 	{% if entry.aboutImage is defined and entry.aboutImage is not null %}
-	    {% for asset in entry.aboutImage %}
-	        <meta itemprop="image" content="{{ asset.url('featureImageSmall') }}">
-	        <meta name="twitter:image:src" content="{{ asset.url('featureImageSmall') }}">
-	        <meta property="og:image" content="{{ asset.url('featureImageSmall') }}">
-	    {% endfor %}
+    {% for asset in entry.aboutImage %}
+      <meta itemprop="image" content="{{ asset.url('featureImageSmall') }}">
+      <meta name="twitter:image:src" content="{{ asset.url('featureImageSmall') }}">
+      <meta property="og:image" content="{{ asset.url('featureImageSmall') }}">
+    {% endfor %}
 	{% endif %}
 	{% if entry.blogFeaturedImage is defined and entry.blogFeaturedImage is not null %}
-	    {% for asset in entry.blogFeaturedImage %}
-	        <meta itemprop="image" content="{{ asset.url() }}">
-	        <meta name="twitter:image:src" content="{{ asset.url() }}">
-	        <meta property="og:image" content="{{ asset.url() }}">
-	    {% endfor %}
+    {% for asset in entry.blogFeaturedImage %}
+      <meta itemprop="image" content="{{ asset.url() }}">
+      <meta name="twitter:image:src" content="{{ asset.url() }}">
+      <meta property="og:image" content="{{ asset.url() }}">
+    {% endfor %}
 	{% endif %}
 	{% if entry.staffHeadshot is defined and entry.staffHeadshot is not null %}
-	    {% for asset in entry.staffHeadshot %}
-	        <meta itemprop="image" content="{{ asset.url() }}">
-	        <meta name="twitter:image:src" content="{{ asset.url() }}">
-	        <meta property="og:image" content="{{ asset.url() }}">
-	    {% endfor %}
+    {% for asset in entry.staffHeadshot %}
+      <meta itemprop="image" content="{{ asset.url() }}">
+      <meta name="twitter:image:src" content="{{ asset.url() }}">
+      <meta property="og:image" content="{{ asset.url() }}">
+    {% endfor %}
 	{% endif %}
 	<!-- Twitter -->
 	<meta name="twitter:site" content="@ideabasekent">
