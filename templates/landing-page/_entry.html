@@ -48,9 +48,9 @@
     <a href="{{ entry.url }}">
       {% set asset = entry.projectPicture %}
       {% if asset|length %}
-        {% for asset in entry.projectPicture.one() %}
+        {% for asset in entry.projectPicture.limit(1) %}
             <div class="project-list__item__image">
-              <img class="" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+              <img src="{{ asset.url('thumbnailLandscape') }}" alt="{{asset.title}}"  >
             </div>
           {% endfor %}
           {% else %}
