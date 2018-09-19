@@ -3797,7 +3797,6 @@ return array(
     'nystudio107\\seomatic\\services\\Link' => $vendorDir . '/nystudio107/craft-seomatic/src/services/Link.php',
     'nystudio107\\seomatic\\services\\MetaBundles' => $vendorDir . '/nystudio107/craft-seomatic/src/services/MetaBundles.php',
     'nystudio107\\seomatic\\services\\MetaContainers' => $vendorDir . '/nystudio107/craft-seomatic/src/services/MetaContainers.php',
-    'nystudio107\\seomatic\\services\\Redirects' => $vendorDir . '/nystudio107/craft-seomatic/src/services/Redirects.php',
     'nystudio107\\seomatic\\services\\Script' => $vendorDir . '/nystudio107/craft-seomatic/src/services/Script.php',
     'nystudio107\\seomatic\\services\\Sitemaps' => $vendorDir . '/nystudio107/craft-seomatic/src/services/Sitemaps.php',
     'nystudio107\\seomatic\\services\\Tag' => $vendorDir . '/nystudio107/craft-seomatic/src/services/Tag.php',

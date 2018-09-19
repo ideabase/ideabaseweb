@@ -4,48 +4,42 @@
  #}
 
 {% extends "_style-layout" %}
-	{% block content %}
-	<style>
-		@media screen and (max-width: 600px) {
-		.js .nav__trigger {
-			display: none !important;
-		}
-	}
-	</style>
-	<a class="styleguide__pane__link styleguide__pane__link__visual" href="{{ entry.visualStyleGuideLink.one().url }}" style="
-			{% if entry.visualGuideImage | length %}
-			    {% for asset in entry.visualGuideImage.all() %}
-			        background-image: url({{ asset.url() }});
-			    {% endfor %}
-			{% endif %}
-			">
-		<div class="styleguide__pane">
-			<div class="styleguide__pane__content">
-				<h2>{{entry.visualStyleGuideTitle}}
-				</h2>
-				<p>
-				{{entry.visualStyleGuideDescription}}</p>
-				<span class="styleguide__pane__content__link">{{entry.visualStyleGuideLinkName}}</span>
-			</div>
-		</div>
-	</a>
-	<a class="styleguide__pane__link styleguide__pane__link__content" href="{{entry.contentStyleGuideLink.one().url}}" style="
-			{% if entry.visualGuideImage | length %}
-			    {% for asset in entry.contentGuideImage.all() %}
-			        background-image: url({{ asset.url() }});
-			    {% endfor %}
-			{% endif %}
-			">
-		<div class="styleguide__pane">
-			<div class="styleguide__pane__content">
-				<h2>{{entry.contentStyleGuideTitle}}
-				</h2>
-				<p>
-				{{entry.contentStyleGuideDescription}}
-				</p>
-				<span class="styleguide__pane__content__link">{{entry.contentStyleGuideLinkName}}</span>
-			</div>
-		</div>
-	</a>
-
-	{% endblock %}
+{% block content %}
+  <style>
+    @media screen and (max-width: 600px) {
+      .js .nav__trigger {
+        display: none !important;
+      }
+    }
+  </style>
+  <a class="styleguide__pane__link styleguide__pane__link__visual" href="{{ entry.visualStyleGuideLink.one().url }}" style="
+    {% if entry.visualGuideImage | length %}
+      {% for asset in entry.visualGuideImage.all() %}
+        background-image: url({{ asset.url() }});
+      {% endfor %}
+    {% endif %}
+  ">
+  <div class="styleguide__pane">
+    <div class="styleguide__pane__content">
+      <h2>{{entry.visualStyleGuideTitle}}</h2>
+      <p>{{entry.visualStyleGuideDescription}}</p>
+      <span class="styleguide__pane__content__link">{{entry.visualStyleGuideLinkName}}</span>
+    </div>
+  </div>
+  </a>
+  <a class="styleguide__pane__link styleguide__pane__link__content" href="{{entry.contentStyleGuideLink.one().url}}" style="
+    {% if entry.visualGuideImage | length %}
+      {% for asset in entry.contentGuideImage.all() %}
+        background-image: url({{ asset.url() }});
+      {% endfor %}
+    {% endif %}
+  ">
+    <div class="styleguide__pane">
+      <div class="styleguide__pane__content">
+        <h2>{{entry.contentStyleGuideTitle}}</h2>
+        <p>{{entry.contentStyleGuideDescription}}</p>
+        <span class="styleguide__pane__content__link">{{entry.contentStyleGuideLinkName}}</span>
+      </div>
+    </div>
+  </a>
+{% endblock %}

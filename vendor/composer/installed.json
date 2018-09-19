@@ -483,12 +483,12 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.24",
-        "version_normalized": "3.0.24.0",
+        "version": "3.0.25",
+        "version_normalized": "3.0.25.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/c107ad908a987faba50f72831df4bdc9df775f2e",
-            "reference": "c107ad908a987faba50f72831df4bdc9df775f2e",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/30b95277d526af7aeff4a10c23b583fde0adb383",
+            "reference": "30b95277d526af7aeff4a10c23b583fde0adb383",
             "shasum": ""
         },
         "require": {
@@ -535,7 +535,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-09-11T17:17:27+00:00",
+        "time": "2018-09-18T16:57:29+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1752,15 +1752,16 @@
     },
     {
         "name": "league/flysystem",
-        "version": "1.0.46",
-        "version_normalized": "1.0.46.0",
+        "version": "1.0.47",
+        "version_normalized": "1.0.47.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-            "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
+            "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
             "shasum": ""
         },
         "require": {
+            "ext-fileinfo": "*",
             "php": ">=5.5.9"
         },
         "conflict": {
@@ -1782,7 +1783,7 @@
             "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
             "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
         },
-        "time": "2018-08-22T07:45:22+00:00",
+        "time": "2018-09-14T15:30:29+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2114,12 +2115,12 @@
     },
     {
         "name": "nystudio107/craft-seomatic",
-        "version": "3.1.20",
-        "version_normalized": "3.1.20.0",
+        "version": "3.1.21",
+        "version_normalized": "3.1.21.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/ed20075a5dac4410e734c96dbde3a1c153e846c8",
-            "reference": "ed20075a5dac4410e734c96dbde3a1c153e846c8",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/37052e99485e85911a693b7035a27c924646da26",
+            "reference": "37052e99485e85911a693b7035a27c924646da26",
             "shasum": ""
         },
         "require": {
@@ -2129,7 +2130,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2018-09-12T17:23:59+00:00",
+        "time": "2018-09-18T17:56:09+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",
@@ -2145,7 +2146,6 @@
                 "link": "nystudio107\\seomatic\\services\\Link",
                 "metaBundles": "nystudio107\\seomatic\\services\\MetaBundles",
                 "metaContainers": "nystudio107\\seomatic\\services\\MetaContainers",
-                "redirects": "nystudio107\\seomatic\\services\\Redirects",
                 "script": "nystudio107\\seomatic\\services\\Script",
                 "sitemaps": "nystudio107\\seomatic\\services\\Sitemaps",
                 "tag": "nystudio107\\seomatic\\services\\Tag",

@@ -96,11 +96,12 @@
   display: flex;
 
   input {
-    float:  none;
+    float: none;
     height: 50px;
   }
 
   input[type="text"] {
+    border: 2px solid $blue;
     width: 90%;
     padding-left: 1em;
     margin-right: 5px;

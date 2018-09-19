@@ -4311,7 +4311,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'nystudio107\\seomatic\\services\\Link' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/Link.php',
         'nystudio107\\seomatic\\services\\MetaBundles' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/MetaBundles.php',
         'nystudio107\\seomatic\\services\\MetaContainers' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/MetaContainers.php',
-        'nystudio107\\seomatic\\services\\Redirects' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/Redirects.php',
         'nystudio107\\seomatic\\services\\Script' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/Script.php',
         'nystudio107\\seomatic\\services\\Sitemaps' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/Sitemaps.php',
         'nystudio107\\seomatic\\services\\Tag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/services/Tag.php',
