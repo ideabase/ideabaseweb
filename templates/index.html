@@ -1,7 +1,4 @@
-{#
- # Homepage template
- # ---------------
- #}
+{#  Homepage template #}
 
 {% extends "_layout" %}
 {% block content %}
@@ -9,7 +6,7 @@
 {% include '_includes/_background-images.html' %}
 
 {% if videoBackground.fileTypeOne|length %}
-  {%cache globally%}
+  {% cache globally %}
 	{# About Section #}
 	<section class="section-header video-background">
 		<video autoplay muted loop class="hero-video">
@@ -17,11 +14,11 @@
 			<source src="{{ asset.url }}" type="video/mp4">
 		{% endfor %}
 		</video>
-    {% endcache %}
+	{% endcache %}
 {% else %}
 	<section class="section-header">
-	{% endif %}
-	{%cache globally%}
+{% endif %}
+	{% cache globally %}
 		<div class="section-header__container">
 		 	<h1 class="section-header__title">{{ entry.mainTagline }}</h2>
 		 	<div class="section-header__text">{{ entry.homepageAboutText }}</div>
@@ -33,85 +30,89 @@
 	{# End About Section #}
 
 	{# Services List #}
-	{%cache globally%}
+	{% cache globally %}
 	<div class="panel-primary-container">
-	<section class="section-services panel-primary">
-		{# Process List #}
-		<h2>{{ entry.designHeadline }}</h2>
-			<ul class="section-services__list">
-				{% for entry in craft.entries.section('processIndex').all() %}
+		<section class="section-services panel-primary">
+			{# Process List #}
+			<h2>{{ entry.designHeadline }}</h2>
+				<ul class="section-services__list">
+					{% for entry in craft.entries.section('processIndex').all() %}
 						{% for block in entry.serviceHomepageMatrix.type('processMatrix').all() %}
 							<li class="section-services__list__item">
 								{% for asset in block.homepageIcon.all() %}
-                        <noscript>
-                          <img class="section-services__list__item__icon" src="{{ asset.url() }}" alt= "{{ asset.title}}">
-                        </noscript>
-							       		<img class="lazy section-services__list__item__icon" data-original="{{ asset.url() }}" alt= "{{ asset.title}}">
-							    {% endfor %}
-							    <h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3>
-							    <div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
+									<noscript>
+										<img class="section-services__list__item__icon" src="{{ asset.url() }}" alt= "{{ asset.title}}">
+									</noscript>
+									<img class="lazy section-services__list__item__icon" data-original="{{ asset.url() }}" alt= "{{ asset.title}}">
+								{% endfor %}
+
+								<h3 class="section-services__list__item__name">{{ block.homeProcessName }}</h3>
+								<div class="section-services__list__item__description">{{ block.homepageDescription }}</div>
 							</li>
 						{% endfor %}
-				{% endfor %}
-			</ul>
-		{# End Process List #}
-		<a class="button button-primary" href="{{ entry.servicesButtonLink.one().url }}">{{ entry.servicesButtonLinkName }}</a>
-	</section>
+					{% endfor %}
+				</ul>
+			{# End Process List #}
+			<a class="button button-primary" href="{{ entry.servicesButtonLink.one().url }}">{{ entry.servicesButtonLinkName }}</a>
+		</section>
 	</div>
 	{% endcache %}
-  {%cache globally%}
+
 	{# Projects List #}
+  {% cache globally %}
 	<div class="panel-secondary-container panel-background-image">
-	<section class="section-projects panel-secondary">
-		<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
-		<div class="section-projects__description">{{ entry.projectsDescription }}</div>
+		<section class="section-projects panel-secondary">
+			<h2 class="section-projects__name">{{ entry.projectsHeadline }}</h2>
+			<div class="section-projects__description">{{ entry.projectsDescription }}</div>
 
-		<ul class="section-projects__list">
-		{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
+			<ul class="section-projects__list">
+				{% set featured = craft.entries.section('ideabaseProjects').featuredProjectLightswitch('not 0') %}
 
-		{% for entry in featured.limit(3).all() %}
-			    <li class="section-projects__list__item">
-				    <a href="{{ entry.url }}">
-				    {% if entry.projectPicture|length %}
+				{% for entry in featured.limit(3).all() %}
+					<li class="section-projects__list__item">
+						<a href="{{ entry.url }}">
+						{% if entry.projectPicture|length %}
 							{% for asset in entry.projectPicture.limit(1).all() %}
-                  <img class="section-projects__list__item__thumb" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
-                {% endfor %}
-   						{% else %}
-   						{% for asset in imagePlaceholder.aboutImage %}
-   					   		<img class="section-projects__list__item__thumb"  src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
-   					 	{% endfor %}
-   					 {% endif %}
-				        <h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
-				    </a>
-			    </li>
-		{% endfor %}
-		</ul>
-		<section class="section-body-button panel-primary">
-			<a class="button button-primary" href="{{ entry.projectButtonLink.one().url }}">{{ entry.projectsButtonLinkName }}</a>
+								<img class="section-projects__list__item__thumb" src="{{ asset.url('thumbnailLandscape') }}" alt= "{{ asset.title}}">
+							{% endfor %}
+						{% else %}
+							{% for asset in imagePlaceholder.aboutImage.all() %}
+								<img class="section-projects__list__item__thumb"  src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
+							{% endfor %}
+						{% endif %}
+							<h3 class="section-projects__list__item__name">{{ entry.title }}</h3>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			
+			<section class="section-body-button panel-primary">
+				<a class="button button-primary" href="{{ entry.projectButtonLink.one().url }}">{{ entry.projectsButtonLinkName }}</a>
+			</section>
 		</section>
-	</section>
 	</div>
   {% endcache %}
+
 	{# End Projects List #}
-	{%cache globally%}
+	{% cache globally %}
 	<div class="panel-primary-container">
-	<section class="section-people-home panel-primary">
-		<h2>{{ entry.peopleSectionTitle }}</h2>
-		<p>{{ entry.peopleSectionDescription }}</p>
-		{% for block in entry.projectMatrix.type('homeProjects').all() %}
-			<ul class="section-people__logos">
-     			{% for asset in block.projectImageLogo.all() %}
-           			<li class="section-people__logos__item">
-                  <noscript>
-                    <img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
-                  </noscript>
-                  <img class="lazy" data-original="{{ asset.url('') }}" alt= "{{ asset.title}}">
-                </li>
-        		{% endfor %}
-			</ul>
-		{% endfor %}
-		<a class="button button-primary" href="{{ entry.peopleButtonLink.one().url }}">{{ entry.peopleButtonName }}</a>
-	</section>
+		<section class="section-people-home panel-primary">
+			<h2>{{ entry.peopleSectionTitle }}</h2>
+			<p>{{ entry.peopleSectionDescription }}</p>
+			{% for block in entry.projectMatrix.type('homeProjects').all() %}
+				<ul class="section-people__logos">
+					{% for asset in block.projectImageLogo.all() %}
+						<li class="section-people__logos__item">
+							<noscript>
+								<img src="{{ asset.url('') }}" alt= "{{ asset.title}}">
+							</noscript>
+							<img class="lazy" data-original="{{ asset.url('') }}" alt= "{{ asset.title}}">
+						</li>
+					{% endfor %}
+				</ul>
+			{% endfor %}
+			<a class="button button-primary" href="{{ entry.peopleButtonLink.one().url }}">{{ entry.peopleButtonName }}</a>
+		</section>
 	</div>
 	{% endcache %}
 

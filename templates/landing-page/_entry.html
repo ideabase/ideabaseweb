@@ -1,12 +1,11 @@
 {% extends "_layout" %}
 {% block content %}
 
-
-
 <div class="panel-primary panel-primary--landing">
   {% for asset in entry.aboutImage.all() %}
-  <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
+    <img class="landing-feature-image" src="{{asset.url}}" alt={{asset.title}} />
   {% endfor %}
+</div>
 
 
 <div class="introduction">
@@ -16,15 +15,15 @@
 <h2>We provide a wide range of services</h2>
 
 <ul class="service-index__examples">
-{% for block in entry.sellingPoints.all() %}
-  <li class="service-index__examples__item">{{block.point}}</li>
-{% endfor %}
+  {% for block in entry.sellingPoints.all() %}
+    <li class="service-index__examples__item">{{block.point}}</li>
+  {% endfor %}
 </ul>
 
 <section class="service-index__examples__supplemental panel-primary">
-<p>
-  Need something else? <a href="{{siteUrl}}services">See what other services we provide.</a>
-</p>
+  <p>
+    Need something else? <a href="{{siteUrl}}services">See what other services we provide.</a>
+  </p>
 </section>
 
 
@@ -41,71 +40,70 @@
 
 <!-- add in images later !-->
 <section class="section-projects-all panel-primary-wide">
-
-<ul class="project-list">
-  {% for entry in entry.relatedWork.limit(3).all() %}
-  <li class="project-list__item--featured">
-    <a href="{{ entry.url }}">
-      {% set asset = entry.projectPicture %}
-      {% if asset|length %}
-        {% for asset in entry.projectPicture.limit(1) %}
-            <div class="project-list__item__image">
-              <img src="{{ asset.url('thumbnailLandscape') }}" alt="{{asset.title}}"  >
-            </div>
-          {% endfor %}
-          {% else %}
-          <div class="project-list__item__image">
-               {% for asset in imagePlaceholder.aboutImage.limit(1) %}
-                <img src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
-               {% endfor %}
-        {% endif %}
-        <h2 class="project-list__item__name">{{ entry.title }}</h2>
-    </a>
-  </li>
-  {% endfor %}
+  <ul class="project-list">
+    {% for entry in entry.relatedWork.limit(3).all() %}
+      <li class="project-list__item--featured">
+        <a href="{{ entry.url }}">
+          {% set asset = entry.projectPicture %}
+          {% if asset|length %}
+            {% for asset in entry.projectPicture.limit(1).all() %}
+                <div class="project-list__item__image">
+                  <img src="{{ asset.url('thumbnailLandscape') }}" alt="{{asset.title}}" >
+                </div>
+              {% endfor %}
+              {% else %}
+              <div class="project-list__item__image">
+                {% for asset in imagePlaceholder.aboutImage.limit(1).all() %}
+                  <img src="{{ asset.url('thumbnailLandscape') }}" alt= "No Image Found">
+                {% endfor %}
+            {% endif %}
+            <h2 class="project-list__item__name">{{ entry.title }}</h2>
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </section>
+
 <section class="testimonial-entry panel-primary">
-{% set quote = entry.relatedTestimonial %}
-{% include '_includes/_testimonial.html' %}
+  {% set quote = entry.relatedTestimonial %}
+  {% include '_includes/_testimonial.html' %}
 </section>
 
 <section class="panel-primary-container section-blog-teaser">
-<h2>Meet Our Team</h2>
+  <h2>Meet Our Team</h2>
 
-{% set entries = entry.relatedPeople %}
+  {% set entries = entry.relatedPeople %}
 
-<div class="landing-page-staff">
-{% for entry in entries.limit(3).all() %}
-{% if entry.alumniLightswitch != 1 %}
-<section class="blog__entry-author">
-  <a href="{{ entry.url }}">
-  <div class="blog__entry__author__image">
-    {% for asset in entry.staffHeadshot.all() %}
-        <img src="{{ asset.url('staffCircle') }}" alt= "{{ asset.title}}">
+  <div class="landing-page-staff">
+    {% for entry in entries.limit(3).all() %}
+      {% if entry.alumniLightswitch == 0 %}
+        <section class="blog__entry-author">
+          <a href="{{ entry.url }}">
+            <div class="blog__entry__author__image">
+              {% for asset in entry.staffHeadshot.all() %}
+                <img src="{{ asset.url('staffCircle') }}" alt= "{{ asset.title}}">
+              {% endfor %}
+            </div>
+            <span class="blog__entry__author__name">{{ entry.title }}</span>
+            <span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
+          </a>
+        </section>
+      {% endif %}
+    {% endfor %}
+    </div>
+    <ul class="blog-teaser-list">
+      {% set entries = entry.relatedBlog.limit(2).all() %}
+      {% for entry in entries %}
+        {% if entries|length == 1 %}
+          <div class="blog-single">
+            {% include '_includes/_blogPreview.html' %}
+          </div>
+        {% else %}
+          {% include '_includes/_blogPreview.html' %}
+        {% endif %}
       {% endfor %}
-   </div>
-   <span class="blog__entry__author__name">{{ entry.title }}
-   </span>
-  <span class="blog__entry__author__info">{{entry.profileJobTitle }}</span>
-  </a>
-</section>
-{% endif %}
-{% endfor %}
-</div>
-<ul class="blog-teaser-list">
-{% set entries = entry.relatedBlog.limit(2) %}
-{% for entry in entries.all() %}
-  {% if entries|length == 1 %}
-  <div class="blog-single">
-    {% include '_includes/_blogPreview.html' %}
+    </ul>
   </div>
-  {% else %}
-  {% include '_includes/_blogPreview.html' %}
-  {% endif %}
-{% endfor %}
-</ul>
 </section>
-</div>
 
 {% endblock %}

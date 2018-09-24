@@ -11,7 +11,7 @@
 
 <div class="panel-primary-container">
 	<section class="section-introduction panel-primary">
-			<div class="introduction">{{ entry.projectsSubDescription }}</div>
+		<div class="introduction">{{ entry.projectsSubDescription }}</div>
 	</section>
 </div>
 
@@ -37,7 +37,7 @@
 							{% endfor %}
 						{% else %}
 							<div class="project-list__item__image">
-								{% for asset in imagePlaceholder.aboutImage %}
+								{% for asset in imagePlaceholder.aboutImage.all() %}
 									<img src="{{ asset.url('projectThumb') }}" alt= "No Image Found">
 								{% endfor %}
 							</div>
@@ -107,14 +107,14 @@
 		<h2>{{ entry.classroomExperienceHeadline }}</h2>
 		{% set image = entry.calloutImage.one() %}
 		{% if entry.calloutImage | length %}
-		<img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
-		<div class="panel-secondary--left">
-		  {{ entry.classroomExperienceDescription }}
-      <a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
-		</div>
+			<img class="panel-secondary__thumbnail" src="{{ image.url('panelCallout') }}" alt ="{{ image.title }}" />
+			<div class="panel-secondary--left">
+				{{ entry.classroomExperienceDescription }}
+				<a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
+			</div>
 		{% else %}
-		{{ entry.classroomExperienceDescription }}
-    <a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
+			{{ entry.classroomExperienceDescription }}
+			<a class="button button-primary" href="{{ siteUrl }}classes">{{ entry.classroomButton }}</a>
 		{% endif %}
 	</section>
 	</div>
