@@ -1,5 +1,21 @@
 # Release Notes for Craft CMS 3.x
 
+## 3.0.26.1 - 2018-09-29
+
+### Changed
+- Changed the `yiisoft/yii2-queue` version requirement to `2.1.0`. ([#3332](https://github.com/craftcms/cms/issues/3332))
+
+## 3.0.26 - 2018-09-29
+
+### Changed
+- `ancestors`, `descendants`, `nextSibling`, `parent`, and `prevSibling` are now reserved field handles.
+- The `svg()` Twig function namespaces class names in addition to IDs now.
+- Changed the `yiisoft/yii2-queue` version requirement to `2.0.1`. ([#3332](https://github.com/craftcms/cms/issues/3332))
+
+### Fixed
+- Fixed a validation error that could occur when saving an entry as a new entry if the URI format didn’t contain a `{slug}` tag. ([#3320](https://github.com/craftcms/cms/issues/3320))
+- Fixed a SQL error that could occur if a deprecation error occurred when attempting to upgrade a Craft 2 project. ([#3324](https://github.com/craftcms/cms/issues/3324))
+
 ## 3.0.25 - 2018-09-18
 
 ### Added

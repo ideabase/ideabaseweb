@@ -483,12 +483,12 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.25",
-        "version_normalized": "3.0.25.0",
+        "version": "3.0.26.1",
+        "version_normalized": "3.0.26.1",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/30b95277d526af7aeff4a10c23b583fde0adb383",
-            "reference": "30b95277d526af7aeff4a10c23b583fde0adb383",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
+            "reference": "61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
             "shasum": ""
         },
         "require": {
@@ -519,7 +519,7 @@
             "twig/twig": "^2.5.0",
             "yiisoft/yii2": "~2.0.15.1",
             "yiisoft/yii2-debug": "^2.0.10",
-            "yiisoft/yii2-queue": "^2.0.1",
+            "yiisoft/yii2-queue": "2.1.0",
             "yiisoft/yii2-swiftmailer": "^2.1.0",
             "zendframework/zend-feed": "^2.8.0"
         },
@@ -535,7 +535,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-09-18T16:57:29+00:00",
+        "time": "2018-09-29T22:15:04+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1180,12 +1180,12 @@
     },
     {
         "name": "egulias/email-validator",
-        "version": "2.1.5",
-        "version_normalized": "2.1.5.0",
+        "version": "2.1.6",
+        "version_normalized": "2.1.6.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/54859fabea8b3beecbb1a282888d5c990036b9e3",
-            "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3",
+            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
+            "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
             "shasum": ""
         },
         "require": {
@@ -1195,7 +1195,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2018-08-16T20:49:45+00:00",
+        "time": "2018-09-25T20:47:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1228,18 +1228,18 @@
     },
     {
         "name": "elvanto/litemoji",
-        "version": "1.4.2",
-        "version_normalized": "1.4.2.0",
+        "version": "1.4.4",
+        "version_normalized": "1.4.4.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/elvanto/litemoji/zipball/af94de6becfbc2f4d9c52e1142183146fd087f36",
-            "reference": "af94de6becfbc2f4d9c52e1142183146fd087f36",
+            "url": "https://api.github.com/repos/elvanto/litemoji/zipball/17bf635e4d1a5b4d35d2cadf153cd589b78af7f0",
+            "reference": "17bf635e4d1a5b4d35d2cadf153cd589b78af7f0",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4"
         },
-        "time": "2018-08-02T03:48:08+00:00",
+        "time": "2018-09-28T05:23:38+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2068,19 +2068,19 @@
     },
     {
         "name": "nesbot/carbon",
-        "version": "1.33.0",
-        "version_normalized": "1.33.0.0",
+        "version": "1.34.0",
+        "version_normalized": "1.34.0.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/55667c1007a99e82030874b1bb14d24d07108413",
-            "reference": "55667c1007a99e82030874b1bb14d24d07108413",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+            "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.9",
             "symfony/translation": "~2.6 || ~3.0 || ~4.0"
         },
-        "time": "2018-08-07T08:39:47+00:00",
+        "time": "2018-09-20T19:36:25+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -2115,12 +2115,12 @@
     },
     {
         "name": "nystudio107/craft-seomatic",
-        "version": "3.1.21",
-        "version_normalized": "3.1.21.0",
+        "version": "3.1.22",
+        "version_normalized": "3.1.22.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/37052e99485e85911a693b7035a27c924646da26",
-            "reference": "37052e99485e85911a693b7035a27c924646da26",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
+            "reference": "26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
             "shasum": ""
         },
         "require": {
@@ -2130,7 +2130,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2018-09-18T17:56:09+00:00",
+        "time": "2018-09-25T19:31:35+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",
@@ -2512,12 +2512,12 @@
     },
     {
         "name": "rias/craft-contact-form-extensions",
-        "version": "1.0.10",
-        "version_normalized": "1.0.10.0",
+        "version": "1.0.11",
+        "version_normalized": "1.0.11.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/2a09a26185c4d784494c87a8b83cf8349cc221cd",
-            "reference": "2a09a26185c4d784494c87a8b83cf8349cc221cd",
+            "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/f5996f09e4b695255fdb87ab3859e99a604ef352",
+            "reference": "f5996f09e4b695255fdb87ab3859e99a604ef352",
             "shasum": ""
         },
         "require": {
@@ -2525,7 +2525,7 @@
             "craftcms/cms": "^3.0.0-RC1",
             "craftcms/contact-form": "^2.1"
         },
-        "time": "2018-08-21T18:54:38+00:00",
+        "time": "2018-09-26T12:54:51+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "Contact Form Extensions",
@@ -3627,19 +3627,19 @@
     },
     {
         "name": "yiisoft/yii2-debug",
-        "version": "2.0.13",
-        "version_normalized": "2.0.13.0",
+        "version": "2.0.14",
+        "version_normalized": "2.0.14.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/b37f414959c2fafefb332020b42037cd17c1cb7f",
-            "reference": "b37f414959c2fafefb332020b42037cd17c1cb7f",
+            "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
+            "reference": "dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
             "shasum": ""
         },
         "require": {
             "yiisoft/yii2": "~2.0.13",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2017-12-05T07:36:23+00:00",
+        "time": "2018-09-23T21:41:04+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3649,10 +3649,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "yii\\debug\\": ""
+                "yii\\debug\\": "src"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
@@ -3752,19 +3751,19 @@
     },
     {
         "name": "yiisoft/yii2-swiftmailer",
-        "version": "2.1.1",
-        "version_normalized": "2.1.1.0",
+        "version": "2.1.2",
+        "version_normalized": "2.1.2.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/fd917fbe63b7ea796c52902143b83b98e65bfb73",
-            "reference": "fd917fbe63b7ea796c52902143b83b98e65bfb73",
+            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/09659a55959f9e64b8178d842b64a9ffae42b994",
+            "reference": "09659a55959f9e64b8178d842b64a9ffae42b994",
             "shasum": ""
         },
         "require": {
             "swiftmailer/swiftmailer": "~6.0",
-            "yiisoft/yii2": "~2.0.4"
+            "yiisoft/yii2": ">=2.0.4"
         },
-        "time": "2018-04-24T23:17:42+00:00",
+        "time": "2018-09-23T22:00:47+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3777,7 +3776,6 @@
                 "yii\\swiftmailer\\": "src"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],

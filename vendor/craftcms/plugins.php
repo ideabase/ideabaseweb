@@ -133,30 +133,6 @@ return array (
       'mailer' => 'craft\\contactform\\Mailer',
     ),
   ),
-  'rias/craft-contact-form-extensions' => 
-  array (
-    'class' => 'rias\\contactformextensions\\ContactFormExtensions',
-    'basePath' => $vendorDir . '/rias/craft-contact-form-extensions/src',
-    'handle' => 'contact-form-extensions',
-    'aliases' => 
-    array (
-      '@rias/contactformextensions' => $vendorDir . '/rias/craft-contact-form-extensions/src',
-    ),
-    'name' => 'Contact Form Extensions',
-    'version' => '1.0.10',
-    'schemaVersion' => '1.0.0',
-    'description' => 'Adds extensions to the Craft CMS contact form plugin.',
-    'developer' => 'Rias',
-    'developerUrl' => 'https://rias.be',
-    'documentationUrl' => 'https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md',
-    'hasCpSettings' => true,
-    'hasCpSection' => true,
-    'components' => 
-    array (
-      'contactFormExtensionsService' => 'rias\\contactformextensions\\services\\ContactFormExtensionsService',
-    ),
-  ),
   'craftcms/redactor' => 
   array (
     'class' => 'craft\\redactor\\Plugin',
@@ -184,7 +160,7 @@ return array (
       '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
     ),
     'name' => 'SEOmatic',
-    'version' => '3.1.21',
+    'version' => '3.1.22',
     'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
     'developer' => 'nystudio107',
     'developerUrl' => 'https://nystudio107.com',
@@ -204,6 +180,30 @@ return array (
       'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
       'tag' => 'nystudio107\\seomatic\\services\\Tag',
       'title' => 'nystudio107\\seomatic\\services\\Title',
+    ),
+  ),
+  'rias/craft-contact-form-extensions' => 
+  array (
+    'class' => 'rias\\contactformextensions\\ContactFormExtensions',
+    'basePath' => $vendorDir . '/rias/craft-contact-form-extensions/src',
+    'handle' => 'contact-form-extensions',
+    'aliases' => 
+    array (
+      '@rias/contactformextensions' => $vendorDir . '/rias/craft-contact-form-extensions/src',
+    ),
+    'name' => 'Contact Form Extensions',
+    'version' => '1.0.11',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Adds extensions to the Craft CMS contact form plugin.',
+    'developer' => 'Rias',
+    'developerUrl' => 'https://rias.be',
+    'documentationUrl' => 'https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'contactFormExtensionsService' => 'rias\\contactformextensions\\services\\ContactFormExtensionsService',
     ),
   ),
 );

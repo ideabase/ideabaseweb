@@ -21,39 +21,37 @@
     		<li class="blog-list__item">
 					<a href="{{ entry.url }}">
 
-			     		<h1 class="blog-list__title">{{ entry.title }}</h1>
-			     		{% set blogAuthor = entry.blogAuthor %}
-			     		{% set numberOfAuthors = entry.blogAuthor|length %}
+						<h1 class="blog-list__title">{{ entry.title }}</h1>
+						{% set blogAuthor = entry.blogAuthor %}
+						{% set numberOfAuthors = entry.blogAuthor|length %}
 
-					    <div class="blog-list__info">
-						    {% if numberOfAuthors < 2 %}
+						<div class="blog-list__info">
+							{% if numberOfAuthors < 2 %}
 								{% for entry in blogAuthor.all() %}
-								<span class="blog-list__author">{{ entry.title }}</span>
+									<span class="blog-list__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% else %}
 								{% for entry in blogAuthor.all() %}
-								<span class="blog-list__author blog-multiple__author">{{ entry.title }}</span>
+									<span class="blog-list__author blog-multiple__author">{{ entry.title }}</span>
 								{% endfor %}
 							{% endif %}
+							
 							<date class="blog-list__date">{{ entry.postDate | date("M d, Y") }}</date>
 						</div>
 
-						{% set blogParagraphsIndex = entry.blogContent|split('.') %}
-						{% set firstBlogParagraphIndex = blogParagraphsIndex|first ~ '.' %}
-							<div class="blog-list__text">
-					    		{{ firstBlogParagraphIndex|raw }}
-					    	</div>
-					    {% if numberOfAuthors < 2 %}
-						    {% for entry in blogAuthor.all() %}
-							<p class="blog-teaser__link">
-								Read {{ entry.profileFirstName}}'s Post</p>
+						<div class="blog-list__text">
+							{% set stripped = entry.blogContent|striptags %}
+							<p>{{ stripped|length > 200 ? stripped|slice(0, 201)|split(' ')|slice(0, -1)|join(' ') ~ '…' : stripped }}</p>
+						</div>
+						{% if numberOfAuthors < 2 %}
+							{% for entry in blogAuthor.all() %}
+								<p class="blog-teaser__link">Read {{ entry.profileFirstName}}'s Post</p>
 							{% endfor %}
 						{% else %}
-							<p class="blog-teaser__link">
-								Read the Post</p>
+							<p class="blog-teaser__link">Read the Post</p>
 						{% endif %}
 
-						</a>
+					</a>
 			</li>
    			{% endfor %}
    		</ul>

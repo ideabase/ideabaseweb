@@ -17,7 +17,7 @@ return array(
     'yii\\queue\\amqp_interop\\' => array($vendorDir . '/yiisoft/yii2-queue/src/drivers/amqp_interop'),
     'yii\\queue\\amqp\\' => array($vendorDir . '/yiisoft/yii2-queue/src/drivers/amqp'),
     'yii\\queue\\' => array($vendorDir . '/yiisoft/yii2-queue/src'),
-    'yii\\debug\\' => array($vendorDir . '/yiisoft/yii2-debug'),
+    'yii\\debug\\' => array($vendorDir . '/yiisoft/yii2-debug/src'),
     'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap/src'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
