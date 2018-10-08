@@ -34,7 +34,7 @@
 		{% else %}
 			<div class="people__bio">{{ entry.profileBiographyDescription }}</div>
 			{% if entry.profileContactEmail|length %}
-				<p class="people__email"><a href="mailto:"{{ entry.profileContactEmail }}"">{{ entry.profileContactEmail }}</a></p>
+				<p class="people__email"><a href="mailto:{{ entry.profileContactEmail }}">{{ entry.profileContactEmail }}</a></p>
 			{% endif %}
 		{% endif %}
 		{% if entry.profileOfficePhoneNumber|length %}
