@@ -1,51 +1,33 @@
-{#
- # 404 template
- # ------------
- #
- # This template is loaded whenever Craft cannot figure out how to
- # respond to an incoming request. No setup is involved to get your
- # 404 page working; you just need to call it 404.html and put it
- # at the root of your craft/templates/ folder.
- #
- # You can also create 400.html, 403.html, 500.html, and 503.html
- # templates if you’d like. If Craft can’t find an error template
- # to match the error code, it will just use the one in
- # craft/app/templates/ instead.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
- #}
-
 {% extends "_layout" %}
 {% set title = "404" %}
 
 {% block content %}
 	<style type="text/css">
-			.section-header {
-				{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage.all() %}
-				        background-image: url({{ asset.url('featureImageSmall') }});
-				    {% endfor %}
-				{% endif %}
-			}
-			@media screen and (min-width: 600px) {
-				.section-header {
-					{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage.all() %}
-				        background-image: url({{ asset.url('featureImageMedium') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
-			@media screen and (min-width: 1000px) {
-				.section-header {
-					{% if fourofour.aboutImage | length %}
-				    {% for asset in fourofour.aboutImage.all() %}
-				        background-image: url({{ asset.url('featureImageLarge') }});
-				    {% endfor %}
-				{% endif %}
-				}
-			}
+    .section-header {
+      {% if fourofour.aboutImage | length %}
+        {% for asset in fourofour.aboutImage.all() %}
+          background-image: url({{ asset.url('featureImageSmall') }});
+        {% endfor %}
+      {% endif %}
+    }
+    @media screen and (min-width: 600px) {
+      .section-header {
+        {% if fourofour.aboutImage | length %}
+          {% for asset in fourofour.aboutImage.all() %}
+            background-image: url({{ asset.url('featureImageMedium') }});
+          {% endfor %}
+        {% endif %}
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      .section-header {
+        {% if fourofour.aboutImage | length %}
+          {% for asset in fourofour.aboutImage.all() %}
+            background-image: url({{ asset.url('featureImageLarge') }});
+          {% endfor %}
+        {% endif %}
+      }
+    }
 	</style>
 	<section class="section-header section-header--interior">
 		<div class="section-header__container">
@@ -54,9 +36,9 @@
 	</section>
 	<div class="section-basic-page panel-primary-container">
 	<section class="panel-primary">
-			<div class="introduction">{{fourofour.introduction}}</div>
-			{{fourofour.body}}
-			<a class="button button-primary button--reverse" href="{{ siteUrl }}">Return Home</a>
+    <div class="introduction">{{fourofour.introduction}}</div>
+    {{fourofour.body}}
+    <a class="button button-primary button--reverse" href="{{ siteUrl }}">Return Home</a>
 	</section>
 	</div>
 {% endblock %}

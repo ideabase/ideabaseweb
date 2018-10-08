@@ -1,9 +1,8 @@
 {# /templates/proposals/clients/index.twig #}
 
-{% requireLogin %}
 {% requirePermission "accessCp" %}
 
-{% extends '_proposals' %}
+{% extends '_proposals_layout' %}
 
 {# set clients = list of clients ordered by title #}
 {% set clients = craft.categories.group('clients').orderBy('title').all() %}

@@ -1,6 +1,8 @@
 {# /templates/proposals/index.twig #}
 
-{% extends '_proposals' %}
+{% requirePermission "accessCp" %}
+
+{% extends '_proposals_layout' %}
 
 {% block content %}
   <div class="proposals-index-container">

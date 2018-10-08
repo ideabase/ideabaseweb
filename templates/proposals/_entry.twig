@@ -1,6 +1,6 @@
 {# /templates/proposals/_entry.twig #}
 
-{% extends '_proposals' %}
+{% extends '_proposals_layout' %}
 
 {# set client = user selected entry category #}
 {% set client = craft.categories.group('clients').relatedTo(entry).one() %}
@@ -144,6 +144,7 @@
 
     {# initialize variables outside of loops #}
     {% set totalCost, elementHours = 0, 0 %}
+    {% set estimatedCompletionTimes = false %}
 
     {# begin phases #}
     {% if phases %}
@@ -172,6 +173,9 @@
               {% if block.phase == phase %}
                 <h3 class="h3-element">{{ block.elementTitle }}</h3>
 
+                {% if block.estimatedTime|length %}
+                  {% set estimatedCompletionTimes = true %}
+                {% endif %}
                 {% set elementHours = block.estimatedHours %}
                 {% set phaseCost = phaseCost + elementHours * entry.pricePerHour.value %}
                 {% set phaseHours = phaseHours + elementHours %}
@@ -221,7 +225,11 @@
     {% else %}
     {# if not phases, else use one page per element #}
       {% for block in entry.elements.all() %}
-      {# IMPORTANT: IF YOU EDIT THIS PAGE, YOU MUST ALSO EDIT THE PHASE PAGE ABOVE #}
+        {% if block.estimatedTime|length %}
+          {% set estimatedCompletionTimes = true %}
+        {% endif %}
+
+        {# IMPORTANT: IF YOU EDIT THIS PAGE, YOU MUST ALSO EDIT THE PHASE PAGE ABOVE #}
         <section class="page page-element container-page">
           <img src="{{ ideabaseLogoStacked.proposalImage.one().getUrl }}" alt="{{ ideabaseLogoStacked.proposalImageAlt }}"{% if ideabaseLogoStacked.proposalImageTitle|length %} title="{{ ideabaseLogoStacked.proposalImageTitle }}"{% endif %}>
           <div class="container-element">
@@ -267,7 +275,9 @@
               {% endif %}
               <th>Element Name</th>
               <th>Hours</th>
-              <th>Completion</th>
+              {% if estimatedCompletionTimes %}
+                <th>Completion</th>
+              {% endif %}
               <th>Subtotal</th>
             </tr>
           </thead>
@@ -279,7 +289,9 @@
                 {% endif %}
                 <td>{{ block.elementTitle }}</td>
                 <td>{{ block.estimatedHours }}</td>
-                <td>{{ block.estimatedTime }}</td>
+                {% if estimatedCompletionTimes %}
+                  <td>{{ block.estimatedTime }}</td>
+                {% endif %}
                 <td>{{ (block.estimatedHours * entry.pricePerHour.value)|currency('USD', [], [], true) }}</td>
               </tr>
             {% endfor %}

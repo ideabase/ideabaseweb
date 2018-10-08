@@ -133,7 +133,7 @@
 
 // letter
 .page-letter {
-  @include list-style-type-square;
+  @include list-style-type-square-1;
 
   color: $darkgray;
   display: flex;
@@ -380,10 +380,17 @@
 
 // agreement page
 .page-agreement {
+  @include list-style-type-square-2;
+  
   p {
     &:first-of-type {
       margin-top: 0;
     }
+  }
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
