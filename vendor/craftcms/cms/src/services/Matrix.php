@@ -18,6 +18,8 @@ use craft\elements\MatrixBlock;
 use craft\errors\MatrixBlockTypeNotFoundException;
 use craft\fields\BaseRelationField;
 use craft\fields\Matrix as MatrixField;
+use craft\helpers\ArrayHelper;
+use craft\helpers\ElementHelper;
 use craft\helpers\Html;
 use craft\helpers\MigrationHelper;
 use craft\helpers\StringHelper;
@@ -621,9 +623,12 @@ class Matrix extends Component
         /** @var MatrixBlock[] $blocks */
         $query = $owner->getFieldValue($field->handle);
 
-        // Skip if the query's site ID is different than the element's
-        // (Indicates that the value as copied from another site for element propagation)
-        if ($query->siteId != $owner->siteId) {
+        // If the element is brand new and propagating, and the field manages blocks on a per-site basis,
+        // then we will need to duplicate the blocks for this site
+        $duplicateBlocks = !$query->ownerId && $owner->propagating && $field->localizeBlocks;
+
+        // Skip if the element is propagating right now, and we don't need to duplicate the blocks
+        if ($owner->propagating && !$duplicateBlocks) {
             return;
         }
 
@@ -633,11 +638,13 @@ class Matrix extends Component
             $blocks = $query->all();
         }
 
+        $elementsService = Craft::$app->getElements();
+
         $transaction = Craft::$app->getDb()->beginTransaction();
         try {
             // If this is a preexisting element, make sure that the blocks for this field/owner respect the field's translation setting
             if ($query->ownerId) {
-                $this->_applyFieldTranslationSetting($query->ownerId, $query->siteId, $field);
+                $this->_applyFieldTranslationSetting($owner, $field);
             }
 
             // If the query is set to fetch blocks of a different owner, we're probably duplicating an element
@@ -647,7 +654,6 @@ class Matrix extends Component
                 $newQuery->ownerId = $owner->id;
                 if (!$newQuery->exists()) {
                     // Duplicate the blocks for the new owner
-                    $elementsService = Craft::$app->getElements();
                     foreach ($blocks as $block) {
                         $elementsService->duplicateElement($block, [
                             'ownerId' => $owner->id,
@@ -663,11 +669,19 @@ class Matrix extends Component
                 $propagate = !$owner->propagating;
 
                 foreach ($blocks as $block) {
-                    $block->ownerId = $owner->id;
-                    $block->ownerSiteId = ($field->localizeBlocks ? $owner->siteId : null);
-                    $block->propagating = $owner->propagating;
-
-                    Craft::$app->getElements()->saveElement($block, false, $propagate);
+                    if ($duplicateBlocks) {
+                        $block = $elementsService->duplicateElement($block, [
+                            'ownerId' => $owner->id,
+                            'ownerSiteId' => ($field->localizeBlocks ? $owner->siteId : null),
+                            'siteId' => $owner->siteId,
+                            'propagating' => false,
+                        ]);
+                    } else {
+                        $block->ownerId = $owner->id;
+                        $block->ownerSiteId = ($field->localizeBlocks ? $owner->siteId : null);
+                        $block->propagating = $owner->propagating;
+                        $elementsService->saveElement($block, false, $propagate);
+                    }
 
                     $blockIds[] = $block->id;
 
@@ -778,93 +792,62 @@ class Matrix extends Component
     /**
      * Applies the field's translation setting to a set of blocks.
      *
-     * @param int $ownerId
-     * @param int $ownerSiteId
+     * @param ElementInterface $owner
      * @param MatrixField $field
      */
-    private function _applyFieldTranslationSetting(int $ownerId, int $ownerSiteId, MatrixField $field)
+    private function _applyFieldTranslationSetting(ElementInterface $owner, MatrixField $field)
     {
+        /** @var Element $owner */
         // If the field is translatable, see if there are any global blocks that should be localized
         if ($field->localizeBlocks) {
             $blockQuery = MatrixBlock::find()
                 ->fieldId($field->id)
-                ->ownerId($ownerId)
+                ->ownerId($owner->id)
                 ->anyStatus()
-                ->siteId($ownerSiteId)
+                ->siteId($owner->siteId)
                 ->ownerSiteId(':empty:');
             $blocks = $blockQuery->all();
 
             if (!empty($blocks)) {
-                // Find any relational fields on these blocks
-                $relationFields = [];
-                foreach ($blocks as $block) {
-                    if (isset($relationFields[$block->typeId])) {
-                        continue;
-                    }
-                    $relationFields[$block->typeId] = [];
-                    foreach ($block->getType()->getFields() as $typeField) {
-                        if ($typeField instanceof BaseRelationField) {
-                            $relationFields[$block->typeId][] = $typeField->handle;
+                // Duplicate the blocks for each of the owner's other sites
+                $elementsService = Craft::$app->getElements();
+                $siteIds = ArrayHelper::getColumn(ElementHelper::supportedSitesForElement($owner), 'siteId');
+
+                foreach ($siteIds as $siteId) {
+                    if ($siteId != $owner->siteId) {
+                        $blockQuery->siteId = $siteId;
+                        $siteBlocks = $blockQuery->all();
+
+                        foreach ($siteBlocks as $siteBlock) {
+                            $elementsService->duplicateElement($siteBlock, [
+                                'siteId' => (int)$siteId,
+                                'ownerSiteId' => (int)$siteId,
+                            ]);
                         }
                     }
                 }
 
-                // Prefetch the blocks in all the other sites, in case they have
-                // any localized content
-                $otherSiteBlocks = [];
-                $allSiteIds = Craft::$app->getSites()->getAllSiteIds();
-                foreach ($allSiteIds as $siteId) {
-                    if ($siteId != $ownerSiteId) {
-                        /** @var MatrixBlock[] $siteBlocks */
-                        $siteBlocks = $otherSiteBlocks[$siteId] = $blockQuery->siteId($siteId)->all();
-
-                        // Hard-set the relation IDs
-                        foreach ($siteBlocks as $block) {
-                            if (isset($relationFields[$block->typeId])) {
-                                foreach ($relationFields[$block->typeId] as $handle) {
-                                    /** @var ElementQueryInterface $relationQuery */
-                                    $relationQuery = $block->getFieldValue($handle);
-                                    $block->setFieldValue($handle, $relationQuery->ids());
-                                }
-                            }
-                        }
-                    }
-                }
-
-                // Explicitly assign the current site's blocks to the current site
+                // Now resave the blocks for this site
                 foreach ($blocks as $block) {
-                    $block->ownerSiteId = $ownerSiteId;
+                    $block->ownerSiteId = $owner->siteId;
                     Craft::$app->getElements()->saveElement($block, false);
-                }
-
-                // Now save the other sites' blocks as new site-specific blocks
-                foreach ($otherSiteBlocks as $siteId => $siteBlocks) {
-                    foreach ($siteBlocks as $block) {
-                        //$originalBlockId = $block->id;
-
-                        $block->id = null;
-                        $block->contentId = null;
-                        $block->siteId = (int)$siteId;
-                        $block->ownerSiteId = (int)$siteId;
-                        Craft::$app->getElements()->saveElement($block, false);
-                        //$newBlockIds[$originalBlockId][$siteId] = $block->id;
-                    }
                 }
             }
         } else {
             // Otherwise, see if the field has any localized blocks that should be deleted
+            $elementsService = Craft::$app->getElements();
             foreach (Craft::$app->getSites()->getAllSiteIds() as $siteId) {
-                if ($siteId != $ownerSiteId) {
+                if ($siteId != $owner->siteId) {
                     $blocks = MatrixBlock::find()
                         ->fieldId($field->id)
-                        ->ownerId($ownerId)
+                        ->ownerId($owner->id)
                         ->anyStatus()
                         ->siteId($siteId)
                         ->ownerSiteId($siteId)
                         ->all();
 
                     foreach ($blocks as $block) {
-                        Craft::$app->getElements()->deleteElement($block);
+                        $elementsService->deleteElement($block);
                     }
                 }
             }

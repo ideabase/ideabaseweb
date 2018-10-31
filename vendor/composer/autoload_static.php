@@ -40,10 +40,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
-        'w' => 
-        array (
-            'wbrowar\\adminbar\\' => 17,
-        ),
         'r' => 
         array (
             'rias\\contactformextensions\\' => 27,
@@ -221,10 +217,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
-        ),
-        'wbrowar\\adminbar\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/wbrowar/adminbar/src',
         ),
         'rias\\contactformextensions\\' => 
         array (
@@ -3624,6 +3616,9 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'enshrined\\svgSanitize\\data\\TagInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/TagInterface.php',
         'mikehaertl\\shellcommand\\Command' => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src/Command.php',
         'mikestecker\\videoembedder\\VideoEmbedder' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/VideoEmbedder.php',
+        'mikestecker\\videoembedder\\assetbundles\\videofield\\VideoFieldAsset' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/assetbundles/videofield/VideoFieldAsset.php',
+        'mikestecker\\videoembedder\\controllers\\VideoController' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/controllers/VideoController.php',
+        'mikestecker\\videoembedder\\fields\\Video' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/fields/Video.php',
         'mikestecker\\videoembedder\\services\\VideoEmbedderService' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/services/VideoEmbedderService.php',
         'mikestecker\\videoembedder\\variables\\VideoEmbedderVariable' => __DIR__ . '/..' . '/mikestecker/craft-videoembedder/src/variables/VideoEmbedderVariable.php',
         'modules\\Module' => __DIR__ . '/../..' . '/modules/Module.php',
@@ -4293,6 +4288,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'nystudio107\\seomatic\\models\\jsonld\\Winery' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/Winery.php',
         'nystudio107\\seomatic\\models\\jsonld\\WriteAction' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/WriteAction.php',
         'nystudio107\\seomatic\\models\\jsonld\\Zoo' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/jsonld/Zoo.php',
+        'nystudio107\\seomatic\\models\\metalink\\AuthorLink' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metalink/AuthorLink.php',
         'nystudio107\\seomatic\\models\\metalink\\CanonicalLink' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metalink/CanonicalLink.php',
         'nystudio107\\seomatic\\models\\metatag\\DescriptionTag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metatag/DescriptionTag.php',
         'nystudio107\\seomatic\\models\\metatag\\OgDescriptionTag' => __DIR__ . '/..' . '/nystudio107/craft-seomatic/src/models/metatag/OgDescriptionTag.php',
@@ -4326,15 +4322,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'rias\\contactformextensions\\models\\Settings' => __DIR__ . '/..' . '/rias/craft-contact-form-extensions/src/models/Settings.php',
         'rias\\contactformextensions\\services\\ContactFormExtensionsService' => __DIR__ . '/..' . '/rias/craft-contact-form-extensions/src/services/ContactFormExtensionsService.php',
         'rias\\contactformextensions\\variables\\ContactFormExtensionsVariable' => __DIR__ . '/..' . '/rias/craft-contact-form-extensions/src/variables/ContactFormExtensionsVariable.php',
-        'wbrowar\\adminbar\\AdminBar' => __DIR__ . '/..' . '/wbrowar/adminbar/src/AdminBar.php',
-        'wbrowar\\adminbar\\assetbundles\\AdminBar\\AdminBarAsset' => __DIR__ . '/..' . '/wbrowar/adminbar/src/assetbundles/adminbar/AdminBarAsset.php',
-        'wbrowar\\adminbar\\console\\controllers\\DefaultController' => __DIR__ . '/..' . '/wbrowar/adminbar/src/console/controllers/DefaultController.php',
-        'wbrowar\\adminbar\\controllers\\BarController' => __DIR__ . '/..' . '/wbrowar/adminbar/src/controllers/BarController.php',
-        'wbrowar\\adminbar\\events\\AdminBarRenderEvent' => __DIR__ . '/..' . '/wbrowar/adminbar/src/events/AdminBarRenderEvent.php',
-        'wbrowar\\adminbar\\models\\Settings' => __DIR__ . '/..' . '/wbrowar/adminbar/src/models/Settings.php',
-        'wbrowar\\adminbar\\services\\Bar' => __DIR__ . '/..' . '/wbrowar/adminbar/src/services/Bar.php',
-        'wbrowar\\adminbar\\services\\EditLinks' => __DIR__ . '/..' . '/wbrowar/adminbar/src/services/EditLinks.php',
-        'wbrowar\\adminbar\\twigextensions\\AdminBarTwigExtension' => __DIR__ . '/..' . '/wbrowar/adminbar/src/twigextensions/AdminBarTwigExtension.php',
         'yii\\BaseYii' => __DIR__ . '/..' . '/yiisoft/yii2/BaseYii.php',
         'yii\\base\\Action' => __DIR__ . '/..' . '/yiisoft/yii2/base/Action.php',
         'yii\\base\\ActionEvent' => __DIR__ . '/..' . '/yiisoft/yii2/base/ActionEvent.php',

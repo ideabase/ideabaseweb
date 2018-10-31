@@ -14,10 +14,6 @@
   <link href="{{ siteUrl }}css/styles.css" type="text/css" rel="stylesheet" media="screen" />
 </head>
 <body>
-  {% if entry is defined %}
-    {{ adminbar({ entry: entry }) }}
-  {% endif %}
-
   {% if getenv('ENVIRONMENT') == 'dev' %}
   <!-- Live Reload - For local environment only -->
     <script src="//localhost:35729/livereload.js"></script>

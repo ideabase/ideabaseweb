@@ -191,12 +191,12 @@
     },
     {
         "name": "composer/ca-bundle",
-        "version": "1.1.2",
-        "version_normalized": "1.1.2.0",
+        "version": "1.1.3",
+        "version_normalized": "1.1.3.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/ca-bundle/zipball/46afded9720f40b9dc63542af4e3e43a1177acb0",
-            "reference": "46afded9720f40b9dc63542af4e3e43a1177acb0",
+            "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8afa52cd417f4ec417b4bfe86b68106538a87660",
+            "reference": "8afa52cd417f4ec417b4bfe86b68106538a87660",
             "shasum": ""
         },
         "require": {
@@ -204,7 +204,7 @@
             "ext-pcre": "*",
             "php": "^5.3.2 || ^7.0"
         },
-        "time": "2018-08-08T08:57:40+00:00",
+        "time": "2018-10-18T06:09:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -483,12 +483,12 @@
     },
     {
         "name": "craftcms/cms",
-        "version": "3.0.26.1",
-        "version_normalized": "3.0.26.1",
+        "version": "3.0.29",
+        "version_normalized": "3.0.29.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/cms/zipball/61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
-            "reference": "61fb42721fc40e65b0f6b459c8c0b47dd5d91146",
+            "url": "https://api.github.com/repos/craftcms/cms/zipball/da54a15c9ac0e2d67d9ac7653c32493d0829788f",
+            "reference": "da54a15c9ac0e2d67d9ac7653c32493d0829788f",
             "shasum": ""
         },
         "require": {
@@ -535,7 +535,7 @@
             "ext-imagick": "Adds support for more image processing formats and options.",
             "ext-intl": "Adds rich internationalization support."
         },
-        "time": "2018-09-29T22:15:04+00:00",
+        "time": "2018-10-30T18:13:23+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1258,12 +1258,12 @@
     },
     {
         "name": "embed/embed",
-        "version": "v3.3.5",
-        "version_normalized": "3.3.5.0",
+        "version": "v3.3.7",
+        "version_normalized": "3.3.7.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/oscarotero/Embed/zipball/46e19804e330065c899657c047288f792e2bca02",
-            "reference": "46e19804e330065c899657c047288f792e2bca02",
+            "url": "https://api.github.com/repos/oscarotero/Embed/zipball/9666691c78b25047bc6ee7e94823de3eaadce0c6",
+            "reference": "9666691c78b25047bc6ee7e94823de3eaadce0c6",
             "shasum": ""
         },
         "require": {
@@ -1272,7 +1272,7 @@
             "ext-mbstring": "*",
             "php": "^5.5|^7.0"
         },
-        "time": "2018-06-18T21:12:45+00:00",
+        "time": "2018-10-22T21:59:03+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1303,15 +1303,15 @@
     },
     {
         "name": "enshrined/svg-sanitize",
-        "version": "0.9.0",
-        "version_normalized": "0.9.0.0",
+        "version": "0.9.2",
+        "version_normalized": "0.9.2.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/509455b32ddfcb6db993ed3564f0670166c6c4c7",
-            "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7",
+            "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e0cb5ad3abea5459e0962cf79a92d34714c74dfa",
+            "reference": "e0cb5ad3abea5459e0962cf79a92d34714c74dfa",
             "shasum": ""
         },
-        "time": "2018-07-19T17:21:27+00:00",
+        "time": "2018-10-01T17:11:02+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1752,12 +1752,12 @@
     },
     {
         "name": "league/flysystem",
-        "version": "1.0.47",
-        "version_normalized": "1.0.47.0",
+        "version": "1.0.48",
+        "version_normalized": "1.0.48.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
-            "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a6ded5b2f6055e2db97b4b859fdfca2b952b78aa",
+            "reference": "a6ded5b2f6055e2db97b4b859fdfca2b952b78aa",
             "shasum": ""
         },
         "require": {
@@ -1783,7 +1783,7 @@
             "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
             "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
         },
-        "time": "2018-09-14T15:30:29+00:00",
+        "time": "2018-10-15T13:53:10+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1967,19 +1967,19 @@
     },
     {
         "name": "mikestecker/craft-videoembedder",
-        "version": "1.0.9",
-        "version_normalized": "1.0.9.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mikestecker/craft-videoembedder/zipball/59ddb17df8f9473f0f7955e330b727c835b66b01",
-            "reference": "59ddb17df8f9473f0f7955e330b727c835b66b01",
+            "url": "https://api.github.com/repos/mikestecker/craft-videoembedder/zipball/ba0c456b31bb8c2db129e1ef16e23fca5ab91247",
+            "reference": "ba0c456b31bb8c2db129e1ef16e23fca5ab91247",
             "shasum": ""
         },
         "require": {
             "craftcms/cms": "^3.0.0",
             "embed/embed": "^3.3"
         },
-        "time": "2018-04-12T19:07:27+00:00",
+        "time": "2018-10-17T23:41:29+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "Video Embedder",
@@ -2115,12 +2115,12 @@
     },
     {
         "name": "nystudio107/craft-seomatic",
-        "version": "3.1.22",
-        "version_normalized": "3.1.22.0",
+        "version": "3.1.23",
+        "version_normalized": "3.1.23.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
-            "reference": "26814be26bc771e3aaca5f5e197d2c3cc963f4e0",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/fd57187bba3c90c39acf0ae5f8e260013dc38041",
+            "reference": "fd57187bba3c90c39acf0ae5f8e260013dc38041",
             "shasum": ""
         },
         "require": {
@@ -2130,7 +2130,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2018-09-25T19:31:35+00:00",
+        "time": "2018-10-15T22:10:54+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",
@@ -2231,12 +2231,12 @@
     },
     {
         "name": "php-science/textrank",
-        "version": "1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/DavidBelicza/PHP-Science-TextRank/zipball/756da9c34ff113ac7aca1be69f2b920b4371ef8e",
-            "reference": "756da9c34ff113ac7aca1be69f2b920b4371ef8e",
+            "url": "https://api.github.com/repos/DavidBelicza/PHP-Science-TextRank/zipball/882adbd0f0d2d0b4229a43dee563785c84738ff9",
+            "reference": "882adbd0f0d2d0b4229a43dee563785c84738ff9",
             "shasum": ""
         },
         "require": {
@@ -2244,7 +2244,7 @@
             "ext-mbstring": "*",
             "php": "7.*"
         },
-        "time": "2018-08-21T11:27:07+00:00",
+        "time": "2018-10-08T08:50:14+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3363,62 +3363,6 @@
             "env",
             "environment"
         ]
-    },
-    {
-        "name": "wbrowar/adminbar",
-        "version": "3.1.6",
-        "version_normalized": "3.1.6.0",
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/wbrowar/craft-3-adminbar/zipball/1915c2dbb7e1759faea053ed0e40e41d52e8b562",
-            "reference": "1915c2dbb7e1759faea053ed0e40e41d52e8b562",
-            "shasum": ""
-        },
-        "require": {
-            "craftcms/cms": "^3.0.7"
-        },
-        "time": "2018-05-11T01:46:55+00:00",
-        "type": "craft-plugin",
-        "extra": {
-            "name": "Admin Bar",
-            "handle": "admin-bar",
-            "schemaVersion": "3.1.0",
-            "hasCpSettings": true,
-            "hasCpSection": false,
-            "changelogUrl": "https://raw.githubusercontent.com/wbrowar/craft-3-adminbar/master/CHANGELOG.md",
-            "components": {
-                "bar": "wbrowar\\adminbar\\services\\Bar",
-                "editLinks": "wbrowar\\adminbar\\services\\EditLinks"
-            },
-            "class": "wbrowar\\adminbar\\AdminBar"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "wbrowar\\adminbar\\": "src/"
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Will Browar",
-                "homepage": "https://wbrowar.com/plugins/adminbar"
-            }
-        ],
-        "description": "Front-end shortcuts for clients logged into Craft CMS.",
-        "keywords": [
-            "admin bar",
-            "cms",
-            "craft",
-            "craft-plugin",
-            "craftcms"
-        ],
-        "support": {
-            "docs": "https://github.com/wbrowar/craft-3-adminbar/blob/master/README.md",
-            "issues": "https://github.com/wbrowar/craft-3-adminbar/issues"
-        }
     },
     {
         "name": "yiisoft/yii2",

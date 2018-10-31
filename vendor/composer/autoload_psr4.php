@@ -21,7 +21,6 @@ return array(
     'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap/src'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
-    'wbrowar\\adminbar\\' => array($vendorDir . '/wbrowar/adminbar/src'),
     'rias\\contactformextensions\\' => array($vendorDir . '/rias/craft-contact-form-extensions/src'),
     'nystudio107\\seomatic\\' => array($vendorDir . '/nystudio107/craft-seomatic/src'),
     'modules\\' => array($baseDir . '/modules'),

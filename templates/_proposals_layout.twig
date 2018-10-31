@@ -12,11 +12,6 @@
 </head>
 
 <body>
-	{# admin bar hidden by default in scss/_proposals/main.scss #}
-	{% if entry is defined %}
-		{{ adminbar({ entry: entry }) }}
-	{% endif %}
-
 	{# content block #}
 	<main role="main">
 		{% block content %}

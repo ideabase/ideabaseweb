@@ -1,5 +1,74 @@
 # Release Notes for Craft CMS 3.x
 
+## 3.0.29 - 2018-10-30
+
+### Added
+- Email and URL fields now have “Placeholder Text” settings. ([#3397](https://github.com/craftcms/cms/issues/3397))
+
+### Changed
+- The default HTML Purifier configuration now allows `download` attributes in `<a>` tags. ([craftcms/redactor#86](https://github.com/craftcms/redactor/issues/86))
+
+### Fixed
+- Fixed a bug where the `ContentBehaviour` and `ElementQueryBehavior` classes could be missing some field properties. ([#3400](https://github.com/craftcms/cms/issues/3400))
+- Fixed a bug where some fields within Matrix fields could lose their values after enabling the “Manage blocks on a per-site basis” setting. ([verbb/super-table/203](https://github.com/verbb/super-table/issues/203))
+- Fixed a bug where HTML Purifier wasn’t being initialized with HTML 5 element support.
+- Fixed a bug where it was possible to save Assets fields with the “Restrict allowed file types?” setting enabled, but no specific file types selected. ([#3410](https://github.com/craftcms/cms/issues/3410))
+
+## 3.0.28 - 2018-10-23
+
+### Added
+- Structure sections now have the ability to disable entry propagation, like Channel sections. ([#2386](https://github.com/craftcms/cms/issues/2386))
+
+### Changed
+- `craft\base\Field::supportedTranslationMethods()` now defaults to only returning `none` if the field type doesn’t have a content column. ([#3385](https://github.com/craftcms/cms/issues/3385))
+- Craft.EntryTypeSwitcher now fires a `beforeTypeChange` event before swapping the Edit Entry form tabs. ([#3375](https://github.com/craftcms/cms/pull/3375))
+- Craft.MatrixInput now fires an `afterInit` event after initialization. ([#3375](https://github.com/craftcms/cms/pull/3375))
+- Craft.MatrixInput now fires an `blockAdded` event after adding a new block. ([#3375](https://github.com/craftcms/cms/pull/3375))
+- System messages sent from front-end requests are now sent using the current site’s language. ([#3388](https://github.com/craftcms/cms/issues/3388))
+
+### Fixed
+- Fixed an error that could occur when acquiring a lock for a file path, if the `mutex` component was swapped out with `yii\mutex\MysqlMutex`.
+
+## 3.0.27.1 - 2018-10-12
+
+### Fixed
+- Fixed an error that occurred when deleting an entry from the Edit Entry page. ([#3372](https://github.com/craftcms/cms/issues/3372))
+- Fixed an error that could occur when changing a Channel section to Structure. ([#3373](https://github.com/craftcms/cms/issues/3373))
+- Fixed an error that occurred when saving Matrix content from console requests.
+
+## 3.0.27 - 2018-10-11
+
+### Added
+- Added `craft\helpers\MigrationHelper::findForeignKey()`.
+- Added the `cp.globals.edit` and `cp.globals.edit.content` template hooks to the Edit Global Set page. ([#3356](https://github.com/craftcms/cms/pull/3356))
+
+### Changed
+- It’s now possible to load a Create Entry page with a specific user preselected in the Author field, using a new `authorId` query string param. ([#3326](https://github.com/craftcms/cms/pull/3326))
+- Matrix fields that are set to manage blocks on a per-site basis will now duplicate Matrix blocks across all of the owner element’s supported sites when the element is first created. ([#3082](https://github.com/craftcms/cms/issues/3082))
+- Disabled Matrix blocks are no longer visible when sharing an entry draft or version. ([#3338](https://github.com/craftcms/cms/issues/3338))
+- Control Panel tabs that have errors now have alert icons.
+- The Debug Toolbar is no longer shown in Live Preview iframes.
+- The Plugin Store now requires browsers with ES6 support.
+- Updated jQuery Touch Events to 2.0.0.
+- Updated Garnish to 0.1.29.
+
+### Fixed
+- Fixed a bug where enabling the “Propagate entries across all enabled sites?” setting for an existing Channel section (or converting the section to a Structure) wouldn’t update entries that had been created for the non-primary site.
+- Fixed a bug where Craft wasn’t detecting and retrying queue jobs that had timed out.
+- Fixed a bug where `Craft::$app->locale` could return the wrong locale during Live Preview requests. ([#3336](https://github.com/craftcms/cms/issues/3336))
+- Fixed a SQL error that could occur when upgrading to Craft 3, if a foreign key had an unexpected name.
+- Fixed a bug where page titles in the Control Panel could be blank when showing validation errors for things that were missing their name or title. ([#3344](https://github.com/craftcms/cms/issues/3344))
+- Fixed an error that could occur if a component’s settings were stored as `null`. ([#3342](https://github.com/craftcms/cms/pull/3342))
+- Fixed a bug where details panes weren’t visible on browser windows sized between 999 and 1,223 pixels wide.
+- Fixed an error that occurred if a Quick Post widget contained a Matrix field that had Min Blocks set and only had one block type.
+- Fixed a bug where disabled Matrix blocks were getting validated as live. ([#3354](https://github.com/craftcms/cms/issues/3354))
+- Fixed a bug where the `EVENT_AFTER_ACTIVATE_USER` event wasn’t getting triggered on user registration when email verification isn’t required. ([craftcms/commerce-digital-products#18](https://github.com/craftcms/commerce-digital-products/issues/18))
+- Added garbage collection for offline storage of remote assets. ([#3335](https://github.com/craftcms/cms/pull/3335))
+- Fixed a bug where Twig could end up in a strange state if an error occurred when preparing to render an object template. ([#3364](https://github.com/craftcms/cms/issues/3364))
+
+### Security
+- The `svg()` Twig function no longer sanitizes SVGs or namespaces their IDs or class names by default when a file path (or alias) was passed in. ([#3337](https://github.com/craftcms/cms/issues/3337))
+
 ## 3.0.26.1 - 2018-09-29
 
 ### Changed
