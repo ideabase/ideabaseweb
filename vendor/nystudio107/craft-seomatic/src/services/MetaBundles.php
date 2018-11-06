@@ -11,6 +11,7 @@
 
 namespace nystudio107\seomatic\services;
 
+use nystudio107\seomatic\fields\SeoSettings;
 use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\helpers\ArrayHelper;
 use nystudio107\seomatic\helpers\Config as ConfigHelper;
@@ -369,7 +370,8 @@ class MetaBundles extends Component
                     Seomatic::$plugin->metaContainers->invalidateContainerCacheById($sourceId);
                     Seomatic::$plugin->sitemaps->invalidateSitemapCache(
                         $metaBundle->sourceHandle,
-                        $metaBundle->sourceSiteId
+                        $metaBundle->sourceSiteId,
+                        $metaBundle->sourceBundleType
                     );
                     // Update the meta bundle data
                     $this->updateMetaBundle($metaBundle, $site->id);
@@ -418,10 +420,11 @@ class MetaBundles extends Component
                         $metaBundle->sourceDateUpdated = $dateUpdated;
                         // Update the meta bundle data
                         $this->updateMetaBundle($metaBundle, $sourceSiteId);
-                        if ($metaBundle) {
+                        if ($metaBundle && $element->scenario !== Element::SCENARIO_ESSENTIALS) {
                             Seomatic::$plugin->sitemaps->invalidateSitemapCache(
                                 $metaBundle->sourceHandle,
-                                $metaBundle->sourceSiteId
+                                $metaBundle->sourceSiteId,
+                                $metaBundle->sourceBundleType
                             );
                             Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
                         }
@@ -429,7 +432,7 @@ class MetaBundles extends Component
                 }
             }
             // If we've invalidated a meta bundle, we need to invalidate the sitemap index, too
-            if ($metaBundleInvalidated) {
+            if ($metaBundleInvalidated && $element->scenario !== Element::SCENARIO_ESSENTIALS) {
                 Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
             }
         }
@@ -635,6 +638,40 @@ class MetaBundles extends Component
         }
 
         return $metaBundles;
+    }
+
+    /**
+     * Set fields the user is unable to edit to an empty string, so they are filtered out
+     * when meta containers are combined
+     *
+     * @param MetaBundle $metaBundle
+     * @param string     $fieldHandle
+     */
+    public function pruneFieldMetaBundleSettings(MetaBundle $metaBundle, string $fieldHandle)
+    {
+        /** @var SeoSettings $seoSettingsField */
+        $seoSettingsField = Craft::$app->getFields()->getFieldByHandle($fieldHandle);
+        $seoSettingsEnabledFields = array_flip(array_merge(
+            $seoSettingsField->generalEnabledFields,
+            $seoSettingsField->twitterEnabledFields,
+            $seoSettingsField->facebookEnabledFields,
+            $seoSettingsField->sitemapEnabledFields
+        ));
+        // metaGlobalVars
+        $attributes = $metaBundle->metaGlobalVars->getAttributes();
+        $emptyValues = array_fill_keys(array_keys(array_diff_key($attributes, $seoSettingsEnabledFields)), '');
+        $attributes = array_merge($attributes, $emptyValues);
+        $metaBundle->metaGlobalVars->setAttributes($attributes, false);
+        // metaSiteVars
+        $attributes = $metaBundle->metaSiteVars->getAttributes();
+        $emptyValues = array_fill_keys(array_keys(array_diff_key($attributes, $seoSettingsEnabledFields)), '');
+        $attributes = array_merge($attributes, $emptyValues);
+        $metaBundle->metaSiteVars->setAttributes($attributes, false);
+        // metaSitemapVars
+        $attributes = $metaBundle->metaSitemapVars->getAttributes();
+        $emptyValues = array_fill_keys(array_keys(array_diff_key($attributes, $seoSettingsEnabledFields)), '');
+        $attributes = array_merge($attributes, $emptyValues);
+        $metaBundle->metaSitemapVars->setAttributes($attributes, false);
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "39829f42148f3be47c8c948bce7fa74f",
+    "content-hash": "a93629585116277bf52bbea7154df07f",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
@@ -1898,11 +1898,11 @@
         },
         {
             "name": "mikestecker/craft-videoembedder",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikestecker/craft-videoembedder/zipball/ba0c456b31bb8c2db129e1ef16e23fca5ab91247",
-                "reference": "ba0c456b31bb8c2db129e1ef16e23fca5ab91247",
+                "url": "https://api.github.com/repos/mikestecker/craft-videoembedder/zipball/03045545633952647190ed07b5b115e645931d57",
+                "reference": "03045545633952647190ed07b5b115e645931d57",
                 "shasum": ""
             },
             "require": {
@@ -1945,7 +1945,7 @@
                 "docs": "https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md",
                 "issues": "https://github.com/mikestecker/craft-videoembedder/issues"
             },
-            "time": "2018-10-17T23:41:29+00:00"
+            "time": "2018-11-02T18:12:54+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -2040,11 +2040,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.23",
+            "version": "3.1.26",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/fd57187bba3c90c39acf0ae5f8e260013dc38041",
-                "reference": "fd57187bba3c90c39acf0ae5f8e260013dc38041",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/0d42e3717e295efc0dbf4ee531ff09c9c849bc61",
+                "reference": "0d42e3717e295efc0dbf4ee531ff09c9c849bc61",
                 "shasum": ""
             },
             "require": {
@@ -2108,7 +2108,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-10-15T22:10:54+00:00"
+            "time": "2018-11-05T23:21:40+00:00"
         },
         {
             "name": "paragonie/random_compat",

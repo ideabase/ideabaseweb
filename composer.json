@@ -25,8 +25,8 @@
     "craftcms/redactor": "2.1.6",
     "craftcms/contact-form": "2.2.2",
     "dolphiq/sitemap": "v1.0.9",
-    "mikestecker/craft-videoembedder": "1.1.0",
-    "nystudio107/craft-seomatic": "3.1.23",
+    "mikestecker/craft-videoembedder": "1.1.1",
+    "nystudio107/craft-seomatic": "3.1.26",
     "craftcms/redactor-clips": "2.0.0",
     "rias/craft-contact-form-extensions": "1.0.11"
   },

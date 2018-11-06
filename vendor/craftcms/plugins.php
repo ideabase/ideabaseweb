@@ -129,6 +129,26 @@ return array (
       'contactFormExtensionsService' => 'rias\\contactformextensions\\services\\ContactFormExtensionsService',
     ),
   ),
+  'mikestecker/craft-videoembedder' => 
+  array (
+    'class' => 'mikestecker\\videoembedder\\VideoEmbedder',
+    'basePath' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    'handle' => 'video-embedder',
+    'aliases' => 
+    array (
+      '@mikestecker/videoembedder' => $vendorDir . '/mikestecker/craft-videoembedder/src',
+    ),
+    'name' => 'Video Embedder',
+    'version' => '1.1.1',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Craft plugin to generate an embed URL from a YouTube or Vimeo URL.',
+    'developer' => 'Mike Stecker',
+    'developerUrl' => 'http://github.com/mikestecker',
+    'documentationUrl' => 'https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/mikestecker/craft-videoembedder/v1/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
   'nystudio107/craft-seomatic' => 
   array (
     'class' => 'nystudio107\\seomatic\\Seomatic',
@@ -139,7 +159,7 @@ return array (
       '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
     ),
     'name' => 'SEOmatic',
-    'version' => '3.1.23',
+    'version' => '3.1.26',
     'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
     'developer' => 'nystudio107',
     'developerUrl' => 'https://nystudio107.com',
@@ -160,25 +180,5 @@ return array (
       'tag' => 'nystudio107\\seomatic\\services\\Tag',
       'title' => 'nystudio107\\seomatic\\services\\Title',
     ),
-  ),
-  'mikestecker/craft-videoembedder' => 
-  array (
-    'class' => 'mikestecker\\videoembedder\\VideoEmbedder',
-    'basePath' => $vendorDir . '/mikestecker/craft-videoembedder/src',
-    'handle' => 'video-embedder',
-    'aliases' => 
-    array (
-      '@mikestecker/videoembedder' => $vendorDir . '/mikestecker/craft-videoembedder/src',
-    ),
-    'name' => 'Video Embedder',
-    'version' => '1.1.0',
-    'schemaVersion' => '1.0.0',
-    'description' => 'Craft plugin to generate an embed URL from a YouTube or Vimeo URL.',
-    'developer' => 'Mike Stecker',
-    'developerUrl' => 'http://github.com/mikestecker',
-    'documentationUrl' => 'https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/mikestecker/craft-videoembedder/v1/CHANGELOG.md',
-    'hasCpSettings' => false,
-    'hasCpSection' => false,
   ),
 );
