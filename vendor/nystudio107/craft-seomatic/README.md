@@ -30,7 +30,7 @@ To install SEOmatic, follow these steps:
 1. Install with Composer via `composer require nystudio107/craft-seomatic`
 2. Install plugin in the Craft Control Panel under Settings > Plugins
 
-You can also install SEOmatic via the **Plugin Store** in the Craft AdminCP.
+You can also install SEOmatic via the **Plugin Store** in the Craft Control Panel.
 
 SEOmatic works on Craft 3.x.
 
@@ -96,6 +96,12 @@ For SEOmatic to be truly useful, you need to configure it so that it knows where
 
 ### Dashboard
 
+![Screenshot](resources/screenshots/seomatic-dashboard.png)
+
+The Dashboard gives you an overview of how fully set up your SEO setting in SEOmatic are, for Global SEO, Content SEO, and Site Settings.
+
+Click on any of the graphs to jump to the section in question to fill things out in more detail.
+
 ### Global SEO
 
 **Global SEO** is where you set all of the default site-wide settings.
@@ -134,7 +140,7 @@ If you are running Nginx, make sure that you don't have a line like:
     
 ...in your config file.  A directive like this will prevent SEOmatic from being able to service the request for `/robots.txt`.  If you do have a line like this in your config file, just comment it out, and restart Nginx with `sudo nginx -s reload`.
 
-The **View robots.txt** button lets you view your `robots.txt`.
+The **View robots.txt** button lets you view your rendered `robots.txt`.
 
 #### Humans
 
@@ -144,11 +150,23 @@ The **View robots.txt** button lets you view your `robots.txt`.
 
 Feel free to edit the default `humans.txt` Template to your heart's content.
 
-#### Global SEO AdminCP Fields
+The **View humans.txt** button lets you view your rendered `humans.txt`.
 
-The fields in the AdminCP Global SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
+#### Ads
 
-This is entirely optional; in typical usage the controls you have in the AdminCP for pulling from other fields will be all you need. But the ability is there if you need it.
+![Screenshot](resources/screenshots/seomatic-global-ads.png)
+
+The [ads.txt](https://iabtechlab.com/ads-txt/) project is simple: Increase transparency in the programmatic advertising ecosystem. ads.txt stands for Authorized Digital Sellers and is a simple, flexible and secure method that publishers and distributors can use to publicly declare the companies they authorize to sell their digital inventory.
+
+Feel free to edit the default `ads.txt` Template to your heart's content.
+
+The **View ads.txt** button lets you view your rendered `ads.txt`.
+
+#### Global SEO Control Panel Fields
+
+The fields in the Control Panel Global SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
+
+This is entirely optional; in typical usage the controls you have in the Control Panel for pulling from other fields will be all you need. But the ability is there if you need it.
 
 For example, the following will output the contents of the **companyInfo** field from the **siteInfo** Global:
 
@@ -212,11 +230,46 @@ SEOmatic can automatically include files such as `.pdf`, `.xls`, `.doc` and othe
 
 In addition, SEOmatic can automatically create [Image sitemaps](https://support.google.com/webmasters/answer/178636?hl=en) and [Video sitemaps](https://developers.google.com/webmasters/videosearch/sitemaps) from images & videos in Asset fields or Asset fields in matrix blocks
 
-Because XML sitemaps can be quite time-intensive to generate as the number of entries scales up, SEOmatic creates your sitemaps via a Queue job, and caches the result. The cache is automatically broken whenever something in that sitemap is changed, and a new Queue job is created to regenerate it.
-
 Sitemap Indexes are automatically submitted to search engines whenever a new Section, Category Group, or Commerce Product Type is added.
 
 Section Sitemaps are automatically submitted to search engines whenever a new Element in that Section, Category Group, or Commerce Product Type is added.
+
+##### Sitemap Generation
+
+Because XML sitemaps can be quite time-intensive to generate as the number of entries scales up, SEOmatic creates your sitemaps via a Queue job, and caches the result. The cache is automatically broken whenever something in that sitemap is changed, and a new Queue job is created to regenerate it.
+
+If `runQueueAutomatically` is set to `false` in [General Config Settings](https://docs.craftcms.com/v3/config/config-settings.html#runqueueautomatically) the Queue job to create the sitemap will not be run during the http request for the sitemap. You'll need to run it manually via whatever means you use to run the Queue.
+
+Normally SEOmatic will regenerate the sitemap for a Section, Category Group, or Product any time you save an element. However, if you are importing a large number of elements, or prefer to regenerate the sitemap manually you can set disable the **Regenerate Sitemaps Automatically** option in SEOmatic's Plugin Settings.
+
+![Screenshot](resources/screenshots/seomatic-sitemap-console-command.png)
+
+You can then regenerate the sitemap via CLI. This will regenerate all sitemaps:
+
+```bash
+./craft seomatic/sitemap/generate
+```
+
+You can also limit it to a specific Section, Category Group, or Product handle:
+
+```bash
+./craft seomatic/sitemap/generate --handle=blog
+```
+
+...or you can regenerate all sitemaps for a specific `siteId`:
+
+```bash
+./craft seomatic/sitemap/generate --siteId=1
+```
+
+...or both:
+
+```bash
+./craft seomatic/sitemap/generate --handle=blog --siteId=1
+```
+**N.B.:** If you do disable **Regenerate Sitemaps Automatically** sitemaps will _not_ be updated unless you do so manually via the CLI, or clear SEOmatic's sitemap caches via Utilities->Clear Caches.
+
+##### Additional Sitemap URLS
 
 If you have custom URLs that are not in the CMS, you can manually add them to their own Sitemap Index via **Site Settings** → **Miscellaneous**.
 
@@ -236,11 +289,11 @@ $e->sitemapUrls[] = [
  });
 ```
 
-#### Content SEO AdminCP Fields
+#### Content SEO Control Panel Fields
 
-The fields in the AdminCP Content SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
+The fields in the Control Panel Content SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
 
-This is entirely optional; in typical usage the controls you have in the AdminCP for pulling from other fields will be all you need. But the ability is there if you need it.
+This is entirely optional; in typical usage the controls you have in the Control Panel for pulling from other fields will be all you need. But the ability is there if you need it.
 
 For example, the following will output the contents of the **description** field from the current **Entry**:
 
@@ -376,13 +429,15 @@ If you want to include the Facebook Pixel script despite `devMode` being enabled
 
 The Plugin Settings lets you control various SEOmatic settings globally (across all sites/languages).
 
-* **Plugin name** - This is the name that will be used for the plugin everywhere it is referenced in the AdminCP GUI
+* **Plugin name** - This is the name that will be used for the plugin everywhere it is referenced in the Control Panel GUI
 * **Automatic Render Enabled** - Controls whether SEOmatic will automatically render metadata on your pages. If you turn this off, you will need to manually render the metadata via `{{ seomatic.tag.render() }}`, `{{ seomatic.link.render() }}`, etc. You can selectively disable rendering via Twig with `{% do seomatic.config.renderEnabled(false) %}
 * **Sitemaps Enabled** - Controls whether SEOmatic will automatically render frontend sitemaps for your website.
 * **HTTP Headers Enabled** - Controls whether SEOmatic will automatically add `X-Robots-Tag`, `canonical`, & `Referrer-Policy` to the http response headers.
 * **Environment** - The server environment, either `live`, `staging`, or `local`. If `devMode` is on, SEOmatic will override this setting to local Development. This setting controls whether certain things render; for instance only in the `live` production environment will Google Analytics and other tracking tags send analytics data. SEOmatic also automatically sets the `robots` tag to `none` for everything but the `live` production environment.
 * **Display Sidebar SEO Preview** - Controls whether to display the Google, Twitter, and Facebook social media previews in the sidebar on entry. category, and product pages.
 * **devMode `<title>` prefix** - If devMode is on, prefix the `<title>` with this string
+* **Control Panel `<title>` prefix** - Prefix the Control Panel `<title>` with this string
+* **devMode Control Panel `<title>` prefix** - If devMode is on, prefix the Control Panel `<title>` with this string
 * **Separator Character** - The separator character to use for the `<title>` tag
 * **Max SEO Title Length** - The max number of characters in the <title> tag; anything beyond this will be truncated on word boundaries
 * **Max SEO Description Length** - The max number of characters in the `meta description` tag
@@ -404,6 +459,9 @@ return [
 
     // Should SEOmatic render frontend sitemaps?
     'sitemapsEnabled' => true,
+
+    // Should sitemaps be regenerated automatically?
+    'regenerateSitemapsAutomatically' => true,
 
     // The server environment, either `live`, `staging`, or `local`
     'environment' => 'live',
@@ -452,6 +510,7 @@ SEOmatic allows you to restrict access to various parts of the plugin based on U
   * Facebook
   * Robots
   * Humans
+  * Ads
 * Edit Content SEO
   * General
   * Twitter
@@ -498,6 +557,14 @@ You can enable every possible field to be displayed in the SEO Settings field if
 ![Screenshot](resources/screenshots/seomatic-field-full.png)
 
 But it's probably best to limit it to just the things that you or your client might want to change on a per-entry basis.
+
+If you enable an SEO Settings field in an Element Index's Table Columns, you'll see an SEO preview there as well:
+
+![Screenshot](resources/screenshots/seomatic-table-columns-google.png)
+
+You can control whether the preview will be from Google, Facebook, or Twitter in the Field Settings.
+
+![Screenshot](resources/screenshots/seomatic-table-columns-facebook.png)
 
 #### Template Access
 
@@ -734,7 +801,7 @@ This parsing is done automatically by SEOmatic just before the meta information 
 
 #### Meta Variables: `seomatic.meta`
 
-The `seomatic.meta` variable contains all of the meta variables that control the SEO that will be rendered on the site. They are pre-populated from your settings and content in the AdminCP, but you can change them as you see fit.
+The `seomatic.meta` variable contains all of the meta variables that control the SEO that will be rendered on the site. They are pre-populated from your settings and content in the Control Panel, but you can change them as you see fit.
 
 ##### General Variables:
 
@@ -1096,7 +1163,7 @@ Create a new [Article](http://schema.org/Article) JSON-LD meta object:
 }) %}
 ```
 
-Get the existing **MainEntityOfPage** as set in the Global SEO or Content SEO AdminCP section to modify it (schema.org: [mainEntityOfPage](http://schema.org/docs/datamodel.html#mainEntityBackground)):
+Get the existing **MainEntityOfPage** as set in the Global SEO or Content SEO Control Panel section to modify it (schema.org: [mainEntityOfPage](http://schema.org/docs/datamodel.html#mainEntityBackground)):
 ```twig
 {% set mainEntity = seomatic.jsonLd.get('mainEntityOfPage') %}
 ```
@@ -1129,7 +1196,7 @@ Display the breadcrumbs on the page:
 {% endfor %}
 ```
 
-Get the existing **Identity** as set in the Site Settings AdminCP section to modify it:
+Get the existing **Identity** as set in the Site Settings Control Panel section to modify it:
 ```twig
 {% set identity = seomatic.jsonLd.get('identity') %}
 ```
@@ -1148,7 +1215,7 @@ Let's say you want to add a [Brand](https://schema.org/Brand) to the **Identity*
 {% do identity.brand(brand) %}
 ```
 
-Get the existing **Creator** as set in the Site Settings AdminCP section to modify it:
+Get the existing **Creator** as set in the Site Settings Control Panel section to modify it:
 ```twig
 {% set identity = seomatic.jsonLd.get('creator') %}
 ```
@@ -1295,7 +1362,7 @@ or just:
 
 SEOmatic supports the standard `config.php` multi-environment friendly config file for the plugin settings. Just copy the `config.php` to your Craft `config/` directory as `seomatic.php` and you can configure the settings in a multi-environment friendly way.
 
-These are the same settings that are configured in the **Plugin Settings** in the AdminCP.
+These are the same settings that are configured in the **Plugin Settings** in the Control Panel.
 
 ### Meta Bundle / Container Settings
 

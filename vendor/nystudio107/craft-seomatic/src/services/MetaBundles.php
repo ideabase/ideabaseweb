@@ -96,7 +96,7 @@ class MetaBundles extends Component
      * Get the global meta bundle for the site
      *
      * @param int  $sourceSiteId
-     * @param bool $parse         Whether the resulting metabundle should be parsed
+     * @param bool $parse Whether the resulting metabundle should be parsed
      *
      * @return null|MetaBundle
      */
@@ -407,27 +407,26 @@ class MetaBundles extends Component
                     __METHOD__
                 );
                 $metaBundleInvalidated = true;
-                if (!$isNew) {
-                    Seomatic::$plugin->metaContainers->invalidateContainerCacheByPath($uri, $sourceSiteId);
-                    // Invalidate the sitemap cache
-                    $metaBundle = $this->getMetaBundleBySourceId($sourceBundleType, $sourceId, $sourceSiteId);
-                    if ($metaBundle) {
-                        if ($element) {
-                            $dateUpdated = $element->dateUpdated ?? $element->dateCreated;
-                        } else {
-                            $dateUpdated = new \DateTime();
-                        }
-                        $metaBundle->sourceDateUpdated = $dateUpdated;
-                        // Update the meta bundle data
-                        $this->updateMetaBundle($metaBundle, $sourceSiteId);
-                        if ($metaBundle && $element->scenario !== Element::SCENARIO_ESSENTIALS) {
-                            Seomatic::$plugin->sitemaps->invalidateSitemapCache(
-                                $metaBundle->sourceHandle,
-                                $metaBundle->sourceSiteId,
-                                $metaBundle->sourceBundleType
-                            );
-                            Seomatic::$plugin->sitemaps->invalidateSitemapIndexCache();
-                        }
+                Seomatic::$plugin->metaContainers->invalidateContainerCacheByPath($uri, $sourceSiteId);
+                // Invalidate the sitemap cache
+                $metaBundle = $this->getMetaBundleBySourceId($sourceBundleType, $sourceId, $sourceSiteId);
+                if ($metaBundle) {
+                    if ($element) {
+                        $dateUpdated = $element->dateUpdated ?? $element->dateCreated;
+                    } else {
+                        $dateUpdated = new \DateTime();
+                    }
+                    $metaBundle->sourceDateUpdated = $dateUpdated;
+                    // Update the meta bundle data
+                    $this->updateMetaBundle($metaBundle, $sourceSiteId);
+                    if ($metaBundle
+                        && $element->scenario !== Element::SCENARIO_ESSENTIALS
+                        && Seomatic::$settings->regenerateSitemapsAutomatically) {
+                        Seomatic::$plugin->sitemaps->invalidateSitemapCache(
+                            $metaBundle->sourceHandle,
+                            $metaBundle->sourceSiteId,
+                            $metaBundle->sourceBundleType
+                        );
                     }
                 }
             }
@@ -535,7 +534,7 @@ class MetaBundles extends Component
             case Entry::class:
             case EntryDraft::class:
             case EntryVersion::class:
-            /** @var  $element Entry */
+                /** @var  $element Entry */
                 $sourceId = $element->sectionId;
                 $sourceSiteId = $element->siteId;
                 $sourceHandle = $element->section->handle;
@@ -641,8 +640,8 @@ class MetaBundles extends Component
     }
 
     /**
-     * Set fields the user is unable to edit to an empty string, so they are filtered out
-     * when meta containers are combined
+     * Set fields the user is unable to edit to an empty string, so they are
+     * filtered out when meta containers are combined
      *
      * @param MetaBundle $metaBundle
      * @param string     $fieldHandle
@@ -658,10 +657,12 @@ class MetaBundles extends Component
             $seoSettingsField->sitemapEnabledFields
         ));
         // metaGlobalVars
+        /* Don't prune the metaGlobalVars
         $attributes = $metaBundle->metaGlobalVars->getAttributes();
         $emptyValues = array_fill_keys(array_keys(array_diff_key($attributes, $seoSettingsEnabledFields)), '');
         $attributes = array_merge($attributes, $emptyValues);
         $metaBundle->metaGlobalVars->setAttributes($attributes, false);
+        */
         // metaSiteVars
         $attributes = $metaBundle->metaSiteVars->getAttributes();
         $emptyValues = array_fill_keys(array_keys(array_diff_key($attributes, $seoSettingsEnabledFields)), '');
@@ -696,12 +697,13 @@ class MetaBundles extends Component
                     if ($category === null) {
                         $unsetMetaBundle = true;
                     } else {
+                        $unsetMetaBundle = true;
                         $siteSettings = $category->getSiteSettings();
                         if (!empty($siteSettings)) {
                             /** @var CategoryGroup_SiteSettings $siteSetting */
                             foreach ($siteSettings as $siteSetting) {
-                                if ($siteSetting->siteId == $metaBundle->sourceSiteId && !$siteSetting->hasUrls) {
-                                    $unsetMetaBundle = true;
+                                if ($siteSetting->siteId == $metaBundle->sourceSiteId && $siteSetting->hasUrls) {
+                                    $unsetMetaBundle = false;
                                 }
                             }
                         }
@@ -712,12 +714,13 @@ class MetaBundles extends Component
                     if ($section === null) {
                         $unsetMetaBundle = true;
                     } else {
+                        $unsetMetaBundle = true;
                         $siteSettings = $section->getSiteSettings();
                         if (!empty($siteSettings)) {
                             /** @var Section_SiteSettings $siteSetting */
                             foreach ($siteSettings as $siteSetting) {
-                                if ($siteSetting->siteId == $metaBundle->sourceSiteId && !$siteSetting->hasUrls) {
-                                    $unsetMetaBundle = true;
+                                if ($siteSetting->siteId == $metaBundle->sourceSiteId && $siteSetting->hasUrls) {
+                                    $unsetMetaBundle = false;
                                 }
                             }
                         }
@@ -731,12 +734,13 @@ class MetaBundles extends Component
                             if ($productType === null) {
                                 $unsetMetaBundle = true;
                             } else {
+                                $unsetMetaBundle = true;
                                 $siteSettings = $productType->getSiteSettings();
                                 if (!empty($siteSettings)) {
                                     /** @var Section_SiteSettings $siteSetting */
                                     foreach ($siteSettings as $siteSetting) {
-                                        if ($siteSetting->siteId == $metaBundle->sourceSiteId && !$siteSetting->hasUrls) {
-                                            $unsetMetaBundle = true;
+                                        if ($siteSetting->siteId == $metaBundle->sourceSiteId && $siteSetting->hasUrls) {
+                                            $unsetMetaBundle = false;
                                         }
                                     }
                                 }
@@ -879,8 +883,8 @@ class MetaBundles extends Component
                             $metaBundle->sourceSiteId,
                             $metaBundle
                         );
-                        break;
                     }
+                    break;
                 case self::PRODUCT_META_BUNDLE:
                     if (Seomatic::$commerceInstalled) {
                         $commerce = CommercePlugin::getInstance();
@@ -1211,9 +1215,10 @@ class MetaBundles extends Component
                 $metaBundle->metaSiteVars->creator->setAttributes($attributes);
             }
         }
-        // Preserve the Frontend Templates
-        $attributes = $baseConfig->frontendTemplatesContainer->getAttributes();
-        $metaBundle->frontendTemplatesContainer->setAttributes($attributes);
+        // Preserve the Frontend Templates, but add in any new containers
+        foreach ($baseConfig->frontendTemplatesContainer->data as $key => $value) {
+            $metaBundle->frontendTemplatesContainer->data[$key] = $value;
+        }
         // Preserve the metaSitemapVars
         $attributes = $baseConfig->metaSitemapVars->getAttributes();
         $metaBundle->metaSitemapVars->setAttributes($attributes);

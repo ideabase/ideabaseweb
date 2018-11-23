@@ -43,7 +43,6 @@ use craft\elements\User;
 use craft\errors\SiteNotFoundException;
 use craft\events\CategoryGroupEvent;
 use craft\events\ElementEvent;
-use craft\events\ExceptionEvent;
 use craft\events\DeleteTemplateCachesEvent;
 use craft\events\PluginEvent;
 use craft\events\RegisterCacheOptionsEvent;
@@ -61,14 +60,11 @@ use craft\services\TemplateCaches;
 use craft\services\UserPermissions;
 use craft\helpers\UrlHelper;
 use craft\utilities\ClearCaches;
-use craft\web\ErrorHandler;
-use yii\web\HttpException;
 use craft\web\UrlManager;
 use craft\web\View;
 
 use craft\commerce\Plugin as CommercePlugin;
 use craft\commerce\elements\Product;
-use craft\commerce\models\ProductType;
 
 use yii\base\Event;
 
@@ -200,6 +196,11 @@ class Seomatic extends Plugin
     {
         parent::init();
         self::$plugin = $this;
+        // Handle any console commands
+        $request = Craft::$app->getRequest();
+        if ($request->getIsConsoleRequest()) {
+            $this->controllerNamespace = 'nystudio107\seomatic\console\controllers';
+        }
         // Initialize properties
         self::$settings = Seomatic::$plugin->getSettings();
         self::$devMode = Craft::$app->getConfig()->getGeneral()->devMode;
@@ -359,7 +360,7 @@ class Seomatic extends Plugin
             if ($request->getIsSiteRequest() && !$request->getIsConsoleRequest()) {
                 $this->installSiteEventListeners();
             }
-            // Install only for non-console AdminCP requests
+            // Install only for non-console Control Panel requests
             if ($request->getIsCpRequest() && !$request->getIsConsoleRequest()) {
                 $this->installCpEventListeners();
             }
@@ -427,7 +428,7 @@ class Seomatic extends Plugin
                 if ($request->getIsSiteRequest() && !$request->getIsConsoleRequest()) {
                     $this->handleSiteRequest();
                 }
-                // Respond to AdminCP requests
+                // Respond to Control Panel requests
                 if ($request->getIsCpRequest() && !$request->getIsConsoleRequest()) {
                     $this->handleAdminCpRequest();
                 }
@@ -607,7 +608,7 @@ class Seomatic extends Plugin
     }
 
     /**
-     * Install site event listeners for AdminCP requests only
+     * Install site event listeners for Control Panel requests only
      */
     protected function installCpEventListeners()
     {
@@ -620,7 +621,7 @@ class Seomatic extends Plugin
                     'UrlManager::EVENT_REGISTER_CP_URL_RULES',
                     __METHOD__
                 );
-                // Register our AdminCP routes
+                // Register our Control Panel routes
                 $event->rules = array_merge(
                     $event->rules,
                     $this->customAdminCpRoutes()
@@ -649,7 +650,7 @@ class Seomatic extends Plugin
                     'ClearCaches::EVENT_REGISTER_CACHE_OPTIONS',
                     __METHOD__
                 );
-                // Register our AdminCP routes
+                // Register our Control Panel routes
                 $event->options = array_merge(
                     $event->options,
                     $this->customAdminCpCacheOptions()
@@ -713,14 +714,22 @@ class Seomatic extends Plugin
     }
 
     /**
-     * Handle AdminCP requests. We do it only after we receive the event
+     * Handle Control Panel requests. We do it only after we receive the event
      * EVENT_AFTER_LOAD_PLUGINS so that any pending db migrations can be run
      * before our event listeners kick in
      */
     protected function handleAdminCpRequest()
     {
-        // Don't cache AdminCP requests
+        // Don't cache Control Panel requests
         self::$cacheDuration = 1;
+        // Prefix the Control Panel title
+        self::$view->hook('cp.layouts.base', function (&$context) {
+            if (self::$devMode) {
+                $context['docTitle'] = self::$settings->devModeCpTitlePrefix.$context['docTitle'];
+            } else {
+                $context['docTitle'] = self::$settings->cpTitlePrefix.$context['docTitle'];
+            }
+        });
         // Entries sidebar
         self::$view->hook('cp.entries.edit.details', function (&$context) {
             $html = '';
@@ -800,7 +809,7 @@ class Seomatic extends Plugin
     }
 
     /**
-     * Return the custom AdminCP routes
+     * Return the custom Control Panel routes
      *
      * @return array
      */
@@ -857,7 +866,7 @@ class Seomatic extends Plugin
     }
 
     /**
-     * Returns the custom AdminCP cache options.
+     * Returns the custom Control Panel cache options.
      *
      * @return array
      */
@@ -886,7 +895,7 @@ class Seomatic extends Plugin
     }
 
     /**
-     * Returns the custom AdminCP user permissions.
+     * Returns the custom Control Panel user permissions.
      *
      * @return array
      */
@@ -934,6 +943,9 @@ class Seomatic extends Plugin
                     ],
                     'seomatic:global-meta:humans' => [
                         'label' => Craft::t('seomatic', 'Humans'),
+                    ],
+                    'seomatic:global-meta:ads' => [
+                        'label' => Craft::t('seomatic', 'Ads'),
                     ],
                 ],
             ],

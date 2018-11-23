@@ -39,6 +39,10 @@ class Settings extends VarsModel
     public $sitemapsEnabled = true;
 
     /**
+     * @var bool Should sitwmaps be regenerated automatically?
+     */
+    public $regenerateSitemapsAutomatically = true;
+    /**
      * @var bool Should SEOmatic add to the http response headers?
      */
     public $headersEnabled = true;
@@ -62,6 +66,16 @@ class Settings extends VarsModel
      * @var string If `devMode` is on, prefix the <title> with this string
      */
     public $devModeTitlePrefix = '&#x1f6a7; ';
+
+    /**
+     * @var string Prefix the Control Panel <title> with this string
+     */
+    public $cpTitlePrefix = '&#x2699; ';
+
+    /**
+     * @var string If `devMode` is on, prefix the Control Panel <title> with this string
+     */
+    public $devModeCpTitlePrefix = '&#x1f6a7;&#x2699; ';
 
     /**
      * @var string The separator character to use for the `<title>` tag
@@ -108,6 +122,7 @@ class Settings extends VarsModel
                 [
                     'renderEnabled',
                     'sitemapsEnabled',
+                    'regenerateSitemapsAutomatically',
                     'headersEnabled',
                     'generatorEnabled',
                     'addHrefLang',
@@ -122,7 +137,7 @@ class Settings extends VarsModel
             ]],
             ['displayPreviewSidebar', 'boolean'],
             ['displayAnalysisSidebar', 'boolean'],
-            ['devModeTitlePrefix', 'string'],
+            [['devModeTitlePrefix', 'cpTitlePrefix', 'devModeCpTitlePrefix'], 'string'],
             ['separatorChar', 'string'],
             ['separatorChar', 'default', 'value' => '|'],
             ['maxTitleLength', 'integer', 'min' => 10],

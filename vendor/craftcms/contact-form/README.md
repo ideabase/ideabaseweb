@@ -1,4 +1,4 @@
-# Contact Form plugin for Craft
+# Contact Form for Craft CMS
 
 This plugin allows you to add an email contact form to your website.
 
@@ -10,21 +10,36 @@ This plugin requires Craft CMS 3.0.0-RC11 or later. (For Craft 2 use the [`v1` b
 
 ## Installation
 
-To install the plugin, follow these instructions.
+You can install this plugin from the Plugin Store or with Composer.
 
-1. Open your terminal and go to your Craft project:
+#### From the Plugin Store
 
-    ```bash
-    cd /path/to/project
-    ```
+Go to the Plugin Store in your project’s Control Panel and search for “Contact Form”. Then click on the “Install” button in its modal window.
 
-2. Then tell Composer to load the plugin:
+#### With Composer
 
-    ```bash
-    composer require craftcms/contact-form
-    ```
+Open your terminal and run the following commands:
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Contact Form.
+```bash
+# go to the project directory
+cd /path/to/my-project.test
+
+# tell Composer to load the plugin
+composer require craftcms/contact-form
+
+# tell Craft to install the plugin
+./craft install/plugin contact-form
+```
+
+## Upgrading from Craft 2
+
+If you’re in the process of upgrading a Craft 2 project to Craft 3, follow these instructions to get Contact Form back up and running:
+
+1. [Install Contact Form 2.x](#installation).
+2. Update the `action` input values in your form templates from `contactForm/sendMessage` to `contact-form/send`.
+3. Make sure the `redirect` input values in your form templates are [hashed](https://docs.craftcms.com/v3/changes-in-craft-3.html#request-params).
+4. If you have a `craft/config/contactform.php` file, move it to `config/` and rename it to `contact-form.php`.
+5. If you were using the honeypot captcha feature, install the new [Contact Form Honeypot](https://github.com/craftcms/contact-form-honeypot) plugin.
 
 ## Usage
 
@@ -234,25 +249,26 @@ $('#my-form').submit(function(ev) {
 });
 ```
 
-### The `beforeValidate` event
+### The `afterValidate` event
 
-Plugins can be notified when a submission is being validated, providing their own custom validation logic, using the `beforeValidate` event on the `Submission` model:
+Modules and plugins can be notified when a submission is being validated, providing their own custom validation logic, using the `afterValidate` event on the `Submission` model:
 
 ```php
 use craft\contactform\models\Submission;
 use yii\base\Event;
-use yii\base\ModelEvent;
+use yii\base\Event;
 
 // ...
 
-Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
+Event::on(Submission::class, Submission::EVENT_AFTER_VALIDATE, function(Event $e) {
     /** @var Submission $submission */
     $submission = $e->sender;
-    $validates = // custom validation logic...
     
-    if (!$validates) {
-        $submission->addError('someAttribute', 'Error message');
-        $e->isValid = false;
+    // Make sure that `message[Phone]` was filled in
+    if (empty($submission->message['Phone']) {
+        // Add the error
+        // (This will be accessible via `message.getErrors('message.phone')` in the template.)
+        $submission->addError('message.phone', 'A phone number is required.');
     }
 });
 ```
@@ -260,7 +276,7 @@ Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEv
 
 ### The `beforeSend` event
 
-Plugins can be notified right before a message is sent out to the recipients using the `beforeSend` event. This is also an opportunity to flag the message as spam, preventing it from getting sent:
+Modules and plugins can be notified right before a message is sent out to the recipients using the `beforeSend` event. This is also an opportunity to flag the message as spam, preventing it from getting sent:
 
 ```php
 use craft\contactform\events\SendEvent;
@@ -271,7 +287,7 @@ use yii\base\Event;
 
 Event::on(Mailer::class, Mailer::EVENT_BEFORE_SEND, function(SendEvent $e) {
     $isSpam = // custom spam detection logic...
-    
+
     if (!$isSpam) {
         $e->isSpam = true;
     }
@@ -281,7 +297,7 @@ Event::on(Mailer::class, Mailer::EVENT_BEFORE_SEND, function(SendEvent $e) {
 
 ### The `afterSend` event
 
-Plugins can be notified right after a message is sent out to the recipients using the `afterSend` event.
+Modules and plugins can be notified right after a message is sent out to the recipients using the `afterSend` event.
 
 ```php
 use craft\contactform\events\SendEvent;

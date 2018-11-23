@@ -39,6 +39,9 @@ return [
     // Should SEOmatic render frontend sitemaps?
     'sitemapsEnabled' => true,
 
+    // Should sitemaps be regenerated automatically?
+    'regenerateSitemapsAutomatically' => true,
+
     // Should SEOmatic add to the http response headers?
     'headersEnabled' => true,
 
@@ -53,6 +56,12 @@ return [
 
     // If `devMode` is on, prefix the <title> with this string
     'devModeTitlePrefix' => '&#x1f6a7; ',
+
+     //  Prefix the Control Panel <title> with this string
+    'cpTitlePrefix' => '&#x2699; ',
+
+    // If `devMode` is on, prefix the Control Panel <title> with this string
+    'devModeCpTitlePrefix' => '&#x1f6a7;&#x2699; ',
 
     // The separator character to use for the `<title>` tag
     'separatorChar' => '|',

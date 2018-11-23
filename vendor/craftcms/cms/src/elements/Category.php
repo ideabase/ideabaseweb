@@ -11,7 +11,9 @@ use Craft;
 use craft\base\Element;
 use craft\controllers\ElementIndexesController;
 use craft\db\Query;
+use craft\elements\actions\DeepDuplicate;
 use craft\elements\actions\Delete;
+use craft\elements\actions\Duplicate;
 use craft\elements\actions\Edit;
 use craft\elements\actions\NewChild;
 use craft\elements\actions\SetStatus;
@@ -174,6 +176,13 @@ class Category extends Element
                     'maxLevels' => $structure->maxLevels,
                     'newChildUrl' => 'categories/' . $group->handle . '/new',
                 ]);
+            }
+
+            // Duplicate
+            $actions[] = Duplicate::class;
+
+            if ($group->maxLevels != 1) {
+                $actions[] = DeepDuplicate::class;
             }
 
             // Delete
@@ -416,6 +425,9 @@ class Category extends Element
      */
     public function beforeSave(bool $isNew): bool
     {
+        // Set the structure ID for Element::attributes() and afterSave()
+        $this->structureId = $this->getGroup()->structureId;
+
         if ($this->_hasNewParent()) {
             if ($this->newParentId) {
                 $parentCategory = Craft::$app->getCategories()->getCategoryById($this->newParentId, $this->siteId);
@@ -439,8 +451,6 @@ class Category extends Element
      */
     public function afterSave(bool $isNew)
     {
-        $group = $this->getGroup();
-
         // Get the category record
         if (!$isNew) {
             $record = CategoryRecord::findOne($this->id);
@@ -459,9 +469,9 @@ class Category extends Element
         // Has the parent changed?
         if ($this->_hasNewParent()) {
             if (!$this->newParentId) {
-                Craft::$app->getStructures()->appendToRoot($group->structureId, $this);
+                Craft::$app->getStructures()->appendToRoot($this->structureId, $this);
             } else {
-                Craft::$app->getStructures()->append($group->structureId, $this, $this->getParent());
+                Craft::$app->getStructures()->append($this->structureId, $this, $this->getParent());
             }
         }
 

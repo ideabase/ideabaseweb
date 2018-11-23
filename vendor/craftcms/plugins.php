@@ -65,29 +65,6 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor-clips/v2/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/redactor-clips/archive/v2.zip',
   ),
-  'craftcms/contact-form' => 
-  array (
-    'class' => 'craft\\contactform\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/contact-form/src',
-    'handle' => 'contact-form',
-    'aliases' => 
-    array (
-      '@craft/contactform' => $vendorDir . '/craftcms/contact-form/src',
-    ),
-    'name' => 'Contact Form',
-    'version' => '2.2.2',
-    'description' => 'Add a simple contact form to your Craft CMS site',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/contact-form',
-    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md',
-    'downloadUrl' => 'https://github.com/craftcms/contact-form/archive/v2.zip',
-    'components' => 
-    array (
-      'mailer' => 'craft\\contactform\\Mailer',
-    ),
-  ),
   'craftcms/redactor' => 
   array (
     'class' => 'craft\\redactor\\Plugin',
@@ -149,6 +126,29 @@ return array (
     'hasCpSettings' => false,
     'hasCpSection' => false,
   ),
+  'craftcms/contact-form' => 
+  array (
+    'class' => 'craft\\contactform\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/contact-form/src',
+    'handle' => 'contact-form',
+    'aliases' => 
+    array (
+      '@craft/contactform' => $vendorDir . '/craftcms/contact-form/src',
+    ),
+    'name' => 'Contact Form',
+    'version' => '2.2.3',
+    'description' => 'Add a simple contact form to your Craft CMS site',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/contact-form',
+    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md',
+    'downloadUrl' => 'https://github.com/craftcms/contact-form/archive/v2.zip',
+    'components' => 
+    array (
+      'mailer' => 'craft\\contactform\\Mailer',
+    ),
+  ),
   'nystudio107/craft-seomatic' => 
   array (
     'class' => 'nystudio107\\seomatic\\Seomatic',
@@ -159,7 +159,7 @@ return array (
       '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
     ),
     'name' => 'SEOmatic',
-    'version' => '3.1.26',
+    'version' => '3.1.33',
     'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
     'developer' => 'nystudio107',
     'developerUrl' => 'https://nystudio107.com',
