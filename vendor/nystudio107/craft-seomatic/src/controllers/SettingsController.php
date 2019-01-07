@@ -79,12 +79,6 @@ class SettingsController extends Controller
         'genericImage',
     ];
 
-    const SCHEMA_TYPES = [
-        'siteSpecificType',
-        'siteSubType',
-        'siteType',
-    ];
-
     // Protected Properties
     // =========================================================================
 
@@ -134,6 +128,7 @@ class SettingsController extends Controller
         $variables['pluginName'] = Seomatic::$settings->pluginName;
         $variables['title'] = $templateTitle;
         $variables['docTitle'] = "{$pluginName} - {$templateTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -141,7 +136,7 @@ class SettingsController extends Controller
             ],
             [
                 'label' => $templateTitle,
-                'url' => UrlHelper::cpUrl('seomatic/dashboard'),
+                'url' => UrlHelper::cpUrl('seomatic/dashboard'.$siteHandleUri),
             ],
         ];
         $variables['selectedSubnavItem'] = 'dashboard';
@@ -233,6 +228,7 @@ class SettingsController extends Controller
         $variables['title'] = $templateTitle;
         $variables['subSectionTitle'] = $subSectionTitle;
         $variables['docTitle'] = "{$pluginName} - {$templateTitle} - {$subSectionTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -240,11 +236,11 @@ class SettingsController extends Controller
             ],
             [
                 'label' => $templateTitle,
-                'url' => UrlHelper::cpUrl('seomatic/global'),
+                'url' => UrlHelper::cpUrl('seomatic/global/general'.$siteHandleUri),
             ],
             [
                 'label' => $subSectionTitle,
-                'url' => UrlHelper::cpUrl('seomatic/global/'.$subSection),
+                'url' => UrlHelper::cpUrl('seomatic/global/'.$subSection.$siteHandleUri),
             ],
         ];
         $variables['selectedSubnavItem'] = 'global';
@@ -320,7 +316,7 @@ class SettingsController extends Controller
             if (\is_array($globalsSettings) && \is_array($bundleSettings)) {
                 PullFieldHelper::parseTextSources($elementName, $globalsSettings, $bundleSettings);
                 PullFieldHelper::parseImageSources($elementName, $globalsSettings, $bundleSettings, $siteId);
-                $globalsSettings['mainEntityOfPage'] = $this->getSpecificEntityType($bundleSettings);
+                $globalsSettings['mainEntityOfPage'] = PullFieldHelper::getSpecificEntityType($bundleSettings);
                 $metaBundle->metaGlobalVars->setAttributes($globalsSettings);
                 $metaBundle->metaBundleSettings->setAttributes($bundleSettings);
             }
@@ -381,6 +377,7 @@ class SettingsController extends Controller
         $variables['pluginName'] = Seomatic::$settings->pluginName;
         $variables['title'] = $templateTitle;
         $variables['docTitle'] = "{$pluginName} - {$templateTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -388,7 +385,7 @@ class SettingsController extends Controller
             ],
             [
                 'label' => $templateTitle,
-                'url' => UrlHelper::cpUrl('seomatic/content'),
+                'url' => UrlHelper::cpUrl('seomatic/content'.$siteHandleUri),
             ],
         ];
         $this->setMultiSiteVariables($siteHandle, $siteId, $variables);
@@ -467,6 +464,7 @@ class SettingsController extends Controller
         $variables['title'] = $templateTitle;
         $variables['subSectionTitle'] = $subSectionTitle;
         $variables['docTitle'] = "{$pluginName} - Content SEO - {$templateTitle} - {$subSectionTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -474,7 +472,7 @@ class SettingsController extends Controller
             ],
             [
                 'label' => 'Content SEO',
-                'url' => UrlHelper::cpUrl('seomatic/content'),
+                'url' => UrlHelper::cpUrl('seomatic/content'.$siteHandleUri),
             ],
             [
                 'label' => $metaBundle->sourceName.' · '.$subSectionTitle,
@@ -560,7 +558,7 @@ class SettingsController extends Controller
             if (\is_array($globalsSettings) && \is_array($bundleSettings)) {
                 PullFieldHelper::parseTextSources($elementName, $globalsSettings, $bundleSettings);
                 PullFieldHelper::parseImageSources($elementName, $globalsSettings, $bundleSettings, $siteId);
-                $globalsSettings['mainEntityOfPage'] = $this->getSpecificEntityType($bundleSettings);
+                $globalsSettings['mainEntityOfPage'] = PullFieldHelper::getSpecificEntityType($bundleSettings);
                 $metaBundle->metaGlobalVars->setAttributes($globalsSettings);
                 $metaBundle->metaBundleSettings->setAttributes($bundleSettings);
             }
@@ -618,6 +616,7 @@ class SettingsController extends Controller
         $variables['title'] = $templateTitle;
         $variables['subSectionTitle'] = $subSectionTitle;
         $variables['docTitle'] = "{$pluginName} - {$templateTitle} - {$subSectionTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -625,11 +624,11 @@ class SettingsController extends Controller
             ],
             [
                 'label' => $templateTitle,
-                'url' => UrlHelper::cpUrl('seomatic/site'),
+                'url' => UrlHelper::cpUrl('seomatic/site/identity'.$siteHandleUri),
             ],
             [
                 'label' => $subSectionTitle,
-                'url' => UrlHelper::cpUrl('seomatic/site/'.$subSection),
+                'url' => UrlHelper::cpUrl('seomatic/site/'.$subSection.$siteHandleUri),
             ],
         ];
         $variables['selectedSubnavItem'] = 'site';
@@ -810,6 +809,7 @@ class SettingsController extends Controller
         $variables['title'] = $templateTitle;
         $variables['subSectionTitle'] = $subSectionTitle;
         $variables['docTitle'] = "{$pluginName} - {$templateTitle} - {$subSectionTitle}";
+        $siteHandleUri = Craft::$app->isMultiSite ? '/'.$siteHandle : '';
         $variables['crumbs'] = [
             [
                 'label' => $pluginName,
@@ -821,7 +821,7 @@ class SettingsController extends Controller
             ],
             [
                 'label' => $subSectionTitle,
-                'url' => UrlHelper::cpUrl('seomatic/tracking/'.$subSection),
+                'url' => UrlHelper::cpUrl('seomatic/tracking/'.$subSection.$siteHandleUri),
             ],
         ];
         $variables['selectedSubnavItem'] = 'tracking';
@@ -1111,27 +1111,6 @@ class SettingsController extends Controller
     }
 
     /**
-     * Return the most specific schema.org type possible from the $settings
-     *
-     * @param $settings
-     *
-     * @return string
-     */
-    protected function getSpecificEntityType($settings): string
-    {
-        if (!empty($settings)) {
-            // Go from most specific type to least specific type
-            foreach (self::SCHEMA_TYPES as $schemaType) {
-                if (!empty($settings[$schemaType]) && ($settings[$schemaType] !== 'none')) {
-                    return $settings[$schemaType];
-                }
-            }
-        }
-
-        return 'WebPage';
-    }
-
-    /**
      * Return a siteId from a siteHandle
      *
      * @param string $siteHandle
@@ -1163,7 +1142,7 @@ class SettingsController extends Controller
     protected function prepEntitySettings(&$settings)
     {
         DynamicMetaHelper::normalizeTimes($settings['localBusinessOpeningHours']);
-        $settings['computedType'] = $this->getSpecificEntityType($settings);
+        $settings['computedType'] = PullFieldHelper::getSpecificEntityType($settings);
         if (!empty($settings['genericImageIds'])) {
             $asset = Craft::$app->getAssets()->getAssetById($settings['genericImageIds'][0]);
             if ($asset !== null) {

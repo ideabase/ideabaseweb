@@ -1,5 +1,45 @@
 # SEOmatic Changelog
 
+## 3.1.38 - 2019.01.03
+### Changed
+* Register cache options for every type of request
+* Refactored the sitemaps and sitemap indexes to always be in the server root, as per the [sitemaps spec](https://www.sitemaps.org/protocol.html#location)
+
+## 3.1.37 - 2018.12.19
+### Changed
+* Ensure that title truncation handles edge cases gracefully
+* Breadcrumbs in the CP now maintain the selected site
+* Parse sitemaps and sitemap URLs for aliases and as Twig templates
+* Don't try to add assets with null URLs to sitemaps
+
+## 3.1.36 - 2018.12.10
+### Added
+* Added the ability to add additional sitemaps that exist out of the CMS into the `sitemap.xml` via Site Settings -> Sitemap as well as via plugin
+
+### Changed
+* Fixed an issue where `LocalBusiness` JSON-LD type didn't inherit all of the properties from `Place` that it should
+* Fixed an issue with `seomatic.helper.getLocalizedUrls` not working as expected for routes other than the current request
+* Fixed an issue where plugin-generated custom sitemap URLs didn't have their `lastmod` respected for the sitemap index
+* Fixed an issue accessing `metaBundleSettings` in the Field when it doesn't exist
+
+## 3.1.35 - 2018.12.03
+### Changed
+* Fixed an issue where the `potentialAction` JSON-LD for the Site Links Search was rendered even if it was left empty
+* Fixed an issue where the SEO Settings field did not properly override the `mainEntityOfPage`
+
+## 3.1.34 - 2018.11.28
+### Added
+* Added a level 2 cache on the controller-based API requests for meta containers to improve "headless" performance
+* Added support for LinkedIn Insight analytics in Tracking Scripts
+* Added support for HubSpot analytics in Tracking Scripts
+* Display the status of tracking scripts in the listing section
+* Allow editing of the tracking scripts body scripts
+
+### Changed
+* Added the Open Graph tag `og:site_name`
+* Removed `craftcms/vue-asset` composer dependency
+* Call `App::maxPowerCaptain()` whenever a queue is manually run (both via web and console request)
+
 ## 3.1.33 - 2018.11.22
 ### Changed
 * Fixed an issue with socialTransform() throwing a Twig exception

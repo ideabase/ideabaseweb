@@ -46,6 +46,10 @@ class RedactorAsset extends AssetBundle
 
         $languages = array_unique([Craft::$app->language, Craft::$app->getLocale()->getLanguageID()]);
 
+        if (!empty(array_intersect($languages, ['nb', 'nn']))) {
+            $languages[] = 'no';
+        }
+
         foreach ($languages as $lang) {
             $subPath = 'lang'.DIRECTORY_SEPARATOR."{$lang}.js";
             if (is_file($this->sourcePath.DIRECTORY_SEPARATOR.$subPath)) {
@@ -60,7 +64,7 @@ class RedactorAsset extends AssetBundle
 
     /**
      * Register the custom translations for the Redactor field.
-     * 
+     *
      * @param $view
      */
     public static function registerTranslations($view)
@@ -69,6 +73,7 @@ class RedactorAsset extends AssetBundle
             'fullscreen' => Craft::t('redactor', 'Fullscreen'),
             'insert-page-break' => Craft::t('redactor', 'Insert Page Break'),
             'table' => Craft::t('redactor', 'Table'),
+            'image-editor' => Craft::t('redactor', 'Image editor'),
             'insert-table' => Craft::t('redactor', 'Insert table'),
             'insert-row-above' => Craft::t('redactor', 'Insert row above'),
             'insert-row-below' => Craft::t('redactor', 'Insert row below'),

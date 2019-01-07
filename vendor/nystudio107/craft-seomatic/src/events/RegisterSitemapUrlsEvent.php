@@ -26,7 +26,7 @@ class RegisterSitemapUrlsEvent extends Event
     /**
      * @var array The registered sitemap URLs.
      */
-    public $sitemapUrls = [];
+    public $sitemaps = [];
 
     /**
      * @var int The site id

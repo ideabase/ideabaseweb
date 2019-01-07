@@ -15,6 +15,7 @@ use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\base\FrontendTemplate;
 use nystudio107\seomatic\base\SitemapInterface;
 use nystudio107\seomatic\events\RegisterSitemapUrlsEvent;
+use nystudio107\seomatic\helpers\MetaValue as MetaValueHelper;
 use nystudio107\seomatic\helpers\UrlHelper;
 
 use Craft;
@@ -75,7 +76,11 @@ class SitemapCustomTemplate extends FrontendTemplate implements SitemapInterface
     public static function create(array $config = [])
     {
         $defaults = [
-            'path' => 'sitemaps/<groupId:\d+>/'.self::CUSTOM_SCOPE.'/'.self::CUSTOM_HANDLE.'/<siteId:\d+>/<file:[-\w\.*]+>',
+            'path' => 'sitemaps_<groupId:\d+>_'
+                .self::CUSTOM_SCOPE
+                .'_'
+                .self::CUSTOM_HANDLE
+                .'_<siteId:\d+>_<file:[-\w\.*]+>',
             'template' => '',
             'controller' => 'sitemap',
             'action' => 'sitemap-custom',
@@ -156,15 +161,16 @@ class SitemapCustomTemplate extends FrontendTemplate implements SitemapInterface
                 $additionalSitemapUrls = empty($additionalSitemapUrls) ? [] : $additionalSitemapUrls;
                 // Allow plugins/modules to add custom URLs
                 $event = new RegisterSitemapUrlsEvent([
-                    'sitemapUrls' => $additionalSitemapUrls,
+                    'sitemaps' => $additionalSitemapUrls,
                     'siteId' => $metaBundle->sourceSiteId,
                 ]);
                 $this->trigger(self::EVENT_REGISTER_SITEMAP_URLS, $event);
-                $additionalSitemapUrls = array_filter($event->sitemapUrls);
+                $additionalSitemapUrls = array_filter($event->sitemaps);
                 // Output the sitemap entry
                 foreach ($additionalSitemapUrls as $additionalSitemapUrl) {
+                    $loc = MetaValueHelper::parseString($additionalSitemapUrl['loc']);
                     $url = UrlHelper::siteUrl(
-                        $additionalSitemapUrl['loc'],
+                        $loc,
                         null,
                         null,
                         $metaBundle->sourceSiteId

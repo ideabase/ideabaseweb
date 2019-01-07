@@ -269,9 +269,27 @@ You can also limit it to a specific Section, Category Group, or Product handle:
 ```
 **N.B.:** If you do disable **Regenerate Sitemaps Automatically** sitemaps will _not_ be updated unless you do so manually via the CLI, or clear SEOmatic's sitemap caches via Utilities->Clear Caches.
 
-##### Additional Sitemap URLS
+##### Additional Sitemaps
 
-If you have custom URLs that are not in the CMS, you can manually add them to their own Sitemap Index via **Site Settings** → **Miscellaneous**.
+If you have custom sitemaps that are not in the CMS, you can manually add them to their own Sitemap Index via **Site Settings** → **Sitemap**.
+
+You can also add to it via a plugin:
+
+```php
+use nystudio107\seomatic\events\RegisterSitemapsEvent;
+use nystudio107\seomatic\models\SitemapIndexTemplate;
+use yii\base\Event;
+Event::on(SitemapIndexTemplate::class, SitemapIndexTemplate::EVENT_REGISTER_SITEMAPS, function(RegisterSitemapsEvent $e) {
+    $e->sitemaps[] = [
+        'loc' => $url,
+        'lastmod' => $lastMod,
+    ];
+});
+```
+
+##### Additional Sitemap URLs
+
+If you have custom URLs that are not in the CMS, you can manually add them to their own Sitemap Index via **Site Settings** → **Sitemap**.
 
 You can also add to it via a plugin:
 
@@ -280,7 +298,7 @@ use nystudio107\seomatic\events\RegisterSitemapUrlsEvent;
 use nystudio107\seomatic\models\SitemapCustomTemplate;
 use yii\base\Event;
 Event::on(SitemapCustomTemplate::class, SitemapCustomTemplate::EVENT_REGISTER_SITEMAP_URLS, function(RegisterSitemapUrlsEvent $e) {
-$e->sitemapUrls[] = [
+    $e->sitemapUrls[] = [
          'loc' => $url,
          'changefreq' => $changeFreq,
          'priority' => $priority,
@@ -1176,10 +1194,12 @@ If you want to add something to the existing **MainEntityOfPage** (in this case 
     'type': 'Offer',
     'name': 'Some prop',
     'url': 'Some url',
-}) %}
+}, false) %}
 
 {% do mainEntity.offers(offerJsonLd) %}
 ```
+
+The `, false` parameter tells it to create the JSON-LD object, but to _not_ automatically add it to the JSON-LD container. We do this because we don't want it rendered on its own, we want it as part of the existing `mainEntityOfPage` JSON-LD object.
 
 Get the existing **BreadcrumbList** as generated automatically by SEOmatic to modify them (schema.org: [BreadcrumbList](http://schema.org/BreadcrumbList)):
 ```twig
@@ -1210,10 +1230,12 @@ Let's say you want to add a [Brand](https://schema.org/Brand) to the **Identity*
     'type': 'Brand',
     'name': 'Some prop',
     'url': 'Some url',
-}) %}
+}, false) %}
 
 {% do identity.brand(brand) %}
 ```
+
+The `, false` parameter tells it to create the JSON-LD object, but to _not_ automatically add it to the JSON-LD container. We do this because we don't want it rendered on its own, we want it as part of the existing `mainEntityOfPage` JSON-LD object.
 
 Get the existing **Creator** as set in the Site Settings Control Panel section to modify it:
 ```twig

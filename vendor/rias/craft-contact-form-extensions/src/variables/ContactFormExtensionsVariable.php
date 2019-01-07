@@ -11,7 +11,10 @@
 
 namespace rias\contactformextensions\variables;
 
+use Craft;
+use craft\elements\db\ElementQueryInterface;
 use rias\contactformextensions\ContactFormExtensions;
+use rias\contactformextensions\elements\ContactFormSubmission;
 
 /**
  * @author    Rias
@@ -32,5 +35,16 @@ class ContactFormExtensionsVariable
         }
 
         return '';
+    }
+
+    public function submissions($criteria = null): ElementQueryInterface
+    {
+        $query = ContactFormSubmission::find();
+
+        if ($criteria) {
+            Craft::configure($query, $criteria);
+        }
+
+        return $query;
     }
 }

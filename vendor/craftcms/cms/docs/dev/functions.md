@@ -3,6 +3,17 @@
 In addition to the template functions that [Twig comes with](https://twig.symfony.com/doc/functions/index.html), Craft provides a few of its own:
 
 
+## `actionInput( actionPath )`
+
+A shortcut for outputting a hidden input used to route a POST request to a particular controller and action. This is effectively the same as writing `<input type="hidden" name="action" value="controller/action-name">` directly into a template.
+
+```twig
+<form method="POST">
+    {{ actionInput('users/save-user') }}
+    <!-- ... -->
+</form>
+```
+
 ## `alias( string )`
 
 Passes a string through [Craft::getAlias()](api:yii\BaseYii::getAlias()), which will check if the string begins with an [alias](https://www.yiiframework.com/doc/guide/2.0/en/concept-aliases). (See [Configuration](../config/README.md#aliases) for more info.)
@@ -166,34 +177,38 @@ The `siteUrl()` function has the following arguments:
 * **`scheme`** – Which scheme the URL should use (`'http'` or `'https'`). The default value depends on whether the current request is served over SSL or not. If not, then the scheme in your Site URL will be used; if so, then `https` will be used.
 * **`siteId`** – The ID of the site that the URL should point to. By default the current site will be used.
 
-## `svg( svg, sanitize )`
+## `svg( svg, sanitize, namespace )`
 
-Outputs an SVG document, sanitized of potentially malicious scripts.
+Outputs an SVG document.
 
-::: tip
-Any `id` attributes within the SVG will automatically be namespaced, to prevent conflicts with other `id` attributes in the DOM. If that’s not desired, you can save your SVG file inside your `templates/` folder and load it with an [include](https://twig.symfony.com/doc/2.x/tags/include.html) tag instead.
+You can pass the following things into it:
+
+- An SVG file path.
+
+  ```twig
+  {{ svg('@webroot/icons/lemon.svg') }}
+  ```
+
+- A <api:craft\elements\Asset> object, such as one pulled in from an [Assets field](../assets-fields.md).
+
+  ```twig
+  {% set image = entry.myAssetsField.one() %}
+  {% if image and image.extension == 'svg' %}
+    {{ svg(image) }}
+  {% endif %}
+  ```
+
+- Raw SVG markup.
+
+  ```twig
+  {% set image = include('_includes/icons/lemon.svg') %}
+  {{ svg(image) }}
+  ```
+
+By default, if you pass an asset or raw markup into the function, the SVG will be sanitized of potentially malicious scripts using [svg-sanitizer](https://github.com/darylldoyle/svg-sanitizer), and any IDs or class names within the document will be namespaced so they don’t conflict with other IDs or class names in the DOM. You can disable those behaviors using the `sanitize` and `namespace` arguments:
 
 ```twig
-{% include "_includes/sprites.svg" %}
-```
-:::
-
-### Arguments
-
-The `svg()` function has the following arguments:
-
-- **`svg`** – The SVG file path, an SVG file’s contents, or an <api:craft\elements\Asset> object that represents an SVG file.
-- **`sanitize`** – Whether the SVG should be sanitized of any potentially malicious scripts (`true` by default).
-
-```twig
-{# file path #}
-{{ svg('@webroot/path/to/file.svg') }}
-
-{# file contents #}
-{{ svg('<svg ... />') }}
-
-{# asset #}
-{{ svg(entry.myAssetsField.one()) }}
+{{ svg(image, sanitize=false, namespace=false) }}
 ```
 
 ## `url( path, params, scheme, mustShowScriptName )`

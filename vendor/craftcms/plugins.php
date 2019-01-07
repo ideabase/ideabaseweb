@@ -65,47 +65,6 @@ return array (
     'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor-clips/v2/CHANGELOG.md',
     'downloadUrl' => 'https://github.com/craftcms/redactor-clips/archive/v2.zip',
   ),
-  'craftcms/redactor' => 
-  array (
-    'class' => 'craft\\redactor\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/redactor/src',
-    'handle' => 'redactor',
-    'aliases' => 
-    array (
-      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
-    ),
-    'name' => 'Redactor',
-    'version' => '2.1.6',
-    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/redactor',
-  ),
-  'rias/craft-contact-form-extensions' => 
-  array (
-    'class' => 'rias\\contactformextensions\\ContactFormExtensions',
-    'basePath' => $vendorDir . '/rias/craft-contact-form-extensions/src',
-    'handle' => 'contact-form-extensions',
-    'aliases' => 
-    array (
-      '@rias/contactformextensions' => $vendorDir . '/rias/craft-contact-form-extensions/src',
-    ),
-    'name' => 'Contact Form Extensions',
-    'version' => '1.0.11',
-    'schemaVersion' => '1.0.0',
-    'description' => 'Adds extensions to the Craft CMS contact form plugin.',
-    'developer' => 'Rias',
-    'developerUrl' => 'https://rias.be',
-    'documentationUrl' => 'https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md',
-    'hasCpSettings' => true,
-    'hasCpSection' => true,
-    'components' => 
-    array (
-      'contactFormExtensionsService' => 'rias\\contactformextensions\\services\\ContactFormExtensionsService',
-    ),
-  ),
   'mikestecker/craft-videoembedder' => 
   array (
     'class' => 'mikestecker\\videoembedder\\VideoEmbedder',
@@ -149,6 +108,47 @@ return array (
       'mailer' => 'craft\\contactform\\Mailer',
     ),
   ),
+  'rias/craft-contact-form-extensions' => 
+  array (
+    'class' => 'rias\\contactformextensions\\ContactFormExtensions',
+    'basePath' => $vendorDir . '/rias/craft-contact-form-extensions/src',
+    'handle' => 'contact-form-extensions',
+    'aliases' => 
+    array (
+      '@rias/contactformextensions' => $vendorDir . '/rias/craft-contact-form-extensions/src',
+    ),
+    'name' => 'Contact Form Extensions',
+    'version' => '1.0.12',
+    'schemaVersion' => '1.0.0',
+    'description' => 'Adds extensions to the Craft CMS contact form plugin.',
+    'developer' => 'Rias',
+    'developerUrl' => 'https://rias.be',
+    'documentationUrl' => 'https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'contactFormExtensionsService' => 'rias\\contactformextensions\\services\\ContactFormExtensionsService',
+    ),
+  ),
+  'craftcms/redactor' => 
+  array (
+    'class' => 'craft\\redactor\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/redactor/src',
+    'handle' => 'redactor',
+    'aliases' => 
+    array (
+      '@craft/redactor' => $vendorDir . '/craftcms/redactor/src',
+    ),
+    'name' => 'Redactor',
+    'version' => '2.1.7',
+    'description' => 'Edit rich text content in Craft CMS using Redactor by Imperavi.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/redactor',
+  ),
   'nystudio107/craft-seomatic' => 
   array (
     'class' => 'nystudio107\\seomatic\\Seomatic',
@@ -159,7 +159,7 @@ return array (
       '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
     ),
     'name' => 'SEOmatic',
-    'version' => '3.1.33',
+    'version' => '3.1.38',
     'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
     'developer' => 'nystudio107',
     'developerUrl' => 'https://nystudio107.com',
