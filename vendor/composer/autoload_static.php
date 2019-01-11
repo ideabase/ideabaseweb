@@ -2901,6 +2901,8 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\console\\Application' => __DIR__ . '/..' . '/craftcms/cms/src/console/Application.php',
         'craft\\console\\Request' => __DIR__ . '/..' . '/craftcms/cms/src/console/Request.php',
         'craft\\console\\User' => __DIR__ . '/..' . '/craftcms/cms/src/console/User.php',
+        'craft\\console\\actions\\ClearCacheAction' => __DIR__ . '/..' . '/craftcms/cms/src/console/actions/ClearCacheAction.php',
+        'craft\\console\\controllers\\ClearCachesController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/ClearCachesController.php',
         'craft\\console\\controllers\\InstallController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/InstallController.php',
         'craft\\console\\controllers\\MigrateController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/MigrateController.php',
         'craft\\console\\controllers\\SetupController' => __DIR__ . '/..' . '/craftcms/cms/src/console/controllers/SetupController.php',

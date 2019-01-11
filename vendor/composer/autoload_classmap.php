@@ -2395,6 +2395,8 @@ return array(
     'craft\\console\\Application' => $vendorDir . '/craftcms/cms/src/console/Application.php',
     'craft\\console\\Request' => $vendorDir . '/craftcms/cms/src/console/Request.php',
     'craft\\console\\User' => $vendorDir . '/craftcms/cms/src/console/User.php',
+    'craft\\console\\actions\\ClearCacheAction' => $vendorDir . '/craftcms/cms/src/console/actions/ClearCacheAction.php',
+    'craft\\console\\controllers\\ClearCachesController' => $vendorDir . '/craftcms/cms/src/console/controllers/ClearCachesController.php',
     'craft\\console\\controllers\\InstallController' => $vendorDir . '/craftcms/cms/src/console/controllers/InstallController.php',
     'craft\\console\\controllers\\MigrateController' => $vendorDir . '/craftcms/cms/src/console/controllers/MigrateController.php',
     'craft\\console\\controllers\\SetupController' => $vendorDir . '/craftcms/cms/src/console/controllers/SetupController.php',
