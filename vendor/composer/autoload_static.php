@@ -66,7 +66,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             'creocoder\\nestedsets\\' => 21,
             'craftcms\\oauth2\\client\\' => 23,
-            'craft\\vue\\' => 10,
             'craft\\redactorclips\\' => 20,
             'craft\\redactor\\' => 15,
             'craft\\contactform\\' => 18,
@@ -253,10 +252,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craftcms\\oauth2\\client\\' => 
         array (
             0 => __DIR__ . '/..' . '/craftcms/oauth2-craftid/src',
-        ),
-        'craft\\vue\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/craftcms/vue-asset',
         ),
         'craft\\redactorclips\\' => 
         array (
@@ -3473,7 +3468,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\volumes\\Local' => __DIR__ . '/..' . '/craftcms/cms/src/volumes/Local.php',
         'craft\\volumes\\MissingVolume' => __DIR__ . '/..' . '/craftcms/cms/src/volumes/MissingVolume.php',
         'craft\\volumes\\Temp' => __DIR__ . '/..' . '/craftcms/cms/src/volumes/Temp.php',
-        'craft\\vue\\Asset' => __DIR__ . '/..' . '/craftcms/vue-asset/Asset.php',
         'craft\\web\\Application' => __DIR__ . '/..' . '/craftcms/cms/src/web/Application.php',
         'craft\\web\\AssetBundle' => __DIR__ . '/..' . '/craftcms/cms/src/web/AssetBundle.php',
         'craft\\web\\AssetManager' => __DIR__ . '/..' . '/craftcms/cms/src/web/AssetManager.php',

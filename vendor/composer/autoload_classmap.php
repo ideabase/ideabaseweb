@@ -2967,7 +2967,6 @@ return array(
     'craft\\volumes\\Local' => $vendorDir . '/craftcms/cms/src/volumes/Local.php',
     'craft\\volumes\\MissingVolume' => $vendorDir . '/craftcms/cms/src/volumes/MissingVolume.php',
     'craft\\volumes\\Temp' => $vendorDir . '/craftcms/cms/src/volumes/Temp.php',
-    'craft\\vue\\Asset' => $vendorDir . '/craftcms/vue-asset/Asset.php',
     'craft\\web\\Application' => $vendorDir . '/craftcms/cms/src/web/Application.php',
     'craft\\web\\AssetBundle' => $vendorDir . '/craftcms/cms/src/web/AssetBundle.php',
     'craft\\web\\AssetManager' => $vendorDir . '/craftcms/cms/src/web/AssetManager.php',

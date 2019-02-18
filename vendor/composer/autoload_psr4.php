@@ -30,7 +30,6 @@ return array(
     'dolphiq\\sitemap\\' => array($vendorDir . '/dolphiq/sitemap/src'),
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'craftcms\\oauth2\\client\\' => array($vendorDir . '/craftcms/oauth2-craftid/src'),
-    'craft\\vue\\' => array($vendorDir . '/craftcms/vue-asset'),
     'craft\\redactorclips\\' => array($vendorDir . '/craftcms/redactor-clips/src'),
     'craft\\redactor\\' => array($vendorDir . '/craftcms/redactor/src'),
     'craft\\contactform\\' => array($vendorDir . '/craftcms/contact-form/src'),

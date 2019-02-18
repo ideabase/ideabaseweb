@@ -94,6 +94,8 @@ All of SEOmatic's settings are multi-site aware, allowing you to have different 
 
 For SEOmatic to be truly useful, you need to configure it so that it knows where to _pull_ SEO content from.
 
+**N.B.** Please ensure that you set up your [Multi-Environment Config Settings](#multi-environment-config-settings) if you will be using SEOmatic across multiple environments.
+
 ### Dashboard
 
 ![Screenshot](resources/screenshots/seomatic-dashboard.png)
@@ -166,6 +168,8 @@ The **View ads.txt** button lets you view your rendered `ads.txt`.
 
 The fields in the Control Panel Global SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
 
+SEOmatic fields are also parsed for aliases, and in Craft 3.1, for [environment variables](https://docs.craftcms.com/v3/config/environments.html#control-panel-settings) as well.
+
 This is entirely optional; in typical usage the controls you have in the Control Panel for pulling from other fields will be all you need. But the ability is there if you need it.
 
 For example, the following will output the contents of the **companyInfo** field from the **siteInfo** Global:
@@ -226,9 +230,9 @@ SEOmatic automatically creates a sitemap index for each of your Site Groups. Thi
 
 Instead of one massive sitemap that must be updated any time anything changes, only the sitemap for the Section, Category Group, or Commerce Product Type will be updated when something changes in it.
 
-SEOmatic can automatically include files such as `.pdf`, `.xls`, `.doc` and other indexable file types in Asset fields or Asset fields in matrix blocks.
+SEOmatic can automatically include files such as `.pdf`, `.xls`, `.doc` and other indexable file types in Asset fields or Asset fields in matrix or Neo blocks.
 
-In addition, SEOmatic can automatically create [Image sitemaps](https://support.google.com/webmasters/answer/178636?hl=en) and [Video sitemaps](https://developers.google.com/webmasters/videosearch/sitemaps) from images & videos in Asset fields or Asset fields in matrix blocks
+In addition, SEOmatic can automatically create [Image sitemaps](https://support.google.com/webmasters/answer/178636?hl=en) and [Video sitemaps](https://developers.google.com/webmasters/videosearch/sitemaps) from images & videos in Asset fields or Asset fields in matrix or Neo blocks
 
 Sitemap Indexes are automatically submitted to search engines whenever a new Section, Category Group, or Commerce Product Type is added.
 
@@ -310,6 +314,8 @@ Event::on(SitemapCustomTemplate::class, SitemapCustomTemplate::EVENT_REGISTER_SI
 #### Content SEO Control Panel Fields
 
 The fields in the Control Panel Content SEO settings are parsed as Twig object templates, so in addition to plain old text, you can also put single and double bracket Twig expressions.
+
+SEOmatic fields are also parsed for aliases, and in Craft 3.1, for [environment variables](https://docs.craftcms.com/v3/config/environments.html#control-panel-settings) as well.
 
 This is entirely optional; in typical usage the controls you have in the Control Panel for pulling from other fields will be all you need. But the ability is there if you need it.
 
@@ -448,7 +454,7 @@ If you want to include the Facebook Pixel script despite `devMode` being enabled
 The Plugin Settings lets you control various SEOmatic settings globally (across all sites/languages).
 
 * **Plugin name** - This is the name that will be used for the plugin everywhere it is referenced in the Control Panel GUI
-* **Automatic Render Enabled** - Controls whether SEOmatic will automatically render metadata on your pages. If you turn this off, you will need to manually render the metadata via `{{ seomatic.tag.render() }}`, `{{ seomatic.link.render() }}`, etc. You can selectively disable rendering via Twig with `{% do seomatic.config.renderEnabled(false) %}
+* **Automatic Render Enabled** - Controls whether SEOmatic will automatically render metadata on your pages. If you turn this off, you will need to manually render the metadata via `{{ seomatic.tag.render() }}`, `{{ seomatic.link.render() }}`, etc. You can selectively disable rendering via Twig with `{% do seomatic.config.renderEnabled(false)` %}
 * **Sitemaps Enabled** - Controls whether SEOmatic will automatically render frontend sitemaps for your website.
 * **HTTP Headers Enabled** - Controls whether SEOmatic will automatically add `X-Robots-Tag`, `canonical`, & `Referrer-Policy` to the http response headers.
 * **Environment** - The server environment, either `live`, `staging`, or `local`. If `devMode` is on, SEOmatic will override this setting to local Development. This setting controls whether certain things render; for instance only in the `live` production environment will Google Analytics and other tracking tags send analytics data. SEOmatic also automatically sets the `robots` tag to `none` for everything but the `live` production environment.
@@ -462,6 +468,8 @@ The Plugin Settings lets you control various SEOmatic settings globally (across 
 * **Site Groups define logically separate sites** - If you are using Site Groups to logically separate 'sister sites', turn this on.
 * **Add `hreflang` Tags** - Controls whether SEOmatic will automatically add `hreflang` and `og:locale:alternate` tags.
 * **Generator Enabled** - Controls whether SEOmatic will include the meta `generator` tag and `X-Powered-By` header
+
+##### Multi-Environment Config Settings
 
 If you're using a multi-environment config, you can map your environment settings using SEOmatic's `config.php` something like this:
 
@@ -513,6 +521,10 @@ return [
     ],
 ];
 ```
+Just copy the `config.php` to your Craft `config/` directory as `seomatic.php` and you can configure the settings in a multi-environment friendly way. See the [Craft Environments](https://docs.craftcms.com/v3/config/environments.html#config-files) page for details, and **N.B.:**
+
+> The `'*'` key is required here so Craft knows to treat it as a multi-environment key, but the other keys are up to you
+
 This is how you can make your multi-environment nomenclature to SEOmatic's. This works exactly like Craft's [multi-environment config](https://docs.craftcms.com/v3/configuration.html#application-config) files such as `general.php` and `db.php`. See SEOmatic's `config.php` for details.
 
 ### Access Permissions
@@ -779,7 +791,6 @@ You can also set multiple variables at once using array syntax:
 
 Or you can chain them together:
 
-
 ```twig
 {% do seomatic.meta
   .seoTitle("Some Title")
@@ -806,6 +817,19 @@ or
 ```twig
  {% do seomatic.meta.seoTitle("{category.title}") %}
 ```
+
+But most of the time, you'll want to just set them like you would regular variables:
+
+ ```twig
+ {% do seomatic.meta.seoTitle(entry.title) %}
+ ```
+or
+```twig
+ {% do seomatic.meta.seoTitle(category.title) %}
+```
+...so that there is no additional Twig parsing that needs to be done.
+
+SEOmatic variables are also parsed for aliases, and in Craft 3.1, for [environment variables](https://docs.craftcms.com/v3/config/environments.html#control-panel-settings) as well.
 
 There may be occasions where you want to output the final parsed value of an SEOmatic variable on the frontend. You can do that via `seomatic.meta.parsedValue()`. For example:
 
@@ -977,7 +1001,7 @@ The `seomatic.config` variables are the global plugin configuration variables se
 * **`seomatic.helper.getLocalizedUrls(URI, SITE_ID)`** - Return a list of localized URLs for a given `URI` that are in the `SITE_ID` site's group. Both `URI` and `SITE_ID` are optional, and will use the current request's `URI` and the current site's `SITE_ID` if omitted.
 * **`seomatic.helper.loadMetadataForUri(URI, SITE_ID)`** - Load the appropriate meta containers for the given `URI` and optional `SITE_ID`
 * **`seomatic.helper.sitemapIndexForSiteId(SITE_ID)`** - Get the URL to the `SITE_ID`s sitemap index
-* **`seomatic.helper.extractTextFromField(FIELD)`** - Extract plain text from a PlainText, Redactor, CKEdtior, Tags, or Matrix field
+* **`seomatic.helper.extractTextFromField(FIELD)`** - Extract plain text from a PlainText, Redactor, CKEdtior, Tags, Matrix, or Neo field
 * **`seomatic.helper.extractKeywords(TEXT, LIMIT)`** - Extract up to `LIMIT` most important keywords from `TEXT`
 * **`seomatic.helper.extractSummary(TEXT)`** - Extract the most important 3 sentences from `TEXT`
 * **`seomatic.helper.socialTransform(ASSET, TRANSFORMNAME)`** - Transform the `ASSET` (either an Asset or an Asset ID) for social media sites in `TRANSFORMNAME`; valid values are `base`, `facebook`, `twitter-summary`, and `twitter-large`
@@ -1214,6 +1238,38 @@ Display the breadcrumbs on the page:
     <a href="{{ crumb.item['@id'] }}">{{ crumb.item['name'] }}</a>
     {% if not loop.last %}&raquo;{% endif %}
 {% endfor %}
+```
+
+To entirely replace the existing **BreadcrumbList** on a page:
+```twig
+{% set crumbList = seomatic.jsonLd.create({
+    'type': 'BreadcrumbList',
+    'name': 'Breadcrumbs',
+    'description': 'Breadcrumbs list',
+    'itemListElement': [
+        {
+            'type': 'ListItem',
+            'item': {
+                '@id': 'http://example.com/',
+                'name': 'Homepage'
+            },
+        },
+        {
+            'type': 'ListItem',
+            'item': {
+                '@id': 'http://example.com/blog/',
+                'name': 'Our blog'
+            },
+        },
+        {
+            'type': 'ListItem',
+            'item': {
+                '@id': 'http://example.com/blog/tech',
+                'name': 'Technology blogs'
+            },
+        },
+    ]
+}) %}
 ```
 
 Get the existing **Identity** as set in the Site Settings Control Panel section to modify it:

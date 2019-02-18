@@ -20,8 +20,8 @@
   {% set leaderGroup = craft.categories.group('staffHierarchy').slug('leadership') %}
   {% set leader = craft.entries.section('people').relatedTo(leaderGroup).alumniLightswitch('not 1') %}
   {% set staffGroup = craft.categories.group('staffHierarchy').slug('student') %}
-  {% set staffUpper = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').limit(2).all() %}
-  {% set staffLower = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').offset(2).all() %}
+  {% set staffUpper = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').limit(1).all() %}
+  {% set staffLower = craft.entries.section('people').relatedTo(staffGroup).alumniLightswitch('not 1').orderBy('profileLastName asc').offset(1).all() %}
   <div class="panel-primary-container">
     <section class="section-people panel-primary-wide">
       <section class="people">

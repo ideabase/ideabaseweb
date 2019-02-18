@@ -834,45 +834,6 @@
         ]
     },
     {
-        "name": "craftcms/vue-asset",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/craftcms/vue-asset/zipball/2f7c1372368cf8bba59375469b43bc68fae3f594",
-            "reference": "2f7c1372368cf8bba59375469b43bc68fae3f594",
-            "shasum": ""
-        },
-        "require": {
-            "craftcms/cms": "~3.0.0-beta.1"
-        },
-        "time": "2017-07-20T15:14:12+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "craft\\vue\\": ""
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Pixel & Tonic",
-                "homepage": "https://pixelandtonic.com/"
-            }
-        ],
-        "description": "Vue.js asset bundle for Craft CMS",
-        "keywords": [
-            "JS",
-            "cms",
-            "craftcms",
-            "vue",
-            "yii2"
-        ]
-    },
-    {
         "name": "creocoder/yii2-nested-sets",
         "version": "0.9.0",
         "version_normalized": "0.9.0.0",
@@ -2105,12 +2066,12 @@
     },
     {
         "name": "nystudio107/craft-seomatic",
-        "version": "3.1.38",
-        "version_normalized": "3.1.38.0",
+        "version": "3.1.43",
+        "version_normalized": "3.1.43.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/4050e0b6bbf00ee7f6ca2b2c1da1b7115b48cd58",
-            "reference": "4050e0b6bbf00ee7f6ca2b2c1da1b7115b48cd58",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/161625381d884b0ae725b1344927b61ff166bdb7",
+            "reference": "161625381d884b0ae725b1344927b61ff166bdb7",
             "shasum": ""
         },
         "require": {
@@ -2119,7 +2080,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2019-01-03T23:26:07+00:00",
+        "time": "2019-02-15T18:44:57+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",
@@ -2527,12 +2488,12 @@
     },
     {
         "name": "rias/craft-contact-form-extensions",
-        "version": "1.0.12",
-        "version_normalized": "1.0.12.0",
+        "version": "1.0.13",
+        "version_normalized": "1.0.13.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/b519cf2390473ae86a313c30701c83292c63235c",
-            "reference": "b519cf2390473ae86a313c30701c83292c63235c",
+            "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/05f3c12c1b887393545b167bb66afbcb70ba6098",
+            "reference": "05f3c12c1b887393545b167bb66afbcb70ba6098",
             "shasum": ""
         },
         "require": {
@@ -2540,7 +2501,7 @@
             "craftcms/cms": "^3.0.0-RC1",
             "craftcms/contact-form": "^2.1"
         },
-        "time": "2018-12-03T12:16:06+00:00",
+        "time": "2019-01-18T08:37:27+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "Contact Form Extensions",

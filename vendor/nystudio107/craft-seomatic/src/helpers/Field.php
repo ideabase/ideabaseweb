@@ -35,6 +35,9 @@ use craft\redactor\Field as RedactorField;
 use craft\commerce\Plugin as CommercePlugin;
 use craft\commerce\elements\Product;
 
+use benf\neo\Field as NeoField;
+use benf\neo\elements\Block as NeoBlock;
+
 use yii\base\InvalidConfigException;
 
 /**
@@ -60,12 +63,14 @@ class Field
             MatrixField::class,
             RedactorField::class,
             TagsField::class,
+            NeoField::class,
         ],
         self::ASSET_FIELD_CLASS_KEY => [
             AssetsField::class,
         ],
         self::BLOCK_FIELD_CLASS_KEY => [
             MatrixField::class,
+            NeoField::class,
         ],
         self::SEO_SETTINGS_CLASS_KEY => [
             SeoSettingsField::class,
@@ -87,6 +92,11 @@ class Field
      * @var array Memoization cache
      */
     public static $matrixFieldsOfTypeCache = [];
+
+    /**
+     * @var array Memoization cache
+     */
+    public static $neoFieldsOfTypeCache = [];
 
     // Static Methods
     // =========================================================================
@@ -194,6 +204,7 @@ class Field
                 $layout = null;
             }
             if ($layout) {
+                /** @noinspection SlowArrayOperationsInLoopInspection */
                 $foundFields = array_merge(
                     $foundFields,
                     self::fieldsOfTypeFromLayout($fieldClassKey, $layout, $keysOnly)
@@ -230,6 +241,7 @@ class Field
                     $fields
                 );
                 // Merge with any fields we've already found
+                /** @noinspection SlowArrayOperationsInLoopInspection */
                 $foundFields = array_merge(
                     $foundFields,
                     $fields
@@ -265,15 +277,24 @@ class Field
                 break;
 
             case MetaBundles::SECTION_META_BUNDLE:
-                $entryTypes = Craft::$app->getSections()->getSectionByHandle($sourceHandle)->getEntryTypes();
-                foreach ($entryTypes as $entryType) {
-                    $layouts[] = Craft::$app->getFields()->getLayoutById($entryType->fieldLayoutId);
+                $section = Craft::$app->getSections()->getSectionByHandle($sourceHandle);
+                if ($section) {
+                    $entryTypes = $section->getEntryTypes();
+                    foreach ($entryTypes as $entryType) {
+                        if ($entryType->fieldLayoutId) {
+                            $layouts[] = Craft::$app->getFields()->getLayoutById($entryType->fieldLayoutId);
+                        }
+                    }
                 }
                 break;
 
             case MetaBundles::CATEGORYGROUP_META_BUNDLE:
+                $layoutId = null;
                 try {
-                    $layoutId = Craft::$app->getCategories()->getGroupByHandle($sourceHandle)->getFieldLayoutId();
+                    $category = Craft::$app->getCategories()->getGroupByHandle($sourceHandle);
+                    if ($category) {
+                        $layoutId = $category->getFieldLayoutId();
+                    }
                 } catch (InvalidConfigException $e) {
                     $layoutId = null;
                 }
@@ -285,8 +306,12 @@ class Field
                 if (Seomatic::$commerceInstalled) {
                     $commerce = CommercePlugin::getInstance();
                     if ($commerce !== null) {
+                        $layoutId = null;
                         try {
-                            $layoutId = $commerce->productTypes->getProductTypeByHandle($sourceHandle)->getFieldLayoutId();
+                            $product = $commerce->productTypes->getProductTypeByHandle($sourceHandle);
+                            if ($product) {
+                                $layoutId = $product->getFieldLayoutId();
+                            }
                         } catch (InvalidConfigException $e) {
                             $layoutId = null;
                         }
@@ -299,6 +324,7 @@ class Field
         }
         // Iterate through the layouts looking for the fields of the type $fieldType
         foreach ($layouts as $layout) {
+            /** @noinspection SlowArrayOperationsInLoopInspection */
             $foundFields = array_merge(
                 $foundFields,
                 self::fieldsOfTypeFromLayout($fieldClassKey, $layout, $keysOnly)
@@ -345,6 +371,49 @@ class Field
             }
             // Cache for future use
             self::$matrixFieldsOfTypeCache[$memoKey] = $foundFields;
+        }
+
+        return $foundFields;
+    }
+
+
+    /**
+     * Return all of the fields in the $neoBlock of the type $fieldType class
+     *
+     * @param NeoBlock $neoBlock
+     * @param string   $fieldType
+     * @param bool     $keysOnly
+     *
+     * @return array
+     */
+    public static function neoFieldsOfType(NeoBlock $neoBlock, string $fieldType, bool $keysOnly = true): array
+    {
+        $foundFields = [];
+
+        try {
+            $neoBlockTypeModel = $neoBlock->getType();
+        } catch (InvalidConfigException $e) {
+            $neoBlockTypeModel = null;
+        }
+        if ($neoBlockTypeModel) {
+            // Cache me if you can
+            $memoKey = $fieldType.$neoBlock->id.($keysOnly ? 'keys' : 'nokeys');
+            if (!empty(self::$neoFieldsOfTypeCache[$memoKey])) {
+                return self::$neoFieldsOfTypeCache[$memoKey];
+            }
+            $fields = $neoBlockTypeModel->getFields();
+            /** @var  $field BaseField */
+            foreach ($fields as $field) {
+                if ($field instanceof $fieldType) {
+                    $foundFields[$field->handle] = $field->name;
+                }
+            }
+            // Return only the keys if asked
+            if ($keysOnly) {
+                $foundFields = array_keys($foundFields);
+            }
+            // Cache for future use
+            self::$neoFieldsOfTypeCache[$memoKey] = $foundFields;
         }
 
         return $foundFields;

@@ -11,16 +11,17 @@
 
 namespace nystudio107\seomatic\helpers;
 
-use nystudio107\seomatic\fields\SeoSettings;
-use nystudio107\seomatic\models\MetaBundle;
 use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\models\Entity;
+use nystudio107\seomatic\fields\SeoSettings;
 use nystudio107\seomatic\helpers\Field as FieldHelper;
+use nystudio107\seomatic\helpers\UrlHelper;
 use nystudio107\seomatic\models\jsonld\ContactPoint;
 use nystudio107\seomatic\models\jsonld\LocalBusiness;
 use nystudio107\seomatic\models\jsonld\Organization;
 use nystudio107\seomatic\models\jsonld\BreadcrumbList;
 use nystudio107\seomatic\models\jsonld\Thing;
+use nystudio107\seomatic\models\MetaBundle;
 use nystudio107\seomatic\models\MetaJsonLd;
 
 
@@ -445,12 +446,7 @@ class DynamicMeta
         }
         // Get the request URI
         if ($uri === null) {
-            try {
-                $requestUri = Craft::$app->getRequest()->getUrl();
-            } catch (InvalidConfigException $e) {
-                $requestUri = '';
-                Craft::error($e->getMessage(), __METHOD__);
-            }
+            $requestUri = Craft::$app->getRequest()->fullPath;
         } else {
             $requestUri = $uri;
         }
@@ -488,7 +484,7 @@ class DynamicMeta
         $elements = Craft::$app->getElements();
         foreach ($sites as $site) {
             $includeUrl = true;
-            $matchedElement = $elements->getElementByUri($requestUri, $site->id);
+            $matchedElement = $elements->getElementByUri($requestUri);
             if ($matchedElement) {
                 $url = $elements->getElementUriForSite($matchedElement->getId(), $site->id);
                 // See if they have disabled sitemaps or robots for this entry,
