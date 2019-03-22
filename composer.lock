@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff27d1628fe9a184713bc7b4164f9f0f",
+    "content-hash": "8ed054488eae47a2d2aa31bdd79c555d",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
@@ -1987,11 +1987,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.43",
+            "version": "3.1.46",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/161625381d884b0ae725b1344927b61ff166bdb7",
-                "reference": "161625381d884b0ae725b1344927b61ff166bdb7",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/cc66f24f5eecd221e862fb7713f784d60f236abc",
+                "reference": "cc66f24f5eecd221e862fb7713f784d60f236abc",
                 "shasum": ""
             },
             "require": {
@@ -2054,7 +2054,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2019-02-15T18:44:57+00:00"
+            "time": "2019-03-15T15:06:11+00:00"
         },
         {
             "name": "paragonie/random_compat",

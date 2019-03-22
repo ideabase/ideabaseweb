@@ -1,5 +1,23 @@
 # SEOmatic Changelog
 
+## 3.1.46 - 2019.03.15
+### Changed
+* Use dash instead of underscore for sitemap urls
+* Don't allow editing of the plugin settings if `allowAdminChanges` is false
+* Sort Content SEO listings by name to make things easier to find
+* Add missing properties to the `Question` JSON-LD schema
+
+## 3.1.45 - 2019.03.04
+### Changed
+* Fixed an issue where `container.clearCache` wasn't using the correct cache key to invalidate the cache
+* Fixed an issue where Google Tag Manager would render in Live Preview
+* Added try/catch around alias/parseEnv to try to catch errors that shouldn't happen
+
+## 3.1.44 - 2019.02.18
+### Changed
+* Fixed an issue with the URL in the sitemap index to the custom sitemap was invalid
+* Fixed an issue when using the meta containers controller with tracking scripts `and asArray=true`
+
 ## 3.1.43 - 2019.02.15
 ### Changed
 * Fixed an issue in Content SEO if no field layouts are yet defined
