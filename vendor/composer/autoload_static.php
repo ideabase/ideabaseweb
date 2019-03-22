@@ -15,6 +15,9 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
@@ -37,7 +40,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
             'yii\\queue\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
-            'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
         'r' => 
@@ -87,7 +89,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
+            'Symfony\\Polyfill\\Iconv\\' => 23,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Process\\' => 26,
@@ -209,10 +214,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
         ),
-        'yii\\bootstrap\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
-        ),
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
@@ -301,9 +302,21 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         array (
             0 => __DIR__ . '/..' . '/true/punycode/src',
         ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
+        ),
+        'Symfony\\Polyfill\\Iconv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
@@ -2298,7 +2311,10 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'Symfony\\Component\\Translation\\Util\\ArrayConverter' => __DIR__ . '/..' . '/symfony/translation/Util/ArrayConverter.php',
         'Symfony\\Component\\Translation\\Writer\\TranslationWriter' => __DIR__ . '/..' . '/symfony/translation/Writer/TranslationWriter.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
+        'Symfony\\Polyfill\\Iconv\\Iconv' => __DIR__ . '/..' . '/symfony/polyfill-iconv/Iconv.php',
+        'Symfony\\Polyfill\\Intl\\Idn\\Idn' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/Idn.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
+        'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
         'TrueBV\\Exception\\DomainOutOfBoundsException' => __DIR__ . '/..' . '/true/punycode/src/Exception/DomainOutOfBoundsException.php',
         'TrueBV\\Exception\\LabelOutOfBoundsException' => __DIR__ . '/..' . '/true/punycode/src/Exception/LabelOutOfBoundsException.php',
         'TrueBV\\Exception\\OutOfBoundsException' => __DIR__ . '/..' . '/true/punycode/src/Exception/OutOfBoundsException.php',
@@ -2962,6 +2978,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\db\\pgsql\\QueryBuilder' => __DIR__ . '/..' . '/craftcms/cms/src/db/pgsql/QueryBuilder.php',
         'craft\\db\\pgsql\\Schema' => __DIR__ . '/..' . '/craftcms/cms/src/db/pgsql/Schema.php',
         'craft\\debug\\DeprecatedPanel' => __DIR__ . '/..' . '/craftcms/cms/src/debug/DeprecatedPanel.php',
+        'craft\\debug\\RequestPanel' => __DIR__ . '/..' . '/craftcms/cms/src/debug/RequestPanel.php',
         'craft\\debug\\UserPanel' => __DIR__ . '/..' . '/craftcms/cms/src/debug/UserPanel.php',
         'craft\\elements\\Asset' => __DIR__ . '/..' . '/craftcms/cms/src/elements/Asset.php',
         'craft\\elements\\Category' => __DIR__ . '/..' . '/craftcms/cms/src/elements/Category.php',
@@ -4398,29 +4415,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'yii\\behaviors\\CacheableWidgetBehavior' => __DIR__ . '/..' . '/yiisoft/yii2/behaviors/CacheableWidgetBehavior.php',
         'yii\\behaviors\\SluggableBehavior' => __DIR__ . '/..' . '/yiisoft/yii2/behaviors/SluggableBehavior.php',
         'yii\\behaviors\\TimestampBehavior' => __DIR__ . '/..' . '/yiisoft/yii2/behaviors/TimestampBehavior.php',
-        'yii\\bootstrap\\ActiveField' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/ActiveField.php',
-        'yii\\bootstrap\\ActiveForm' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/ActiveForm.php',
-        'yii\\bootstrap\\Alert' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Alert.php',
-        'yii\\bootstrap\\BaseHtml' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/BaseHtml.php',
-        'yii\\bootstrap\\BootstrapAsset' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/BootstrapAsset.php',
-        'yii\\bootstrap\\BootstrapPluginAsset' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/BootstrapPluginAsset.php',
-        'yii\\bootstrap\\BootstrapThemeAsset' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/BootstrapThemeAsset.php',
-        'yii\\bootstrap\\BootstrapWidgetTrait' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/BootstrapWidgetTrait.php',
-        'yii\\bootstrap\\Button' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Button.php',
-        'yii\\bootstrap\\ButtonDropdown' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/ButtonDropdown.php',
-        'yii\\bootstrap\\ButtonGroup' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/ButtonGroup.php',
-        'yii\\bootstrap\\Carousel' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Carousel.php',
-        'yii\\bootstrap\\Collapse' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Collapse.php',
-        'yii\\bootstrap\\Dropdown' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Dropdown.php',
-        'yii\\bootstrap\\Html' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Html.php',
-        'yii\\bootstrap\\InputWidget' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/InputWidget.php',
-        'yii\\bootstrap\\Modal' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Modal.php',
-        'yii\\bootstrap\\Nav' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Nav.php',
-        'yii\\bootstrap\\NavBar' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/NavBar.php',
-        'yii\\bootstrap\\Progress' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Progress.php',
-        'yii\\bootstrap\\Tabs' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Tabs.php',
-        'yii\\bootstrap\\ToggleButtonGroup' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/ToggleButtonGroup.php',
-        'yii\\bootstrap\\Widget' => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src/Widget.php',
         'yii\\caching\\ApcCache' => __DIR__ . '/..' . '/yiisoft/yii2/caching/ApcCache.php',
         'yii\\caching\\ArrayCache' => __DIR__ . '/..' . '/yiisoft/yii2/caching/ArrayCache.php',
         'yii\\caching\\Cache' => __DIR__ . '/..' . '/yiisoft/yii2/caching/Cache.php',
@@ -4575,6 +4569,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'yii\\db\\sqlite\\SqlTokenizer' => __DIR__ . '/..' . '/yiisoft/yii2/db/sqlite/SqlTokenizer.php',
         'yii\\db\\sqlite\\conditions\\InConditionBuilder' => __DIR__ . '/..' . '/yiisoft/yii2/db/sqlite/conditions/InConditionBuilder.php',
         'yii\\db\\sqlite\\conditions\\LikeConditionBuilder' => __DIR__ . '/..' . '/yiisoft/yii2/db/sqlite/conditions/LikeConditionBuilder.php',
+        'yii\\debug\\DbAsset' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/DbAsset.php',
         'yii\\debug\\DebugAsset' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/DebugAsset.php',
         'yii\\debug\\FlattenException' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/FlattenException.php',
         'yii\\debug\\LogTarget' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/LogTarget.php',
@@ -4609,6 +4604,7 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'yii\\debug\\panels\\AssetPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/AssetPanel.php',
         'yii\\debug\\panels\\ConfigPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/ConfigPanel.php',
         'yii\\debug\\panels\\DbPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/DbPanel.php',
+        'yii\\debug\\panels\\DumpPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/DumpPanel.php',
         'yii\\debug\\panels\\EventPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/EventPanel.php',
         'yii\\debug\\panels\\LogPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/LogPanel.php',
         'yii\\debug\\panels\\MailPanel' => __DIR__ . '/..' . '/yiisoft/yii2-debug/src/panels/MailPanel.php',
