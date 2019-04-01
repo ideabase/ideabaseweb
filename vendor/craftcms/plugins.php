@@ -46,25 +46,6 @@ return array (
       'sitemapService' => 'dolphiq\\sitemap\\services\\SitemapService',
     ),
   ),
-  'craftcms/redactor-clips' => 
-  array (
-    'class' => 'craft\\redactorclips\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/redactor-clips/src',
-    'handle' => 'redactor-clips',
-    'aliases' => 
-    array (
-      '@craft/redactorclips' => $vendorDir . '/craftcms/redactor-clips/src',
-    ),
-    'name' => 'Redactor Clips',
-    'version' => '2.0.0',
-    'description' => 'This plugin Adds Redactor’s “Clips” plugin to Rich Text fields in Craft, which lets you insert predefined code snippets.',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/redactor-clips',
-    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/redactor-clips/v2/CHANGELOG.md',
-    'downloadUrl' => 'https://github.com/craftcms/redactor-clips/archive/v2.zip',
-  ),
   'mikestecker/craft-videoembedder' => 
   array (
     'class' => 'mikestecker\\videoembedder\\VideoEmbedder',

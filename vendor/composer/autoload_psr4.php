@@ -29,7 +29,6 @@ return array(
     'dolphiq\\sitemap\\' => array($vendorDir . '/dolphiq/sitemap/src'),
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'craftcms\\oauth2\\client\\' => array($vendorDir . '/craftcms/oauth2-craftid/src'),
-    'craft\\redactorclips\\' => array($vendorDir . '/craftcms/redactor-clips/src'),
     'craft\\redactor\\' => array($vendorDir . '/craftcms/redactor/src'),
     'craft\\contactform\\' => array($vendorDir . '/craftcms/contact-form/src'),
     'craft\\composer\\' => array($vendorDir . '/craftcms/plugin-installer/src'),

@@ -12,7 +12,6 @@ _reset.scssc
 node_modules
 /httpdocs/wiki/LocalSettings.php
 db-default.php
-/httpdocs/package-lock.json
 /httpdocs/sitemap.xml
 
 /.env

@@ -540,10 +540,6 @@ class Url
         foreach ((array) $query as $key => $value) {
             $this->info['query'][hex2bin($key)] = $value;
         }
-
-        array_walk_recursive($this->info['query'], function (&$value) {
-            $value = urldecode($value);
-        });
     }
 
     /**
@@ -624,9 +620,9 @@ class Url
     private static function getSuffixes()
     {
         if (self::$public_suffix_list === null) {
-            self::$public_suffix_list = include __DIR__.'/../resources/public_suffix_list.php';
+            self::$public_suffix_list = (@include __DIR__.'/../resources/public_suffix_list.php') ?: [];
         }
-
+      
         return self::$public_suffix_list;
     }
 
