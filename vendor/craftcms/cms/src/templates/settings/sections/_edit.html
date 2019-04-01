@@ -26,8 +26,10 @@
         label: "Handle"|t('app'),
         instructions: "How you’ll refer to this section in the templates."|t('app'),
         id: 'handle',
-        class: 'code',
         name: 'handle',
+        class: 'code',
+        autocorrect: false,
+        autocapitalize: false,
         value: section.handle,
         errors: section.getErrors('handle'),
         required: true
@@ -122,7 +124,7 @@
                 class: 'type-channel type-structure'~(section.type == 'single' ? ' hidden')
             },
             template: {
-                type: 'singleline',
+                type: 'template',
                 heading: "Template"|t('app'),
                 info: "Which template should be loaded when an entry’s URL is requested."|t('app'),
                 code: true

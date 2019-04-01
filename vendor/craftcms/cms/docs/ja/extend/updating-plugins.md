@@ -34,7 +34,7 @@ Craft 3 プラグインは、`releases.json` ファイルではなく、`CHANGEL
 # go to the plugin directory
 cd /path/to/my-plugin
 
-# create a CHANGELOG.md from its releases.json 
+# create a CHANGELOG.md from its releases.json
 curl https://api.craftcms.com/v1/utils/releases-2-changelog --data-binary @releases.json > CHANGELOG.md
 ```
 
@@ -881,12 +881,12 @@ class MyTask extends BaseTask
     {
         return 'Default description';
     }
-    
+
     public function getTotalSteps()
     {
         return 5;
     }
-    
+
     public function runStep($step)
     {
         // do something...
@@ -904,11 +904,11 @@ class MyJob extends BaseJob
         $totalSteps = 5;
         for ($step = 0; $step < $steps; $step++)
         {
-            $this->setProgress($queue, $step / $totalSteps); 
+            $this->setProgress($queue, $step / $totalSteps);
             // do something...
-        } 
+        }
     }
-    
+
     protected function defaultDescription()
     {
         return 'Default description';
@@ -921,7 +921,7 @@ class MyJob extends BaseJob
 ```php
 // Old:
 craft()->tasks->createTask('MyTask', 'Custom description', array(
-    'mySetting' => 'value', 
+    'mySetting' => 'value',
 ));
 
 // New:
@@ -954,30 +954,32 @@ class Install extends Migration
         if ($this->_upgradeFromCraft2()) {
             return;
         }
-        
+
         // Fresh install code goes here...
     }
 
-    private function _upgradeFromCraft2()
+    private function _upgradeFromCraft2(): bool
     {
         // Fetch the old plugin row, if it was installed
         $row = (new \craft\db\Query())
-            ->select(['id', 'settings'])
+            ->select(['id', 'handle', 'settings'])
             ->from(['{{%plugins}}'])
-            ->where(['in', 'handle', ['old-handle', 'oldhandle']])
+            ->where(['in', 'handle', ['<old-handle>', '<oldhandle>']])
             ->one();
-        
+
         if (!$row) {
             return false;
         }
 
         // Update this one's settings to old values
-        $this->update('{{%plugins}}', [
-            'settings' => $row['settings']
-        ], ['handle' => 'new-handle']);
+        $projectConfig = \Craft::$app->projectConfig;
+        $oldKey = "plugins.{$row['handle']}";
+        $newKey = 'plugins.<new-handle>';
+        $projectConfig->set($newKey, $projectConfig->get($oldKey));
 
-        // Delete the old row
+        // Delete the old plugin row and project config data
         $this->delete('{{%plugins}}', ['id' => $row['id']]);
+        $projectConfig->remove($oldKey);
 
         // Any additional upgrade code goes here...
 
@@ -991,7 +993,7 @@ class Install extends Migration
 }
 ```
 
-プラグインの以前のハンドル（`kebab-case` と `onewordalllowercase`）を `old-handle` と `oldhandle` に置き換えてください。そして、`_upgradeFromCraft2()` メソッドの最後（`return` 文の前）に、追加のアップグレードコードを配置してください。（プラグインの新規インストール向けの）通常のインストールマイグレーションコードは、`safeUp()` の最後に入れる必要があります。
+プラグインの以前のハンドル（`kebab-case` と `onewordalllowercase`）を `<old-handle>` と `<oldhandle>` に置き換えてください。そして、`_upgradeFromCraft2()` メソッドの最後（`return` 文の前）に、追加のアップグレードコードを配置してください。（プラグインの新規インストール向けの）通常のインストールマイグレーションコードは、`safeUp()` の最後に入れる必要があります。
 
 ### コンポーネントクラス名
 

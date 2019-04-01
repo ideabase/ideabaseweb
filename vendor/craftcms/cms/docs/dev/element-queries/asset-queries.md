@@ -130,8 +130,8 @@ Possible values include:
 
 ```php
 // Fetch assets created last month
-$start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-$end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+$start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+$end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
 
 $assets = \craft\elements\Asset::find()
     ->dateCreated(['and', ">= {$start}", "< {$end}"])
@@ -166,7 +166,7 @@ Possible values include:
 
 ```php
 // Fetch assets modified in the last month
-$start = new \DateTime('30 days ago')->format(\DateTime::ATOM);
+$start = (new \DateTime('30 days ago'))->format(\DateTime::ATOM);
 
 $assets = \craft\elements\Asset::find()
     ->dateModified(">= {$start}")
@@ -203,7 +203,7 @@ Possible values include:
 
 ```php
 // Fetch assets updated in the last week
-$lastWeek = new \DateTime('1 week ago')->format(\DateTime::ATOM);
+$lastWeek = (new \DateTime('1 week ago'))->format(\DateTime::ATOM);
 
 $assets = \craft\elements\Asset::find()
     ->dateUpdated(">= {$lastWeek}")
@@ -546,14 +546,14 @@ Determines the order that the assets should be returned in.
 ```twig
 {# Fetch all assets in order of date created #}
 {% set assets = craft.assets()
-    .orderBy('elements.dateCreated asc')
+    .orderBy('dateCreated asc')
     .all() %}
 ```
 
 ```php
 // Fetch all assets in order of date created
 $assets = \craft\elements\Asset::find()
-    ->orderBy('elements.dateCreated asc')
+    ->orderBy('dateCreated asc')
     ->all();
 ```
 :::
@@ -599,7 +599,7 @@ See [Searching](https://docs.craftcms.com/v3/searching.html) for a full explanat
 ::: code
 ```twig
 {# Get the search query from the 'q' query string param #}
-{% set searchQuery = craft.request.getQueryParam('q') %}
+{% set searchQuery = craft.app.request.getQueryParam('q') %}
 
 {# Fetch all assets that match the search query #}
 {% set assets = craft.assets()
@@ -743,6 +743,31 @@ Possible values include:
 // Fetch assets with a title that contains "Foo"
 $assets = \craft\elements\Asset::find()
     ->title('*Foo*')
+    ->all();
+```
+:::
+
+
+### `trashed`
+
+Narrows the query results to only assets that have been soft-deleted.
+
+
+
+
+
+::: code
+```twig
+{# Fetch trashed assets #}
+{% set assets = {twig-function}
+    .trashed()
+    .all() %}
+```
+
+```php
+// Fetch trashed assets
+$assets = \craft\elements\Asset::find()
+    ->trashed()
     ->all();
 ```
 :::

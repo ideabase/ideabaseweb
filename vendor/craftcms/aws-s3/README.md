@@ -1,67 +1,46 @@
-Amazon S3 for Craft CMS
-=======================
+<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Amazon S3 for Craft CMS icon"></p>
+
+<h1 align="center">Amazon S3 for Craft CMS</h1>
 
 This plugin provides an [Amazon S3](https://aws.amazon.com/s3/) integration for [Craft CMS](https://craftcms.com/).
 
-
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-RC4 or later.
-
+This plugin requires Craft CMS 3.1.5 or later.
 
 ## Installation
 
-To install the plugin, follow these instructions.
+You can install this plugin from the Plugin Store or with Composer.
 
-1. Open your terminal and go to your Craft project:
+#### From the Plugin Store
 
-        cd /path/to/project
+Go to the Plugin Store in your project’s Control Panel and search for “Amazon S3”. Then click on the “Install” button in its modal window.
 
-2. Then tell Composer to load the plugin:
+#### With Composer
 
-        composer require craftcms/aws-s3
+Open your terminal and run the following commands:
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Amazon S3.
+```bash
+# go to the project directory
+cd /path/to/my-project.test
+
+# tell Composer to load the plugin
+composer require craftcms/aws-s3
+
+# tell Craft to install the plugin
+./craft install/plugin aws-s3
+```
 
 ## Setup
 
 To create a new asset volume for your Amazon S3 bucket, go to Settings → Assets, create a new volume, and set the Volume Type setting to “Amazon S3”.
 
-### Per-Environment Configuration
+> **Tip:** The Base URL, Access Key ID, Secret Access Key, Bucket, Region, Subfolder, CloudFront Distribution ID, and CloudFront Path Prefix settings can be set to environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.
 
-Once you’ve created your S3 volume in the Control Panel, you can override its settings with different values for each environment.
+### Using the automatic focal point detection
 
-First, add the following environment variables to your `.env` and `.env.example` files:
+This plugin can use the AWS Rekognition service to detect faces in an image and automatically set the focal point accordingly. This requires the image to be either a jpg or a png file. To enable this feature, just turn it on the volume settings.
 
-```
-# The AWS API key with read/write access to S3
-S3_API_KEY=""
+:warning: ️Using this will incur extra cost for each upload
 
-# The AWS API key secret
-S3_SECRET=""
-
-# The name of the S3 bucket
-S3_BUCKET=""
-
-# The region the S3 bucket is in
-S3_REGION=""
-``` 
-
-Then fill in the values in your `.env` file (leaving the values in `.env.example` blank).
-
-Finally, create a `config/volumes.php` file containing references to these variables:
-
-```php
-<?php
-
-return [
-    'myS3VolumeHandle' => [
-        'hasUrls' => true,
-        'url' => 'https://s3-eu-west-1.amazonaws.com/'.getenv('S3_BUCKET').'/',
-        'keyId' => getenv('S3_API_KEY'),
-        'secret' => getenv('S3_SECRET'),
-        'bucket' => getenv('S3_BUCKET'),
-        'region' => getenv('S3_REGION'),
-    ],
-];
-```
+:warning: ️Using this requires the <code>rekognition:DetectFaces</code> action to be allowed.

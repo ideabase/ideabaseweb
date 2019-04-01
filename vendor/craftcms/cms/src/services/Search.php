@@ -13,6 +13,7 @@ use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\config\DbConfig;
 use craft\db\Query;
+use craft\db\Table;
 use craft\events\SearchEvent;
 use craft\helpers\Db;
 use craft\helpers\Search as SearchHelper;
@@ -197,7 +198,7 @@ class Search extends Component
         }
 
         // Begin creating SQL
-        $sql = sprintf('SELECT * FROM %s WHERE %s', Craft::$app->getDb()->quoteTableName('{{%searchindex}}'), $where);
+        $sql = sprintf('SELECT * FROM %s WHERE %s', Craft::$app->getDb()->quoteTableName(Table::SEARCHINDEX), $where);
 
         // Append elementIds to QSL
         if (!empty($elementIds)) {
@@ -246,7 +247,7 @@ class Search extends Component
 
         $elementIds = array_unique($elementIds);
 
-        // Fire a 'beforeSearch' event
+        // Fire an 'afterSearch' event
         if ($this->hasEventHandlers(self::EVENT_AFTER_SEARCH)) {
             $this->trigger(self::EVENT_AFTER_SEARCH, new SearchEvent([
                 'elementIds' => $elementIds,
@@ -317,7 +318,7 @@ class Search extends Component
         // Insert/update the row in searchindex
         Craft::$app->getDb()->createCommand()
             ->upsert(
-                '{{%searchindex}}',
+                Table::SEARCHINDEX,
                 $keyColumns,
                 $keywordColumns,
                 [],
@@ -563,7 +564,17 @@ class Search extends Component
 
                         // Add quotes for exact match
                         if ($isMysql && StringHelper::contains($keywords, ' ')) {
-                            $keywords = '"' . $keywords . '"';
+                            if (StringHelper::first($keywords, 1) === '*') {
+                                $keywords = StringHelper::insert($keywords, '"', 1);
+                            } else {
+                                $keywords = '"' . $keywords;
+                            }
+
+                            if (StringHelper::last($keywords, 1) === '*') {
+                                $keywords = StringHelper::insert($keywords, '"', StringHelper::length($keywords) - 1);
+                            } else {
+                                $keywords .= '"';
+                            }
                         }
 
                         // Determine prefix for the full-text keyword
@@ -710,7 +721,7 @@ class Search extends Component
     {
         $query = (new Query())
             ->select(['elementId'])
-            ->from(['{{%searchindex}}'])
+            ->from([Table::SEARCHINDEX])
             ->where($where);
 
         if ($siteId !== null) {

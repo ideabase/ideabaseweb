@@ -17,6 +17,7 @@ use craft\contactform\models\Submission;
 use craft\helpers\StringHelper;
 use rias\contactformextensions\ContactFormExtensions;
 use rias\contactformextensions\elements\ContactFormSubmission;
+use rias\contactformextensions\models\RecaptchaV3;
 use yii\base\Exception;
 
 /**
@@ -47,10 +48,9 @@ class ContactFormExtensionsService extends Component
      *
      * @param Submission $submission
      *
+     * @throws Exception
      * @throws \Throwable
      * @throws \craft\errors\ElementNotFoundException
-     * @throws \yii\base\Exception
-     * @throws \yii\base\ExitException
      *
      * @return mixed
      */
@@ -63,7 +63,7 @@ class ContactFormExtensionsService extends Component
         $contactFormSubmission->subject = $submission->subject;
 
         if (!is_array($submission->message)) {
-            $submission->message = ['message' => $submission->message];
+            $submission->message = ['message' => $this->utf8Value($submission->message)];
         }
 
         $message = $this->utf8AllTheThings($submission->message);
@@ -78,8 +78,21 @@ class ContactFormExtensionsService extends Component
 
     public function getRecaptcha()
     {
-        $siteKey = ContactFormExtensions::$plugin->settings->recaptchaSiteKey;
-        $secretKey = ContactFormExtensions::$plugin->settings->recaptchaSecretKey;
+        $siteKey = Craft::parseEnv(ContactFormExtensions::$plugin->settings->recaptchaSiteKey);
+        $secretKey = Craft::parseEnv(ContactFormExtensions::$plugin->settings->recaptchaSecretKey);
+
+        if (ContactFormExtensions::$plugin->settings->recaptchaVersion === '3') {
+            $recaptcha = new RecaptchaV3(
+                $siteKey,
+                $secretKey,
+                ContactFormExtensions::$plugin->settings->recaptchaThreshold,
+                ContactFormExtensions::$plugin->settings->recaptchaTimeout,
+                ContactFormExtensions::$plugin->settings->recaptchaHideBadge
+            );
+
+            return $recaptcha;
+        }
+
         $options = [
             'hideBadge' => ContactFormExtensions::$plugin->settings->recaptchaHideBadge,
             'dataBadge' => ContactFormExtensions::$plugin->settings->recaptchaDataBadge,

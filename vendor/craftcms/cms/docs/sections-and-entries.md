@@ -2,7 +2,7 @@
 
 ## Entries
 
-Entries hold the content that you want to display on your web pages. Each entry has an Author, a Post Date, an Expiration Date (if desired), a status (enabled or disabled), and of course, content. 
+Entries hold the content that you want to display on your web pages. Each entry has an Author, a Post Date, an Expiration Date (if desired), a status (enabled or disabled), and of course, content.
 
 You can also create drafts of entries that live alongside the current live version of the entry.
 
@@ -60,11 +60,11 @@ Channel and Structure sections can choose whether their entries should be assign
 
 Entry URI Formats are mini Twig templates, which will be rendered each time an entry in the section is saved. The rendering result will be saved as the entry’s URI in the system.
 
-The entry being saved will be available to the template as a variabled named `object`, and each of the entry’s properties and custom field values will also be available as their own variables. So something like this is possible:
+The entry being saved will be available to the template as a variable named `object`, and each of the entry’s properties and custom field values will also be available as their own variables. So something like this is possible:
 
 ```twig
 {{ author.username }}/{{ slug }}
-``` 
+```
 
 A shortcut syntax is also available for output tags that reference a property on the entry:
 
@@ -84,7 +84,7 @@ Structure sections might also want to include a segment before the nested path:
 
 ```twig
 {parent.uri ?? 'docs'}/{slug}
-``` 
+```
 
 The above template could also be expressed with this syntax:
 
@@ -120,7 +120,7 @@ The entry is passed to this template as a variable named `object`. You can refer
 * `{{ object.property }}` _(normal Twig syntax)_
 * `{property}` _(shortcut syntax)_
 
-_Note that the shortcut syntax only has one set of curly braces_. 
+_Note that the shortcut syntax only has one set of curly braces_.
 
 If Craft finds any of these in your Title Format, it will replace the `{` with `{{object.` and the `}` with `}}`, before passing the template off to Twig for parsing.
 

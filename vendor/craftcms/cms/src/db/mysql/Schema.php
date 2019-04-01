@@ -8,6 +8,7 @@
 namespace craft\db\mysql;
 
 use Craft;
+use craft\db\Table;
 use craft\db\TableSchema;
 use craft\helpers\FileHelper;
 use yii\db\Exception;
@@ -197,8 +198,10 @@ class Schema extends \yii\db\mysql\Schema
      *
      * ```php
      * [
-     *     'IndexName1' => ['col1' [, ...]],
-     *     'IndexName2' => ['col2' [, ...]],
+     *     'IndexName' => [
+     *         'columns' => ['col1' [, ...]],
+     *         'unique' => false
+     *     ],
      * ]
      * ```
      *
@@ -213,12 +216,15 @@ class Schema extends \yii\db\mysql\Schema
         $sql = $this->getCreateTableSql($table);
         $indexes = [];
 
-        $regexp = '/KEY\s+([^\(\s]+)\s*\(([^\(\)]+)\)/mi';
+        $regexp = '/(UNIQUE\s+)?KEY\s+([^\(\s]+)\s*\(([^\(\)]+)\)/mi';
         if (preg_match_all($regexp, $sql, $matches, PREG_SET_ORDER)) {
             foreach ($matches as $match) {
-                $indexName = str_replace('`', '', $match[1]);
-                $indexColumns = array_map('trim', explode(',', str_replace('`', '', $match[2])));
-                $indexes[$indexName] = $indexColumns;
+                $indexName = str_replace('`', '', $match[2]);
+                $indexColumns = array_map('trim', explode(',', str_replace('`', '', $match[3])));
+                $indexes[$indexName] = [
+                    'columns' => $indexColumns,
+                    'unique' => !empty($match[1]),
+                ];
             }
         }
 

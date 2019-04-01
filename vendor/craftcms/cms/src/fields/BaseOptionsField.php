@@ -156,7 +156,11 @@ abstract class BaseOptionsField extends Field implements PreviewableFieldInterfa
             return $value;
         }
 
-        if (is_string($value)) {
+        if (is_string($value) && (
+                $value === '' ||
+                strpos($value, '[') === 0 ||
+                strpos($value, '{') === 0
+            )) {
             $value = Json::decodeIfJson($value);
         } else if ($value === null && $this->isFresh($element)) {
             $value = $this->defaultValue();
@@ -175,7 +179,7 @@ abstract class BaseOptionsField extends Field implements PreviewableFieldInterfa
             $value = new MultiOptionsFieldData($options);
         } else {
             // Convert the value to a SingleOptionFieldData object
-            $value = reset($selectedValues) ?: null;
+            $value = !empty($selectedValues) ? reset($selectedValues) : null;
             $label = $this->optionLabel($value);
             $value = new SingleOptionFieldData($label, $value, true);
         }

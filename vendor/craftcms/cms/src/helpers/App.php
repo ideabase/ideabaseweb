@@ -20,16 +20,18 @@ use craft\mail\Mailer;
 use craft\mail\Message;
 use craft\mail\transportadapters\Sendmail;
 use craft\models\MailSettings;
-use craft\mutex\FileMutex;
+use craft\services\ProjectConfig as ProjectConfigService;
 use craft\web\AssetManager;
 use craft\web\Request as WebRequest;
 use craft\web\Session;
 use craft\web\User as WebUser;
 use craft\web\View;
+use yii\base\InvalidArgumentException;
 use yii\caching\FileCache;
 use yii\helpers\Inflector;
 use yii\log\Dispatcher;
 use yii\log\Logger;
+use yii\mutex\FileMutex;
 
 /**
  * App helper.
@@ -61,6 +63,24 @@ class App
     }
 
     /**
+     * Returns the handle of the given Craft edition.
+     *
+     * @param int $edition An edition’s ID.
+     * @return string The edition’s name.
+     */
+    public static function editionHandle(int $edition): string
+    {
+        switch ($edition) {
+            case Craft::Solo:
+                return 'solo';
+            case Craft::Pro:
+                return 'pro';
+            default:
+                throw new InvalidArgumentException('Invalid Craft edition ID: ' . $edition);
+        }
+    }
+
+    /**
      * Returns the name of the given Craft edition.
      *
      * @param int $edition An edition’s ID.
@@ -68,7 +88,33 @@ class App
      */
     public static function editionName(int $edition): string
     {
-        return ($edition == Craft::Pro) ? 'Pro' : 'Solo';
+        switch ($edition) {
+            case Craft::Solo:
+                return 'Solo';
+            case Craft::Pro:
+                return 'Pro';
+            default:
+                throw new InvalidArgumentException('Invalid Craft edition ID: ' . $edition);
+        }
+    }
+
+    /**
+     * Returns the ID of a Craft edition by its handle.
+     *
+     * @param string $handle An edition’s handle
+     * @return int The edition’s ID
+     * @throws InvalidArgumentException if $handle is invalid
+     */
+    public static function editionIdByHandle(string $handle): int
+    {
+        switch ($handle) {
+            case 'solo':
+                return Craft::Solo;
+            case 'pro':
+                return Craft::Pro;
+            default:
+                throw new InvalidArgumentException('Invalid Craft edition handle: ' . $handle);
+        }
     }
 
     /**
@@ -177,7 +223,8 @@ class App
         }
 
         $testValue = sprintf('%sM', ceil($testBytes / (1024 * 1024)));
-        set_error_handler(function(){});
+        set_error_handler(function() {
+        });
         $result = ini_set('memory_limit', $testValue);
         $newValue = ini_get('memory_limit');
         ini_set('memory_limit', $oldValue);
@@ -373,6 +420,17 @@ class App
     }
 
     /**
+     * Returns the system email settings.
+     *
+     * @return MailSettings
+     */
+    public static function mailSettings(): MailSettings
+    {
+        $settings = Craft::$app->getProjectConfig()->get('email') ?? [];
+        return new MailSettings($settings);
+    }
+
+    /**
      * Returns the `mailer` component config.
      *
      * @param MailSettings|null $settings The system mail settings
@@ -381,7 +439,7 @@ class App
     public static function mailerConfig(MailSettings $settings = null): array
     {
         if ($settings === null) {
-            $settings = Craft::$app->getSystemSettings()->getEmailSettings();
+            $settings = static::mailSettings();
         }
 
         try {
@@ -394,8 +452,10 @@ class App
         return [
             'class' => Mailer::class,
             'messageClass' => Message::class,
-            'from' => [$settings->fromEmail => $settings->fromName],
-            'template' => $settings->template,
+            'from' => [
+                Craft::parseEnv($settings->fromEmail) => Craft::parseEnv($settings->fromName)
+            ],
+            'template' => Craft::parseEnv($settings->template),
             'transport' => $adapter->defineTransport(),
         ];
     }
@@ -435,6 +495,7 @@ class App
             'class' => FileTarget::class,
             'fileMode' => $generalConfig->defaultFileMode,
             'dirMode' => $generalConfig->defaultDirMode,
+            'includeUserIp' => $generalConfig->storeUserIps,
         ];
 
         if ($isConsoleRequest) {
@@ -453,6 +514,17 @@ class App
             'targets' => [
                 $target,
             ]
+        ];
+    }
+
+    /**
+     * Returns the `projectConfig` component config.
+     */
+    public static function projectConfigConfig(): array
+    {
+        return [
+            'class' => ProjectConfigService::class,
+            'readOnly' => !Craft::$app->getConfig()->getGeneral()->allowAdminChanges,
         ];
     }
 
@@ -503,6 +575,7 @@ class App
             'identityCookie' => Craft::cookieConfig(['name' => $stateKeyPrefix . '_identity']),
             'usernameCookie' => Craft::cookieConfig(['name' => $stateKeyPrefix . '_username']),
             'idParam' => $stateKeyPrefix . '__id',
+            'tokenParam' => $stateKeyPrefix . '__token',
             'authTimeoutParam' => $stateKeyPrefix . '__expire',
             'absoluteAuthTimeoutParam' => $stateKeyPrefix . '__absoluteExpire',
             'returnUrlParam' => $stateKeyPrefix . '__returnUrl',

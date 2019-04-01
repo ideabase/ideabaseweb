@@ -205,13 +205,14 @@ class Connection extends \yii\db\Connection
     public function getIgnoredBackupTables(): array
     {
         $tables = [
-            '{{%assetindexdata}}',
-            '{{%assettransformindex}}',
+            Table::ASSETINDEXDATA,
+            Table::ASSETTRANSFORMINDEX,
+            Table::SESSIONS,
+            Table::TEMPLATECACHES,
+            Table::TEMPLATECACHEQUERIES,
+            Table::TEMPLATECACHEELEMENTS,
             '{{%cache}}',
-            '{{%sessions}}',
-            '{{%templatecaches}}',
             '{{%templatecachecriteria}}',
-            '{{%templatecacheelements}}',
         ];
 
         $schema = $this->getSchema();
@@ -556,7 +557,7 @@ class Connection extends \yii\db\Connection
         }
 
         // PostgreSQL specific cleanup.
-        if (Craft::$app->getDb()->getDriverName() === DbConfig::DRIVER_PGSQL) {
+        if ($this->getIsPgsql()) {
             if (Platform::isWindows()) {
                 $envCommand = 'set PGPASSWORD=';
             } else {
@@ -591,10 +592,10 @@ class Connection extends \yii\db\Connection
         try {
             return (new Query())
                 ->select(['siteName'])
-                ->from(['{{%info}}'])
+                ->from([Table::INFO])
                 ->column()[0];
         } catch (\Throwable $e) {
-            return Craft::$app->getInfo()->name ?: Craft::$app->getSites()->getPrimarySite()->name;
+            return Craft::$app->getSystemName();
         }
     }
 }

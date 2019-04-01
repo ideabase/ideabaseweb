@@ -75,6 +75,7 @@ can connect via SSL, you'd set these:
 ```
 
 
+
 ### `charset`
 
 Allowed types
@@ -92,6 +93,7 @@ Defined by
 
 
 The charset to use when creating tables.
+
 
 
 ### `database`
@@ -113,6 +115,7 @@ Defined by
 The name of the database to select.
 
 
+
 ### `driver`
 
 Allowed types
@@ -130,6 +133,7 @@ Defined by
 
 
 The database driver to use. Either 'mysql' for MySQL or 'pgsql' for PostgreSQL.
+
 
 
 ### `dsn`
@@ -152,8 +156,9 @@ If you want to manually specify your PDO DSN connection string you can do so her
 
 - MySQL: http://php.net/manual/en/ref.pdo-mysql.connection.php
 - PostgreSQL: http://php.net/manual/en/ref.pdo-pgsql.connection.php
-If you set this, then the [$server](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-server), [$port](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-port), [$user](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-user), [$password](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-password), [$database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-database),
-[$driver](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-driver) and [$unixSocket](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-unixsocket) config settings will be ignored.
+If you set this, then the [server](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#server), [port](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#port), [user](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#user), [password](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#password), [database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#database),
+[driver](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#driver) and [unixSocket](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#unixsocket) config settings will be ignored.
+
 
 
 ### `password`
@@ -175,6 +180,7 @@ Defined by
 The database password to connect with.
 
 
+
 ### `port`
 
 Allowed types
@@ -192,6 +198,7 @@ Defined by
 
 
 The database server port. Defaults to 3306 for MySQL and 5432 for PostgreSQL.
+
 
 
 ### `schema`
@@ -213,6 +220,7 @@ Defined by
 The database schema to use (PostgreSQL only).
 
 
+
 ### `server`
 
 Allowed types
@@ -230,6 +238,7 @@ Defined by
 
 
 The database server name or IP address. Usually 'localhost' or '127.0.0.1'.
+
 
 
 ### `tablePrefix`
@@ -254,6 +263,7 @@ prefix here to avoid table naming conflicts per install. This can be no more tha
 characters, and must be all lowercase.
 
 
+
 ### `unixSocket`
 
 Allowed types
@@ -275,6 +285,7 @@ connect to the Unix socket, instead of the server and port. If this is
 specified, then 'server' and 'port' settings are ignored.
 
 
+
 ### `url`
 
 Allowed types
@@ -293,8 +304,9 @@ Defined by
 
 The database connection URL, if one was provided by your hosting environment.
 
-If this is set, the values for [$driver](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-driver), [$user](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-user), [$database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-database), [$server](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-server), [$port](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-port), and [$database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#property-database)
+If this is set, the values for [driver](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#driver), [user](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#user), [database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#database), [server](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#server), [port](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#port), and [database](https://docs.craftcms.com/api/v3/craft-config-dbconfig.html#database)
 will be extracted from it.
+
 
 
 ### `user`
@@ -314,6 +326,7 @@ Defined by
 
 
 The database username to connect with.
+
 
 
 

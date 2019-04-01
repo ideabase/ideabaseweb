@@ -177,8 +177,8 @@ Possible values include:
 
 ```php
 // Fetch elements created last month
-$start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-$end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+$start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+$end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
 
 $elements = ElementClass::find()
     ->dateCreated(['and', ">= {$start}", "< {$end}"])
@@ -215,7 +215,7 @@ Possible values include:
 
 ```php
 // Fetch elements updated in the last week
-$lastWeek = new \DateTime('1 week ago')->format(\DateTime::ATOM);
+$lastWeek = (new \DateTime('1 week ago'))->format(\DateTime::ATOM);
 
 $elements = ElementClass::find()
     ->dateUpdated(">= {$lastWeek}")
@@ -468,7 +468,7 @@ Possible values include:
 
 ```php
 // Fetch elements that logged in recently
-$aWeekAgo = new \DateTime('7 days ago')->format(\DateTime::ATOM);
+$aWeekAgo = (new \DateTime('7 days ago'))->format(\DateTime::ATOM);
 
 $elements = ElementClass::find()
     ->lastLoginDate(">= {$aWeekAgo}")
@@ -563,14 +563,14 @@ Determines the order that the elements should be returned in.
 ```twig
 {# Fetch all elements in order of date created #}
 {% set elements = craft.queryFunction()
-    .orderBy('elements.dateCreated asc')
+    .orderBy('dateCreated asc')
     .all() %}
 ```
 
 ```php
 // Fetch all elements in order of date created
 $elements = ElementClass::find()
-    ->orderBy('elements.dateCreated asc')
+    ->orderBy('dateCreated asc')
     ->all();
 ```
 :::
@@ -616,7 +616,7 @@ See [Searching](https://docs.craftcms.com/v3/searching.html) for a full explanat
 ::: code
 ```twig
 {# Get the search query from the 'q' query string param #}
-{% set searchQuery = craft.request.getQueryParam('q') %}
+{% set searchQuery = craft.app.request.getQueryParam('q') %}
 
 {# Fetch all elements that match the search query #}
 {% set elements = craft.queryFunction()
@@ -645,10 +645,10 @@ Possible values include:
 | Value | Fetches elements…
 | - | -
 | `'active'` _(default)_ | with active accounts.
-| `'locked'` | with locked accounts.
 | `'suspended'` | with suspended accounts.
 | `'pending'` | with accounts that are still pending activation.
-| `['active', 'locked']` | with active or locked accounts.
+| `'locked'` | with locked accounts (regardless of whether they’re active or suspended).
+| `['active', 'suspended']` | with active or suspended accounts.
 
 
 
@@ -664,6 +664,31 @@ Possible values include:
 // Fetch active and locked elements
 $elements = ElementClass::find()
     ->status(['active', 'locked'])
+    ->all();
+```
+:::
+
+
+### `trashed`
+
+Narrows the query results to only elements that have been soft-deleted.
+
+
+
+
+
+::: code
+```twig
+{# Fetch trashed elements #}
+{% set elements = {twig-function}
+    .trashed()
+    .all() %}
+```
+
+```php
+// Fetch trashed elements
+$elements = ElementClass::find()
+    ->trashed()
     ->all();
 ```
 :::

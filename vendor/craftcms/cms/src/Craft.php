@@ -8,8 +8,10 @@
 use craft\behaviors\ContentBehavior;
 use craft\behaviors\ElementQueryBehavior;
 use craft\db\Query;
+use craft\db\Table;
 use craft\helpers\FileHelper;
 use GuzzleHttp\Client;
+use GuzzleHttp\Cookie\FileCookieJar;
 use yii\base\ExitException;
 use yii\db\Expression;
 use yii\helpers\VarDumper;
@@ -55,6 +57,46 @@ class Craft extends Yii
 
     // Public Methods
     // =========================================================================
+
+    /**
+     * Checks if a string references an environment variable (`$VARIABLE_NAME`)
+     * and/or an alias (`@aliasName`), and returns the referenced value.
+     *
+     * If the string references an environment variable with a value of `true`
+     * or `false`, a boolean value will be returned.
+     *
+     * ---
+     *
+     * ```php
+     * $value1 = Craft::parseEnv('$SMTP_PASSWORD');
+     * $value2 = Craft::parseEnv('@webroot');
+     * ```
+     *
+     * @param string|null $str
+     * @return string|bool|null The parsed value, or the original value if it didn’t
+     * reference an environment variable and/or alias.
+     */
+    public static function parseEnv(string $str = null)
+    {
+        if ($str === null) {
+            return null;
+        }
+
+        if (preg_match('/^\$(\w+)$/', $str, $matches)) {
+            $value = getenv($matches[1]);
+            if ($value !== false) {
+                switch (strtolower($value)) {
+                    case 'true':
+                        return true;
+                    case 'false':
+                        return false;
+                }
+                $str = $value;
+            }
+        }
+
+        return static::getAlias($str, false) ?: $str;
+    }
 
     /**
      * Displays a variable.
@@ -123,7 +165,7 @@ class Craft extends Yii
     public static function autoload($className)
     {
         // FileCookieJar is not supported
-        if ($className === 'GuzzleHttp\Cookie\FileCookieJar') {
+        if ($className === FileCookieJar::class) {
             require dirname(__DIR__) . '/lib/guzzle/FileCookieJar.php';
             return;
         }
@@ -155,7 +197,7 @@ class Craft extends Yii
 
             $fieldHandles = (new Query())
                 ->distinct(true)
-                ->from(['{{%fields}}'])
+                ->from([Table::FIELDS])
                 ->select([$column])
                 ->column();
         } else {
@@ -271,12 +313,6 @@ EOD;
         $fileContents = file_get_contents($templatePath);
         $fileContents = str_replace($search, $replace, $fileContents);
         FileHelper::writeToFile($destinationPath, $fileContents);
-
-        // Invalidate opcache
-        if (function_exists('opcache_invalidate')) {
-            @opcache_invalidate($destinationPath, true);
-        }
-
         include $destinationPath;
     }
 }

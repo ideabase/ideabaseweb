@@ -10,8 +10,10 @@ namespace craft\base;
 use Craft;
 use craft\behaviors\ContentBehavior;
 use craft\db\Query;
+use craft\db\Table;
 use craft\elements\db\ElementQuery;
 use craft\elements\db\ElementQueryInterface;
+use craft\events\DefineEagerLoadingMapEvent;
 use craft\events\ElementStructureEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterElementActionsEvent;
@@ -40,6 +42,7 @@ use craft\validators\SlugValidator;
 use craft\validators\StringValidator;
 use craft\web\UploadedFile;
 use DateTime;
+use Twig\Markup;
 use yii\base\Event;
 use yii\base\Exception;
 use yii\base\InvalidConfigException;
@@ -65,7 +68,7 @@ use yii\validators\Validator;
  * @property bool $hasFreshContent Whether the element’s content is "fresh" (unsaved and without validation errors)
  * @property array $htmlAttributes Any attributes that should be included in the element’s DOM representation in the Control Panel
  * @property bool $isEditable Whether the current user can edit the element
- * @property \Twig_Markup|null $link An anchor pre-filled with this element’s URL and title
+ * @property Markup|null $link An anchor pre-filled with this element’s URL and title
  * @property Element|null $next The next element relative to this one, from a given set of criteria
  * @property Element|null $nextSibling The element’s next sibling
  * @property Element|null $parent The element’s parent
@@ -142,6 +145,11 @@ abstract class Element extends Component implements ElementInterface
     const EVENT_REGISTER_DEFAULT_TABLE_ATTRIBUTES = 'registerDefaultTableAttributes';
 
     /**
+     * @event DefineEagerLoadingMapEvent The event that is triggered when defining an eager-loading map.
+     */
+    const EVENT_DEFINE_EAGER_LOADING_MAP = 'defineEagerLoadingMap';
+
+    /**
      * @event SetElementTableAttributeHtmlEvent The event that is triggered when defining the HTML to represent a table attribute.
      */
     const EVENT_SET_TABLE_ATTRIBUTE_HTML = 'setTableAttributeHtml';
@@ -188,6 +196,17 @@ abstract class Element extends Component implements ElementInterface
      * @event \yii\base\Event The event that is triggered after the element is deleted
      */
     const EVENT_AFTER_DELETE = 'afterDelete';
+
+    /**
+     * @event ModelEvent The event that is triggered before the element is restored
+     * You may set [[ModelEvent::isValid]] to `false` to prevent the element from getting restored.
+     */
+    const EVENT_BEFORE_RESTORE = 'beforeRestore';
+
+    /**
+     * @event \yii\base\Event The event that is triggered after the element is restored
+     */
+    const EVENT_AFTER_RESTORE = 'afterRestore';
 
     /**
      * @event ElementStructureEvent The event that is triggered before the element is moved in a structure.
@@ -548,7 +567,7 @@ abstract class Element extends Component implements ElementInterface
 
             $structureData = (new Query())
                 ->select($selectColumns)
-                ->from(['{{%structureelements}}'])
+                ->from([Table::STRUCTUREELEMENTS])
                 ->where(['elementId' => $sourceElementIds])
                 ->all();
 
@@ -589,7 +608,7 @@ abstract class Element extends Component implements ElementInterface
             // Return any child elements
             $map = $query
                 ->select([$sourceSelectSql, 'elementId as target'])
-                ->from(['{{%structureelements}}'])
+                ->from([Table::STRUCTUREELEMENTS])
                 ->where($condition)
                 ->orderBy(['structureId' => SORT_ASC, 'lft' => SORT_ASC])
                 ->all();
@@ -608,6 +627,21 @@ abstract class Element extends Component implements ElementInterface
             if ($field instanceof EagerLoadingFieldInterface) {
                 return $field->getEagerLoadingMap($sourceElements);
             }
+        }
+
+        // Give plugins a chance to provide custom mappings
+        $event = new DefineEagerLoadingMapEvent([
+            'sourceElements' => $sourceElements,
+            'handle' => $handle
+        ]);
+        Event::trigger(static::class, self::EVENT_DEFINE_EAGER_LOADING_MAP, $event);
+
+        if ($event->elementType !== null) {
+            return [
+                'elementType' => $event->elementType,
+                'map' => $event->map,
+                'criteria' => $event->criteria,
+            ];
         }
 
         return false;
@@ -948,11 +982,10 @@ abstract class Element extends Component implements ElementInterface
      */
     public function rules()
     {
-        $rules = [
-            [['id', 'contentId', 'root', 'lft', 'rgt', 'level'], 'number', 'integerOnly' => true, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE]],
-            [['siteId'], SiteIdValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]],
-            [['dateCreated', 'dateUpdated'], DateTimeValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE]],
-        ];
+        $rules = parent::rules();
+        $rules[] = [['id', 'contentId', 'root', 'lft', 'rgt', 'level'], 'number', 'integerOnly' => true, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE]];
+        $rules[] = [['siteId'], SiteIdValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]];
+        $rules[] = [['dateCreated', 'dateUpdated'], DateTimeValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE]];
 
         if (static::hasTitles()) {
             $rules[] = [['title'], 'trim', 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE]];
@@ -961,7 +994,13 @@ abstract class Element extends Component implements ElementInterface
         }
 
         if (static::hasUris()) {
-            $rules[] = [['slug'], SlugValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]];
+            try {
+                $language = $this->getSite()->language;
+            } catch (InvalidConfigException $e) {
+                $language = null;
+            }
+
+            $rules[] = [['slug'], SlugValidator::class, 'language' => $language, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]];
             $rules[] = [['slug'], 'string', 'max' => 255, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]];
             $rules[] = [['uri'], ElementUriValidator::class, 'on' => [self::SCENARIO_DEFAULT, self::SCENARIO_LIVE, self::SCENARIO_ESSENTIALS]];
         }
@@ -1884,6 +1923,41 @@ abstract class Element extends Component implements ElementInterface
         // Trigger an 'afterDelete' event
         if ($this->hasEventHandlers(self::EVENT_AFTER_DELETE)) {
             $this->trigger(self::EVENT_AFTER_DELETE);
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeRestore(): bool
+    {
+        // Tell the fields about it
+        foreach ($this->fieldLayoutFields() as $field) {
+            if (!$field->beforeElementRestore($this)) {
+                return false;
+            }
+        }
+
+        // Trigger a 'beforeRestore' event
+        $event = new ModelEvent();
+        $this->trigger(self::EVENT_BEFORE_RESTORE, $event);
+
+        return $event->isValid;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function afterRestore()
+    {
+        // Tell the fields about it
+        foreach ($this->fieldLayoutFields() as $field) {
+            $field->afterElementRestore($this);
+        }
+
+        // Trigger an 'afterRestore' event
+        if ($this->hasEventHandlers(self::EVENT_AFTER_RESTORE)) {
+            $this->trigger(self::EVENT_AFTER_RESTORE);
         }
     }
 

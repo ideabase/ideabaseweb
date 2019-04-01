@@ -14,8 +14,10 @@ use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
 use craft\db\Query;
+use craft\db\Table as TableName;
 use craft\elements\db\ElementQuery;
 use craft\elements\db\ElementQueryInterface;
+use craft\errors\SiteNotFoundException;
 use craft\helpers\ElementHelper;
 use craft\helpers\Html;
 use craft\helpers\StringHelper;
@@ -88,7 +90,7 @@ abstract class BaseRelationField extends Field implements PreviewableFieldInterf
     public $source;
 
     /**
-     * @var int|null The site that this field should relate elements from
+     * @var string|null The site that this field should relate elements from
      */
     public $targetSiteId;
 
@@ -128,7 +130,7 @@ abstract class BaseRelationField extends Field implements PreviewableFieldInterf
     protected $allowLargeThumbsView = false;
 
     /**
-     * @var string Temlpate to use for settings rendering
+     * @var string Template to use for settings rendering
      */
     protected $settingsTemplate = '_components/fieldtypes/elementfieldsettings';
 
@@ -457,7 +459,7 @@ JS;
         // Return any relation data on these elements, defined with this field
         $map = (new Query())
             ->select(['sourceId as source', 'targetId as target'])
-            ->from(['{{%relations}}'])
+            ->from([TableName::RELATIONS])
             ->where([
                 'and',
                 [
@@ -606,7 +608,7 @@ JS;
         foreach (Craft::$app->getSites()->getAllSites() as $site) {
             $siteOptions[] = [
                 'label' => Craft::t('site', $site->name),
-                'value' => $site->id
+                'value' => $site->uid
             ];
         }
 
@@ -737,7 +739,11 @@ JS;
         /** @var Element|null $element */
         if (Craft::$app->getIsMultiSite()) {
             if ($this->targetSiteId) {
-                return $this->targetSiteId;
+                try {
+                    return Craft::$app->getSites()->getSiteByUid($this->targetSiteId)->id;
+                } catch (SiteNotFoundException $exception) {
+                    Craft::warning($exception->getMessage(), __METHOD__);
+                }
             }
 
             if ($element !== null) {

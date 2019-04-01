@@ -1,11 +1,11 @@
 /*
     Redactor
-    Version 3.1.4
-    Updated: October 25, 2018
+    Version 3.1.7
+    Updated: February 13, 2019
 
     http://imperavi.com/redactor/
 
-    Copyright (c) 2009-2018, Imperavi Ltd.
+    Copyright (c) 2009-2019, Imperavi Ltd.
     License: http://imperavi.com/redactor/license/
 */
 (function() {
@@ -123,7 +123,7 @@ AjaxRequest.prototype = {
     }
 };
 var DomCache = [0];
-var DomExpando = 'data' + +new Date();
+var DomExpando = 'data' + new Date().getTime();
 var DomHClass = 'is-hidden';
 var DomHMClass = 'is-hidden-mobile';
 
@@ -466,7 +466,7 @@ Dom.prototype = {
 
             for (var key in attrs)
             {
-                if (reDataAttr.test(attrs[key].nodeName))
+                if (attrs[key] && reDataAttr.test(attrs[key].nodeName))
                 {
                     var dataName = attrs[key].nodeName.match(reDataAttr)[1];
                     var val = attrs[key].value;
@@ -1336,7 +1336,7 @@ var $R = function(selector, options)
 
 // Globals
 $R.app = [];
-$R.version = '3.1.4';
+$R.version = '3.1.7';
 $R.options = {};
 $R.modules = {};
 $R.services = {};
@@ -1757,6 +1757,7 @@ $R.opts = {
 
     // misc
     grammarly: true,
+    notranslate: false,
 
     // private
     bufferLimit: 100,
@@ -1819,7 +1820,7 @@ $R.lang['en'] = {
     "delete": "Delete",
     "text": "Text",
     "edit": "Edit",
-    "title": "Title",
+    "title": "Alt",
     "paragraph": "Normal text",
     "quote": "Quote",
     "code": "Code",
@@ -3054,9 +3055,9 @@ $R.add('service', 'caret', {
             if (tag === 'a')
             {
                 var textNode = this.utils.createInvisibleChar();
-                node.appendChild(textNode);
+                $R.dom(node).after(textNode);
 
-                range.setStartBefore(textNode);
+                range.selectNodeContents(textNode);
                 range.collapse(true);
             }
             else
@@ -5356,7 +5357,7 @@ $R.add('class', 'toolbar.dropdown', {
         var btnHeight = this.$btn.height();
         var btnWidth = this.$btn.width();
         var position = (isFixed) ? 'fixed' : 'absolute';
-        var topOffset = 2;
+        var topOffset = (isFixed) ? (2 + this.opts.toolbarFixedTopOffset) : 2;
         var leftOffset = 0;
         var left = (pos.left + leftOffset);
         var width = parseFloat(this.css('width'));
@@ -5694,7 +5695,6 @@ $R.add('service', 'cleaner', {
         var exceptedTags = this.opts.pasteBlockTags.concat(this.opts.pasteInlineTags);
         html = this.removeTagsExcept(html, exceptedTags);
 
-
         // links & images
         html = (this.opts.pasteLinks) ? html : this.removeTags(html, ['a']);
         html = (this.opts.pasteImages) ? html : this.removeTags(html, ['img']);
@@ -5711,11 +5711,11 @@ $R.add('service', 'cleaner', {
 
         // remove class
         var filterClass = (this.opts.pasteKeepClass.length !== 0) ? ',' + this.opts.pasteKeepClass.join(',') : '';
-        $elms.not('[data-redactor-style-cache]' + filterClass).removeAttr('class');
+        $elms.not('[data-redactor-style-cache], span.redactor-component' + filterClass).removeAttr('class');
 
         // remove attrs
         var filterAttrs = (this.opts.pasteKeepAttrs.length !== 0) ? ',' + this.opts.pasteKeepAttrs.join(',') : '';
-        $elms.not('img, a, [data-redactor-style-cache]' + filterAttrs).each(function(node)
+        $elms.not('img, a, span.redactor-component, [data-redactor-style-cache]' + filterAttrs).each(function(node)
         {
             while(node.attributes.length > 0)
             {
@@ -6126,10 +6126,19 @@ $R.add('service', 'cleaner', {
         // parse Lists
         this._parseWordLists($wrapper);
 
-        $wrapper.find('[style]').removeAttr('style');
         $wrapper.find('[align]').removeAttr('align');
         $wrapper.find('[name]').removeAttr('name');
-        $wrapper.find('span').unwrap();
+        $wrapper.find('span').each(function(node)
+        {
+            var $node = $R.dom(node);
+            var str = $node.attr('style');
+            var matches = /mso-list:Ignore/.exec(str);
+
+            if (matches) $node.remove();
+            else $node.unwrap();
+
+        });
+        $wrapper.find('[style]').removeAttr('style');
         $wrapper.find("[class^='Mso']").removeAttr('class');
         $wrapper.find('a').filter(function(node) { return !node.hasAttribute('href'); }).unwrap();
 
@@ -6157,11 +6166,14 @@ $R.add('service', 'cleaner', {
     {
         var lastLevel = 0;
         var pnt = null;
+        var $item = null;
+        var setPnt = false;
 
         $wrapper.find('p').each(function(node)
         {
             var $node = $R.dom(node);
             var currentLevel = $node.data('_listLevel');
+
             if (currentLevel !== null)
             {
                 var txt = $node.text();
@@ -6190,22 +6202,35 @@ $R.add('service', 'cleaner', {
                     else
                     {
                         var $list = $R.dom(listTag);
-                        pnt.append($list);
-                    }
-                }
 
-                if (currentLevel < lastLevel)
-                {
-                    for (var i = 0; i < (lastLevel - currentLevel); i++)
-                    {
-                        pnt = pnt.parent();
+                        if ($item)
+                        {
+                            $item.append($list);
+                            pnt = $list;
+                            setPnt = true;
+
+                        }
+                        else
+                        {
+                            pnt.append($list);
+                        }
+
                     }
                 }
 
                 $node.find('span').first().unwrap();
-                pnt.append('<li>' + $node.html() + '</li>');
+                $item = $R.dom('<li>' + $node.html().trim() + '</li>');
+                pnt.append($item);
                 $node.remove();
+
+                if (setPnt)
+                {
+                    pnt = pnt.parent();
+                }
+
                 lastLevel = currentLevel;
+                setPnt = false;
+
             }
             else
             {
@@ -6336,6 +6361,7 @@ $R.add('class', 'cleaner.figure', {
         this.app = app;
         this.opts = app.opts;
         this.utils = app.utils;
+        this.detector = app.detector;
     },
     // public
     convert: function(html, rules)
@@ -6360,6 +6386,11 @@ $R.add('class', 'cleaner.figure', {
         $wrapper.find('figure pre').each(this._setContenteditableCode.bind(this));
         $wrapper.find('.redactor-component, .non-editable').attr('contenteditable', false);
 
+        if (this.detector.isIe())
+        {
+            $wrapper.find('[data-redactor-type=table]').removeAttr('contenteditable');
+        }
+
         $wrapper.find('figcaption, td, th').attr('contenteditable', true);
         $wrapper.find('.redactor-component, figcaption').attr('tabindex', '-1');
 
@@ -6379,7 +6410,7 @@ $R.add('class', 'cleaner.figure', {
         $wrapper.find('figure').removeClass('redactor-component redactor-component-active redactor-uploaded-figure');
 
         // unconvert
-        $wrapper.find('[data-redactor-type=variable]').removeClass('redactor-component');
+        $wrapper.find('[data-redactor-type=variable]').removeClass('redactor-component redactor-component-active');
         $wrapper.find('figure[data-redactor-type=line]').unwrap();
         $wrapper.find('figure[data-redactor-type=widget]').each(this._unconvertWidget.bind(this));
         $wrapper.find('figure[data-redactor-type=form]').each(this._unconvertForm.bind(this));
@@ -6434,7 +6465,18 @@ $R.add('class', 'cleaner.figure', {
 
         if ($figure.length === 0)
         {
-            $figure = ($link.length !== 0) ? $link.wrap('<figure>') : $node.wrap('<figure>');
+
+            var $parent = ($link.length !== 0) ? $link.closest('p') : $node.closest('p');
+            if (this.opts.imageFigure === false && $parent.length !== 0)
+            {
+                var $el = this.utils.replaceToTag($parent, 'figure');
+                $figure = $el;
+                $figure.addClass('redactor-replace-figure');
+            }
+            else
+            {
+                $figure = ($link.length !== 0) ? $link.wrap('<figure>') : $node.wrap('<figure>');
+            }
         }
         else
         {
@@ -6474,6 +6516,9 @@ $R.add('class', 'cleaner.figure', {
     _convertIframe: function(node)
     {
         if (this._isNonEditable(node)) return;
+
+        var $node = $R.dom(node);
+        if ($node.closest('.redactor-component').length !== 0) return;
 
         var src = node.getAttribute('src');
         var isVideo = (src && (src.match(this.opts.regex.youtube) || src.match(this.opts.regex.vimeo)));
@@ -6550,15 +6595,27 @@ $R.add('class', 'cleaner.figure', {
         {
             $node.removeClass('redactor-keep-figure');
         }
+
         // unwrap figure
         else if (this.opts.imageFigure === false)
         {
             var hasFigcaption = ($node.find('figcaption').length !== 0);
             if (!hasFigcaption)
             {
-                $node.unwrap();
+                // replace
+                if ($node.hasClass('redactor-replace-figure'))
+                {
+                    $node.removeClass('redactor-replace-figure');
+                    this.utils.replaceToTag($node, 'p');
+                }
+                else
+                {
+                    $node.unwrap();
+                }
             }
         }
+
+        $node.removeClass('redactor-replace-figure');
     },
 
     // wrap
@@ -6633,6 +6690,19 @@ $R.add('class', 'cleaner.paragraphize', {
         // build markup tag
         var markupTag = (this.opts.breakline) ? 'sdivtag' : this.opts.markup;
 
+        // store comments
+        var storeComments = [];
+        var commentsMatch = html.match(new RegExp('<!--([\\w\\W]*?)-->', 'gi'));
+        if (commentsMatch !== null)
+        {
+            for (var i = 0; i < commentsMatch.length; i++)
+            {
+                html = html.replace(commentsMatch[i], '#####xstarthtmlcommentzz' + i + 'xendhtmlcommentzz#####');
+                storeComments.push(commentsMatch[i]);
+            }
+        }
+
+
         // store tags
         html = this._storeTags(html);
 
@@ -6672,6 +6742,12 @@ $R.add('class', 'cleaner.paragraphize', {
 
         // restore tags
         html = this._restoreTags(html);
+
+        // restore comments
+        for (var i = 0; i < storeComments.length; i++)
+        {
+            html = html.replace('#####xstarthtmlcommentzz' + i + 'xendhtmlcommentzz#####', storeComments[i]);
+        }
 
         // clean restored
         html = (this.opts.breakline) ? html : html.replace(new RegExp('<' + markupTag + '><br\\s?/?></' + markupTag + '>', 'gi'), '<' + markupTag + '></' + markupTag + '>');
@@ -6987,6 +7063,13 @@ $R.add('class', 'inspector.parser', {
         this.el = el;
         this.$el = $R.dom(this.el);
         this.node = this.$el.get();
+
+        // comment node
+        if (this.node && this.node.nodeType === 8)
+        {
+            this.node = false;
+        }
+
         this.$component = this.$el.closest('.redactor-component', '.redactor-in');
     },
     // is
@@ -7853,11 +7936,11 @@ $R.add('service', 'insertion', {
 
                 this.utils.splitNode(current, fragment);
                 this.caret.setEnd(fragment.last);
-
                 return this._sendNodes(fragment.nodes);
             }
 
             parsedInput.html = (clean !== false) ? parsedInput.html.replace(/\n/g, '<br>') : parsedInput.html;
+
             fragment = this.utils.createFragment(parsedInput.html);
 
             return this.insertNode(fragment.nodes, 'end');
@@ -7970,7 +8053,7 @@ $R.add('service', 'insertion', {
         $editor.html('');
         $editor.append(fragment.frag);
 
-        this.caret.setEnd($editor);
+        this.caret.setEnd(fragment.last);
 
         return this._sendNodes(fragment.nodes);
     },
@@ -8051,6 +8134,11 @@ $R.add('service', 'insertion', {
             }
         }
 
+        if (this.detector.isIe())
+        {
+            this.editor.getElement().find('[data-redactor-type=table]').attr('contenteditable', true);
+        }
+
         // callback
         this.app.broadcast('inserted', nodes);
 
@@ -8088,6 +8176,7 @@ $R.add('service', 'insertion', {
     {
         var isPreformatted = (dataCurrent.isCode() || dataCurrent.isPre());
 
+        parsedInput.html = parsedInput.html.replace(/&nbsp;/g, ' ');
         parsedInput.html = (!isPreformatted && clean !== false) ? this.cleaner.input(parsedInput.html) : parsedInput.html;
         parsedInput = (!isPreformatted && clean !== false) ? this.utils.parseHtml(parsedInput.html) : parsedInput;
 
@@ -8517,8 +8606,18 @@ $R.add('service', 'inline', {
         if (typeof args === 'string') this.args = false;
         else this.buildArgs(args);
 
+        if (!this.detector.isIe())
+        {
+            this.editor.disableNonEditables();
+        }
+
         // format
         var nodes = (this.selection.isCollapsed()) ? this.formatCollapsed() : this.formatUncollapsed();
+
+        if (!this.detector.isIe())
+        {
+            this.editor.enableNonEditables();
+        }
 
         return nodes;
     },
@@ -8790,7 +8889,8 @@ $R.add('service', 'inline', {
     {
         var inlines = this.selection.getInlines({ all: true, inside: true });
 
-        this.selection.save();
+        if (this.detector.isIe()) this.selection.saveMarkers();
+        else this.selection.save();
 
         // convert del / u
         this._convertTags('u');
@@ -8799,11 +8899,11 @@ $R.add('service', 'inline', {
         // convert target tags
         this._convertToStrike(inlines);
 
-        this.selection.restore();
+        if (this.detector.isIe()) this.selection.restoreMarkers();
+        else this.selection.restore();
 
         // apply strike
         document.execCommand('strikethrough');
-
 
         // clear decoration
         this._clearDecoration();
@@ -9618,6 +9718,16 @@ $R.add('service', 'utils', {
         $el.after(markup);
         this.caret.setStart(markup);
     },
+    createMarkupBefore: function(el)
+    {
+        var markup = document.createElement(this.opts.markup);
+        if (this.opts.breakline) markup.setAttribute('data-redactor-tag', 'br');
+
+        var $el = $R.dom(el);
+
+        $el.before(markup);
+        this.caret.setEnd(markup);
+    },
     getNode: function(el)
     {
         var node = $R.dom(el).get();
@@ -10209,7 +10319,7 @@ $R.add('module', 'editor', {
         var $editor = this.editor.getElement();
         var $container = this.container.getElement();
 
-        var classesEditor = ['redactor-in', 'redactor-in-' + this.uuid, 'redactor-structure', 'redactor-placeholder', this.opts.stylesClass];
+        var classesEditor = ['redactor-in', 'redactor-in-' + this.uuid, 'redactor-structure', 'redactor-placeholder', 'notranslate', this.opts.stylesClass];
         var classesContainer = ['redactor-focus', 'redactor-blur', 'redactor-over', 'redactor-styles-on',
                                 'redactor-styles-off', 'redactor-toolbar-on', 'redactor-text-labeled-on', 'redactor-source-view'];
 
@@ -10271,6 +10381,11 @@ $R.add('module', 'editor', {
         if (!this.opts.grammarly)
         {
             $editor.attr('data-gramm_editor', false);
+        }
+
+        if (this.opts.notranslate)
+        {
+            $editor.addClass('notranslate');
         }
 
         if (this.opts.styles)
@@ -11562,6 +11677,10 @@ $R.add('module', 'contextbar', {
             {
                 $R.dom(this.opts.scrollTarget).on('scroll.redactor-context', this.close.bind(this));
             }
+            else if (this.opts.maxHeight !== false)
+            {
+                $editor.on('scroll.redactor-context', this.close.bind(this));
+            }
         }
     },
     stop: function()
@@ -11646,6 +11765,7 @@ $R.add('module', 'contextbar', {
         var top, left;
         var isTarget = this.toolbar.isTarget();
         var offset = (isTarget) ? $el.position() : $el.offset();
+
         var width = $el.width();
         var height = $el.height();
 
@@ -11728,6 +11848,7 @@ $R.add('module', 'toolbar', {
     init: function(app)
     {
         this.app = app;
+        this.uuid = app.uuid;
         this.opts = app.opts;
         this.utils = app.utils;
         this.toolbar = app.toolbar;
@@ -11751,6 +11872,13 @@ $R.add('module', 'toolbar', {
             {
                 this.toolbarModule.createSourceHelper();
             }
+
+            // hide tooltips
+            setTimeout(function()
+            {
+                $R.dom('.re-button-tooltip-' + this.uuid).remove();
+            }.bind(this), 100)
+
         },
         close: function()
         {
@@ -11813,6 +11941,9 @@ $R.add('module', 'toolbar', {
         {
             this.toolbarModule.stop();
         }
+
+        // stop dropdowns
+        $R.dom('.redactor-dropdown-' + this.uuid).remove();
     },
 
     // private
@@ -12175,6 +12306,11 @@ $R.add('class', 'toolbar.fixed', {
         var $toolbar = this.toolbar.getElement();
         var $wrapper = this.toolbar.getWrapper();
 
+        if (this.editor.isSourceMode())
+        {
+            return;
+        }
+
         var $targets = $container.parents().filter(function(node)
         {
             return (getComputedStyle(node, null).display === 'none') ? node : false;
@@ -12217,11 +12353,23 @@ $R.add('class', 'toolbar.fixed', {
 
             $wrapper.height(toolbarHeight);
             $toolbar.addClass('redactor-toolbar-fixed');
-            $toolbar.css({
-                position: position,
-                top: (top + this.opts.toolbarFixedTopOffset) + 'px',
-                width: $container.width() + 'px'
-            });
+
+            if ($container.hasClass('redactor-box-fullscreen'))
+            {
+                $toolbar.css({
+                    position: position,
+                    top: '0px',
+                    width: $container.width() + 'px'
+                });
+            }
+            else
+            {
+                $toolbar.css({
+                    position: position,
+                    top: (top + this.opts.toolbarFixedTopOffset) + 'px',
+                    width: $container.width() + 'px'
+                });
+            }
 
             var dropdown = this.toolbar.getDropdown();
             if (dropdown) dropdown.updatePosition();
@@ -14000,7 +14148,14 @@ $R.add('class', 'input.arrow', {
         else if (!data.isComponentEditable() && data.isComponent() && !data.isComponentType('variable'))
         {
             var component = data.getComponent();
-            if (component.previousElementSibling)
+            if (!component.previousElementSibling)
+            {
+                e.preventDefault();
+                this.component.clearActive();
+
+                return this._exitPrevElement(e, data.getComponent());
+            }
+            else if (component.previousElementSibling)
             {
                 e.preventDefault();
                 this.component.clearActive();
@@ -14078,6 +14233,15 @@ $R.add('class', 'input.arrow', {
             return this._exitNextElement(e, data.getComponent());
         }
     },
+    _exitPrevElement: function(e, node)
+    {
+        e.preventDefault();
+
+        if (node.previousElementSibling) this.caret.setEnd(node.previousElementSibling);
+        else this.utils.createMarkupBefore(node);
+
+        return true;
+    },
     _exitNextElement: function(e, node)
     {
         e.preventDefault();
@@ -14126,6 +14290,7 @@ $R.add('class', 'input.delete', {
         this.component = app.component;
         this.inspector = app.inspector;
         this.selection = app.selection;
+        this.insertion = app.insertion;
 
         // local
         this.key = key;
@@ -14156,6 +14321,14 @@ $R.add('class', 'input.delete', {
         if (this._detectVariableOrNonEditable() || this.selection.hasNonEditable())
         {
             e.preventDefault();
+            return;
+        }
+
+        // all selected
+        if (this.selection.isAll())
+        {
+            e.preventDefault();
+            this.insertion.set(this.opts.emptyHtml);
             return;
         }
 
@@ -16395,12 +16568,10 @@ $R.add('class', 'image.component', {
         if (title === '')
         {
             this.$element.removeAttr('alt');
-            this.$element.removeAttr('title');
         }
         else
         {
             this.$element.attr('alt', title);
-            this.$element.attr('title', title);
         }
 
     },
@@ -16426,6 +16597,7 @@ $R.add('class', 'image.component', {
         var imageMargin = '';
         var textAlign = '';
         var $el = this;
+        var $figcaption = this.find('figcaption');
 
         if (typeof this.opts.imagePosition === 'object')
         {
@@ -16460,6 +16632,15 @@ $R.add('class', 'image.component', {
 
             $el.css({ 'float': imageFloat, 'margin': imageMargin, 'text-align': textAlign });
             $el.attr('rel', $el.attr('style'));
+
+            if (align === 'center')
+            {
+                $figcaption.css('text-align', 'center');
+            }
+            else
+            {
+                $figcaption.css('text-align', '');
+            }
         }
     },
     _set_link: function(data)
@@ -16496,11 +16677,8 @@ $R.add('class', 'image.component', {
     _get_title: function()
     {
         var alt = this.$element.attr('alt');
-        var title = this.$element.attr('title');
 
-        if (alt) return alt;
-        else if (title) return title;
-        else return '';
+        return (alt) ? alt : '';
     },
     _get_caption: function()
     {
@@ -17898,6 +18076,65 @@ $R.add('class', 'video.component', {
     }
 });
 
+$R.add('class', 'widget.component', {
+    mixins: ['dom', 'component'],
+    init: function(app, el)
+    {
+        this.app = app;
+
+        // init
+        return (el && el.cmnt !== undefined) ? el : this._init(el);
+    },
+    getData: function()
+    {
+        return {
+            html: this._getHtml()
+        };
+    },
+
+    // private
+    _init: function(el)
+    {
+        if (typeof el !== 'undefined')
+        {
+            var $node = $R.dom(el);
+            var $figure = $node.closest('figure');
+            if ($figure.length !== 0)
+            {
+                this.parse($figure);
+            }
+            else
+            {
+                this.parse('<figure>');
+                this.html(el);
+            }
+        }
+        else
+        {
+            this.parse('<figure>');
+        }
+
+
+        this._initWrapper();
+    },
+    _getHtml: function()
+    {
+        var $wrapper = $R.dom('<div>');
+        $wrapper.html(this.html());
+        $wrapper.find('.redactor-component-caret').remove();
+
+        return $wrapper.html();
+    },
+    _initWrapper: function()
+    {
+        this.addClass('redactor-component');
+        this.attr({
+            'data-redactor-type': 'widget',
+            'tabindex': '-1',
+            'contenteditable': false
+        });
+    }
+});
 
     window.Redactor = window.$R = $R;
 

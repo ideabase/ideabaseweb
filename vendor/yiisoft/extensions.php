@@ -48,4 +48,13 @@ return array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
     ),
   ),
+  'yii2tech/ar-softdelete' => 
+  array (
+    'name' => 'yii2tech/ar-softdelete',
+    'version' => '1.0.3.0',
+    'alias' => 
+    array (
+      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
+    ),
+  ),
 );

@@ -34,9 +34,9 @@ If you have an existing `releases.json` file, you can quickly convert it to a ch
 # go to the plugin directory
 cd /path/to/my-plugin
 
-# create a CHANGELOG.md from its releases.json 
+# create a CHANGELOG.md from its releases.json
 curl https://api.craftcms.com/v1/utils/releases-2-changelog --data-binary @releases.json > CHANGELOG.md
-``` 
+```
 
 ## Yii 2
 
@@ -72,7 +72,7 @@ The following core service names have changed:
 | `templates`     | `view`
 | `userSession`   | `user`
 
-## Components 
+## Components
 
 Component classes (element types, field types, widget types, etc.) follow a new design pattern in Craft 3.
 
@@ -164,7 +164,7 @@ use craft\elements\Entry;
 
 $entries = Entry::find()
     ->section('news')
-    ->all(); 
+    ->all();
 ```
 
 ## Craft Config Settings
@@ -323,7 +323,7 @@ public function getResourcePath($path)
 ```
 
 ::: warning NOTE
-There is no direct Craft 3 equivalent for this hook, which allowed plugins to handle resource requests, because the concept of resource requests has been removed in Craft 3. See [Asset Bundles](asset-bundles.md) to learn how plugins can serve resources in Craft 3.  
+There is no direct Craft 3 equivalent for this hook, which allowed plugins to handle resource requests, because the concept of resource requests has been removed in Craft 3. See [Asset Bundles](asset-bundles.md) to learn how plugins can serve resources in Craft 3.
 :::
 
 #### `modifyCpNav`
@@ -883,12 +883,12 @@ class MyTask extends BaseTask
     {
         return 'Default description';
     }
-    
+
     public function getTotalSteps()
     {
         return 5;
     }
-    
+
     public function runStep($step)
     {
         // do something...
@@ -906,11 +906,11 @@ class MyJob extends BaseJob
         $totalSteps = 5;
         for ($step = 0; $step < $steps; $step++)
         {
-            $this->setProgress($queue, $step / $totalSteps); 
+            $this->setProgress($queue, $step / $totalSteps);
             // do something...
-        } 
+        }
     }
-    
+
     protected function defaultDescription()
     {
         return 'Default description';
@@ -923,7 +923,7 @@ Adding jobs to the queue is a little different as well:
 ```php
 // Old:
 craft()->tasks->createTask('MyTask', 'Custom description', array(
-    'mySetting' => 'value', 
+    'mySetting' => 'value',
 ));
 
 // New:
@@ -957,30 +957,32 @@ class Install extends Migration
         if ($this->_upgradeFromCraft2()) {
             return;
         }
-        
+
         // Fresh install code goes here...
     }
 
-    private function _upgradeFromCraft2()
+    private function _upgradeFromCraft2(): bool
     {
         // Fetch the old plugin row, if it was installed
         $row = (new \craft\db\Query())
-            ->select(['id', 'settings'])
+            ->select(['id', 'handle', 'settings'])
             ->from(['{{%plugins}}'])
-            ->where(['in', 'handle', ['old-handle', 'oldhandle']])
+            ->where(['in', 'handle', ['<old-handle>', '<oldhandle>']])
             ->one();
-        
+
         if (!$row) {
             return false;
         }
 
         // Update this one's settings to old values
-        $this->update('{{%plugins}}', [
-            'settings' => $row['settings']
-        ], ['handle' => 'new-handle']);
+        $projectConfig = \Craft::$app->projectConfig;
+        $oldKey = "plugins.{$row['handle']}";
+        $newKey = 'plugins.<new-handle>';
+        $projectConfig->set($newKey, $projectConfig->get($oldKey));
 
-        // Delete the old row
+        // Delete the old plugin row and project config data
         $this->delete('{{%plugins}}', ['id' => $row['id']]);
+        $projectConfig->remove($oldKey);
 
         // Any additional upgrade code goes here...
 
@@ -994,7 +996,9 @@ class Install extends Migration
 }
 ```
 
-Replace `old-handle` and `oldhandle` with your plugin’s previous handle (in `kebab-case` and `onewordalllowercase`), and put any additional upgrade code at the end of the `_upgradeFromCraft2()` method (before the `return` statement). Your normal install migration code (for fresh installations of your plugin) should go at the end of `safeUp()`.
+Replace `<old-handle>` and `<oldhandle>` with your plugin’s previous handle (in `kebab-case` and `onewordalllowercase`), and `<new-handle>` with your new plugin handle.
+
+If there’s any additional upgrade logic you need to add, put it at the end of the `_upgradeFromCraft2()` method (before the `return` statement). Your normal install migration code (for fresh installations of your plugin) should go at the end of `safeUp()`.
 
 ### Component Class Names
 

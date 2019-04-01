@@ -23,6 +23,9 @@
 </template>
 
 <script>
+    /* global Craft */
+    /* global Garnish */
+
     export default {
         data() {
             return {
@@ -35,15 +38,6 @@
             craftTranslation() {
                 return Craft.t('app', 'Go to {link}', {link: '<a href="#">test</a>'})
             },
-        },
-
-        created() {
-            this.$root.crumbs = [
-                {
-                    label: this.$options.filters.t("Plugin Store", 'app'),
-                    path: '/',
-                }
-            ]
         },
 
         mounted() {

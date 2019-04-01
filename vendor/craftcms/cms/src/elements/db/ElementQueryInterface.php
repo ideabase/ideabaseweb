@@ -203,6 +203,30 @@ interface ElementQueryInterface extends QueryInterface, ArrayAccess, Arrayable, 
     public function archived(bool $value = true);
 
     /**
+     * Narrows the query results to only {elements} that have been soft-deleted.
+     *
+     * ---
+     *
+     * ```twig
+     * {# Fetch trashed {elements} #}
+     * {% set {elements-var} = {twig-function}
+     *     .trashed()
+     *     .all() %}
+     * ```
+     *
+     * ```php
+     * // Fetch trashed {elements}
+     * ${elements-var} = {element-class}::find()
+     *     ->trashed()
+     *     ->all();
+     * ```
+     *
+     * @param bool|null $value The property value (defaults to true)
+     * @return static self reference
+     */
+    public function trashed($value = true);
+
+    /**
      * Narrows the query results based on the {elements}’ creation dates.
      *
      * Possible values include:
@@ -227,8 +251,8 @@ interface ElementQueryInterface extends QueryInterface, ArrayAccess, Arrayable, 
      *
      * ```php
      * // Fetch {elements} created last month
-     * $start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-     * $end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+     * $start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+     * $end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
      *
      * ${elements-var} = {php-method}
      *     ->dateCreated(['and', ">= {$start}", "< {$end}"])
@@ -264,7 +288,7 @@ interface ElementQueryInterface extends QueryInterface, ArrayAccess, Arrayable, 
      *
      * ```php
      * // Fetch {elements} updated in the last week
-     * $lastWeek = new \DateTime('1 week ago')->format(\DateTime::ATOM);
+     * $lastWeek = (new \DateTime('1 week ago'))->format(\DateTime::ATOM);
      *
      * ${elements-var} = {php-method}
      *     ->dateUpdated(">= {$lastWeek}")
@@ -521,7 +545,7 @@ interface ElementQueryInterface extends QueryInterface, ArrayAccess, Arrayable, 
      *
      * ```twig
      * {# Get the search query from the 'q' query string param #}
-     * {% set searchQuery = craft.request.getQueryParam('q') %}
+     * {% set searchQuery = craft.app.request.getQueryParam('q') %}
      *
      * {# Fetch all {elements} that match the search query #}
      * {% set {elements-var} = {twig-method}

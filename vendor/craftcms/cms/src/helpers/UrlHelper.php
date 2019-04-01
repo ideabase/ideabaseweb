@@ -138,6 +138,18 @@ class UrlHelper
     }
 
     /**
+     * Returns a root-relative URL based on the given URL.
+     *
+     * @param string $url
+     * @return string
+     */
+    public static function rootRelativeUrl(string $url): string
+    {
+        $url = static::urlWithScheme($url, 'http');
+        return substr($url, strpos($url, '/', 7));
+    }
+
+    /**
      * Returns either a CP or a site URL, depending on the request type.
      *
      * @param string $path
@@ -330,8 +342,8 @@ class UrlHelper
     {
         try {
             $currentSite = Craft::$app->getSites()->getCurrentSite();
-            if ($currentSite->baseUrl) {
-                return rtrim(Craft::getAlias($currentSite->baseUrl), '/') . '/';
+            if (($baseUrl = $currentSite->getBaseUrl()) !== null) {
+                return $baseUrl;
             }
         } catch (SiteNotFoundException $e) {
             // Fail silently if Craft isn't installed yet or is in the middle of updating

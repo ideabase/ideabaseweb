@@ -133,8 +133,8 @@ Possible values include:
 
 ```php
 // Fetch Matrix blocks created last month
-$start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-$end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+$start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+$end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
 
 $MatrixBlocks = \craft\elements\MatrixBlock::find()
     ->dateCreated(['and', ">= {$start}", "< {$end}"])
@@ -171,7 +171,7 @@ Possible values include:
 
 ```php
 // Fetch Matrix blocks updated in the last week
-$lastWeek = new \DateTime('1 week ago')->format(\DateTime::ATOM);
+$lastWeek = (new \DateTime('1 week ago'))->format(\DateTime::ATOM);
 
 $MatrixBlocks = \craft\elements\MatrixBlock::find()
     ->dateUpdated(">= {$lastWeek}")
@@ -360,14 +360,14 @@ Determines the order that the Matrix blocks should be returned in.
 ```twig
 {# Fetch all Matrix blocks in order of date created #}
 {% set MatrixBlocks = craft.matrixBlocks()
-    .orderBy('elements.dateCreated asc')
+    .orderBy('dateCreated asc')
     .all() %}
 ```
 
 ```php
 // Fetch all Matrix blocks in order of date created
 $MatrixBlocks = \craft\elements\MatrixBlock::find()
-    ->orderBy('elements.dateCreated asc')
+    ->orderBy('dateCreated asc')
     ->all();
 ```
 :::
@@ -540,7 +540,7 @@ See [Searching](https://docs.craftcms.com/v3/searching.html) for a full explanat
 ::: code
 ```twig
 {# Get the search query from the 'q' query string param #}
-{% set searchQuery = craft.request.getQueryParam('q') %}
+{% set searchQuery = craft.app.request.getQueryParam('q') %}
 
 {# Fetch all Matrix blocks that match the search query #}
 {% set MatrixBlocks = craft.matrixBlocks()
@@ -648,6 +648,31 @@ Possible values include:
 // Fetch disabled Matrix blocks
 $MatrixBlocks = \craft\elements\MatrixBlock::find()
     ->status('disabled')
+    ->all();
+```
+:::
+
+
+### `trashed`
+
+Narrows the query results to only Matrix blocks that have been soft-deleted.
+
+
+
+
+
+::: code
+```twig
+{# Fetch trashed Matrix blocks #}
+{% set MatrixBlocks = {twig-function}
+    .trashed()
+    .all() %}
+```
+
+```php
+// Fetch trashed Matrix blocks
+$MatrixBlocks = \craft\elements\MatrixBlock::find()
+    ->trashed()
     ->all();
 ```
 :::

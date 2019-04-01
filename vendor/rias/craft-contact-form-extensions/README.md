@@ -57,6 +57,19 @@ When saving submissions to the database the default form name will be "Contact".
 <input type="hidden" name="message[formName]" value="myFormName">
 ```
 
+## Overriding the confirmation template
+When sending confirmation option is enabled and custom templates per form are needed, override the template with a hidden field. The template needs to be placed under templates\\_emails folder. Add a hash for safety. The same data is passed as in the default overridden template.
+
+```
+<input type="hidden" name="message[template]" value="{{ 'contact'|hash }}">
+```
+
+## Overriding where the message is sent
+
+```
+<input type="hidden" name="message[toEmail]" value="{{ 'hello@rias.be'|hash }}">
+```
+
 ## Adding invisible reCAPTCHA
 
 Before you set your config, remember to choose `invisible reCAPTCHA` while applying for keys.
@@ -69,6 +82,16 @@ Then use the following code in your forms:
 
 ```twig
 {{ craft.contactFormExtensions.recaptcha | raw }}
+```
+
+### ReCaptcha V3
+
+To use ReCaptcha V3, choose the V3 option in the settings, make sure to enter a correct `siteKey` and `secretKey` and enter a `threshold`. [Learn more about ReCaptcha V3](https://developers.google.com/recaptcha/docs/v3)
+
+Then include the following code in your forms, for example for the `homepage` action:
+
+```twig
+{{ craft.contactFormExtensions.recaptcha('homepage') | raw }}
 ```
 
 ## Display form submissions in your template files

@@ -362,8 +362,8 @@ Possible values include:
 
 ```php
 // Fetch entries created last month
-$start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-$end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+$start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+$end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
 
 $entries = \craft\elements\Entry::find()
     ->dateCreated(['and', ">= {$start}", "< {$end}"])
@@ -400,7 +400,7 @@ Possible values include:
 
 ```php
 // Fetch entries updated in the last week
-$lastWeek = new \DateTime('1 week ago')->format(\DateTime::ATOM);
+$lastWeek = (new \DateTime('1 week ago'))->format(\DateTime::ATOM);
 
 $entries = \craft\elements\Entry::find()
     ->dateUpdated(">= {$lastWeek}")
@@ -514,6 +514,8 @@ Possible values include:
 
 | Value | Fetches entries…
 | - | -
+| `':empty:'` | that don’t have an expiry date.
+| `':notempty:'` | that have an expiry date.
 | `'>= 2020-04-01'` | that will expire on or after 2020-04-01.
 | `'< 2020-05-01'` | that will expire before 2020-05-01
 | `['and', '>= 2020-04-04', '< 2020-05-01']` | that will expire between 2020-04-01 and 2020-05-01.
@@ -532,7 +534,7 @@ Possible values include:
 
 ```php
 // Fetch entries expiring this month
-$nextMonth = new \DateTime('first day of next month')->format(\DateTime::ATOM);
+$nextMonth = (new \DateTime('first day of next month'))->format(\DateTime::ATOM);
 
 $entries = \craft\elements\Entry::find()
     ->expiryDate("< {$nextMonth}")
@@ -810,14 +812,14 @@ Determines the order that the entries should be returned in.
 ```twig
 {# Fetch all entries in order of date created #}
 {% set entries = craft.entries()
-    .orderBy('elements.dateCreated asc')
+    .orderBy('dateCreated asc')
     .all() %}
 ```
 
 ```php
 // Fetch all entries in order of date created
 $entries = \craft\elements\Entry::find()
-    ->orderBy('elements.dateCreated asc')
+    ->orderBy('dateCreated asc')
     ->all();
 ```
 :::
@@ -914,8 +916,8 @@ Possible values include:
 
 ```php
 // Fetch entries posted last month
-$start = new \DateTime('first day of next month')->format(\DateTime::ATOM);
-$end = new \DateTime('first day of this month')->format(\DateTime::ATOM);
+$start = (new \DateTime('first day of last month'))->format(\DateTime::ATOM);
+$end = (new \DateTime('first day of this month'))->format(\DateTime::ATOM);
 
 $entries = \craft\elements\Entry::find()
     ->postDate(['and', ">= {$start}", "< {$end}"])
@@ -996,7 +998,7 @@ See [Searching](https://docs.craftcms.com/v3/searching.html) for a full explanat
 ::: code
 ```twig
 {# Get the search query from the 'q' query string param #}
-{% set searchQuery = craft.request.getQueryParam('q') %}
+{% set searchQuery = craft.app.request.getQueryParam('q') %}
 
 {# Fetch all entries that match the search query #}
 {% set entries = craft.entries()
@@ -1282,6 +1284,31 @@ Possible values include:
 // Fetch entries with a title that contains "Foo"
 $entries = \craft\elements\Entry::find()
     ->title('*Foo*')
+    ->all();
+```
+:::
+
+
+### `trashed`
+
+Narrows the query results to only entries that have been soft-deleted.
+
+
+
+
+
+::: code
+```twig
+{# Fetch trashed entries #}
+{% set entries = {twig-function}
+    .trashed()
+    .all() %}
+```
+
+```php
+// Fetch trashed entries
+$entries = \craft\elements\Entry::find()
+    ->trashed()
     ->all();
 ```
 :::

@@ -605,12 +605,25 @@ td.right {
     vertical-align: baseline;
     width: 100%;
     line-height: 1.375;
-    content: 'info';
     color: $lightTextColor;
   }
 
-  &:hover:before {
-    color: $linkColor;
+  &:not(.warning) {
+    &:before {
+      content: 'info';
+    }
+    &:hover:before {
+      color: $linkColor;
+    }
+  }
+
+  &.warning {
+    &:before {
+      content: 'alert';
+    }
+    &:hover:before {
+      color: $warningColor;
+    }
   }
 }
 
@@ -811,6 +824,10 @@ ul.icons li a:hover {
     padding: 7px 1px 0;
     background: #fff;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .flex {
+    align-items: flex-start;
   }
 }
 
@@ -1337,6 +1354,36 @@ div.btn.submit input {
     @include floatleft;
     background-image: linear-gradient(#fff, hsl($hue, 5%, 98%));
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* pagination */
+.pagination {
+  margin: 24px 0;
+
+  .page-link {
+    padding: 0 9px 3px;
+    border-radius: $btnBorderRadius;
+
+    &:before {
+      font-size: 1em;
+    }
+
+    &:not(.disabled) {
+      transition: box-shadow linear 100ms;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+      &:hover {
+        text-decoration: none;
+        box-shadow: inset 0 0 0 1px $linkColor;
+      }
+    }
+
+    &.disabled {
+      opacity: 1;
+      background: $bgColor;
+      font-weight: bold;
+      color: $lightTextColor;
+    }
   }
 }
 
@@ -2094,6 +2141,10 @@ table.editable {
 
         &.textual {
           vertical-align: top;
+
+          textarea {
+            resize: none;
+          }
         }
 
         &:not(.textual) {
@@ -2256,7 +2307,7 @@ ul.tree,
   border: 1px solid transparent;
 }
 
-.status:not(.on):not(.live):not(.active):not(.enabled):not(.locked):not(.pending):not(.off):not(.suspended):not(.expired):not(.yellow):not(.orange):not(.red):not(.pink):not(.purple):not(.blue):not(.green):not(.turquoise):not(.light):not(.grey):not(.black) {
+.status:not(.on):not(.live):not(.active):not(.enabled):not(.pending):not(.off):not(.suspended):not(.expired):not(.yellow):not(.orange):not(.red):not(.pink):not(.purple):not(.blue):not(.green):not(.turquoise):not(.light):not(.grey):not(.black) {
   border-color: rgba(0, 0, 0, 0.40);
 }
 
@@ -2271,7 +2322,6 @@ ul.tree,
 /* green */
 
 .status.orange,
-.status.locked,
 .status.pending {
   background-color: $orange;
 }
@@ -3224,6 +3274,19 @@ ul.tree,
   }
 }
 
+.menubtn,
+.menu {
+  span.icon {
+    display: inline-block;
+    margin-top: -1px;
+    width: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: $lightTextColor;
+  }
+}
+
 .menu ul li a:not(.sel):not(.disabled):hover,
 .menu ul li a:not(.sel):not(.disabled):hover .light,
 .menu:not(:hover) ul li a:not(.disabled).hover,
@@ -3297,9 +3360,49 @@ ul.tree,
 .shadow-box {
   border-radius: $paneBorderRadius;
   border: 1px solid #ccc;
-  overflow: hidden;
   width: 100%;
   box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.1);
+}
+
+table.shadow-box {
+  thead:first-child,
+  tbody:first-child {
+    tr:first-child {
+      th:first-child,
+      td:first-child {
+        &,
+        &.disabled:after {
+          border-top-left-radius: $paneBorderRadius - 1;
+        }
+      }
+      th:last-child,
+      td:last-child {
+        &,
+        &.disabled:after {
+          border-top-right-radius: $paneBorderRadius - 1;
+        }
+      }
+    }
+  }
+  thead:last-child,
+  tbody:last-child {
+    tr:last-child {
+      th:first-child,
+      td:first-child {
+        &,
+        &.disabled:after {
+          border-bottom-left-radius: $paneBorderRadius - 1;
+        }
+      }
+      th:last-child,
+      td:last-child {
+        &,
+        &.disabled:after {
+          border-bottom-right-radius: $paneBorderRadius - 1;
+        }
+      }
+    }
+  }
 }
 
 .text:not(.selectize-text),
@@ -3440,12 +3543,21 @@ textarea.text.fullwidth {
     }
   }
 
+  & > .notice,
   & > .warning {
     margin: 2px 0 0;
 
     &:before {
       @include margin(-2px, 2px, 0, 0);
       @include icon;
+      width: 1em;
+    }
+
+    &.notice:before {
+      content: 'lightbulb';
+    }
+
+    &.warning:before {
       content: 'alert';
     }
   }
@@ -3463,8 +3575,23 @@ textarea.text.fullwidth {
 .checkboxfield.has-instructions .instructions {
   margin-top: 2px;
   color: $mediumTextColor;
+
   img {
     max-width: 100%;
+  }
+
+  ul,
+  ol {
+    margin: 1em 0;
+    @include padding-left(2em);
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  li + li {
+    margin-top: 0.25em;
   }
 }
 
@@ -3472,7 +3599,6 @@ textarea.text.fullwidth {
 .nested-fields {
   margin: -24px;
   padding: 24px 24px 0;
-  overflow: hidden;
 
   &.hidden {
     display: block;
@@ -3619,6 +3745,7 @@ input.checkbox:focus + label:before,
 .input.errors > .text,
 .input.errors > .border-box,
 .input.errors > .passwordwrapper > .text,
+.input.errors > .autosuggest-container .text,
 .text.error {
   border: 1px solid $errorColor !important;
 }
@@ -4069,25 +4196,59 @@ ul.errors li {
 }
 
 /* message pages */
-body.message .message-container {
+.message-container {
   position: absolute;
   z-index: 100;
   top: 0;
   @include left(0);
   width: 100%;
   height: 100%;
+
+  &.no-access {
+    background: rgba(50, 50, 50, 0.9);
+  }
+
+  .pane {
+    top: 50%;
+    margin-top: -33px !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+  }
 }
 
-body.message .message-container.no-access {
-  background: rgba(50, 50, 50, 0.9);
+/* auto-suggest */
+.autosuggest-container {
+  position: relative;
 }
 
-body.message .message-container .pane {
-  top: 50%;
-  margin-top: -33px !important;
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
+.autosuggest__results-container {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  border-radius: $paneBorderRadius;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 0 14px;
+  text-align: left;
+  @include sans-serif-font;
+  font-size: 1em !important;
+
+  .autosuggest__results_title {
+    @include h6-styles;
+    margin-top: 14px !important;
+  }
+
+  .autosuggest__results_item {
+    @include menu-option-styles;
+
+    &:hover,
+    &.autosuggest__results_item-highlighted {
+      @include menu-option-active-styles;
+      cursor: pointer;
+    }
+  }
 }
 
 /* ----------------------------------------

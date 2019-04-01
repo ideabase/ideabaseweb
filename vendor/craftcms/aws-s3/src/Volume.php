@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://craftcms.com/
+ * @link https://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
- * @license   MIT
+ * @license MIT
  */
 
 namespace craft\awss3;
@@ -11,25 +11,28 @@ use Aws\CloudFront\CloudFrontClient;
 use Aws\CloudFront\Exception\CloudFrontException;
 use Aws\Credentials\Credentials;
 use Aws\Handler\GuzzleV6\GuzzleHandler;
+use Aws\Rekognition\RekognitionClient;
 use Aws\S3\Exception\S3Exception;
 use Aws\S3\S3Client;
 use Aws\Sts\StsClient;
 use Craft;
 use craft\base\FlysystemVolume;
+use craft\behaviors\EnvAttributeParserBehavior;
+use craft\helpers\ArrayHelper;
 use craft\helpers\Assets;
 use craft\helpers\DateTimeHelper;
 use craft\helpers\StringHelper;
 use DateTime;
 use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\AdapterInterface;
 
 /**
  * Class Volume
  *
- * @property mixed  $settingsHtml
+ * @property mixed $settingsHtml
  * @property string $rootUrl
- *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since  3.0
+ * @since 1.0
  */
 class Volume extends FlysystemVolume
 {
@@ -85,6 +88,11 @@ class Volume extends FlysystemVolume
     public $secret = '';
 
     /**
+     * @var string Bucket selection mode ('choose' or 'manual')
+     */
+    public $bucketSelectionMode = 'choose';
+
+    /**
      * @var string Bucket to use
      */
     public $bucket = '';
@@ -100,7 +108,13 @@ class Volume extends FlysystemVolume
     public $expires = '';
 
     /**
+     * @var bool Set ACL for Uploads
+     */
+    public $makeUploadsPublic = true;
+
+    /**
      * @var string S3 storage class to use.
+     * @deprecated in 1.1.1
      */
     public $storageClass = '';
 
@@ -109,8 +123,56 @@ class Volume extends FlysystemVolume
      */
     public $cfDistributionId;
 
+    /**
+     * @var string CloudFront Distribution Prefix
+     */
+    public $cfPrefix;
+
+    /**
+     * @var bool Whether facial detection should be attempted to set the focal point automatically
+     */
+    public $autoFocalPoint = false;
+
     // Public Methods
     // =========================================================================
+
+    /**
+     * @inheritdoc
+     */
+    public function __construct(array $config = [])
+    {
+        if (isset($config['manualBucket'])) {
+            if (isset($config['bucketSelectionMode']) && $config['bucketSelectionMode'] === 'manual') {
+                $config['bucket'] = ArrayHelper::remove($config, 'manualBucket');
+                $config['region'] = ArrayHelper::remove($config, 'manualRegion');
+            } else {
+                unset($config['manualBucket'], $config['manualRegion']);
+            }
+        }
+
+        parent::__construct($config);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors['parser'] = [
+            'class' => EnvAttributeParserBehavior::class,
+            'attributes' => [
+                'keyId',
+                'secret',
+                'bucket',
+                'region',
+                'subfolder',
+                'cfDistributionId',
+                'cfPrefix',
+            ],
+        ];
+        return $behaviors;
+    }
 
     /**
      * @inheritdoc
@@ -131,7 +193,6 @@ class Volume extends FlysystemVolume
         return Craft::$app->getView()->renderTemplate('aws-s3/volumeSettings', [
             'volume' => $this,
             'periods' => array_merge(['' => ''], Assets::periodList()),
-            //'storageClasses' => static::storageClasses(),
         ]);
     }
 
@@ -140,7 +201,6 @@ class Volume extends FlysystemVolume
      *
      * @param $keyId
      * @param $secret
-     *
      * @return array
      * @throws \InvalidArgumentException
      */
@@ -162,15 +222,18 @@ class Volume extends FlysystemVolume
 
         foreach ($buckets as $bucket) {
             try {
-                $location = $client->determineBucketRegion($bucket['Name']);
+                $region = $client->determineBucketRegion($bucket['Name']);
             } catch (S3Exception $exception) {
+
+                // If a bucket cannot be accessed by the current policy, move along:
+                // https://github.com/craftcms/aws-s3/pull/29#issuecomment-468193410
                 continue;
             }
 
             $bucketList[] = [
                 'bucket' => $bucket['Name'],
-                'urlPrefix' => 'http://'.$bucket['Name'].'.s3.amazonaws.com/',
-                'region' => $location ?? ''
+                'urlPrefix' => 'https://s3.'.$region.'.amazonaws.com/'.$bucket['Name'].'/',
+                'region' => $region
             ];
         }
 
@@ -182,24 +245,10 @@ class Volume extends FlysystemVolume
      */
     public function getRootUrl()
     {
-        if (($rootUrl = parent::getRootUrl()) !== false && $this->subfolder) {
-            $rootUrl .= rtrim($this->subfolder, '/').'/';
+        if (($rootUrl = parent::getRootUrl()) !== false) {
+            $rootUrl .= $this->_subfolder();
         }
         return $rootUrl;
-    }
-
-    /**
-     * Return a list of available storage classes.
-     *
-     * @return array
-     */
-    public static function storageClasses()
-    {
-        return [
-            static::STORAGE_STANDARD => 'Standard',
-            static::STORAGE_REDUCED_REDUNDANCY => 'Reduced Redundancy Storage',
-            static::STORAGE_STANDARD_IA => 'Infrequent Access Storage'
-        ];
     }
 
     // Protected Methods
@@ -207,7 +256,6 @@ class Volume extends FlysystemVolume
 
     /**
      * @inheritdoc
-     *
      * @return AwsS3Adapter
      */
     protected function createAdapter()
@@ -216,14 +264,13 @@ class Volume extends FlysystemVolume
 
         $client = static::client($config);
 
-        return new AwsS3Adapter($client, $this->bucket, $this->subfolder);
+        return new AwsS3Adapter($client, Craft::parseEnv($this->bucket), $this->_subfolder());
     }
 
     /**
      * Get the Amazon S3 client.
      *
      * @param $config
-     *
      * @return S3Client
      */
     protected static function client(array $config = []): S3Client
@@ -239,16 +286,10 @@ class Volume extends FlysystemVolume
         if (!empty($this->expires) && DateTimeHelper::isValidIntervalString($this->expires)) {
             $expires = new DateTime();
             $now = new DateTime();
-            $expires->modify('+'.$this->expires);
+            $expires->modify('+' . $this->expires);
             $diff = $expires->format('U') - $now->format('U');
-            $config['CacheControl'] = 'max-age='.$diff.', must-revalidate';
+            $config['CacheControl'] = 'max-age=' . $diff . ', must-revalidate';
         }
-
-        // TODO re-add once fully supported by adapter.
-        /*if (!empty($this->storageClass)) {
-            $config['StorageClass'] = $this->storageClass;
-        }*/
-        $config['StorageClass'] = static::STORAGE_STANDARD;
 
         return parent::addFileMetadataToConfig($config);
     }
@@ -265,14 +306,14 @@ class Volume extends FlysystemVolume
             try {
                 $cfClient->createInvalidation(
                     [
-                        'DistributionId' => $this->cfDistributionId,
+                        'DistributionId' => Craft::parseEnv($this->cfDistributionId),
                         'InvalidationBatch' => [
                             'Paths' =>
-                                [
-                                    'Quantity' => 1,
-                                    'Items' => ['/'.ltrim($path, '/')]
-                                ],
-                            'CallerReference' => 'Craft-'.StringHelper::randomString(24)
+                            [
+                                'Quantity' => 1,
+                                'Items' => ['/' . $this->_cfPrefix() . ltrim($path, '/')]
+                            ],
+                            'CallerReference' => 'Craft-' . StringHelper::randomString(24)
                         ]
                     ]
                 );
@@ -285,8 +326,76 @@ class Volume extends FlysystemVolume
         return true;
     }
 
+    /**
+     * Attempt to detect focal point for a path on the bucket and return the
+     * focal point position as an array of decimal parts
+     *
+     * @param string $filePath
+     * @return array
+     */
+    public function detectFocalPoint(string $filePath): array
+    {
+        $extension = StringHelper::toLowerCase(pathinfo($filePath, PATHINFO_EXTENSION));
+
+        if (!in_array($extension, ['jpeg', 'jpg', 'png'])) {
+            return [];
+        }
+
+
+        $client = new RekognitionClient($this->_getConfigArray());
+        $params = [
+            'Image' => [
+                'S3Object' => [
+                    'Name' => $filePath,
+                    'Bucket' => Craft::parseEnv($this->bucket),
+                ],
+            ],
+        ];
+
+        $faceData = $client->detectFaces($params);
+
+        if (!empty($faceData['FaceDetails'])) {
+            $face = array_shift($faceData['FaceDetails']);
+            if ($face['Confidence'] > 80) {
+                $box = $face['BoundingBox'];
+                return [
+                    number_format($box['Left'] + ($box['Width'] / 2), 4),
+                    number_format($box['Top'] + ($box['Height'] / 2), 4),
+                ];
+            }
+        }
+
+        return [];
+    }
+
     // Private Methods
     // =========================================================================
+
+    /**
+     * Returns the parsed subfolder path
+     *
+     * @return string|null
+     */
+    private function _subfolder(): string
+    {
+        if ($this->subfolder && ($subfolder = rtrim(Craft::parseEnv($this->subfolder), '/')) !== '') {
+            return $subfolder . '/';
+        }
+        return '';
+    }
+
+    /**
+     * Returns the parsed CloudFront distribution prefix
+     *
+     * @return string|null
+     */
+    private function _cfPrefix(): string
+    {
+        if ($this->cfPrefix && ($cfPrefix = rtrim(Craft::parseEnv($this->cfPrefix), '/')) !== '') {
+            return $cfPrefix . '/';
+        }
+        return '';
+    }
 
     /**
      * Get a CloudFront client.
@@ -305,9 +414,9 @@ class Volume extends FlysystemVolume
      */
     private function _getConfigArray()
     {
-        $keyId = $this->keyId;
-        $secret = $this->secret;
-        $region = $this->region;
+        $keyId = Craft::parseEnv($this->keyId);
+        $secret = Craft::parseEnv($this->secret);
+        $region = Craft::parseEnv($this->region);
 
         return self::_buildConfigArray($keyId, $secret, $region);
     }
@@ -318,7 +427,6 @@ class Volume extends FlysystemVolume
      * @param $keyId
      * @param $secret
      * @param $region
-     *
      * @return array
      */
     private static function _buildConfigArray($keyId = null, $secret = null, $region = null)
@@ -331,7 +439,7 @@ class Volume extends FlysystemVolume
         if (empty($keyId) || empty($secret)) {
             // Assume we're running on EC2 and we have an IAM role assigned. Kick back and relax.
         } else {
-            $tokenKey = static::CACHE_KEY_PREFIX.md5($keyId.$secret);
+            $tokenKey = static::CACHE_KEY_PREFIX . md5($keyId . $secret);
             $credentials = new Credentials($keyId, $secret);
 
             if (Craft::$app->cache->exists($tokenKey)) {
@@ -353,5 +461,14 @@ class Volume extends FlysystemVolume
         $config['http_handler'] = new GuzzleHandler($client);
 
         return $config;
+    }
+
+    /**
+     * Returns the visibility setting for the Volume.
+     *
+     * @return string
+     */
+    protected function visibility(): string {
+        return $this->makeUploadsPublic ? AdapterInterface::VISIBILITY_PUBLIC : AdapterInterface::VISIBILITY_PRIVATE;
     }
 }

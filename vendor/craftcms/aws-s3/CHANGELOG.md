@@ -1,5 +1,56 @@
-Changelog
-=========
+# Release Notes for Amazon S3 for Craft CMS
+
+## 1.2.2 - 2019-03-27
+
+### Added
+- Added the `makeUploadsPublic` setting which defaults to true and determines whether the uploaded Assets are public on the bucket. ([#48](https://github.com/craftcms/aws-s3/issues/48))
+
+### Fixed
+- Fixed an error that could occur when installing the plugin on a site that was migrated from Craft 2. ([#47](https://github.com/craftcms/aws-s3/issues/47))
+
+## 1.2.1 - 2019-03-05
+
+### Changed
+- Default URLs for buckets now use HTTPS. ([#34](https://github.com/craftcms/aws-s3/issues/34))
+
+### Fixed
+- Fixed an error that occurred if expiry time was set up incorrectly. ([#47](https://github.com/craftcms/aws-s3/issues/47))
+
+## 1.2.0 - 2019-02-21
+
+### Added
+- Added the CloudFront Path Prefix setting. ([#46](https://github.com/craftcms/aws-s3/pull/46))
+- The Bucket and Region settings can now be set to environment variables. ([#42](https://github.com/craftcms/aws-s3/issues/42))
+
+## 1.1.3 - 2019-02-06
+
+### Fixed
+- Fixed a bug where migrations were making project config changes when they shouldn't have been. ([#43](https://github.com/craftcms/aws-s3/issues/43))
+
+## 1.1.2 - 2019-02-04
+
+### Changed
+- Amazon S3 now requires Craft 3.1.5.
+- Settings that can be set to environment variables now show a tip about that if the value is not already set to an environment variable or alias.
+
+## 1.1.1 - 2019-02-01
+
+### Fixed
+- Fixed an error that occurred when installing this plugin with no volumes defined. ([#41](https://github.com/craftcms/aws-s3/issues/41))
+- Fixed an error that occurred when updating to 1.1.0 in some cases. ([#40](https://github.com/craftcms/aws-s3/issues/40))
+
+## 1.1.0 - 2019-02-01
+
+### Added
+- It's now possible to detect faces on upload and set the focal point accordingly.
+- Access Key ID, Secret Access Key, Subfolder, and CloudFront Distribution ID settings can now be set to environment variables. ([#35](https://github.com/craftcms/aws-s3/issues/35))
+
+### Changed
+- Show validation error when creating a volume and not specify a bucket.
+
+### Fixed
+- Fixed an error that occurred when updating from Craft 2 to Craft 3.1 when using this plugin. ([#38](https://github.com/craftcms/aws-s3/issues/38))
+- Fixed a migration error. ([#39](https://github.com/craftcms/aws-s3/issues/39))
 
 ## 1.0.8 - 2018-01-02
 

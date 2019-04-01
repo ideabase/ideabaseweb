@@ -340,7 +340,7 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function isUUID(string $uuid): bool
     {
-        return !empty($uuid) && preg_match('/^'.self::UUID_PATTERN.'$/', $uuid);
+        return !empty($uuid) && preg_match('/^' . self::UUID_PATTERN . '$/', $uuid);
     }
 
     /**
@@ -409,7 +409,7 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function toKebabCase(string $string, string $glue = '-', bool $lower = true, bool $removePunctuation = true): string
     {
-        $words = self::_prepStringForCasing($string, $lower, $removePunctuation);
+        $words = self::toWords($string, $lower, $removePunctuation);
 
         return implode($glue, $words);
     }
@@ -425,7 +425,7 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function toCamelCase(string $string): string
     {
-        $words = self::_prepStringForCasing($string);
+        $words = self::toWords($string, true, true);
 
         if (empty($words)) {
             return '';
@@ -450,7 +450,7 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function toPascalCase(string $string): string
     {
-        $words = self::_prepStringForCasing($string);
+        $words = self::toWords($string, true, true);
         $string = implode('', array_map([
             static::class,
             'upperCaseFirst'
@@ -470,7 +470,7 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function toSnakeCase(string $string): string
     {
-        $words = self::_prepStringForCasing($string);
+        $words = self::toWords($string, true, true);
 
         return implode('_', $words);
     }
@@ -891,11 +891,12 @@ class StringHelper extends \yii\helpers\StringHelper
      * counterparts, and the rest are removed.
      *
      * @param string $str The string to convert.
+     * @param string|null $language The language to pull ASCII character mappings for.
      * @return string The string that contains only ASCII characters.
      */
-    public static function toAscii(string $str): string
+    public static function toAscii(string $str, string $language = null): string
     {
-        return (string)BaseStringy::create($str)->toAscii(Craft::$app->language);
+        return (string)BaseStringy::create($str)->toAscii($language ?? Craft::$app->language);
     }
 
     /**
@@ -1009,39 +1010,64 @@ class StringHelper extends \yii\helpers\StringHelper
      */
     public static function encodeMb4(string $string): string
     {
-        // Does this string have any 4+ byte Unicode chars?
-        if (static::containsMb4($string)) {
-            $string = preg_replace_callback('/./u', function(array $match) {
-                if (strlen($match[0]) >= 4) {
-                    // (Logic pulled from WP's wp_encode_emoji() function)
-                    // UTF-32's hex encoding is the same as HTML's hex encoding.
-                    // So, by converting from UTF-8 to UTF-32, we magically
-                    // get the correct hex encoding.
-                    $unpacked = unpack('H*', mb_convert_encoding($match[0], 'UTF-32', 'UTF-8'));
-
-                    return isset($unpacked[1]) ? '&#x' . ltrim($unpacked[1], '0') . ';' : '';
-                }
-
-                return $match[0];
-            }, $string);
-        }
-
-        return $string;
+        // (Logic pulled from WP's wp_encode_emoji() function)
+        // UTF-32's hex encoding is the same as HTML's hex encoding.
+        // So, by converting from UTF-8 to UTF-32, we magically
+        // get the correct hex encoding.
+        return static::replaceMb4($string, function($char) {
+            $unpacked = unpack('H*', mb_convert_encoding($char, 'UTF-32', 'UTF-8'));
+            return isset($unpacked[1]) ? '&#x' . ltrim($unpacked[1], '0') . ';' : '';
+        });
     }
 
     /**
-     * Prepares a string for casing routines.
+     * Replaces 4-byte UTF-8 characters in a string.
+     * ---
+     * ```php
+     * // Convert emojis to smilies
+     * $string = StringHelper::replaceMb4($string, function($char) {
+     *     switch ($char) {
+     *         case '😀':
+     *             return ':)';
+     *         case '☹️':
+     *             return ':(';
+     *         default:
+     *             return '¯\_(ツ)_/¯';
+     *     }
+     * });
+     * ```
      *
      * @param string $string The string
-     * @param bool $lower
-     * @param bool $removePunctuation Whether punctuation marks should be removed (default is true)
+     * @param string|callable $replace The replacement string, or callback function.
+     * @return string The string with converted 4-byte UTF-8 characters
+     */
+    public static function replaceMb4(string $string, $replace): string
+    {
+        if (!static::containsMb4($string)) {
+            return $string;
+        }
+
+        return preg_replace_callback('/./u', function(array $match) use ($replace): string {
+            if (strlen($match[0]) >= 4) {
+                return is_callable($replace) ? $replace($match[0]) : $replace;
+            }
+            return $match[0];
+        }, $string);
+    }
+
+    /**
+     * Returns an array of words extracted from a string
+     *
+     * @param string $string The string
+     * @param bool $lower Whether the returned words should be lowercased
+     * @param bool $removePunctuation Whether punctuation should be removed from the returned words
      * @return string[] The prepped words in the string
      * @see toKebabCase()
      * @see toCamelCase()
      * @see toPascalCase()
      * @see toSnakeCase()
      */
-    private static function _prepStringForCasing(string $string, bool $lower = true, bool $removePunctuation = true): array
+    public static function toWords(string $string, bool $lower = false, bool $removePunctuation = false): array
     {
         // Convert CamelCase to multiple words
         $string = preg_replace('/(?<=[a-z])[A-Z]/u', ' \0', $string);

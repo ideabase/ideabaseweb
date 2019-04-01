@@ -1,5 +1,40 @@
 # Release Notes for Redactor for Craft CMS
 
+## 2.3.2 - 2019-02-21
+
+### Changed
+- Updated Redactor to 3.1.7.
+
+### Fixed
+- Fixed a bug where full-screen editor would be obscured by the sidebar if the `toolbarFixed` config setting was set to `false.` ([#120](https://github.com/craftcms/redactor/issues/120))
+- Fixed a bug where adding a second link in a list would not work as expected. ([#104](https://github.com/craftcms/redactor/issues/104))
+
+## 2.3.1 - 2019-01-30
+
+### Fixed
+- Fixed a bug where the “Image editor” button wasn’t showing up when selecting assets for non-admin users.
+
+## 2.3.0 - 2019-01-22
+
+### Changed
+- Updated Redactor to 3.1.6.
+
+### Fixed
+- Fixed a bug where adding links inside lists would not work as expected. ([#104](https://github.com/craftcms/redactor/issues/104))
+- Fixed a bug where adding links inside tables would not work as expected. ([#98](https://github.com/craftcms/redactor/issues/98))
+- Fixed a bug where Redactor would leave extra markup in the HTML. ([#106](https://github.com/craftcms/redactor/issues/106))
+
+## 2.2.1 - 2019-01-17
+
+### Fixed
+- Fixed an error that occurred when updating to 2.2.0 if there were Redactor fields without the `availableTransforms` or `availableVolumes` set. ([#112](https://github.com/craftcms/redactor/issues/112))
+
+## 2.2.0 - 2019-01-16
+
+### Changed
+- Redactor for Craft CMS now requires Craft 3.1.
+- Improved Project Config compatibility.
+
 ## 2.1.7 - 2018-12-17
 
 ### Changed
