@@ -391,6 +391,10 @@
   textarea {
     border: 2px solid $blue;
   }
+
+  input[type="radio"] {
+    margin-right: .5em;
+  }
 }
 
 .wiki__field {
