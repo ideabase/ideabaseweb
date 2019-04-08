@@ -47,61 +47,6 @@ return array (
     'hasCpSettings' => false,
     'hasCpSection' => false,
   ),
-  'craftcms/contact-form' => 
-  array (
-    'class' => 'craft\\contactform\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/contact-form/src',
-    'handle' => 'contact-form',
-    'aliases' => 
-    array (
-      '@craft/contactform' => $vendorDir . '/craftcms/contact-form/src',
-    ),
-    'name' => 'Contact Form',
-    'version' => '2.2.3',
-    'description' => 'Add a simple contact form to your Craft CMS site',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/contact-form',
-    'changelogUrl' => 'https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md',
-    'downloadUrl' => 'https://github.com/craftcms/contact-form/archive/v2.zip',
-    'components' => 
-    array (
-      'mailer' => 'craft\\contactform\\Mailer',
-    ),
-  ),
-  'nystudio107/craft-seomatic' => 
-  array (
-    'class' => 'nystudio107\\seomatic\\Seomatic',
-    'basePath' => $vendorDir . '/nystudio107/craft-seomatic/src',
-    'handle' => 'seomatic',
-    'aliases' => 
-    array (
-      '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
-    ),
-    'name' => 'SEOmatic',
-    'version' => '3.1.46',
-    'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
-    'developer' => 'nystudio107',
-    'developerUrl' => 'https://nystudio107.com',
-    'documentationUrl' => 'https://github.com/nystudio107/craft-seomatic/blob/v3/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/nystudio107/craft-seomatic/v3/CHANGELOG.md',
-    'hasCpSettings' => true,
-    'hasCpSection' => true,
-    'components' => 
-    array (
-      'frontendTemplates' => 'nystudio107\\seomatic\\services\\FrontendTemplates',
-      'helper' => 'nystudio107\\seomatic\\services\\Helper',
-      'jsonLd' => 'nystudio107\\seomatic\\services\\JsonLd',
-      'link' => 'nystudio107\\seomatic\\services\\Link',
-      'metaBundles' => 'nystudio107\\seomatic\\services\\MetaBundles',
-      'metaContainers' => 'nystudio107\\seomatic\\services\\MetaContainers',
-      'script' => 'nystudio107\\seomatic\\services\\Script',
-      'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
-      'tag' => 'nystudio107\\seomatic\\services\\Tag',
-      'title' => 'nystudio107\\seomatic\\services\\Title',
-    ),
-  ),
   'craftcms/redactor' => 
   array (
     'class' => 'craft\\redactor\\Plugin',
@@ -159,5 +104,58 @@ return array (
     'developerUrl' => 'https://pixelandtonic.com/',
     'developerEmail' => 'support@craftcms.com',
     'documentationUrl' => 'https://github.com/craftcms/aws-s3/blob/master/README.md',
+  ),
+  'craftcms/contact-form' => 
+  array (
+    'class' => 'craft\\contactform\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/contact-form/src',
+    'handle' => 'contact-form',
+    'aliases' => 
+    array (
+      '@craft/contactform' => $vendorDir . '/craftcms/contact-form/src',
+    ),
+    'name' => 'Contact Form',
+    'version' => '2.2.4',
+    'description' => 'Add a simple contact form to your Craft CMS site',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/contact-form/blob/v2/README.md',
+    'components' => 
+    array (
+      'mailer' => 'craft\\contactform\\Mailer',
+    ),
+  ),
+  'nystudio107/craft-seomatic' => 
+  array (
+    'class' => 'nystudio107\\seomatic\\Seomatic',
+    'basePath' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    'handle' => 'seomatic',
+    'aliases' => 
+    array (
+      '@nystudio107/seomatic' => $vendorDir . '/nystudio107/craft-seomatic/src',
+    ),
+    'name' => 'SEOmatic',
+    'version' => '3.1.47',
+    'description' => 'SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.',
+    'developer' => 'nystudio107',
+    'developerUrl' => 'https://nystudio107.com',
+    'documentationUrl' => 'https://github.com/nystudio107/craft-seomatic/blob/v3/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/nystudio107/craft-seomatic/v3/CHANGELOG.md',
+    'hasCpSettings' => true,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'frontendTemplates' => 'nystudio107\\seomatic\\services\\FrontendTemplates',
+      'helper' => 'nystudio107\\seomatic\\services\\Helper',
+      'jsonLd' => 'nystudio107\\seomatic\\services\\JsonLd',
+      'link' => 'nystudio107\\seomatic\\services\\Link',
+      'metaBundles' => 'nystudio107\\seomatic\\services\\MetaBundles',
+      'metaContainers' => 'nystudio107\\seomatic\\services\\MetaContainers',
+      'script' => 'nystudio107\\seomatic\\services\\Script',
+      'sitemaps' => 'nystudio107\\seomatic\\services\\Sitemaps',
+      'tag' => 'nystudio107\\seomatic\\services\\Tag',
+      'title' => 'nystudio107\\seomatic\\services\\Title',
+    ),
   ),
 );

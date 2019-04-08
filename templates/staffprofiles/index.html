@@ -95,7 +95,7 @@
                 <img class="people__profile-item__photo" src="{{ asset.url('thumb') }}" alt="{{ asset.title}}">
               {% endfor %}
             {% else %}
-              {% for asset in imagePlaceholder.aboutImage %}
+              {% for asset in imagePlaceholder.aboutImage.all() %}
                 <img src="{{ asset.url('thumb') }}" alt="No Image Found">
               {% endfor %}
             {% endif %}

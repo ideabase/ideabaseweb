@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b916ee875b883ee286ee3b3e50e5084",
+    "content-hash": "e36cb3d9b06c2bf88a64576e1c0c2e1c",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
@@ -412,23 +412,22 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "1.0.8",
+            "version": "1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/94401bcf960eaef1c0f3a9631e8ab34ee4e418fe",
-                "reference": "94401bcf960eaef1c0f3a9631e8ab34ee4e418fe",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/6c38b988d759d8b0af70b27dde74e3a1f0d78353",
+                "reference": "6c38b988d759d8b0af70b27dde74e3a1f0d78353",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0-RC4",
+                "craftcms/cms": "^3.1.5",
                 "league/flysystem-aws-s3-v3": "^1.0.13"
             },
             "type": "craft-plugin",
             "extra": {
                 "name": "Amazon S3",
                 "handle": "aws-s3",
-                "changelogUrl": "https://raw.githubusercontent.com/craftcms/aws-s3/master/CHANGELOG.md",
-                "downloadUrl": "https://github.com/craftcms/aws-s3/archive/master.zip"
+                "documentationUrl": "https://github.com/craftcms/aws-s3/blob/master/README.md"
             },
             "autoload": {
                 "psr-4": {
@@ -457,18 +456,18 @@
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/aws-s3/issues?state=open",
                 "source": "https://github.com/craftcms/aws-s3",
-                "docs": "https://github.com/craftcms/aws-s3",
+                "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
                 "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
             },
-            "time": "2018-01-02T18:40:37+00:00"
+            "time": "2019-03-27T09:29:56+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.20.1",
+            "version": "3.1.21.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/07dcd7f593c2faf56303f3348c061204270ae32d",
-                "reference": "07dcd7f593c2faf56303f3348c061204270ae32d",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/f2ef5da6693a3aa89bd2585b3a8c366ee5d7ab70",
+                "reference": "f2ef5da6693a3aa89bd2585b3a8c366ee5d7ab70",
                 "shasum": ""
             },
             "require": {
@@ -499,7 +498,7 @@
                 "true/punycode": "^2.1.0",
                 "twig/twig": "^2.7.2",
                 "yii2tech/ar-softdelete": "^1.0.2",
-                "yiisoft/yii2": "~2.0.16.1",
+                "yiisoft/yii2": "~2.0.17.0",
                 "yiisoft/yii2-debug": "^2.0.10",
                 "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
@@ -544,15 +543,15 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-03-27T22:26:46+00:00"
+            "time": "2019-04-04T19:07:09+00:00"
         },
         {
             "name": "craftcms/contact-form",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/431a2c298480cd9253b7fc1c4198fd63620e2c5c",
-                "reference": "431a2c298480cd9253b7fc1c4198fd63620e2c5c",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/f606446dd9f86cb98dd66ec2c7df081cdff73c7a",
+                "reference": "f606446dd9f86cb98dd66ec2c7df081cdff73c7a",
                 "shasum": ""
             },
             "require": {
@@ -562,8 +561,7 @@
             "extra": {
                 "name": "Contact Form",
                 "handle": "contact-form",
-                "changelogUrl": "https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md",
-                "downloadUrl": "https://github.com/craftcms/contact-form/archive/v2.zip",
+                "documentationUrl": "https://github.com/craftcms/contact-form/blob/v2/README.md",
                 "components": {
                     "mailer": "craft\\contactform\\Mailer"
                 }
@@ -594,10 +592,10 @@
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/contact-form/issues?state=open",
                 "source": "https://github.com/craftcms/contact-form",
-                "docs": "https://github.com/craftcms/contact-form",
+                "docs": "https://github.com/craftcms/contact-form/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
             },
-            "time": "2018-11-13T23:19:42+00:00"
+            "time": "2019-04-03T16:45:22+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -3423,11 +3421,11 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.16.1",
+            "version": "2.0.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/089198cced57c4b8c9545ddc56001a1bd114b2dd",
-                "reference": "089198cced57c4b8c9545ddc56001a1bd114b2dd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/b56159228c3b4990e38cf41ddd69af27ab015bea",
+                "reference": "b56159228c3b4990e38cf41ddd69af27ab015bea",
                 "shasum": ""
             },
             "require": {
@@ -3513,7 +3511,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-02-28T07:03:06+00:00"
+            "time": "2019-03-22T21:26:26+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
