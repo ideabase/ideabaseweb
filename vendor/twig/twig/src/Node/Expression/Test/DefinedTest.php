@@ -18,6 +18,7 @@ use Twig\Node\Expression\BlockReferenceExpression;
 use Twig\Node\Expression\ConstantExpression;
 use Twig\Node\Expression\FunctionExpression;
 use Twig\Node\Expression\GetAttrExpression;
+use Twig\Node\Expression\MethodCallExpression;
 use Twig\Node\Expression\NameExpression;
 use Twig\Node\Expression\TestExpression;
 use Twig\Node\Node;
@@ -47,8 +48,10 @@ class DefinedTest extends TestExpression
             $node->setAttribute('is_defined_test', true);
         } elseif ($node instanceof ConstantExpression || $node instanceof ArrayExpression) {
             $node = new ConstantExpression(true, $node->getTemplateLine());
+        } elseif ($node instanceof MethodCallExpression) {
+            $node->setAttribute('is_defined_test', true);
         } else {
-            throw new SyntaxError('The "defined" test only works with simple variables.', $this->getTemplateLine(), null, null, false);
+            throw new SyntaxError('The "defined" test only works with simple variables.', $lineno);
         }
 
         parent::__construct($node, $name, $arguments, $lineno);

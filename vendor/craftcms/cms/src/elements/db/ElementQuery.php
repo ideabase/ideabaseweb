@@ -365,7 +365,7 @@ class ElementQuery extends Query implements ElementQueryInterface
         $this->elementType = $elementType;
 
         // Use ** as a placeholder for "all the default columns"
-        $config['select'] = $config['select'] ?? ['**'];
+        $config['select'] = $config['select'] ?? ['**' => '**'];
 
         parent::__construct($config);
     }
@@ -474,6 +474,11 @@ class ElementQuery extends Query implements ElementQueryInterface
     public function offsetExists($name): bool
     {
         if (is_numeric($name)) {
+            // Cached?
+            if (($cachedResult = $this->getCachedResult()) !== null) {
+                return $name < count($cachedResult);
+            }
+
             $offset = $this->offset;
             $limit = $this->limit;
 
@@ -1222,6 +1227,14 @@ class ElementQuery extends Query implements ElementQueryInterface
 
     /**
      * @inheritdoc
+     */
+    public function exists($db = null)
+    {
+        return ($this->getCachedResult() !== null) ?: parent::exists($db);
+    }
+
+    /**
+     * @inheritdoc
      * @return ElementInterface|array|null The element. Null is returned if the query
      * results in nothing.
      */
@@ -1248,7 +1261,7 @@ class ElementQuery extends Query implements ElementQueryInterface
         }
 
         $select = $this->select;
-        $this->select = ['elements.id'];
+        $this->select = ['elements.id' => 'elements.id'];
         $result = $this->column($db);
         $this->select($select);
 
@@ -1609,6 +1622,7 @@ class ElementQuery extends Query implements ElementQueryInterface
      */
     private function _joinContentTable(string $class)
     {
+        /** @var ElementInterface|string $class */
         // Join in the content table on both queries
         $this->subQuery->innerJoin($this->contentTable . ' content', '[[content.elementId]] = [[elements.id]]');
         $this->subQuery->addSelect(['contentId' => 'content.id']);
@@ -1790,18 +1804,20 @@ class ElementQuery extends Query implements ElementQueryInterface
                     '[[structureelements.elementId]] = [[subquery.elementsId]]',
                     '[[structureelements.structureId]] = [[subquery.structureId]]',
                 ]);
+            $existsQuery = (new Query())
+                ->from([Table::STRUCTURES])
+                ->where('[[id]] = [[structureelements.structureId]]');
+            // todo: remove schema version condition after next beakpoint
+            $schemaVersion = Craft::$app->getProjectConfig()->get('system.schemaVersion');
+            if (version_compare($schemaVersion, '3.1.0', '>=')) {
+                $existsQuery->andWhere(['dateDeleted' => null]);
+            }
             $this->subQuery
                 ->addSelect(['structureelements.structureId'])
                 ->leftJoin('{{%structureelements}} structureelements', [
                     'and',
                     '[[structureelements.elementId]] = [[elements.id]]',
-                    [
-                        'exists',
-                        (new Query())
-                            ->from([Table::STRUCTURES])
-                            ->where('[[id]] = [[structureelements.structureId]]')
-                            ->andWhere(['dateDeleted' => null])
-                    ],
+                    ['exists', $existsQuery],
                 ]);
         }
 
@@ -1982,7 +1998,7 @@ class ElementQuery extends Query implements ElementQueryInterface
             $this->subQuery->offset = null;
 
             $select = $this->query->select;
-            $this->query->select = ['elements.id'];
+            $this->query->select = ['elements.id' => 'elements.id'];
             $elementIds = $this->query->column();
             $this->query->select = $select;
             $searchResults = Craft::$app->getSearch()->filterElementIdsByQuery($elementIds, $this->search, true, $this->siteId, true);
@@ -2127,26 +2143,26 @@ class ElementQuery extends Query implements ElementQueryInterface
         $select = array_merge((array)$this->select);
 
         // Is there still a ** placeholder param?
-        if (($placeholderPos = array_search('**', $select, true)) !== false) {
-            array_splice($select, $placeholderPos, 1);
+        if (isset($select['**'])) {
+            unset($select['**']);
 
             // Merge in the default columns
             $select = array_merge($select, [
-                'elements.id',
-                'elements.fieldLayoutId',
-                'elements.uid',
-                'elements.enabled',
-                'elements.archived',
-                'elements.dateCreated',
-                'elements.dateUpdated',
-                'elements_sites.slug',
-                'elements_sites.uri',
+                'elements.id' => 'elements.id',
+                'elements.fieldLayoutId' => 'elements.fieldLayoutId',
+                'elements.uid' => 'elements.uid',
+                'elements.enabled' => 'elements.enabled',
+                'elements.archived' => 'elements.archived',
+                'elements.dateCreated' => 'elements.dateCreated',
+                'elements.dateUpdated' => 'elements.dateUpdated',
+                'elements_sites.slug' => 'elements_sites.slug',
+                'elements_sites.uri' => 'elements_sites.uri',
                 'enabledForSite' => 'elements_sites.enabled',
             ]);
 
             // If the query includes soft-deleted elements, include the date deleted
             if ($this->trashed !== false) {
-                $select[] = 'elements.dateDeleted';
+                $select['elements.dateDeleted'] = 'elements.dateDeleted';
             }
 
             // If the query already specifies any columns, merge those in too

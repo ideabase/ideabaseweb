@@ -1,5 +1,97 @@
 # SEOmatic Changelog
 
+## 3.2.9 - 2019.06.13
+### Changed
+* Fixed an issue where the built JS bundles would error inside of webpack
+
+## 3.2.8 - 2019.06.13
+### Changed
+* Switched over to `startDateLocalized` & `endDateLocalized` for Solspace Calendar defaults
+* Fixed an issue with the Breadcrumbs JSON-LD not being generated properly for sites that has a path as part of their URL (e.g. `example.com/us/`)
+* Handle an edge-case where a migration didn't work properly to add `ADS_TXT_HANDLE`
+* Fixed an issue where an error would be thrown if a new Section was created, and you had a site group that had no sites in it
+* Fixed an issue where the SEOmatic CSS was affecting the CP CSS
+* Fixed the **Look up Latitude/Longitude** button; it now opens [www.latlong.net](https://www.latlong.net/convert-address-to-lat-long.html) because Google requires an API key now
+
+## 3.2.7 - 2019.06.03
+### Changed
+* Added the ability to pass in `asArray` as a parameter for CraftQL queries to a JSON-encoded array of data back
+* Updated build system
+
+## 3.2.6 - 2019.05.29
+### Changed
+* Updated to [schema.org 3.6](http://schema.org/version/3.6/) with over 900 JSON-LD Structured Data schemas!
+
+## 3.2.5 - 2019.05.29
+### Changed
+* Added `FAQPage` schema type from [schema.org](https://schema.org/FAQPage)
+* Ensure that URLs with spaces or other non-RFC1738 compliant characters are encoded
+* Replace "steps" by "step" in HowTo JSON-LD
+* Changed `copyrightYear` to output just the year
+* Fixed an issue with the JavaScript bundle not instantiating for SEO Settings fields
+* Updated to latest npm deps
+
+## 3.2.4 - 2019.05.24
+### Changed
+* Fixed a typecasting issue that caused `link rel="alternate"` to render for entries that were disabled for a particular site
+* Remove pagination via query string for `link rel="alternate"`
+* Remove the pointless `Twig_Node_Expression_EmptyCoalesce` class
+
+## 3.2.3 - 2019.05.22
+### Changed
+* Fixed an issue where the new SEO Settings Field implementation could cause images to be duplicated
+* Fixed an issue where JSON-LD schema could not be properly overridden via an SEO Settings field
+* Fixed an issue where the dynamically populated schema menu would have improper padding in the `value`s
+
+## 3.2.2 - 2019.05.21
+### Changed
+* Fixed an issue where a Section with no elements in it could cause the Sitemaps queue job to stall
+* Fixed Slack & Discord “summary card” CSS
+
+## 3.2.1 - 2019.05.21
+### Changed
+* Fixed an issue where the Site Setup checklist wasn't accurately reflecting the site settings
+* Fixed an issue where trying to create a new section would throw a Type Error, preventing you from doing so
+
+## 3.2.0 - 2019.05.20
+### Added
+* Added SEO Previews for LinkedIn, Pinterest, Slack, and Discord
+* Added the ability to control what SEO Previews appear in the sidebar
+* Added CraftQL support for fetching SEOmatic container meta data
+* Added support for Solspace Calendar events for custom metadata, JSON-LD, etc.
+* SEO Settings fields now default to whatever the parent element's Content SEO settings are when instantiating it
+* The Dashboard setup checklists now display checkboxes for items have have been set up properly
+* Added a `SeoElementInterface` to abstract out the support for custom elements
+
+### Changed
+* Changed paginated `rel="alternate"` URLs to always point to the first page in other languages, not the paginated page (that may or may not exist)
+* Fixed an issue in `getLocalizedUrls()` so that it handles `getElementUriForSite()` returning both `null` and `false`
+* If a meta value with the key of `target` (used for schema.org `SearchAction`s) doesn't have a `{` as the first character, it is not parsed as Twig
+* Fixed an issue where environment variables in tracking scripts were not parsed
+
+## 3.1.50 - 2019.04.30
+### Added
+* Added the `???` Empty Coalesce operator to allow for the easy cascading of default text/image SEO values
+
+### Changed
+* Fix the `addXDefaultHrefLang` so it doesn’t throw an error if enabled
+
+## 3.1.49 - 2019.04.22
+### Changed
+* Don't create `rel=alternate` links for sections that aren't enabled for a site
+* Added a new `addXDefaultHrefLang` setting (which defaults to `true`) to control whether the `x-default` `hreflang` tag is included
+* Updated Twig namespacing to be compliant with deprecated class aliases in 2.7.x
+* Changed the default Google Tag Manager data layer variable back to the default `dataLayer` (which it should have been all along)
+* Fixed `SoftwareApplication` JSON-LD object model
+
+## 3.1.48 - 2019.04.16
+### Changed
+* Added `/cache/` to the default paths excluded in `robots.txt` to auto-exclude the default Blitz `/cache/blitz/` path
+* SEOmatic now throws a `AddDynamicMetaEvent` event to give modules/plugins a chance to add any dynamic meta items to SEOmatic's containers
+* SEOmatic now throws a `InvalidateContainerCachesEvent` event whenever it clears its meta container caches, so other plugins/modules can listen in for it
+* No longer regenerate sitemaps when a Section is edited and `'regenerateSitemapsAutomatically' => false`
+* Update the display name of sections, category groups, and products in Content SEO when they are edited
+
 ## 3.1.47 - 2019.04.02
 ### Changed
 * Added `Environment::determineEnvironment()` so SEOmatic is can be smarter about automatically mapping environments

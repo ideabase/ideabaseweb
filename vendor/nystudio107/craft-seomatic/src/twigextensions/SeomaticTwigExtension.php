@@ -11,10 +11,16 @@
 
 namespace nystudio107\seomatic\twigextensions;
 
+use nystudio107\seomatic\Node\Expression\EmptyCoalesceExpression;
 use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\variables\SeomaticVariable;
 
 use Craft;
+
+use Twig\ExpressionParser;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
+
 use yii\base\InvalidConfigException;
 
 /**
@@ -22,7 +28,7 @@ use yii\base\InvalidConfigException;
  * @package   Seomatic
  * @since     3.0.0
  */
-class SeomaticTwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
+class SeomaticTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
      * @inheritdoc
@@ -79,4 +85,24 @@ class SeomaticTwigExtension extends \Twig_Extension implements \Twig_Extension_G
     {
         return [];
     }
+
+    /**
+     * @return array
+     */
+    public function getOperators(): array
+    {
+        return [
+            // Unary operators
+            [],
+            // Binary operators
+            [
+                '???' => [
+                    'precedence' => 300,
+                    'class' => EmptyCoalesceExpression::class,
+                    'associativity' => ExpressionParser::OPERATOR_RIGHT
+                ],
+            ],
+        ];
+    }
+
 }

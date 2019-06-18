@@ -80,6 +80,10 @@ SEOmatic also caches each unique SEO Meta request so that your website performan
 
 * [Crafting Modern SEO slide deck](https://speakerdeck.com/nystudio107/crafting-modern-seo)
 
+### Articles on SEO/SEOmatic:
+
+* [Advanced SEOmatic Tips](https://nystudio107.com/blog/tips-for-using-seomatic-effectively)
+
 * [Modern SEO: Snake Oil vs. Substance](https://nystudio107.com/blog/modern-seo-snake-oil-vs-substance)
 
 * [JSON-LD, Structured Data and Erotica](https://nystudio107.com/blog/json-ld-structured-data-and-erotica)
@@ -181,8 +185,10 @@ For example, the following will output the contents of the **companyInfo** field
 You can even do complex expressions, such as the following which outputs the first field that isn't empty, or a default text:
 
 ```twig
-{{ siteInfo.companyInfo ?? siteInfo.companySummary ?? "Some default text" }}
+{{ siteInfo.companyInfo ??? siteInfo.companySummary ??? "Some default text" }}
 ```
+
+The above uses the `???` empty coalesce operator that comes with SEOmatic; check out [SEOmatic's ??? Empty Coalesce operator](#seomatics--empty-coalesce-operator) for details.
 
 You can also access SEOmatic global variables (discussed below):
 
@@ -346,12 +352,14 @@ Is the same as:
 You can even do complex expressions, such as the following which outputs the first field that isn't empty, or a default text:
 
 ```twig
-{entry.description ?? entry.summary ?? "Some default text"}
+{entry.description ??? entry.summary ??? "Some default text"}
 ```
 Is the same as:
 ```twig
-{{ object.entry.description ?? object.entry.summary ?? "Some default text" }}
+{{ object.entry.description ??? object.entry.summary ??? "Some default text" }}
 ```
+
+The above uses the `???` empty coalesce operator that comes with SEOmatic; check out [SEOmatic's ??? Empty Coalesce operator](#seomatics--empty-coalesce-operator) for details.
 
 ### Site Settings
 
@@ -459,11 +467,12 @@ The Plugin Settings lets you control various SEOmatic settings globally (across 
 * **HTTP Headers Enabled** - Controls whether SEOmatic will automatically add `X-Robots-Tag`, `canonical`, & `Referrer-Policy` to the http response headers.
 * **Environment** - The server environment, either `live`, `staging`, or `local`. If `devMode` is on, SEOmatic will override this setting to local Development. This setting controls whether certain things render; for instance only in the `live` production environment will Google Analytics and other tracking tags send analytics data. SEOmatic also automatically sets the `robots` tag to `none` for everything but the `live` production environment.
 * **Display Sidebar SEO Preview** - Controls whether to display the Google, Twitter, and Facebook social media previews in the sidebar on entry. category, and product pages.
+* **Sidebar SEO Preview Sites** - The social media platforms that should be displayed in the SEO Preview sidebar
 * **devMode `<title>` prefix** - If devMode is on, prefix the `<title>` with this string
 * **Control Panel `<title>` prefix** - Prefix the Control Panel `<title>` with this string
 * **devMode Control Panel `<title>` prefix** - If devMode is on, prefix the Control Panel `<title>` with this string
 * **Separator Character** - The separator character to use for the `<title>` tag
-* **Max SEO Title Length** - The max number of characters in the <title> tag; anything beyond this will be truncated on word boundaries
+* **Max SEO Title Length** - The max number of characters in the `<title>` tag; anything beyond this will be truncated on word boundaries
 * **Max SEO Description Length** - The max number of characters in the `meta description` tag
 * **Site Groups define logically separate sites** - If you are using Site Groups to logically separate 'sister sites', turn this on.
 * **Add `hreflang` Tags** - Controls whether SEOmatic will automatically add `hreflang` and `og:locale:alternate` tags.
@@ -476,7 +485,6 @@ If you're using a multi-environment config, you can map your environment setting
 ```php
 <?php 
 return [
-    '*' => [
     // The public-facing name of the plugin
     'pluginName' => 'SEOmatic',
 
@@ -489,17 +497,33 @@ return [
     // Should sitemaps be regenerated automatically?
     'regenerateSitemapsAutomatically' => true,
 
+    // Should SEOmatic add to the http response headers?
+    'headersEnabled' => true,
+
     // The server environment, either `live`, `staging`, or `local`
     'environment' => 'live',
 
     // Should SEOmatic display the SEO Preview sidebar?
     'displayPreviewSidebar' => true,
 
+    // The social media platforms that should be displayed in the SEO Preview sidebar
+    'sidebarDisplayPreviewTypes' => [
+        'google',
+        'twitter',
+        'facebook'
+    ],
+
     // Should SEOmatic display the SEO Analysis sidebar?
     'displayAnalysisSidebar' => true,
 
     // If `devMode` is on, prefix the <title> with this string
     'devModeTitlePrefix' => '&#x1f6a7; ',
+
+     //  Prefix the Control Panel <title> with this string
+    'cpTitlePrefix' => '&#x2699; ',
+
+    // If `devMode` is on, prefix the Control Panel <title> with this string
+    'devModeCpTitlePrefix' => '&#x1f6a7;&#x2699; ',
 
     // The separator character to use for the `<title>` tag
     'separatorChar' => '|',
@@ -509,15 +533,18 @@ return [
 
     // The max number of characters in the `<meta name="description">` tag
     'maxDescriptionLength' => 155,
-    ],
-    'local' => [
-        'environment' => 'local',
-    ],
-    'staging' => [
-        'environment' => 'staging',
-    ],
-    'live' => [
-        'environment' => 'live',
+
+    // Site Groups define logically separate sites
+    'siteGroupsSeparate' => true,
+
+    // Whether to dynamically include the hreflang tags
+    'addHrefLang' => true,
+
+    // Should the meta generator tag and X-Powered-By header be included?
+    'generatorEnabled' => true,
+
+    // SeoElementInterface[] The default SeoElement type classes
+    'defaultSeoElementTypes' => [
     ],
 ];
 ```
@@ -570,7 +597,7 @@ Modern SEO works best if it actually reflects what is on the page, visible to th
 
 However, in some cases you may want more control over page SEO for specific entries. That's where the SEO Settings field comes in. Add it to your Section's Field Layout, and you can override specific SEO settings on a per-entry basis.
 
-Any setting that you leave blank or empty in the SEO Settings field will just default to the Content SEO and/or Global SEO setting.
+When a new entry is created with an SEO Settings field in it, the field values will default to the Content SEO settings for the Section that the field is in. Any setting that you leave blank or empty in the SEO Settings field will just default to the Content SEO and/or Global SEO setting.
 
 The Field settings let you control exactly what fields will appear and be visible for you or your client to override:
 
@@ -674,6 +701,17 @@ Sites that are grouped together under the same Site Group will also be included 
 
 If you want to disable the generation of the `<xhtml:link rel="alternate" hreflang="xx-xx">` on a per-Entry basis, you can do this by adding an SEO Settings to the Section/Category Group/Product in question, and turn off **Sitemap Enabled** on a per-entry basis.
 
+## Plugin Support
+
+SEOmatic automatically works with the following plugins:
+
+* [Craft Commerce](https://plugins.craftcms.com/commerce) from Pixel & Tonic
+* [Calendar](https://plugins.craftcms.com/calendar) from Solspace
+
+This means that SEOmatic will treat the Elements that these plugins provide as first class citizens, just like Craft Entries & Categories.
+
+SEOmatic will generate metadata, sitemaps, and have a Craft CP UI for them. If you have a custom Element provided by a plugin or module, you can integrate it using the [SeoElementInterface](https://github.com/nystudio107/craft-seomatic/blob/v3/src/base/SeoElementInterface.php).
+
 ## Emoji Support
 
 SEOmatic supports using Emojis in any of the fields in SEOmatic, so you could use one in the SEO Description, for instance:
@@ -697,7 +735,7 @@ Add the following to the non-AMP template to tell Google where the AMP version o
 ```twig
 {% set linkTag = seomatic.link.create({
   "rel": "amphtml",
-  "content": yourAmpPageLink
+  "href": yourAmpPageLink
   })
 %}
 ```
@@ -718,7 +756,7 @@ This will cause SEOmatic to not render _any_ custom scripts you might have enabl
 Then you can include Google AMP Analytics as per [Adding Analytics to your AMP pages](https://developers.google.com/analytics/devguides/collection/amp-analytics/) (this assumes you're using `gtag`):
 ```
 {% set script = seomatic.script.get('gtag') %}
-{% set analyticsId = script.vars.googleAnalyticsId.value ?? '' %}
+{% set analyticsId = script.vars.googleAnalyticsId.value ??? '' %}
 <amp-analytics type="googleanalytics">
     <script type="application/json">
         {
@@ -735,6 +773,9 @@ Then you can include Google AMP Analytics as per [Adding Analytics to your AMP p
     </script>
 </amp-analytics>
 ```
+
+The above uses the `???` empty coalesce operator that comes with SEOmatic; check out [SEOmatic's ??? Empty Coalesce operator](#seomatics--empty-coalesce-operator) for details.
+
 ## Single Page App (SPA) Support
 
 SEOmatic fully supports working with SPAs, allowing you to receive the metadata needed for a given route either as an array, or as DOM elements ready to be inserted.
@@ -742,6 +783,52 @@ SEOmatic fully supports working with SPAs, allowing you to receive the metadata 
 See the **Headless SPA API** section for details.
 
 ## Using SEOmatic
+
+### SEOmatic's ??? Empty Coalesce operator
+
+SEOmatic adds the `???` operator to Twig that will return the first thing that is defined, not null, and not empty. This allows you to safely "cascade" empty text/image values.
+
+This can be used both in Twig templates, and in any of SEOmatic's fields, which are parsed as Twig templates as well.
+
+This is particularly useful for SEO fields (both text & images), where you're dealing with a number of fallback/default values that may or may not exist, and may or may not be empty.
+
+The `???` Empty Coalescing operator is similar to the `??` [null coalescing operator](https://nystudio107.com/blog/handling-errors-gracefully-in-craft-cms#coalescing-the-night-away), but also ignores empty strings (`""`) and empty arrays (`[]`) as well.
+
+The problem is that to [code defensively](https://nystudio107.com/blog/handling-errors-gracefully-in-craft-cms#defensive-coding-in-twig), you want to make sure that all of these things are defined, not null, and also have a value. So you end up with something like:
+
+```twig
+{% if entry is defined and entry.description is defined and entry.description | length %}
+    {% set description = entry.description %}
+{% elseif category is defined and category.description is defined and category.description | length %}
+    {% set description = category.description %}
+{% else %}
+    {% set description = global.description %}
+{% endif %}
+```
+
+This gets quite verbose and quite tiresome quickly. There are other ways you can do something similar, such as using using the `?:` [ternary operator](https://twig.symfony.com/doc/2.x/templates.html#other-operators) and the [default filter](https://twig.symfony.com/doc/2.x/filters/default.html), but this too gets a bit unwieldy.
+
+You can use the [null coalescing operator](https://nystudio107.com/blog/handling-errors-gracefully-in-craft-cms#coalescing-the-night-away), which picks the first thing that is defined and not null:
+
+```twig
+{% set description = entry.description ?? category.description ?? global.description %}
+```
+
+But the problem here is it'll _just_ pick the first thing that is defined and not `null`. So if `entry.description` is an empty string, it'll use that, which is rarely what you want.
+
+Enter the Empty Coalescing operator, and it becomes:
+
+```twig
+{% set description = entry.description ??? category.description ??? global.description %}
+```
+
+Now the first thing that is defined, not null, _and_ not empty will be what `description` is set to.
+
+Nice. Simple. Readable. And most importantly, likely the result you're expecting.
+
+The examples presented here use the `???` operator for SEOmatic functions, but you can use them for anything you like.
+
+We've submitted a [pull request](https://github.com/twigphp/Twig/pull/2787) in the hopes of making this part of Twig core. This functionality is also available separately in the [Empty Coalesce](https://nystudio107.com/plugins/empty-coalesce) plugin.
 
 ### Twig Templating
 
@@ -1082,7 +1169,7 @@ To create a new meta object, you pass in a key:value array of the attributes to 
 ```twig
 {% set linkTag = seomatic.link.create({
   "rel": "canonical",
-  "content": "https://nystudio107.com"
+  "href": "https://nystudio107.com"
   })
 %}
 ```
@@ -1092,7 +1179,7 @@ By default, newly created meta objects are added to the appropriate meta contain
 ```twig
 {% set linkTag = seomatic.link.create({
   "rel": "canonical",
-  "content": "https://nystudio107.com"
+  "href": "https://nystudio107.com"
   }, false)
 %}
 ```
@@ -1320,6 +1407,20 @@ Note that you can achieve the same result with:
 
 ...since the `canonicalUrl` populates the `<link rel="canonical">` Link meta object
 
+If you want to check what `alternate` links are rendered:
+
+```twig
+    {% set alt = seomatic.link.get('alternate') %}
+    {% do alt.href([
+            'http://example.com',
+            'http://example.com/es'
+        ]).hreflang([
+            'x-default',
+            'es',
+        ])
+    %}
+```
+
 #### Script Meta Object Functions `seomatic.script`
 
 * **`seomatic.script.get(META_HANDLE)`** Returns the Script meta object of the handle `META_HANDLE` or `null` if it is not found 
@@ -1457,6 +1558,78 @@ You can bump the `Bundle.php`'s `bundleVersion` setting if you want it to re-rea
 ## Headless SPA API
 
 SEOmatic allows you to fetch the meta information for any page via a controller API endpoint, so you can render the meta data via a frontend framework like VueJS or React.
+
+### GraphQL Query support
+
+To retrieve SEOmatic container data through the [CraftQL](https://github.com/markhuot/craftql) plugin, use the `seomatic` field in your graphql query. Each parameter will return that container's data, ready for insertion into the DOM.
+
+You must as least pass in the URI you want metadata for:
+
+```gql
+{
+  seomatic (uri: "/") {
+      metaTitleContainer
+      metaTagContainer
+      metaLinkContainer
+      metaScriptContainer
+      metaJsonLdContainer
+  }
+}
+```
+
+...and you can also pass in an optional `siteId`:
+
+```gql
+{
+  seomatic (uri: "/", siteId: 1) {
+      metaTitleContainer
+      metaTagContainer
+      metaLinkContainer
+      metaScriptContainer
+      metaJsonLdContainer
+  }
+}
+```
+
+...and you can also pass in an optional `asArray` parameter:
+
+```gql
+{
+  seomatic (uri: "/", asArray: true) {
+      metaTitleContainer
+      metaTagContainer
+      metaLinkContainer
+      metaScriptContainer
+      metaJsonLdContainer
+  }
+}
+```
+This defaults to `false` which returns to you HTML ready to be inserted into the DOM. If you set it to `true` then it will return a JSON-encoded array of the container data.
+
+This is useful if you're using Next.js, Nuxt.js, Gatsby, Gridsome, or anything else that uses a library to insert the various tags. In this case, you want the raw data to pass along.
+
+![Screenshot](resources/screenshots/seomatic-craftql-query.png)
+
+You can also piggyback on an entries query, to return all of your data for an entry as well as the SEOmatic metadata in one request:
+```gql
+{
+  entry(section: homepage) {
+    id
+    title
+    ... on Homepage {
+      seomatic {
+        metaTitleContainer
+        metaTagContainer
+        metaLinkContainer
+        metaScriptContainer
+        metaJsonLdContainer
+      }
+    }
+  }
+}
+```
+
+In this case, no arguments are passed in, because the URI and siteId will be taken from the parent Entry element.
 
 ### Meta Container API Endpoints
 

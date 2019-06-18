@@ -103,9 +103,31 @@
             id: "displayPreviewSidebar",
             name: "displayPreviewSidebar",
             on: settings.displayPreviewSidebar,
+            toggle: "sidebarDisplayPreviewTypes-wrapper",
             warning: configWarning("displayPreviewSidebar", "seomatic"),
             errors: settings.getErrors("displayPreviewSidebar"),
         }) }}
+
+        <div id="sidebarDisplayPreviewTypes-wrapper" class="{% if not settings.displayPreviewSidebar %}hidden{% endif %}">
+            {{ forms.checkboxSelectField({
+                label: "Sidebar SEO Preview Sites"|t("seomatic"),
+                instructions: "The social media platforms that should be displayed in the SEO Preview sidebar"|t,
+                id: 'sidebarDisplayPreviewTypes',
+                name: 'sidebarDisplayPreviewTypes',
+                options: {
+                    'google': 'Google'|t('seomatic'),
+                    'twitter': 'Twitter'|t('seomatic'),
+                    'facebook': 'Facebook'|t('seomatic'),
+                    'linkedin': 'LinkedIn'|t('seomatic'),
+                    'pinterest': 'Pinterest'|t('seomatic'),
+                    'slack': 'Slack'|t('seomatic'),
+                    'discord': 'Discord'|t('seomatic'),
+                },
+                values: settings.sidebarDisplayPreviewTypes,
+                warning: false,
+                errors: settings.getErrors("sidebarDisplayPreviewTypes"),
+            }) }}
+        </div>
 
 {# @TODO: This will be added an upcoming "pro" edition
 
@@ -197,13 +219,23 @@
         }) }}
 
         {{ forms.lightswitchField({
-            label: "Add `hreflang` Tags"|t("seomatic"),
-            instructions: "Controls whether SEOmatic will automatically add `hreflang` and `og:locale:alternate` tags."|t("seomatic"),
+            label: "Add `hreflang` Tags"|t("seomatic")|md,
+            instructions: "Controls whether SEOmatic will automatically add `hreflang` and `og:locale:alternate` tags. [Learn More](https://support.google.com/webmasters/answer/189077)"|t("seomatic"),
             id: "addHrefLang",
             name: "addHrefLang",
             on: settings.addHrefLang,
             warning: configWarning("addHrefLang", "seomatic"),
             errors: settings.getErrors("addHrefLang"),
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: "Include `x-default` `hreflang` Tag"|t("seomatic")|md,
+            instructions: "Controls whether SEOmatic will automatically include an `x-default` `hreflang` tag. [Learn More](https://webmasters.googleblog.com/2013/04/x-default-hreflang-for-international-pages.html)"|t("seomatic"),
+            id: "addXDefaultHrefLang",
+            name: "addXDefaultHrefLang",
+            on: settings.addXDefaultHrefLang,
+            warning: configWarning("addXDefaultHrefLang", "seomatic"),
+            errors: settings.getErrors("addXDefaultHrefLang"),
         }) }}
 
         {{ forms.lightswitchField({

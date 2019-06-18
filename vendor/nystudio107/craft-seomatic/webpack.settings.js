@@ -17,9 +17,7 @@ module.exports = {
         dist: {
             base: "./src/assetbundles/seomatic/dist/",
             clean: [
-                "./img",
-                "./css",
-                "./js"
+                '**/*'
             ]
         },
         templates: "./src/templates/"
@@ -36,6 +34,11 @@ module.exports = {
         "seomatic-meta": "seomatic-meta.js",
         "twig-editor": "twig-editor.js",
         "javascript-editor": "javascript-editor.js",
+    },
+    babelLoaderConfig: {
+        exclude: [
+            /(node_modules|bower_components)/
+        ],
     },
     copyWebpackConfig: [
     ],

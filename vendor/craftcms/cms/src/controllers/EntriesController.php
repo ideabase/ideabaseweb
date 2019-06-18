@@ -153,7 +153,20 @@ class EntriesController extends BaseEntriesController
             ];
 
             if ($section->maxLevels) {
-                $variables['parentOptionCriteria']['level'] = '< ' . $section->maxLevels;
+                if ($entry->id) {
+                    // Figure out how deep the ancestors go
+                    $maxDepth = Entry::find()
+                        ->select('level')
+                        ->descendantOf($entry)
+                        ->anyStatus()
+                        ->leaves()
+                        ->scalar();
+                    $depth = 1 + ($maxDepth ?: $entry->level) - $entry->level;
+                } else {
+                    $depth = 1;
+                }
+
+                $variables['parentOptionCriteria']['level'] = '<= ' . ($section->maxLevels - $depth);
             }
 
             if ($entry->id !== null) {
@@ -532,15 +545,6 @@ class EntriesController extends BaseEntriesController
             }
         }
 
-        // Make sure the entry has at least one version if the section has versioning enabled
-        $revisionsService = Craft::$app->getEntryRevisions();
-        if ($entry->getSection()->enableVersioning && $entry->id && !$revisionsService->doesEntryHaveVersions($entry->id, $entry->siteId)) {
-            $currentEntry = Craft::$app->getEntries()->getEntryById($entry->id, $entry->siteId);
-            $currentEntry->revisionCreatorId = $entry->authorId;
-            $currentEntry->revisionNotes = 'Revision from ' . Craft::$app->getFormatter()->asDatetime($entry->dateUpdated);
-            $revisionsService->saveVersion($currentEntry);
-        }
-
         // Save the entry (finally!)
         if ($entry->enabled && $entry->enabledForSite) {
             $entry->setScenario(Element::SCENARIO_LIVE);
@@ -561,11 +565,6 @@ class EntriesController extends BaseEntriesController
             ]);
 
             return null;
-        }
-
-        // Should we save a new version?
-        if ($entry->getSection()->enableVersioning) {
-            $revisionsService->saveVersion($entry);
         }
 
         if ($request->getAcceptsJson()) {
@@ -720,7 +719,7 @@ class EntriesController extends BaseEntriesController
      * @param int|null $draftId
      * @param int|null $versionId
      * @return Response
-     * @throws NotFoundHttpException if the requested category cannot be found
+     * @throws NotFoundHttpException if the requested entry cannot be found
      */
     public function actionViewSharedEntry(int $entryId = null, int $siteId = null, int $draftId = null, int $versionId = null): Response
     {

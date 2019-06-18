@@ -15,6 +15,7 @@ use nystudio107\seomatic\helpers\ArrayHelper;
 use nystudio107\seomatic\Seomatic;
 use nystudio107\seomatic\base\MetaContainer;
 use nystudio107\seomatic\base\MetaItem;
+use nystudio107\seomatic\events\InvalidateContainerCachesEvent;
 use nystudio107\seomatic\helpers\DynamicMeta as DynamicMetaHelper;
 use nystudio107\seomatic\helpers\Field as FieldHelper;
 use nystudio107\seomatic\helpers\MetaValue as MetaValueHelper;
@@ -33,12 +34,7 @@ use nystudio107\seomatic\variables\SeomaticVariable;
 use Craft;
 use craft\base\Component;
 use craft\base\Element;
-use craft\elements\Category;
-use craft\elements\Entry;
 use craft\helpers\UrlHelper;
-
-use craft\commerce\Plugin as CommercePlugin;
-use craft\commerce\elements\Product;
 
 use yii\base\Exception;
 use yii\base\InvalidConfigException;
@@ -61,6 +57,22 @@ class MetaContainers extends Component
     const INVALID_RESPONSE_CACHE_KEY = 'seomatic_invalid_response';
     const GLOBALS_CACHE_KEY = 'parsed_globals_';
     const SCRIPTS_CACHE_KEY = 'body_scripts_';
+
+    /**
+     * @event InvalidateContainerCachesEvent The event that is triggered when SEOmatic
+     *        is about to clear its meta container caches
+     *
+     * ---
+     * ```php
+     * use nystudio107\seomatic\events\InvalidateContainerCachesEvent;
+     * use nystudio107\seomatic\services\MetaContainers;
+     * use yii\base\Event;
+     * Event::on(MetaContainers::class, MetaContainers::EVENT_INVALIDATE_CONTAINER_CACHES, function(InvalidateContainerCachesEvent $e) {
+     *     // Container caches are about to be cleared
+     * });
+     * ```
+     */
+    const EVENT_INVALIDATE_CONTAINER_CACHES = 'invalidateContainerCaches';
 
     // Public Properties
     // =========================================================================
@@ -548,33 +560,16 @@ class MetaContainers extends Component
         /** @var Element $element */
         $element = Seomatic::$matchedElement;
         if ($element) {
-            $sourceType = '';
-            switch (FieldHelper::getElementRootClass($element)) {
-                case Entry::class:
-                    /** @var  $element Entry */
-                    $sourceType = MetaBundles::SECTION_META_BUNDLE;
-                    break;
-
-                case Category::class:
-                    /** @var  $element Category */
-                    $sourceType = MetaBundles::CATEGORYGROUP_META_BUNDLE;
-                    break;
-                case Product::class:
-                    if (Seomatic::$commerceInstalled) {
-                        $commerce = CommercePlugin::getInstance();
-                        if ($commerce !== null) {
-                            $sourceType = MetaBundles::PRODUCT_META_BUNDLE;
-                        }
-                    }
-                    break;
+            $sourceType = Seomatic::$plugin->seoElements->getMetaBundleTypeFromElement($element);
+            if ($sourceType) {
+                list($sourceId, $sourceBundleType, $sourceHandle, $sourceSiteId)
+                    = Seomatic::$plugin->metaBundles->getMetaSourceFromElement($element);
+                $metaBundle = Seomatic::$plugin->metaBundles->getMetaBundleBySourceId(
+                    $sourceType,
+                    $sourceId,
+                    $sourceSiteId
+                );
             }
-            list($sourceId, $sourceBundleType, $sourceHandle, $sourceSiteId)
-                = Seomatic::$plugin->metaBundles->getMetaSourceFromElement($element);
-            $metaBundle = Seomatic::$plugin->metaBundles->getMetaBundleBySourceId(
-                $sourceType,
-                $sourceId,
-                $sourceSiteId
-            );
         }
         $this->matchedMetaBundle = $metaBundle;
 
@@ -642,6 +637,13 @@ class MetaContainers extends Component
             'All meta container caches cleared',
             __METHOD__
         );
+        // Trigger an event to let other plugins/modules know we've cleared our caches
+        $event = new InvalidateContainerCachesEvent([
+            'uri' => null,
+            'siteId' => null,
+            'sourceId' => null,
+        ]);
+        $this->trigger(self::EVENT_INVALIDATE_CONTAINER_CACHES, $event);
     }
 
     /**
@@ -661,6 +663,13 @@ class MetaContainers extends Component
             'Meta bundle cache cleared: '.$metaBundleSourceId,
             __METHOD__
         );
+        // Trigger an event to let other plugins/modules know we've cleared our caches
+        $event = new InvalidateContainerCachesEvent([
+            'uri' => null,
+            'siteId' => null,
+            'sourceId' => $sourceId,
+        ]);
+        $this->trigger(self::EVENT_INVALIDATE_CONTAINER_CACHES, $event);
     }
 
     /**
@@ -677,6 +686,13 @@ class MetaContainers extends Component
             'Meta container cache cleared: '.$uri.'/'.$siteId,
             __METHOD__
         );
+        // Trigger an event to let other plugins/modules know we've cleared our caches
+        $event = new InvalidateContainerCachesEvent([
+            'uri' => $uri,
+            'siteId' => $siteId,
+            'sourceId' => null,
+        ]);
+        $this->trigger(self::EVENT_INVALIDATE_CONTAINER_CACHES, $event);
     }
 
     // Protected Methods

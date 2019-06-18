@@ -11,7 +11,14 @@
 
 namespace nystudio107\seomatic\models;
 
+use nystudio107\seomatic\Seomatic;
+use nystudio107\seomatic\base\SeoElementInterface;
 use nystudio107\seomatic\base\VarsModel;
+
+use craft\behaviors\EnvAttributeParserBehavior;
+use craft\validators\ArrayValidator;
+
+use yii\behaviors\AttributeTypecastBehavior;
 
 /**
  * @author    nystudio107
@@ -56,6 +63,15 @@ class Settings extends VarsModel
      * @var bool Should SEOmatic display the SEO Preview sidebar?
      */
     public $displayPreviewSidebar = true;
+
+    /**
+     * @var array The social media platforms that should be displayed in the SEO Preview sidebar
+     */
+    public $sidebarDisplayPreviewTypes = [
+        'google',
+        'twitter',
+        'facebook'
+    ];
 
     /**
      * @var bool Should SEOmatic display the SEO Analysis sidebar?
@@ -103,9 +119,20 @@ class Settings extends VarsModel
     public $addHrefLang = true;
 
     /**
+     * @var bool Whether to dynamically include the `x-default` hreflang tags
+     */
+    public $addXDefaultHrefLang = true;
+
+    /**
      * @var bool Should the meta generator tag and X-Powered-By header be included?
      */
     public $generatorEnabled = true;
+
+    /**
+     * @var SeoElementInterface[] The default SeoElement type classes
+     */
+    public $defaultSeoElementTypes = [
+    ];
 
     // Public Methods
     // =========================================================================
@@ -126,6 +153,7 @@ class Settings extends VarsModel
                     'headersEnabled',
                     'generatorEnabled',
                     'addHrefLang',
+                    'addXDefaultHrefLang',
                 ],
                 'boolean'],
             ['environment', 'string'],
@@ -139,6 +167,39 @@ class Settings extends VarsModel
             ['maxTitleLength', 'default', 'value' => 70],
             ['maxDescriptionLength', 'integer', 'min' => 10],
             ['maxDescriptionLength', 'default', 'value' => 155],
+            [
+                [
+                    'sidebarDisplayPreviewTypes',
+                    'defaultSeoElementTypes',
+                ],
+                ArrayValidator::class,
+            ],
+
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public function behaviors()
+    {
+        $craft31Behaviors = [];
+        if (Seomatic::$craft31) {
+            $craft31Behaviors = [
+                'parser' => [
+                    'class' => EnvAttributeParserBehavior::class,
+                    'attributes' => [
+                        'environment',
+                    ],
+                ]
+            ];
+        }
+
+        return array_merge($craft31Behaviors, [
+            'typecast' => [
+                'class' => AttributeTypecastBehavior::class,
+                // 'attributeTypes' will be composed automatically according to `rules()`
+            ],
+        ]);
     }
 }

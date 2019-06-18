@@ -25,6 +25,7 @@ use craft\elements\Tag;
 use craft\elements\User;
 use craft\errors\ElementNotFoundException;
 use craft\errors\InvalidElementException;
+use craft\errors\OperationAbortedException;
 use craft\events\DeleteElementEvent;
 use craft\events\ElementEvent;
 use craft\events\MergeElementsEvent;
@@ -310,7 +311,7 @@ class Elements extends Component
      *
      * @param int $elementId The element’s ID.
      * @param int $siteId The site to search for the element’s URI in.
-     * @return string|null The element’s URI, or `null`.
+     * @return string|null|false The element’s URI or `null`, or `false` if the element doesn’t exist.
      */
     public function getElementUriForSite(int $elementId, int $siteId)
     {
@@ -382,6 +383,7 @@ class Elements extends Component
      * @param ElementInterface $element The element that is being saved
      * @param bool $runValidation Whether the element should be validated
      * @param bool $propagate Whether the element should be saved across all of its supported sites
+     * (this can only be disabled when updating an existing element)
      * @return bool
      * @throws ElementNotFoundException if $element has an invalid $id
      * @throws Exception if the $element doesn’t have any supported sites
@@ -391,6 +393,11 @@ class Elements extends Component
     {
         /** @var Element $element */
         $isNewElement = !$element->id;
+
+        // If this is a new element, give it a UID right away
+        if ($isNewElement && !$element->uid) {
+            $element->uid = StringHelper::UUID();
+        }
 
         // Fire a 'beforeSaveElement' event
         if ($this->hasEventHandlers(self::EVENT_BEFORE_SAVE_ELEMENT)) {
@@ -444,6 +451,7 @@ class Elements extends Component
             } else {
                 $elementRecord = new ElementRecord();
                 $elementRecord->type = get_class($element);
+                $elementRecord->uid = $element->uid;
             }
 
             // Set the attributes
@@ -473,7 +481,6 @@ class Elements extends Component
             if ($isNewElement) {
                 // Save the element ID on the element model
                 $element->id = $elementRecord->id;
-                $element->uid = $elementRecord->uid;
 
                 // If there's a temp ID, update the URI
                 if ($element->tempId && $element->uri) {
@@ -518,7 +525,7 @@ class Elements extends Component
             Craft::$app->getSearch()->indexElementAttributes($element);
 
             // Update the element across the other sites?
-            if ($propagate && $element::isLocalized() && Craft::$app->getIsMultiSite()) {
+            if (($isNewElement || $propagate) && $element::isLocalized() && Craft::$app->getIsMultiSite()) {
                 foreach ($supportedSites as $siteInfo) {
                     // Skip the master site
                     if ($siteInfo['siteId'] != $element->siteId) {
@@ -587,7 +594,7 @@ class Elements extends Component
         $element->getFieldValues();
         /** @var Element $mainClone */
         $mainClone = clone $element;
-        $mainClone->setAttributes($newAttributes);
+        $mainClone->setAttributes($newAttributes, false);
         $mainClone->duplicateOf = $element;
         $mainClone->id = null;
         $mainClone->contentId = null;
@@ -597,6 +604,13 @@ class Elements extends Component
         $supportedSiteIds = ArrayHelper::getColumn($supportedSites, 'siteId');
         if (!in_array($mainClone->siteId, $supportedSiteIds, false)) {
             throw new Exception('Attempting to duplicate an element in an unsupported site.');
+        }
+
+        // Set a unique URI on the clone
+        try {
+            ElementHelper::setUniqueUri($mainClone);
+        } catch (OperationAbortedException $e) {
+            // Oh well, not worth bailing over
         }
 
         $transaction = Craft::$app->getDb()->beginTransaction();
@@ -620,12 +634,19 @@ class Elements extends Component
 
                     /** @var Element $siteClone */
                     $siteClone = clone $siteElement;
-                    $siteClone->setAttributes($newAttributes);
+                    $siteClone->setAttributes($newAttributes, false);
                     $siteClone->duplicateOf = $siteElement;
                     $siteClone->propagating = true;
                     $siteClone->id = $mainClone->id;
                     $siteClone->siteId = $siteInfo['siteId'];
                     $siteClone->contentId = null;
+
+                    // Set a unique URI on the site clone
+                    try {
+                        ElementHelper::setUniqueUri($siteClone);
+                    } catch (OperationAbortedException $e) {
+                        // Oh well, not worth bailing over
+                    }
 
                     if (!$this->saveElement($siteClone, false, false)) {
                         throw new InvalidElementException($siteClone, 'Element ' . $element->id . ' could not be duplicated for site ' . $siteInfo['siteId']);
@@ -774,7 +795,7 @@ class Elements extends Component
     }
 
     /**
-     * Merges two elements together.
+     * Merges two elements together by their IDs.
      *
      * This method will update the following:
      * - Any relations involving the merged element
@@ -784,9 +805,39 @@ class Elements extends Component
      * @param int $mergedElementId The ID of the element that is going away.
      * @param int $prevailingElementId The ID of the element that is sticking around.
      * @return bool Whether the elements were merged successfully.
+     * @throws ElementNotFoundException if one of the element IDs don’t exist.
      * @throws \Throwable if reasons
      */
     public function mergeElementsByIds(int $mergedElementId, int $prevailingElementId): bool
+    {
+        // Get the elements
+        $mergedElement = $this->getElementById($mergedElementId);
+        if (!$mergedElement) {
+            throw new ElementNotFoundException("No element exists with the ID '{$mergedElementId}'");
+        }
+        $prevailingElement = $this->getElementById($prevailingElementId);
+        if (!$prevailingElement) {
+            throw new ElementNotFoundException("No element exists with the ID '{$prevailingElementId}'");
+        }
+
+        // Merge them
+        return $this->mergeElements($mergedElement, $prevailingElement);
+    }
+
+    /**
+     * Merges two elements together.
+     *
+     * This method will update the following:
+     * - Any relations involving the merged element
+     * - Any structures that contain the merged element
+     * - Any reference tags in textual custom fields referencing the merged element
+     *
+     * @param ElementInterface $mergedElement The element that is going away.
+     * @param ElementInterface $prevailingElement The element that is sticking around.
+     * @return bool Whether the elements were merged successfully.
+     * @throws \Throwable if reasons
+     */
+    public function mergeElements(ElementInterface $mergedElement, ElementInterface $prevailingElement): bool
     {
         $transaction = Craft::$app->getDb()->beginTransaction();
         try {
@@ -794,7 +845,7 @@ class Elements extends Component
             $relations = (new Query())
                 ->select(['id', 'fieldId', 'sourceId', 'sourceSiteId'])
                 ->from([Table::RELATIONS])
-                ->where(['targetId' => $mergedElementId])
+                ->where(['targetId' => $mergedElement->id])
                 ->all();
 
             foreach ($relations as $relation) {
@@ -805,7 +856,7 @@ class Elements extends Component
                         'fieldId' => $relation['fieldId'],
                         'sourceId' => $relation['sourceId'],
                         'sourceSiteId' => $relation['sourceSiteId'],
-                        'targetId' => $prevailingElementId
+                        'targetId' => $prevailingElement->id
                     ])
                     ->exists();
 
@@ -814,7 +865,7 @@ class Elements extends Component
                         ->update(
                             Table::RELATIONS,
                             [
-                                'targetId' => $prevailingElementId
+                                'targetId' => $prevailingElement->id
                             ],
                             [
                                 'id' => $relation['id']
@@ -827,7 +878,7 @@ class Elements extends Component
             $structureElements = (new Query())
                 ->select(['id', 'structureId'])
                 ->from([Table::STRUCTUREELEMENTS])
-                ->where(['elementId' => $mergedElementId])
+                ->where(['elementId' => $mergedElement->id])
                 ->all();
 
             foreach ($structureElements as $structureElement) {
@@ -836,7 +887,7 @@ class Elements extends Component
                     ->from([Table::STRUCTUREELEMENTS])
                     ->where([
                         'structureId' => $structureElement['structureId'],
-                        'elementId' => $prevailingElementId
+                        'elementId' => $prevailingElement->id
                     ])
                     ->exists();
 
@@ -844,7 +895,7 @@ class Elements extends Component
                     Craft::$app->getDb()->createCommand()
                         ->update(Table::RELATIONS,
                             [
-                                'elementId' => $prevailingElementId
+                                'elementId' => $prevailingElement->id
                             ],
                             [
                                 'id' => $structureElement['id']
@@ -855,7 +906,7 @@ class Elements extends Component
 
             // Update any reference tags
             /** @var ElementInterface|null $elementType */
-            $elementType = $this->getElementTypeById($prevailingElementId);
+            $elementType = $this->getElementTypeById($prevailingElement->id);
 
             if ($elementType !== null && ($refHandle = $elementType::refHandle()) !== null) {
                 $refTagPrefix = "{{$refHandle}:";
@@ -863,27 +914,27 @@ class Elements extends Component
 
                 $queue->push(new FindAndReplace([
                     'description' => Craft::t('app', 'Updating element references'),
-                    'find' => $refTagPrefix . $mergedElementId . ':',
-                    'replace' => $refTagPrefix . $prevailingElementId . ':',
+                    'find' => $refTagPrefix . $mergedElement->id . ':',
+                    'replace' => $refTagPrefix . $prevailingElement->id . ':',
                 ]));
 
                 $queue->push(new FindAndReplace([
                     'description' => Craft::t('app', 'Updating element references'),
-                    'find' => $refTagPrefix . $mergedElementId . '}',
-                    'replace' => $refTagPrefix . $prevailingElementId . '}',
+                    'find' => $refTagPrefix . $mergedElement->id . '}',
+                    'replace' => $refTagPrefix . $prevailingElement->id . '}',
                 ]));
             }
 
             // Fire an 'afterMergeElements' event
             if ($this->hasEventHandlers(self::EVENT_AFTER_MERGE_ELEMENTS)) {
                 $this->trigger(self::EVENT_AFTER_MERGE_ELEMENTS, new MergeElementsEvent([
-                    'mergedElementId' => $mergedElementId,
-                    'prevailingElementId' => $prevailingElementId
+                    'mergedElementId' => $mergedElement->id,
+                    'prevailingElementId' => $prevailingElement->id
                 ]));
             }
 
             // Now delete the merged element
-            $success = $this->deleteElementById($mergedElementId);
+            $success = $this->deleteElement($mergedElement);
 
             $transaction->commit();
 
@@ -906,6 +957,7 @@ class Elements extends Component
      */
     public function deleteElementById(int $elementId, string $elementType = null, int $siteId = null): bool
     {
+        /** @var ElementInterface|string|null $elementType */
         if ($elementType === null) {
             /** @noinspection CallableParameterUseCaseInTypeContextInspection */
             $elementType = $this->getElementTypeById($elementId);
@@ -1329,6 +1381,7 @@ class Elements extends Component
      */
     public function eagerLoadElements(string $elementType, array $elements, $with)
     {
+        /** @var Element[] $elements */
         // Bail if there aren't even any elements
         if (empty($elements)) {
             return;
@@ -1412,6 +1465,9 @@ class Elements extends Component
                             $map['criteria'] ?? [],
                             $pathCriterias[$targetPath] ?? []
                         ));
+                        if (!$query->siteId) {
+                            $query->siteId = reset($elements)->siteId;
+                        }
                         $query->andWhere(['elements.id' => $uniqueTargetElementIds]);
                         /** @var Element[] $targetElements */
                         $targetElements = $query->all();
@@ -1512,6 +1568,7 @@ class Elements extends Component
     {
         /** @var Element $element */
         // Try to fetch the element in this site
+        /** @var Element|null $siteElement */
         $siteElement = null;
         if (!$isNewElement) {
             $siteElement = $this->getElementById($element->id, get_class($element), $siteInfo['siteId']);
@@ -1519,13 +1576,13 @@ class Elements extends Component
 
         // If it doesn't exist yet, just clone the master site
         if ($isNewSiteForElement = ($siteElement === null)) {
-            /** @var Element $siteElement */
             $siteElement = clone $element;
             $siteElement->siteId = $siteInfo['siteId'];
             $siteElement->contentId = null;
             $siteElement->enabledForSite = $siteInfo['enabledByDefault'];
         } else {
             $siteElement->enabled = $element->enabled;
+            $siteElement->resaving = $element->resaving;
         }
 
         // Copy any non-translatable field values

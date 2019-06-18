@@ -27,7 +27,7 @@ class MacroNode extends Node
     {
         foreach ($arguments as $argumentName => $argument) {
             if (self::VARARGS_NAME === $argumentName) {
-                throw new SyntaxError(sprintf('The argument "%s" in macro "%s" cannot be defined because the variable "%s" is reserved for arbitrary arguments.', self::VARARGS_NAME, $name, self::VARARGS_NAME), $argument->getTemplateLine(), null, null, false);
+                throw new SyntaxError(sprintf('The argument "%s" in macro "%s" cannot be defined because the variable "%s" is reserved for arbitrary arguments.', self::VARARGS_NAME, $name, self::VARARGS_NAME), $argument->getTemplateLine(), $argument->getSourceContext());
             }
         }
 
@@ -63,9 +63,7 @@ class MacroNode extends Node
             ->raw(")\n")
             ->write("{\n")
             ->indent()
-        ;
-
-        $compiler
+            ->write("\$macros = \$this->macros;\n")
             ->write("\$context = \$this->env->mergeGlobals([\n")
             ->indent()
         ;
@@ -90,7 +88,7 @@ class MacroNode extends Node
             ->outdent()
             ->write("]);\n\n")
             ->write("\$blocks = [];\n\n")
-            ->write("ob_start();\n")
+            ->write("ob_start(function () { return ''; });\n")
             ->write("try {\n")
             ->indent()
             ->subcompile($this->getNode('body'))

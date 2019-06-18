@@ -200,6 +200,7 @@ class Extension extends AbstractExtension implements GlobalsInterface
         $security = Craft::$app->getSecurity();
 
         return [
+            new TwigFilter('ascii', [StringHelper::class, 'toAscii']),
             new TwigFilter('atom', [$this, 'atomFilter'], ['needs_environment' => true]),
             new TwigFilter('camel', [$this, 'camelFilter']),
             new TwigFilter('column', [ArrayHelper::class, 'getColumn']),
@@ -209,7 +210,7 @@ class Extension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('duration', [DateTimeHelper::class, 'humanDurationFromInterval']),
             new TwigFilter('encenc', [$this, 'encencFilter']),
             new TwigFilter('filesize', [$formatter, 'asShortSize']),
-            new TwigFilter('filter', 'array_filter'),
+            new TwigFilter('filter', [$this, 'filterFilter']),
             new TwigFilter('filterByValue', [ArrayHelper::class, 'filterByValue']),
             new TwigFilter('group', [$this, 'groupFilter']),
             new TwigFilter('hash', [$security, 'hashData']),
@@ -585,6 +586,22 @@ class Extension extends AbstractExtension implements GlobalsInterface
     }
 
     /**
+     * Filters an array.
+     *
+     * @param array|\Traversable $arr
+     * @param callable|null $arrow
+     * @return array|\Traversable
+     */
+    public function filterFilter($arr, $arrow = null)
+    {
+        if ($arrow === null) {
+            return array_filter($arr);
+        }
+
+        return iterator_to_array(twig_array_filter($arr, $arrow));
+    }
+
+    /**
      * Groups an array or element query's results by a common property.
      *
      * @param array|\Traversable $arr
@@ -954,11 +971,11 @@ class Extension extends AbstractExtension implements GlobalsInterface
                 return 'class=' . $matches[1] . implode(' ', $newClasses) . $matches[1];
             }, $svg);
             foreach ($ids as $id) {
-                $quotedId = preg_quote($id, '\\');
+                $quotedId = preg_quote($id, '/');
                 $svg = preg_replace("/#{$quotedId}\b(?!\-)/", "#{$ns}{$id}", $svg);
             }
             foreach ($classes as $c) {
-                $quotedClass = preg_quote($c, '\\');
+                $quotedClass = preg_quote($c, '/');
                 $svg = preg_replace("/\.{$quotedClass}\b(?!\-)/", ".{$ns}{$c}", $svg);
             }
         }

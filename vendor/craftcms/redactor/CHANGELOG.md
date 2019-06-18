@@ -1,8 +1,30 @@
 # Release Notes for Redactor for Craft CMS
 
+## 2.3.3.2 - 2019-04-29
+
+### Fixed
+- Fixed an error that could occur after updating to Redactor 2.3.3. ([#140](https://github.com/craftcms/redactor/issues/140))
+
+## 2.3.3.1 - 2019-04-26
+
+### Fixed
+- Fixed an error that occurred when updating to Redactor 2.3.3 if any Redactor fields didn’t have a `cleanupHtml` setting saved. 
+
+## 2.3.3 - 2019-04-26
+
+### Changed
+- Split the `cleanupHtml` setting into three separate settings: `removeInlineStyles`, `removeEmptyTags`, and `removeNbsp`. ([#125](https://github.com/craftcms/redactor/pull/125))
+- Updated Redactor to 3.1.8.
+
+### Fixed
+- Fixed a bug where linking files or assets would not work as expected. ([#136](https://github.com/craftcms/redactor/issues/136))
+
+### Deprecated
+- Deprecated `craft\redactor\Field::cleanupHtml`.
+
 ## 2.3.2 - 2019-02-21
 
-### Changed
+### Changed
 - Updated Redactor to 3.1.7.
 
 ### Fixed

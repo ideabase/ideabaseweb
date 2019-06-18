@@ -142,7 +142,8 @@ class SeoSettings extends Field implements PreviewableFieldInterface
                     'facebookEnabledFields',
                     'sitemapEnabledFields',
                 ],
-                'each', 'rule' => ['string']],
+                'each', 'rule' => ['string'],
+            ],
 
         ]);
 
@@ -220,6 +221,38 @@ class SeoSettings extends Field implements PreviewableFieldInterface
             }
             if (!empty($config['metaGlobalVars'])) {
                 $config['metaGlobalVars']['mainEntityOfPage'] = $mainEntity;
+            }
+        }
+        // Try to get a meta bundle for this elements's section, and use its defaults
+        if ($element !== null) {
+            list($sourceId, $sourceBundleType, $sourceHandle, $sourceSiteId)
+                = Seomatic::$plugin->metaBundles->getMetaSourceFromElement($element);
+            $metaBundle = Seomatic::$plugin->metaBundles->getMetaBundleBySourceId(
+                $sourceBundleType,
+                $sourceId,
+                $sourceSiteId
+            );
+            if ($metaBundle) {
+                // Merge in the metaGlobalVars
+                if (empty($config['metaGlobalVars'])) {
+                    $config['metaGlobalVars'] = [];
+                }
+                $attributes = $metaBundle->metaGlobalVars->getAttributes();
+                $attributes = array_filter(
+                    $attributes,
+                    [ArrayHelper::class, 'preserveBools']
+                );
+                $config['metaGlobalVars'] = array_merge($attributes, $config['metaGlobalVars']);
+                // Merge in the metaSiteVars
+                if (empty($config['metaBundleSettings'])) {
+                    $config['metaBundleSettings'] = [];
+                }
+                $attributes = $metaBundle->metaBundleSettings->getAttributes();
+                $attributes = array_filter(
+                    $attributes,
+                    [ArrayHelper::class, 'preserveBools']
+                );
+                $config['metaBundleSettings'] = array_merge($attributes, $config['metaBundleSettings']);
             }
         }
         // Create a new meta bundle with propagated defaults
@@ -382,7 +415,7 @@ class SeoSettings extends Field implements PreviewableFieldInterface
                     Seomatic::$plugin->metaContainers->previewMetaContainers($uri, $siteId, true);
                     $variables = [
                         'previewTypes' => [
-                            $this->elementDisplayPreviewType ?? ''
+                            $this->elementDisplayPreviewType ?? '',
                         ],
                         'previewElementId' => $element->id,
                     ];

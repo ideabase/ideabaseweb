@@ -47,8 +47,11 @@ function fillDynamicSchemaMenu(menuId, menuValue, path, subTypes, blankItem, cal
                         .appendTo(menu);
                 }
                 $.each(data, function() {
+                    // Strip out any &nbsp; characters, char code 160
+                    var re = new RegExp(String.fromCharCode(160), "g");
+                    var val = this.replace(re, '');
                     $('<option />')
-                        .attr('value', this)
+                        .attr('value', val)
                         .html(this)
                         .appendTo(menu);
                 });
@@ -78,6 +81,7 @@ function seomaticTabChangeHandler() {
 
 window.fillDynamicSchemaMenu = fillDynamicSchemaMenu;
 window.seomaticTabChangeHandler = seomaticTabChangeHandler;
+window.seomaticTabChangeHandler();
 
 $(function() {
     // Tokenize any seomatic-keywords fields

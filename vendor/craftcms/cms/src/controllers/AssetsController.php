@@ -653,12 +653,14 @@ class AssetsController extends Controller
                 throw new BadRequestHttpException('The folder cannot be found');
             }
 
-            // Check the permissions to save in the resolved folder.
-            $this->_requirePermissionByAsset('saveAssetInVolume', $asset);
+            // Do what you want with your own photo.
+            if ($asset->id != Craft::$app->getUser()->getIdentity()->photoId) {
+                $this->_requirePermissionByAsset('saveAssetInVolume', $asset);
 
-            // If replacing, check for permissions to replace existing Asset files.
-            if ($replace) {
-                $this->_requirePermissionByAsset('deleteFilesAndFoldersInVolume', $asset);
+                // If replacing, check for permissions to replace existing Asset files.
+                if ($replace) {
+                    $this->_requirePermissionByAsset('deleteFilesAndFoldersInVolume', $asset);
+                }
             }
 
             // Verify parameter adequacy
@@ -985,7 +987,9 @@ class AssetsController extends Controller
             }
         }
 
-        $this->_requirePermissionByVolumeId($permissionName, $asset->getVolume()->uid);
+        /** @var Volume $volume */
+        $volume = $asset->getVolume();
+        $this->_requirePermissionByVolumeId($permissionName, $volume->uid);
     }
 
     /**
@@ -1005,7 +1009,9 @@ class AssetsController extends Controller
             }
         }
 
-        $this->_requirePermissionByVolumeId($permissionName, $folder->getVolume()->uid);
+        /** @var Volume $volume */
+        $volume = $folder->getVolume();
+        $this->_requirePermissionByVolumeId($permissionName, $volume->uid);
     }
 
     /**
