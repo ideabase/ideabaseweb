@@ -590,7 +590,7 @@ class Extension extends AbstractExtension implements GlobalsInterface
      *
      * @param array|\Traversable $arr
      * @param callable|null $arrow
-     * @return array|\Traversable
+     * @return array
      */
     public function filterFilter($arr, $arrow = null)
     {
@@ -598,7 +598,13 @@ class Extension extends AbstractExtension implements GlobalsInterface
             return array_filter($arr);
         }
 
-        return iterator_to_array(twig_array_filter($arr, $arrow));
+        $filtered = twig_array_filter($arr, $arrow);
+
+        if (is_array($filtered)) {
+            return $filtered;
+        }
+
+        return iterator_to_array($filtered);
     }
 
     /**
@@ -772,7 +778,8 @@ class Extension extends AbstractExtension implements GlobalsInterface
         $generalConfig = Craft::$app->getConfig()->getGeneral();
 
         if ($generalConfig->enableCsrfProtection === true) {
-            return TemplateHelper::raw('<input type="hidden" name="' . $generalConfig->csrfTokenName . '" value="' . Craft::$app->getRequest()->getCsrfToken() . '">');
+            $request = Craft::$app->getRequest();
+            return TemplateHelper::raw('<input type="hidden" name="' . $request->csrfParam . '" value="' . $request->getCsrfToken() . '">');
         }
 
         return null;

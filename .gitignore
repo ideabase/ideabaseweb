@@ -16,4 +16,5 @@ db-default.php
 
 /.env
 /.idea
+/.vscode
 **/.DS_Store
