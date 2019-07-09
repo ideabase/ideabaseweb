@@ -2031,12 +2031,12 @@
     },
     {
         "name": "nystudio107/craft-seomatic",
-        "version": "3.2.10",
-        "version_normalized": "3.2.10.0",
+        "version": "3.2.11",
+        "version_normalized": "3.2.11.0",
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/bf199ee45904e7b90eaedeca6464a47c7cb366cc",
-            "reference": "bf199ee45904e7b90eaedeca6464a47c7cb366cc",
+            "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/849649419e3c46a1779d9b6ec30c8981cd12d5c0",
+            "reference": "849649419e3c46a1779d9b6ec30c8981cd12d5c0",
             "shasum": ""
         },
         "require": {
@@ -2045,7 +2045,7 @@
             "php-science/textrank": "^1.0.3",
             "sunra/php-simple-html-dom-parser": "^1.5.2"
         },
-        "time": "2019-06-27T15:58:00+00:00",
+        "time": "2019-07-09T15:40:13+00:00",
         "type": "craft-plugin",
         "extra": {
             "name": "SEOmatic",

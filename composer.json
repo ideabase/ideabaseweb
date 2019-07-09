@@ -26,7 +26,7 @@
     "craftcms/contact-form": "2.2.5",
     "dolphiq/sitemap": "v1.0.9",
     "mikestecker/craft-videoembedder": "1.1.3",
-    "nystudio107/craft-seomatic": "3.2.10",
+    "nystudio107/craft-seomatic": "3.2.11",
     "rias/craft-contact-form-extensions": "1.1.6"
   },
   "autoload": {
