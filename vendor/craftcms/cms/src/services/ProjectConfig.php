@@ -880,7 +880,11 @@ class ProjectConfig extends Component
         $this->trigger(self::EVENT_REBUILD, $event);
 
         // Merge the new data over the existing one.
-        $configData = array_replace_recursive($currentConfig, $event->config);
+        $configData = array_replace_recursive([
+            'system' => $currentConfig['system'],
+            'routes' => $currentConfig['routes'] ?? [],
+            'plugins' => $currentConfig['plugins'] ?? []
+        ], $event->config);
 
         $this->muteEvents = true;
 
@@ -1478,7 +1482,7 @@ class ProjectConfig extends Component
                 'sections.handle',
                 'sections.type',
                 'sections.enableVersioning',
-                'sections.propagateEntries',
+                'sections.propagationMethod',
                 'sections.uid',
                 'structures.uid AS structure',
                 'structures.maxLevels AS structureMaxLevels',
@@ -1504,7 +1508,6 @@ class ProjectConfig extends Component
             $uid = $section['uid'];
             unset($section['id'], $section['structureMaxLevels'], $section['uid']);
 
-            $section['propagateEntries'] = (bool)$section['propagateEntries'];
             $section['enableVersioning'] = (bool)$section['enableVersioning'];
 
             $sectionData[$uid] = $section;
