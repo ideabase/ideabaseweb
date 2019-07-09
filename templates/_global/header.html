@@ -1,34 +1,35 @@
-{% cache globally %}
 <header role="banner">
-	<a id="skip-to-content" href="#content">skip to main content</a>
-	<a class="ideabaselogo" href="{{ siteUrl }}">
-		{% for image in header.headerLogo.all() %}
-    	<img src="{{ image.url }}" alt="{{ image.title }}">
-    {% endfor %}
-	</a>
-  <span class="nav__trigger">
-    	<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
-	</span>
-	{% endcache %}
 	{% cache globally %}
-	<nav role="navigation">
-				<ul>
-					<li class="nav__item">
-						<a href="{{ url('services') }}">Services</a>
-					</li>
-					<li class="nav__item">
-						<a href="{{ url('work') }}">Work</a>
-					</li>
-					<li class="nav__item">
-						<a href="{{ url('people') }}">People</a>
-					</li>
-      		<li class="nav__contact">
-						<a href="#footer-form" id="contact-toggle">
-							<svg><use xlink:href="#envelope" /></svg>
-							<span>Contact Us</span>
-						</a>
-					</li>
-      	</ul>
-	</nav>
+		<a id="skip-to-content" href="#content">skip to main content</a>
+		<a class="ideabaselogo" href="{{ siteUrl }}">
+			{% for image in header.headerLogo.all() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			{% endfor %}
+		</a>
+		<span class="nav__trigger">
+			<a href="#" class="nav__trigger__link" id="navshow">Menu</a>
+		</span>
+	{% endcache %}
+
+	{% cache globally %}
+		<nav role="navigation">
+			<ul>
+				<li class="nav__item">
+					<a href="{{ url('services') }}">Services</a>
+				</li>
+				<li class="nav__item">
+					<a href="{{ url('work') }}">Work</a>
+				</li>
+				<li class="nav__item">
+					<a href="{{ url('people') }}">People</a>
+				</li>
+				<li class="nav__contact">
+					<a href="#footer-form" id="contact-toggle">
+						<svg><use xlink:href="#envelope" /></svg>
+						<span>Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
 	{% endcache %}
 </header>

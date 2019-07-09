@@ -38,8 +38,7 @@ return [
     'siteUrl' => 'https://www.ideabasekent.com',
     'aliases' => [
       'basePath' => '',
-      'baseUrl' =>
-      'https://www.ideabasekent.com',
+      'baseUrl' => 'https://www.ideabasekent.com',
     ],
   ],
 ];

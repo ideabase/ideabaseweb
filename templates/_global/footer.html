@@ -7,7 +7,7 @@
  {% else %}
 		 <h2 class="global-footer__cta">{{ footer.footerHeadline }}</h2>
  {% endif %}
-{%cache globally%}
+{% cache globally %}
 	<div class="global-footer__image__container">
 			<svg class="global-footer__image" viewBox="0 0 356.8 376.8" enable-background="new 0 0 502 502" xml:space="preserve">
 				<g>
@@ -26,9 +26,9 @@
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Phone</span>{{ footer.phoneNumber }}</div>
 		<div class="global-footer__contact"><span class="global-footer__contact__title">Email</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a></div>
 		<div class="global-footer__invitation">{{ footer.contactFormDescription }}</div>
-		<!-- Contact Form -->
+		{# Contact Form #}
 		<div class="contact-form">{% include '_global/contactform.html' %}</div>
-		<!-- End Contact Form -->
+		{# End Contact Form #}
 	</section>
 	<div class="footer-form__button__container">
 		<a tabindex="0" id="footer-form-toggle" class="footer-form__button button button-primary button--large">{{ footer.ctaButton }}</a>
@@ -50,19 +50,19 @@
 					<span class="global-footer__text__name">E:</span><a href="mailto:{{ footer.footerEmail }}">{{ footer.footerEmail }}</a>
 				</div>
 			</section>
-			<!-- Social Media -->
+			{# Social Media #}
 			<section class="footer-info__social footer-info__social--footer">
 			{% for block in socMedia.socialMediaRepeater.type('socialName').all() %}
      			<a href="{{ block.socialMediaLink }}"><svg class="footer-info__social__icon"><use xlink:href="#{{ block.socialMediaName|striptags }}" /></svg></a>
 			{% endfor %}
-			<!-- Begin MailChimp Signup Form -->
+			{# Begin MailChimp Signup Form #}
 			<div class="footer-info__email">
 					<h3 class="footer-info__email__heading">Newsletter</h3>
 					<div id="mc_embed_signup" class="footer-info__email__signup">
 					<form action="https://ideabasekent.us9.list-manage.com/subscribe/post?u=768657c2485cb25aa8053c28d&amp;id=076d5d160f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					    <div id="mc_embed_signup_scroll" class="footer-info__email__signup__form">
 								<input type="email" value="" name="EMAIL" class="footer-info__email__signup__form__field" id="mce-EMAIL" placeholder="Your email address" required>
-					    	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    	{# real people should not fill this in and expect good things - do not remove this or risk form bot signups #}
 					    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_768657c2485cb25aa8053c28d_076d5d160f" tabindex="-1" value=""></div>
 					    	<div class="clear"><input type="submit" value="+" name="subscribe" id="mc-embedded-subscribe" class="footer-info__email__signup__form__button"></div>
 					    </div>
@@ -70,7 +70,7 @@
 					</div>
 			</div>
 			</section>
-			<!-- End Social Media -->
+			{# End Social Media #}
 			<section class="footer-info__supplemental">
 				<ul class="footer-info__nav">
 					<li class="footer-info__nav__item"><a href="{{siteUrl}}about">About</a></li>
