@@ -35,10 +35,10 @@ return [
 
   // Production environment settings
   'production' => [
-    'siteUrl' => 'https://www.ideabasekent.com',
+    'siteUrl' => 'https://ideabasekent.com',
     'aliases' => [
       'basePath' => '',
-      'baseUrl' => 'https://www.ideabasekent.com',
+      'baseUrl' => 'https://ideabasekent.com',
     ],
   ],
 ];

@@ -51,6 +51,8 @@ AdminLabs
 adressendeutschland
 adscanner
 Adstxtaggregator
+adstxt-worker
+adstxt\.com
 agentslug
 AHC
 aihit
@@ -84,6 +86,7 @@ APIs-Google
 AportWorm\/
 AppBeat\/
 AppEngine-Google
+AppleSyndication
 AppStoreScraperZ
 Aprc\/[0-9]
 Arachmo
@@ -100,6 +103,7 @@ Astute
 asynchttp
 Attach
 autocite
+AutomaticWPTester
 Autonomy
 axios\/
 B-l-i-t-z-B-O-T
@@ -213,6 +217,7 @@ Crescent
 Crowsnest
 Criteo
 CSHttp
+CSSCheck
 curb
 Curious George
 curl
@@ -228,6 +233,9 @@ DataparkSearch
 dataprovider
 DataXu
 Daum(oa)?[ \/][0-9]
+dBpoweramp
+ddline
+deeris
 Demon
 DeuSu
 developers\.google\.com\/\+\/web\/snippet\/
@@ -352,6 +360,7 @@ GetRight
 getroot
 GetURLInfo\/
 GetWeb
+Geziyor
 Ghost Inspector
 GigablastOpenSource
 GIS-LABS
@@ -456,6 +465,7 @@ http_get
 HttpComponents
 httphr
 HTTPMon
+HTTPie
 httpRequest
 httpscheck
 httpssites_power
@@ -516,6 +526,7 @@ isitup\.org
 iskanie
 isUp\.li
 iThemes Sync\/
+IZaBEE
 iZSearch
 JAHHO
 janforman
@@ -542,6 +553,7 @@ Kerrigan\/
 KeyCDN
 Keyword Density
 Keywords Research
+khttp\/
 KickFire
 KimonoLabs\/
 Kml-Google
@@ -565,6 +577,7 @@ libwww
 Licorne
 Liferea\/
 Lightspeedsystems
+Lighthouse
 Likse
 Link Valet
 link_thumbnailer
@@ -608,6 +621,7 @@ MarkWatch
 Mass Downloader
 masscan\/
 Mata Hari
+Mediametric
 Mediapartners-Google
 mediawords
 MegaIndex\.ru
@@ -832,6 +846,7 @@ Recorder
 RecurPost\/
 redback\/
 ReederForMac
+Reeder\/
 ReGet
 RepoMonkey
 request\.js
@@ -999,6 +1014,7 @@ terrainformatica
 Test Certificate Info
 testuri
 Tetrahedron
+TextRazor Downloader
 The Drop Reaper
 The Expert HTML Source Viewer
 The Knowledge AI
@@ -1008,6 +1024,7 @@ TheNomad
 Thinklab
 Thumbshots
 ThumbSniper
+Thumbor
 timewe\.net
 TinEye
 Tiny Tiny RSS
@@ -1017,6 +1034,7 @@ topster
 touche\.com
 Traackr\.com
 tracemyfile
+Trackuity
 TrapitAgent
 Trendiction
 Trendsmap
@@ -1096,6 +1114,7 @@ Web Fetch
 Web Fuck
 Web Pix
 Web Sauger
+Web spyder
 Web Sucker
 Webalta
 Webauskunft
@@ -1159,6 +1178,7 @@ Woko
 woorankreview
 Word\/
 WordPress\/
+worldping-api
 WordupinfoSearch
 wotbox
 WP Engine Install Performance API
@@ -1206,9 +1226,10 @@ Zemanta Aggregator
 Zend_Http_Client
 Zend\\Http\\Client
 Zermelo
-Zeus
+Zeus 
 zgrab
 ZnajdzFoto
+ZnHTTP
 Zombie\.js
 Zoom\.Mac
 ZyBorg
