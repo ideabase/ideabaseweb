@@ -646,6 +646,8 @@ class Elements extends Component
 
             // Update the element across the other sites?
             if ($propagate) {
+                $element->newSiteIds = [];
+
                 foreach ($supportedSites as $siteInfo) {
                     // Skip the master site
                     if ($siteInfo['siteId'] != $element->siteId) {
@@ -688,17 +690,17 @@ class Elements extends Component
             }
         }
 
-        // Delete any caches involving this element. (Even do this for new elements, since they
-        // might pop up in a cached criteria.)
-        Craft::$app->getTemplateCaches()->deleteCachesByElement($element);
-
-        // Update search index
         if (!$element->propagating && !ElementHelper::isDraftOrRevision($element)) {
+            // Update search index
             Craft::$app->getQueue()->push(new UpdateSearchIndex([
                 'elementType' => get_class($element),
                 'elementId' => $element->id,
                 'siteId' => $propagate ? '*' : $element->siteId,
             ]));
+
+            // Delete any caches involving this element. (Even do this for new elements, since they
+            // might pop up in a cached criteria.)
+            Craft::$app->getTemplateCaches()->deleteCachesByElement($element);
         }
 
         // Fire an 'afterSaveElement' event
@@ -845,6 +847,8 @@ class Elements extends Component
 
                 $e = null;
                 try {
+                    $element->newSiteIds = [];
+
                     foreach ($elementSiteIds as $siteId) {
                         if ($siteId != $element->siteId) {
                             // Make sure the site element wasn't updated more recently than the main one
@@ -1752,6 +1756,21 @@ class Elements extends Component
     }
 
     /**
+     * Returns all placeholder elements.
+     *
+     * @return ElementInterface[]
+     * @since 3.2.5
+     */
+    public function getPlaceholderElements(): array
+    {
+        if ($this->_placeholderElements === null) {
+            return [];
+        }
+
+        return call_user_func_array('array_merge', $this->_placeholderElements);
+    }
+
+    /**
      * Returns a placeholder element by its ID and site ID.
      *
      * @param int $sourceId The element’s ID
@@ -1978,6 +1997,9 @@ class Elements extends Component
             $siteElement->siteId = $siteInfo['siteId'];
             $siteElement->contentId = null;
             $siteElement->enabledForSite = $siteInfo['enabledByDefault'];
+
+            // Keep track of this new site ID
+            $element->newSiteIds[] = $siteInfo['siteId'];
         } else if ($element->propagateAll) {
             $oldSiteElement = $siteElement;
             $siteElement = clone $element;

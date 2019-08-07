@@ -28,23 +28,6 @@ return array (
       'sitemapService' => 'dolphiq\\sitemap\\services\\SitemapService',
     ),
   ),
-  'craftcms/aws-s3' => 
-  array (
-    'class' => 'craft\\awss3\\Plugin',
-    'basePath' => $vendorDir . '/craftcms/aws-s3/src',
-    'handle' => 'aws-s3',
-    'aliases' => 
-    array (
-      '@craft/awss3' => $vendorDir . '/craftcms/aws-s3/src',
-    ),
-    'name' => 'Amazon S3',
-    'version' => '1.2.3',
-    'description' => 'Amazon S3 integration for Craft CMS',
-    'developer' => 'Pixel & Tonic',
-    'developerUrl' => 'https://pixelandtonic.com/',
-    'developerEmail' => 'support@craftcms.com',
-    'documentationUrl' => 'https://github.com/craftcms/aws-s3/blob/master/README.md',
-  ),
   'craftcms/redactor' => 
   array (
     'class' => 'craft\\redactor\\Plugin',
@@ -159,5 +142,22 @@ return array (
       'tag' => 'nystudio107\\seomatic\\services\\Tag',
       'title' => 'nystudio107\\seomatic\\services\\Title',
     ),
+  ),
+  'craftcms/aws-s3' => 
+  array (
+    'class' => 'craft\\awss3\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/aws-s3/src',
+    'handle' => 'aws-s3',
+    'aliases' => 
+    array (
+      '@craft/awss3' => $vendorDir . '/craftcms/aws-s3/src',
+    ),
+    'name' => 'Amazon S3',
+    'version' => '1.2.5',
+    'description' => 'Amazon S3 integration for Craft CMS',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://github.com/craftcms/aws-s3/blob/master/README.md',
   ),
 );

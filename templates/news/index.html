@@ -16,7 +16,7 @@
 {% block content %}
 	<h1>News</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
+	{% for entry in craft.entries.section('news').all() %}
 		<section class="news-individual">
 			<h3 class="news-individual__title">
 				<a href="{{ entry.url }}">
@@ -34,4 +34,3 @@
 		</article>
 	{% endfor %}
 {% endblock %}
-

@@ -1,6 +1,24 @@
 Yii Framework 2 debug extension Change Log
 ==========================================
 
+2.1.7 July 30, 2019
+-------------------
+
+- Bug #401: Partial revert of #390, use var dumper on dump panel as serializer to deal with closures in SPL Objects (Sarke)
+- Bug #404: Fix insufficient data escaping in debugger views (0xbug, Artem Myshenkov, samdark)
+- Enh #40: Add "since previous" and sequential number to "logs" panel detail view (Deele, samdark)
+
+
+2.1.6 July 23, 2019
+-------------------
+
+- Enh #167: Add total request processing time and peak memory consumption on index page (pistej)
+- Enh #379: Better error message when no debug data is found (Sarke)
+- Enh #380: Enhanced browser compatibility (samdark)
+- Enh #390: Use opis/closure to serialize data (Sarke)
+- Enh #392: Add `tracePathMappings` property to module (Sarke)
+
+
 2.1.5 June 04, 2019
 -------------------
 

@@ -39,22 +39,22 @@ return array (
       '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
     ),
   ),
-  'yii2tech/ar-softdelete' => 
-  array (
-    'name' => 'yii2tech/ar-softdelete',
-    'version' => '1.0.3.0',
-    'alias' => 
-    array (
-      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
-    ),
-  ),
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
-    'version' => '2.1.5.0',
+    'version' => '2.1.7.0',
     'alias' => 
     array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
+  'yii2tech/ar-softdelete' => 
+  array (
+    'name' => 'yii2tech/ar-softdelete',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
     ),
   ),
 );

@@ -9,7 +9,6 @@ return array(
     'UpdateHelper\\' => array($vendorDir . '/kylekatarnls/update-helper/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Sunra\\PhpSimple\\HtmlDomParser' => array($vendorDir . '/sunra/php-simple-html-dom-parser/Src'),
-    'Imagine' => array($vendorDir . '/pixelandtonic/imagine/lib'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'DaveChild\\TextStatistics' => array($vendorDir . '/davechild/textstatistics/src'),
 );
