@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: 'css/style.css',
+        src: 'css/*.css',
       }
     },
     criticalcss: {
@@ -73,5 +73,5 @@ module.exports = function (grunt) {
 
   // Tasks
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('critical', ['criticalcss']);
+  grunt.registerTask('critical', ['criticalcss', 'postcss']);
 };
