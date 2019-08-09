@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: 'css/style.css',
+        src: 'css/*.css',
       }
     },
     criticalcss: {
