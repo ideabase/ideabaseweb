@@ -208,6 +208,8 @@ namespace Aws;
  * @method \Aws\MultiRegionClient createMultiRegionKinesisVideoMedia(array $args = [])
  * @method \Aws\Kms\KmsClient createKms(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionKms(array $args = [])
+ * @method \Aws\LakeFormation\LakeFormationClient createLakeFormation(array $args = [])
+ * @method \Aws\MultiRegionClient createMultiRegionLakeFormation(array $args = [])
  * @method \Aws\Lambda\LambdaClient createLambda(array $args = [])
  * @method \Aws\MultiRegionClient createMultiRegionLambda(array $args = [])
  * @method \Aws\LexModelBuildingService\LexModelBuildingServiceClient createLexModelBuildingService(array $args = [])
@@ -375,7 +377,7 @@ namespace Aws;
  */
 class Sdk
 {
-    const VERSION = '3.108.5';
+    const VERSION = '3.109.0';
 
     /** @var array Arguments for creating clients */
     private $args;
