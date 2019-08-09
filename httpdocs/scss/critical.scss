@@ -1,6 +1,6 @@
 @import 'partials/_variables';
 @import 'partials/_clearfix';
-@import 'partials/_reset';
+@import 'partials/_normalize';
 @import 'partials/_header';
 @import 'partials/_hero';
 @import 'partials/_headings';
@@ -19,5 +19,5 @@ img {
 }
 
 html, body {
-   height: 100%;
+  height: 100%;
 }

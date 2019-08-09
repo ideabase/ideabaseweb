@@ -15,7 +15,6 @@ use Craft;
 use craft\base\Plugin;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
-use craft\contactform\models\Submission;
 use craft\events\RegisterUrlRulesEvent;
 use craft\events\TemplateEvent;
 use craft\helpers\App;
@@ -173,7 +172,7 @@ class ContactFormExtensions extends Plugin
                 $message = new Message();
                 $message->setTo($e->submission->fromEmail);
                 if (isset(App::mailSettings()->fromEmail)) {
-                    $message->setFrom(App::mailSettings()->fromEmail);
+                    $message->setFrom(Craft::parseEnv(App::mailSettings()->fromEmail));
                 } else {
                     $message->setFrom($e->message->getTo());
                 }

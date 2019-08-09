@@ -4,6 +4,10 @@
 
 @import 'partials/_partials_.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $source;
 }

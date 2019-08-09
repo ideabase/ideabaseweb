@@ -12,7 +12,7 @@
 <body>
   {# Include SVG Sprite Sheet, which holds some common icons used in the site #}
   {% include '_includes/_svg-defs.svg' %}
-  
+
   {# Include the header #}
   {% include '_global/header' %}
   {# Start the main content block #}
@@ -30,10 +30,10 @@
   </script>
 
   {# Bring in the main custom scripts, with other conditional scripts for specific templates #}
-  <script type="text/javascript" src="{{ siteUrl }}js/custom-scripts-min.js"></script>
+  <script type="text/javascript" src="{{ siteUrl }}js/min/custom-scripts-min.js"></script>
   {% if entry is defined %}
     {% if entry.section.handle == 'projectsHomepage' or entry.section.handle == 'projectsList' or entry.section.handle == 'ideabaseProjects' %}
-      <script type="text/javascript" src="{{ siteUrl }}js/project-scripts-min.js"></script>
+      <script type="text/javascript" src="{{ siteUrl }}js/min/project-scripts-min.js"></script>
     {% endif %}
   {% endif %}
 

@@ -1,7 +1,4 @@
-
-module.exports = function(grunt) {
-
-  // Configuration
+module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
@@ -10,67 +7,69 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-        'css/styles.css': 'scss/styles.scss',
-        'css/proposals.css': 'scss/proposals.scss'
+          'css/style.css': 'scss/styles.scss',
+          'css/proposals.css': 'scss/proposals.scss'
         }
       }
     },
-    criticalcss: {
-      home: {
-        options: {
-          url: "http://ideabase.web",
-                width: 1500,
-                height: 1200,
-                outputfile: "../templates/_includes/critical-home.css",
-                filename: "css/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
-                buffer: 800*1024,
-                ignoreConsole: true,
-                restoreFontFaces: true
-        }
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('pixrem')(),
+          require('autoprefixer')(),
+          require('cssnano')()
+        ]
       },
+      dist: {
+        src: 'css/style.css',
+      }
+    },
+    criticalcss: {
+      custom: {
+        options: {
+          url: "http://ideabase.web/",
+          width: 1500,
+          height: 1200,
+          outputfile: "css/critical.css",
+          filename: "css/style.css",
+          buffer: 800 * 1024,
+          ignoreConsole: false
+        }
+      }
     },
     uglify: {
       my_target: {
         files: {
-          'js/custom-scripts-min.js': ['js/jquery.min.js','js/jquery.easing.1.3.js','js/scrollreveal.min.js','js/flickity.min.js','js/jquery.fitvids.js','js/prism.js','js/jquery.lazyload.min.js','js/picturefill.min.js','js/custom-scripts.js'],
-          'js/project-scripts-min.js': ['js/project-scripts.js']
+          'js/min/custom-scripts-min.js': ['js/jquery.min.js', 'js/jquery.easing.1.3.js', 'js/scrollreveal.min.js', 'js/flickity.min.js', 'js/jquery.fitvids.js', 'js/prism.js', 'js/jquery.lazyload.min.js', 'js/picturefill.min.js', 'js/custom-scripts.js'],
+          'js/min/project-scripts-min.js': ['js/project-scripts.js']
         }
       }
     },
-    autoprefixer: {
-      your_target: {
-        files: {
-          'css/styles.css': 'css/styles.css',
-          'css/proposals.css': 'css/proposals.css'
-        }
-      },
-    },
     watch: {
       css: {
-				files: '**/scss/**/*.scss',
-				tasks: ['sass', 'autoprefixer'],
+        files: '**/scss/**/*.scss',
+        tasks: ['sass', 'postcss'],
         options: {
-          livereload: true,
-        },
-			},
+          livereload: true
+        }
+      },
       js: {
-				files: ['**/js/*.js', '!**/js/*min.js'],
-				tasks: ['uglify'],
+        files: '**/js/*.js',
+        tasks: ['uglify'],
         options: {
-          livereload: true,
-        },
-			},
+          livereload: true
+        }
+      }
     }
   });
 
   // Plugins
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-criticalcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-criticalcss');
+  grunt.loadNpmTasks('grunt-postcss');
 
   // Tasks
   grunt.registerTask('default', ['watch']);
