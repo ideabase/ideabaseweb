@@ -2,7 +2,6 @@
   "name": "ideabase",
   "version": "0.1.0",
   "devDependencies": {
-    "diff": ">=3.5.0",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-contrib-concat": "^1.0.1",
