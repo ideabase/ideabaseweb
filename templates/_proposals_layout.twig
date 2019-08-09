@@ -6,8 +6,8 @@
 	{% include '_global/head' %}
 
 	{# include proposal stylesheet #}
-	<link href="{{ siteUrl }}css/proposals.css" type="text/css" rel="stylesheet" media="screen, projection, print"/>
-	
+	<link href="{{ url('css/proposals.css') }}" type="text/css" rel="stylesheet" media="screen, projection, print"/>
+
 	<meta name="robots" content="noindex">
 </head>
 
@@ -23,19 +23,20 @@
 		WebFontConfig = {
 	    google: { families: [ 'Montserrat:700', 'Source+Sans+Pro:600,700,400,400italic,300' ] }
 	  };
-		  (function() {
-		    var wf = document.createElement('script');
-		    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-		    wf.type = 'text/javascript';
-		    wf.async = 'true';
-		    var s = document.getElementsByTagName('script')[0];
-		    s.parentNode.insertBefore(wf, s);
-		  })();
+
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
 	</script>
 
-  {% if getenv('ENVIRONMENT') == 'dev' %}
-	  {# live Reload - For local environment only #}
-	  <script src="//localhost:35729/livereload.js"></script>
+  {# Live reload in dev mode #}
+  {% if craft.app.config.general.devMode %}
+    <script src="//localhost:35729/livereload.js"></script>
   {% endif %}
 
 </body>

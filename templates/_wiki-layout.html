@@ -13,12 +13,8 @@
 	{% include '_includes/_favicons.html' %}
   <link href="{{ url('css/style.css') }}css/style.css" type="text/css" rel="stylesheet" media="screen" />
 </head>
-<body>
-  {% if getenv('ENVIRONMENT') == 'dev' %}
-  <!-- Live Reload - For local environment only -->
-    <script src="//localhost:35729/livereload.js"></script>
-  {% endif %}
 
+<body>
   <header class="wiki-header">
     <div class="wiki-header__inner">
       <a class="wiki-subheader" href="{{ siteUrl }}wiki"><h1 class="wiki-subheader__title"><span>_</span>wiki</h1></a>
@@ -39,12 +35,16 @@
     <p>© {{ 'now'|date('Y') }} <a href="https://www.ideabasekent.com">IdeaBase</a></p>
   </footer>
 
+  {# Live reload in dev mode #}
+  {% if craft.app.config.general.devMode %}
+    <script src="//localhost:35729/livereload.js"></script>
+  {% endif %}
+
   <script type="text/javascript" src="{{ siteUrl }}js/modernizr-custom.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.0.9/scrollreveal.min.js"></script>
   <script>
-      // Picture element HTML5 shiv
-      document.createElement( "picture" );
+    document.createElement( "picture" );
   </script>
   <script type="text/javascript" src="{{ siteUrl }}js/min/custom-scripts-min.js"></script>
   <script>
@@ -55,7 +55,6 @@
 
     ga('create', 'UA-52690730-4', 'auto');
     ga('send', 'pageview');
-
   </script>
 </body>
 </html>
