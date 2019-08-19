@@ -3130,7 +3130,6 @@ return array(
     'craft\\records\\MatrixBlockType' => $vendorDir . '/craftcms/cms/src/records/MatrixBlockType.php',
     'craft\\records\\Migration' => $vendorDir . '/craftcms/cms/src/records/Migration.php',
     'craft\\records\\Plugin' => $vendorDir . '/craftcms/cms/src/records/Plugin.php',
-    'craft\\records\\Route' => $vendorDir . '/craftcms/cms/src/records/Route.php',
     'craft\\records\\Section' => $vendorDir . '/craftcms/cms/src/records/Section.php',
     'craft\\records\\Section_SiteSettings' => $vendorDir . '/craftcms/cms/src/records/Section_SiteSettings.php',
     'craft\\records\\Session' => $vendorDir . '/craftcms/cms/src/records/Session.php',

@@ -3664,7 +3664,6 @@ class ComposerStaticInit3b74590e706b329507f226ac2f405083
         'craft\\records\\MatrixBlockType' => __DIR__ . '/..' . '/craftcms/cms/src/records/MatrixBlockType.php',
         'craft\\records\\Migration' => __DIR__ . '/..' . '/craftcms/cms/src/records/Migration.php',
         'craft\\records\\Plugin' => __DIR__ . '/..' . '/craftcms/cms/src/records/Plugin.php',
-        'craft\\records\\Route' => __DIR__ . '/..' . '/craftcms/cms/src/records/Route.php',
         'craft\\records\\Section' => __DIR__ . '/..' . '/craftcms/cms/src/records/Section.php',
         'craft\\records\\Section_SiteSettings' => __DIR__ . '/..' . '/craftcms/cms/src/records/Section_SiteSettings.php',
         'craft\\records\\Session' => __DIR__ . '/..' . '/craftcms/cms/src/records/Session.php',
