@@ -15,6 +15,7 @@
     {# {{ csrfInput() }} #}
     <div class="contact-form__column">
       <input type="hidden" name="action" value="contact-form/send">
+      <input type="hidden" name="toEmail" value="{{ 'tbyron@ideabasekent.com'|hash }}">
       {{ redirectInput('/success') }}
 
       <input placeholder="Name" id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" required>

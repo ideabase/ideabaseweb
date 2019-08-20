@@ -32,33 +32,25 @@
 
     <div class="wiki__field">
       <label for="new-or-existing">Is this a request for a new or existing article?</label>
-
       <label><input type="radio" name="message[Services][]" value="New" required checked>New</label>
-
       <label><input type="radio" name="message[Services][]" value="Existing" required>Existing</label>
     </div>
 
     <div class="wiki__field">
       <label for="from-name">Your Name</label>
-
       <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" required>
-
       {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
     </div>
 
     <div class="wiki__field">
       <label for="from-email">Your Email</label>
-
       <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" required>
-
       {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
     </div>
 
     <div class="wiki__field">
       <label for="message">Requested Update or New Content</label>
-
       <textarea rows="10" cols="40" id="message" name="message[body]" required>{{ message.message ?? '' }}</textarea>
-
       {{ message is defined and message ? errorList(message.getErrors('message')) }}
     </div>
 
